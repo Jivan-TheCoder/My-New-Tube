@@ -17,6 +17,7 @@ import org.schabi.newpipe.DownloaderImpl;
 import org.schabi.newpipe.R;
 import org.schabi.newpipe.extractor.NewPipe;
 import org.schabi.newpipe.player.helper.PlayerHelper;
+import org.schabi.newpipe.util.InfoCache;
 import org.schabi.newpipe.util.Localization;
 import org.schabi.newpipe.util.image.ImageStrategy;
 import org.schabi.newpipe.util.image.PreferredImageQuality;
@@ -33,9 +34,35 @@ public class ContentSettingsFragment extends BasePreferenceFragment {
         youtubeRestrictedModeEnabledKey = getString(R.string.youtube_restricted_mode_enabled);
 
         addPreferencesFromResourceRegistry();
+        hideUnusedPreferences();
 
         setupAppLanguagePreferences();
+        setupContentLocalizationPreferences();
         setupImageQualityPref();
+    }
+
+    private void hideUnusedPreferences() {
+        hidePreference(R.string.main_page_content_key);
+        hidePreference(R.string.show_channel_tabs_key);
+        hidePreference(R.string.show_age_restricted_content);
+        hidePreference(R.string.youtube_restricted_mode_enabled);
+        hidePreference(R.string.show_search_suggestions_key);
+        hidePreference(R.string.show_meta_info_key);
+        hideFeedCategory();
+    }
+
+    private void hidePreference(final int keyResId) {
+        final Preference preference = findPreference(getString(keyResId));
+        if (preference != null) {
+            preference.setVisible(false);
+        }
+    }
+
+    private void hideFeedCategory() {
+        final Preference feedCategory = findPreference("content_feed_category");
+        if (feedCategory != null) {
+            feedCategory.setVisible(false);
+        }
     }
 
     private void setupAppLanguagePreferences() {
@@ -84,6 +111,50 @@ public class ContentSettingsFragment extends BasePreferenceFragment {
             });
     }
 
+    private void setupContentLocalizationPreferences() {
+        requirePreference(R.string.content_language_key).setOnPreferenceChangeListener(
+                (preference, newValue) -> {
+                    applyContentLocalization(preference.getContext(), (String) newValue, null);
+                    return true;
+                });
+        requirePreference(R.string.content_country_key).setOnPreferenceChangeListener(
+                (preference, newValue) -> {
+                    applyContentLocalization(preference.getContext(), null, (String) newValue);
+                    return true;
+                });
+    }
+
+    private void applyContentLocalization(final Context context) {
+        applyContentLocalization(context, null, null);
+    }
+
+    private void applyContentLocalization(final Context context,
+                                          final String newLanguageCode,
+                                          final String newCountryCode) {
+        final String defaultKey = context.getString(R.string.default_localization_key);
+        final String languageCode = newLanguageCode != null
+                ? newLanguageCode
+                : Localization.getPreferredLocale(context).toLanguageTag();
+        final String countryCode = newCountryCode != null
+                ? newCountryCode
+                : Localization.getPreferredContentCountry(context).getCountryCode();
+
+        final Locale preferredLocale = defaultKey.equals(languageCode)
+                ? Locale.getDefault()
+                : Locale.forLanguageTag(languageCode);
+        final String resolvedCountryCode = defaultKey.equals(countryCode)
+                ? Locale.getDefault().getCountry()
+                : countryCode;
+
+        NewPipe.setupLocalization(
+                org.schabi.newpipe.extractor.localization.Localization.fromLocale(
+                        preferredLocale),
+                new org.schabi.newpipe.extractor.localization.ContentCountry(
+                        resolvedCountryCode));
+        InfoCache.getInstance().clearCache();
+        PlayerHelper.resetFormat();
+    }
+
     @Override
     public boolean onPreferenceTreeClick(final Preference preference) {
         if (preference.getKey().equals(youtubeRestrictedModeEnabledKey)) {
@@ -103,9 +174,6 @@ public class ContentSettingsFragment extends BasePreferenceFragment {
         super.onDestroy();
 
         final Context context = requireContext();
-        NewPipe.setupLocalization(
-            Localization.getPreferredLocalization(context),
-            Localization.getPreferredContentCountry(context));
-        PlayerHelper.resetFormat();
+        applyContentLocalization(context);
     }
 }

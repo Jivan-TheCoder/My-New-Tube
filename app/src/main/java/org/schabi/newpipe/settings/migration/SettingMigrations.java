@@ -1,7 +1,6 @@
 package org.schabi.newpipe.settings.migration;
 
 import static org.schabi.newpipe.MainActivity.DEBUG;
-import static org.schabi.newpipe.extractor.ServiceList.SoundCloud;
 import static org.schabi.newpipe.extractor.ServiceList.YouTube;
 
 import android.content.Context;
@@ -14,6 +13,7 @@ import androidx.preference.PreferenceManager;
 
 import org.schabi.newpipe.App;
 import org.schabi.newpipe.R;
+import org.schabi.newpipe.database.LocalItem.LocalItemType;
 import org.schabi.newpipe.error.ErrorInfo;
 import org.schabi.newpipe.error.ErrorUtil;
 import org.schabi.newpipe.error.UserAction;
@@ -162,27 +162,7 @@ public final class SettingMigrations {
 
     private static final Migration MIGRATION_6_7 = new Migration(6, 7) {
         @Override
-        protected void migrate(@NonNull final Context context) {
-            // The SoundCloud Top 50 Kiosk was removed in the extractor,
-            // so we remove the corresponding tab if it exists.
-            final TabsManager tabsManager = TabsManager.getManager(context);
-            final List<Tab> tabs = tabsManager.getTabs();
-            final List<Tab> cleanedTabs = tabs.stream()
-                    .filter(tab -> !(tab instanceof Tab.KioskTab kioskTab
-                            && kioskTab.getKioskServiceId() == SoundCloud.getServiceId()
-                            && kioskTab.getKioskId().equals("Top 50")))
-                    .collect(Collectors.toUnmodifiableList());
-            if (tabs.size() != cleanedTabs.size()) {
-                tabsManager.saveTabs(cleanedTabs);
-                // create an AlertDialog to inform the user about the change
-                MigrationManager.addMigrationInfo(uiContext ->
-                        MigrationManager.createMigrationInfoDialog(
-                                uiContext,
-                                uiContext.getString(R.string.migration_info_6_7_title),
-                                uiContext.getString(R.string.migration_info_6_7_message))
-                                .show());
-            }
-        }
+        protected void migrate(@NonNull final Context context) { }
     };
 
     private static final Migration MIGRATION_7_8 = new Migration(7, 8) {
@@ -221,6 +201,40 @@ public final class SettingMigrations {
         }
     };
 
+    private static final Migration MIGRATION_8_9 = new Migration(8, 9) {
+        @Override
+        protected void migrate(@NonNull final Context context) {
+            sp.edit().putString(
+                    context.getString(R.string.current_service_key),
+                    context.getString(R.string.youtube)
+            ).apply();
+
+            final TabsManager tabsManager = TabsManager.getManager(context);
+            final List<Tab> tabs = tabsManager.getTabs();
+            final List<Tab> cleanedTabs = tabs.stream()
+                    .filter(SettingMigrations::isYouTubeOnlyTab)
+                    .collect(Collectors.toUnmodifiableList());
+
+            if (tabs.size() != cleanedTabs.size()) {
+                tabsManager.saveTabs(cleanedTabs);
+            }
+        }
+    };
+
+    private static boolean isYouTubeOnlyTab(@NonNull final Tab tab) {
+        if (tab instanceof Tab.KioskTab kioskTab) {
+            return kioskTab.getKioskServiceId() == YouTube.getServiceId();
+        }
+        if (tab instanceof Tab.ChannelTab channelTab) {
+            return channelTab.getChannelServiceId() == YouTube.getServiceId();
+        }
+        if (tab instanceof Tab.PlaylistTab playlistTab) {
+            return playlistTab.getPlaylistType() != LocalItemType.PLAYLIST_REMOTE_ITEM
+                    || playlistTab.getPlaylistServiceId() == YouTube.getServiceId();
+        }
+        return true;
+    }
+
     /**
      * List of all implemented migrations.
      * <p>
@@ -236,12 +250,13 @@ public final class SettingMigrations {
             MIGRATION_5_6,
             MIGRATION_6_7,
             MIGRATION_7_8,
+            MIGRATION_8_9,
     };
 
     /**
      * Version number for preferences. Must be incremented every time a migration is necessary.
      */
-    private static final int VERSION = 8;
+    private static final int VERSION = 9;
 
 
     static void runMigrationsIfNeeded(@NonNull final Context context) {

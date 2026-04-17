@@ -194,7 +194,7 @@ public abstract class Tab {
         public String getTabName(final Context context) {
             // TODO: find a better name for the blank tab (maybe "blank_tab") or replace it with
             //       context.getString(R.string.app_name);
-            return "NewPipe"; // context.getString(R.string.blank_page_summary);
+            return "Blank"; // context.getString(R.string.blank_page_summary);
         }
 
         @DrawableRes
@@ -493,13 +493,13 @@ public abstract class Tab {
 
         @Override
         public String getTabName(final Context context) {
-            return KioskTranslator.getTranslatedKioskName(getDefaultKioskId(context), context);
+            return context.getString(R.string.trending);
         }
 
         @DrawableRes
         @Override
         public int getTabIconRes(final Context context) {
-            return KioskTranslator.getKioskIcon(getDefaultKioskId(context));
+            return R.drawable.ic_whatshot;
         }
 
         @Override

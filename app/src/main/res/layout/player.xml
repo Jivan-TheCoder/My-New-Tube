@@ -336,20 +336,26 @@
                         app:tint="@color/white"
                         tools:ignore="RtlHardcoded" />
 
-                    <androidx.appcompat.widget.AppCompatImageButton
-                        android:id="@+id/openInBrowser"
+                    <FrameLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="35dp"
-                        android:layout_marginEnd="8dp"
-                        android:background="?attr/selectableItemBackgroundBorderless"
-                        android:clickable="true"
-                        android:contentDescription="@string/open_in_browser"
-                        android:focusable="true"
-                        android:padding="@dimen/player_main_buttons_padding"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/ic_language"
-                        app:tint="@color/white"
-                        tools:ignore="RtlHardcoded" />
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/openInBrowser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_marginEnd="8dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:contentDescription="@string/open_in_browser"
+                            android:focusable="true"
+                            android:padding="@dimen/player_main_buttons_padding"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_language"
+                            app:tint="@color/white"
+                            tools:ignore="RtlHardcoded" />
+                    </FrameLayout>
 
                     <androidx.appcompat.widget.AppCompatImageButton
                         android:id="@+id/share"

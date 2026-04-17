@@ -18,6 +18,7 @@ public class AppearanceSettingsFragment extends BasePreferenceFragment {
     @Override
     public void onCreatePreferences(final Bundle savedInstanceState, final String rootKey) {
         addPreferencesFromResourceRegistry();
+        hideUnusedPreferences();
 
         final String themeKey = getString(R.string.theme_key);
         // the key of the active theme when settings were opened (or recreated after theme change)
@@ -51,6 +52,21 @@ public class AppearanceSettingsFragment extends BasePreferenceFragment {
                 preference.setSummary(getString(R.string.night_theme_available,
                         getString(R.string.auto_device_theme_title)));
             }
+        }
+    }
+
+    private void hideUnusedPreferences() {
+        hidePreference(R.string.show_hold_to_append_key);
+        hidePreference(R.string.tablet_mode_key);
+        hidePreference(R.string.list_view_mode_key);
+        hidePreference(R.string.caption_settings_key);
+        hidePreference(R.string.main_tabs_position_key);
+    }
+
+    private void hidePreference(final int keyResId) {
+        final Preference preference = findPreference(getString(keyResId));
+        if (preference != null) {
+            preference.setVisible(false);
         }
     }
 

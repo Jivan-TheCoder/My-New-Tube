@@ -10,8 +10,10 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.util.TypedValue
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.IntentCompat
@@ -103,6 +105,10 @@ class ErrorActivity : AppCompatActivity() {
         buildInfo(errorInfo)
         binding.errorMessageView.setTextWithLinks(errorInfo.getMessage(this))
         binding.errorView.text = formErrorText(errorInfo.stackTraces)
+
+        if (shouldShowFriendlyParsingMessage()) {
+            showFriendlyParsingMessage()
+        }
 
         // print stack trace once again for debugging:
         errorInfo.stackTraces.forEach { Log.e(TAG, it) }
@@ -265,6 +271,30 @@ class ErrorActivity : AppCompatActivity() {
         var text = binding.errorSorryView.text.toString()
         text += "\n" + getString(R.string.guru_meditation)
         binding.errorSorryView.text = text
+    }
+
+    private fun shouldShowFriendlyParsingMessage(): Boolean {
+        return errorInfo.getMessage(this).toString() == getString(R.string.parsing_error)
+    }
+
+    private fun showFriendlyParsingMessage() {
+        binding.errorSorryView.text = getString(R.string.friendly_parsing_title)
+        binding.errorMessageView.text = getString(R.string.friendly_parsing_message)
+        binding.errorSorryView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f)
+        binding.errorMessageView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 22f)
+        binding.errorMessageView.setLineSpacing(0f, 1.15f)
+
+        binding.whatHappenedHeadlineView.visibility = View.GONE
+        binding.whatDeviceHeadlineView.visibility = View.GONE
+        binding.errorInfoContainer.visibility = View.GONE
+        binding.errorDetailsHeadlineView.visibility = View.GONE
+        binding.errorView.visibility = View.GONE
+        binding.yourCommentHeadlineView.visibility = View.GONE
+        binding.errorCommentBox.visibility = View.GONE
+        binding.errorReportEmailButton.visibility = View.GONE
+        binding.errorGithubNoticeView.visibility = View.GONE
+        binding.errorReportCopyButton.visibility = View.GONE
+        binding.errorReportGitHubButton.visibility = View.GONE
     }
 
     companion object {

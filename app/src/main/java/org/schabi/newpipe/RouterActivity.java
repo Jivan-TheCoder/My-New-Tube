@@ -57,6 +57,7 @@ import org.schabi.newpipe.extractor.Info;
 import org.schabi.newpipe.extractor.NewPipe;
 import org.schabi.newpipe.extractor.StreamingService;
 import org.schabi.newpipe.extractor.StreamingService.LinkType;
+import org.schabi.newpipe.extractor.ServiceList;
 import org.schabi.newpipe.extractor.channel.ChannelInfo;
 import org.schabi.newpipe.extractor.exceptions.ExtractionException;
 import org.schabi.newpipe.extractor.linkhandler.ListLinkHandler;
@@ -227,6 +228,9 @@ public class RouterActivity extends AppCompatActivity {
                     try {
                         if (currentServiceId == -1) {
                             currentService = NewPipe.getServiceByUrl(url);
+                            if (currentService != ServiceList.YouTube) {
+                                return false;
+                            }
                             currentServiceId = currentService.getServiceId();
                             currentLinkType = currentService.getLinkTypeByUrl(url);
                             currentUrl = url;

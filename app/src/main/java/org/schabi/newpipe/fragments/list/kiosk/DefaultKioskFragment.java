@@ -1,13 +1,14 @@
 package org.schabi.newpipe.fragments.list.kiosk;
 
 import android.os.Bundle;
+import android.util.Log;
 
+import org.schabi.newpipe.R;
 import org.schabi.newpipe.error.ErrorInfo;
 import org.schabi.newpipe.error.UserAction;
 import org.schabi.newpipe.extractor.NewPipe;
 import org.schabi.newpipe.extractor.exceptions.ExtractionException;
 import org.schabi.newpipe.extractor.kiosk.KioskList;
-import org.schabi.newpipe.util.KioskTranslator;
 import org.schabi.newpipe.util.ServiceHelper;
 
 public class DefaultKioskFragment extends KioskFragment {
@@ -40,11 +41,18 @@ public class DefaultKioskFragment extends KioskFragment {
 
             final KioskList kioskList = NewPipe.getService(serviceId).getKioskList();
             kioskId = kioskList.getDefaultKioskId();
+
+            if (serviceId == 0) {
+                kioskId = "trending_gaming";
+            } else {
+                kioskId = kioskList.getDefaultKioskId();
+            }
             url = kioskList.getListLinkHandlerFactoryByType(kioskId).fromId(kioskId).getUrl();
+            Log.e("DefaultKioskFragment", "jivan url: " + url);
 
-            kioskTranslatedName = KioskTranslator.getTranslatedKioskName(kioskId, requireContext());
+            kioskTranslatedName = getString(R.string.trending);
             name = kioskTranslatedName;
-
+            Log.e("DefaultKioskFragment", "jivan kioskTranslatedName: " + kioskTranslatedName);
             currentInfo = null;
             currentNextPage = null;
         } catch (final ExtractionException e) {

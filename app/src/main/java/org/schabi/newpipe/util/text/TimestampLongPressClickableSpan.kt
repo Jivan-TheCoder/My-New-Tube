@@ -8,7 +8,6 @@ package org.schabi.newpipe.util.text
 import android.content.Context
 import android.view.View
 import io.reactivex.rxjava3.disposables.CompositeDisposable
-import org.schabi.newpipe.extractor.ServiceList
 import org.schabi.newpipe.extractor.StreamingService
 import org.schabi.newpipe.util.external_communication.ShareUtils
 import org.schabi.newpipe.util.text.TimestampExtractor.TimestampMatchDTO
@@ -49,23 +48,7 @@ class TimestampLongPressClickableSpan(
             descriptionText: String,
             timestampMatchDTO: TimestampMatchDTO
         ): String {
-            // TODO: use extractor methods to get timestamps when this feature will be implemented in it
-            when (relatedInfoService) {
-                ServiceList.YouTube ->
-                    return relatedStreamUrl + "&t=" + timestampMatchDTO.seconds()
-
-                ServiceList.SoundCloud, ServiceList.MediaCCC ->
-                    return relatedStreamUrl + "#t=" + timestampMatchDTO.seconds()
-
-                ServiceList.PeerTube ->
-                    return relatedStreamUrl + "?start=" + timestampMatchDTO.seconds()
-            }
-
-            // Return timestamp text for other services
-            return descriptionText.substring(
-                timestampMatchDTO.timestampStart(),
-                timestampMatchDTO.timestampEnd()
-            )
+            return "$relatedStreamUrl&t=${timestampMatchDTO.seconds()}"
         }
     }
 }

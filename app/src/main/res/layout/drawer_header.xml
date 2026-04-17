@@ -68,6 +68,7 @@
             android:gravity="center"
             android:orientation="horizontal"
             android:paddingLeft="6dp"
+            android:visibility="invisible"
             android:paddingRight="6dp">
 
             <LinearLayout
@@ -75,7 +76,8 @@
                 android:layout_height="32dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="invisible">
 
                 <ImageView
                     android:id="@+id/drawer_header_service_icon"

@@ -26,6 +26,7 @@ import kotlinx.parcelize.Parcelize
 import org.schabi.newpipe.BuildConfig
 import org.schabi.newpipe.R
 import org.schabi.newpipe.extractor.NewPipe
+import org.schabi.newpipe.extractor.subscription.SubscriptionExtractor.InvalidSourceException
 import org.schabi.newpipe.local.subscription.SubscriptionManager
 import org.schabi.newpipe.util.ExtractorHelper
 
@@ -59,37 +60,65 @@ class SubscriptionImportWorker(
         val qty = subscriptions.size
         var title =
             applicationContext.resources.getQuantityString(R.plurals.load_subscriptions, qty, qty)
+        var failedImports = 0
 
         val channelInfoList =
-            try {
-                withContext(Dispatchers.IO.limitedParallelism(PARALLEL_EXTRACTIONS)) {
-                    subscriptions
-                        .map {
-                            async {
+            withContext(Dispatchers.IO.limitedParallelism(PARALLEL_EXTRACTIONS)) {
+                subscriptions
+                    .map { subscription ->
+                        async {
+                            try {
                                 val channelInfo =
-                                    ExtractorHelper.getChannelInfo(it.serviceId, it.url, true).await()
+                                    ExtractorHelper.getChannelInfo(
+                                        subscription.serviceId,
+                                        subscription.url,
+                                        true
+                                    ).await()
                                 val channelTab =
-                                    ExtractorHelper.getChannelTab(it.serviceId, channelInfo.tabs[0], true).await()
+                                    ExtractorHelper.getChannelTab(
+                                        subscription.serviceId,
+                                        channelInfo.tabs[0],
+                                        true
+                                    ).await()
 
                                 val currentIndex = mutex.withLock { index++ }
                                 setForeground(createForegroundInfo(title, channelInfo.name, currentIndex, qty))
 
                                 channelInfo to channelTab
+                            } catch (e: Exception) {
+                                if (BuildConfig.DEBUG) {
+                                    Log.w(
+                                        TAG,
+                                        "Skipping subscription import for ${subscription.url}",
+                                        e
+                                    )
+                                }
+
+                                mutex.withLock {
+                                    failedImports++
+                                    index++
+                                }
+                                null
                             }
-                        }.awaitAll()
-                }
-            } catch (e: Exception) {
-                if (BuildConfig.DEBUG) {
-                    Log.e(TAG, "Error while loading subscription data", e)
-                }
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(applicationContext, R.string.subscriptions_import_unsuccessful, Toast.LENGTH_SHORT)
-                        .show()
-                }
-                return Result.failure()
+                        }
+                    }.awaitAll()
+                    .filterNotNull()
             }
 
-        title = applicationContext.resources.getQuantityString(R.plurals.import_subscriptions, qty, qty)
+        if (channelInfoList.isEmpty()) {
+            withContext(Dispatchers.Main) {
+                Toast.makeText(applicationContext, R.string.subscriptions_import_unsuccessful, Toast.LENGTH_SHORT)
+                    .show()
+            }
+            return Result.failure()
+        }
+
+        val importedCount = channelInfoList.size
+        title = applicationContext.resources.getQuantityString(
+            R.plurals.import_subscriptions,
+            importedCount,
+            importedCount
+        )
         setForeground(createForegroundInfo(title, null, 0, 0))
         index = 0
 
@@ -103,8 +132,12 @@ class SubscriptionImportWorker(
         }
 
         withContext(Dispatchers.Main) {
-            Toast.makeText(applicationContext, R.string.import_complete_toast, Toast.LENGTH_SHORT)
-                .show()
+            val toastText = if (failedImports == 0) {
+                applicationContext.getString(R.string.import_complete_toast)
+            } else {
+                "Imported $importedCount subscriptions, skipped $failedImports"
+            }
+            Toast.makeText(applicationContext, toastText, Toast.LENGTH_SHORT).show()
         }
 
         return Result.success()
@@ -119,12 +152,10 @@ class SubscriptionImportWorker(
                         .map { SubscriptionItem(it.serviceId, it.url, it.name) }
 
                 is SubscriptionImportInput.InputStreamMode ->
-                    applicationContext.contentResolver.openInputStream(input.url.toUri())?.use {
-                        val contentType =
-                            MimeTypeMap.getFileExtensionFromUrl(input.url).ifEmpty { DEFAULT_MIME }
-                        NewPipe.getService(input.serviceId).subscriptionExtractor
-                            .fromInputStream(it, contentType)
-                            .map { SubscriptionItem(it.serviceId, it.url, it.name) }
+                    applicationContext.contentResolver.openInputStream(input.url.toUri())?.use { inputStream ->
+                        val bytes = inputStream.readBytes()
+                        val mimeCandidates = buildMimeCandidates(input.url.toUri())
+                        parseSubscriptionsFromBytes(input.serviceId, bytes, mimeCandidates)
                     }
 
                 is SubscriptionImportInput.PreviousExportMode ->
@@ -133,6 +164,48 @@ class SubscriptionImportWorker(
                     }
             } ?: emptyList()
         }
+    }
+
+    private fun buildMimeCandidates(uri: android.net.Uri): List<String> {
+        val candidates = mutableListOf<String>()
+
+        applicationContext.contentResolver.getType(uri)?.let(candidates::add)
+
+        val extension = MimeTypeMap.getFileExtensionFromUrl(uri.toString())
+            .lowercase()
+            .takeIf { it.isNotBlank() }
+        extension?.let {
+            MimeTypeMap.getSingleton().getMimeTypeFromExtension(it)?.let(candidates::add)
+            candidates.add(it)
+        }
+
+        candidates.addAll(DEFAULT_MIME_CANDIDATES)
+        return candidates
+            .map { it.lowercase() }
+            .distinct()
+    }
+
+    private fun parseSubscriptionsFromBytes(
+        serviceId: Int,
+        bytes: ByteArray,
+        mimeCandidates: List<String>
+    ): List<SubscriptionItem> {
+        val extractor = NewPipe.getService(serviceId).subscriptionExtractor
+
+        var lastInvalidSourceException: InvalidSourceException? = null
+        for (mime in mimeCandidates) {
+            try {
+                return bytes.inputStream().use { inputStream ->
+                    extractor.fromInputStream(inputStream, mime)
+                        .map { SubscriptionItem(it.serviceId, it.url, it.name) }
+                }
+            } catch (e: InvalidSourceException) {
+                lastInvalidSourceException = e
+            }
+        }
+
+        throw lastInvalidSourceException
+            ?: InvalidSourceException("Unable to detect subscription file type")
     }
 
     private fun createForegroundInfo(
@@ -176,7 +249,14 @@ class SubscriptionImportWorker(
 
         private const val NOTIFICATION_ID = 4568
         private const val NOTIFICATION_CHANNEL_ID = "newpipe"
-        private const val DEFAULT_MIME = "application/octet-stream"
+        private val DEFAULT_MIME_CANDIDATES = listOf(
+            "application/zip",
+            "zip",
+            "text/csv",
+            "csv",
+            "application/json",
+            "json"
+        )
         private const val PARALLEL_EXTRACTIONS = 8
         private const val BUFFER_COUNT_BEFORE_INSERT = 50
 

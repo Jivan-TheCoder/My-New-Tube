@@ -18,16 +18,15 @@ import org.schabi.newpipe.error.ErrorInfo;
 import org.schabi.newpipe.error.UserAction;
 import org.schabi.newpipe.extractor.ListExtractor;
 import org.schabi.newpipe.extractor.NewPipe;
-import org.schabi.newpipe.extractor.ServiceList;
 import org.schabi.newpipe.extractor.StreamingService;
 import org.schabi.newpipe.extractor.exceptions.ExtractionException;
 import org.schabi.newpipe.extractor.kiosk.KioskInfo;
 import org.schabi.newpipe.extractor.linkhandler.ListLinkHandlerFactory;
 import org.schabi.newpipe.extractor.localization.ContentCountry;
-import org.schabi.newpipe.extractor.services.media_ccc.extractors.MediaCCCLiveStreamKiosk;
 import org.schabi.newpipe.extractor.stream.StreamInfoItem;
 import org.schabi.newpipe.fragments.list.BaseListInfoFragment;
 import org.schabi.newpipe.util.ExtractorHelper;
+import org.schabi.newpipe.util.InfoCache;
 import org.schabi.newpipe.util.KioskTranslator;
 import org.schabi.newpipe.util.Localization;
 
@@ -63,6 +62,8 @@ public class KioskFragment extends BaseListInfoFragment<StreamInfoItem, KioskInf
     String kioskTranslatedName;
     @State
     ContentCountry contentCountry;
+    @State
+    String contentLanguageCode = "";
 
     /*//////////////////////////////////////////////////////////////////////////
     // Views
@@ -100,12 +101,23 @@ public class KioskFragment extends BaseListInfoFragment<StreamInfoItem, KioskInf
         kioskTranslatedName = KioskTranslator.getTranslatedKioskName(kioskId, activity);
         name = kioskTranslatedName;
         contentCountry = Localization.getPreferredContentCountry(requireContext());
+        contentLanguageCode = Localization.getPreferredLocalization(requireContext())
+                .getLocalizationCode();
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        if (!Localization.getPreferredContentCountry(requireContext()).equals(contentCountry)) {
+        final ContentCountry preferredCountry =
+                Localization.getPreferredContentCountry(requireContext());
+        final String preferredLanguageCode =
+                Localization.getPreferredLocalization(requireContext()).getLocalizationCode();
+        if (!preferredCountry.equals(contentCountry)
+                || !preferredLanguageCode.equals(contentLanguageCode)) {
+            NewPipe.setupLocalization(
+                    Localization.getPreferredLocalization(requireContext()),
+                    preferredCountry);
+            InfoCache.getInstance().clearCache();
             reloadContent();
         }
         if (useAsFrontPage && activity != null) {
@@ -145,6 +157,8 @@ public class KioskFragment extends BaseListInfoFragment<StreamInfoItem, KioskInf
     @Override
     public Single<KioskInfo> loadResult(final boolean forceReload) {
         contentCountry = Localization.getPreferredContentCountry(requireContext());
+        contentLanguageCode = Localization.getPreferredLocalization(requireContext())
+                .getLocalizationCode();
         return ExtractorHelper.getKioskInfo(serviceId, url, forceReload);
     }
 
@@ -165,13 +179,4 @@ public class KioskFragment extends BaseListInfoFragment<StreamInfoItem, KioskInf
         setTitle(kioskTranslatedName);
     }
 
-    @Override
-    public void showEmptyState() {
-        // show "no live streams" for live stream kiosk
-        super.showEmptyState();
-        if (MediaCCCLiveStreamKiosk.KIOSK_ID.equals(currentInfo.getId())
-                && ServiceList.MediaCCC.getServiceId() == currentInfo.getServiceId()) {
-            setEmptyStateMessage(R.string.no_live_streams);
-        }
-    }
 }

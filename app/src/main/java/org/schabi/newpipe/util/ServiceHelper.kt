@@ -10,27 +10,25 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
-import com.grack.nanojson.JsonParser
 import java.util.concurrent.TimeUnit
 import org.schabi.newpipe.R
 import org.schabi.newpipe.extractor.NewPipe
 import org.schabi.newpipe.extractor.ServiceList
 import org.schabi.newpipe.extractor.StreamingService
-import org.schabi.newpipe.extractor.services.peertube.PeertubeInstance
 import org.schabi.newpipe.ktx.getStringSafe
 
 object ServiceHelper {
     private val DEFAULT_FALLBACK_SERVICE: StreamingService = ServiceList.YouTube
+    private val SUPPORTED_SERVICES = listOf(ServiceList.YouTube)
+
+    @JvmStatic
+    fun getSupportedServices(): List<StreamingService> = SUPPORTED_SERVICES
 
     @JvmStatic
     @DrawableRes
     fun getIcon(serviceId: Int): Int {
         return when (serviceId) {
             0 -> R.drawable.ic_smart_display
-            1 -> R.drawable.ic_cloud
-            2 -> R.drawable.ic_placeholder_media_ccc
-            3 -> R.drawable.ic_placeholder_peertube
-            4 -> R.drawable.ic_placeholder_bandcamp
             else -> R.drawable.ic_circle
         }
     }
@@ -64,7 +62,6 @@ object ServiceHelper {
     fun getImportInstructions(serviceId: Int): Int {
         return when (serviceId) {
             0 -> R.string.import_youtube_instructions
-            1 -> R.string.import_soundcloud_instructions
             else -> -1
         }
     }
@@ -79,10 +76,7 @@ object ServiceHelper {
     @JvmStatic
     @StringRes
     fun getImportInstructionsHint(serviceId: Int): Int {
-        return when (serviceId) {
-            1 -> R.string.import_soundcloud_instructions_hint
-            else -> -1
-        }
+        return -1
     }
 
     @JvmStatic
@@ -98,12 +92,17 @@ object ServiceHelper {
                 context.getString(R.string.default_service_value)
             )
 
-        return runCatching { NewPipe.getService(serviceName) }.getOrNull()
+        val selectedService = runCatching { NewPipe.getService(serviceName) }.getOrNull()
+        return if (selectedService in SUPPORTED_SERVICES) {
+            selectedService
+        } else {
+            DEFAULT_FALLBACK_SERVICE
+        }
     }
 
     @JvmStatic
     fun getNameOfServiceById(serviceId: Int): String {
-        return ServiceList.all().stream()
+        return SUPPORTED_SERVICES.stream()
             .filter { it.serviceId == serviceId }
             .findFirst()
             .map(StreamingService::getServiceInfo)
@@ -118,12 +117,12 @@ object ServiceHelper {
      */
     @JvmStatic
     fun getServiceById(serviceId: Int): StreamingService {
-        return ServiceList.all().firstNotNullOf { it.takeIf { it.serviceId == serviceId } }
+        return SUPPORTED_SERVICES.firstNotNullOf { it.takeIf { it.serviceId == serviceId } }
     }
 
     @JvmStatic
     fun setSelectedServiceId(context: Context, serviceId: Int) {
-        val serviceName = runCatching { NewPipe.getService(serviceId).serviceInfo.name }
+        val serviceName = runCatching { getServiceById(serviceId).serviceInfo.name }
             .getOrDefault(DEFAULT_FALLBACK_SERVICE.serviceInfo.name)
 
         setSelectedServicePreferences(context, serviceName)
@@ -136,33 +135,13 @@ object ServiceHelper {
 
     @JvmStatic
     fun getCacheExpirationMillis(serviceId: Int): Long {
-        return if (serviceId == ServiceList.SoundCloud.serviceId) {
-            TimeUnit.MILLISECONDS.convert(5, TimeUnit.MINUTES)
-        } else {
-            TimeUnit.MILLISECONDS.convert(1, TimeUnit.HOURS)
-        }
+        return TimeUnit.MILLISECONDS.convert(1, TimeUnit.HOURS)
     }
 
-    fun initService(context: Context, serviceId: Int) {
-        if (serviceId == ServiceList.PeerTube.serviceId) {
-            val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
-            val json = sharedPreferences.getString(
-                context.getString(R.string.peertube_selected_instance_key),
-                null
-            ) ?: return
-
-            val jsonObject = runCatching { JsonParser.`object`().from(json) }
-                .getOrElse { return@initService }
-
-            ServiceList.PeerTube.instance = PeertubeInstance(
-                jsonObject.getString("url"),
-                jsonObject.getString("name")
-            )
-        }
-    }
+    fun initService(context: Context, serviceId: Int) = Unit
 
     @JvmStatic
     fun initServices(context: Context) {
-        ServiceList.all().forEach { initService(context, it.serviceId) }
+        SUPPORTED_SERVICES.forEach { initService(context, it.serviceId) }
     }
 }

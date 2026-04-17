@@ -20,7 +20,6 @@
 
 package org.schabi.newpipe;
 
-import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -28,20 +27,14 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
-import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -62,34 +55,28 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import org.schabi.newpipe.databinding.ActivityMainBinding;
 import org.schabi.newpipe.databinding.DrawerHeaderBinding;
 import org.schabi.newpipe.databinding.DrawerLayoutBinding;
-import org.schabi.newpipe.databinding.InstanceSpinnerLayoutBinding;
 import org.schabi.newpipe.databinding.ToolbarLayoutBinding;
 import org.schabi.newpipe.error.ErrorUtil;
 import org.schabi.newpipe.extractor.NewPipe;
 import org.schabi.newpipe.extractor.StreamingService;
 import org.schabi.newpipe.extractor.comments.CommentsInfoItem;
 import org.schabi.newpipe.extractor.exceptions.ExtractionException;
-import org.schabi.newpipe.extractor.services.peertube.PeertubeInstance;
 import org.schabi.newpipe.fragments.BackPressable;
 import org.schabi.newpipe.fragments.MainFragment;
 import org.schabi.newpipe.fragments.detail.VideoDetailFragment;
 import org.schabi.newpipe.fragments.list.comments.CommentRepliesFragment;
 import org.schabi.newpipe.fragments.list.search.SearchFragment;
-import org.schabi.newpipe.local.feed.notifications.NotificationWorker;
 import org.schabi.newpipe.player.Player;
 import org.schabi.newpipe.player.event.OnKeyDownListener;
 import org.schabi.newpipe.player.helper.PlayerHolder;
 import org.schabi.newpipe.player.playqueue.PlayQueue;
-import org.schabi.newpipe.settings.UpdateSettingsFragment;
 import org.schabi.newpipe.settings.migration.MigrationManager;
 import org.schabi.newpipe.util.Constants;
 import org.schabi.newpipe.util.DeviceUtils;
 import org.schabi.newpipe.util.KioskTranslator;
 import org.schabi.newpipe.util.Localization;
 import org.schabi.newpipe.util.NavigationHelper;
-import org.schabi.newpipe.util.PeertubeHelper;
 import org.schabi.newpipe.util.PermissionHelper;
-import org.schabi.newpipe.util.ReleaseVersionUtil;
 import org.schabi.newpipe.util.SerializedCache;
 import org.schabi.newpipe.util.ServiceHelper;
 import org.schabi.newpipe.util.StateSaver;
@@ -97,10 +84,6 @@ import org.schabi.newpipe.util.ThemeHelper;
 import org.schabi.newpipe.util.external_communication.ShareUtils;
 import org.schabi.newpipe.views.FocusOverlayView;
 
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
@@ -115,8 +98,6 @@ public class MainActivity extends AppCompatActivity {
 
     private ActionBarDrawerToggle toggle;
 
-    private boolean servicesShown = false;
-
     private BroadcastReceiver broadcastReceiver;
 
     private static final int ITEM_ID_SUBSCRIPTIONS = -1;
@@ -125,8 +106,9 @@ public class MainActivity extends AppCompatActivity {
     private static final int ITEM_ID_DOWNLOADS = -4;
     private static final int ITEM_ID_HISTORY = -5;
     private static final int ITEM_ID_SETTINGS = 0;
-    private static final int ITEM_ID_DONATION = 1;
-    private static final int ITEM_ID_ABOUT = 2;
+    private static final int ITEM_ID_RATE_APP = 1;
+    private static final int ITEM_ID_SHARE_APP = 2;
+    private static final int ITEM_ID_ABOUT = 3;
 
     private static final int ORDER = 0;
     public static final String KEY_IS_IN_BACKGROUND = "is_in_background";
@@ -187,40 +169,7 @@ public class MainActivity extends AppCompatActivity {
         }
         openMiniPlayerUponPlayerStarted();
 
-        if (PermissionHelper.checkPostNotificationsPermission(this,
-                PermissionHelper.POST_NOTIFICATIONS_REQUEST_CODE)) {
-            // Schedule worker for checking for new streams and creating corresponding notifications
-            // if this is enabled by the user.
-            NotificationWorker.initialize(this);
-        }
-        if (!UpdateSettingsFragment.wasUserAskedForConsent(this)
-                && !App.getInstance().isFirstRun()
-                && ReleaseVersionUtil.INSTANCE.isReleaseApk()) {
-            UpdateSettingsFragment.askForConsentToUpdateChecks(this);
-        }
-
-        // ReleaseVersionUtil.INSTANCE.isReleaseApk() will be true only for main official build
-        // We want every release build (nightly, nightly-refactor) to show the popup
-        if (!DEBUG) {
-            showKeepAndroidDialog();
-        }
-
         MigrationManager.showUserInfoIfPresent(this);
-    }
-
-    @Override
-    protected void onPostCreate(final Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-
-        final App app = App.getInstance();
-
-        if (sharedPreferences.getBoolean(app.getString(R.string.update_app_key), false)
-                && sharedPreferences
-                .getBoolean(app.getString(R.string.update_check_consent_key), false)) {
-            // Start the worker which is checking all conditions
-            // and eventually searching for a new version.
-            NewVersionWorker.enqueueNewVersionCheckingWork(app, false);
-        }
     }
 
     @Override
@@ -253,9 +202,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onDrawerClosed(final View drawerView) {
-                if (servicesShown) {
-                    toggleServices();
-                }
                 if (lastService != ServiceHelper.getSelectedServiceId(MainActivity.this)) {
                     ActivityCompat.recreate(MainActivity.this);
                 }
@@ -297,6 +243,9 @@ public class MainActivity extends AppCompatActivity {
         int kioskMenuItemId = 0;
 
         for (final String ks : service.getKioskList().getAvailableKiosks()) {
+            if (shouldHideDrawerKiosk(ks)) {
+                continue;
+            }
             drawerLayoutBinding.navigation.getMenu()
                     .add(R.id.menu_kiosks_group, kioskMenuItemId, 0, KioskTranslator
                             .getTranslatedKioskName(ks, this))
@@ -309,9 +258,11 @@ public class MainActivity extends AppCompatActivity {
                 .add(R.id.menu_options_about_group, ITEM_ID_SETTINGS, ORDER, R.string.settings)
                 .setIcon(R.drawable.ic_settings);
         drawerLayoutBinding.navigation.getMenu()
-                .add(R.id.menu_options_about_group, ITEM_ID_DONATION, ORDER,
-                        R.string.donation_title)
-                .setIcon(R.drawable.volunteer_activism_ic);
+                .add(R.id.menu_options_about_group, ITEM_ID_RATE_APP, ORDER, R.string.rate_app)
+                .setIcon(R.drawable.ic_star_filled);
+        drawerLayoutBinding.navigation.getMenu()
+                .add(R.id.menu_options_about_group, ITEM_ID_SHARE_APP, ORDER, R.string.share_app)
+                .setIcon(R.drawable.ic_share);
         drawerLayoutBinding.navigation.getMenu()
                 .add(R.id.menu_options_about_group, ITEM_ID_ABOUT, ORDER, R.string.tab_about)
                 .setIcon(R.drawable.ic_info_outline);
@@ -319,9 +270,7 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean drawerItemSelected(final MenuItem item) {
         final int groupId = item.getGroupId();
-        if (groupId == R.id.menu_services_group) {
-            changeService(item);
-        } else if (groupId == R.id.menu_tabs_group) {
+        if (groupId == R.id.menu_tabs_group) {
             tabSelected(item);
         } else if (groupId == R.id.menu_kiosks_group) {
             try {
@@ -373,6 +322,9 @@ public class MainActivity extends AppCompatActivity {
         final StreamingService currentService = ServiceHelper.getSelectedService(this);
         int kioskMenuItemId = 0;
         for (final String kioskId : currentService.getKioskList().getAvailableKiosks()) {
+            if (shouldHideDrawerKiosk(kioskId)) {
+                continue;
+            }
             if (kioskMenuItemId == item.getItemId()) {
                 NavigationHelper.openKioskFragment(getSupportFragmentManager(),
                         currentService.getServiceId(), kioskId);
@@ -382,13 +334,22 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private boolean shouldHideDrawerKiosk(@NonNull final String kioskId) {
+        return "Trending".equals(kioskId);
+    }
+
     private void optionsAboutSelected(final MenuItem item) {
         switch (item.getItemId()) {
             case ITEM_ID_SETTINGS:
                 NavigationHelper.openSettings(this);
                 break;
-            case ITEM_ID_DONATION:
-                ShareUtils.openUrlInBrowser(this, getString(R.string.donation_url));
+            case ITEM_ID_RATE_APP:
+                ShareUtils.installApp(this, getPackageName());
+                break;
+            case ITEM_ID_SHARE_APP:
+                ShareUtils.shareText(this,
+                        getString(R.string.app_name),
+                        "https://play.google.com/store/apps/details?id=" + getPackageName());
                 break;
             case ITEM_ID_ABOUT:
                 NavigationHelper.openAbout(this);
@@ -397,7 +358,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupDrawerHeader() {
-        drawerHeaderBinding.drawerHeaderActionButton.setOnClickListener(view -> toggleServices());
+        drawerHeaderBinding.drawerHeaderActionButton.setOnClickListener(null);
+        drawerHeaderBinding.drawerHeaderActionButton.setEnabled(false);
 
         // If the current app name is bigger than the default "NewPipe" (7 chars),
         // let the text view grow a little more as well.
@@ -412,92 +374,7 @@ public class MainActivity extends AppCompatActivity {
             drawerHeaderBinding.drawerHeaderNewpipeTitle.setMaxWidth(getResources()
                     .getDimensionPixelSize(R.dimen.drawer_header_newpipe_title_max_width));
         }
-    }
-
-    private void toggleServices() {
-        servicesShown = !servicesShown;
-
-        drawerLayoutBinding.navigation.getMenu().removeGroup(R.id.menu_services_group);
-        drawerLayoutBinding.navigation.getMenu().removeGroup(R.id.menu_tabs_group);
-        drawerLayoutBinding.navigation.getMenu().removeGroup(R.id.menu_kiosks_group);
-        drawerLayoutBinding.navigation.getMenu().removeGroup(R.id.menu_options_about_group);
-
-        // Show up or down arrow
-        drawerHeaderBinding.drawerArrow.setImageResource(
-                servicesShown ? R.drawable.ic_arrow_drop_up : R.drawable.ic_arrow_drop_down);
-
-        if (servicesShown) {
-            showServices();
-        } else {
-            try {
-                addDrawerMenuForCurrentService();
-            } catch (final Exception e) {
-                ErrorUtil.showUiErrorSnackbar(this, "Showing main page tabs", e);
-            }
-        }
-    }
-
-    private void showServices() {
-        for (final StreamingService s : NewPipe.getServices()) {
-            final String title = s.getServiceInfo().getName();
-
-            final MenuItem menuItem = drawerLayoutBinding.navigation.getMenu()
-                    .add(R.id.menu_services_group, s.getServiceId(), ORDER, title)
-                    .setIcon(ServiceHelper.getIcon(s.getServiceId()));
-
-            // peertube specifics
-            if (s.getServiceId() == 3) {
-                enhancePeertubeMenu(menuItem);
-            }
-        }
-        drawerLayoutBinding.navigation.getMenu()
-                .getItem(ServiceHelper.getSelectedServiceId(this))
-                .setChecked(true);
-    }
-
-    private void enhancePeertubeMenu(final MenuItem menuItem) {
-        final PeertubeInstance currentInstance = PeertubeHelper.getCurrentInstance();
-        menuItem.setTitle(currentInstance.getName());
-        final Spinner spinner = InstanceSpinnerLayoutBinding.inflate(LayoutInflater.from(this))
-                .getRoot();
-        final List<PeertubeInstance> instances = PeertubeHelper.getInstanceList(this);
-        final List<String> items = new ArrayList<>();
-        int defaultSelect = 0;
-        for (final PeertubeInstance instance : instances) {
-            items.add(instance.getName());
-            if (instance.getUrl().equals(currentInstance.getUrl())) {
-                defaultSelect = items.size() - 1;
-            }
-        }
-        final ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                R.layout.instance_spinner_item, items);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setSelection(defaultSelect, false);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(final AdapterView<?> parent, final View view,
-                                       final int position, final long id) {
-                final PeertubeInstance newInstance = instances.get(position);
-                if (newInstance.getUrl().equals(PeertubeHelper.getCurrentInstance().getUrl())) {
-                    return;
-                }
-                PeertubeHelper.selectInstance(newInstance, getApplicationContext());
-                changeService(menuItem);
-                mainBinding.getRoot().closeDrawers();
-                new Handler(Looper.getMainLooper()).postDelayed(() -> {
-                    getSupportFragmentManager().popBackStack(null,
-                            FragmentManager.POP_BACK_STACK_INCLUSIVE);
-                    ActivityCompat.recreate(MainActivity.this);
-                }, 300);
-            }
-
-            @Override
-            public void onNothingSelected(final AdapterView<?> parent) {
-
-            }
-        });
-        menuItem.setActionView(spinner);
+        drawerHeaderBinding.drawerArrow.setVisibility(View.GONE);
     }
 
     @Override
@@ -556,6 +433,8 @@ public class MainActivity extends AppCompatActivity {
                 getString(R.string.enable_watch_history_key), true);
         drawerLayoutBinding.navigation.getMenu().findItem(ITEM_ID_HISTORY)
                 .setVisible(isHistoryEnabled);
+
+        updateDrawerNavigation();
     }
 
     @Override
@@ -667,9 +546,6 @@ public class MainActivity extends AppCompatActivity {
                 if (fragment instanceof VideoDetailFragment) {
                     ((VideoDetailFragment) fragment).openDownloadDialog();
                 }
-                break;
-            case PermissionHelper.POST_NOTIFICATIONS_REQUEST_CODE:
-                NotificationWorker.initialize(this);
                 break;
         }
     }
@@ -982,57 +858,4 @@ public class MainActivity extends AppCompatActivity {
                 || sheetState == BottomSheetBehavior.STATE_COLLAPSED;
     }
 
-    private void showKeepAndroidDialog() {
-        final var prefs = PreferenceManager.getDefaultSharedPreferences(this);
-
-        final var now = Instant.now();
-        final var kaoLastCheck = Instant.ofEpochMilli(prefs.getLong(
-                getString(R.string.kao_last_checked_key),
-                0
-        ));
-
-        final var supportedLannguages = List.of("fr", "de", "ca", "es", "id", "it", "pl",
-                "pt", "cs", "sk", "fa", "ar", "tr", "el", "th", "ru", "uk", "ko", "zh", "ja");
-        final var locale = Localization.getAppLocale();
-        final String kaoBaseUrl = "https://keepandroidopen.org/";
-        final String kaoURI;
-        if (supportedLannguages.contains(locale.getLanguage())) {
-            if ("zh".equals(locale.getLanguage())) {
-                kaoURI = kaoBaseUrl + ("TW".equals(locale.getCountry()) ? "zh-TW" : "zh-CN");
-            } else {
-                kaoURI = kaoBaseUrl + locale.getLanguage();
-            }
-        } else {
-            kaoURI = kaoBaseUrl;
-        }
-        final var solutionURI =
-                "https://github.com/woheller69/FreeDroidWarn?tab=readme-ov-file#solutions";
-
-        if (kaoLastCheck.plus(30, ChronoUnit.DAYS).isBefore(now)) {
-            final var dialog = new AlertDialog.Builder(this)
-                    .setTitle("Keep Android Open")
-                    .setCancelable(false)
-                    .setMessage(this.getString(R.string.kao_dialog_warning))
-                    .setPositiveButton(this.getString(android.R.string.ok), (d, w) -> {
-                        prefs.edit()
-                                .putLong(
-                                        getString(R.string.kao_last_checked_key),
-                                        now.toEpochMilli()
-                                )
-                                .apply();
-                    })
-                    .setNeutralButton(this.getString(R.string.kao_solution), null)
-                    .setNegativeButton(this.getString(R.string.kao_dialog_more_info), null)
-                    .show();
-
-            // If we use setNeutralButton and etc. dialog will close after pressing the buttons,
-            // but we want it to close only when positive button is pressed
-            dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setOnClickListener(v ->
-                    ShareUtils.openUrlInBrowser(this, kaoURI)
-            );
-            dialog.getButton(AlertDialog.BUTTON_NEUTRAL).setOnClickListener(v ->
-                    ShareUtils.openUrlInBrowser(this, solutionURI)
-            );
-        }
-    }
 }

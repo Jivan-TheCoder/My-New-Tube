@@ -89,6 +89,7 @@ import org.schabi.newpipe.error.ErrorInfo;
 import org.schabi.newpipe.error.ErrorUtil;
 import org.schabi.newpipe.error.UserAction;
 import org.schabi.newpipe.extractor.Image;
+import org.schabi.newpipe.extractor.exceptions.ExtractionException;
 import org.schabi.newpipe.extractor.stream.AudioStream;
 import org.schabi.newpipe.extractor.stream.StreamInfo;
 import org.schabi.newpipe.extractor.stream.StreamType;
@@ -1374,15 +1375,24 @@ public final class Player implements PlaybackListener, Listener {
             currentMetadata = tag;
 
             if (!currentMetadata.getErrors().isEmpty()) {
-                // new errors might have been added even if previousInfo == tag.getMaybeStreamInfo()
-                final ErrorInfo errorInfo = new ErrorInfo(
-                        currentMetadata.getErrors(),
-                        UserAction.PLAY_STREAM,
-                        "Loading failed for [" + currentMetadata.getTitle()
-                                + "]: " + currentMetadata.getStreamUrl(),
-                        currentMetadata.getServiceId(),
-                        currentMetadata.getStreamUrl());
-                ErrorUtil.createNotification(context, errorInfo);
+                if (shouldNotifyMetadataErrors(currentMetadata)) {
+                    // New errors might be added even when the current stream info
+                    // instance is still the same.
+                    final ErrorInfo errorInfo = new ErrorInfo(
+                            currentMetadata.getErrors(),
+                            UserAction.PLAY_STREAM,
+                            "Loading failed for [" + currentMetadata.getTitle()
+                                    + "]: " + currentMetadata.getStreamUrl(),
+                            currentMetadata.getServiceId(),
+                            currentMetadata.getStreamUrl());
+                    ErrorUtil.createNotification(context, errorInfo);
+                } else {
+                    for (final Exception error : currentMetadata.getErrors()) {
+                        final String logMessage = "Suppressing non-fatal player metadata error "
+                                + "for: " + currentMetadata.getStreamUrl();
+                        Log.w(TAG, logMessage, error);
+                    }
+                }
             }
 
             currentMetadata.getMaybeStreamInfo().ifPresent(info -> {
@@ -1410,6 +1420,22 @@ public final class Player implements PlaybackListener, Listener {
                     + "track group size = " + tracks.getGroups().size());
         }
         UIs.call(playerUi -> playerUi.onTextTracksChanged(tracks));
+    }
+
+    private boolean shouldNotifyMetadataErrors(@NonNull final MediaItemTag tag) {
+        final boolean hasPrimaryMetadata = tag.getMaybeStreamInfo().isPresent();
+
+        if (!hasPrimaryMetadata) {
+            return true;
+        }
+
+        for (final Exception error : tag.getErrors()) {
+            if (!(error instanceof ExtractionException)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     @Override

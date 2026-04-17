@@ -114,7 +114,6 @@ import org.schabi.newpipe.util.Localization;
 import org.schabi.newpipe.util.NavigationHelper;
 import org.schabi.newpipe.util.PermissionHelper;
 import org.schabi.newpipe.util.PlayButtonHelper;
-import org.schabi.newpipe.util.StreamTypeUtil;
 import org.schabi.newpipe.util.ThemeHelper;
 import org.schabi.newpipe.util.external_communication.KoreUtils;
 import org.schabi.newpipe.util.external_communication.ShareUtils;
@@ -158,13 +157,11 @@ public final class VideoDetailFragment
 
     private static final String COMMENTS_TAB_TAG = "COMMENTS";
     private static final String RELATED_TAB_TAG = "NEXT VIDEO";
-    private static final String DESCRIPTION_TAB_TAG = "DESCRIPTION TAB";
     private static final String EMPTY_TAB_TAG = "EMPTY TAB";
 
     // tabs
     private boolean showComments;
     private boolean showRelatedItems;
-    private boolean showDescription;
     private String selectedTabTag;
     @AttrRes
     @NonNull
@@ -182,9 +179,6 @@ public final class VideoDetailFragment
                     tabSettingsChanged = true;
                 } else if (getString(R.string.show_next_video_key).equals(key)) {
                     showRelatedItems = sharedPreferences.getBoolean(key, true);
-                    tabSettingsChanged = true;
-                } else if (getString(R.string.show_description_key).equals(key)) {
-                    showDescription = sharedPreferences.getBoolean(key, true);
                     tabSettingsChanged = true;
                 }
             };
@@ -319,9 +313,7 @@ public final class VideoDetailFragment
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(activity);
         showComments = prefs.getBoolean(getString(R.string.show_comments_key), true);
         showRelatedItems = prefs.getBoolean(getString(R.string.show_next_video_key), true);
-        showDescription = prefs.getBoolean(getString(R.string.show_description_key), true);
-        selectedTabTag = prefs.getString(
-                getString(R.string.stream_info_selected_tab_key), COMMENTS_TAB_TAG);
+        selectedTabTag = RELATED_TAB_TAG;
         prefs.registerOnSharedPreferenceChangeListener(preferenceChangeListener);
 
         setupBroadcastReceiver();
@@ -483,7 +475,9 @@ public final class VideoDetailFragment
             openVideoPlayerAutoFullscreen();
         });
 
-        binding.detailControlsBackground.setOnClickListener(v -> openBackgroundPlayer(false));
+        binding.detailControlsBackground.setOnClickListener(makeOnClickListener(info ->
+                ShareUtils.shareText(requireContext(), info.getName(), info.getUrl(),
+                        info.getThumbnails())));
         binding.detailControlsPopup.setOnClickListener(v -> openPopupPlayer(false));
         binding.detailControlsPlaylistAppend.setOnClickListener(makeOnClickListener(info -> {
             if (getFM() != null && currentInfo != null) {
@@ -502,12 +496,7 @@ public final class VideoDetailFragment
                         dialog -> dialog.show(getParentFragmentManager(), TAG)));
             }
         }));
-        binding.detailControlsDownload.setOnClickListener(v -> {
-            if (PermissionHelper.checkStoragePermissions(activity,
-                    PermissionHelper.DOWNLOAD_DIALOG_REQUEST_CODE)) {
-                openDownloadDialog();
-            }
-        });
+        binding.detailControlsDownload.setOnClickListener(v -> openDownloadDialog());
         binding.detailControlsShare.setOnClickListener(makeOnClickListener(info ->
                 ShareUtils.shareText(requireContext(), info.getName(), info.getUrl(),
                         info.getThumbnails())));
@@ -562,15 +551,10 @@ public final class VideoDetailFragment
             }
         }));
 
-        binding.detailControlsBackground.setOnLongClickListener(makeOnLongClickListener(info ->
-            openBackgroundPlayer(true)
-        ));
+        binding.detailControlsBackground.setOnLongClickListener(v -> true);
         binding.detailControlsPopup.setOnLongClickListener(makeOnLongClickListener(info ->
             openPopupPlayer(true)
         ));
-        binding.detailControlsDownload.setOnLongClickListener(makeOnLongClickListener(info ->
-                NavigationHelper.openDownloads(activity)));
-
         final View.OnLongClickListener overlayListener = makeOnLongClickListener(info ->
                 openChannel(info.getUploaderUrl(), info.getUploaderName()));
         binding.overlayThumbnail.setOnLongClickListener(overlayListener);
@@ -597,6 +581,9 @@ public final class VideoDetailFragment
     }
 
     private void toggleTitleAndSecondaryControls() {
+        if (binding.detailToggleSecondaryControlsView.getVisibility() != View.VISIBLE) {
+            return;
+        }
         if (binding.detailSecondaryControlPanel.getVisibility() == View.GONE) {
             binding.detailVideoTitleView.setMaxLines(10);
             animateRotation(binding.detailToggleSecondaryControlsView,
@@ -911,13 +898,6 @@ public final class VideoDetailFragment
             tabContentDescriptions.add(R.string.related_items_tab_description);
         }
 
-        if (showDescription) {
-            // temp empty fragment. will be updated in handleResult
-            pageAdapter.addFragment(EmptyFragment.newInstance(false), DESCRIPTION_TAB_TAG);
-            tabIcons.add(R.drawable.ic_description);
-            tabContentDescriptions.add(R.string.description_tab_description);
-        }
-
         if (pageAdapter.getCount() == 0) {
             pageAdapter.addFragment(EmptyFragment.newInstance(true), EMPTY_TAB_TAG);
         }
@@ -960,10 +940,6 @@ public final class VideoDetailFragment
                         .commitAllowingStateLoss();
                 binding.relatedItemsLayout.setVisibility(isFullscreen() ? View.GONE : View.VISIBLE);
             }
-        }
-
-        if (showDescription) {
-            pageAdapter.updateItem(DESCRIPTION_TAB_TAG, new DescriptionFragment(info));
         }
 
         binding.viewPager.setVisibility(View.VISIBLE);
@@ -1586,9 +1562,9 @@ public final class VideoDetailFragment
             binding.detailDurationView.setVisibility(View.GONE);
         }
 
-        binding.detailTitleRootLayout.setClickable(true);
+        binding.detailTitleRootLayout.setClickable(false);
         binding.detailToggleSecondaryControlsView.setRotation(0);
-        binding.detailToggleSecondaryControlsView.setVisibility(View.VISIBLE);
+        binding.detailToggleSecondaryControlsView.setVisibility(View.GONE);
         binding.detailSecondaryControlPanel.setVisibility(View.GONE);
 
         checkUpdateProgressInfo(info);
@@ -1602,26 +1578,27 @@ public final class VideoDetailFragment
         }
 
         if (!info.getErrors().isEmpty()) {
-            // Bandcamp fan pages are not yet supported and thus a ContentNotAvailableException is
+            // Some uploader pages are not supported and thus a ContentNotAvailableException is
             // thrown. This is not an error and thus should not be shown to the user.
-            for (final Throwable throwable : info.getErrors()) {
-                if (throwable instanceof ContentNotSupportedException
-                        && "Fan pages are not supported".equals(throwable.getMessage())) {
-                    info.getErrors().remove(throwable);
-                }
-            }
+            info.getErrors().removeIf(throwable ->
+                    throwable instanceof ContentNotSupportedException
+                            && "Fan pages are not supported".equals(throwable.getMessage()));
 
             if (!info.getErrors().isEmpty()) {
-                showSnackBarError(new ErrorInfo(info.getErrors(), UserAction.REQUESTED_STREAM,
-                        "Some info not extracted: " + info.getUrl(), info));
+                if (shouldShowStreamInfoErrorToUser(info)) {
+                    showSnackBarError(new ErrorInfo(info.getErrors(), UserAction.REQUESTED_STREAM,
+                            "Some info not extracted: " + info.getUrl(), info));
+                } else {
+                    for (final Throwable throwable : info.getErrors()) {
+                        Log.w(TAG, "Suppressing non-fatal stream parsing error for: "
+                                + info.getUrl(), throwable);
+                    }
+                }
             }
         }
 
-        binding.detailControlsDownload.setVisibility(
-                StreamTypeUtil.isLiveStream(info.getStreamType()) ? View.GONE : View.VISIBLE);
-        binding.detailControlsBackground.setVisibility(
-                info.getAudioStreams().isEmpty() && info.getVideoStreams().isEmpty()
-                        ? View.GONE : View.VISIBLE);
+        binding.detailControlsDownload.setVisibility(View.VISIBLE);
+        binding.detailControlsBackground.setVisibility(View.VISIBLE);
 
         final boolean noVideoStreams =
                 info.getVideoStreams().isEmpty() && info.getVideoOnlyStreams().isEmpty();
@@ -1647,6 +1624,27 @@ public final class VideoDetailFragment
                 info.getUploaderAvatars());
         binding.detailSubChannelThumbnailView.setVisibility(View.VISIBLE);
         binding.detailUploaderThumbnailView.setVisibility(View.GONE);
+    }
+
+    private boolean shouldShowStreamInfoErrorToUser(@NonNull final StreamInfo info) {
+        final boolean hasPlayableStreams = !info.getVideoStreams().isEmpty()
+                || !info.getVideoOnlyStreams().isEmpty()
+                || !info.getAudioStreams().isEmpty();
+        final boolean hasPrimaryContent = !isEmpty(info.getName())
+                && !isEmpty(info.getUrl())
+                && hasPlayableStreams;
+
+        if (!hasPrimaryContent) {
+            return true;
+        }
+
+        for (final Throwable throwable : info.getErrors()) {
+            if (!(throwable instanceof ExtractionException)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private void displayBothUploaderAndSubChannel(final StreamInfo info) {

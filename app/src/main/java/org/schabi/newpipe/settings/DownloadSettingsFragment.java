@@ -49,6 +49,7 @@ public class DownloadSettingsFragment extends BasePreferenceFragment {
     @Override
     public void onCreatePreferences(final Bundle savedInstanceState, final String rootKey) {
         addPreferencesFromResourceRegistry();
+        hideUnusedPreferences();
 
         downloadPathVideoPreference = getString(R.string.download_path_video_key);
         downloadPathAudioPreference = getString(R.string.download_path_audio_key);
@@ -79,6 +80,21 @@ public class DownloadSettingsFragment extends BasePreferenceFragment {
             updatePathPickers(!(boolean) value);
             return true;
         });
+    }
+
+    private void hideUnusedPreferences() {
+        hidePreference(R.string.settings_file_charset_key);
+        hidePreference(R.string.settings_file_replacement_character_key);
+        hidePreference(R.string.downloads_maximum_retry);
+        hidePreference(R.string.downloads_cross_network);
+        hidePreference(R.string.downloads_queue_limit);
+    }
+
+    private void hidePreference(@StringRes final int keyResId) {
+        final Preference preference = findPreference(getString(keyResId));
+        if (preference != null) {
+            preference.setVisible(false);
+        }
     }
 
     @Override

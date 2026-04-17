@@ -61,6 +61,7 @@ import org.schabi.newpipe.database.feed.model.FeedGroupEntity
 import org.schabi.newpipe.database.subscription.SubscriptionEntity
 import org.schabi.newpipe.databinding.FragmentFeedBinding
 import org.schabi.newpipe.error.ErrorInfo
+import org.schabi.newpipe.error.ErrorInfo.Companion.isContentSurelyNotAvailable
 import org.schabi.newpipe.error.ErrorUtil
 import org.schabi.newpipe.error.UserAction
 import org.schabi.newpipe.extractor.exceptions.AccountTerminatedException
@@ -469,7 +470,8 @@ class FeedFragment : BaseStateFragment<FeedState>() {
     private fun handleItemsErrors(errors: List<Throwable>) {
         errors.forEachIndexed { i, t ->
             if (t is FeedLoadService.RequestException &&
-                t.cause is ContentNotAvailableException
+                t.cause is ContentNotAvailableException &&
+                isContentSurelyNotAvailable(t.cause as ContentNotAvailableException)
             ) {
                 disposables.add(
                     Single.fromCallable {
@@ -495,7 +497,7 @@ class FeedFragment : BaseStateFragment<FeedState>() {
         }
 
         if (errors.isNotEmpty()) {
-            // if no error was a ContentNotAvailableException, show a general error snackbar
+            // Temporary extractor/internal failures should not prompt the user to unsubscribe.
             ErrorUtil.showSnackbar(this, ErrorInfo(errors, UserAction.REQUESTED_FEED, ""))
         }
     }

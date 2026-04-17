@@ -9,6 +9,7 @@ import android.text.format.DateUtils;
 import android.widget.Toast;
 
 import androidx.preference.ListPreference;
+import androidx.preference.Preference;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -26,6 +27,7 @@ public class VideoAudioSettingsFragment extends BasePreferenceFragment {
     public void onCreatePreferences(final Bundle savedInstanceState, final String rootKey) {
         addPreferencesFromResourceRegistry();
 
+        hideUnusedPreferences();
         updateSeekOptions();
         updateResolutionOptions();
         listener = (sharedPreferences, key) -> {
@@ -53,6 +55,37 @@ public class VideoAudioSettingsFragment extends BasePreferenceFragment {
                 updateResolutionOptions();
             }
         };
+    }
+
+    private void hideUnusedPreferences() {
+        hidePreference("video_audio_player_category");
+        hidePreference(R.string.prefer_original_audio_key);
+        hidePreference(R.string.prefer_descriptive_audio_key);
+        hidePreference(R.string.exoplayer_settings_key);
+        hidePreference(R.string.use_external_video_player_key);
+        hidePreference(R.string.use_external_audio_player_key);
+        hidePreference(R.string.show_play_with_kodi_key);
+        hidePreference(R.string.seekbar_preview_thumbnail_key);
+        hidePreference(R.string.preferred_open_action_key);
+        hidePreference(R.string.minimize_on_exit_key);
+        hidePreference(R.string.start_main_player_fullscreen_key);
+        hidePreference(R.string.use_inexact_seek_key);
+        hidePreference(R.string.clear_queue_confirmation_key);
+        hidePreference(R.string.ignore_hardware_media_buttons_key);
+    }
+
+    private void hidePreference(final int keyResId) {
+        final Preference preference = findPreference(getString(keyResId));
+        if (preference != null) {
+            preference.setVisible(false);
+        }
+    }
+
+    private void hidePreference(final String key) {
+        final Preference preference = findPreference(key);
+        if (preference != null) {
+            preference.setVisible(false);
+        }
     }
 
     /**

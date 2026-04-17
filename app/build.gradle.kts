@@ -4,6 +4,8 @@
  */
 
 import com.android.build.api.dsl.ApplicationExtension
+import java.io.File
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.android.application)
@@ -16,13 +18,46 @@ plugins {
     checkstyle
 }
 
-val gitWorkingBranch = providers.exec {
-    commandLine("git", "rev-parse", "--abbrev-ref", "HEAD")
-}.standardOutput.asText.map { it.trim() }
+System.getProperty("customBuildDir")?.let { customBuildDir ->
+    layout.buildDirectory.set(file(customBuildDir))
+}
+
+val releaseKeystoreProperties = Properties().apply {
+    val keystorePropertiesFile = rootProject.file("keystore.properties")
+    if (keystorePropertiesFile.exists()) {
+        keystorePropertiesFile.inputStream().use(::load)
+    }
+}
+
+fun releaseSigningProperty(name: String): String? =
+    providers.gradleProperty(name).orNull
+        ?: System.getenv(name)
+        ?: releaseKeystoreProperties.getProperty(name)
+
+val releaseStoreFilePath = releaseSigningProperty("RELEASE_STORE_FILE")
+val releaseStorePassword = releaseSigningProperty("RELEASE_STORE_PASSWORD")
+val releaseKeyAlias = releaseSigningProperty("RELEASE_KEY_ALIAS")
+val releaseKeyPassword = releaseSigningProperty("RELEASE_KEY_PASSWORD")
+val hasReleaseSigningConfig =
+    !releaseStoreFilePath.isNullOrBlank()
+        && !releaseStorePassword.isNullOrBlank()
+        && !releaseKeyAlias.isNullOrBlank()
+        && !releaseKeyPassword.isNullOrBlank()
+
+val requestedReleasePackagingTask = gradle.startParameter.taskNames.any { taskName ->
+    val normalizedTaskName = taskName.lowercase()
+    "release" in normalizedTaskName && listOf(
+        "assemble",
+        "bundle",
+        "package",
+        "install"
+    ).any(normalizedTaskName::contains)
+}
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
+        // Use the local Android Studio JBR on this machine, which is Java 21.
+        languageVersion = JavaLanguageVersion.of(21)
     }
 }
 
@@ -41,7 +76,7 @@ configure<ApplicationExtension> {
 
     defaultConfig {
         applicationId = "org.schabi.newpipe"
-        resValue("string", "app_name", "NewPipe")
+        resValue("string", "app_name", "My NewPipe")
         minSdk = 21
         targetSdk = 35
 
@@ -53,34 +88,32 @@ configure<ApplicationExtension> {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        if (hasReleaseSigningConfig) {
+            create("release") {
+                storeFile = File(releaseStoreFilePath!!)
+                storePassword = releaseStorePassword
+                keyAlias = releaseKeyAlias
+                keyPassword = releaseKeyPassword
+            }
+        }
+    }
+
     buildTypes {
         debug {
             isDebuggable = true
-
-            // suffix the app id and the app name with git branch name
-            val defaultBranches = listOf("master", "dev")
-            val workingBranch = gitWorkingBranch.getOrElse("")
-            val normalizedWorkingBranch = workingBranch
-                .replaceFirst("^[^A-Za-z]+".toRegex(), "")
-                .replace("[^0-9A-Za-z]+".toRegex(), "")
-
-            if (normalizedWorkingBranch.isEmpty() || workingBranch in defaultBranches) {
-                // default values when branch name could not be determined or is master or dev
-                applicationIdSuffix = ".debug"
-                resValue("string", "app_name", "NewPipe Debug")
-            } else {
-                applicationIdSuffix = ".debug.$normalizedWorkingBranch"
-                resValue("string", "app_name", "NewPipe $workingBranch")
-            }
         }
 
         release {
+            if (hasReleaseSigningConfig) {
+                signingConfig = signingConfigs.getByName("release")
+            }
             System.getProperty("packageSuffix")?.let { suffix ->
                 applicationIdSuffix = suffix
-                resValue("string", "app_name", "NewPipe $suffix")
+                resValue("string", "app_name", "Mine NewPipe $suffix")
             }
-            isMinifyEnabled = true
-            isShrinkResources = true
+            isMinifyEnabled = false
+            isShrinkResources = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -90,7 +123,7 @@ configure<ApplicationExtension> {
 
     lint {
         lintConfig = file("lint.xml")
-        // Continue the debug build even when errors are found
+        // Continue the build even when errors are found
         abortOnError = false
     }
 
@@ -126,6 +159,20 @@ configure<ApplicationExtension> {
                 "META-INF/COPYRIGHT" // "COPYRIGHT" belongs to RxJava...
             )
         }
+    }
+}
+
+if (requestedReleasePackagingTask && !hasReleaseSigningConfig) {
+    throw GradleException(
+        "Release signing is not configured. Create keystore.properties in the project root " +
+            "with RELEASE_STORE_FILE, RELEASE_STORE_PASSWORD, RELEASE_KEY_ALIAS, and " +
+            "RELEASE_KEY_PASSWORD."
+    )
+}
+
+androidComponents {
+    beforeVariants(selector().withBuildType("debug")) { variantBuilder ->
+        variantBuilder.enable = false
     }
 }
 
@@ -195,7 +242,7 @@ tasks.register<CheckDependenciesOrder>("checkDependenciesOrder") {
 }
 
 afterEvaluate {
-    tasks.named("preDebugBuild").configure {
+    tasks.named("preReleaseBuild").configure {
         if (!System.getProperties().containsKey("skipFormatKtlint")) {
             dependsOn("formatKtlint")
         }
