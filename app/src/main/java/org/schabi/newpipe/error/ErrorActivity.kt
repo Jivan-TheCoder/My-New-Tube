@@ -89,16 +89,8 @@ class ErrorActivity : AppCompatActivity() {
         // print current time, as zoned ISO8601 timestamp
         currentTimeStamp = ZonedDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
 
-        binding.errorReportEmailButton.setOnClickListener { _ ->
-            openPrivacyPolicyDialog(this, "EMAIL")
-        }
-
         binding.errorReportCopyButton.setOnClickListener { _ ->
             ShareUtils.copyToClipboard(this, buildMarkdown())
-        }
-
-        binding.errorReportGitHubButton.setOnClickListener { _ ->
-            openPrivacyPolicyDialog(this, "GITHUB")
         }
 
         // normal bugreport
@@ -137,31 +129,6 @@ class ErrorActivity : AppCompatActivity() {
 
             else -> false
         }
-    }
-
-    private fun openPrivacyPolicyDialog(context: Context, action: String) {
-        AlertDialog.Builder(context)
-            .setIcon(android.R.drawable.ic_dialog_alert)
-            .setTitle(R.string.privacy_policy_title)
-            .setMessage(R.string.start_accept_privacy_policy)
-            .setCancelable(false)
-            .setNeutralButton(R.string.read_privacy_policy) { _, _ ->
-                ShareUtils.openUrlInApp(context, context.getString(R.string.privacy_policy_url))
-            }
-            .setPositiveButton(R.string.accept) { _, _ ->
-                if (action == "EMAIL") { // send on email
-                    val intent = Intent(Intent.ACTION_SENDTO)
-                        .setData("mailto:".toUri()) // only email apps should handle this
-                        .putExtra(Intent.EXTRA_EMAIL, arrayOf(ERROR_EMAIL_ADDRESS))
-                        .putExtra(Intent.EXTRA_SUBJECT, errorEmailSubject)
-                        .putExtra(Intent.EXTRA_TEXT, buildJson())
-                    ShareUtils.openIntentInApp(context, intent)
-                } else if (action == "GITHUB") { // open the NewPipe issue page on GitHub
-                    ShareUtils.openUrlInApp(this, ERROR_GITHUB_ISSUE_URL)
-                }
-            }
-            .setNegativeButton(R.string.decline, null)
-            .show()
     }
 
     private fun formErrorText(stacktrace: Array<String>): String {
@@ -291,10 +258,8 @@ class ErrorActivity : AppCompatActivity() {
         binding.errorView.visibility = View.GONE
         binding.yourCommentHeadlineView.visibility = View.GONE
         binding.errorCommentBox.visibility = View.GONE
-        binding.errorReportEmailButton.visibility = View.GONE
         binding.errorGithubNoticeView.visibility = View.GONE
         binding.errorReportCopyButton.visibility = View.GONE
-        binding.errorReportGitHubButton.visibility = View.GONE
     }
 
     companion object {

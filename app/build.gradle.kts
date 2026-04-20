@@ -40,9 +40,9 @@ val releaseKeyAlias = releaseSigningProperty("RELEASE_KEY_ALIAS")
 val releaseKeyPassword = releaseSigningProperty("RELEASE_KEY_PASSWORD")
 val hasReleaseSigningConfig =
     !releaseStoreFilePath.isNullOrBlank()
-        && !releaseStorePassword.isNullOrBlank()
-        && !releaseKeyAlias.isNullOrBlank()
-        && !releaseKeyPassword.isNullOrBlank()
+            && !releaseStorePassword.isNullOrBlank()
+            && !releaseKeyAlias.isNullOrBlank()
+            && !releaseKeyPassword.isNullOrBlank()
 
 val requestedReleasePackagingTask = gradle.startParameter.taskNames.any { taskName ->
     val normalizedTaskName = taskName.lowercase()
@@ -77,12 +77,12 @@ configure<ApplicationExtension> {
     defaultConfig {
         applicationId = "org.schabi.newpipe"
         resValue("string", "app_name", "My NewPipe")
-        minSdk = 21
+        minSdk = 23
         targetSdk = 35
 
-        versionCode = System.getProperty("versionCodeOverride")?.toInt() ?: 1009
+        versionCode = System.getProperty("versionCodeOverride")?.toInt() ?: 1010
 
-        versionName = "0.28.4"
+        versionName = "0.28.5"
         System.getProperty("versionNameSuffix")?.let { versionNameSuffix = it }
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -110,7 +110,7 @@ configure<ApplicationExtension> {
             }
             System.getProperty("packageSuffix")?.let { suffix ->
                 applicationIdSuffix = suffix
-                resValue("string", "app_name", "Mine NewPipe $suffix")
+                resValue("string", "app_name", "My NewPipe $suffix")
             }
             isMinifyEnabled = false
             isShrinkResources = false
@@ -165,8 +165,8 @@ configure<ApplicationExtension> {
 if (requestedReleasePackagingTask && !hasReleaseSigningConfig) {
     throw GradleException(
         "Release signing is not configured. Create keystore.properties in the project root " +
-            "with RELEASE_STORE_FILE, RELEASE_STORE_PASSWORD, RELEASE_KEY_ALIAS, and " +
-            "RELEASE_KEY_PASSWORD."
+                "with RELEASE_STORE_FILE, RELEASE_STORE_PASSWORD, RELEASE_KEY_ALIAS, and " +
+                "RELEASE_KEY_PASSWORD."
     )
 }
 

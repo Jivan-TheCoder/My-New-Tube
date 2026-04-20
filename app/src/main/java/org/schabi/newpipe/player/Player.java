@@ -1778,6 +1778,11 @@ public final class Player implements PlaybackListener, Listener {
             }
         }
 
+        if (isStopped()) {
+            setRecovery();
+            reloadPlayQueueManager();
+        }
+
         simpleExoPlayer.play();
         saveStreamProgressState();
     }
