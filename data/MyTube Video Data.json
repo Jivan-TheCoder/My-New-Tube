@@ -1,5 +1,4 @@
 {
-  "settings": {
     "Music": {
       "data": [
         {
@@ -743,7 +742,6 @@
           "redirect_link": "https://www.youtube.com/watch?v=F2m4HPLvj-4"
         } 
 	  ]
-	}
   }
 }
 
