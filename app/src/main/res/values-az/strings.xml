@@ -317,18 +317,9 @@
     <string name="settings_file_replacement_character_summary">Etibarsız simvollar bu dəyərlə əvəz olunur</string>
     <string name="settings_file_replacement_character_title">Əvəzedici simvol</string>
     <string name="charset_most_special_characters">Ən xüsusi simvollar</string>
-    <string name="title_licenses">Üçüncü Tərəf Lisenziyaları</string>
-    <string name="tab_about">Haqqında &amp; T-TSS</string>
-    <string name="contribution_title">Töhfə Ver</string>
-    <string name="contribution_encouragement">Fikirlərinizin olub-olmaması, tərcümə, dizayn dəyişiklikləri, kod təmizlənməsi və ya real ağır kod dəyişiklikləri və.s kömək həmişə xoşdur. Nə qədər çox edilsə, bir o qədər yaxşı olar!</string>
     <string name="give_back">İanə Et</string>
-    <string name="website_title">Veb sayt</string>
-    <string name="website_encouragement">Əlavə məlumat və xəbərlər üçün NewPipe Veb saytını ziyarət et.</string>
-    <string name="privacy_policy_title">NewPipe Məxfilik Siyasəti</string>
     <string name="privacy_policy_encouragement">NewPipe layihəsi məxfiliyinizə çox ciddi yanaşır. Nəticə etibarı ilə, tətbiq sizin razılığınız olmadan heç bir məlumat toplamır.
 \nNewPipe məxfilik siyasəti xəta məlumatı göndərdiyiniz zaman hansı məlumatların göndərildiyini və saxlanıldığını ətraflı izah edir.</string>
-    <string name="read_privacy_policy">Məxfilik Siyasətini Oxu</string>
-    <string name="app_license_title">NewPipe Lisenziyası</string>
     <string name="action_history">Tarixçə</string>
     <string name="delete_item_search_history">Bu elementi axtarış tarixçəsindən silmək istəyirsiniz\?</string>
     <string name="title_last_played">Son Oynadılan</string>
@@ -442,7 +433,6 @@
     <string name="detail_sub_channel_thumbnail_view_description">Kanalın avatar miniatürü</string>
     <string name="select_night_theme_toast">Sevdiyiniz gecə temasını aşağıda seçə bilərsiniz</string>
     <string name="notification_colorize_summary">Android\'in bildiriş rəngini miniatürdəki əsas rəngə uyğun fərdiləşdirməsini təmin et (qeyd edək ki, bu, bütün cihazlarda mövcud deyil)</string>
-    <string name="view_on_github">GitHub\'da Bax</string>
     <string name="donation_title">İanə Et</string>
     <string name="donation_encouragement">NewPipe, sizə ən yaxşı istifadəçi təcrübəsi göstərmək üçün boş vaxtını sərf edən könüllülər tərəfindən hazırlanmışdır. Tərtibatçıların bir fincan qəhvə içərkən NewPipe-ı daha da yaxşılaşdırmasına ianə edərək kömək edin.</string>
     <string name="most_liked">Ən çox bəyənildi</string>
@@ -557,8 +547,6 @@
     <string name="drawer_open">Çəkməcəni Aç</string>
     <string name="hold_to_append">Növbələşdirmək üçün basılı tut</string>
     <string name="play_queue_remove">Sil</string>
-    <string name="app_description">Android\'də pulsuz, zərif yayımlayıcı.</string>
-    <string name="copyright">© %1$s, %2$s tərəfindən %3$s altında</string>
     <string name="settings_category_downloads_title">Endirmə</string>
     <string name="msg_popup_permission">Bu icazə, ani görüntü rejimində
 \naçmaq üçün lazımdır</string>
@@ -612,7 +600,6 @@
     <string name="metadata_language">Dil</string>
     <string name="metadata_privacy_public">İctimai</string>
     <string name="subscribers_count_not_available">Abunəçi sayı əlçatan deyil</string>
-    <string name="read_full_license">Lisenziyanı Oxu</string>
     <string name="title_activity_history">Tarixçə</string>
     <string name="charset_letters_and_digits">Hərflər və rəqəmlər</string>
     <string name="crash_the_player">Oynadıcını çökdür</string>
@@ -628,9 +615,6 @@
     <string name="msg_running">NewPipe Endirilir</string>
     <string name="msg_calculating_hash">Hash hesablanır</string>
     <string name="settings_file_charset_title">Fayl adlarında icazə verilən simvollar</string>
-    <string name="title_activity_about">NewPipe Haqqında</string>
-    <string name="tab_licenses">Lisenziyalar</string>
-    <string name="app_license">NewPipe müəllif hüquqlu sərbəst tətbiqdir: Siz onu istədiyiniz zaman istifadə edə, öyrənə, paylaşa və təkmilləşdirə bilərsiniz. Xüsusilə, siz Lisenziyanın 3-cü versiyası və ya (seçiminizə görə) hər hansı sonrakı versiyada Azad Proqram Təminatı Fondu tərəfindən dərc edilən GNU Ümumi İctimai Lisenziya şərtlərinə uyğun olaraq onu yenidən paylaya və/yaxud dəyişdirə bilərsiniz.</string>
     <string name="export_complete_toast">İxrac edildi</string>
     <string name="main_page_content_swipe_remove">Elementləri silmək üçün sürüşdür</string>
     <string name="no_playlist_bookmarked_yet">Hələ,əlfəcinlənmiş pleylistlər yoxdur</string>
@@ -672,9 +656,6 @@
     <string name="unknown_format">Naməlum format</string>
     <string name="unknown_quality">Naməlum keyfiyyət</string>
     <string name="progressive_load_interval_title">Oynatma yükləmə intervalı həcmi</string>
-    <string name="faq_description">Tətbiqi istifadə etməkdə çətinlik çəkirsinizsə, ümumi suallara bu cavabları yoxladığınıza əmin olun!</string>
-    <string name="faq_title">Tez-tez soruşulan suallar</string>
-    <string name="faq">Veb Saytında bax</string>
     <string name="sort">Çeşidlə</string>
     <string name="app_update_unavailable_toast">NewPipe\'ın ən son versiyasın işlədirsiniz</string>
     <string name="fast_mode">Sürətli rejim</string>
@@ -753,7 +734,6 @@
     <string name="channel_tab_videos">Videolar</string>
     <string name="channel_tab_tracks">Axınlar</string>
     <string name="channel_tab_channels">Kanallar</string>
-    <string name="channel_tab_about">Haqqında</string>
     <string name="show_channel_tabs">Kanal səhifələri</string>
     <string name="channel_tab_playlists">Pleylistlər</string>
     <string name="channel_tab_shorts">Shorts</string>

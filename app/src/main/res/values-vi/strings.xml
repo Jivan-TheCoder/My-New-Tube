@@ -99,17 +99,7 @@
 \nmở trong chế độ bật lên</string>
     <string name="title_activity_recaptcha">reCAPTCHA</string>
     <string name="recaptcha_request_toast">Yêu cầu reCAPTCHA</string>
-    <string name="title_activity_about">Giới thiệu về NewPipe</string>
-    <string name="title_licenses">Giấy phép của bên thứ ba</string>
     <string name="copyright" formatted="true">© %1$s bởi %2$s dưới %3$s</string>
-    <string name="tab_about">Giới thiệu &amp; Câu hỏi thường gặp</string>
-    <string name="tab_licenses">Giấy phép</string>
-    <string name="app_description">Phát trực tuyến nhẹ tự do trên Android.</string>
-    <string name="view_on_github">Xem trên GitHub</string>
-    <string name="app_license_title">Giấy phép của NewPipe</string>
-    <string name="contribution_encouragement">Cho dù bạn có ý tưởng về: dịch thuật, thay đổi thiết kế, dọn mã hoặc thay đổi mã thực sự nhiều— sự trợ giúp luôn được hoan nghênh. Làm càng nhiều thì càng tốt!</string>
-    <string name="read_full_license">Đọc giấy phép</string>
-    <string name="contribution_title">Đóng góp</string>
     <string name="content_language_title">Ngôn ngữ nội dung ưu tiên</string>
     <string name="settings_category_video_audio_title">Video và âm thanh</string>
     <string name="enable_watch_history_title">Lịch sử xem</string>
@@ -212,13 +202,8 @@
     <string name="donation_title">Quyên tặng</string>
     <string name="donation_encouragement">NewPipe được phát triển bởi các tình nguyện viên dành thời gian rảnh rỗi để mang lại cho bạn trải nghiệm người dùng tốt nhất. Hãy đền đáp để giúp các nhà phát triển làm cho NewPipe thậm chí còn tốt hơn nữa trong khi họ thưởng thức một tách cà phê.</string>
     <string name="give_back">Đền đáp</string>
-    <string name="website_title">Trang web</string>
-    <string name="website_encouragement">Truy cập website chính thức của NewPipe để biết thêm thông tin và tin tức.</string>
-    <string name="privacy_policy_title">Chính sách bảo mật của NewPipe</string>
     <string name="privacy_policy_encouragement">NewPipe rất coi trọng quyền riêng tư của bạn. Do đó, ứng dụng không thu thập bất kỳ dữ liệu nào mà không có sự đồng ý của bạn.
 \nChính sách bảo mật của NewPipe giải thích chi tiết dữ liệu nào được gửi và lưu trữ khi bạn gửi báo cáo sự cố.</string>
-    <string name="read_privacy_policy">Đọc chính sách bảo mật</string>
-    <string name="app_license">NewPipe là phần mềm tự do bản quyền bên trái: Bạn có thể sử dụng, nghiên cứu, chia sẻ và cải tiến nó theo ý muốn. Cụ thể là bạn có thể phân phối lại và/hoặc sửa đổi nó theo các điều khoản của Giấy phép Công cộng GNU do Tổ chức Phần mềm Tự do xuất bản, phiên bản 3 của Giấy phép hoặc (tùy theo lựa chọn của bạn) bất kỳ phiên bản nào mới hơn.</string>
     <string name="title_activity_history">Lịch sử</string>
     <string name="action_history">Lịch sử</string>
     <string name="delete_item_search_history">Bạn có muốn xóa mục này khỏi lịch sử tìm kiếm không?</string>
@@ -682,9 +667,6 @@
     <string name="unknown_quality">Độ phân giải không xác định</string>
     <string name="progressive_load_interval_title">Kích thước tải thời lượng phát lại</string>
     <string name="sort">Thể loại</string>
-    <string name="faq_title">Câu hỏi thường gặp</string>
-    <string name="faq">Xem trên website</string>
-    <string name="faq_description">Nếu bạn gặp vấn đề khi sử dụng ứng dụng , hãy chắc chắn rằng bạn đã tìm kiếm các câu hỏi thường thấy !</string>
     <string name="import_subscriptions_hint">Nhập hoặc xuất các kênh bạn đăng ký bằng cách nhấn nút 3 chấm ở góc trên màn hình</string>
     <string name="msg_failed_to_copy">Không thể sao chép vào khay nhớ tạm</string>
     <string name="playlist_add_stream_success_duplicate">Đã thêm trùng lặp %d lần</string>
@@ -754,7 +736,6 @@
     <string name="next_stream">Luồng tiếp theo</string>
     <string name="metadata_subchannel_avatars">Hình đại diện kênh phụ</string>
     <string name="open_play_queue">Mở phát hàng chờ</string>
-    <string name="channel_tab_about">Giới thiệu</string>
     <string name="replay">Phát lại</string>
     <string name="metadata_banners">Băng rôn</string>
     <string name="channel_tab_playlists">Danh sách phát</string>
@@ -817,7 +798,7 @@
     <string name="trending_movies">Phim và chương trình đang thịnh hành</string>
     <string name="trending_music">Âm nhạc đang thịnh hành</string>
     <string name="player_http_403">Đã xảy ra lỗi HTTP 403 trong khi phát, có thể do URL phát sóng đã hết hạn hoặc bị ban IP</string>
-    <string name="sign_in_confirm_not_bot_error">%1$s đã từ chối cung cấp dữ liệu, cần phải đăng nhập để xác nhận requester của NewPipe ko phải là bot.\n\nIP này có vẻ đã bị ban tạm thời bởi %1$s, bạn có thể đợi một lúc hoặc chuyển sang IP khác (ví dụ như việc tắt / bật lại VPN, hoặc là chuyển mạng từ WIFI sang 4G/5G).\n\nXem qua <a href="%2$s">phần FAQ này</a> đẻ biết thêm chi tiết</string>
+    <string name="sign_in_confirm_not_bot_error">%1$s đã từ chối cung cấp dữ liệu, cần phải đăng nhập để xác nhận requester của NewPipe ko phải là bot.\n\nIP này có vẻ đã bị ban tạm thời bởi %1$s, bạn có thể đợi một lúc hoặc chuyển sang IP khác (ví dụ như việc tắt / bật lại VPN, hoặc là chuyển mạng từ WIFI sang 4G/5G).\n\nXem qua <a href="%2$s">phần help này</a> đẻ biết thêm chi tiết</string>
     <string name="unsupported_content_in_country">Nội dung này không được hỗ trợ tại quốc gia mà bạn chọn.\n\nHãy đổi quốc gia trong phần \"Cài đặt &gt; Nội dung &gt; Quốc gia nội dung mặc định\".</string>
     <string name="permission_display_over_apps_message">Để sử dụng tính năng phát video nổi, hãy chọn %1$s trong Cài đặt Android và bật tính năng %2$s.</string>
     <string name="youtube_player_http_403">Đã xảy ra lỗi HTTP 403 trong khi phát, có thể IP này đã bị ban hoặc vấn đề phát URL deobfuscation</string>

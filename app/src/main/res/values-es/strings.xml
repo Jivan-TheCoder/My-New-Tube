@@ -101,17 +101,7 @@
     <string name="show_search_suggestions_title">Sugerencias de búsqueda</string>
     <string name="show_search_suggestions_summary">Elegir las sugerencias a mostrar al buscar</string>
     <string name="best_resolution">Mejor resolución</string>
-    <string name="title_activity_about">Acerca de NewPipe</string>
-    <string name="title_licenses">Licencias de terceros</string>
     <string name="copyright" formatted="true">© %1$s por %2$s, bajo %3$s</string>
-    <string name="tab_about">FAQ y Acerca de</string>
-    <string name="tab_licenses">Licencias</string>
-    <string name="app_description">Reproducción de transmisiones ligera y libre para Android.</string>
-    <string name="view_on_github">Ver en GitHub</string>
-    <string name="app_license_title">Licencia de NewPipe</string>
-    <string name="contribution_encouragement">Si puedes traducir, quieres cambiar el diseño, tienes ideas para mejorar el código o proponer mejoras grandes, siempre agradeceremos tu ayuda. ¡Mientras más manos participen, mejor!</string>
-    <string name="read_full_license">Leer licencia</string>
-    <string name="contribution_title">Contribuir</string>
     <string name="subscribe_button_title">Suscribirse</string>
     <string name="subscribed_button_title">Suscrito</string>
     <string name="channel_unsubscribed">Canal no suscrito</string>
@@ -186,8 +176,6 @@
     <string name="donation_title">Donar</string>
     <string name="donation_encouragement">NewPipe es desarrollado por voluntarios que emplean su tiempo libre para brindarle la mejor experiencia. Haz una aportación para ayudarlos a crear un NewPipe mejor mientras disfrutan de una taza de café.</string>
     <string name="give_back">Devolver</string>
-    <string name="website_title">Sitio web</string>
-    <string name="website_encouragement">Visita el sitio web de NewPipe para más información y noticias.</string>
     <string name="default_content_country_title">País predefinido del contenido</string>
     <string name="switch_to_background">Cambiar a segundo plano</string>
     <string name="switch_to_popup">Cambiar a emergente</string>
@@ -301,12 +289,9 @@
     <string name="delete_search_history_alert">¿Borrar todo el historial de búsqueda\?</string>
     <string name="search_history_deleted">Historial de búsquedas borrado</string>
     <string name="one_item_deleted">Se ha borrado 1 elemento.</string>
-    <string name="app_license">NewPipe es un software copyleft libre: puedes usarlo, estudiarlo, compartirlo y mejorarlo a voluntad. Específicamente, puedes redistribuirlo y/o modificarlo bajo los términos de la Licencia Pública General GNU publicada por la Free Software Foundation, ya sea la versión 3 de la licencia, o (a tu elección) cualquier versión posterior.</string>
     <string name="import_settings">¿Quieres importar también los ajustes\?</string>
-    <string name="privacy_policy_title">Política de privacidad de NewPipe</string>
     <string name="privacy_policy_encouragement">El proyecto NewPipe toma tu privacidad muy en serio. Por ello, la aplicación no recopila ningún dato sin tu consentimiento.
 \nLa política de privacidad de NewPipe explica en detalle qué datos se envían y almacenan al enviar un informe de fallo.</string>
-    <string name="read_privacy_policy">Leer política de privacidad</string>
     <string name="start_accept_privacy_policy">Para cumplir con el «Reglamento general europeo de protección de datos (GDPR)», atraemos su atención sobre la política de privacidad de NewPipe. Por favor léase cuidadosamente.
 \nDebe aceptarlo para enviarnos el informe de error.</string>
     <string name="accept">Aceptar</string>
@@ -699,9 +684,6 @@
     <string name="unknown_format">Formato desconocido</string>
     <string name="unknown_quality">Calidad desconocida</string>
     <string name="progressive_load_interval_title">Tamaño del intervalo de carga de reproducción</string>
-    <string name="faq">Ver en la página web</string>
-    <string name="faq_title">Preguntas frecuentes</string>
-    <string name="faq_description">Si tienes problemas al usar la aplicación, ¡Asegúrate de verificar estas respuestas a preguntas comunes!</string>
     <string name="sort">Ordenar</string>
     <string name="fast_mode">Modo rápido</string>
     <string name="import_subscriptions_hint">Importa o exporta las suscripciones desde el menú con los tres puntos</string>
@@ -764,7 +746,6 @@
     <string name="channel_tab_shorts">Shorts</string>
     <string name="loading_metadata_title">Cargando metadatos…</string>
     <string name="feed_fetch_channel_tabs">Recuperar las fichas del canal</string>
-    <string name="channel_tab_about">Acerca de</string>
     <string name="channel_tab_albums">Álbumes</string>
     <string name="feed_fetch_channel_tabs_summary">Pestañas para recuperar al actualizar el canal. Esta opción no tiene efecto si el canal se actualiza en modo rápido.</string>
     <string name="channel_tab_playlists">Listas de reproducción</string>

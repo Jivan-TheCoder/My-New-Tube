@@ -101,17 +101,7 @@
     <string name="best_resolution">Risoluzione migliore</string>
     <string name="msg_popup_permission">Questo permesso è necessario
 \nper utilizzare il lettore popup</string>
-    <string name="title_licenses">Licenze di terze parti</string>
     <string name="copyright" formatted="true">© %1$s di %2$s protetto da licenza %3$s</string>
-    <string name="tab_about">Info e domande frequenti</string>
-    <string name="tab_licenses">Licenze</string>
-    <string name="app_description">Streaming libero e leggero su Android.</string>
-    <string name="view_on_github">Mostra su GitHub</string>
-    <string name="app_license_title">Licenza di NewPipe</string>
-    <string name="contribution_encouragement">Un aiuto è sempre gradito: traduzioni, modifiche al design, pulizia del codice, cambiamenti radicali. Più si fa, meglio è!</string>
-    <string name="read_full_license">Leggi la Licenza</string>
-    <string name="contribution_title">Contribuisci</string>
-    <string name="title_activity_about">Informazioni su NewPipe</string>
     <string name="subscribe_button_title">Iscriviti</string>
     <string name="subscribed_button_title">Iscritto</string>
     <string name="channel_unsubscribed">Disiscritto dal canale</string>
@@ -184,8 +174,6 @@
     <string name="start_here_on_background">Riproduci in sottofondo</string>
     <string name="start_here_on_popup">Riproduci nel lettore popup</string>
     <string name="donation_title">Dona</string>
-    <string name="website_title">Sito</string>
-    <string name="website_encouragement">Visita il sito di NewPipe per informazioni e novità.</string>
     <string name="donation_encouragement">NewPipe è sviluppato da volontari che impiegano il loro tempo libero per offrire agli utenti un\'esperienza migliore. Restituisci il favore, aiutandoli a rendere NewPipe ancora più piacevole, mentre si gustano una tazza di caffè.</string>
     <string name="give_back">Restituisci</string>
     <string name="default_content_country_title">Paese predefinito per i contenuti</string>
@@ -305,12 +293,9 @@
     <string name="delete_search_history_alert">Eliminare la cronologia delle ricerche\?</string>
     <string name="search_history_deleted">Cronologia delle ricerche eliminata</string>
     <string name="one_item_deleted">1 elemento eliminato.</string>
-    <string name="app_license">NewPipe è un software libero con licenza copyleft: si può utilizzare, studiare, condividere e migliorare a proprio piacimento. In particolare, è possibile ridistribuirlo e/o modificarlo secondo i termini della GNU General Public License (Free Software Foundation), nella versione 3 o successiva, a propria discrezione.</string>
     <string name="import_settings">Vuoi anche importare le impostazioni?</string>
-    <string name="privacy_policy_title">Informativa sulla privacy</string>
     <string name="privacy_policy_encouragement">Il progetto NewPipe tiene molto alla tua privacy. Perciò, l\'app non raccoglie alcun dato senza il tuo consenso.
 \nL\'informativa sulla privacy spiega nel dettaglio quali dati vengono trattati e memorizzati durante l\'invio di segnalazioni per arresti anomali.</string>
-    <string name="read_privacy_policy">Leggi l\'informativa sulla privacy</string>
     <string name="start_accept_privacy_policy">Per rispettare il regolamento europeo sulla protezione dei dati (GDPR), richiamiamo la vostra attenzione sull\'informativa sulla privacy di NewPipe. Si prega di leggerla attentamente.
 \nDeve essere accettata per poter inviare la segnalazione.</string>
     <string name="accept">Accetto</string>
@@ -707,10 +692,7 @@
     <string name="unknown_quality">Qualità sconosciuta</string>
     <string name="unknown_format">Formato sconosciuto</string>
     <string name="progressive_load_interval_title">Dimensione intervallo di caricamento della riproduzione</string>
-    <string name="faq_title">Domande frequenti</string>
-    <string name="faq_description">Se riscontri problemi nell\'utilizzo dell\'app, dai un\'occhiata alle risposte delle domande più comuni!</string>
     <string name="sort">Ordina</string>
-    <string name="faq">Visualizza sul sito</string>
     <string name="fast_mode">Recupero veloce</string>
     <string name="app_update_available_notification_text">Premi per scaricare %s</string>
     <string name="app_update_unavailable_toast">Stai già usando l\'ultima versione di NewPipe</string>
@@ -772,7 +754,6 @@
     <string name="channel_tab_shorts">Shorts</string>
     <string name="loading_metadata_title">Caricamento metadati…</string>
     <string name="feed_fetch_channel_tabs">Recupera schede del canale</string>
-    <string name="channel_tab_about">Informazioni</string>
     <string name="channel_tab_albums">Album</string>
     <string name="feed_fetch_channel_tabs_summary">Schede da recuperare quando si aggiorna il feed. Questa opzione non ha effetto se un canale viene aggiornato usando la modalità veloce.</string>
     <string name="channel_tab_playlists">Playlist</string>
@@ -855,7 +836,7 @@
     <string name="player_http_403">Errore HTTP 403 ricevuto dal server durante la riproduzione, probabilmente causato dalla scadenza dell\'URL in streaming o da un divieto dell\'IP</string>
     <string name="player_http_invalid_status">Errore HTTP %1$s ricevuto dal server durante la riproduzione</string>
     <string name="youtube_player_http_403">Errore HTTP 403 ricevuto dal server durante la riproduzione, probabilmente causato da un divieto dell\'IP o problemi di de-offuscamento dell\'URL in streaming</string>
-    <string name="sign_in_confirm_not_bot_error">%1$s ha rifiutato di fornire i dati, chiedendo un accesso per confermare che il richiedente non sia un bot.\n\nIl tuo IP potrebbe essere stato temporaneamente vietato da %1$s, puoi aspettare un po\' di tempo o passare ad un IP diverso (ad esempio accendendo/spegnendo una VPN, o passando dal WiFi ai dati mobili).\n\nLeggi <a href="%2$s">questa voce nelle FAQ</a> per maggiori informazioni.</string>
+    <string name="sign_in_confirm_not_bot_error">%1$s ha rifiutato di fornire i dati, chiedendo un accesso per confermare che il richiedente non sia un bot.\n\nIl tuo IP potrebbe essere stato temporaneamente vietato da %1$s, puoi aspettare un po\' di tempo o passare ad un IP diverso (ad esempio accendendo/spegnendo una VPN, o passando dal WiFi ai dati mobili).\n\nLeggi <a href="%2$s">questa voce nelle help</a> per maggiori informazioni.</string>
     <string name="unsupported_content_in_country">Questo contenuto non è disponibile per il Paese dei contenuti attualmente selezionato.\n\nModifica la selezione da \"Impostazioni &gt; Contenuti &gt; Paese dei contenuti predefinito\".</string>
 
 

@@ -71,8 +71,6 @@
     <string name="audio">آڈیو</string>
     <string name="retry">فیر کرو</string>
     <string name="create">بݨاؤ</string>
-    <string name="tab_about">بارے</string>
-    <string name="tab_licenses">لائیسنس</string>
     <string name="action_history">اتیت</string>
     <string name="add_to_playlist">پلےلِسٹ وچ پایو</string>
     <string name="always_ask_open_action">ہمیشا پچھو</string>
@@ -87,7 +85,6 @@
     <string name="play_audio">آڈیو</string>
     <string name="notification_action_buffering">بفر کردے</string>
     <string name="settings_category_downloads_title">ڈاؤن‌لوڈ</string>
-    <string name="app_license_title">لائیسنس</string>
     <string name="theme_title">تھیم</string>
     <string name="description_tab_description">تفصیل</string>
     <string name="pause">روکو</string>

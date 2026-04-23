@@ -120,12 +120,7 @@
     <string name="settings_file_replacement_character_title">Erstatningstegn</string>
     <string name="charset_letters_and_digits">Bokstaver og tall</string>
     <string name="charset_most_special_characters">De fleste spesialtegn</string>
-    <string name="title_activity_about">Om NewPipe</string>
-    <string name="title_licenses">Tredjepartslisenser</string>
     <string name="copyright" formatted="true">© %1$s av %2$s lisensiert %3$s</string>
-    <string name="tab_about">Om og Ofte stilte spørsmål</string>
-    <string name="tab_licenses">Lisenser</string>
-    <string name="app_description">Fri lett strømming på Android.</string>
     <string name="resume_on_audio_focus_gain_title">Fortsett avspilling</string>
     <string name="resume_on_audio_focus_gain_summary">Fortsett å spille etter avbrytelser (f.eks. telefonsamtaler)</string>
     <string name="settings_category_player_title">Avspiller</string>
@@ -149,11 +144,6 @@
         <item quantity="one">Én video</item>
         <item quantity="other">%s videoer</item>
     </plurals>
-    <string name="view_on_github">Vis på GitHub</string>
-    <string name="app_license_title">NewPipe sin lisens</string>
-    <string name="contribution_encouragement">Hvorvidt du har idéer vedrørende oversettelser, designendringer, koderenskning, eller tunge kodeendringer—hjelp er alltids kjærkommen. Desto mer som gjøres, desto bedre blir det!</string>
-    <string name="read_full_license">Les lisensen</string>
-    <string name="contribution_title">Bidra</string>
     <string name="title_activity_history">Historikk</string>
     <string name="action_history">Historikk</string>
     <string name="delete_item_search_history">Ønsker du å slette dette elementet fra søkehistorikken?</string>
@@ -183,8 +173,6 @@
     <string name="donation_title">Doner</string>
     <string name="donation_encouragement">NewPipe utvikles av frivillige som bruker sin fritid til å gi deg den beste brukeropplevelsen. Gi tilbake for å hjelpe utviklere å gjøre NewPipe enda bedre, mens de nyter en varm kopp kaffe.</string>
     <string name="give_back">Bidra</string>
-    <string name="website_title">Nettside</string>
-    <string name="website_encouragement">Besøk NewPipe-nettsiden for mer info og nyheter.</string>
     <string name="default_content_country_title">Forvalgt innholdsland</string>
     <string name="switch_to_background">Bytt til bakgrunnsmodus</string>
     <string name="switch_to_popup">Bytt til oppsprettsmodus</string>
@@ -279,7 +267,6 @@
     <string name="one_item_deleted">Ett element slettet.</string>
     <string name="caption_setting_title">Undertekster</string>
     <string name="caption_setting_description">Endre spillerens undertekststørrelse og bakgrunnsstiler. Krever omstart av appen for å tre i kraft</string>
-    <string name="app_license">NewPipe er copyleft fri programvare: Du kan bruke, studere og forbedre den etter egen vilje. Spesifikt kan du redistribuere og/eller modifisere den i henhold til vilkårene gitt i GNU General Public-lisensen, som er publisert av Free Software Foundation, enten versjon 3 av lisensen, eller (etter eget ønske) enhver senere versjon.</string>
     <string name="import_settings">Ønsker du også å importere innstillinger?</string>
     <string name="subscriptions_import_unsuccessful">Kunne ikke importere abonnementer</string>
     <string name="subscriptions_export_unsuccessful">Kunne ikke eksportere abonnementer</string>
@@ -304,10 +291,8 @@
     <string name="enable_disposed_exceptions_title">Rapporter feil utenfor livssyklusen</string>
     <string name="enable_disposed_exceptions_summary">Tving rapportering av uleverbare Rx-unntak utenom fragment eller aktivitetslevetid etter forkastelse</string>
     <string name="unhook_checkbox">Avhekt (kan forårsake forvrenging)</string>
-    <string name="privacy_policy_title">NewPipes personvernspraksis</string>
     <string name="privacy_policy_encouragement">NewPipe-prosjektet tar ditt personvern veldig alvorlig. Derfor samler ikke appen inn data uten ditt samtykke.
 \nNewPipes personvernspraksis forklarer i detalj hvilken data som sendes og lagres når du sender en krasjrapport.</string>
-    <string name="read_privacy_policy">Les personvernspraksis</string>
     <string name="start_accept_privacy_policy">For å overholde EUs personvernforordning (GDPR), vil vi rette oppmerksomheten din mot NewPipe sin personvernerklæring. Vennligst les den nøye.
 \nDu må godta den, for å sende oss feilrapporten.</string>
     <string name="accept">Godta</string>
@@ -685,8 +670,6 @@
     <string name="no_video_streams_available_for_external_players">Ingen videostrømmer er tilgjengelige for eksterne spillere</string>
     <string name="unknown_format">Ukjent format</string>
     <string name="unknown_quality">Ukjent kvalitet</string>
-    <string name="faq_title">Ofte stilte spørsmål</string>
-    <string name="faq">Vis på nettsiden</string>
     <string name="check_new_streams">Start sjekk etter nye strømmer</string>
     <string name="enable_streams_notifications_title">Varsel om nye strømmer</string>
     <string name="streams_notifications_interval_title">Hyppighet for sjekk</string>
@@ -697,7 +680,6 @@
     <string name="no_audio_streams_available_for_external_players">Ingen lydstrømmer er tilgjengelige for eksterne spillere</string>
     <string name="sort">Sorter</string>
     <string name="toggle_all">Velg alle</string>
-    <string name="faq_description">Hvis du har problemer med å bruke appen, så bør du sjekke ut disse svarene fra generelle spørsmål!</string>
     <string name="unset_playlist_thumbnail">Skru av vedvarende miniatyrbilde</string>
     <string name="night_theme_available">Dette valget er kun tilgjengelig dersom %s er valgt som tema</string>
     <string name="msg_failed_to_copy">Klarte ikke å kopiere til utklippstavlen</string>
@@ -740,7 +722,6 @@
     <string name="prefer_original_audio_summary">Velg opprinnelig lydspor uavhengig av språk</string>
     <string name="image_quality_none">Ikke last inn bilder</string>
     <string name="image_quality_high">Høy kvalitet</string>
-    <string name="channel_tab_about">Om</string>
     <string name="share_playlist">Del spilleliste</string>
     <string name="channel_tab_albums">Album</string>
     <string name="replay">Gjenta</string>

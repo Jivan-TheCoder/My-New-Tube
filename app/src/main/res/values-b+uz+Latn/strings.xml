@@ -56,7 +56,7 @@
     <string name="show_play_with_kodi_title">\"Kodi bilan ijro etish\" parametrini ko\'rsatish</string>
     <string name="kore_not_found">missing Kore dasturini o\'rnatasizmi\?</string>
     <string name="play_with_kodi_title">Kodi bilan ijro etish</string>
-    <string name="show_higher_resolutions_summary">Faqat ba\'zi qurilmalar 2K / 4K videolarni ijro etishi mumkin</string>
+    <string name="show_higher_resolutions_summary">helpat ba\'zi qurilmalar 2K / 4K videolarni ijro etishi mumkin</string>
     <string name="show_higher_resolutions_title">Yuqori o\'lchamlarni ko\'rsatish</string>
     <string name="default_popup_resolution_title">Standart pop-up o\'lchamlari</string>
     <string name="default_resolution_title">Standart o\'lchamlari</string>
@@ -98,7 +98,7 @@
     <string name="notification_channel_description">NewPipe fon va popup pleyerlari uchun bildirishnomalar</string>
     <string name="notification_channel_name">NewPipe bildirishnomasi</string>
     <string name="file">Fayl</string>
-    <string name="just_once">Faqat bittasi</string>
+    <string name="just_once">helpat bittasi</string>
     <string name="always">Har doim</string>
     <string name="play_all">Barchasini ijro etish</string>
     <string name="file_deleted">Fayl o\'chirildi</string>
@@ -138,7 +138,7 @@
     <string name="settings_category_player_behavior_title">Xatti-harakat</string>
     <string name="settings_category_player_title">Ijro etish</string>
     <string name="peertube_instance_add_exists">Namuna allaqachon mavjud</string>
-    <string name="peertube_instance_add_https_only">Faqat HTTPS URL-lari qo\'llab-quvvatlanadi</string>
+    <string name="peertube_instance_add_https_only">helpat HTTPS URL-lari qo\'llab-quvvatlanadi</string>
     <string name="peertube_instance_add_fail">Namunani tasdiqlab bo\'lmadi</string>
     <string name="peertube_instance_add_help">Namuna URL manzilini kiriting</string>
     <string name="peertube_instance_add_title">Namuna qo\'shish</string>
@@ -187,27 +187,11 @@
     <string name="delete_item_search_history">Ushbu narsani qidiruv tarixidan o\'chirmoqchimisiz\?</string>
     <string name="action_history">Tarix</string>
     <string name="title_activity_history">Tarix</string>
-    <string name="read_full_license">Litsenziyani o\'qish</string>
-    <string name="app_license">NewPipe - bu nusxa ko\'chirish dasturiy ta\'minotidir: Siz foydalanishingiz, baham ko\'rishingiz va o\'zingizning xohishingiz bilan yaxshilashingiz mumkin. Xususan, siz uni bepul dasturiy ta\'minot fondi tomonidan e\'lon qilingan GNU umumiy jamoat litsenziyasi shartlari asosida qayta tarqatishingiz va / yoki o\'zgartirishingiz mumkin, Litsenziyaning 3-versiyasi yoki (sizning xohishingizga ko\'ra) har qanday keyingi versiyada.</string>
-    <string name="app_license_title">NewPipe litsenziyasi</string>
-    <string name="read_privacy_policy">Maxfiylik siyosatini o\'qish</string>
     <string name="privacy_policy_encouragement">NewPipe loyihasi sizning shaxsiy hayotingizga jiddiy e\'tibor beradi. Shuning uchun ilova sizning roziligingizsiz biron bir ma\'lumot to\'plamaydi.
 \nNewPipe-ning maxfiylik siyosati halokat to\'g\'risidagi hisobotni yuborganingizda qanday ma\'lumotlar yuborilishi va saqlanishi haqida batafsil ma\'lumot beradi.</string>
-    <string name="privacy_policy_title">NewPipe-ning maxfiylik siyosati</string>
-    <string name="website_encouragement">Qo\'shimcha ma\'lumot va yangiliklar uchun NewPipe veb-saytiga tashrif buyuring.</string>
-    <string name="website_title">Websayt</string>
     <string name="give_back">Qaytarib berish</string>
     <string name="donation_title">Hadya etish</string>
     <string name="donation_encouragement">NewPipe ko\'ngillilar tomonidan bo\'sh vaqtlarini sarflash orqali sizga eng yaxshi foydalanuvchi tajribasini taqdim etadi. Ishlab chiquvchilarga bir chashka qahvadan zavqlanib, NewPipe-ni yanada yaxshiroq qilishlariga yordam berish.</string>
-    <string name="view_on_github">GitHubda ko\'rish</string>
-    <string name="contribution_encouragement">Sizda g\'oyalar bormi; tarjima, dizayndagi o\'zgarishlar, kodni tozalash yoki haqiqiy og\'ir kodni o\'zgartirish - yordam har doim mamnuniyat bilan qabul qilinadi. Qancha ko\'p ish qilinsa, shuncha yaxshi bo\'ladi!</string>
-    <string name="contribution_title">Hissa qo\'shish</string>
-    <string name="app_description">Androidda Libre yengil streaming.</string>
-    <string name="tab_licenses">Litsenziyalar</string>
-    <string name="tab_about">Haqida</string>
-    <string name="copyright">© %1$s tomonidan %2$s gacha %3$s</string>
-    <string name="title_licenses">Uchinchi tomon litsenziyalari</string>
-    <string name="title_activity_about">NewPipe haqida</string>
     <string name="charset_most_special_characters">Ko\'pchilik maxsus belgilar</string>
     <string name="charset_letters_and_digits">Yozuvlar va raqamlar</string>
     <string name="settings_file_replacement_character_title">O\'zgartirish belgisi</string>
@@ -351,7 +335,7 @@
     <string name="feed_update_threshold_summary">Obunadan oldingi, so\'nggi yangilanishdan keyingi vaqt eskirgan hisoblanadi - %s</string>
     <string name="feed_update_threshold_title">Tasmani yangilash chegarasi</string>
     <string name="settings_category_feed_title">Ta\'minlamoq</string>
-    <string name="feed_group_show_only_ungrouped_subscriptions">Faqat guruhlanmagan obunalarni ko\'rsatish</string>
+    <string name="feed_group_show_only_ungrouped_subscriptions">helpat guruhlanmagan obunalarni ko\'rsatish</string>
     <string name="feed_create_new_group_button_title">Yangi</string>
     <string name="feed_group_dialog_delete_message">Ushbu guruhni o\'chirmoqchimisiz\?</string>
     <string name="feed_group_dialog_empty_name">Bo\'sh guruh nomi</string>
@@ -446,7 +430,7 @@
     <string name="list">Ro\'yxat</string>
     <string name="list_view_mode">Ro\'yxatni ko\'rish rejimi</string>
     <string name="never">Xech qachon</string>
-    <string name="wifi_only">Faqat Wi-Fi orqali</string>
+    <string name="wifi_only">helpat Wi-Fi orqali</string>
     <string name="autoplay_summary">Avtomatik ijro etishni boshlash - %s</string>
     <string name="minimize_on_exit_popup_description">Pop-up pleyerga kichraytirish</string>
     <string name="minimize_on_exit_background_description">Fon pleyerini kichraytirish</string>
@@ -481,7 +465,7 @@
 \n
 \n1. Ushbu URL manzilga o\'ting: %1$s
 \n2. So\'ralganda tizimga kiring
-\n3. \"Barcha ma\'lumotlar kiritilgan\" tugmachasini bosing, so\'ng \"Barchasini bekor qilish\" tugmachasini bosing, so\'ngra faqat \"obunalarni\" tanlang va \"OK\" tugmasini bosing
+\n3. \"Barcha ma\'lumotlar kiritilgan\" tugmachasini bosing, so\'ng \"Barchasini bekor qilish\" tugmachasini bosing, so\'ngra helpat \"obunalarni\" tanlang va \"OK\" tugmasini bosing
 \n4. \"Keyingi qadam\" ni, so\'ngra \"Eksport yaratish\" tugmasini bosing.
 \n5. U paydo bo\'lgandan keyin va \"Yuklab olish\" tugmasini bosing
 \n6. Yuklangan zip-dan .json faylini chiqarib oling (odatda \"YouTube va YouTube Music / subscriptions / subscriptions.json\" ostida) va uni shu yerga import qiling.</string>

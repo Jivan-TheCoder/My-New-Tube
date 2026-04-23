@@ -215,27 +215,12 @@
     <string name="settings_file_replacement_character_title">प्रतिस्थापन वर्ण</string>
     <string name="charset_letters_and_digits">अक्षर र अंक</string>
     <string name="charset_most_special_characters">सबै विशेष वर्णहरु</string>
-    <string name="title_activity_about">न्यू पाइपको बारेमा</string>
-    <string name="title_licenses">तेस्रो-पक्ष इजाजत पत्र</string>
     <string name="copyright" formatted="true">©%1$s को %2$s द्वारा %3$s अन्तर्गत</string>
-    <string name="tab_about">बारेमा</string>
-    <string name="tab_licenses">लाइसेन्सहरु</string>
-    <string name="app_description">(Android) एन्ड्रोइडमा निःशुल्क लाइटवेट स्ट्रिमिंग।</string>
-    <string name="contribution_title">योगदान</string>
-    <string name="contribution_encouragement">तपाईं को विचार छ कि छैन; अनुवाद, डिजाइन परिवर्तन, कोड सफाई, वा वास्तविक भारी कोड परिवर्तन-मद्दत सधैं छ स्वागत गर्दछौं। अधिक राम्रो यो हुन्छ गरिन्छ!</string>
-    <string name="view_on_github">(GitHub)गिटहबमा हेर्नुहोस्</string>
     <string name="donation_title">दान</string>
     <string name="donation_encouragement">(NewPipe)न्यु पाइप तपाईं ल्याउन सबै भन्दा राम्रो प्रयोगकर्ता अनुभव आफ्नो स्वतन्त्र समय खर्च स्वयंसेवकहरु विकास गरिएको छ। NewPipe अझ राम्रो तिनीहरू एक कप कफी आनन्द गर्दा बनाउन मद्दत विकासकर्ताहरूले फिर्ता दिनुहोस्।</string>
     <string name="give_back">फिर्ता दिनुहोस</string>
-    <string name="website_title">वेबसाइट</string>
-    <string name="website_encouragement">थप जानकारी र समाचार लागि NewPipe वेबसाइट मा जानुहोस्।</string>
-    <string name="privacy_policy_title">NewPipe गोपनीयता नीति</string>
     <string name="privacy_policy_encouragement">न्यू पाइप परियोजना आफ्नो गोपनीयता धेरै गम्भीरतापूर्वक लिन्छ। तसर्थ, तपाईँको सहमति बिना कुनै पनि डाटा संकलन गर्दैन।
 \nन्यू पाइपको गोपनीयता नीतिले क्र्यास रिपोर्ट पठाउने बित्तिकै कुन डाटा पठाइएको र भण्डारण गरिएको छ भनेर विस्तृत वर्णन गर्दछ।</string>
-    <string name="read_privacy_policy">गोपनीयता नीति पढ्नुहोस्</string>
-    <string name="app_license_title">NewPipe इजाजत पत्र</string>
-    <string name="app_license">NewPipe copyleft छ मुफ्त सफ्टवेयर: तपाईं प्रयोग गर्न सक्नुहुन्छ, अध्ययन शेयर र इच्छामा सुधार। विशेष तपाईं redistribute गर्न सक्नुहुन्छ र / वा रूपमा फ्री सफ्टवेयर फाउंडेशन द्वारा प्रकाशित GNU जनरल सार्वजनिक लाइसेन्स सर्तहरू अन्तर्गत यो परिमार्जन, कि त लाइसेन्स को संस्करण 3, वा (तपाईँको विकल्प मा) कुनै पनि पछि संस्करण।</string>
-    <string name="read_full_license">लाइसेन्स पढ्नुहोस्</string>
     <string name="title_activity_history">इतिहास</string>
     <string name="action_history">इतिहास</string>
     <string name="delete_item_search_history">तपाईं खोज इतिहासबाट यो वस्तु मेटाउन चाहनुहुन्छ\?</string>

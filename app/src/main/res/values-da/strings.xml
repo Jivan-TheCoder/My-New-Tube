@@ -206,25 +206,10 @@
     <string name="settings_file_replacement_character_title">Erstatningstegn</string>
     <string name="charset_letters_and_digits">Bogstaver og cifre</string>
     <string name="charset_most_special_characters">De fleste specialtegn</string>
-    <string name="title_activity_about">Om NewPipe</string>
-    <string name="title_licenses">Tredjepartslicenser</string>
     <string name="copyright" formatted="true">© %1$s af %2$s under %3$s</string>
-    <string name="tab_about">Om &amp; Ofte Stillede Spørgsmål</string>
-    <string name="tab_licenses">Licenser</string>
-    <string name="app_description">Fri letvægtsstreaming på Android.</string>
-    <string name="contribution_title">Bidrag</string>
-    <string name="contribution_encouragement">Uanset om du har idéer til oversættelse, designændringer, oprydning i koden eller virkelig store kodeændringer, er hjælp altid velkommen. Jo mere der bliver gjort, jo bedre bliver det!</string>
-    <string name="view_on_github">Se på GitHub</string>
     <string name="donation_title">Donér</string>
     <string name="donation_encouragement">NewPipe er udviklet af frivillige, der bruger deres fritid på at give dig den bedste brugeroplevelse. Giv noget tilbage og hjælp udviklerne med at gøre NewPipe endnu bedre, mens de nyder en kop kaffe.</string>
     <string name="give_back">Giv tilbage</string>
-    <string name="website_title">Hjemmeside</string>
-    <string name="website_encouragement">Besøg NewPipe\'s hjemmeside for flere oplysninger og nyheder.</string>
-    <string name="privacy_policy_title">NewPipe\'s Privatlivspolitik</string>
-    <string name="read_privacy_policy">Læs privatlivspolitik</string>
-    <string name="app_license_title">NewPipe\'s Licens</string>
-    <string name="app_license">NewPipe er copyleft, fri software: Du kan bruge, studere, dele og forbedre den, som du vil. Specifikt kan du redistribuere og/eller ændre den under betingelserne i GNU General Public License som udgivet af Free Software Foundation, enten version 3 af licensen eller (efter dit ønske) en vilkårlig senere version.</string>
-    <string name="read_full_license">Læs licens</string>
     <string name="title_activity_history">Historik</string>
     <string name="action_history">Historik</string>
     <string name="delete_item_search_history">Vil du slette dette element fra søgehistorikken\?</string>
@@ -681,9 +666,6 @@
     <string name="streams_not_yet_supported_removed">Streams, som endnu ikke understøttes af downloaderen, vises ikke</string>
     <string name="fast_mode">Hurtig tilstand</string>
     <string name="import_subscriptions_hint">Importér eller eksportér abonnementer fra 3-punktsmenuen</string>
-    <string name="faq_title">Ofte stillede spørgsmål</string>
-    <string name="faq_description">Hvis du har problemer med at bruge appen, bør du tjekke disse svar på almindelige spørgsmål!</string>
-    <string name="faq">Se på hjemmesiden</string>
     <string name="app_update_unavailable_toast">Du kører den nyeste version af NewPipe</string>
     <string name="new_seek_duration_toast">Grundet ExoPlayer-begrænsninger blev søgevarigheden sat til %d sekunder</string>
     <string name="feed_group_show_only_ungrouped_subscriptions">Vis kun ugrupperede abonnementer</string>
@@ -744,7 +726,6 @@
     <string name="channel_tab_channels">Kanaler</string>
     <string name="channel_tab_playlists">Playlister</string>
     <string name="channel_tab_albums">Album</string>
-    <string name="channel_tab_about">Om</string>
     <string name="show_channel_tabs">Kanal-faner</string>
     <string name="show_channel_tabs_summary">Hvilke faner vises på kanalsiderne</string>
     <string name="open_play_queue">Åbn afspilningskø</string>

@@ -137,17 +137,7 @@
     <string name="settings_file_replacement_character_title">替換字元</string>
     <string name="charset_letters_and_digits">字母與數字</string>
     <string name="charset_most_special_characters">大部分的特殊字元</string>
-    <string name="title_activity_about">關於 NewPipe</string>
-    <string name="title_licenses">第三方授權</string>
     <string name="copyright" formatted="true">© %1$s 由 %2$s 使用 %3$s 授權條款發布</string>
-    <string name="tab_about">關於與常見問題</string>
-    <string name="tab_licenses">授權條款</string>
-    <string name="app_description">Android 上自由且輕巧的串流播放器。</string>
-    <string name="view_on_github">在 GitHub 上檢視</string>
-    <string name="app_license_title">NewPipe 使用的授權條款</string>
-    <string name="contribution_encouragement">不管您有什麼點子 ── 翻譯、設計、清理或撰寫大量程式碼 ── 我們永遠歡迎您來幫忙。做得越多，NewPipe 就會更好！</string>
-    <string name="read_full_license">閱讀授權條款</string>
-    <string name="contribution_title">貢獻</string>
     <string name="title_activity_history">歷史記錄</string>
     <string name="action_history">歷史記錄</string>
     <string name="delete_item_search_history">確定要刪除此項搜尋記錄嗎？</string>
@@ -169,13 +159,11 @@
     <string name="video_streams_empty">找不到影片串流</string>
     <string name="audio_streams_empty">找不到音訊串流</string>
     <string name="donation_title">贊助</string>
-    <string name="website_title">網站</string>
     <string name="import_data_title">匯入資料庫</string>
     <string name="export_data_title">匯出資料庫</string>
     <string name="import_data_summary">覆寫您目前的歷史記錄、訂閱與設定 (選用)</string>
     <string name="export_data_summary">匯出歷史記錄、訂閱內容、播放清單、設定</string>
     <string name="give_back">回饋</string>
-    <string name="website_encouragement">如欲了解更多有關 NewPipe 的資訊和新聞，請造訪我們的網站。</string>
     <string name="main_page_content">首頁內容</string>
     <string name="blank_page_summary">空白頁面</string>
     <string name="kiosk_page_summary">互動導覽頁面</string>
@@ -288,12 +276,9 @@
     <string name="delete_search_history_alert">刪除所有搜尋歷史記錄？</string>
     <string name="search_history_deleted">搜尋記錄已刪除</string>
     <string name="one_item_deleted">已刪除一個項目。</string>
-    <string name="app_license">NewPipe 是一個 Copyleft 的自由軟體：您可以隨意使用、研究、分享並改進它。在遵守由自由軟體基金會所發佈的 GNU 通用公共授權條款的狀況下，您可以自由地再散佈及／或修改它；授權條款預設使用第三版，但您也可以選擇更新的版本。</string>
     <string name="import_settings">您是否要同時匯入設定？</string>
-    <string name="privacy_policy_title">NewPipe 的隱私政策</string>
     <string name="privacy_policy_encouragement">NewPipe 專案非常重視您的隱私。因此，未經您同意此程式不會收集任何資料。 
 \nNewPipe 的隱私權政策詳細說明了當您發送錯誤回報時，什麼資料會被傳送及儲存。</string>
-    <string name="read_privacy_policy">閱讀隱私政策</string>
     <string name="start_accept_privacy_policy">為配合歐洲通用資料保護條例 ( GDPR ) ，我們在此請您注意 NewPipe 的隱私政策。請務必仔細閱讀。 
 \n您必須接受它才能向我們發送錯誤報告。</string>
     <string name="accept">接受</string>
@@ -661,10 +646,7 @@
     <string name="no_video_streams_available_for_external_players">沒有可用於外部播放程式的視訊串流</string>
     <string name="select_quality_external_players">選取外部播放程式的畫質</string>
     <string name="progressive_load_interval_title">播放載入間隔大小</string>
-    <string name="faq_title">常見問題</string>
-    <string name="faq">在網站上檢視</string>
     <string name="sort">排序</string>
-    <string name="faq_description">若您在使用此應用程式時遇到任何問題，請務必先看看常見問題的答案！</string>
     <string name="app_update_unavailable_toast">您正在執行最新版本的 NewPipe</string>
     <string name="app_update_available_notification_text">輕觸以下載 %s</string>
     <string name="fast_mode">快速模式</string>
@@ -726,7 +708,6 @@
     <string name="channel_tab_shorts">短片</string>
     <string name="loading_metadata_title">正在載入詮釋資料……</string>
     <string name="feed_fetch_channel_tabs">擷取頻道分頁</string>
-    <string name="channel_tab_about">關於</string>
     <string name="channel_tab_albums">專輯</string>
     <string name="feed_fetch_channel_tabs_summary">更新 feed 時要擷取的分頁。若使用快速模式更新頻道，則此選項無效。</string>
     <string name="channel_tab_playlists">播放清單</string>
@@ -807,7 +788,7 @@
     <string name="player_http_403">播放時收到來自伺服器的 HTTP 錯誤 403，可能因串流網址過期或 IP 封鎖所致</string>
     <string name="player_http_invalid_status">播放時收到來自伺服器的 HTTP 錯誤 %1$s</string>
     <string name="youtube_player_http_403">播放時收到來自伺服器的 HTTP 錯誤 403，可能因 IP 封鎖或串流網址去混淆化問題所致</string>
-    <string name="sign_in_confirm_not_bot_error">%1$s 拒絕提供資料，要求登入以確認請求者並非機器人。\n\n您的 IP 位址可能已被 %1$s 暫時封鎖，您可稍候片刻或切換至其他 IP 位址（例如開啟/關閉 VPN，或從 Wi-Fi 切換至行動數據）。\n\n更多資訊請參見<a href="%2$s">此 FAQ 條目</a>。</string>
+    <string name="sign_in_confirm_not_bot_error">%1$s 拒絕提供資料，要求登入以確認請求者並非機器人。\n\n您的 IP 位址可能已被 %1$s 暫時封鎖，您可稍候片刻或切換至其他 IP 位址（例如開啟/關閉 VPN，或從 Wi-Fi 切換至行動數據）。\n\n更多資訊請參見<a href="%2$s">此 help 條目</a>。</string>
     <string name="unsupported_content_in_country">此內容目前無法於您所選的國家/地區提供。\n\n請至「設定」→「內容」→「預設內容國家」變更您的選擇。</string>
 
 

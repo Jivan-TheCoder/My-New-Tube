@@ -70,7 +70,6 @@
     <string name="channel_page_summary">Tasna n Tbadut</string>
     <string name="kiosk_page_summary">Tasna n ukiyusk</string>
     <string name="delete_item_search_history">Is nit txsed ad tkksed aferdis-a seg umezruy n urezzu\?</string>
-    <string name="view_on_github">Ẓeṛ g GitHub</string>
     <plurals name="videos">
         <item quantity="one">%s uvidyu</item>
         <item quantity="other">%s ividyuten</item>
@@ -104,8 +103,6 @@
     <string name="mute">Ẓẓiẓen</string>
     <string name="name">Isem</string>
     <string name="local">Adɣran</string>
-    <string name="website_title">Asit wib</string>
-    <string name="tab_about">Γef</string>
     <string name="settings_category_downloads_title">Agam</string>
     <string name="msg_name">Isem n ufaylu</string>
     <string name="ok">WAXXA</string>
@@ -147,7 +144,6 @@
     <string name="fragment_feed_title">Matta n umaynu</string>
     <string name="always_ask_open_action">ttseqsa abda</string>
     <string name="blank_page_summary">Tasna ixwan</string>
-    <string name="title_activity_about">Ɣef NewPipe</string>
     <string name="msg_wait">Ṛaja…</string>
     <plurals name="listening">
         <item quantity="one">%s umsflid</item>
@@ -170,7 +166,6 @@
     <string name="unknown_content">[Arussin]</string>
     <string name="description_tab_description">Aglam</string>
     <string name="playlist_add_stream_success">Rnu ɣer telgamt n tɣuri</string>
-    <string name="tab_licenses">Turagin</string>
     <string name="dismiss">Ttu</string>
     <string name="undo">Ser</string>
     <string name="albums">Ilbumen</string>

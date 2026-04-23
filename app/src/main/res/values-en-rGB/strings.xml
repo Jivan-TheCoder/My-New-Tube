@@ -35,7 +35,6 @@
     <string name="autoplay_summary">Start playback automatically – %s</string>
     <string name="minimize_on_exit_summary">Action when switching to other app from main video player – %s</string>
     <string name="preferred_open_action_settings_summary">Default action when opening content – %s</string>
-    <string name="contribution_encouragement">Whether you have ideas of; translation, design changes, code cleaning, or real heavy code changes – help is always welcome. The more is done, the better it gets!</string>
     <string name="switch_to_main">Switch to Main</string>
     <string name="switch_to_popup">Switch to Pop-up</string>
     <string name="switch_to_background">Switch to Background</string>
@@ -67,11 +66,6 @@
 \nSo the choice boils down to what you prefer: speed or complete information.</string>
     <string name="feed_use_dedicated_fetch_method_summary">Available in some services, it is usually much faster but may return a limited number of items and often incomplete information (e.g. no duration, item type, no live status).</string>
     <string name="max_retry_desc">Maximum number of attempts before cancelling the download</string>
-    <string name="read_full_license">Read licence</string>
-    <string name="app_license">NewPipe is copyleft libre software: You can use, study share and improve it at will. Specifically you can redistribute and/or modify it under the terms of the GNU General Public Licence as published by the Free Software Foundation, either version 3 of the Licence, or (at your option) any later version.</string>
-    <string name="app_license_title">NewPipe’s licence</string>
-    <string name="tab_licenses">Licences</string>
-    <string name="title_licenses">Third-party licences</string>
     <string name="download_to_sdcard_error_message">Downloading to SD card not possible. Reset download folder location\?</string>
     <string name="settings_category_player_behavior_title">Behaviour</string>
     <string name="peertube_instance_url_summary">Select your favourite PeerTube instances</string>

@@ -83,16 +83,7 @@
     <string name="settings_file_charset_title">Caráuteres permitíos nos nomes de los ficheros</string>
     <string name="charset_letters_and_digits">Lletres y díxitos</string>
     <string name="charset_most_special_characters">La mayoría de caráuteres especiales</string>
-    <string name="title_activity_about">Tocante a NewPipe</string>
-    <string name="title_licenses">Llicencies de terceros</string>
     <string name="copyright" formatted="true">© %1$s por %2$s baxo %3$s</string>
-    <string name="tab_about">Tocante a</string>
-    <string name="tab_licenses">Llicencies</string>
-    <string name="view_on_github">Ver en GitHub</string>
-    <string name="app_license_title">Llicencia de NewPipe</string>
-    <string name="contribution_encouragement">Si tienes idees, quies traducir, facer dalgún cambéu nel diseñu, acuriosar poco o muncho\'l códigu… Agradecemos l\'ayuda. ¡Cuanto más se faiga, meyor!</string>
-    <string name="read_full_license">Lleer</string>
-    <string name="contribution_title">Collaboración</string>
     <string name="title_activity_history">Historial</string>
     <string name="action_history">Historial</string>
     <string name="delete_item_search_history">¿Quies desaniciar esti elementu del historial de busques\?</string>
@@ -112,8 +103,6 @@
     <string name="donation_title">Donación</string>
     <string name="donation_encouragement">NewPipe ta desendolcáu por xente voluntario que pasa\'l tiempu llibre ufriéndote la meyor esperiencia d\'usuariu. Devolvi\'l favor p\'ayudar a los desendolcadores p\'ameyorar NewPipe tovía más mentanto esfruten d\'una taza de café.</string>
     <string name="give_back">Donar</string>
-    <string name="website_title">Sitiu web</string>
-    <string name="website_encouragement">Visita\'l sitiu web de NewPipe pa más información y noticies.</string>
     <string name="default_content_country_title">País predetermináu del conteníu</string>
     <string name="always">Siempres</string>
     <string name="import_data_title">Importar una base de datos</string>
@@ -141,7 +130,6 @@
     <string name="subscriptions_export_unsuccessful">Nun pudieron esportase les soscripciones</string>
     <string name="preferred_open_action_settings_title">Aición d\'apertura preferida</string>
     <string name="import_settings">¿Quies tamién importar los axustes\?</string>
-    <string name="read_privacy_policy">Lleer</string>
     <string name="channels">Canales</string>
     <string name="playlists">Llistes de reproducción</string>
     <string name="tracks">Pistes</string>
@@ -216,7 +204,6 @@
         <item quantity="other">%s vídeos</item>
     </plurals>
     <string name="preferred_player_fetcher_notification_message">Cargando\'l conteníu solicitáu</string>
-    <string name="privacy_policy_title">Política de privacidá de NewPipe</string>
     <string name="error_file_creation">El ficheru nun pue crease</string>
     <string name="error_http_no_content">El sirvidor nun unvia datos</string>
     <string name="search">Buscar</string>
@@ -408,10 +395,8 @@
     <string name="kiosk_page_summary">Páxina de quioscu</string>
     <string name="title_most_played">Lo más reproducío</string>
     <string name="title_last_played">Lo último reproducío</string>
-    <string name="app_license">NewPipe ye software copyleft: pues usalu, estudialu, compartilu y ameyoralu como quieras. N\'especial, pues redistribuyilu y/o modificalu baxo los términos de la GNU General Public License según espublizó la Free Software Foundation, quier la versión 3 de la llicencia quier (na to opinión) cualesquier versión posterior.</string>
     <string name="privacy_policy_encouragement">El proyeutu de NewPipe toma mui en serio la privacidá. Poro, l\'aplicación nun recueye nengún datu ensin el to consentimientu.
 \nLa política de privacidá de NewPipe desplica en detalle los datos que s\'unvien y atroxen cuando unvies un informe de casque.</string>
-    <string name="app_description">Un aplicación llibre pa ver/sentir plataformes de tresmisión n\'Android.</string>
     <string name="settings_file_replacement_character_title">Caráuteres de troquéu</string>
     <string name="settings_file_replacement_character_summary">Los caráuteres que nun son válidos van trocase por esti valor</string>
     <string name="done">Fecho</string>

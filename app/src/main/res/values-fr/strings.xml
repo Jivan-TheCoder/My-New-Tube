@@ -107,18 +107,8 @@
     <string name="channel_unsubscribed">Désabonné de la chaîne</string>
     <string name="tab_subscriptions">Abonnements</string>
     <string name="settings_category_downloads_title">Téléchargement</string>
-    <string name="title_licenses">Licences tierce partie</string>
-    <string name="tab_about">À propos &amp; FAQ</string>
-    <string name="tab_licenses">Licences</string>
-    <string name="app_description">Lecteur multimédia libre et léger pour Android.</string>
-    <string name="view_on_github">Voir sur GitHub</string>
-    <string name="app_license_title">Licence de NewPipe</string>
-    <string name="read_full_license">Lire la licence</string>
-    <string name="contribution_title">Contribuer</string>
     <string name="charset_letters_and_digits">Lettres et chiffres</string>
-    <string name="title_activity_about">À propos de NewPipe</string>
     <string name="copyright" formatted="true">© %1$s par %2$s sous %3$s</string>
-    <string name="contribution_encouragement">Que ce soit pour des idées de traductions, de changements de design, de nettoyage de code ou de gros changements de code, une aide est toujours la bienvenue. Plus on en fera meilleur il sera !</string>
     <string name="subscription_change_failed">Impossible de modifier l’abonnement</string>
     <string name="subscription_update_failed">Impossible d’actualiser l’abonnement</string>
     <string name="resume_on_audio_focus_gain_summary">Continuer la lecture après les interruptions (ex. : appels téléphoniques)</string>
@@ -185,8 +175,6 @@
     <string name="start_here_on_popup">Démarrer la lecture dans une fenêtre flottante</string>
     <string name="donation_title">Donner</string>
     <string name="donation_encouragement">NewPipe est développé par des volontaires sur leur temps libre afin de vous proposer la meilleure expérience possible. Vous pouvez leur offrir un café pour les soutenir dans leurs efforts et rendre NewPipe encore meilleur.</string>
-    <string name="website_title">Site Web</string>
-    <string name="website_encouragement">Visitez le site Web de NewPipe pour plus d’informations et de nouvelles.</string>
     <string name="give_back">Donner en retour</string>
     <string name="default_content_country_title">Pays du contenu par défaut</string>
     <string name="switch_to_background">Basculer en arrière-plan</string>
@@ -305,9 +293,6 @@
     <string name="delete_search_history_alert">Voulez-vous supprimer entièrement l’historique de recherche \?</string>
     <string name="search_history_deleted">Historique de recherche supprimé</string>
     <string name="one_item_deleted">1 élément supprimé.</string>
-    <string name="app_license">NewPipe est un logiciel sous licence libre copyleft : vous pouvez l’utiliser, l’étudier, le partager, et l’améliorer comme bon vous semble. Plus précisément, vous pouvez le redistribuer ou le modifier sous les termes de la licence générale publique GNU, comme publiée par la Free Software Foundation, dans sa version 3, ou, à votre convenance, dans une quelconque version ultérieure.</string>
-    <string name="privacy_policy_title">Politique de confidentialité de NewPipe</string>
-    <string name="read_privacy_policy">Lire la politique de confidentialité</string>
     <string name="import_settings">Voulez-vous également importer les paramètres \?</string>
     <string name="accept">Accepter</string>
     <string name="decline">Refuser</string>
@@ -708,9 +693,6 @@
     <string name="selected_stream_external_player_not_supported">Le flux sélectionné n’est pas pris en charge par les lecteurs externes</string>
     <string name="no_video_streams_available_for_external_players">Aucun flux vidéo n’est disponible pour les lecteurs externes</string>
     <string name="progressive_load_interval_title">Taille de l\'intervalle de chargement de la lecture</string>
-    <string name="faq_title">Foire aux questions</string>
-    <string name="faq">Voir sur le site web</string>
-    <string name="faq_description">Si vous avez des difficultés à utiliser l\'application, consultez les réponses aux questions les plus fréquentes !</string>
     <string name="sort">Trier</string>
     <string name="fast_mode">Mode rapide</string>
     <string name="import_subscriptions_hint">Importer ou exporter des abonnements à partir du menu</string>
@@ -775,7 +757,6 @@
     <string name="next_stream">Flux suivant</string>
     <string name="image_quality_none">Ne pas charger d’images</string>
     <string name="image_quality_high">Haute qualité</string>
-    <string name="channel_tab_about">À propos</string>
     <string name="channel_tab_albums">Albums</string>
     <string name="image_quality_medium">Qualité moyenne</string>
     <string name="metadata_banners">Bannières</string>
@@ -856,7 +837,7 @@
     <string name="player_http_403">Erreur HTTP 403 reçue du serveur pendant la lecture, probablement causée par l\'expiration de l\'URL de streaming ou une interdiction d\'IP</string>
     <string name="player_http_invalid_status">Erreur HTTP %1$s reçue du serveur pendant la lecture</string>
     <string name="youtube_player_http_403">Erreur HTTP 403 reçue du serveur pendant la lecture, probablement causée par un bannissement d\'IP ou des problèmes de désobfuscation de l\'URL de streaming</string>
-    <string name="sign_in_confirm_not_bot_error">%1$s a refusé de fournir des données et a demandé un identifiant pour confirmer que l\'auteur de la requête n\'est pas un robot.\n\nVotre adresse IP a peut-être été temporairement bloquée par %1$s. Vous pouvez patienter ou essayer une autre adresse IP (par exemple, en activant/désactivant un VPN ou en passant du Wi-Fi aux données mobiles).\n\nPour plus d\'informations, veuillez consulter <a href="%2$s">cette FAQ</a>.</string>
+    <string name="sign_in_confirm_not_bot_error">%1$s a refusé de fournir des données et a demandé un identifiant pour confirmer que l\'auteur de la requête n\'est pas un robot.\n\nVotre adresse IP a peut-être été temporairement bloquée par %1$s. Vous pouvez patienter ou essayer une autre adresse IP (par exemple, en activant/désactivant un VPN ou en passant du Wi-Fi aux données mobiles).\n\nPour plus d\'informations, veuillez consulter <a href="%2$s">cette help</a>.</string>
     <string name="unsupported_content_in_country">Ce contenu n\'est pas disponible pour le pays actuellement sélectionné.\n\nModifiez votre sélection dans « Paramètres &gt; Contenu &gt; Pays par défaut ».</string>
 
 

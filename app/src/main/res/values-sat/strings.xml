@@ -82,8 +82,6 @@
     <string name="tracks">ᱴᱨᱮᱠ</string>
     <string name="import_data_title">ᱤᱢᱯᱳᱨᱴ ᱰᱮᱴᱟᱵᱮᱥ</string>
     <string name="general_error">ᱪᱷᱟᱸᱪ</string>
-    <string name="contribution_encouragement">ᱟᱢᱟᱜ ᱟᱭᱳ ᱟᱲᱟᱝ, ᱰᱤᱡᱟᱭᱤᱱ ᱵᱮᱵᱚᱥᱛᱟ, ᱠᱳᱰ ᱥᱟᱹᱠᱷᱭᱟᱹᱛ, ᱟᱨᱵᱟᱝ ᱟᱹᱰᱤ ᱢᱟᱨᱟᱝ ᱠᱳᱰ ᱵᱮᱵᱚᱥᱛᱟ ᱨᱮᱱᱟᱜ ᱟᱭᱳ ᱟᱲᱟᱝ ᱢᱮᱱᱟᱜᱼᱟ ⁇ ᱜᱚᱲᱚ ᱫᱚ ᱡᱚᱛᱚ ᱚᱠᱛᱚ ᱨᱮᱜᱮ ᱥᱟᱨᱦᱟᱣ ᱢᱮᱱᱟᱜᱼᱟ ᱾ ᱰᱤᱜᱟᱱ ᱠᱟᱹᱢᱤ ᱦᱩᱭ ᱞᱮᱱ ᱠᱷᱟᱱ ᱚᱱᱟ ᱜᱮ ᱱᱟᱯᱟᱭᱚᱜ-ᱟ ᱾</string>
-    <string name="view_on_github">GitHub ᱨᱮ ᱧᱮᱞ ᱢᱮ</string>
     <string name="most_liked">ᱡᱟᱹᱥᱛᱤ ᱞᱟᱭᱠᱟᱨ</string>
     <string name="delete_downloaded_files">ᱰᱟᱩᱱᱞᱚᱰ ᱟᱠᱟᱱ ᱯᱷᱤᱞᱤᱯ ᱠᱚ ᱵᱚᱫᱚᱞ ᱢᱮ</string>
     <string name="delete_downloaded_files_confirm">ᱰᱤᱥᱠ ᱠᱷᱚᱱ ᱡᱚᱛᱚ ᱰᱟᱩᱱᱞᱚᱰ ᱟᱠᱟᱱ ᱯᱷᱤᱞ ᱠᱚ ᱵᱚᱫᱚᱞ ᱢᱮ?</string>
@@ -352,7 +350,6 @@
     <string name="channel_tab_channels">ᱪᱟᱱᱮᱞ</string>
     <string name="channel_tab_playlists">ᱠᱷᱮᱞᱚᱸᱰᱤᱭᱟᱹ ᱠᱚ</string>
     <string name="channel_tab_albums">ᱟᱞᱵᱚᱢ</string>
-    <string name="channel_tab_about">ᱤᱫᱤ ᱠᱟᱛᱮ</string>
     <string name="show_channel_tabs">ᱪᱟᱱᱮᱞ ᱛᱟᱵᱽ</string>
     <string name="toggle_screen_orientation">ᱥᱠᱨᱤᱱ ᱴᱳᱜᱞ ᱳᱭᱨᱮᱱᱟᱥᱚᱱ</string>
     <string name="previous_stream">ᱢᱟᱲᱟᱝ ᱥᱴᱨᱤᱢ</string>
@@ -476,8 +473,6 @@
     <string name="no_subscribers">ᱚᱵᱷᱤᱱᱮᱛᱟᱨ ᱵᱟᱹᱱᱩᱜᱼᱟ</string>
     <string name="no_one_watching">ᱚᱠᱚᱭ ᱦᱚᱸ ᱵᱟᱝ ᱧᱮᱞᱚᱜ ᱠᱟᱱᱟ</string>
     <string name="done">ᱜᱚᱴᱟ ᱟᱠᱟᱱᱟ</string>
-    <string name="title_activity_about">ᱱᱤᱭᱩ ᱯᱟᱭᱯᱮ ᱵᱟᱵᱚᱛ</string>
-    <string name="title_licenses">ᱯᱮᱨᱟᱜ ᱞᱟᱭᱥᱮᱱᱥ</string>
     <string name="donation_title">ᱰᱳᱱᱮᱴ ᱢᱮ</string>
     <string name="no_one_listening">ᱡᱟᱦᱟᱸᱭ ᱜᱮᱭ ᱟᱸᱡᱚᱢᱟ</string>
     <string name="infinite_videos">∞ ᱵᱷᱤᱰᱤᱭᱳ</string>
@@ -491,12 +486,6 @@
     <string name="recaptcha_request_toast">reCAPTCHA challenge ᱞᱟᱹᱠᱛᱤ ᱠᱟᱱᱟ</string>
     <string name="recaptcha_solve">ᱥᱚᱞᱦᱮ</string>
     <string name="donation_encouragement">ᱱᱤᱭᱩ ᱯᱟᱭᱤᱯ ᱫᱚ ᱱᱤᱡᱮᱨᱟᱜ ᱚᱠᱛᱚ ᱟᱢᱟᱜ ᱵᱮᱵᱷᱟᱨᱤᱭᱟᱹ ᱵᱷᱟᱹᱜᱤ ᱵᱷᱟᱹᱜᱤ ᱥᱟᱹᱜᱟᱹᱭ ᱮᱢ ᱠᱟᱛᱮ ᱵᱮᱱᱟᱣ ᱟᱠᱟᱱᱟ ᱾ ᱱᱤᱣ ᱯᱟᱭᱤᱯ ᱵᱮᱨᱮᱫ ᱞᱟᱹᱜᱤᱫ ᱮᱱᱮᱢᱤᱭᱟᱹ ᱠᱚ ᱜᱚᱲᱚ ᱥᱚᱦᱚᱫ ᱮᱢ ᱢᱮ ᱾</string>
-    <string name="website_title">ᱣᱮᱵᱽᱥᱟᱭᱤᱴ</string>
-    <string name="app_license_title">ᱱᱤᱣ ᱯᱟᱭᱯ ᱨᱮᱭᱟᱜ ᱞᱟᱭᱥᱮᱱᱥ</string>
-    <string name="app_license">ᱱᱤᱭᱩ ᱯᱟᱭᱯ ᱫᱚ ᱠᱚᱯᱤᱞᱮᱠᱴ ᱞᱤᱵᱨᱮ ᱥᱚᱯᱷᱴᱣᱮᱭᱟᱨ ᱠᱟᱱᱟ ᱾ ᱟᱢ ᱱᱚᱶᱟ ᱵᱮᱵᱷᱟᱨ, ᱯᱟᱲᱦᱟᱣ, ᱮᱴᱟᱜ ᱦᱚᱲ ᱥᱟᱶ ᱮᱢ ᱟᱨ ᱵᱮᱵᱚᱥᱛᱟ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ ᱾ ᱟᱢ ᱱᱚᱶᱟ GNU General Public License ᱞᱮᱠᱟᱛᱮ ᱯᱟᱨᱥᱟᱞ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ ᱟᱨ/ᱟᱨᱵᱟᱝ Free Software Foundation ᱦᱚᱛᱮᱛᱮ ᱵᱮᱵᱦᱟᱨ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ, ᱡᱟᱦᱟᱸ ᱫᱚ ᱞᱟᱭᱥᱮᱱᱥ ᱨᱮᱱᱟᱜ ᱵᱟᱨᱥᱚᱱ ᱓ ᱥᱮ (ᱛᱟᱢᱟᱜ ᱵᱟᱪᱷᱟᱣ ᱞᱮᱠᱟᱛᱮ) ᱡᱟᱦᱟᱸᱱᱟᱜ ᱛᱟᱭᱚᱢ ᱵᱟᱨᱥᱚᱱ ᱠᱟᱱᱟ ᱾</string>
-    <string name="website_encouragement">ᱟᱨᱦᱚᱸ ᱵᱟᱰᱟᱭ ᱟᱨ ᱠᱷᱚᱵᱚᱨ ᱞᱟᱹᱜᱤᱫ NewPipe ᱣᱮᱵᱽᱥᱟᱭᱤᱴ ᱧᱮᱞ ᱢᱮ ᱾</string>
-    <string name="faq_description">ᱡᱩᱫᱤ ᱟᱢ ᱱᱚᱶᱟ ᱮᱯᱞᱤᱠᱮᱥᱚᱱ ᱵᱮᱵᱚᱦᱟᱨ ᱨᱮ ᱠᱷᱟᱡᱽᱱᱟ ᱮ ᱧᱟᱢᱟ, ᱮᱱᱠᱷᱟᱱ ᱱᱚᱶᱟ ᱥᱟᱸᱣ ᱡᱩᱲᱟᱹᱣ ᱟᱠᱟᱱ ᱯᱩᱥᱴᱟᱹ ᱠᱚ ᱧᱮᱞ ᱢᱮ!</string>
-    <string name="faq">ᱣᱮᱵᱽᱥᱟᱭᱤᱴ ᱨᱮ ᱧᱮᱞ ᱢᱮ</string>
     <string name="title_activity_history">ᱱᱟᱜᱟᱢ</string>
     <string name="action_history">ᱱᱟᱜᱟᱢ</string>
     <string name="delete_item_search_history">ᱟᱢ ᱱᱚᱶᱟ ᱡᱤᱱᱤᱥ ᱥᱟᱸᱪᱟᱨ ᱱᱟᱜᱟᱢ ᱠᱷᱚᱱ ᱵᱚᱫᱚᱞ ᱢᱮᱢᱮ?</string>
@@ -694,7 +683,6 @@
     <string name="youtube_restricted_mode_enabled_title">ᱭᱩᱴᱭᱩᱵᱽ ᱨᱮᱱᱟᱜ \"Restricted Mode\" ᱚᱞ ᱢᱮ</string>
     <string name="all">ᱡᱚᱛᱚ</string>
     <string name="network_error">ᱱᱮᱴᱣᱟᱨᱠ ᱵᱷᱩᱞ</string>
-    <string name="app_description">ᱟᱱᱰᱨᱚᱭᱮᱰ ᱨᱮ ᱞᱤᱵᱨᱮ ᱞᱟᱭᱤᱴᱣᱮᱴ ᱥᱴᱨᱤᱢᱤᱝ</string>
     <string name="metadata_tags">ᱴᱮᱜᱥ</string>
     <string name="metadata_privacy_public">ᱥᱚᱨᱠᱟᱨᱤ</string>
     <string name="error_insufficient_storage_left">ᱚᱱᱚᱞ ᱨᱮ ᱡᱟᱭᱜᱟ ᱵᱟᱹᱱᱩᱜᱼᱟ</string>
@@ -712,16 +700,8 @@
     <string name="msg_running_detail">ᱵᱟᱰᱟᱭ ᱞᱟᱹᱜᱤᱫ ᱴᱟᱯ ᱢᱮ</string>
     <string name="msg_calculating_hash">ᱦᱟᱥᱤ ᱠᱚᱞᱠᱟᱛᱟ</string>
     <string name="no_dir_yet">ᱱᱤᱛ ᱦᱟᱹᱵᱤᱡ ᱰᱟᱩᱱᱞᱚᱰ ᱯᱷᱳᱞᱰᱟᱨ ᱥᱮᱴ ᱵᱟᱝ, ᱱᱤᱛ ᱦᱟᱹᱵᱤᱡ ᱰᱟᱩᱱᱞᱚᱰ ᱯᱷᱳᱞᱰᱟᱨ ᱵᱟᱪᱷᱟᱣ ᱢᱮ</string>
-    <string name="copyright">© %1$s ᱛᱮ %2$s ᱞᱟᱛᱟᱨ ᱨᱮ %3$s</string>
-    <string name="tab_about">About &amp; FAQ</string>
-    <string name="tab_licenses">ᱞᱟᱭᱥᱮᱱᱥ</string>
-    <string name="contribution_title">ᱥᱮᱞᱮᱫᱚᱜ ᱢᱮ</string>
-    <string name="privacy_policy_title">ᱱᱤᱭᱩ ᱯᱟᱭᱯᱮ ᱨᱮᱱᱟᱜ ᱯᱨᱟᱭᱵᱷᱮᱴᱤ ᱯᱚᱞᱤᱥᱤ</string>
     <string name="privacy_policy_encouragement">ᱱᱤᱣ ᱯᱟᱭᱤᱯ ᱯᱨᱚᱡᱮᱠᱴ ᱟᱢᱟᱜ ᱯᱨᱟᱭᱵᱷᱮᱴ ᱟᱹᱰᱤ ᱥᱚᱨᱮᱥ ᱜᱮᱭᱟ. ᱚᱱᱟᱛᱮ, ᱟᱢᱟᱜ ᱟᱹᱭᱫᱟᱹᱨᱤ ᱵᱟᱹᱱᱩᱜ ᱠᱷᱟᱱ ᱱᱚᱶᱟ ᱮᱯᱞᱤᱠᱮᱥᱚᱱ ᱡᱟᱦᱟᱱ ᱰᱮᱴᱟ ᱵᱟᱭ ᱥᱟᱢᱟᱝᱟ ᱾_x000D_
 \nᱱᱤᱣ ᱯᱟᱭᱤᱯ ᱨᱮᱱᱟᱜ ᱯᱨᱟᱭᱵᱷᱮᱴ ᱯᱚᱞᱤᱥᱤ ᱨᱮ ᱡᱟᱦᱟᱸᱱ ᱰᱮᱴᱟ ᱠᱚ ᱟᱢ ᱠᱨᱮᱥᱚᱨ ᱨᱮᱯᱳᱨᱴ ᱚᱠᱟᱛᱮ ᱟᱢ ᱚᱠᱟ ᱞᱮᱠᱟᱛᱮ ᱟᱢᱟᱜ ᱰᱮᱴᱟ ᱠᱚ ᱵᱚᱫᱚᱞᱟ ᱟᱨ ᱵᱚᱫᱚᱞᱟ ᱚᱱᱟ ᱵᱟᱵᱚᱫ ᱛᱮ ᱡᱚᱛᱚ ᱵᱟᱰᱟᱭ ᱮᱢᱚᱜ ᱟ᱾</string>
-    <string name="read_privacy_policy">ᱯᱨᱟᱭᱵᱷᱮᱴᱤ ᱯᱚᱞᱤᱥ ᱯᱟᱲᱦᱟᱣ ᱢᱮ</string>
-    <string name="read_full_license">ᱞᱟᱭᱥᱮᱱᱥ ᱯᱟᱲᱦᱟᱣ ᱢᱮ</string>
-    <string name="faq_title">ᱟᱥᱚᱠᱟᱭ ᱛᱮ ᱚᱞ ᱟᱠᱟᱱ ᱯᱩᱥᱴᱟ</string>
     <string name="missing_file">ᱯᱷᱤᱞ ᱥᱮᱴᱮᱨ ᱟᱠᱟᱱᱟ ᱟᱨ ᱵᱟᱝ ᱵᱚᱫᱚᱞ ᱟᱠᱟᱱᱟ</string>
     <string name="invalid_directory">ᱱᱚᱝᱠᱟᱱ ᱯᱷᱳᱞᱰᱟᱨ ᱵᱟᱹᱱᱩᱜᱼᱟ</string>
     <string name="invalid_source">ᱱᱚᱝᱠᱟᱱ ᱯᱷᱤᱞ/ᱥᱟᱹᱛ ᱨᱮᱱᱟᱜ ᱜᱟᱞᱢᱟᱨᱟᱣ ᱵᱟᱹᱱᱩᱜᱼᱟ</string>

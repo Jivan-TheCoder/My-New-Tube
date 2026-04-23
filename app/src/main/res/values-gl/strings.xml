@@ -200,27 +200,12 @@
     <string name="settings_file_replacement_character_title">Carácter de substitución</string>
     <string name="charset_letters_and_digits">Letras e díxitos</string>
     <string name="charset_most_special_characters">A maioría dos caracteres especiais</string>
-    <string name="title_activity_about">Sobre o NewPipe</string>
-    <string name="title_licenses">Licenzas de terceiros</string>
     <string name="copyright" formatted="true">© %1$s de %2$s, so %3$s</string>
-    <string name="tab_about">Sobre e preguntas frecuentes</string>
-    <string name="tab_licenses">Licenzas</string>
-    <string name="app_description">Reprodutor lixeiro e libre para Android.</string>
-    <string name="contribution_title">Colaborar</string>
-    <string name="contribution_encouragement">Se ten ideas de tradución, mudanzas ao deseño, limpeza de código ou mudanzas serias deste—a axuda sempre é benvida. Canto máis fixermos, tanto máis vai mellorar!</string>
-    <string name="view_on_github">Ver no GitHub</string>
     <string name="donation_title">Doar</string>
     <string name="donation_encouragement">NewPipe é desenvolvido por voluntarios que pasan o seu tempo libre para brindarte a mellor experiencia de usuario. Regresa aos desenvolvedores para que NewPipe sexa aínda mellor mentres gozan dunha cunca de café.</string>
     <string name="give_back">Retribuír</string>
-    <string name="website_title">Sitio web</string>
-    <string name="website_encouragement">Visite o sitio web do NewPipe para saber máis e ver noticias sobre o proxecto.</string>
-    <string name="privacy_policy_title">Política de privacidade do NewPipe</string>
     <string name="privacy_policy_encouragement">O proxecto NewPipe dá moita importancia á súa privacidade. Por tanto, non recolle ningún dato sen o seu consentimento.
 \nA política de privacidade do NewPipe explica con máis detalle que datos son enviados e gardados cando envía un relatorio de erros.</string>
-    <string name="read_privacy_policy">Ler a política de privacidade</string>
-    <string name="app_license_title">Licenza do NewPipe</string>
-    <string name="app_license">NewPipe é un software libre copyleft: Pode usar, estudar compartillar e melloralo a vontade. En concreto, pode redistribuír e / ou modificala segundo os termos da Licenza Pública Xeral GNU publicada pola Free Software Foundation, xa sexa a versión 3 da licenza, ou (na súa opción) calquera outra versión posterior.</string>
-    <string name="read_full_license">Ler a licenza</string>
     <string name="title_activity_history">Historial</string>
     <string name="action_history">Historial</string>
     <string name="delete_item_search_history">Desexa eliminar este elemento do historial de procura?</string>
@@ -694,9 +679,6 @@
     <string name="selected_stream_external_player_not_supported">As emisións seleccionadas non son soportadas polos reprodutores externos</string>
     <string name="no_video_streams_available_for_external_players">Non hai emisións de vídeo dispoñíbeis para reprodutores externos</string>
     <string name="no_audio_streams_available_for_external_players">Non hai emisións de audio dispoñíbeis para reprodutores externos</string>
-    <string name="faq">Ver na páxina web</string>
-    <string name="faq_title">Preguntas máis frecuentes</string>
-    <string name="faq_description">Se tes problemas para usala aplicación, asegúrate de consultar estas respostas ás preguntas comúns!</string>
     <string name="sort">Ordenar</string>
     <string name="fast_mode">Modo rápido</string>
     <string name="app_update_unavailable_toast">Estás executando a última versión de NewPipe</string>
@@ -788,7 +770,6 @@
     <string name="channel_tab_channels">Canles</string>
     <string name="channel_tab_playlists">Listas de reprodución</string>
     <string name="channel_tab_albums">Álbums</string>
-    <string name="channel_tab_about">Sobre</string>
     <string name="show_channel_tabs">Lapelas da canle</string>
     <string name="play">Reproducir</string>
     <string name="replay">Reproducir de novo</string>

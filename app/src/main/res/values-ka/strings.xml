@@ -292,25 +292,10 @@
     <string name="done">შესრულებულია</string>
     <string name="settings_file_replacement_character_title">შემცვლელი პერსონაჟი</string>
     <string name="charset_letters_and_digits">ასოები და ციფრები</string>
-    <string name="title_activity_about">NewPipe-ის შესახებ</string>
-    <string name="tab_licenses">ლიცენზიები</string>
-    <string name="app_description">უფასო მსუბუქი ნაკადი Android-ზე.</string>
-    <string name="contribution_title">წვლილი შეიტანეთ</string>
-    <string name="contribution_encouragement">გაქვთ თუ არა იდეები; თარგმანი, დიზაინის ცვლილებები, კოდის გაწმენდა ან კოდის რეალური მძიმე ცვლილებები — დახმარება ყოველთვის მისასალმებელია. რაც მეტი კეთდება მით უკეთესი!</string>
-    <string name="view_on_github">ნახვა GitHub-ზე</string>
     <string name="donation_title">შემოწირულობა</string>
     <string name="give_back">დაბრუნება</string>
-    <string name="website_title">საიტი</string>
-    <string name="website_encouragement">ეწვიეთ NewPipe ვებსაიტს დამატებითი ინფორმაციისა და სიახლეებისთვის.</string>
-    <string name="privacy_policy_title">NewPipe-ის კონფიდენციალურობის პოლიტიკა</string>
     <string name="privacy_policy_encouragement">NewPipe პროექტი თქვენს კონფიდენციალურობას ძალიან სერიოზულად ეკიდება. ამიტომ, აპლიკაცია არ აგროვებს მონაცემებს თქვენი თანხმობის გარეშე.
 \nNewPipe-ის კონფიდენციალურობის პოლიტიკა დეტალურად განმარტავს, თუ რა მონაცემები იგზავნება და ინახება ავარიის ანგარიშის გაგზავნისას.</string>
-    <string name="read_privacy_policy">წაიკითხეთ კონფიდენციალურობის პოლიტიკა</string>
-    <string name="app_license_title">NewPipe-ის ლიცენზია</string>
-    <string name="read_full_license">წაიკითხეთ ლიცენზია</string>
-    <string name="faq_title">Ხშირად დასმული შეკითხვები</string>
-    <string name="faq_description">თუ აპლიკაციის გამოყენება გიჭირთ, დარწმუნდით, რომ შეამოწმეთ ეს პასუხები საერთო კითხვებზე!</string>
-    <string name="faq">ნახვა საიტზე</string>
     <string name="title_activity_history">ისტორია</string>
     <string name="action_history">ისტორია</string>
     <string name="delete_item_search_history">გსურთ წაშალოთ ეს ელემენტი ძიების ისტორიიდან\?</string>
@@ -615,9 +600,6 @@
     <string name="charset_most_special_characters">ყველაზე განსაკუთრებული პერსონაჟები</string>
     <string name="settings_file_charset_title">დაშვებული სიმბოლოები ფაილის სახელებში</string>
     <string name="settings_file_replacement_character_summary">არასწორი სიმბოლოები ჩანაცვლებულია ამ მნიშვნელობით</string>
-    <string name="tab_about">შესახებ &amp; ხშირად დასმული კითხვები</string>
-    <string name="title_licenses">მესამე მხარის ლიცენზიები</string>
-    <string name="copyright">© %1$s მიერ %2$s %3$s-ის ქვეშ</string>
     <string name="donation_encouragement">NewPipe შემუშავებულია მოხალისეების მიერ, რომლებიც ატარებენ თავისუფალ დროს და მოგაქვთ საუკეთესო მომხმარებლის გამოცდილება. დაეხმარეთ დეველოპერებს, გააუმჯობესონ NewPipe, სანამ ფინჯანი ყავით ტკბებიან.</string>
     <string name="import_youtube_instructions">YouTube გამოწერების იმპორტი Google takeout-დან:
 \n
@@ -654,7 +636,6 @@
     <string name="downloads_storage_ask_summary">თქვენ მოგეთხოვებათ სად შეინახოთ თითოეული ჩამოტვირთვა.
 \n ჩართეთ სისტემის საქაღალდის ამომრჩევი (SAF), თუ გსურთ ჩამოტვირთოთ გარე SD ბარათზე</string>
     <string name="remove_watched_popup_warning">ვიდეოები, რომლებიც უყურეთ დასაკრავ სიაში დამატებამდე და მის შემდეგ, წაიშლება. \n დარწმუნებული ხართ?</string>
-    <string name="app_license">NewPipe არის copyleft უფასო პროგრამული უზრუნველყოფა: თქვენ შეგიძლიათ გამოიყენოთ, შეისწავლოთ, გააზიაროთ და გააუმჯობესოთ იგი სურვილისამებრ. კონკრეტულად თქვენ შეგიძლიათ გადაანაწილოთ და/ან შეცვალოთ იგი GNU-ს ზოგადი საჯარო ლიცენზიის პირობებით, როგორც ეს გამოქვეყნებულია თავისუფალი პროგრამული უზრუნველყოფის ფონდის მიერ, ლიცენზიის მე-3 ვერსიით, ან (თქვენი სურვილისამებრ) ნებისმიერი შემდგომი ვერსიით.</string>
     <string name="auto">ავტო</string>
     <string name="blank_page_summary">ცარიელი გვერდი</string>
     <string name="select_a_channel">აირჩიეთ არხი</string>
@@ -801,7 +782,6 @@
     <string name="channel_tab_playlists">დასაკრავი სიები</string>
     <string name="channel_tab_albums">ალბომები</string>
     <string name="channel_tab_likes">მოწონებები</string>
-    <string name="channel_tab_about">შესახებ</string>
     <string name="show_channel_tabs">არხის ჩანართები</string>
     <string name="show_channel_tabs_summary">რომელი ჩანართებია ნაჩვენები არხის გვერდებზე</string>
     <string name="open_play_queue">დაკვრის რიგის გახსნა</string>

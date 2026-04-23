@@ -156,22 +156,10 @@
     <string name="settings_file_replacement_character_title">תו חלופי</string>
     <string name="charset_letters_and_digits">אותיות וספרות</string>
     <string name="charset_most_special_characters">רוב התווים המיוחדים</string>
-    <string name="title_activity_about">על אודות NewPipe</string>
-    <string name="title_licenses">רישיונות צד שלישי</string>
     <string name="copyright" formatted="true">© %1$s ע״י %2$s תחת %3$s</string>
-    <string name="tab_about">על אודות ושו״ת</string>
-    <string name="tab_licenses">רישיונות</string>
-    <string name="app_description">נגן קל וחופשי להזרמת מדיה עבור Android.</string>
-    <string name="contribution_title">התנדבות</string>
-    <string name="contribution_encouragement">אם יש לך רעיון כלשהו בנוגע לתרגום, שינויי עיצוב, ניקוי הקוד או שינויים מהותיים בקוד - אנו תמיד שמחים לקבל עזרה. ככל שיותר דברים מתבצעים כך היישומון משתפר!</string>
-    <string name="view_on_github">הצגה ב־GitHub</string>
     <string name="donation_title">תרומה</string>
     <string name="donation_encouragement">הפיתוח של NewPipe נערך ע״י מתנדבים שמשקיעים את זמנם הפנוי כדי להגיש לך את חווית השימוש הטובה ביותר. באפשרותך להעניק בחזרה כדי לסייע למפתחים לשפר את NewPipe בעודם נהנים מכוס קפה.</string>
     <string name="give_back">לתרום בחזרה</string>
-    <string name="website_title">אתר הבית</string>
-    <string name="website_encouragement">מומלץ לבקר באתר של NewPipe לפרטים נוספים ולחדשות.</string>
-    <string name="app_license_title">הרישיון של NewPipe</string>
-    <string name="read_full_license">הצגת הרישיון</string>
     <string name="title_activity_history">היסטוריה</string>
     <string name="action_history">היסטוריה</string>
     <string name="delete_item_search_history">למחוק את הפריט הזה מהיסטוריית החיפושים\?</string>
@@ -283,11 +271,8 @@
     <string name="invalid_source">אין מקור תיקייה/תוכן</string>
     <string name="error_occurred_detail">אירעה שגיאה: %1$s</string>
     <string name="no_streams_available_download">אין תזרימים זמינים להורדה</string>
-    <string name="privacy_policy_title">מדיניות הפרטיות של NewPipe</string>
     <string name="privacy_policy_encouragement">מיזם NewPipe שומר על הפרטיות שלך בצורה מאוד קפדנית. לפיכך, היישומון אינו אוסף נתונים ללא הסכמתך.
 \nמדיניות הפרטיות של NewPipe מסבירה בפרטי פרטים אילו נתונים נשלחים ומאוחסנים בעת שליחת דיווח על תקלה.</string>
-    <string name="read_privacy_policy">הצגת מדיניות הפרטיות</string>
-    <string name="app_license">NewPipe הוא יישומון חופשי בהתאם לרישיון קופילפט: מותר לך להשתמש, לחקור, לשתף ולשפר בכל דרך שנראית לך. במיוחד מותר לך להפיץ מחדש ו/או לשנות תחת תנאי הרישיון הציבורי הכללי של GNU כפי שמופץ על ידי קרן התכנה החופשית, בין אם גרסה 3 של הרישיון או (לשיקולך) כל גרסה עדכנית יותר שלו.</string>
     <string name="title_last_played">התנגנו אחרונים</string>
     <string name="title_most_played">הכי נצפים</string>
     <string name="could_not_import_all_files">אזהרה: ייבוא חלק מהקבצים נכשל.</string>
@@ -720,9 +705,6 @@
     <string name="unknown_format">תצורה לא מוכרת</string>
     <string name="progressive_load_interval_title">גודל משך טעינת נגינה</string>
     <string name="sort">מיון</string>
-    <string name="faq">הצגה באתר</string>
-    <string name="faq_title">תשובות לשאלות נפוצות</string>
-    <string name="faq_description">אם נתקלת בתקלות כשניסית להשתמש ביישומון, כדאי לעיין בתשובות לשאלות הנפוצות!</string>
     <string name="import_subscriptions_hint">ניתן לייבא או לייצא מינויים מתפריט 3 הנקודות</string>
     <string name="app_update_available_notification_text">נגיעה כאן תוריד את %s</string>
     <string name="fast_mode">מצב מהיר</string>
@@ -784,7 +766,6 @@
     <string name="channel_tab_shorts">Shorts‎</string>
     <string name="loading_metadata_title">נתוני העל נטענים…</string>
     <string name="feed_fetch_channel_tabs">משיכת לשוניות הערוץ</string>
-    <string name="channel_tab_about">על אודות</string>
     <string name="channel_tab_albums">אלבומים</string>
     <string name="feed_fetch_channel_tabs_summary">לשוניות למשיכה בעת עדכון ערוץ העדכונים. לאפשרות זו אין השפעה אם הערוץ מתעדכן במצב מהיר.</string>
     <string name="channel_tab_playlists">רשימות נגינה</string>

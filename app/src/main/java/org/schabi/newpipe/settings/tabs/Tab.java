@@ -23,6 +23,7 @@ import org.schabi.newpipe.fragments.BlankFragment;
 import org.schabi.newpipe.fragments.list.channel.ChannelFragment;
 import org.schabi.newpipe.fragments.list.kiosk.DefaultKioskFragment;
 import org.schabi.newpipe.fragments.list.kiosk.KioskFragment;
+import org.schabi.newpipe.fragments.list.kiosk.RemoteKioskFragment;
 import org.schabi.newpipe.fragments.list.playlist.PlaylistFragment;
 import org.schabi.newpipe.local.bookmark.BookmarkFragment;
 import org.schabi.newpipe.local.feed.FeedFragment;
@@ -354,13 +355,11 @@ public abstract class Tab {
         }
 
         @Override
-        public KioskFragment getFragment(final Context context) throws ExtractionException {
-//            return KioskFragment.getInstance(kioskServiceId, kioskId);
-
+        public Fragment getFragment(final Context context) throws ExtractionException {
             if (AppMode.USE_EXTRACTOR) {
                 return KioskFragment.getInstance(kioskServiceId, kioskId);
             } else {
-                return RemoteKioskFragment.getInstance(kioskId); // JSON + Room based
+                return RemoteKioskFragment.getInstance(kioskId);
             }
         }
 

@@ -6,8 +6,11 @@ import android.widget.Toast;
 
 import androidx.preference.PreferenceManager;
 
+import org.schabi.newpipe.AppMode;
 import org.schabi.newpipe.R;
+import org.schabi.newpipe.extractor.ServiceList;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public final class TabsManager {
@@ -28,6 +31,9 @@ public final class TabsManager {
     }
 
     public List<Tab> getTabs() {
+        if (!AppMode.USE_EXTRACTOR) {
+            return getRemoteModeTabs();
+        }
         final String savedJson = sharedPreferences.getString(savedTabsKey, null);
         try {
             return TabsJsonHelper.getTabsFromJson(savedJson);
@@ -47,7 +53,18 @@ public final class TabsManager {
     }
 
     public List<Tab> getDefaultTabs() {
+        if (!AppMode.USE_EXTRACTOR) {
+            return getRemoteModeTabs();
+        }
         return TabsJsonHelper.getDefaultTabs();
+    }
+
+    private List<Tab> getRemoteModeTabs() {
+        final List<Tab> tabs = new ArrayList<>();
+        final int youtubeServiceId = ServiceList.YouTube.getServiceId();
+        tabs.add(new Tab.KioskTab(youtubeServiceId, "trending_gaming"));
+        tabs.add(new Tab.KioskTab(youtubeServiceId, "trending_music"));
+        return tabs;
     }
 
     /*//////////////////////////////////////////////////////////////////////////

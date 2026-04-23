@@ -171,18 +171,7 @@
     <string name="settings_file_replacement_character_title">نویسه جایگزین</string>
     <string name="charset_letters_and_digits">حروف و اعداد</string>
     <string name="charset_most_special_characters">مهم‌ترین نویسه‌های خاص</string>
-    <string name="title_activity_about">درباره نیوپایپ</string>
-    <string name="tab_about">درباره و سوالات‌متداول</string>
-    <string name="tab_licenses">پروانه‌ها</string>
-    <string name="app_description">پخش‌کننده آزاد سبُک برای اندروید.</string>
-    <string name="contribution_title">مشارکت</string>
-    <string name="view_on_github">دیدن روی گیت‌هاب</string>
     <string name="donation_title">اعانه</string>
-    <string name="website_title">وب‌سایت</string>
-    <string name="privacy_policy_title">سیاست حریم خصوصی نیوپایپ</string>
-    <string name="read_privacy_policy">خواندن سیاست حریم خصوصی</string>
-    <string name="app_license_title">پروانه نیوپایپ</string>
-    <string name="read_full_license">خواندن پروانه</string>
     <string name="title_activity_history">تاریخچه</string>
     <string name="action_history">تاریخچه</string>
     <string name="delete_item_search_history">می‌خواهید این مورد را از تاریخچه جستجو پاک کنید؟</string>
@@ -280,9 +269,7 @@
     <string name="msg_popup_permission">این اجازه برای گشودن در حالت
 \nتصویر در تصویر لازم است</string>
     <string name="popup_playing_toast">نمایش در حالت تصویر در تصویر</string>
-    <string name="title_licenses">پروانه‌های شخص سوم</string>
     <string name="copyright" formatted="true">© %1$s توسط %2$s تحت %3$s</string>
-    <string name="contribution_encouragement">اگر ایده‌ای برای ترجمه، تغییر طراحی، پاک‌سازی کد و یا تغییرات واقعا سنگین کدنویسی دارید، از کمک‌تان همواره استقبال می‌کنیم. هر چه بیشتر کار کنیم، نتایج بهتری می‌گیریم!</string>
     <string name="notification_channel_description">آگاهی‌ها برای پخش‌کنندهٔ نیوپایپ</string>
     <string name="empty_list_subtitle">چیزی جز کریکت اینجا نیست</string>
     <string name="no_subscribers">فاقد مشترک</string>
@@ -292,7 +279,6 @@
     <string name="start_here_on_popup">شروع پخش در تصویر در تصویر</string>
     <string name="donation_encouragement">نیوپایپ توسط داوطلبانی توسعه داده می‌شود که با صرف زمان آزاد‌شان، بهترین تجربه کاربری را برای شما به ارمغان می‌آورند. حمایت از توسعه‌دهندگان، به آنها کمک می‌کند تا حین لذت بردن از نوشیدن یک فنجان قهوه، نیوپایپ را به مراتب بهتر کنند.</string>
     <string name="give_back">حمایت</string>
-    <string name="website_encouragement">برای اطلاعات و اخبار بیشتر، به وب‌سایت نیوپایپ سر بزنید.</string>
     <string name="switch_to_popup">تغییر وضعیت به تصویر در تصویر</string>
     <string name="drawer_open">باز کردن کشو</string>
     <string name="drawer_close">بستن کشو</string>
@@ -339,7 +325,6 @@
     <string name="preferred_open_action_settings_summary">کنش پیش‌فرض در زمان باز کردن محتوا — %s</string>
     <string name="caption_setting_description">تغییر سبک پس‌زمینه و اندازه متن توضیحات پخش‌کننده. برای تأثیر، نیازمند آغاز دوبارهٔ کاره است</string>
     <string name="clear_views_history_summary">پاک کردن تاریخچه جریان‌های پخش شه و موقعیت‌های پخش</string>
-    <string name="app_license">نیوپایپ یک نرم‌افزار آزاد کپی‌لفتی است: می‌توانید به دلخواه خود استفاده، بررسی، هم‌رسانی و بهترش کنید. به طور خاص می‌توانید ذیل نگارش ۳ یا هر نگارش بالاتری از پروانهٔ جامع همگانی گنو که به دست بنیاد نرم‌افزار آزاد منتشر شده، تغییر و بازنشرش دهید.</string>
     <string name="privacy_policy_encouragement">حریم شخصی شما برای پروژه نیویایپ بسیاری جدی است. در نتیجه، این برنامه هیچ اطلاعاتی را بدون رضایت شما گردآوری نمی‌کند.
 \nسیاست‌های حریم شخصی نیوپایپ با جزئیات توضیح می‌دهد که وقتی گزارش یک خطا را می‌فرستید، چه داده‌هایی ذخیره و فرستاده می‌شود.</string>
     <string name="start_accept_privacy_policy">به منظور هماهنگی با مقرّرات حفاظت دادهٔ عمومی اروپا (GDPR) توجهتان را به سیاست محرمانگی نیوپایپ جلب می‌کنیم. لطفاً به دقّت مطالعه‌اش کنید.
@@ -693,9 +678,6 @@
     <string name="unknown_format">قالب ناشناخته</string>
     <string name="unknown_quality">کیفیت ناشناخته</string>
     <string name="progressive_load_interval_title">اندازهٔ دورهٔ بار کردن پخش</string>
-    <string name="faq_title">سوالات متداول</string>
-    <string name="faq_description">اگر حین استفاده از اپ مشکلی دارید، حتما پاسخ‌ها به سوالات متداول را بررسی کنید!</string>
-    <string name="faq">نمایش در وبسایت</string>
     <string name="sort">ترتیب</string>
     <string name="import_subscriptions_hint">درون یا برون ریزی اشتراک‌ها از فهرست سه‌نقطه‌ای</string>
     <string name="fast_mode">حالت سریع</string>
@@ -742,7 +724,6 @@
     <string name="channel_tab_channels">کانال‌ها</string>
     <string name="channel_tab_playlists">سیاهه‌های پخش</string>
     <string name="channel_tab_albums">آلبوم‌ها</string>
-    <string name="channel_tab_about">درباره</string>
     <string name="play">پخش</string>
     <string name="replay">بازپخش</string>
     <string name="audio_track_name">%1$s%2$s</string>

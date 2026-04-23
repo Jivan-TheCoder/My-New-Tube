@@ -121,7 +121,6 @@
     <string name="msg_running">Nagda-dawnload ang NewPipe</string>
     <string name="on">Naka-bukas</string>
     <string name="app_language_title">Wika ng App</string>
-    <string name="tab_about">Tungkol dito</string>
     <string name="restricted_video_no_stream">Ang video na ito ay may paghihigpit sa edad.
 \nDahil sa mga bagong polisiya ng Youtube, hindi maaring ma-access ng NewPipe ang mga video streams nito, kaya hindi ito maipapalabas.</string>
     <string name="notification_channel_name">Notipikasyon sa NewPipe</string>
@@ -136,7 +135,6 @@
     <string name="notifications">Mga Notipikasyon</string>
     <string name="comments_are_disabled">Pinagbabawal ang pagkomento</string>
     <string name="settings_file_charset_title">Mga pinahihintulutang karakter sa pangalan ng file</string>
-    <string name="tab_licenses">Mga Lisensya</string>
     <string name="title_activity_history">Kasaysayan</string>
     <string name="main_page_content">Laman ng pangunahing pahina</string>
     <string name="duration_live">Live</string>

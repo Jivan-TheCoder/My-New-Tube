@@ -101,17 +101,7 @@
     <string name="title_activity_recaptcha">Запрос reCAPTCHA</string>
     <string name="recaptcha_request_toast">Запрошен ввод reCAPTCHA</string>
     <string name="show_higher_resolutions_title">Высокие разрешения</string>
-    <string name="title_activity_about">О NewPipe</string>
-    <string name="app_license_title">Лицензия NewPipe</string>
-    <string name="tab_licenses">Лицензии</string>
-    <string name="title_licenses">Сторонние лицензии</string>
-    <string name="tab_about">О приложении</string>
-    <string name="read_full_license">Прочитать лицензию</string>
-    <string name="app_description">Свободный и легковесный потоковый плеер для Android.</string>
-    <string name="view_on_github">Открыть на GitHub</string>
-    <string name="contribution_encouragement">Приветствуется всё — идеи, перевод, редизайн, чистка кода или огромные изменения в коде. Чем больше сделано, тем лучше!</string>
     <string name="copyright" formatted="true">© %1$s • %2$s • %3$s</string>
-    <string name="contribution_title">Помощь проекту</string>
     <string name="subscribe_button_title">Подписаться</string>
     <string name="subscription_change_failed">Не удалось изменить подписку</string>
     <string name="subscription_update_failed">Не удалось обновить подписку</string>
@@ -207,8 +197,6 @@
     <string name="donation_title">Пожертвование</string>
     <string name="donation_encouragement">Разработчики NewPipe ценой своего свободного времени делают вашу жизнь чуть удобнее. Отплатите им тем же — наслаждаясь чашечкой кофе, они смогут сделать NewPipe ещё круче.</string>
     <string name="give_back">Воздать должное</string>
-    <string name="website_title">Веб-сайт</string>
-    <string name="website_encouragement">Для получения более подробной информации и последних новостей о NewPipe посетите наш веб-сайт.</string>
     <string name="drawer_open">Открыть боковую панель</string>
     <string name="drawer_close">Закрыть боковую панель</string>
     <string name="video_player">Видеоплеер</string>
@@ -315,13 +303,10 @@
     <string name="delete_search_history_alert">Удалить всю историю поиска\?</string>
     <string name="search_history_deleted">История поиска удалена</string>
     <string name="one_item_deleted">1 элемент удалён.</string>
-    <string name="app_license">NewPipe — свободное программное обеспечение: вы можете использовать, изучать и улучшать его по своему усмотрению. В частности, вы можете распространять и/или изменять его в соответствии с условиями GNU General Public License, опубликованной Free Software Foundation, либо версии 3, либо (по вашему выбору) любой более поздней версии.</string>
     <string name="preferred_open_action_settings_title">При открытии ссылки</string>
     <string name="import_settings">Хотите импортировать настройки?</string>
-    <string name="privacy_policy_title">Конфиденциальность</string>
     <string name="privacy_policy_encouragement">Проект NewPipe очень серьёзно относится к вашей конфиденциальности. Приложение не собирает никакие данные без вашего согласия.
 \nПолитика конфиденциальности подробно объясняет, какие данные обрабатываются и хранятся при отправке отчёта о сбоях.</string>
-    <string name="read_privacy_policy">Прочитать политику</string>
     <string name="start_accept_privacy_policy">В соответствии с Общим регламентом по защите данных ЕС (GDPR), обращаем ваше внимание на политику конфиденциальности NewPipe. Пожалуйста, внимательно ознакомьтесь с ней.
 \nВам необходимо принять её условия, чтобы отправить нам отчёт об ошибке.</string>
     <string name="accept">Принять</string>
@@ -711,9 +696,6 @@
     <string name="select_quality_external_players">Выберите качество для внешних плееров</string>
     <string name="unknown_quality">Неизвестное качество</string>
     <string name="progressive_load_interval_title">Размер интервала загрузки при воспроизведении</string>
-    <string name="faq_title">Ответы на частые вопросы</string>
-    <string name="faq_description">Если у вас возникли проблемы с использованием приложения, обязательно ознакомьтесь с ответами на распространённые вопросы!</string>
-    <string name="faq">Посмотреть на веб-сайте</string>
     <string name="sort">Сортировка</string>
     <string name="app_update_unavailable_toast">У вас последняя версия</string>
     <string name="fast_mode">Быстрый режим</string>
@@ -791,7 +773,6 @@
     <string name="open_play_queue">Открыть очередь воспроизведения</string>
     <string name="image_quality_none">Не загружать изображения</string>
     <string name="image_quality_high">Высокое качество</string>
-    <string name="channel_tab_about">О канале</string>
     <string name="share_playlist">Поделиться подборкой</string>
     <string name="forward">Перемотать вперёд</string>
     <string name="channel_tab_albums">Альбомы</string>

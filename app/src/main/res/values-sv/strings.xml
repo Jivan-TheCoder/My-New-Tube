@@ -150,17 +150,7 @@
     <string name="settings_file_replacement_character_title">Ersättningstecken</string>
     <string name="charset_letters_and_digits">Bokstäver och siffror</string>
     <string name="charset_most_special_characters">De flesta specialtecken</string>
-    <string name="title_activity_about">Om NewPipe</string>
-    <string name="title_licenses">Tredjepartslicenser</string>
     <string name="copyright" formatted="true">© %1$s av %2$s under %3$s</string>
-    <string name="tab_about">Om &amp; FAQ</string>
-    <string name="tab_licenses">Licenser</string>
-    <string name="app_description">Öppen och enkel Android-app för mediastreaming.</string>
-    <string name="view_on_github">Visa på GitHub</string>
-    <string name="app_license_title">NewPipes licens</string>
-    <string name="contribution_encouragement">Vad du än har för idéer; översättningar, designändringar, kodstädning eller riktiga stora kodändringar—hjälp är alltid välkommen. Ju mer som görs desto bättre blir det!</string>
-    <string name="read_full_license">Läs hela licensen</string>
-    <string name="contribution_title">Bidra</string>
     <string name="title_activity_history">Historik</string>
     <string name="action_history">Historik</string>
     <string name="delete_item_search_history">Vill du ta bort det här objektet från sökhistoriken?</string>
@@ -183,8 +173,6 @@
     <string name="donation_title">Donera</string>
     <string name="donation_encouragement">NewPipe utvecklas av frivilliga som spenderar sin fritid på att ge dig den bästa användarupplevelsen. Nu är det tid att ge tillbaka för att säkerställa att utvecklarna kan göra NewPipe ännu bättre medan de njuter av en kopp kaffe.</string>
     <string name="give_back">Ge tillbaka</string>
-    <string name="website_title">Webbplats</string>
-    <string name="website_encouragement">För att få mer information och de senaste nyheterna om NewPipe, besök vår webbplats.</string>
     <string name="show_info">Visa info</string>
     <string name="tab_bookmarks">Bokmärkta Spellistor</string>
     <string name="controls_add_to_playlist_title">Lägg till i</string>
@@ -236,11 +224,8 @@
     <string name="dismiss">Avfärda</string>
     <string name="rename">Byt namn</string>
     <string name="one_item_deleted">1 objekt borttaget.</string>
-    <string name="privacy_policy_title">NewPipes sekretesspolicy</string>
     <string name="privacy_policy_encouragement">NewPipe-projektet tar din integritet på största allvar. Appen samlar därför inte in några uppgifter utan ditt medgivande.
 \nNewPipes sekretesspolicy förklarar i detalj vad för data som skickas och lagras när du skickar en kraschrapport.</string>
-    <string name="read_privacy_policy">Läs sekretesspolicy</string>
-    <string name="app_license">NewPipe är copyleft fri programvara: Du kan använda, studera, dela och förbättra den som du vill. Specifikt kan du distribuera och/eller modifiera det under villkoren för GNU General Public License som publicerats av Free Software Foundation, antingen version 3 av licensen, eller (om du så önskar) en senare version.</string>
     <string name="title_last_played">Senast spelade</string>
     <string name="title_most_played">Mest spelade</string>
     <string name="export_complete_toast">Exporterad</string>
@@ -695,9 +680,6 @@
     <string name="progressive_load_interval_title">Inläsningsintervallsstorlek</string>
     <string name="select_quality_external_players">Välj kvalitet för externa spelare</string>
     <string name="selected_stream_external_player_not_supported">Den valda videoströmmen stöds inte av externa spelare</string>
-    <string name="faq_description">Om du har problem med att använda appen, kolla in dessa svar på vanligt ställda frågor!</string>
-    <string name="faq_title">Vanligt ställda frågor</string>
-    <string name="faq">Visa på webbplats</string>
     <string name="sort">Sortera</string>
     <string name="import_subscriptions_hint">Importera eller exportera prenumerationer från 3-punktsmenyn</string>
     <string name="fast_mode">Snabbt läge</string>
@@ -768,7 +750,6 @@
     <string name="open_play_queue">Öppna spelkö</string>
     <string name="image_quality_none">Ladda inte bilder</string>
     <string name="image_quality_high">Hög kvalité</string>
-    <string name="channel_tab_about">Om</string>
     <string name="share_playlist">Dela spellista</string>
     <string name="forward">Spola frammåt</string>
     <string name="channel_tab_albums">Album</string>
@@ -841,7 +822,7 @@
     <string name="player_http_403">HTTP-fel 403 mottogs från servern under uppspelning, troligen orsakat av att streaming-URL:en har löpt ut eller att en IP-adress har blockerats</string>
     <string name="player_http_invalid_status">HTTP-fel %1$s mottogs från servern under spelning</string>
     <string name="youtube_player_http_403">HTTP-fel 403 mottogs från servern under spelning, troligen orsakat av en IP-avstängning eller problem med deobfuskering av streaming-URL:er</string>
-    <string name="sign_in_confirm_not_bot_error">%1$s vägrade att lämna ut data och bad om en inloggning för att bekräfta att den som begärde detta inte är en bot.\n\nDin IP-adress kan ha blivit tillfälligt avstängd av %1$s. Du kan vänta en stund eller byta till en annan IP-adress (till exempel genom att slå på/av ett VPN eller genom att byta från Wi-Fi till mobildata).\n\nSe <a href="%2$s">denna FAQ-post</a> för mer information.</string>
+    <string name="sign_in_confirm_not_bot_error">%1$s vägrade att lämna ut data och bad om en inloggning för att bekräfta att den som begärde detta inte är en bot.\n\nDin IP-adress kan ha blivit tillfälligt avstängd av %1$s. Du kan vänta en stund eller byta till en annan IP-adress (till exempel genom att slå på/av ett VPN eller genom att byta från Wi-Fi till mobildata).\n\nSe <a href="%2$s">denna help-post</a> för mer information.</string>
     <string name="unsupported_content_in_country">Detta innehåll är inte tillgängligt för det valda innehållslandet.\n\nÄndra ditt val från \"Inställningar &gt; Innehåll &gt; Standardinnehållsland\".</string>
 
 

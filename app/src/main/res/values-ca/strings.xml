@@ -61,13 +61,6 @@
     <string name="msg_name">Nom de fitxer</string>
     <string name="msg_error">Error</string>
     <string name="settings_category_downloads_title">Baixades</string>
-    <string name="title_licenses">Llicències de tercers</string>
-    <string name="tab_about">Quant a i PMF</string>
-    <string name="tab_licenses">Llicències</string>
-    <string name="contribution_title">Col·labora-hi</string>
-    <string name="website_title">Lloc web</string>
-    <string name="app_license_title">Llicència del NewPipe</string>
-    <string name="read_full_license">Llegiu la llicència</string>
     <string name="title_activity_history">Historial</string>
     <string name="action_history">Historial</string>
     <string name="delete_item_search_history">Voleu eliminar aquest element de l\'historial de cerca\?</string>
@@ -191,12 +184,8 @@
     <string name="msg_copied">S\'ha copiat al porta-retalls</string>
     <string name="settings_file_charset_title">Caràcters permesos als noms de fitxer</string>
     <string name="charset_letters_and_digits">Lletres i dígits</string>
-    <string name="title_activity_about">Quant al NewPipe</string>
     <string name="copyright" formatted="true">© %1$s per %2$s sota %3$s</string>
-    <string name="app_description">Reprodueix transmissions de manera lliure i lleugera a l\'Android.</string>
-    <string name="view_on_github">Visualitza a GitHub</string>
     <string name="donation_title">Feu una donació</string>
-    <string name="website_encouragement">Per a més informació i notícies, visiteu el nostre web.</string>
     <string name="title_last_played">Últimes reproduccions</string>
     <string name="title_most_played">Més reproduïts</string>
     <string name="kiosk_page_summary">Tendències</string>
@@ -241,7 +230,6 @@
     <string name="settings_file_replacement_character_summary">Se substituiran els caràcters no vàlids amb aquest valor</string>
     <string name="settings_file_replacement_character_title">Caràcter de substitució</string>
     <string name="charset_most_special_characters">Principals caràcters especials</string>
-    <string name="contribution_encouragement">Idees, traduccions, canvis en el disseny, neteja del codi, canvis importants de programació… La vostra ajuda sempre és benvinguda. Com més feina feta hi hagi, millor!</string>
     <string name="donation_encouragement">El NewPipe està desenvolupat per voluntaris que fan servir el seu temps lliure per oferir-vos la millor experiència possible. Feu una aportació per assegurar que els nostres desenvolupadors puguin millorar encara més el NewPipe mentre fan un cafè.</string>
     <string name="give_back">Feu la vostra aportació</string>
     <string name="no_channel_subscribed_yet">Encara no us heu subscrit a cap canal</string>
@@ -297,12 +285,9 @@
     <string name="delete_search_history_alert">Voleu suprimir tot l\'historial de cerca\?</string>
     <string name="search_history_deleted">S\'ha esborrat l\'historial de cerca</string>
     <string name="one_item_deleted">S\'ha esborrat 1 element.</string>
-    <string name="app_license">El NewPipe és programari lliure sota llicència copyleft: el podeu fer servir, estudiar, compartir i millorar com vulgueu. Concretament, el podeu redistribuir i/o modificar d\'acord amb els termes de la llicència GNU GPL publicada per la Free Software Foundation, versió 3 o qualsevol altra versió posterior.</string>
     <string name="import_settings">Voleu importar també els paràmetres\?</string>
-    <string name="privacy_policy_title">Política de privadesa del NewPipe</string>
     <string name="privacy_policy_encouragement">El projecte NewPipe es pren molt seriosament la vostra privadesa. Per aquesta raó, l\'aplicació no emmagatzema cap dada sense el vostre consentiment. 
 \nLa política de privadesa del NewPipe descriu detalladament quines dades s\'envien i s\'emmagatzemen quan envieu un informe d\'error.</string>
-    <string name="read_privacy_policy">Llegiu la política de privadesa</string>
     <string name="start_accept_privacy_policy">Per complir amb el Reglament General de Protecció de Dades Europeu (GDPR), us demanem que pareu atenció a la política de privadesa del NewPipe. Llegiu-la detingudament.
 \nSi voleu informar d\'un error, l\'haureu d\'acceptar.</string>
     <string name="accept">Accepta</string>
@@ -668,13 +653,10 @@
     <string name="enumeration_comma">,</string>
     <string name="settings_category_player_notification_title">Notificació del reproductor</string>
     <string name="notifications">Notificacions</string>
-    <string name="faq_description">Si tens problemes utilitzant la aplicació, comprova las preguntes freqüents!</string>
     <string name="check_new_streams">Ejecutar comprovació per nous streams</string>
     <string name="loading_stream_details">Cargant detalls del stream…</string>
     <string name="notifications_disabled">Notificacions estan desactivades</string>
     <string name="percent">Percent</string>
-    <string name="faq_title">Preguntes freqüents</string>
-    <string name="faq">Veure a la pàgina web</string>
     <string name="delete_downloaded_files_confirm">Borrar tots el fitxers descargats al disc\?</string>
     <string name="get_notified">Ser notificat</string>
     <string name="you_successfully_subscribed">Ara estás subscrit a aquest canal</string>
@@ -790,7 +772,6 @@
     <string name="feed_fetch_channel_tabs">Recupera les pestanyes del canal</string>
     <string name="progressive_load_interval_exoplayer_default">Valor per defecte d\'ExoPlayer</string>
     <string name="metadata_thumbnails">Miniatures</string>
-    <string name="channel_tab_about">Quant a</string>
     <string name="always_use_exoplayer_set_output_surface_workaround_title">Usa sempre la sortida de vídeo d\'ExoPlayer com a solució de contingència</string>
     <string name="import_settings_vulnerable_format">La configuració exportada que vols importar té un format vulnerable que és obsolet des de NewPipe 0.27.0. Assegura\'t que l\'exportació que vols importar prové d\'una font de confiança i prefereix només les exportacions fetes amb NewPipe 0.27.0 o posterior d\'ara endavant. El suport a la importació de configuracions en aquest format vulnerable aviat serà suprimit completament i aleshores les antigues versions de NewPipe ja no podran importar les exportacions de les configuracions des de les noves versions.</string>
     <string name="channel_tab_albums">Àlbums</string>

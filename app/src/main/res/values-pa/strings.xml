@@ -194,23 +194,10 @@
     <string name="settings_file_replacement_character_title">ਵਟਾਂਦਰਾ ਚਿੰਨ</string>
     <string name="charset_letters_and_digits">ਅੱਖਰ ਅਤੇ ਅੰਕ</string>
     <string name="charset_most_special_characters">ਬਹੁਤੇ ਖ਼ਾਸ ਅੱਖਰ</string>
-    <string name="title_activity_about">ਨਿਊਪਾਈਪ ਬਾਰੇ ਵਿੱਚ ਜਾਣੋ</string>
-    <string name="title_licenses">ਤੀਜੀ ਧਿਰ ਦੇ ਲਾਈਸੈਂਸ</string>
     <string name="copyright" formatted="true">%2$s ਵੱਲੋਂ © %1$s , %3$s ਅਧੀਨ</string>
-    <string name="tab_about">ਐਪ ਬਾਰੇ ਤੇ ਆਮ ਸਵਾਲ</string>
-    <string name="tab_licenses">ਲਾਈਸੈਂਸ</string>
-    <string name="app_description">ਐਂਡਰਾਇਡ ਦੇ ਲਈ ਹਲਕੀ ਅਤੇ ਮੁਫ਼ਤ ਸਟ੍ਰੀਮਿੰਗ ਐਪਲੀਕੇਸ਼ਨ।</string>
-    <string name="contribution_title">ਯੋਗਦਾਨ ਪਾਓ</string>
-    <string name="contribution_encouragement">ਭਾਵੇਂ ਤੁਹਾਡੇ ਕੋਲ ਵਿਚਾਰ ਹਨ; ਅਨੁਵਾਦ, ਡਿਜ਼ਾਈਨ ਬਦਲਾਵ, ਕੋਡ ਦੀ ਸਫਾਈ, ਜਾਂ ਅਸਲ ਭਾਰੀ ਕੋਡ ਬਦਲਾਵ — ਹਰ ਮਦਦ ਦਾ ਸਦਾ ਸਵਾਗਤ ਹੈ। ਜਿੰਨਾ ਇਸ ਨੂੰ ਜ਼ਿਆਦਾ ਕੀਤਾ ਜਾਂਦਾ ਹੈ ਉੱਨਾ ਹੀ ਇਹ ਬਿਹਤਰ ਹੁੰਦਾ ਹੈ!</string>
-    <string name="view_on_github">ਗਿਟਹੱਬ ਤੇ ਵੇਖੋ</string>
     <string name="donation_title">ਦਾਨ ਕਰੋ</string>
     <string name="donation_encouragement">ਨਿਊਪਾਈਪ ਵਲੰਟੀਅਰਾਂ ਦੁਆਰਾ ਵਿਕਸਤ ਕੀਤੀ ਗਈ ਹੈ ਜੋ ਤੁਹਾਡੇ ਲਈ ਬਿਹਤਰ ਵਰਤੋਂਕਾਰ ਤਜ਼ਰਬਾ ਲਿਆਉਣ ਲਈ ਸਮਾਂ ਬਿਤਾਉਂਦੇ ਹਨ। ਡਿਵੈਲਪਰਾਂ ਵਾਸਤੇ ਇੱਕ ਕੱਪ ਕਾਫ਼ੀ ਖ਼ਰੀਦ ਦਿਓ ਤਾਂ ਕਿ ਇਸਦਾ ਆਨੰਦ ਲੈਂਦੇ ਹੋਏ ਉਹ ਨਿਊਪਾਈਪ ਨੂੰ ਹੋਰ ਵਧੀਆ ਬਣਾ ਸਕਣ।</string>
     <string name="give_back">ਵਾਪਸ ਦਿਓ</string>
-    <string name="website_title">ਵੈੱਬਸਾਈਟ</string>
-    <string name="website_encouragement">ਵਧੇਰੇ ਜਾਣਕਾਰੀ ਅਤੇ ਖ਼ਬਰਾਂ ਲਈ ਨਿਊਪਾਈਪ ਵੈੱਬਸਾਈਟ ਵੇਖੋ।</string>
-    <string name="app_license_title">ਨਿਊਪਾਈਪ ਲਾਈਸੈਂਸ</string>
-    <string name="app_license">ਨਿਊਪਾਈਪ ਇੱਕ ਕਾਪੀਲਿਫਟ ਮੁਫ਼ਤ ਸਾਫਟਵੇਅਰ ਹੈ। ਤੁਸੀਂ ਇਸ ਦੀ ਵਰਤੋਂ, ਇਸ ਦਾ ਅਧਿਐਨ ਅਤੇ ਇਸ ਨੂੰ ਸਾਂਝਾ ਕਰ ਸਕਦੇ ਹੋ ਅਤੇ ਇਸ ਵਿੱਚ ਆਪਣੀ ਮਰਜ਼ੀ ਅਨੁਸਾਰ ਸੁਧਾਰ ਸਕਦੇ ਹੋ। ਖਾਸ ਤੌਰ \'ਤੇ ਤੁਸੀਂ ਇਸ ਨੂੰ GNU ਜਨਰਲ ਪਬਲਿਕ ਲਾਈਸੈਂਸ ਦੀਆਂ ਸ਼ਰਤਾਂ ਦੇ ਅਧੀਨ ਵੰਡ ਸਕਦੇ ਹੋ / ਜਾਂ ਸੰਸ਼ੋਧਿਤ ਕਰ ਸਕਦੇ ਹੋ ਜਿਵੇਂ ਕਿ ਮੁਫਤ ਸਾਫਟਵੇਅਰ ਫਾਊਂਡੇਸ਼ਨ ਦੁਆਰਾ ਪ੍ਰਕਾਸ਼ਤ ਕੀਤਾ ਗਿਆ ਹੈ, ਜਾਂ ਤਾਂ ਲਾਈਸੈਂਸ ਦਾ ਵਰਜ਼ਨ 3, ਜਾਂ (ਤੁਹਾਡੇ ਵਿਕਲਪ \'ਤੇ) ਬਾਅਦ ਦਾ ਕੋਈ ਸੰਸਕਰਣ।</string>
-    <string name="read_full_license">ਲਾਈਸੈਂਸ ਪੜ੍ਹੋ</string>
     <string name="title_activity_history">ਇਤਿਹਾਸ</string>
     <string name="action_history">ਇਤਿਹਾਸ</string>
     <string name="delete_item_search_history">ਕੀ ਤੁਸੀਂ ਇਸਨੂੰ ਖੋਜ ਇਤਿਹਾਸ ਵਿੱਚੋਂ ਮਿਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ\?</string>
@@ -286,9 +273,6 @@
     <string name="playback_pitch">ਪਿੱਚ</string>
     <string name="unhook_checkbox">ਅਲਹਿਦਾ ਕਰੋ (ਵਿਗਾੜ ਪੈ ਸਕਦਾ ਹੈ)</string>
     <string name="import_settings">ਕੀ ਤੁਸੀਂ ਸੈਟਿੰਗਾਂ ਨੂੰ ਵੀ ਇੰਪੋਰਟ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ\?</string>
-    <string name="privacy_policy_title">ਨਿਊਪਾਈਪ ਦੀ ਗੋਪਨੀਯਤਾ ਨੀਤੀ</string>
-    <string name="privacy_policy_encouragement">ਨਿਊਪਾਈਪ ਪ੍ਰੋਜੈਕਟ ਤੁਹਾਡੀ ਗੋਪਨੀਯਤਾ ਨੂੰ ਬਹੁਤ ਗੰਭੀਰਤਾ ਨਾਲ ਲੈਂਦਾ ਹੈ। ਇਸ ਲਈ ਐਪ ਤੁਹਾਡੀ ਸਹਿਮਤੀ ਤੋਂ ਬਿਨਾਂ ਕੋਈ ਵੀ ਡਾਟਾ ਇੱਕਠਾ ਨਹੀਂ ਕਰਦਾ।\nਨਿਊਪਾਈਪ ਦੀ ਗੋਪਨੀਯਤਾ ਨੀਤੀ ਵਿਸਥਾਰ ਵਿੱਚ ਦੱਸਦੀ ਹੈ ਕਿ ਜਦੋਂ ਤੁਸੀਂ ਕਰੈਸ਼ ਰਿਪੋਰਟ ਭੇਜਦੇ ਹੋ ਤਾਂ ਕਿਹੜਾ ਡਾਟਾ ਭੇਜਿਆ ਜਾਂ ਸਟੋਰ ਕੀਤਾ ਜਾਂਦਾ ਹੈ।</string>
-    <string name="read_privacy_policy">ਗੋਪਨੀਯਤਾ ਨੀਤੀ ਪੜ੍ਹੋ</string>
     <string name="start_accept_privacy_policy">ਯੂਰਪੀਅਨ ਜਨਰਲ ਡੇਟਾ ਪ੍ਰੋਟੈਕਸ਼ਨ ਰੈਗੂਲੇਸ਼ਨ (ਜੀਡੀਪੀਆਰ) ਦੀ ਪਾਲਣਾ ਕਰਨ ਲਈ, ਅਸੀਂ ਤੁਹਾਡਾ ਧਿਆਨ ਨਿਊਪਾਈਪ ਦੀ ਗੋਪਨੀਯਤਾ ਨੀਤੀ ਵੱਲ ਖਿੱਚਦੇ ਹਾਂ। ਕਿਰਪਾ ਕਰਕੇ ਇਸਨੂੰ ਧਿਆਨ ਨਾਲ ਪੜ੍ਹੋ।\nਸਾਨੂੰ ਨੁਕਸ ਰਿਪੋਰਟ ਭੇਜਣ ਲਈ ਤੁਹਾਨੂੰ ਇਸ ਨੂੰ ਸਵੀਕਾਰ ਕਰਨਾ ਹੋਵੇਗਾ।</string>
     <string name="accept">ਸਵੀਕਾਰ ਕਰੋ</string>
     <string name="decline">ਅਸਵੀਕਾਰ</string>
@@ -629,8 +613,6 @@
     <string name="soundcloud_go_plus_content">ਇਹ ਸਾਊਂਡਕਲਾਊਡ ਗੋ-ਪਲੱਸ ਟਰੈਕ ਹੈ, ਘੱਟੋ-ਘੱਟ ਤੁਹਾਡੇ ਦੇਸ਼ ਵਿੱਚ, ਇਸ ਲਈ ਇਹ ਸਟ੍ਰੀਮ ਜਾਂ ਡਾਊਨਲੋਡ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।</string>
     <string name="unknown_format">ਅਗਿਆਤ ਫਾਰਮੈਟ</string>
     <string name="unknown_quality">ਅਗਿਆਤ ਕੁਆਲਿਟੀ</string>
-    <string name="faq_title">ਅਕਸਰ ਪੁੱਛੇ ਜਾਂਦੇ ਸਵਾਲ</string>
-    <string name="faq">ਵੈੱਬਸਾਈਟ \'ਤੇ ਵੇਖੋ</string>
     <string name="loading_stream_details">ਸਟ੍ਰੀਮ ਦੇ ਵਿਵਰਣ ਲੋਡ ਹੋ ਰਹੇ ਹਨ…</string>
     <string name="processing_may_take_a_moment">ਕਾਰਵਾਈ ਵਿੱਚ... ਕੁਝ ਸਮਾਂ ਲੱਗ ਰਿਹਾ ਹੈ</string>
     <string name="show_crash_the_player_title">\"ਪਲੇਅਰ ਕਰੈਸ਼ ਕਰੋ\" ਵਿਖਾਉ</string>
@@ -659,7 +641,6 @@
     <string name="sort">ਲੜੀਬੱਧ ਕਰੋ</string>
     <string name="crash_the_player">ਪਲੇਅਰ ਕਰੈਸ਼ ਕਰੋ</string>
     <string name="start_main_player_fullscreen_summary">ਮਿੰਨੀ ਪਲੇਅਰ ਵਿੱਚ ਵੀਡੀਓ ਸ਼ੁਰੂ ਨਾਂ ਕਰੋ ਬਲਕਿ ਜੇ ਆਟੋ-ਰੋਟੇਸ਼ਨ ਲਾਕ ਹੈ ਤਾਂ ਸਿੱਧਾ ਫੁੱਲ ਸਕਰੀਨ ਵਿੱਚ ਚਲਾਓ। ਤੁਸੀਂ ਫਿਰ ਵੀ ਫੁੱਲ ਸਕ੍ਰੀਨ ਤੋਂ ਬਾਹਰ ਆਕੇ ਮਿੰਨੀ-ਪਲੇਅਰ ਤੱਕ ਰਸਾਈ ਹਾਸਿਲ ਕਰ ਸਕਦੇ ਹੋ</string>
-    <string name="faq_description">ਅਗਰ ਤੁਸੀਂ ਐਪ ਦੀ ਵਰਤੋਂ ਸਬੰਧੀ ਮੁਸ਼ਕਿਲਾਂ ਦਾ ਸਾਹਮਣਾ ਕਰ ਰਹੇ ਹੋ, ਤਾਂ ਇਹਨਾਂ ਆਮ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਜਾਣਨਾ ਨਾ ਭੁੱਲੋ!</string>
     <string name="enqueued_next">ਕਤਾਰ ਵਿੱਚ ਅੱਗੇ ਲਗਾਇਆ ਗਿਆ</string>
     <string name="streams_notifications_network_title">ਨੈੱਟਵਰਕ ਦੀ ਕਿਸਮ</string>
 <string name="high_quality_larger">ਵਧੀਆ ਗੁਣਵੱਤਾ (ਵੱਡਾ ਆਕਾਰ)</string>
@@ -739,7 +720,6 @@
     <string name="channel_tab_shorts">ਸ਼ੌਰਟਸ</string>
     <string name="loading_metadata_title">ਮੈਟਾਡੇਟਾ ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ…</string>
     <string name="feed_fetch_channel_tabs">ਚੈਨਲ ਟੈਬਾਂ ਪ੍ਰਾਪਤ ਕਰੋ</string>
-    <string name="channel_tab_about">ਦੇ ਬਾਰੇ</string>
     <string name="channel_tab_albums">ਐਲਬਮਜ਼</string>
     <string name="feed_fetch_channel_tabs_summary">ਫ਼ੀਡ ਅੱਪਡੇਟ ਕਰਨ ਵੇਲੇ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ ਟੈਬਾਂ। ਇਸ ਵਿਕਲਪ ਦਾ ਕੋਈ ਅਸਰ ਨਹੀਂ ਹੁੰਦਾ ਜੇਕਰ ਚੈਨਲ ਨੂੰ ਫਾਸਟ ਮੋਡ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅੱਪਡੇਟ ਕੀਤਾ ਜਾਂਦਾ ਹੈ।</string>
     <string name="channel_tab_playlists">ਪਲੇਲਿਸਟਾਂ</string>
@@ -821,7 +801,7 @@
     <string name="player_http_403">ਪਲੇਅ ਕਰਦੇ ਸਮੇਂ ਸਰਵਰ ਤੋਂ HTTP error 403 ਪ੍ਰਾਪਤ ਹੋਇਆ, ਜੋ ਸ਼ਾਇਦ ਸਟ੍ਰੀਮਿੰਗ URL ਦੀ ਮਿਆਦ ਪੁੱਗਣ ਜਾਂ IP ਦੀ ਪਾਬੰਦੀ ਕਾਰਨ ਹੋਈ ਹੈ</string>
     <string name="player_http_invalid_status">ਚਲਾਉਣ ਦੌਰਾਨ ਸਰਵਰ ਤੋਂ HTTP error %1$s ਪ੍ਰਾਪਤ ਹੋਇਆ</string>
     <string name="youtube_player_http_403">ਪਲੇਅ ਕਰਦੇ ਸਮੇਂ ਸਰਵਰ ਤੋਂ HTTP error 403 ਪ੍ਰਾਪਤ ਹੋਇਆ, ਜੋ ਸ਼ਾਇਦ IP ਬੈਨ ਜਾਂ ਸਟ੍ਰੀਮਿੰਗ URL ਡੀਔਬਫਸਕੇਸ਼ਨ ਸਮੱਸਿਆਵਾਂ ਕਾਰਨ ਹੋਈ ਹੈ</string>
-    <string name="sign_in_confirm_not_bot_error">%1$s ਨੇ ਡੇਟਾ ਪ੍ਰਦਾਨ ਕਰਨ ਤੋਂ ਇਨਕਾਰ ਕਰ ਦਿੱਤਾ, ਅਤੇ ਇਹ ਪੁਸ਼ਟੀ ਕਰਨ ਲਈ ਲੌਗਇਨ ਕਰਨ ਲਈ ਕਿਹਾ ਕਿ ਬੇਨਤੀਕਰਤਾ ਬੋਟ ਨਹੀਂ ਹੈ।\n\nਹੋ ਸਕਦਾ ਹੈ ਕਿ %1$s ਨੇ ਤੁਹਾਡੇ IP ਨੂੰ ਅਸਥਾਈ ਤੌਰ \'ਤੇ ਪਾਬੰਦੀ ਲਗਾਈ ਹੋਵੇ, ਤੁਸੀਂ ਕੁਝ ਸਮਾਂ ਉਡੀਕ ਕਰ ਸਕਦੇ ਹੋ ਜਾਂ ਕਿਸੇ ਵੱਖਰੇ IP \'ਤੇ ਸਵਿੱਚ ਕਰ ਸਕਦੇ ਹੋ (ਉਦਾਹਰਣ ਵਜੋਂ VPN ਨੂੰ ਚਾਲੂ/ਬੰਦ ਕਰਕੇ, ਜਾਂ WiFi ਤੋਂ ਮੋਬਾਈਲ ਡੇਟਾ \'ਤੇ ਸਵਿੱਚ ਕਰਕੇ)।\n\nਹੋਰ ਜਾਣਕਾਰੀ ਲਈ ਕਿਰਪਾ ਕਰਕੇ <a href="%2$s">ਇਹ FAQ ਐਂਟਰੀ</a> ਵੇਖੋ।</string>
+    <string name="sign_in_confirm_not_bot_error">%1$s ਨੇ ਡੇਟਾ ਪ੍ਰਦਾਨ ਕਰਨ ਤੋਂ ਇਨਕਾਰ ਕਰ ਦਿੱਤਾ, ਅਤੇ ਇਹ ਪੁਸ਼ਟੀ ਕਰਨ ਲਈ ਲੌਗਇਨ ਕਰਨ ਲਈ ਕਿਹਾ ਕਿ ਬੇਨਤੀਕਰਤਾ ਬੋਟ ਨਹੀਂ ਹੈ।\n\nਹੋ ਸਕਦਾ ਹੈ ਕਿ %1$s ਨੇ ਤੁਹਾਡੇ IP ਨੂੰ ਅਸਥਾਈ ਤੌਰ \'ਤੇ ਪਾਬੰਦੀ ਲਗਾਈ ਹੋਵੇ, ਤੁਸੀਂ ਕੁਝ ਸਮਾਂ ਉਡੀਕ ਕਰ ਸਕਦੇ ਹੋ ਜਾਂ ਕਿਸੇ ਵੱਖਰੇ IP \'ਤੇ ਸਵਿੱਚ ਕਰ ਸਕਦੇ ਹੋ (ਉਦਾਹਰਣ ਵਜੋਂ VPN ਨੂੰ ਚਾਲੂ/ਬੰਦ ਕਰਕੇ, ਜਾਂ WiFi ਤੋਂ ਮੋਬਾਈਲ ਡੇਟਾ \'ਤੇ ਸਵਿੱਚ ਕਰਕੇ)।\n\nਹੋਰ ਜਾਣਕਾਰੀ ਲਈ ਕਿਰਪਾ ਕਰਕੇ <a href="%2$s">ਇਹ help ਐਂਟਰੀ</a> ਵੇਖੋ।</string>
     <string name="unsupported_content_in_country">ਇਹ ਸਮੱਗਰੀ ਵਰਤਮਾਨ ਵਿੱਚ ਚੁਣੇ ਗਏ ਦੇਸ਼ ਦੀ ਸਮੱਗਰੀ ਲਈ ਉਪਲੱਬਧ ਨਹੀਂ ਹੈ।\n\n\"ਸੈਟਿੰਗਾਂ &gt; ਸਮੱਗਰੀ &gt; ਡਿਫ਼ਾਲਟ ਸਮੱਗਰੀ ਦੇਸ਼\" ਤੋਂ ਆਪਣੀ ਚੋਣ ਬਦਲੋ।</string>
 
 

@@ -101,17 +101,7 @@
     <string name="show_search_suggestions_title">検索候補の表示</string>
     <string name="show_search_suggestions_summary">検索時に表示する候補を選択します</string>
     <string name="best_resolution">最高</string>
-    <string name="title_activity_about">NewPipe について</string>
-    <string name="title_licenses">サードパーティー ライセンス</string>
     <string name="copyright" formatted="true">© %1$s 作者 %2$s ライセンス %3$s</string>
-    <string name="tab_about">バージョン情報とよくある質問</string>
-    <string name="tab_licenses">ライセンス</string>
-    <string name="app_description">Android 向けのフリーで軽量なストリーミング。</string>
-    <string name="view_on_github">GitHub で表示</string>
-    <string name="app_license_title">NewPipe のライセンス</string>
-    <string name="contribution_encouragement">翻訳、デザインの変更、コードの整理、動作の重いコードの変更など、アイデアをお持ちではありませんか？ヘルプはいつでも歓迎します。より良いものを一緒に作り上げましょう！</string>
-    <string name="read_full_license">ライセンスを読む</string>
-    <string name="contribution_title">貢献する</string>
     <string name="subscribe_button_title">チャンネル登録</string>
     <string name="subscribed_button_title">登録済み</string>
     <string name="channel_unsubscribed">チャンネル登録を解除しました</string>
@@ -146,8 +136,6 @@
     <string name="charset_most_special_characters">文字と数字と、多くの特殊文字</string>
     <string name="donation_title">寄付</string>
     <string name="donation_encouragement">NewPipe は、あなたに最高の体験を提供するために、ボランティアが自分たちの時間を使って開発しています。開発者たちがコーヒーを飲みながら NewPipe を継続的に改良できるよう、ご支援をお願いします。</string>
-    <string name="website_title">Webサイト</string>
-    <string name="website_encouragement">NewPipe の詳しい情報や最新情報については、ウェブサイトをご覧ください。</string>
     <string name="title_activity_history">履歴</string>
     <string name="action_history">履歴</string>
     <string name="delete_item_search_history">このアイテムを検索履歴から削除しますか？</string>
@@ -245,8 +233,6 @@
     <string name="channels">チャンネル</string>
     <string name="playlists">プレイリスト</string>
     <string name="users">ユーザー</string>
-    <string name="privacy_policy_title">NewPipe プライバシーポリシー</string>
-    <string name="read_privacy_policy">プライバシーポリシーを確認</string>
     <string name="use_inexact_seek_title">おおまかなシーク</string>
     <string name="use_inexact_seek_summary">おおまかなシークを使用することで精度が下がる代わりに高速にシークができます。5 秒、15 秒または 25 秒間隔のシークはできません</string>
     <string name="auto_queue_summary">キューに関連動画を追加して再生を続ける (繰り返ししない場合)</string>
@@ -264,7 +250,6 @@
     <string name="give_back">支援する</string>
     <string name="privacy_policy_encouragement">NewPipe プロジェクトはあなたのプライバシーを非常に大切にしています。あなたの同意がない限り、アプリはいかなるデータも収集しません。
 \nNewPipe のプライバシー・ポリシーでは、クラッシュリポート送信時にどのような種類のデータが送信・記録されるかを詳細に説明しています。</string>
-    <string name="app_license">NewPipe はコピーレフトなソフトウェアです。あなたは自由にそれを使用し、研究し、共有し、そして改善することができます。あなたは、GNU フリーソフトウェア財団が公開する GNU General Public ライセンス バージョン3以降の下に、自由に再配布・修正を行うことができます。</string>
     <string name="title_last_played">最終再生日時</string>
     <string name="title_most_played">最も再生された動画</string>
     <string name="resize_zoom">拡大</string>
@@ -680,11 +665,8 @@
     <string name="no_video_streams_available_for_external_players">外部プレイヤーで利用可能な動画ストリームがありません</string>
     <string name="select_quality_external_players">外部プレイヤーでの品質を選択</string>
     <string name="sort">並び替え</string>
-    <string name="faq">ウェブサイトを表示</string>
     <string name="app_update_available_notification_text">タップして%sをダウンロード</string>
     <string name="app_update_unavailable_toast">あなたはNewPipeの最新版を起動しています</string>
-    <string name="faq_title">よくある質問</string>
-    <string name="faq_description">アプリの使い方に困ったときは、よくある質問に答えていますので、ぜひご覧ください!</string>
     <string name="night_theme_available">%sがテーマに選択された場合のみ、この選択肢が利用可能です</string>
     <string name="fast_mode">高速モード</string>
     <string name="import_subscriptions_hint">3点メニューから登録チャンネルの読み込みまたは書き出しが可能</string>
@@ -744,7 +726,6 @@
     <string name="show_channel_tabs">チャンネルタブ</string>
     <string name="channel_tab_shorts">ショート</string>
     <string name="feed_fetch_channel_tabs">チャンネルタブを取得する</string>
-    <string name="channel_tab_about">詳細</string>
     <string name="channel_tab_albums">アルバム</string>
     <string name="feed_fetch_channel_tabs_summary">フィードを更新するときに取得するタブ。 高速モードを使用してチャンネルを更新する場合は、効果がありません。</string>
     <string name="channel_tab_playlists">プレイリスト</string>

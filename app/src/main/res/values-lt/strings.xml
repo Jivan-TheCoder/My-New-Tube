@@ -153,22 +153,10 @@
     <string name="settings_file_replacement_character_title">Pakaitinis simbolis</string>
     <string name="charset_letters_and_digits">Raidės ir skaičiai</string>
     <string name="charset_most_special_characters">Ypatingieji simboliai</string>
-    <string name="title_activity_about">Apie NewPipe</string>
-    <string name="title_licenses">Trečiųjų šalių licencijos</string>
     <string name="copyright" formatted="true">© %1$s %2$s pagal %3$s</string>
-    <string name="tab_about">Apie ir DUK</string>
-    <string name="tab_licenses">Licencijos</string>
-    <string name="app_description">Nemokama, atviro kodo transliacijų peržiūros programėlė Android sistemai.</string>
-    <string name="contribution_title">Prisidėti</string>
-    <string name="contribution_encouragement">Jei turite idėjų dėl: vertimų, išvaizdos pakeitimų, kodo supaprastinimo, arba rimtų kodo pakeitimų - pagalba visada laukiama!</string>
-    <string name="view_on_github">Peržiūrėti per GitHub</string>
     <string name="donation_title">Paremti</string>
     <string name="donation_encouragement">NewPipe yra vystoma savanorių, kurie skiria savo laisvą laiką, kad sukurtų geriausią patirtį Jums. Dabar yra laikas paremti juos, kad kūrėjai galėtų NewPipe paversti dar geresne programėle.</string>
     <string name="give_back">Duokite grąžos</string>
-    <string name="website_title">Interneto puslapis</string>
-    <string name="website_encouragement">Kad sužinotumėte daugiau apie NewPipe apsilankykite mūsų interneto puslapyje.</string>
-    <string name="app_license_title">NewPipe licencija</string>
-    <string name="read_full_license">Skaityti licenciją</string>
     <string name="title_activity_history">Istorija</string>
     <string name="action_history">Istorija</string>
     <string name="delete_item_search_history">Ar norite ištrinti šį elementą iš paieškos istorijos?</string>
@@ -384,7 +372,6 @@
 \n5. Pasirodžius mygtukui „Download“ (Atsisiųsti), spustelėkite jį ir
 \n6. Spustelėkite toliau Importuoti failą ir pasirinkite atsisiųstą ZIP failą
 \n7. [Jei nepavyksta importuoti ZIP failo] Ištraukite .csv failą (paprastai po „YouTube and YouTube Music/subscriptions/subscriptions.json“), spustelėkite toliau esantį Importuoti failą ir pasirinkite išgautą CSV failą</string>
-    <string name="app_license">NewPipe yra „copyleft libre“ programinė įranga: galite ją naudoti, studijuoti ir patobulinti. Konkrečiau, galite ją platinti ir (arba) modifikuoti pagal „Free Software Foundation“ paskelbtą GNU bendrosios viešosios licencijos sąlygas, pasirinktinai pagal 3 licencijos versiją arba (jūsų pasirinkimu) bet kurią vėlesnę versiją.</string>
     <string name="import_soundcloud_instructions">Importuokite \"SoundCloud\" profilį įvesdami URL arba savo ID:
 \n
 \n1. Interneto naršyklėje įjunkite darbalaukio režimą (svetainė neprieinama mobiliesiems įrenginiams).
@@ -496,10 +483,8 @@
     <string name="select_a_playlist">Pasirinkite grojaraštį</string>
     <string name="default_kiosk_page_summary">Numatytasis režimas</string>
     <string name="main_page_content_summary">Kokios kortelės rodomos pagrindiniame puslapyje</string>
-    <string name="read_privacy_policy">Skaityti privatumo politiką</string>
     <string name="privacy_policy_encouragement">NewPipe į jūsų privatumą žiūri labai rimtai. Programa be jūsų sutikimo nerenka jokių duomenų.
 \nNewPipe privatumo politika išsamiai parodo kokie duomenys siunčiami ir saugomi pranešant apie problemą.</string>
-    <string name="privacy_policy_title">NewPipe privatumo politika</string>
     <string name="done">Atlikta</string>
     <string name="recaptcha_solve">Išspręsta</string>
     <string name="subtitle_activity_recaptcha">Paspauskite \"atlikta\" kai išspręsta</string>
@@ -707,9 +692,6 @@
     <string name="notifications_disabled">Pranešimai yra išjungti</string>
     <string name="progressive_load_interval_exoplayer_default">„ExoPlayer“ numatytasis</string>
     <string name="unknown_quality">Nežinoma kokybė</string>
-    <string name="faq_title">Dažniausiai užduodami klausimai</string>
-    <string name="faq">Žiūrėti svetainėje</string>
-    <string name="faq_description">Jei kyla sunkumų naudojantis programėle, būtinai peržiūrėkite šiuos atsakymus į dažniausiai užduodamus klausimus!</string>
     <string name="sort">Rikiuoti</string>
     <string name="import_subscriptions_hint">Importuokite arba eksportuokite prenumeratas iš 3 taškelių meniu</string>
     <string name="fast_mode">Greitasis režimas</string>
@@ -801,7 +783,6 @@
     <string name="channel_tab_channels">Kanalai</string>
     <string name="channel_tab_playlists">Grojaraščiai</string>
     <string name="channel_tab_albums">Albumai</string>
-    <string name="channel_tab_about">Apie</string>
     <string name="open_play_queue">Paleisti eilę</string>
     <string name="previous_stream">Ankstesnė transliacija</string>
     <string name="next_stream">Sekanti transliacija</string>

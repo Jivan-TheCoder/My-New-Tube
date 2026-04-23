@@ -82,11 +82,7 @@
     <string name="msg_wait">请稍候…</string>
     <string name="msg_copied">已复制到剪贴板</string>
     <string name="controls_popup_title">悬浮窗播放</string>
-    <string name="title_activity_about">关于 NewPipe</string>
-    <string name="title_licenses">第三方许可</string>
     <string name="copyright" formatted="true">© %1$s 由 %2$s 遵循 %3$s 协议发布</string>
-    <string name="tab_about">关于和常见问题</string>
-    <string name="tab_licenses">许可证</string>
     <string name="settings_category_downloads_title">下载</string>
     <string name="settings_file_charset_title">文件名中允许的字符</string>
     <string name="settings_file_replacement_character_summary">无效字符将会被替换为该字符</string>
@@ -166,12 +162,6 @@
     <string name="use_external_video_player_summary">部分分辨率下没有音频</string>
     <string name="show_search_suggestions_summary">选择搜索时显示的建议</string>
     <string name="best_resolution">最佳分辨率</string>
-    <string name="app_description">自由且小巧的 Android 媒体播放器。</string>
-    <string name="view_on_github">在 GitHub 上查看</string>
-    <string name="app_license_title">NewPipe 的许可证</string>
-    <string name="contribution_encouragement">你是否想过要翻译、设计、清理或重构代码——我们始终欢迎你来贡献！</string>
-    <string name="read_full_license">阅读许可证</string>
-    <string name="contribution_title">贡献</string>
     <string name="settings_file_replacement_character_title">替换字符</string>
     <string name="channel_unsubscribed">已取消订阅频道</string>
     <string name="subscription_change_failed">无法修改订阅</string>
@@ -217,8 +207,6 @@
     <string name="donation_title">捐赠</string>
     <string name="donation_encouragement">NewPipe 由志愿者开发，他们利用自己的空闲时间，为您带来最佳的用户体验。是时候回馈他们，让他们享受一杯咖啡，帮助开发者们让 NewPipe 变得更好。</string>
     <string name="give_back">回馈</string>
-    <string name="website_title">官网</string>
-    <string name="website_encouragement">请访问 NewPipe 网站以了解更多信息和新闻。</string>
     <string name="default_content_country_title">视频默认国家/地区</string>
     <string name="switch_to_background">切换到后台播放</string>
     <string name="switch_to_popup">切换到悬浮窗播放</string>
@@ -323,12 +311,9 @@
     <string name="clear_search_history_summary">清空搜索历史关键词</string>
     <string name="delete_search_history_alert">是否删除全部搜索历史？</string>
     <string name="search_history_deleted">搜索历史已删除</string>
-    <string name="app_license">NewPipe 是 Copyleft 的自由软件：您可以随时使用、研究共享和改进它。您可以根据自由软件基金会发布的 GNU 通用公共许可证 GPLv3 或（由您选择的）任何更高版本的许可证重新分发或修改该许可证。</string>
     <string name="import_settings">是否要导入设置？</string>
-    <string name="privacy_policy_title">NewPipe 隐私政策</string>
     <string name="privacy_policy_encouragement">NewPipe 项目非常重视您的隐私。因此，未经您的同意，应用程序不会收集任何数据。
 \nNewPipe 的隐私政策详细解释了发送崩溃报告时会发送和存储的数据。</string>
-    <string name="read_privacy_policy">阅读隐私政策</string>
     <string name="start_accept_privacy_policy">为了遵守欧盟的《通用数据保护条例 (GDPR)》，我们特此提醒您注意 NewPipe 的隐私政策，请您仔细阅读。
 \n您必须在同意以后才能向我们发送错误报告。</string>
     <string name="accept">接受</string>
@@ -679,9 +664,6 @@
     <string name="streams_not_yet_supported_removed">不显示下载器尚不支持的串流</string>
     <string name="unknown_quality">未知画质</string>
     <string name="progressive_load_interval_title">播放加载间隔大小</string>
-    <string name="faq_title">常见问题</string>
-    <string name="faq_description">如果你在使用本应用时遇到问题，请务必查看这些常见问题的答案！</string>
-    <string name="faq">在网站上查看</string>
     <string name="sort">排序</string>
     <string name="fast_mode">快速模式</string>
     <string name="import_subscriptions_hint">从三点菜单导入或导出订阅</string>
@@ -744,7 +726,6 @@
     <string name="channel_tab_shorts">短视频</string>
     <string name="loading_metadata_title">正在加载元数据…</string>
     <string name="feed_fetch_channel_tabs">获取频道标签页</string>
-    <string name="channel_tab_about">关于</string>
     <string name="channel_tab_albums">专辑</string>
     <string name="feed_fetch_channel_tabs_summary">更新数据源时要获取的标签页。如果使用快速模式更新频道，则该选项无效果。</string>
     <string name="channel_tab_playlists">播放列表</string>
@@ -825,7 +806,7 @@
     <string name="player_http_403">播放时从服务器收到 HTTP 403 错误，可能因串流 URL 过期或 IP 封锁导致</string>
     <string name="player_http_invalid_status">播放时从服务器收到 HTTP %1$s 错误</string>
     <string name="youtube_player_http_403">播放时从服务器收到 HTTP 403 错误，可能因 IP 封锁或串流 URL 解密问题导致</string>
-    <string name="sign_in_confirm_not_bot_error">%1$s 拒绝提供数据， 要求登录确认请求方不是机器人。\n\n你的 IP 可能已经暂时被 %1$s 封禁，你可以等待一段时间或切换到不同 IP （比如开/关 VPN, 或者从 WiFi 连接切换到移动数据）。\n\n请见 <a href="%2$s">此 FAQ条目</a> 获取更多信息。</string>
+    <string name="sign_in_confirm_not_bot_error">%1$s 拒绝提供数据， 要求登录确认请求方不是机器人。\n\n你的 IP 可能已经暂时被 %1$s 封禁，你可以等待一段时间或切换到不同 IP （比如开/关 VPN, 或者从 WiFi 连接切换到移动数据）。\n\n请见 <a href="%2$s">此 help条目</a> 获取更多信息。</string>
     <string name="unsupported_content_in_country">此内容对当前选中的内容地区不可用。\n\n要更改选择，请前往 “设置 &gt; 内容 &gt; 默认内容地区”。</string>
 
 

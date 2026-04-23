@@ -96,7 +96,6 @@
     <string name="create">बनवा</string>
     <string name="delete">हटवा</string>
     <string name="msg_error">चुक झाली</string>
-    <string name="contribution_title">योगदान करा</string>
     <string name="resize_fill">भरुन</string>
     <string name="resize_zoom">झूम</string>
     <string name="import_ongoing">आत टाकत आहोत…</string>
@@ -140,7 +139,6 @@
     <string name="duration_live">थेट</string>
     <string name="playlists">प्लेलिस्ट</string>
     <string name="file">फाईल</string>
-    <string name="tab_licenses">परवाना</string>
     <string name="checksum">चेकसम</string>
     <string name="action_history">इतिहास</string>
     <string name="export_complete_toast">बाहेर काढा</string>
@@ -202,7 +200,6 @@
     <string name="audio_track_type_dubbed">डब केलेला</string>
     <string name="audio">ऑडिओ</string>
     <string name="retry">पुन्हा प्रयत्न करा</string>
-    <string name="website_title">वेबसाईट</string>
     <string name="title_activity_history">इतिहास</string>
     <string name="settings_category_downloads_title">डाउनलोड करा</string>
     <string name="sort">क्रम</string>
@@ -219,7 +216,6 @@
     <string name="channel_tab_channels">चॅनेलस्</string>
     <string name="channel_tab_playlists">प्लेलिस्ट</string>
     <string name="channel_tab_albums">अल्बमस्</string>
-    <string name="channel_tab_about">बद्दल</string>
     <string name="replay">पुन: पहा</string>
     <string name="rewind">माघे घ्या</string>
     <string name="enqueue_stream">रांग</string>

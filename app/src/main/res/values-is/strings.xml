@@ -40,12 +40,9 @@
 \n6) Smelltu á FLYTJA INN SKRÁ fyrir neðan og veldu .zip skrána.
 \n7) [Ef .zip innflutningur mistekst] Taktu út .csv skrána (venjulega undir „YouTube og YouTube Music/subscriptions/subscriptions.csv“), smelltu á FLYTJA INN SKRÁ fyrir neðan og veldu þá skrá.</string>
     <string name="use_external_audio_player_title">Nota utanaðkomandi hljóðspilara</string>
-    <string name="app_description">Frjáls og léttur streymisspilari fyrir Android.</string>
-    <string name="title_activity_about">Um NewPipe</string>
     <string name="channel_unsubscribed">Áskrift hætt</string>
     <string name="unsubscribe">Hætta áskrift</string>
     <string name="empty_list_subtitle">Allt er tómt</string>
-    <string name="app_license">NewPipe er „copyleft“ frjáls hugbúnaður: Þú getur notað, rannsakað, deilt og bætt honum að vild. Þú getur endurdreift og breytt því samkvæmt skilmálum GNU GPL notendaleyfi eins og það er gefið út af Frjálsa Hugbúnaðarstofnuninni, annað hvort útgáfu 3 af leyfinu, eða (að eigin vali) hvaða síðari útgáfu sem er.</string>
     <string name="subscribed_button_title">Í áskrift</string>
     <string name="tab_bookmarks">Bókamerktir spilunarlistar</string>
     <string name="notification_channel_name">NewPipe tilkynning</string>
@@ -53,7 +50,6 @@
     <string name="app_update_notification_channel_description">Tilkynningar fyrir nýjar útgáfur NewPipe</string>
     <string name="clear_cookie_summary">Hreinsa vefkökur sem NewPipe geymir þegar þú leysir reCAPTCHA</string>
     <string name="error_report_notification_title">NewPipe rakst á villu, ýttu til að tilkynna hana</string>
-    <string name="tab_about">Um okkur og algengar spurningar</string>
     <string name="subscribe_button_title">Gerast áskrifandi</string>
     <string name="show_higher_resolutions_summary">Aðeins sum tæki geta spilað 2K/4K myndskeið</string>
     <string name="play_with_kodi_title">Spila með Kodi</string>
@@ -124,12 +120,9 @@
     <string name="play_audio">Hljóð</string>
     <string name="autoplay_title">Sjálfvirk spilun</string>
     <string name="dark_theme_title">Dökk</string>
-    <string name="app_license_title">Hugbúnaðarleyfi NewPipe</string>
     <string name="settings_category_appearance_title">Útlit</string>
     <string name="settings_category_history_title">Ferill og skyndiminni</string>
     <string name="msg_running">NewPipe er að sækja</string>
-    <string name="website_encouragement">Fyrir frekari upplýsingar og nýjustu fréttir um NewPipe geturðu skoðað heimasíðu okkar.</string>
-    <string name="privacy_policy_title">Persónuverndarstefna NewPipe</string>
     <string name="privacy_policy_encouragement">NewPipe verkefnið tekur friðhelgi þína mjög alvarlega. Þess vegna safnar forritið ekkert án samþykkis þíns.
 \nPersónuverndarstefna NewPipe útskýrir í smáatriðum hvaða gögn eru send og geymd þegar þú sendir hrunskýrslu.</string>
     <string name="settings_category_player_title">Spilari</string>
@@ -250,19 +243,10 @@
     <string name="recaptcha_solve">Leysa</string>
     <string name="done">Lokið</string>
     <string name="recaptcha_request_toast">Beðið eftir þraut reCAPTCHA</string>
-    <string name="title_licenses">Leyfi þriðja aðila</string>
-    <string name="tab_licenses">Hugbúnaðarleyfi</string>
-    <string name="copyright">© %1$s • %2$s • %3$s</string>
-    <string name="contribution_title">Taka þátt</string>
-    <string name="contribution_encouragement">Allt er velkomið — hugmyndir, þýðingar, endurhönnun, kóðahreinsun eða miklar kóðabreytingar. Því fleiri, því betra!</string>
-    <string name="view_on_github">Skoða á GitHub</string>
     <string name="donation_title">Gefa pening</string>
     <string name="give_back">Gefa</string>
-    <string name="website_title">Vefsíða</string>
-    <string name="read_privacy_policy">Lesa persónuverndarstefnu</string>
     <string name="title_activity_history">Áhorf</string>
     <string name="action_history">Áhorf</string>
-    <string name="read_full_license">Lesa leyfi</string>
     <string name="title_last_played">Nýlega spilað</string>
     <string name="title_most_played">Mest spilað</string>
     <string name="main_page_content">Aðalsíða</string>
@@ -676,9 +660,6 @@
     <string name="selected_stream_external_player_not_supported">Valið streymi er ekki stutt af utanaðkomandi spilurum</string>
     <string name="no_audio_streams_available_for_external_players">Engin hljóðstreymi eru í boði fyrir utanaðkomandi spilara</string>
     <string name="select_quality_external_players">Veldu gæði fyrir utanaðkomandi spilara</string>
-    <string name="faq_description">Ef þú átt í vandræðum með að nota forritið vertu viss um að skoða þessi svör við algengum spurningum!</string>
-    <string name="faq_title">Algengar spurningar</string>
-    <string name="faq">Skoða á vefsíðu</string>
     <string name="sort">Raða</string>
     <string name="brightness">Birtustig</string>
     <string name="no_streams">Engin streymi</string>
@@ -720,7 +701,6 @@
     <string name="channel_tab_shorts">Símamyndir</string>
     <string name="channel_tab_playlists">Spilunarlistar</string>
     <string name="channel_tab_albums">Albúm</string>
-    <string name="channel_tab_about">Um hugbúnaðinn</string>
     <string name="show_channel_tabs">Rásaflipar</string>
     <string name="open_play_queue">Opna spilunarröð</string>
     <string name="toggle_screen_orientation">Víxla stefnu skjás</string>

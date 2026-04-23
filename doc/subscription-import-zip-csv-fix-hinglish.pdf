@@ -1,0 +1,836 @@
+%PDF-1.4
+%1234
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [ 5 0 R 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R 19 0 R ] /Count 8 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 3131 >>
+stream
+BT
+/F1 14 Tf
+40 805 Td
+(My New Tube - Full Changes and Fixes Report \\(Hinglish Team Version\\)) Tj
+/F1 10.4 Tf
+0 -22 Td
+(Report Scope) Tj
+0 -15 Td
+(This PDF covers major fixes and code changes implemented in our customization cycle, based on) Tj
+0 -15 Td
+(commit 6a99a2050 and its current code state.) Tj
+0 -15 Td
+(This is written in simple Hindi + English mix for internal team sharing.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(>>> MAIN HIGHLIGHTS \\(Quick Read\\)) Tj
+0 -15 Td
+(1\\) App is now YouTube-only at service layer, router layer, and settings layer.) Tj
+0 -15 Td
+(2\\) Drawer and top navigation simplified, with Rate App + Share App actions added.) Tj
+0 -15 Td
+(3\\) Video detail control row cleaned as requested; description tab flow simplified.) Tj
+0 -15 Td
+(4\\) Settings sections simplified mostly by hiding extra options \\(not full deletion in many places\\).) Tj
+0 -15 Td
+(5\\) Country/language refresh issue for kiosk content addressed with localization + cache refresh.) Tj
+0 -15 Td
+(6\\) Subscription import reliability improved with ZIP/CSV fallback MIME parsing and partial success) Tj
+0 -15 Td
+(handling.) Tj
+0 -15 Td
+(7\\) Parsing error screen now shows a friendly user message \\(less technical noise for users\\).) Tj
+0 -15 Td
+(8\\) In-app update checker and related update prompt flow removed.) Tj
+0 -15 Td
+(9\\) Release build pipeline hardened with signing config support and debug build disabled.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+(SECTION A: YouTube-only conversion \\(core architecture\\)) Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(A1\\) ServiceHelper restricted to YouTube only) Tj
+0 -15 Td
+(File: app/src/main/java/org/schabi/newpipe/util/ServiceHelper.kt) Tj
+0 -15 Td
+(Key change: SUPPORTED_SERVICES list now contains only ServiceList.YouTube.) Tj
+0 -15 Td
+(Impact: service selection cannot drift to SoundCloud, PeerTube, Bandcamp, media.ccc etc.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(CODE SNIPPET:) Tj
+0 -15 Td
+(private val SUPPORTED_SERVICES = listOf\\(ServiceList.YouTube\\)) Tj
+0 -15 Td
+(fun getSupportedServices\\(\\): List<StreamingService> = SUPPORTED_SERVICES) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(A2\\) Router blocks non-YouTube URLs) Tj
+0 -15 Td
+(File: app/src/main/java/org/schabi/newpipe/RouterActivity.java) Tj
+0 -15 Td
+(Key change: while detecting service from URL, non-YouTube service immediately returns false.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(CODE SNIPPET:) Tj
+0 -15 Td
+(if \\(currentService != ServiceList.YouTube\\) {) Tj
+0 -15 Td
+(return false;) Tj
+0 -15 Td
+(}) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(A3\\) AndroidManifest intent filters trimmed) Tj
+0 -15 Td
+(File: app/src/main/AndroidManifest.xml) Tj
+0 -15 Td
+(Removed filters include Hooktube, Invidious hosts list, y2u.be, SoundCloud, media.ccc.de,) Tj
+0 -15 Td
+(PeerTube, Bandcamp.) Tj
+0 -15 Td
+(Impact: deep link routing now aligned with YouTube-only behavior.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(A4\\) Kiosk selection list forced to YouTube) Tj
+0 -15 Td
+ET
+
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 2934 >>
+stream
+BT
+/F1 12 Tf
+40 805 Td
+(My New Tube - Full Changes Report Continued) Tj
+/F1 10.4 Tf
+0 -22 Td
+(File: app/src/main/java/org/schabi/newpipe/settings/SelectKioskFragment.java) Tj
+0 -15 Td
+(Before: iterate NewPipe.getServices\\(\\). After: use ServiceList.YouTube only.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(A5\\) Settings migration added for cleanup) Tj
+0 -15 Td
+(File: app/src/main/java/org/schabi/newpipe/settings/migration/SettingMigrations.java) Tj
+0 -15 Td
+(Added migration version 9 to force current_service = YouTube and clean non-YouTube tabs.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(CODE SNIPPET IDEA:) Tj
+0 -15 Td
+(- For KioskTab: keep only kioskServiceId == YouTube.getServiceId\\(\\)) Tj
+0 -15 Td
+(- For ChannelTab: keep only channelServiceId == YouTube.getServiceId\\(\\)) Tj
+0 -15 Td
+(- For remote PlaylistTab: keep only playlistServiceId == YouTube.getServiceId\\(\\)) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+(SECTION B: Drawer and navigation cleanup) Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(B1\\) Service switch UI removed from drawer behavior) Tj
+0 -15 Td
+(File: app/src/main/java/org/schabi/newpipe/MainActivity.java) Tj
+0 -15 Td
+(Old service-toggle flow removed \\(toggleServices / servicesShown style behavior removed\\).) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(B2\\) Trending kiosk hidden from drawer list as requested) Tj
+0 -15 Td
+(File: MainActivity.java) Tj
+0 -15 Td
+(Added: shouldHideDrawerKiosk\\(kioskId\\) returning true for "Trending" in drawer menu creation.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(CODE SNIPPET:) Tj
+0 -15 Td
+(private boolean shouldHideDrawerKiosk\\(@NonNull final String kioskId\\) {) Tj
+0 -15 Td
+(return "Trending".equals\\(kioskId\\);) Tj
+0 -15 Td
+(}) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(B3\\) Rate App and Share App added under settings area in drawer) Tj
+0 -15 Td
+(File: MainActivity.java + strings.xml + new icon drawable) Tj
+0 -15 Td
+(- Added menu item: Rate app with filled star icon \\(ic_star_filled\\).) Tj
+0 -15 Td
+(- Added menu item: Share app with share icon.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(B4\\) Drawer header service row made non-interactive/hidden style) Tj
+0 -15 Td
+(Files: MainActivity.java, res/layout/drawer_header.xml) Tj
+0 -15 Td
+(- Header action button disabled.) Tj
+0 -15 Td
+(- Service row visibility set invisible in layout.) Tj
+0 -15 Td
+(- Drawer arrow hidden \\(set GONE in setupDrawerHeader\\).) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+(SECTION C: Player and video detail control updates) Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(C1\\) Video detail primary controls adjusted to requested simplified behavior) Tj
+0 -15 Td
+(Files: fragment_video_detail.xml + VideoDetailFragment.java) Tj
+0 -15 Td
+ET
+
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 2685 >>
+stream
+BT
+/F1 12 Tf
+40 805 Td
+(My New Tube - Full Changes Report Continued) Tj
+/F1 10.4 Tf
+0 -22 Td
+(- Primary row currently mapped to: Add To, Share \\(reused background slot\\), Popup, Download.) Tj
+0 -15 Td
+(- Download click path simplified to openDownloadDialog\\(\\) directly.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(C2\\) Open in browser globe hidden in player top controls) Tj
+0 -15 Td
+(File: res/layout/player.xml) Tj
+0 -15 Td
+(openInBrowser button is wrapped in parent FrameLayout with android:visibility="gone".) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(CODE SNIPPET:) Tj
+0 -15 Td
+(<FrameLayout android:visibility="gone">) Tj
+0 -15 Td
+(<AppCompatImageButton android:id="@+id/openInBrowser" .../>) Tj
+0 -15 Td
+(</FrameLayout>) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(C3\\) Description tab removed from tab setup flow) Tj
+0 -15 Td
+(File: VideoDetailFragment.java) Tj
+0 -15 Td
+(- DESCRIPTION_TAB_TAG references removed from active tab creation/update path.) Tj
+0 -15 Td
+(- Selected tab default set to RELATED_TAB_TAG \\(Next/Similar side\\).) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(CODE SNIPPET:) Tj
+0 -15 Td
+(selectedTabTag = RELATED_TAB_TAG;) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(C4\\) Secondary controls expander hidden) Tj
+0 -15 Td
+(File: VideoDetailFragment.java) Tj
+0 -15 Td
+(- detailTitleRootLayout set non-clickable.) Tj
+0 -15 Td
+(- detailToggleSecondaryControlsView visibility set GONE.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+(SECTION D: Settings simplification \\(hide-heavy approach\\)) Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(D1\\) Video and audio settings trimmed by visibility) Tj
+0 -15 Td
+(File: VideoAudioSettingsFragment.java) Tj
+0 -15 Td
+(Hidden via preference.setVisible\\(false\\): player category, external player options, kodi option,) Tj
+0 -15 Td
+(seek preview, preferred open action, minimize on exit, fullscreen on start, inexact seek, queue) Tj
+0 -15 Td
+(confirmation, hardware media buttons etc.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(D2\\) Download settings trimmed) Tj
+0 -15 Td
+(File: DownloadSettingsFragment.java) Tj
+0 -15 Td
+(Hidden: file charset, replacement char, max retry, cross-network pause, queue-limit toggle.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(D3\\) Appearance settings trimmed) Tj
+0 -15 Td
+(File: AppearanceSettingsFragment.java) Tj
+0 -15 Td
+(Hidden: hold-to-append tip, tablet mode, list view mode, caption settings entry, main tab) Tj
+0 -15 Td
+(position.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(D4\\) Content settings trimmed + feed category hidden) Tj
+0 -15 Td
+(File: ContentSettingsFragment.java) Tj
+0 -15 Td
+ET
+
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 8 0 R >>
+endobj
+10 0 obj
+<< /Length 2853 >>
+stream
+BT
+/F1 12 Tf
+40 805 Td
+(My New Tube - Full Changes Report Continued) Tj
+/F1 10.4 Tf
+0 -22 Td
+(Hidden: main page content chooser, channel tabs chooser, age restriction toggles, restricted mode,) Tj
+0 -15 Td
+(search suggestions, meta info toggle, feed category block.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(D5\\) Top-level settings pages removed from main list) Tj
+0 -15 Td
+(Files: main_settings.xml, SettingsResourceRegistry.java) Tj
+0 -15 Td
+(Removed from main settings navigation: Notifications, Updates, Backup and restore.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(Note for team:) Tj
+0 -15 Td
+(In many modules we used hide \\(setVisible false\\) instead of deleting base preference definitions,) Tj
+0 -15 Td
+(so rollback remains easier.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+(SECTION E: Content country/language refresh fix) Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(E1\\) Immediate localization apply on setting changes) Tj
+0 -15 Td
+(File: ContentSettingsFragment.java) Tj
+0 -15 Td
+(Added setupContentLocalizationPreferences\\(\\) + applyContentLocalization\\(...\\) flow.) Tj
+0 -15 Td
+(Now language/country change triggers NewPipe.setupLocalization + InfoCache clear +) Tj
+0 -15 Td
+(PlayerHelper.resetFormat.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(E2\\) Kiosk reload now checks both country and language) Tj
+0 -15 Td
+(File: KioskFragment.java) Tj
+0 -15 Td
+(On resume, compares preferred country and preferred language code with stored state.) Tj
+0 -15 Td
+(If changed, app re-applies localization, clears cache, and reloads content.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(Why this matters:) Tj
+0 -15 Td
+(Trending music/live categories now react more reliably to content settings changes.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+(SECTION F: Subscription ZIP/CSV import reliability fix) Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(File: app/src/main/java/org/schabi/newpipe/local/subscription/workers/SubscriptionImportWorker.kt) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(F1\\) MIME candidate strategy added) Tj
+0 -15 Td
+(Added buildMimeCandidates\\(uri\\) and DEFAULT_MIME_CANDIDATES list.) Tj
+0 -15 Td
+(Defaults include: application/zip, zip, text/csv, csv, application/json, json.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(F2\\) Retry parser added) Tj
+0 -15 Td
+(parseSubscriptionsFromBytes\\(serviceId, bytes, mimeCandidates\\) tries candidates one by one and) Tj
+0 -15 Td
+(accepts first valid parse.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(F3\\) Partial-success import support) Tj
+0 -15 Td
+(Channel extraction failures are caught per-item, failed ones skipped, valid ones continue.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+ET
+
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 10 0 R >>
+endobj
+12 0 obj
+<< /Length 2414 >>
+stream
+BT
+/F1 12 Tf
+40 805 Td
+(My New Tube - Full Changes Report Continued) Tj
+/F1 10.4 Tf
+0 -22 Td
+(F4\\) User result message improved) Tj
+0 -15 Td
+(On partial success: "Imported X subscriptions, skipped Y".) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(F5\\) Import instruction text improved) Tj
+0 -15 Td
+(File: strings.xml import_youtube_instructions now clearly tells ZIP first, CSV fallback if ZIP) Tj
+0 -15 Td
+(fails.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+(SECTION G: Error UX and snackbar/report behavior improvements) Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(G1\\) Friendly parsing message screen) Tj
+0 -15 Td
+(File: ErrorActivity.kt + activity_error.xml + strings.xml) Tj
+0 -15 Td
+(If message == parsing_error, app now shows friendly text and hides technical report-heavy) Tj
+0 -15 Td
+(controls.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(New user-facing strings:) Tj
+0 -15 Td
+(- friendly_parsing_title) Tj
+0 -15 Td
+(- friendly_parsing_message) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(G2\\) Non-fatal extractor errors suppressed where content still playable) Tj
+0 -15 Td
+(Files: VideoDetailFragment.java, Player.java) Tj
+0 -15 Td
+(If stream has primary playable data and errors are only extractor-level temporary ones, user gets) Tj
+0 -15 Td
+(less noisy error surfacing.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(G3\\) Feed error handling tuned) Tj
+0 -15 Td
+(File: FeedFragment.kt) Tj
+0 -15 Td
+(Improved handling so temporary extractor/content availability cases do not aggressively suggest) Tj
+0 -15 Td
+(destructive actions.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+(SECTION H: In-app update checker and disruptive dialog removal) Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(H1\\) Update checker stack removed) Tj
+0 -15 Td
+(Deleted files:) Tj
+0 -15 Td
+(- NewVersionWorker.kt) Tj
+0 -15 Td
+(- UpdateSettingsFragment.java) Tj
+0 -15 Td
+(- ReleaseVersionUtil.kt) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(H2\\) Update settings and notification XML removed) Tj
+0 -15 Td
+(Deleted XML:) Tj
+0 -15 Td
+(- update_settings.xml) Tj
+0 -15 Td
+(- notifications_settings.xml) Tj
+0 -15 Td
+(- player_notification_settings.xml) Tj
+0 -15 Td
+(- backup_restore_settings.xml) Tj
+0 -15 Td
+ET
+
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 12 0 R >>
+endobj
+14 0 obj
+<< /Length 2528 >>
+stream
+BT
+/F1 12 Tf
+40 805 Td
+(My New Tube - Full Changes Report Continued) Tj
+/F1 10.4 Tf
+0 -22 Td
+() Tj
+0 -15 Td
+(H3\\) App notification channels cleaned) Tj
+0 -15 Td
+(File: App.kt) Tj
+0 -15 Td
+(App update channel removed from createNotificationChannelsCompat list.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(H4\\) Keep Android Open popup flow removed from main activity path) Tj
+0 -15 Td
+(MainActivity no longer invokes prior update/consent/popup initialization flow that triggered that) Tj
+0 -15 Td
+(dialog sequence.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+(SECTION I: Release build and signing hardening) Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(I1\\) Release signing from secure property sources) Tj
+0 -15 Td
+(File: app/build.gradle.kts) Tj
+0 -15 Td
+(Priority used: Gradle properties OR env vars OR keystore.properties file.) Tj
+0 -15 Td
+(Expected keys:) Tj
+0 -15 Td
+(- RELEASE_STORE_FILE) Tj
+0 -15 Td
+(- RELEASE_STORE_PASSWORD) Tj
+0 -15 Td
+(- RELEASE_KEY_ALIAS) Tj
+0 -15 Td
+(- RELEASE_KEY_PASSWORD) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(I2\\) Debug variant disabled intentionally) Tj
+0 -15 Td
+(androidComponents.beforeVariants\\(... withBuildType\\("debug"\\)\\) { enable = false }) Tj
+0 -15 Td
+(Impact: release-only run/build workflow enforced.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(I3\\) Fail-fast if release signing missing) Tj
+0 -15 Td
+(If release packaging task requested and signing config absent, GradleException is thrown with) Tj
+0 -15 Td
+(clear message.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(I4\\) Example config file added) Tj
+0 -15 Td
+(File added: keystore.properties.example) Tj
+0 -15 Td
+(Important: team must never commit real passwords/keystore secrets to git.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+(SECTION J: String safety and encoding cleanup) Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(J1\\) image_quality_summary corrupted dash issue normalized) Tj
+0 -15 Td
+(File: strings.xml) Tj
+0 -15 Td
+(Now safe text uses standard hyphen in summary to avoid weird render/parsing artifacts in some) Tj
+0 -15 Td
+(environments.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+(SECTION K: Important file groups touched) Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+ET
+
+endstream
+endobj
+15 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 14 0 R >>
+endobj
+16 0 obj
+<< /Length 2357 >>
+stream
+BT
+/F1 12 Tf
+40 805 Td
+(My New Tube - Full Changes Report Continued) Tj
+/F1 10.4 Tf
+0 -22 Td
+() Tj
+0 -15 Td
+(Core behavior:) Tj
+0 -15 Td
+(- MainActivity.java) Tj
+0 -15 Td
+(- ServiceHelper.kt) Tj
+0 -15 Td
+(- RouterActivity.java) Tj
+0 -15 Td
+(- AndroidManifest.xml) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(Player and stream detail:) Tj
+0 -15 Td
+(- VideoDetailFragment.java) Tj
+0 -15 Td
+(- fragment_video_detail.xml) Tj
+0 -15 Td
+(- player.xml) Tj
+0 -15 Td
+(- Player.java) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(Settings:) Tj
+0 -15 Td
+(- main_settings.xml) Tj
+0 -15 Td
+(- SettingsResourceRegistry.java) Tj
+0 -15 Td
+(- VideoAudioSettingsFragment.java) Tj
+0 -15 Td
+(- DownloadSettingsFragment.java) Tj
+0 -15 Td
+(- AppearanceSettingsFragment.java) Tj
+0 -15 Td
+(- ContentSettingsFragment.java) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(Import and error handling:) Tj
+0 -15 Td
+(- SubscriptionImportWorker.kt) Tj
+0 -15 Td
+(- ErrorActivity.kt) Tj
+0 -15 Td
+(- activity_error.xml) Tj
+0 -15 Td
+(- strings.xml) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(Build pipeline:) Tj
+0 -15 Td
+(- app/build.gradle.kts) Tj
+0 -15 Td
+(- keystore.properties.example) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+(SECTION L: QA test checklist \\(recommended\\)) Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(1\\) Install fresh release build and verify no Keep Android Open popup appears.) Tj
+0 -15 Td
+(2\\) Verify drawer shows only expected YouTube-centric options and no service switch menu.) Tj
+0 -15 Td
+(3\\) Verify Rate App and Share App buttons work from drawer.) Tj
+0 -15 Td
+(4\\) Open video detail and verify primary controls behave as expected \\(Add To, Share, Popup,) Tj
+0 -15 Td
+(Download\\).) Tj
+0 -15 Td
+(5\\) Verify globe/open-in-browser icon in player top controls stays hidden.) Tj
+0 -15 Td
+(6\\) Change Content country and language, then re-open Trending categories and verify refresh) Tj
+0 -15 Td
+(behavior.) Tj
+0 -15 Td
+(7\\) Test subscription import with ZIP, then with CSV fallback.) Tj
+0 -15 Td
+(8\\) Introduce a broken channel entry in import list and verify partial import still succeeds.) Tj
+0 -15 Td
+(9\\) Trigger parsing error scenario and verify friendly message screen appears instead of technical) Tj
+0 -15 Td
+ET
+
+endstream
+endobj
+17 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 16 0 R >>
+endobj
+18 0 obj
+<< /Length 969 >>
+stream
+BT
+/F1 12 Tf
+40 805 Td
+(My New Tube - Full Changes Report Continued) Tj
+/F1 10.4 Tf
+0 -22 Td
+(dump for user.) Tj
+0 -15 Td
+(10\\) Run release build without signing config and confirm fail-fast message appears \\(CI safety\\).) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+(Final Team Note) Tj
+0 -15 Td
+(====================================================) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(We completed a strong YouTube-only hardening pass plus stability and UX cleanups. The most) Tj
+0 -15 Td
+(critical reliability wins are: content localization refresh correctness, resilient ZIP/CSV) Tj
+0 -15 Td
+(subscription import, and reduced user-facing noise for recoverable extractor issues. This gives) Tj
+0 -15 Td
+(better day-to-day experience while keeping the codebase manageable for future updates.) Tj
+0 -15 Td
+() Tj
+0 -15 Td
+(Document prepared for internal team communication.) Tj
+0 -15 Td
+ET
+
+endstream
+endobj
+19 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 18 0 R >>
+endobj
+xref
+0 20
+0000000000 65535 f 
+0000000017 00000 n 
+0000000069 00000 n 
+0000000178 00000 n 
+0000000251 00000 n 
+0000003437 00000 n 
+0000003566 00000 n 
+0000006555 00000 n 
+0000006684 00000 n 
+0000009424 00000 n 
+0000009553 00000 n 
+0000012462 00000 n 
+0000012593 00000 n 
+0000015063 00000 n 
+0000015194 00000 n 
+0000017778 00000 n 
+0000017909 00000 n 
+0000020322 00000 n 
+0000020453 00000 n 
+0000021477 00000 n 
+trailer
+<< /Size 20 /Root 1 0 R >>
+startxref
+21608
+%%EOF

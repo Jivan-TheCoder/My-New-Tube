@@ -6,7 +6,6 @@
     <string name="missions_header_finished">সম্পূর্ণ</string>
     <string name="list">তালিকা</string>
     <string name="title_activity_history">ইতিহাস</string>
-    <string name="website_title">ওয়েব সাইট</string>
     <string name="recaptcha_request_toast">reCAPTCHA চ্যালেঞ্জ অনুরোধ করা হয়েছে</string>
     <string name="title_activity_recaptcha">reCAPTCHA চ্যালেঞ্জ</string>
     <string name="msg_popup_permission">এই অনুমতিটি
@@ -169,11 +168,6 @@
     <string name="select_a_channel">একটি চ্যানেল পছন্দ করুন</string>
     <string name="channel_page_summary">চ্যানেল এর পাতা</string>
     <string name="blank_page_summary">খালি পাতা</string>
-    <string name="app_license_title">নিউপাইপ এর লাইসেন্স</string>
-    <string name="read_privacy_policy">প্রাইভেসি পলিসি পড়ুন</string>
-    <string name="privacy_policy_title">নিউপাইপ এর প্রাইভেসি পলিসি</string>
-    <string name="view_on_github">গিটহাব এ দেখুন</string>
-    <string name="tab_licenses">লাইসেন্স</string>
     <string name="settings_category_downloads_title">ডাউনলোড</string>
     <string name="one_item_deleted">একটি আইটেম ডিলিট হয়েছে।</string>
     <string name="dismiss">ডিসমিস</string>
@@ -185,7 +179,6 @@
     <string name="name">নাম</string>
     <string name="rename_playlist">নাম পরিবর্তন</string>
     <string name="action_history">ইতিহাস</string>
-    <string name="read_full_license">লাইসেন্স পড়ুন</string>
     <string name="donation_title">দান করুন</string>
     <string name="create">তৈরি করুন</string>
     <string name="retry">পুনরায় চেষ্টা করুন</string>
@@ -236,8 +229,6 @@
     <string name="title_most_played">সবথেকে বেশি চালানো</string>
     <string name="title_last_played">শেষ চালানো</string>
     <string name="give_back">ফিরিয়ে দিন</string>
-    <string name="contribution_title">যোগদান</string>
-    <string name="title_activity_about">নিউ পাইপ এর সম্বন্ধে</string>
     <string name="charset_letters_and_digits">শব্দ ও নম্বর</string>
     <string name="done">হয়েছে</string>
     <string name="no_comments">কোন মন্তব্য নেই</string>
@@ -265,14 +256,11 @@
     <string name="feed_notification_loading">ফিড লোড হচ্ছে…</string>
     <string name="show_error">এরর দেখান</string>
     <string name="select_a_playlist">একটি প্লে লিস্ট পছন্দ করুন</string>
-    <string name="tab_about">সম্পর্কিত</string>
-    <string name="title_licenses">থার্ড-পার্টি লাইসেন্স সমূহ</string>
     <string name="error_report_open_issue_button_text">গিটহাব এ রিপোর্ট করুন</string>
     <string name="restore_defaults">ডিফল্ট এ ফিরে যান</string>
     <string name="search_showing_result_for">রেজাল্ট দেখান হচ্ছেঃ %s</string>
     <string name="clear_queue_confirmation_title">কিউ মোছার আগে নিশ্চিত করুন</string>
     <string name="notification_action_repeat">পুনরায়</string>
-    <string name="website_encouragement">নিউ পাইপ ওয়েব সাইট এ যান বিস্তারিত বিবরণ ও খবর এর জন্য</string>
     <string name="more_than_100_videos">১০০+ ভিডিও</string>
     <plurals name="listening">
         <item quantity="one">%s শ্রোতা</item>

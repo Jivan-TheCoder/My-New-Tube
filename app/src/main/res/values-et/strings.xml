@@ -194,19 +194,7 @@
     <string name="settings_file_replacement_character_title">Asendustähemärk</string>
     <string name="charset_letters_and_digits">Tähed ja numbrid</string>
     <string name="charset_most_special_characters">Erimärgid</string>
-    <string name="title_activity_about">Rakenduse teave: NewPipe</string>
-    <string name="title_licenses">Kolmanda osapoole litsentsid</string>
-    <string name="tab_about">Rakenduse teave ja KKK</string>
-    <string name="tab_licenses">Litsentsid</string>
-    <string name="contribution_title">Panusta</string>
-    <string name="view_on_github">Vaata GitHubis</string>
     <string name="donation_title">Anneta</string>
-    <string name="website_title">Veebisait</string>
-    <string name="website_encouragement">Täiendava info ja uudiste lugemiseks külasta NewPipe\'i veebisaiti.</string>
-    <string name="privacy_policy_title">NewPipe\'i andmekaitsepõhimõtted</string>
-    <string name="read_privacy_policy">Loe andmekaitsepõhimõtteid</string>
-    <string name="app_license_title">NewPipe\'i litsents</string>
-    <string name="read_full_license">Loe litsentsi</string>
     <string name="title_activity_history">Ajalugu</string>
     <string name="action_history">Ajalugu</string>
     <string name="delete_item_search_history">Kas kustutame selle kirje otsinguajaloost\?</string>
@@ -298,12 +286,8 @@
     <string name="title_activity_recaptcha">reCAPTCHA nõue</string>
     <string name="recaptcha_request_toast">reCAPTCHA nõude taotlus</string>
     <string name="copyright" formatted="true">© %1$s %2$s %3$s alla</string>
-    <string name="app_description">Vaba ja lihtne voogesitus Androidis.</string>
-    <string name="contribution_encouragement">Kui sul on ideid kujunduse muutmisest, koodi puhastamisest või suurtest koodi muudatustest - abi on alati teretulnud. Mida rohkem tehtud, seda paremaks läheb!</string>
     <string name="donation_encouragement">NewPipe\'i arendajad on vabatahtlikud, kes kulutavad oma vaba aega, toomaks sulle parimat kasutuskogemust. On aeg anda tagasi aidates arendajaid ja muuta NewPipe veel paremaks, nautides ise tassi kohvi.</string>
     <string name="give_back">Anneta</string>
-    <string name="privacy_policy_encouragement">NewPipe võtab privaatsust väga tõsiselt. Seetõttu ei kogu rakendus ilma nõusolekuta mingeid andmeid. \nNewPipe\'i andmekaitsepõhimõtted selgitavad üksikasjalikult, milliseid andmeid saadetakse ja kogutakse veateate saatmisel.</string>
-    <string name="app_license">NewPipe on vaba ja avatud lähtekoodiga tarkvara. Seada võid kasutada, uurida, jagada ja parandada nii, nagu õigemaks pead. Täpsemalt - seda võid levitada ja/või muuta vastavalt Vaba Tarkvara Sihtasutuse avaldatud GNU Üldise Avaliku Litsentsi v.3 (või sinu valikul hilisema versiooni) tingimustele.</string>
     <string name="enable_disposed_exceptions_title">Teavita elutsüklist väljas vigadest</string>
     <string name="import_soundcloud_instructions">Impordi SoundCloudi profiil trükkides URL või oma ID:
 \n
@@ -680,9 +664,6 @@
     <string name="percent">Protsent</string>
     <string name="semitone">Pooltoon</string>
     <string name="progressive_load_interval_title">Taasesituseks vajalike andmete laadimise samm</string>
-    <string name="faq_title">Korduma kippuvad küsimused</string>
-    <string name="faq_description">Kui sul tekib selle rakenduse kasutamisel probleeme, siis esmalt vaata, kas vastus leidub korduma kippuvate küsimuste hulgas!</string>
-    <string name="faq">Edasi loe veebisaidist</string>
     <string name="sort">Sortimine</string>
     <string name="app_update_available_notification_text">%s allalaadimiseks toksa</string>
     <string name="fast_mode">Kiirrežiim</string>
@@ -756,7 +737,6 @@
     <string name="open_play_queue">Ava esitusjärjekord</string>
     <string name="image_quality_none">Ära laadi pilte</string>
     <string name="image_quality_high">Parim kvaliteet</string>
-    <string name="channel_tab_about">Kanali teave</string>
     <string name="forward">Keri edasi</string>
     <string name="channel_tab_albums">Albumid</string>
     <string name="rewind">Keri tagasi</string>

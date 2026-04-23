@@ -101,17 +101,7 @@
     <string name="show_search_suggestions_title">Arama önerileri</string>
     <string name="show_search_suggestions_summary">Arama yaparken öneriler gösterilsin mi</string>
     <string name="best_resolution">En iyi çözünürlük</string>
-    <string name="title_activity_about">NewPipe Hakkında</string>
-    <string name="title_licenses">Üçüncü Taraf Lisansları</string>
     <string name="copyright" formatted="true">© %1$s, %2$s tarafından %3$s altında</string>
-    <string name="tab_about">Hakkında ve SSS</string>
-    <string name="tab_licenses">Lisanslar</string>
-    <string name="app_description">Android\'de özgür ve hafif bir oynatıcı.</string>
-    <string name="view_on_github">GitHub\'da Görüntüle</string>
-    <string name="app_license_title">NewPipe\'ın Lisansı</string>
-    <string name="contribution_encouragement">Fikirleriniz; çeviri, tasarım değişiklikleri, kod temizliği ya da gerçek köklü kod değişikleri olsun yardımınıza her zaman açığız. Ne kadar çok yapılırsa o kadar iyi olur!</string>
-    <string name="read_full_license">Lisansı oku</string>
-    <string name="contribution_title">Katkıda bulunun</string>
     <string name="settings_category_downloads_title">İndir</string>
     <string name="settings_file_charset_title">Dosya adlarında izin verilen karakterler</string>
     <string name="settings_file_replacement_character_summary">Geçersiz karakterler bu değer ile değiştirilir</string>
@@ -179,8 +169,6 @@
     <string name="donation_title">Bağışta bulunun</string>
     <string name="donation_encouragement">NewPipe, boş zamanlarını size en iyi kullanıcı deneyimi sunmak için harcayan gönüllüler tarafından geliştirilmiştir. Geliştiricilerin bir fincan kahvenin tadını çıkarırken NewPipe\'ı daha iyi hale getirmelerine yardımcı olun.</string>
     <string name="give_back">Bağışta bulunun</string>
-    <string name="website_title">Web sitesi</string>
-    <string name="website_encouragement">Daha çok bilgi ve haber için NewPipe web sitesini ziyaret edin.</string>
     <string name="default_content_country_title">Öntanımlı içerik ülkesi</string>
     <string name="switch_to_background">Arka Plana Geç</string>
     <string name="switch_to_popup">Açılır Pencereye Geç</string>
@@ -298,12 +286,9 @@
     <string name="delete_search_history_alert">Tüm arama geçmişi silinsin mi\?</string>
     <string name="search_history_deleted">Arama geçmişi silindi</string>
     <string name="one_item_deleted">1 öge silindi.</string>
-    <string name="app_license">NewPipe, telif müsaadeli özgür yazılımdır: İstediğiniz gibi kullanabilir, öğrenebilir, paylaşabilir ve geliştirebilirsiniz. Özellikle, Özgür Yazılım Vakfı tarafından yayımlanan GNU Genel Kamu Lisansı 3. sürümü veya (isterseniz) daha sonraki sürümleri koşulları altında yeniden dağıtabilir ve/veya değiştirebilirsiniz.</string>
     <string name="import_settings">Ayarları da içe aktarmak istiyor musunuz?</string>
-    <string name="privacy_policy_title">NewPipe\'ın Gizlilik İlkesi</string>
     <string name="privacy_policy_encouragement">NewPipe projesi, gizliliğinizi çok ciddiye alıyor. Bu nedenle, uygulama sizin izniniz olmadan herhangi bir veri toplamaz.
 \nNewPipe\'ın gizlilik ilkesi, çökme raporu gönderdiğinizde hangi verilerin gönderildiğini ve saklandığını ayrıntılı olarak açıklar.</string>
-    <string name="read_privacy_policy">Gizlilik ilkesini oku</string>
     <string name="start_accept_privacy_policy">Avrupa Genel Veri Koruma Yönetmeliğine (GDPR) uymak için, dikkatinizi NewPipe\'ın gizlilik ilkesine çekiyoruz. Lütfen dikkatlice okuyun.
 \nBize hata bildirimini göndermek için kabul etmelisiniz.</string>
     <string name="accept">Kabul et</string>
@@ -693,9 +678,6 @@
     <string name="unknown_format">Bilinmeyen biçim</string>
     <string name="unknown_quality">Bilinmeyen nitelik</string>
     <string name="progressive_load_interval_title">Oynatma yükleme aralığı boyutu</string>
-    <string name="faq_title">Sık Sorulan Sorular</string>
-    <string name="faq">Web sitesinde görüntüle</string>
-    <string name="faq_description">Uygulamayı kullanırken sorun yaşıyorsanız, sık sorulan sorulara verilen bu yanıtlara göz atmayı unutmayın!</string>
     <string name="sort">Sırala</string>
     <string name="fast_mode">Hızlı kip</string>
     <string name="app_update_unavailable_toast">En yeni NewPipe sürümünü kullanıyorsunuz</string>
@@ -774,7 +756,6 @@
     <string name="open_play_queue">Oynatma kuyruğunu aç</string>
     <string name="image_quality_none">Resimleri yükleme</string>
     <string name="image_quality_high">Yüksek nitelik</string>
-    <string name="channel_tab_about">Hakkında</string>
     <string name="share_playlist">Oynatma Listesini Paylaş</string>
     <string name="forward">İleri sar</string>
     <string name="channel_tab_albums">Albümler</string>

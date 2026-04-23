@@ -19,7 +19,6 @@
     <string name="default_popup_resolution_title">Resolução padrão para janela popup</string>
     <string name="could_not_import_all_files">Aviso: não foi possível importar todos os ficheiros.</string>
     <string name="download_already_running">Já existe uma descarga em curso com este nome</string>
-    <string name="view_on_github">Ver no GitHub</string>
     <string name="main_page_content">Conteúdo da página principal</string>
     <string name="error_progress_lost">Progresso perdido, o ficheiro foi eliminado</string>
     <string name="channel_unsubscribed">Canal não subscrito</string>
@@ -57,7 +56,6 @@
     <string name="play_all">Reproduzir tudo</string>
     <string name="delete_playlist_prompt">Eliminar esta lista de reprodução\?</string>
     <string name="what_device_headline">Informação:</string>
-    <string name="tab_licenses">Licenças</string>
     <string name="pause_downloads_on_mobile">Interromper em redes limitadas</string>
     <string name="detail_thumbnail_view_description">Reproduzir vídeo, duração:</string>
     <string name="feed_create_new_group_button_title">Novo</string>
@@ -74,7 +72,6 @@
     <string name="restricted_video">Este vídeo está restringido a idades.
 \n
 \nPara o poder ver, tem que ativar \"%1$s\" nas definições.</string>
-    <string name="read_full_license">Ver licença</string>
     <string name="peertube_instance_add_https_only">Apenas os URL HTTPS são suportados</string>
     <string name="peertube_instance_add_fail">Falha ao validar a instância</string>
     <string name="clear_download_history">Limpar histórico de descargas</string>
@@ -95,7 +92,6 @@
     <string name="use_inexact_seek_summary">A pesquisa inexata permite que esta seja mais rápida, mas reduz a precisão. Procurar por 5, 15 ou 25 segundos não funciona corretamente</string>
     <string name="permission_display_over_apps">Permitir sobreposição a outras aplicações</string>
     <string name="export_to">Exportar para</string>
-    <string name="title_activity_about">Sobre o NewPipe</string>
     <string name="blank_page_summary">Página vazia</string>
     <string name="playlist_no_uploader">Geração automática (não foi encontrado nenhum enviador)</string>
     <string name="default_resolution_title">Resolução padrão</string>
@@ -120,7 +116,6 @@
         <item quantity="other">%d selecionados</item>
     </plurals>
     <string name="share">Partilhar</string>
-    <string name="read_privacy_policy">Ver política de privacidade</string>
     <string name="player_unrecoverable_failure">Ocorreu um erro compulsivo do reprodutor</string>
     <string name="youtube_restricted_mode_enabled_title">Ativar \"Modo restrito\" do YouTube</string>
     <string name="invalid_directory">Pasta inexistente</string>
@@ -159,13 +154,11 @@
     <string name="audio_streams_empty">Não foram encontrados áudios</string>
     <string name="error_postprocessing_stopped">NewPipe foi fechado enquanto trabalhava no ficheiro</string>
     <string name="create_playlist">Nova lista de reprodução</string>
-    <string name="copyright">© %1$s de %2$s nos termos da %3$s</string>
     <string name="black_theme_title">Preto</string>
     <string name="no_one_listening">Ninguém está a ouvir</string>
     <string name="playlist_thumbnail_change_success">Miniatura da lista de reprodução alterada.</string>
     <string name="error_unable_to_load_comments">Não foi possível carregar os comentários</string>
     <string name="default_content_country_title">País padrão para conteúdo</string>
-    <string name="app_description">Aplicação livre de reprodução de transmissões para Android.</string>
     <string name="content_language_title">Idioma padrão para conteúdo</string>
     <string name="import_youtube_instructions">Importar subscrições do YouTube do Google Takeout:
 \n
@@ -197,12 +190,10 @@
     <string name="error_snackbar_message">Desculpe mas algo correu mal.</string>
     <string name="theme_title">Tema</string>
     <string name="error_path_creation">Não foi possível criar a pasta de destino</string>
-    <string name="title_licenses">Licenças de terceiros</string>
     <string name="generate_unique_name">Gerar nome único</string>
     <string name="minimize_on_exit_summary">Ação a executar ao trocar para outra aplicação a partir do menu principal - %s</string>
     <string name="use_external_video_player_title">Utilizar reprodutor de vídeo externo</string>
     <string name="info_labels">O quê:\nPedido:\nIdioma do conteúdo:\nPaís do conteúdo\nIdioma da aplicação\nServiço:\nHora GMT:\nPacote:\nVersão:\nSO Versão:</string>
-    <string name="contribution_encouragement">Se tem ideias para: tradução, alterações de desenho, limpeza de código, ou alterações significativas no código fonte - todas as ajudas são bem-vindas. Quanto mais se faz, melhor ficará!</string>
     <string name="settings_category_clear_data_title">Limpar dados</string>
     <string name="just_once">Apenas uma vez</string>
     <string name="feed_subscription_not_loaded_count">Não carregado: %d</string>
@@ -241,7 +232,6 @@
     <string name="download_path_audio_dialog_title">Escolha a pasta para colocar os ficheiros de áudio</string>
     <string name="app_update_available_notification_title">Atualização NewPipe disponível!</string>
     <string name="events">Eventos</string>
-    <string name="privacy_policy_title">Política de privacidade do NewPipe</string>
     <string name="could_not_load_thumbnails">Não foi possível carregar todas as miniaturas</string>
     <string name="audio">Áudio</string>
     <string name="cancel">Cancelar</string>
@@ -263,7 +253,6 @@
     <string name="seek_duration_title">Duração da pesquisa de avanço/recuo rápido</string>
     <string name="missing_file">Ficheiro movido ou eliminado</string>
     <string name="title_last_played">Última reprodução</string>
-    <string name="website_encouragement">Visite o site NewPipe para obter mais informação e novidades.</string>
     <string name="import_soundcloud_instructions">Importe o seu perfil SoundCloud digitando o URL ou a ID.:
 \n
 \n1. Ative o modo desktop do seu navegador web (o site não está disponível para dispositivos móveis)
@@ -367,7 +356,6 @@
     <string name="app_ui_crash">Aplicação terminou em erro</string>
     <string name="delete_item_search_history">Deseja remover este item do histórico de pesquisas\?</string>
     <string name="resume_on_audio_focus_gain_title">Continuar reprodução</string>
-    <string name="app_license">NewPipe é um software livre \"copyleft\": pode utilizar, estudar, partilhar e melhorar a aplicação. Especificamente, pode redistribuir e/ou modificar a aplicação nos termos da GNU General Public License, conforme publicada pela Free Software Foundation, tanto a versão 3 da licença ou (por opção) qualquer versão posterior.</string>
     <string name="infinite_videos">∞ vídeos</string>
     <string name="export_ongoing">A exportar…</string>
     <string name="most_liked">Mais apreciados</string>
@@ -385,7 +373,6 @@
     <string name="download_already_pending">Existe uma descarga pendente com este nome</string>
     <string name="accept">Aceitar</string>
     <string name="what_happened_headline">O que ocorreu:</string>
-    <string name="contribution_title">Participar</string>
     <string name="controls_background_title">Segundo plano</string>
     <string name="unknown_content">[Desconhecido]</string>
     <string name="peertube_instance_url_help">Encontre as instâncias que gosta em %s</string>
@@ -429,7 +416,6 @@
     <string name="saved_tabs_invalid_json">Não foi possível ler as guias gravadas, portanto usando as guias predefinidas</string>
     <string name="close">Fechar</string>
     <string name="caption_none">Sem legendas</string>
-    <string name="website_title">Site oficial</string>
     <string name="tab_subscriptions">Subscrições</string>
     <string name="give_back">Contribuir</string>
     <string name="default_audio_format_title">Formato padrão de áudio</string>
@@ -443,7 +429,6 @@
     <string name="enable_search_history_summary">Guardar termos de pesquisa localmente</string>
     <string name="unsupported_url">URL não suportado</string>
     <string name="download_dialog_title">Descarregar</string>
-    <string name="app_license_title">Licença do NewPipe</string>
     <string name="file_deleted">Ficheiro eliminado</string>
     <string name="feed_use_dedicated_fetch_method_enable_button">Ativar modo rápido</string>
     <string name="detail_sub_channel_thumbnail_view_description">Miniatura do avatar do canal</string>
@@ -489,7 +474,6 @@
     <string name="content_not_available">Conteúdo indisponível</string>
     <string name="subscribed_button_title">Subscrito</string>
     <string name="thumbnail_cache_wipe_complete_notice">Cache de imagens limpa</string>
-    <string name="tab_about">Sobre e perguntas frequentes</string>
     <string name="subscribers_count_not_available">Contagem de subscrições indisponível</string>
     <string name="preferred_open_action_settings_summary">Ação padrão ao abrir o conteúdo — %s</string>
     <string name="playback_reset">Repor</string>
@@ -706,9 +690,6 @@
     <string name="unknown_quality">Qualidade desconhecida</string>
     <string name="select_quality_external_players">Selecione a qualidade para reprodutores externos</string>
     <string name="progressive_load_interval_title">Tamanho do intervalo de carregamento da reprodução</string>
-    <string name="faq_title">Perguntas frequentes</string>
-    <string name="faq_description">Se está a ter problemas a usar a aplicação, veja estas respostas para perguntas mais comuns!</string>
-    <string name="faq">Ver no site</string>
     <string name="fast_mode">Modo rápido</string>
     <string name="import_subscriptions_hint">Importar ou exportar subscrições do menu de 3 pontos</string>
     <string name="app_update_unavailable_toast">Já está a executar a versão mais recente do NewPipe</string>
@@ -786,7 +767,6 @@
     <string name="open_play_queue">Abrir fila de reprodução</string>
     <string name="image_quality_none">Não carregar imagens</string>
     <string name="image_quality_high">Alta qualidade</string>
-    <string name="channel_tab_about">Sobre</string>
     <string name="share_playlist">Partilhar lista de reprodução</string>
     <string name="forward">Avançar</string>
     <string name="channel_tab_albums">Álbuns</string>
@@ -852,7 +832,7 @@
     <string name="entry_deleted">Entrada apagada</string>
     <string name="account_terminated_service_provides_reason">Conta terminada\n\n%1$s fornece esta razão: %2$s</string>
     <string name="player_http_invalid_status">Erro HTTP %1$s recebido do servidor ao reproduzir</string>
-    <string name="sign_in_confirm_not_bot_error">%1$s recusou fornecer dados, pedindo por um login para confirmar que o solicitante não é um bot.\n\nO seu IP pode ter sido temporariamente banido por %1$s, você pode esperar algum tempo ou mudar para um IP diferente (por exemplo, a ligar/desligar uma VPN, ou a alternar de Wi-Fi para dados móveis).\n\nConfira <a href="%2$s">este artigo do FAQ</a> para mais informações.</string>
+    <string name="sign_in_confirm_not_bot_error">%1$s recusou fornecer dados, pedindo por um login para confirmar que o solicitante não é um bot.\n\nO seu IP pode ter sido temporariamente banido por %1$s, você pode esperar algum tempo ou mudar para um IP diferente (por exemplo, a ligar/desligar uma VPN, ou a alternar de Wi-Fi para dados móveis).\n\nConfira <a href="%2$s">este artigo do help</a> para mais informações.</string>
     <string name="unsupported_content_in_country">Este conteúdo não está disponível para o país de conteúdo atualmente selecionado.\n\nAltere a sua seleção de \"Configurações &gt; Conteúdo &gt; País predefinido de conteúdo\".</string>
     <string name="player_http_403">Erro HTTP 403 recebido do servidor durante a reprodução, provavelmente causado pela URL de streaming expirado ou IP banido</string>
     <string name="youtube_player_http_403">Erro HTTP 403 recebido do servidor durante a reprodução, provavelmente causado por um bloqueio de IP ou problemas de desofuscação da URL de streaming</string>

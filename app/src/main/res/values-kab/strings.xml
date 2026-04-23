@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="settings_category_video_audio_title">Avidyu akked d imesli</string>
-    <string name="tab_about">Ɣef &amp; ISTEQSIYEN</string>
     <string name="feed_create_new_group_button_title">Amaynut</string>
     <string name="all">Akk</string>
     <string name="kore_not_found">Sbedd asnas n Kore yexxuṣen\?</string>
@@ -77,7 +76,6 @@
     <string name="show_info">Sken talɣut</string>
     <string name="disabled">Ittwarermed</string>
     <string name="audio">Imesli</string>
-    <string name="tab_licenses">Iselkinen</string>
     <string name="light_theme_title">Afaw</string>
     <string name="download_dialog_title">Sader</string>
     <string name="controls_popup_title">Asfaylu udhim</string>
@@ -108,9 +106,7 @@
     <string name="overwrite">Écraser</string>
     <string name="search_no_results">Ulac igmad</string>
     <string name="cancel">Sefex</string>
-    <string name="contribution_title">Ttekki</string>
     <string name="tab_subscriptions">Ijerriden</string>
-    <string name="website_title">Asmel web</string>
     <string name="decline">Agwi</string>
     <string name="show_comments_title">Beqqeḍ iwenniten</string>
     <string name="settings_category_player_title">Ameɣri</string>
@@ -154,7 +150,6 @@
     <string name="network_error">Tuccḍa deg uẓeṭṭa</string>
     <string name="infinite_videos">∞ tividyutin</string>
     <string name="msg_wait">Ttxil arǧu…</string>
-    <string name="title_activity_about">Ɣef NewPipe</string>
     <string name="video_player">Imeɣri n uvidyu</string>
     <string name="channel_tab_shorts">Shorts</string>
     <string name="channel_tab_livestreams">Srid</string>
@@ -169,7 +164,6 @@
     <string name="channel_tab_videos">Tividyutin</string>
     <string name="channel_tab_playlists">Tibdarin n tɣuri</string>
     <string name="channel_tab_albums">Ilbumen</string>
-    <string name="channel_tab_about">Ɣef</string>
     <string name="rewind">Tuɣalin ɣer deffir</string>
     <string name="image_quality_title">Taɣara n tugna</string>
     <string name="sort">Smizzwer</string>
@@ -205,8 +199,6 @@
     <string name="audio_track_type_original">aneṣli</string>
     <string name="unbookmark_playlist">Kkes ticreḍt</string>
     <string name="import_from">Kter seg</string>
-    <string name="app_license_title">Turagt n NewPipe</string>
-    <string name="read_full_license">Ɣeṛ turagt</string>
     <string name="error_http_not_found">Ur yettwaf ara</string>
     <string name="more_options">Ugar n tnefrunin</string>
     <string name="share_dialog_title">Bḍu d</string>

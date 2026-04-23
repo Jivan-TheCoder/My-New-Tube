@@ -111,13 +111,6 @@
     <string name="resume_on_audio_focus_gain_title">Настави са пуштањем</string>
     <string name="best_resolution">Најбоља резолуција</string>
     <string name="settings_category_downloads_title">Преузимање</string>
-    <string name="title_activity_about">О NewPipe</string>
-    <string name="tab_about">О нама и ЧПП</string>
-    <string name="tab_licenses">Лиценце</string>
-    <string name="app_description">Слободно и лагано токовање на Android-у.</string>
-    <string name="view_on_github">Погледај на GitHub-у</string>
-    <string name="read_full_license">Прочитај лиценцу</string>
-    <string name="contribution_title">Допринос</string>
     <string name="title_activity_history">Историја</string>
     <string name="action_history">Историја</string>
     <string name="resume_on_audio_focus_gain_summary">Наставите са пуштањем након прекида (нпр. телефонски позиви)</string>
@@ -156,9 +149,6 @@
     <string name="settings_file_replacement_character_summary">Неисправни знакови биће замењени овим вредностима</string>
     <string name="settings_file_replacement_character_title">Заменски знак</string>
     <string name="charset_most_special_characters">Већина посебних знакова</string>
-    <string name="title_licenses">Лиценце треће стране</string>
-    <string name="app_license_title">Лиценца NewPipe-а</string>
-    <string name="contribution_encouragement">Без обзира имате ли идеје; превод, промене дизајна, чишћење кода или праве, озбиљне, промене кода—помоћ је увек добродошла. Што се више уради, то је боље!</string>
     <string name="show_hold_to_append_summary">Прикажите савет када притиснете позадину или искачуће дугме у видео снимку „Детаљи:“</string>
     <string name="play_all">Пусти све</string>
     <string name="player_stream_failure">Није могуће пустити овај ток</string>
@@ -192,8 +182,6 @@
     <string name="donation_title">Донација</string>
     <string name="donation_encouragement">NewPipe је развијен од стране волонтера који проводе своје слободно време доносећи вам најбоље корисничко искуство. Узвратите програмерима како би учинили NewPipe још бољим, док уживају у шољици кафе.</string>
     <string name="give_back">Узврати</string>
-    <string name="website_title">Веб-сајт</string>
-    <string name="website_encouragement">За више информација и новости посетите NewPipe веб-сајт.</string>
     <string name="hold_to_append">Задржати за стављање у редослед</string>
     <string name="use_inexact_seek_title">Користи брзо, непрецизно премотавање</string>
     <string name="use_inexact_seek_summary">Непрецизно премотавање омогућава плејеру да брже долази до позиције уз смањену прецизност. Премотавање за 5, 15 или 25 секунди са овом опцијом не ради</string>
@@ -376,11 +364,8 @@
     <string name="main_page_content_summary">Које картице се приказују на главној страници</string>
     <string name="title_most_played">Највише пуштано</string>
     <string name="title_last_played">Последње пуштано</string>
-    <string name="app_license">NewPipe је слободан софтвер за копирање: Можете га користити, проучавати, делити и побољшавати по жељи. Конкретно, можете га поново дистрибуирати и/или модификовати под условима GNU Опште јавне лиценце коју је објавила Фондација за слободни софтвер, било верзију 3 лиценце или (по вашем избору) било коју каснију верзију.</string>
-    <string name="read_privacy_policy">Прочитај политику приватности</string>
     <string name="privacy_policy_encouragement">Пројекат NewPipe веома озбиљно схвата вашу приватност. Стога, апликација не прикупља никакве податке без вашег пристанка.
 \nПолитика приватности NewPipe-а детаљно објашњава који се подаци шаљу и чувају када пошаљете извештај о отказивању апликације.</string>
-    <string name="privacy_policy_title">Политика приватности NewPipe-а</string>
     <string name="done">Готово</string>
     <string name="recaptcha_solve">Реши</string>
     <string name="subtitle_activity_recaptcha">Притисните „Готово“ када решите</string>
@@ -648,8 +633,6 @@
     <string name="audio_track_name">%1$s %2$s</string>
     <string name="enable_streams_notifications_title">Обавештења о новим токовима</string>
     <string name="notifications">Обавештења</string>
-    <string name="faq">Погледај на веб-сајту</string>
-    <string name="faq_description">Ако имате проблема са коришћењем апликације, обавезно погледајте ове одговоре на честа питања!</string>
     <string name="playlist_add_stream_success_duplicate">Дупликат је додат %d пут(а)</string>
     <string name="streams_notifications_network_title">Потребна мрежна веза</string>
     <string name="feed_show_watched">Потпуно одгледано</string>
@@ -736,7 +719,6 @@
     <string name="dont_show">Не приказуј</string>
     <string name="no_appropriate_file_manager_message">Није пронађен одговарајући менаџер фајлова за ову радњу.
 \nИнсталирајте менаџер фајлова или покушајте да онемогућите „%s“ у подешавањима преузимања</string>
-    <string name="faq_title">Често постављана питања</string>
     <string name="show_crash_the_player_summary">Приказује опцију рушења, када користите плејер</string>
     <plurals name="deleted_downloads_toast">
         <item quantity="one">Избрисано је %1$s преузимање</item>
@@ -772,7 +754,6 @@
     <string name="show_channel_tabs_summary">Које картице се приказују на страницама канала</string>
     <string name="show_channel_tabs">Картице канала</string>
     <string name="channel_tab_shorts">Shorts</string>
-    <string name="channel_tab_about">Информације</string>
     <string name="channel_tab_albums">Албуми</string>
     <string name="channel_tab_playlists">Плејлисте</string>
     <string name="channel_tab_tracks">Снимци</string>

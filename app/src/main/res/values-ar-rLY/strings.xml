@@ -30,7 +30,6 @@
     <string name="audio_track_type_original">الافتراضي</string>
     <string name="channel_tab_videos">الفيديوهات</string>
     <string name="dismiss">إلغاء</string>
-    <string name="app_description">تطبيق مجاني خفيف البث على أندرويد.</string>
     <string name="title_activity_history">التاريخ</string>
     <string name="pause_downloads">إيقاف التحميل مؤقتًا</string>
     <string name="notification_scale_to_square_image_summary">قم بقص الصورة المصغرة للفيديو الموضحة في الإشعار من نسبة العرض إلى الارتفاع 16: 9 إلى 1: 1</string>
@@ -67,9 +66,7 @@
     <string name="restore_defaults_confirmation">هل تريد استعادة الإعدادات الافتراضية؟</string>
     <string name="preferred_player_fetcher_notification_message">تحميل المحتوى المطلوب</string>
     <string name="peertube_instance_add_title">إضافة نموذج</string>
-    <string name="title_licenses">تراخيص الجهات الخارجية</string>
     <string name="clear_playback_states_summary">حذف كل مواقف التشغيل</string>
-    <string name="tab_about">عن التطبيق والأسئلة الشائعة</string>
     <string name="import_subscriptions_hint">استيراد الاشتراكات أو تصديرها من القائمة المكونة من 3 نقاط</string>
     <string name="downloads_title">الملفات المحملة</string>
     <string name="invalid_source">لا يوجد مثل هذا الملف/مصدر المحتوى</string>
@@ -177,7 +174,6 @@
     <string name="set_as_playlist_thumbnail">تعيين كصورة مصغرة لقائمة التشغيل</string>
     <string name="max_retry_msg">العدد الأقصى للمحاولات</string>
     <string name="error_snackbar_message">عذرًا، حدث خطأ ما.</string>
-    <string name="view_on_github">عرض على GitHub</string>
     <string name="error_details_headline">التفاصيل:</string>
     <string name="playback_pitch">تردد الصوت</string>
     <string name="feed_use_dedicated_fetch_method_help_text">هل تعتقد أن تحميل التغذية بطيءٌ جدًا؟ إذا كان الأمر كذلك، فحاول تمكين التحميل السريع (يمكنك تغييره في الإعدادات أو بالضغط على الزر أدناه).
@@ -198,7 +194,6 @@
     <string name="delete_playlist_prompt">هل تريد حذف قائمة التشغيل هذه؟</string>
     <string name="content_language_title">اللغة الإفتراضية للمحتوى</string>
     <string name="processing_may_take_a_moment">جاري المعالجة ... قد يستغرق لحظة</string>
-    <string name="read_full_license">قراءة الرخصة</string>
     <string name="show_channel_tabs">ألسنة القنوات</string>
     <string name="seekbar_preview_thumbnail_title">معاينة مصغرة على شريط التمرير</string>
     <string name="fragment_feed_title">ما الجديد</string>
@@ -313,7 +308,6 @@
     <string name="error_path_creation">لا يمكن إنشاء المجلد الوجهة</string>
     <string name="download_path_audio_summary">يتم تخزين الملفات الصوتية التي تم تنزيلها هنا</string>
     <string name="notification_action_nothing">لا شيء</string>
-    <string name="read_privacy_policy">الإطلاع على سياسة الخصوصية</string>
     <string name="youtube_restricted_mode_enabled_summary">يوفر YouTube \"وضع تقييد المحتوى\" الذي يخفي المحتوى المحتمل للكبار</string>
     <string name="show_comments_summary">عطّله لإخفاء التعليقات</string>
     <string name="error_report_notification_title">واجه NewPipe خطأ، اضغط للتقرير</string>
@@ -335,9 +329,7 @@
     <string name="notification_colorize_summary">اجعل أندرويد يخصص لون الإشعار وفقا للّون الرئيسي في الصورة المصغرة (لاحظ أن هذا غير متوفر على جميع الأجهزة)</string>
     <string name="background_player_playing_toast">يتم التشغيل في الخلفية</string>
     <string name="error_http_no_content">الخادم لا يقوم بإرسال البيانات</string>
-    <string name="privacy_policy_title">سياسة خصوصية NewPipe</string>
     <string name="recaptcha_request_toast">طلب اختبار الكابتشا مطلوب</string>
-    <string name="faq_description">إذا كنت تواجه مشكلة في استخدام التطبيق ، فتأكد من مراجعة هذه الإجابات للأسئلة الشائعة!</string>
     <string name="downloads">التحميلات</string>
     <string name="remove_duplicates_message">هل تريد إزالة جميع التدفقات المكررة في قائمة التشغيل هذه؟</string>
     <string name="enable_leak_canary_summary">قد تتسبب مراقبة تسرب الذاكرة في عدم استجابة التطبيق عند تفريغ السجلات</string>
@@ -382,7 +374,6 @@
     <string name="use_external_video_player_summary">يزيل الصوت في بعض الجودات</string>
     <string name="feed_fetch_channel_tabs">جلب ألسنة القنوات</string>
     <string name="high_quality_larger">جودة عالية (أكبر)</string>
-    <string name="faq_title">أسئلة مكررة</string>
     <string name="no_dir_yet">لم يتم تعيين مجلد التحميل، الرجاء اختيار مجلد التحميل الافتراضي الآن</string>
     <string name="feed_update_threshold_title">عتبة تحديث الموجز</string>
     <string name="select_night_theme_toast">يمكنك اختيار نسقك الليلي المفضل أدناه</string>
@@ -427,7 +418,6 @@
     <string name="settings_category_feed_title">الموجز</string>
     <string name="remove_watched_popup_warning">ستتم إزالة مقاطع الفيديو التي تمت مشاهدتها قبل وبعد إضافتها إلى قائمة التشغيل. \nهل أنت واثق؟ لا يمكن التراجع عن هذا!</string>
     <string name="detail_dislikes_img_view_description">عدم الإعجاب</string>
-    <string name="faq">مشاهدة على الموقع</string>
     <string name="night_theme_available">هذا الخيار متاح فقط إذا تم تحديد %s للسمة</string>
     <string name="retry">إعادة المحاولة</string>
     <string name="settings_category_player_title">المشغل</string>
@@ -485,7 +475,6 @@
     <string name="image_quality_high">عالية الجودة</string>
     <string name="select_quality_external_players">حدد الجودة للمشغلين الخارجيين</string>
     <string name="detail_heart_img_view_description">أُعجب بها منشئ المحتوى</string>
-    <string name="channel_tab_about">عن</string>
     <string name="search_showing_result_for">عرض نتائج ل: %s</string>
     <string name="open_with">افتح باستخدام</string>
     <string name="delete_item_search_history">هل تريد حذف هذا العنصر من سجل البحث؟</string>
@@ -524,7 +513,6 @@
     <string name="local_search_suggestions">اقتراحات البحث المحلية</string>
     <string name="notification_scale_to_square_image_title">اقتصاص الصورة المصغرة إلى نسبة العرض إلى الارتفاع 1:1</string>
     <string name="comments_are_disabled">تم تعطيل التعليقات</string>
-    <string name="website_title">موقع الويب</string>
     <string name="enable_search_history_title">سجل البحث</string>
     <string name="drawer_open">فتح الدرج</string>
     <string name="infinite_videos">∞ فيديو</string>
@@ -637,7 +625,6 @@
     <string name="playback_step">خطوة</string>
     <string name="recaptcha_solve">حل</string>
     <string name="selected_stream_external_player_not_supported">الدفق المحدد غير مدعوم من قبل المشغلون الخارجيون</string>
-    <string name="title_activity_about">عن تطبيق نيوپايپ</string>
     <string name="seek_duration_title">تسريع إلى الأمام/-ترجيع وقت البحث</string>
     <string name="permission_denied">تم رفضها من قبل النظام</string>
     <string name="no_comments">ليس هناك تعليقات</string>
@@ -654,7 +641,6 @@
     <string name="player_stream_failure">لا يمكن تشغيل هذا البث</string>
     <string name="clear_cookie_title">امسح ملفات تعريف الارتباط reCAPTCHA</string>
     <string name="metadata_banners">اللافتات</string>
-    <string name="contribution_title">ساهم</string>
     <string name="minimize_on_exit_summary">الإجراء عند التبديل إلى تطبيق آخر من مشغل الفيديو الرئيسي — %s</string>
     <string name="channel_tab_playlists">قوائم التشغيل</string>
     <string name="metadata_privacy_public">عامة</string>
@@ -684,7 +670,6 @@
     <string name="subscribers_count_not_available">عدد المشتركين غير متاح</string>
     <string name="feed_group_dialog_select_subscriptions">حدد الاشتراكات</string>
     <string name="tab_subscriptions">الاشتراكات</string>
-    <string name="app_license">NewPipe هو برنامج مفتوح المصدر وبحقوق متروكة: يمكنك استخدام الكود ودراسته وتحسينه كما شئت. وعلى وجه التحديد يمكنك إعادة توزيعه / أو تعديله تحت شروط رخصة GNU العمومية والتي نشرتها مؤسسة البرمجيات الحرة، سواء الإصدار 3 من الرخصة، أو (باختيارك) أي إصدار أحدث.</string>
     <string name="show_play_with_kodi_summary">اعرض خيار لتشغيل الفيديو عبر مركز وسائط Kodi</string>
     <string name="post_processing">قيد المعالجة</string>
     <string name="rename_playlist">إعادة تسمية</string>
@@ -759,12 +744,9 @@
     <string name="conferences">المؤتمرات</string>
     <string name="import_file_title">إستيراد ملف</string>
     <string name="show_error_snackbar">إظهار خطأ snackbar</string>
-    <string name="website_encouragement">قم بزيارة موقع NewPipe لمزيد من المعلومات والمستجدات.</string>
     <string name="no_channel_subscribed_yet">لم يتم الاشتراك في أي قناة بعد</string>
     <string name="start_main_player_fullscreen_summary">لا تبدأ تشغيل مقاطع الفيديو في المشغل المصغر، ولكن قم بتدوير وضع ملء الشاشة مباشرة، إذا تم تأمين التدوير التلقائي. لا يزال بإمكانك الوصول إلى المشغل المصغر عن طريق الخروج من ملء الشاشة</string>
-    <string name="app_license_title">تراخيص NewPipe</string>
     <string name="feed_update_threshold_option_always_update">تحديث دائمًا</string>
-    <string name="tab_licenses">التراخيص</string>
     <string name="export_ongoing">عملية التصدير جارية …</string>
     <string name="minimize_on_exit_background_description">تصغير إلى مشغل الخلفية</string>
     <string name="notification_channel_description">تنبيهات مشغل NewPipe</string>
@@ -794,7 +776,6 @@
     <string name="enqueue_next_stream">وضع التالي على قائمة الانتظار</string>
     <string name="show_meta_info_title">إظهار معلومات التعريف</string>
     <string name="select_a_channel">اختر قناة</string>
-    <string name="copyright">© %1$sبواسطة%2$sتحت%3$s</string>
     <string name="disable_media_tunneling_title">تعطيل نفق الوسائط</string>
     <string name="channel_tab_tracks">المسارات</string>
     <string name="feed_group_dialog_empty_name">اسم المجموعة فارغ</string>
@@ -803,7 +784,6 @@
     <string name="subscriptions_export_unsuccessful">لا يمكن تصدير الاشتراكات</string>
     <string name="no_streams">لاتوجد بثوث</string>
     <string name="notification_actions_at_most_three">يمكنك تحديد ثلاثة إجراءات كحد أقصى لإظهارها في الإشعار المضغوط!</string>
-    <string name="contribution_encouragement">إذا كانت لديك أفكار؛ أو ترجمة، أو تغييرات تخص التصميم، أو تنظيف و تحسين الشفرة البرمجية، أو تعديلات عميقة عليها، فتذكر أنّ مساعدتك دائما موضع ترحيب. وكلما أتممنا شيئا كلما كان ذلك أفضل!</string>
     <string name="main_page_content_summary">اختار الألسنة التي تودّ ظهورها على الصفحة الرئيسية</string>
     <string name="download_path_title">مجلد تحميل الفيديو</string>
     <string name="restricted_video">هذا الفيديو مقيد بالفئة العمرية.
