@@ -335,9 +335,8 @@
     <string name="subscribers_count_not_available">Jumlah pelanggan tidak tersedia</string>
     <string name="main_page_content_summary">Tab apa yang ditampilkan di halaman utama</string>
     <string name="conferences">Konferensi</string>
-    <string name="updates_setting_title">Pembaruan</string>
-    <string name="updates_setting_description">Tampilkan pemberitahuan untuk meminta pembaruan aplikasi saat versi baru tersedia</string>
-    <string name="list_view_mode">Mode tampilan berdaftar</string>
+
+<string name="list_view_mode">Mode tampilan berdaftar</string>
     <string name="list">Daftar</string>
     <string name="grid">Kisi</string>
     <string name="auto">Otomatis</string>
@@ -632,9 +631,8 @@
     <string name="enqueued_next">telah ditambahkan ke selanjutnya</string>
     <string name="start_main_player_fullscreen_summary">Jangan memulai memutar video di mini player, tapi nyalakan langsung di mode layar penuh, jika rotasi otomatis terkunci. Anda tetap dapat mengakses mini player dengan keluar dari layar penuh</string>
     <string name="processing_may_take_a_moment">Memproses… Mungkin butuh waktu sebentar</string>
-    <string name="check_for_updates">Periksa Pembaruan</string>
-    <string name="manual_update_description">Periksa secara manual untuk melihat aplikasi versi baru</string>
-    <string name="checking_updates_toast">Memeriksa pembaruan…</string>
+
+<string name="checking_updates_toast">Memeriksa pembaruan…</string>
     <string name="feed_new_items">Item feed baru</string>
     <string name="show_crash_the_player_title">Tampilkan \"Mogokkan pemutar\"</string>
     <string name="show_crash_the_player_summary">Menampilkan opsi penghentian ketika menggunakan pemain video</string>
@@ -798,9 +796,7 @@
     <string name="reset_all_settings">Mengatur ulang semua pengaturan akan mengabaikan pengaturan Anda yang disukai dan memulai ulang aplikasi.
 \n
 \nApakah Anda yakin ingin melanjutkan?</string>
-    <string name="auto_update_check_description">NewPipe dapat memeriksa versi baru secara berkala dan memberi tahu Anda ketika ada yang baru.
-\nApakah Anda ingin mengaktifkan ini?</string>
-    <string name="settings_category_backup_restore_title">Cadangkan dan pulihkan</string>
+<string name="settings_category_backup_restore_title">Cadangkan dan pulihkan</string>
     <string name="import_settings_vulnerable_format">Pengaturan dalam ekspor yang diimpor menggunakan format rentan yang tidak digunakan lagi sejak NewPipe 0.27.0. Pastikan ekspor yang diimpor berasal dari sumber tepercaya, dan lebih memilih hanya menggunakan ekspor yang diperoleh dari NewPipe 0.27.0 atau yang lebih baru di masa mendatang. Dukungan untuk mengimpor pengaturan dalam format rentan ini akan segera dihapus sepenuhnya, dan NewPipe versi lama tidak akan dapat lagi mengimpor pengaturan ekspor dari versi baru.</string>
     <string name="audio_track_type_secondary">sekunder</string>
     <string name="share_playlist_as_youtube_temporary_playlist">Daftar putar</string>
@@ -833,10 +829,9 @@
     <string name="short_thousand">%sK</string>
     <string name="short_million">%sM</string>
     <string name="short_billion">%sB</string>
-    <string name="kao_dialog_warning">Pada Agustus 2025, Google mengumumkan bahwa mulai September 2026, pemasangan aplikasi akan memerlukan verifikasi pengembang untuk semua aplikasi Android pada perangkat bersertifikasi, termasuk yang dipasang di luar Play Store. Karena pengembang NewPipe tidak menyetujui persyaratan ini, NewPipe tidak akan lagi berfungsi pada perangkat Android bersertifikasi setelah waktu tersebut.</string>
-    <string name="kao_dialog_more_info">Rincian</string>
-    <string name="kao_solution">Solusi</string>
-    <plurals name="export_subscriptions">
+
+
+<plurals name="export_subscriptions">
         <item quantity="other">Mengekspor %d langganan…</item>
     </plurals>
     <plurals name="load_subscriptions">

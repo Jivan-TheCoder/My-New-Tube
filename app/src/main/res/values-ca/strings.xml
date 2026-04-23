@@ -327,8 +327,7 @@
     <string name="download_to_sdcard_error_title">L\'emmagatzematge extern no està disponible</string>
     <string name="restore_defaults">Reinicia als valors per defecte</string>
     <string name="restore_defaults_confirmation">Voleu reiniciar als valors per defecte\?</string>
-    <string name="updates_setting_title">Actualitzacions</string>
-    <string name="list">Llista</string>
+<string name="list">Llista</string>
     <string name="grid">Quadrícula</string>
     <string name="auto">Automàtic</string>
     <string name="app_update_available_notification_title">Una nova versió del NewPipe està disponible!</string>
@@ -371,8 +370,7 @@
     <string name="error_unable_to_load_comments">No s\'han pogut carregar els comentaris</string>
     <string name="close">Tanca</string>
     <string name="saved_tabs_invalid_json">S\'ha produït un error en llegir les pestanyes desades; s\'estan utilitzant les pestanyes per defecte</string>
-    <string name="updates_setting_description">Mostra una notificació per demanar l\'actualització de l\'aplicació si hi ha una versió nova disponible</string>
-    <string name="error_http_no_content">El servidor no està enviant dades</string>
+<string name="error_http_no_content">El servidor no està enviant dades</string>
     <string name="app_update_notification_channel_name">Notificació d\'actualització de l\'aplicació</string>
     <string name="enable_playback_resume_title">Reprèn la reproducció</string>
     <string name="overwrite_failed">No es pot sobreescriure el fitxer</string>
@@ -635,9 +633,8 @@
     <string name="start_main_player_fullscreen_summary">Si la rotació automàtica està bloquejada, no inicieu vídeos al mini reproductor, sinó que aneu directament al mode de pantalla completa. Podeu accedir igualment al mini reproductor sortint de pantalla completa</string>
     <string name="error_report_channel_name">Notificació d\'informe d\'error</string>
     <string name="crash_the_player">Tancar abruptament el reproductor</string>
-    <string name="check_for_updates">Comprovar si hi ha actualitzacions</string>
-    <string name="manual_update_description">Comprovar manualment si hi ha noves versions</string>
-    <plurals name="download_finished_notification">
+
+<plurals name="download_finished_notification">
         <item quantity="one">Baixada finalitzada</item>
         <item quantity="many">%s baixades finalitzades</item>
         <item quantity="other">%s baixades finalitzades</item>
@@ -737,8 +734,7 @@
     <string name="channel_tab_playlists">Llistes de reproducció</string>
     <string name="remove_duplicates">Suprimeix els duplicats</string>
     <string name="reset_settings_title">Restableix la configuració</string>
-    <string name="auto_update_check_description">NewPipe pot cercar automàticament actualitzacions i fer-t\'ho saber en estar disponibles.\nVols habilitar-ho?</string>
-    <string name="remove_duplicates_title">Suprimeixo els duplicats?</string>
+<string name="remove_duplicates_title">Suprimeixo els duplicats?</string>
     <string name="reset_settings_summary">Restableix tots els paràmetres als valors per defecte</string>
     <string name="reset_all_settings">Restablir tots els paràmetres descartarà els teus paràmetres preferits i reiniciarà l\'aplicació.\n\nN\'estàs segur?</string>
     <string name="app_update_available_notification_text">Clica per descarregar%s</string>

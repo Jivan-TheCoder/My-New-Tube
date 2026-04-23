@@ -119,9 +119,8 @@
     <string name="minimize_on_exit_none_description">Asnjë</string>
     <string name="minimize_on_exit_summary">Veprimi që ndërmerret kur kalohet në aplikacione të tjera nga luajtësi kryesor i videove — %s</string>
     <string name="minimize_on_exit_title">Minimizoje kur kalon midis aplikacioneve</string>
-    <string name="updates_setting_description">Shfaq një njoftim për të përditësuar menjëherë aplikacionin kur një version i ri është i disponueshëm</string>
-    <string name="updates_setting_title">Përditësimet</string>
-    <string name="limit_mobile_data_usage_title">Limitoje rezolucionin kur je duke përdorur internetin nga SIM</string>
+
+<string name="limit_mobile_data_usage_title">Limitoje rezolucionin kur je duke përdorur internetin nga SIM</string>
     <string name="limit_data_usage_none_description">Pa limit</string>
     <string name="decline">Refuzo</string>
     <string name="accept">Prano</string>

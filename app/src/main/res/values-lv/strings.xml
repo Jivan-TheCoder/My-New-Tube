@@ -427,9 +427,8 @@
     <string name="minimize_on_exit_popup_description">Minimizēt uz popup atskaņotāju</string>
     <string name="minimize_on_exit_background_description">Minimizēt uz fona atskaņotāju</string>
     <string name="minimize_on_exit_none_description">Nav</string>
-    <string name="updates_setting_description">Rādīt paziņojumu, ja pieejama jauna lietotnes versija</string>
-    <string name="updates_setting_title">Atjauninājumi</string>
-    <string name="limit_mobile_data_usage_title">Ierobežots izšķirtspēju, izmantojot mobilos datus</string>
+
+<string name="limit_mobile_data_usage_title">Ierobežots izšķirtspēju, izmantojot mobilos datus</string>
     <string name="limit_data_usage_none_description">Nav ierobežojuma</string>
     <string name="decline">Nepiekrist</string>
     <string name="accept">Piekrist</string>
@@ -603,9 +602,8 @@
     <string name="main_page_content_swipe_remove">Pavelciet atlasīto elementu pa kreisi vai labi, lai to aizvāktu</string>
     <string name="local_search_suggestions">Lokālos meklēšanas ieteikumus</string>
     <string name="high_quality_larger">Augstas kvalitātes (lielāks)</string>
-    <string name="check_for_updates">Pārbaudīt atjauninājumus</string>
-    <string name="manual_update_description">Pašrocīgi veikt jaunas versijas pārbaudi</string>
-    <string name="seekbar_preview_thumbnail_title">Video atskaņošanas joslas sīktēla priekšskatījums</string>
+
+<string name="seekbar_preview_thumbnail_title">Video atskaņošanas joslas sīktēla priekšskatījums</string>
     <string name="checking_updates_toast">Notiek atjauninājumu pārbaude…</string>
     <string name="downloads_storage_use_saf_summary_api_29">Sākot ar Android 10, tikai“Krātuves Piekļuves Sistēma” ir atbalstīta</string>
     <string name="feed_load_error_account_info">Nevarēja ielādēt straumi priekš \'%s\'.</string>
@@ -712,8 +710,7 @@
     <string name="channel_tab_about">Par</string>
     <string name="metadata_thumbnails">Sīkattēli</string>
     <string name="sort">Kārtot</string>
-    <string name="auto_update_check_description">NewPipe pati var veikt jaunas versijas pārbaudi laiku pa laikam un informēt jūs, kad tā ir pieejama.\nVai tiešām vēlaties ieslēgt šo funkciju?</string>
-    <string name="no_appropriate_file_manager_message">Netika atrasts atbilstošs failu pārvaldnieks šai darbībai.
+<string name="no_appropriate_file_manager_message">Netika atrasts atbilstošs failu pārvaldnieks šai darbībai.
 \nLūdzu instalējiet failu pārvaldnieku vai pamēģiniet atspējot \'%s\' lejuplādēšanas iestatījumos</string>
     <string name="audio_track_type_original">oriģinālais</string>
     <string name="streams_notifications_network_title">Nepieciešams tīkla savienojums</string>
@@ -828,10 +825,9 @@
     <string name="player_http_403">Atskaņošanas laikā no servera saņemta HTTP 403 kļūda, ko, iespējams, izraisīja straumēšanas URL derīguma beigu termiņš vai IP aizliegums</string>
     <string name="player_http_invalid_status">Atskaņošanas laikā no servera saņemta HTTP %1$s kļūda</string>
     <string name="youtube_player_http_403">Atskaņošanas laikā no servera saņemta HTTP 403 kļūda, ko, iespējams, izraisīja IP aizliegums vai straumēšanas URL atšifrēšanas (deobfuskācijas) problēmas</string>
-    <string name="kao_dialog_warning">2025. gada augustā Google paziņoja, ka, sākot ar 2026. gada septembri, lai uzstādītu lietotnes, būs nepieciešama izstrādātāja verifikācija visām Android lietotnēm sertificētajās ierīcēs, tostarp arī tām, kuras uzstādītas ārpus Play veikala. Tā kā NewPipe izstrādātāji nepiekrīt un negrib pieņemt šo prasību, pēc šī datuma NewPipe vairs nedarbosies sertificētajās Android ierīcēs.</string>
-    <string name="kao_dialog_more_info">Detalizētāka informācija</string>
-    <string name="kao_solution">Risinājums</string>
-    <string name="migration_info_6_7_message">SoundCloud likvidēja oriģinālos Top 50 topus. Atbilstošā cilne noņemta no jūsu galvenās lapas.</string>
+
+
+<string name="migration_info_6_7_message">SoundCloud likvidēja oriģinālos Top 50 topus. Atbilstošā cilne noņemta no jūsu galvenās lapas.</string>
     <string name="permission_display_over_apps_message">Lai varētu izmantot uznirstošo atskaņotāju, lūdzu, atlasiet %1$s šajā Android iestatījumu izvēlnē un iespējojiet %2$s.</string>
     <string name="import_subscriptions_title">Ievietot abonementus</string>
     <string name="export_subscriptions_title">Izgūt abonementus</string>

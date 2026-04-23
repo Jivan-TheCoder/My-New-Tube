@@ -475,10 +475,9 @@
     <string name="limit_mobile_data_usage_title">ߞߊ߬ ߓߍ߲߬ߡߊ ߘߊ߲߬ߠߊߕߍ߬ ߜߋߟߋ߲ߜߋߟߋ߲߫ ߟߐ߲ߕߊ ߟߎ߬ ߟߊߓߊ߯ߙߊ߫ ߕߎߡߊ</string>
     <string name="enable_streams_notifications_summary">ߞߊ߬ ߡߊ߬ߝߘߎ߬ߟߌ ߟߎ߬ ߟߊ߫ ߥߦߏ߬ ߞߎߘߊ ߟߎ߫ ߛߏߓߌ߬ߘߐ߬ߓߏ߲ ߠߎ߬ ߟߊߣߊ߬</string>
     <string name="any_network">ߞߙߏ߬ߝߏ߫ ߛߎ߮ ߓߍ߯</string>
-    <string name="updates_setting_title">ߟߏ߲ߘߐߦߊߟߌ ߟߎ߬</string>
-    <string name="check_for_updates">ߟߏ߲ߘߐߦߊߟߌ ߟߎ߬ ߡߊߝߍߣߍ߲߫</string>
-    <string name="manual_update_description">ߞߊ߬ ߓߐߞߏ߫ ߞߎߘߊ ߟߎ߫ ߕߎ߬ߢߊ߬ߟߐ߲߫ ߓߟߏ ߟߊ߫</string>
-    <string name="minimize_on_exit_title">ߞߵߊ߬ ߡߊߖߌ߰ ߟߥߊߟߌߟߊ߲ ߘߐߦߟߍߡߊ߲߫ ߕߎߡߊ</string>
+
+
+<string name="minimize_on_exit_title">ߞߵߊ߬ ߡߊߖߌ߰ ߟߥߊߟߌߟߊ߲ ߘߐߦߟߍߡߊ߲߫ ߕߎߡߊ</string>
     <string name="minimize_on_exit_none_description">ߝߏߛߌ߬</string>
     <string name="minimize_on_exit_popup_description">ߞߵߊ߬ ߡߊߖߌ߰ ߘߐ߬ߛߊ߬ߙߌ߬ߟߊ߲߬ ߝߎ߲ߞߊ߲ߡߊ ߘߐ߫</string>
     <string name="autoplay_summary">ߞߊ߬ ߘߐ߬ߛߊ߬ߙߌ߬ߟߊ߲ ߘߊߦߟߍ߬ ߊ߬ ߖߍ߬ߘߍߡߊ߬ — %s</string>
@@ -522,8 +521,7 @@
     <string name="percent">ߗߡߍ߬ߘߐ߬ߦߊ</string>
     <string name="streams_notifications_interval_title">ߕߎ߬ߢߊ߬ߟߐ߲ ߡߊߛߊ߬ߦߌ</string>
     <string name="streams_notifications_network_title">ߞߙߏ߬ߝߏ߫ ߜߊ߲߬ߞߎ߲߬ߠߌ߲߫ ߛߎ߯ߦߊ</string>
-    <string name="updates_setting_description">ߞߊ߬ ߟߥߊߟߌߟߊ߲߫ ߟߏ߲ߘߐߦߊߟߌ ߛߏ߬ߓߌ߬ߘߐ߬ߓߏ߲ ߦߌ߬ߘߊ߬ ߣߌ߫ ߓߐߞߏ߫ ߞߎߘߊ߫ ߛߐ߬ߘߐ߲߬ ߘߊ߫</string>
-    <string name="minimize_on_exit_background_description">ߞߵߊ߬ ߡߊߖߌ߰ ߝߊ߲߬ߝߘߊ߬ߞߘߐ߬ߟߊ߬ ߘߐ߬ߛߊ߬ߙߌ߬ߟߊ߲ ߘߐ߫</string>
+<string name="minimize_on_exit_background_description">ߞߵߊ߬ ߡߊߖߌ߰ ߝߊ߲߬ߝߘߊ߬ߞߘߐ߬ߟߊ߬ ߘߐ߬ߛߊ߬ߙߌ߬ߟߊ߲ ߘߐ߫</string>
     <string name="never">ߤߓߊߘߊ߲߫</string>
     <string name="queued">ߊ߬ ߓߘߊ߫ ߝߙߊ߬ ߕߎ߲߰ߠߌ߲ ߠߊ߫</string>
     <string name="generate_unique_name">ߞߊ߬ ߕߐ߯ ߞߎ߲߬ߞߋߟߋ߲߫ ߘߏ߫ ߛߌ߲ߘߌ߫</string>

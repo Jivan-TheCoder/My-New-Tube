@@ -453,9 +453,8 @@
     <string name="minimize_on_exit_none_description">Yo\'q</string>
     <string name="minimize_on_exit_summary">Asosiy video pleyerdan boshqa dasturga o\'tishda harakat - %s</string>
     <string name="minimize_on_exit_title">Ilovani almashtirishni minimallashtirish</string>
-    <string name="updates_setting_description">Yangi versiya mavjud bo\'lganda dasturni yangilashni so\'rash uchun bildirishnomani ko\'rsating</string>
-    <string name="updates_setting_title">Yangilanishlar</string>
-    <string name="limit_mobile_data_usage_title">Mobil ma\'lumotlardan foydalanishda cheklovlarni cheklash</string>
+
+<string name="limit_mobile_data_usage_title">Mobil ma\'lumotlardan foydalanishda cheklovlarni cheklash</string>
     <string name="limit_data_usage_none_description">Limitsiz</string>
     <string name="decline">Rad etish</string>
     <string name="accept">Qabul qilmoq</string>

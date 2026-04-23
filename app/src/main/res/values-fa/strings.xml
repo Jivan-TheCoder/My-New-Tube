@@ -243,8 +243,7 @@
     <string name="app_update_notification_channel_description">آگاهی‌ها برای نگارش‌های جدید نیوپایپ</string>
     <string name="restore_defaults">بازنشانی پیش‌فرض‌ها</string>
     <string name="restore_defaults_confirmation">می‌خواهید پیش‌فرض‌ها را بازنشانی کنید؟</string>
-    <string name="updates_setting_title">به‌روزرسانی‌ها</string>
-    <string name="list_view_mode">حالت نمایش سیاهه</string>
+<string name="list_view_mode">حالت نمایش سیاهه</string>
     <string name="list">سیاهه</string>
     <string name="grid">شبکه</string>
     <string name="auto">خودکار</string>
@@ -353,8 +352,7 @@
     <string name="saved_tabs_invalid_json">به دلیل ناتوانی در خواندن برگه‌های ذخیره شده، برگه‌های پیش‌فرض استفاده می‌شوند</string>
     <string name="subscribers_count_not_available">تعداد مشترک‌شدگان دردسترس نیست</string>
     <string name="main_page_content_summary">چه برگه‌هایی در صفحه اصلی نمایش پیدا کنند</string>
-    <string name="updates_setting_description">زمانی که نسخه جدید برنامه دردسرس است، اعلانی برای به‌روزرسانی نمایش بده</string>
-    <string name="paused">متوقف</string>
+<string name="paused">متوقف</string>
     <string name="queued">در صف</string>
     <string name="post_processing">در حال پساپردازش</string>
     <string name="permission_denied">کنش به دست سامانه متوقف شد</string>
@@ -644,9 +642,8 @@
     <string name="enqueued_next">بعدی در صف گذاشته شد</string>
     <string name="enqueue_next_stream">در صف گذاشتن بعدی</string>
     <string name="processing_may_take_a_moment">در حال پردازش… ممکن است کمی طول بکشد</string>
-    <string name="check_for_updates">بررسی به‌روز رسانی‌ها</string>
-    <string name="manual_update_description">بررسی دستی برای نگارش‌های جدید</string>
-    <string name="checking_updates_toast">بررسی کردن به‌روز رسانی‌ها…</string>
+
+<string name="checking_updates_toast">بررسی کردن به‌روز رسانی‌ها…</string>
     <string name="feed_new_items">موارد خوراک جدید</string>
     <string name="crash_the_player">فروپاشی پخش‌کننده</string>
     <string name="show_crash_the_player_summary">نمایش یک گزینهٔ فروپاشی هنگام استفاده از پخش کننده</string>
@@ -806,8 +803,7 @@
     <string name="notification_actions_summary_android13">ویرایش هر کنش آگاهی زیر با زدن رویش. سه کنش نخست (پخش/مکث، پیشین و بعدی) به دست سامانه تنظیم شده و قابل سفارشی سازی نیستند.</string>
     <string name="left_gesture_control_summary">گزینش کنش ژست نیمهٔ چپ صفحه</string>
     <string name="prefer_original_audio_summary">گزینش قطعهٔ صوتی اصلی فارغ از زبان</string>
-    <string name="auto_update_check_description">نیوپایپ می‌تواند گه‌گاه به صورت خودکار نگارش‌های جدید را بررسی کرده و از وجودشان آگاهتان کند.\nمی‌خواهید به کارش بیندازید؟</string>
-    <string name="reset_settings_summary">بازنشانی همهٔ تنظیمات به مقدارهای پیش‌گزیده‌شان</string>
+<string name="reset_settings_summary">بازنشانی همهٔ تنظیمات به مقدارهای پیش‌گزیده‌شان</string>
     <string name="show_more">نمایش بیش‌تر</string>
     <string name="import_settings_vulnerable_format">تنظیمات داخل برون‌ریزی‌ از قالبی آسیب‌پذیر استفاده می‌کند که از نگارش ۰٫۲۷٫۰ منسوخ شده. مطمئن شوید برون‌ریزی از منبعی مطمئن آمده و ترجیحاً فقط از برون‌ریزی‌های آمده از نگارش ۰٫۲۷٫۰ به بعد استفاده کنید. پشتیبانی از درون‌ریزی تنظیمات به این قالب آسیب‌پذیر به زودی کاملاً‌برداشته خواهد شد و دیگر نگارش‌خای قدیمی‌تر قادر به درون ریزی تنظیمات از نگارش‌های جدید نخواهند بود.</string>
     <string name="open_play_queue">گشودن صف پخش</string>

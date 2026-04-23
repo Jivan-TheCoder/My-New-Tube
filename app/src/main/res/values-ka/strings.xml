@@ -419,11 +419,10 @@
     <string name="enable_streams_notifications_summary">შემატყობინეთ ახალი ნაკადების შესახებ გამოწერებიდან</string>
     <string name="streams_notifications_interval_title">სიხშირის შემოწმება</string>
     <string name="any_network">ნებისმიერი ქსელი</string>
-    <string name="updates_setting_title">განახლებები</string>
-    <string name="updates_setting_description">მაჩვენე შეტყობინება აპის განახლების მოთხოვნით, როდესაც ხელმისაწვდომი იქნება ახალი ვერსია</string>
-    <string name="check_for_updates">Შეამოწმოთ განახლებები</string>
-    <string name="manual_update_description">ხელით შეამოწმეთ ახალი ვერსიები</string>
-    <string name="minimize_on_exit_title">მინიმიზაცია აპის გადამრთველზე</string>
+
+
+
+<string name="minimize_on_exit_title">მინიმიზაცია აპის გადამრთველზე</string>
     <string name="minimize_on_exit_summary">მოქმედება სხვა აპზე გადასვლისას მთავარი ვიდეო დამკვრელიდან — %s</string>
     <string name="minimize_on_exit_none_description">არცერთი</string>
     <string name="minimize_on_exit_background_description">მინიმიზაცია ფონურ დამკვრელამდე</string>
@@ -756,8 +755,7 @@
     <string name="select_a_feed_group">აირჩიეთ არხის ჯგუფი</string>
     <string name="no_feed_group_created_yet">არხის ჯგუფი ჯერ არ შექმნილა</string>
     <string name="disable_media_tunneling_automatic_info">მედიის გვირაბირება თქვენს მოწყობილობაზე ნაგულისხმევად გამორთულია, რადგან თქვენი მოწყობილობის მოდელი, როგორც ცნობილია, მას არ უჭერს მხარს.</string>
-    <string name="auto_update_check_description">NewPipe-ს შეუძლია დროდადრო ავტომატურად შეამოწმოს ახალი ვერსიები და შეგატყობინოთ, როგორც კი ისინი ხელმისაწვდომი გახდება.\nგსურთ ამის ჩართვა?</string>
-    <string name="reset_settings_title">პარამეტრების გადაყენება</string>
+<string name="reset_settings_title">პარამეტრების გადაყენება</string>
     <string name="reset_settings_summary">ყველა პარამეტრის ნაგულისხმევ მნიშვნელობებზე დაბრუნება</string>
     <string name="reset_all_settings">ყველა პარამეტრის გადატვირთვა გააუქმებს თქვენს მიერ არჩეულ ყველა პარამეტრს და გადატვირთავს აპლიკაციას.\n\nდარწმუნებული ხართ, რომ გსურთ გაგრძელება?</string>
     <string name="error_insufficient_storage">მოწყობილობაზე საკმარისი თავისუფალი ადგილი არ არის</string>

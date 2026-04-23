@@ -378,8 +378,7 @@
     <string name="invalid_directory">هەمان فۆڵدەر بوونی نییە</string>
     <string name="bookmark_playlist">نیشانه‌كردنی خشته‌لێدان</string>
     <string name="file_name_empty_error">ناوی فایل ناکرێت بەتاڵ بێت</string>
-    <string name="updates_setting_description">پیشاندانی پەیامێک بۆ ئامادەبوونی به‌رنامه‌ لەکاتی بەردەست بوونی وەشانی نوێ</string>
-    <string name="enable_watch_history_title">مێژووی سەیرکردن</string>
+<string name="enable_watch_history_title">مێژووی سەیرکردن</string>
     <string name="enable_disposed_exceptions_title">سکاڵا لەسەر کێشەکان</string>
     <string name="playlist_no_uploader">خۆکار-دانراو (هیچ بەرزکەرەوەیەک نەدۆزرایەوە)</string>
     <string name="start_here_on_background">دەستپێکردنی لێدان لە پاشبنەماوە</string>
@@ -514,8 +513,7 @@
 \n4. بەستەری پەڕەی کەسییەکەت دابنێ.</string>
     <string name="charset_letters_and_digits">پیت و ژمارەکان</string>
     <string name="default_content_country_title">بابەتی وڵاتی بنەڕەتی</string>
-    <string name="updates_setting_title">نوێکارییەکان</string>
-    <string name="playlist_page_summary">پەڕەی خشته‌لێدان</string>
+<string name="playlist_page_summary">پەڕەی خشته‌لێدان</string>
     <string name="feed_group_show_only_ungrouped_subscriptions">تەنیا به‌ژداریییه‌ كۆمه‌ڵه‌ نەکراوەکان پیشان بدرێن</string>
     <string name="never">هەرگیز</string>
     <string name="wifi_only">تەنیا لەسەر وای-فای</string>
@@ -644,14 +642,12 @@
     <string name="enqueued_next">لە نۆبەت دانرا بۆ دواتر</string>
     <string name="processing_may_take_a_moment">جێبەجێ دەکرێت... ڕەنگە ساتێک بخایەنێت</string>
     <string name="checking_updates_toast">دەپشکنرێت بۆ نوێکردنەوە…</string>
-    <string name="manual_update_description">پشکنینی خۆیی بۆ وەشانی نوێ</string>
-    <string name="show_crash_the_player_summary">بژاردەی کڕاش کردن پیشان دەدات لەکاتی بەکارهێنانی لێدەرەکە</string>
+<string name="show_crash_the_player_summary">بژاردەی کڕاش کردن پیشان دەدات لەکاتی بەکارهێنانی لێدەرەکە</string>
     <string name="error_report_notification_toast">کێشەیەک ڕوویدا ، پەیامەکە ببینە</string>
     <string name="error_report_notification_title">نیوپایپ تووشی کێشەیەک بوو ، کرتە بکە بۆ سکاڵاکردن</string>
     <string name="show_crash_the_player_title">پیشاندانی ”کڕاش کردنی لێدەرەکە“</string>
     <string name="create_error_notification">سازاندنی پەیامی کێشەیەک</string>
-    <string name="check_for_updates">پشکنین بۆ نوێکردنەوە</string>
-    <string name="error_report_channel_name">کێشە لە سکاڵا کردنی پەیام</string>
+<string name="error_report_channel_name">کێشە لە سکاڵا کردنی پەیام</string>
     <string name="error_report_channel_description">پەیامەکانی سکاڵاکردن لە کێشەکان</string>
     <string name="feed_new_items">بابەتە نوێیەکانی فیید</string>
     <string name="detail_pinned_comment_view_description">لێدوانی هەڵواسراو</string>

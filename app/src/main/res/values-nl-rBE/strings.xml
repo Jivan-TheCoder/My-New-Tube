@@ -341,9 +341,8 @@
     <string name="subscribers_count_not_available">Aantal abonnees niet beschikbaar</string>
     <string name="main_page_content_summary">Welke tabbladen er worden weergegeven op de hoofdpagina</string>
     <string name="conferences">Conferenties</string>
-    <string name="updates_setting_title">Updates</string>
-    <string name="updates_setting_description">Toon een melding om de app bij te werken indien er een nieuwe versie beschikbaar is</string>
-    <string name="list_view_mode">Lijstweergave modus</string>
+
+<string name="list_view_mode">Lijstweergave modus</string>
     <string name="list">Lijst</string>
     <string name="grid">Raster</string>
     <string name="auto">Auto</string>

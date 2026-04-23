@@ -371,9 +371,8 @@
     <string name="restore_defaults_confirmation">Ĉu vi volas restarigi la implicitajn valorojn?</string>
     <string name="subscribers_count_not_available">Abonantoj kalkulo malhaveblas</string>
     <string name="main_page_content_summary">Kioj ongletoj estas montritaj en la ĉefpaĝo</string>
-    <string name="updates_setting_title">Ĝisdatigoj</string>
-    <string name="updates_setting_description">Montri sciigon por proponi ĝisdatigon de la apo kiam nova versio estas havebla</string>
-    <string name="list_view_mode">Lista vido maniero</string>
+
+<string name="list_view_mode">Lista vido maniero</string>
     <string name="list">Listo</string>
     <string name="grid">Krado</string>
     <string name="auto">Aŭto</string>

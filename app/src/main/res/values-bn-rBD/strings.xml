@@ -367,8 +367,7 @@
     <string name="recaptcha_solve">সমাধান করো</string>
     <string name="enable_streams_notifications_title">নতুন স্ট্রিমের নোটিফিকেশন</string>
     <string name="any_network">যেকোন নেটওয়ার্ক</string>
-    <string name="updates_setting_title">আপডেটসমূহ</string>
-    <string name="wifi_only">শুধু ওয়াই-ফাই তে</string>
+<string name="wifi_only">শুধু ওয়াই-ফাই তে</string>
     <string name="never">কখনো না</string>
     <string name="missions_header_pending">অপেক্ষমাণ</string>
     <string name="checking_updates_toast">আপডেট চেক করা হচ্ছে …</string>
@@ -398,8 +397,7 @@
     <string name="default_content_country_title">কনটেন্টের জন্য পূর্বনির্ধারিত দেশ</string>
     <string name="external_player_unsupported_link_type">বাইরের প্লেয়ারসমূহ এ ধরনের লিঙ্কসমূহ সমর্থন করে না</string>
     <string name="msg_calculating_hash">হ্যাশ হিসাব করা হচ্ছে</string>
-    <string name="check_for_updates">আপডেট চেক করো</string>
-    <plurals name="watching">
+<plurals name="watching">
         <item quantity="one">%s জন দেখছে</item>
         <item quantity="other">%s জন দেখছে</item>
     </plurals>

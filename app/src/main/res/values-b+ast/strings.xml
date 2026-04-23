@@ -148,9 +148,8 @@
     <string name="users">Usuarios</string>
     <string name="restore_defaults">Reafitamientu de valores</string>
     <string name="subscribers_count_not_available">El númberu de soscriptores nun ta disponible</string>
-    <string name="updates_setting_title">Anovamientos</string>
-    <string name="updates_setting_description">Amuesa un avisu qu\'apaez cuando hai disponible una versión nueva</string>
-    <string name="list">Llista</string>
+
+<string name="list">Llista</string>
     <string name="grid">Rexáu</string>
     <string name="missions_header_finished">Finó</string>
     <string name="download_failed">Falló la descarga</string>

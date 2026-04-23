@@ -329,9 +329,8 @@
     <string name="restore_defaults_confirmation">Аднавіць прадвызначаныя значэнні?</string>
     <string name="subscribers_count_not_available">Колькасць падпісчыкаў недаступна</string>
     <string name="main_page_content_summary">Укладкі, бачныя на галоўнай старонцы</string>
-    <string name="updates_setting_title">Абнаўленні</string>
-    <string name="updates_setting_description">Паказваць апавяшчэнне пры наяўнасці новай версіі</string>
-    <string name="list_view_mode">Выгляд спіса</string>
+
+<string name="list_view_mode">Выгляд спіса</string>
     <string name="list">Спіс</string>
     <string name="grid">Сетка</string>
     <string name="auto">Аўтаматычна</string>
@@ -648,9 +647,8 @@
     <string name="enable_streams_notifications_summary">Апавяшчаць пра новыя відэа з падпісак</string>
     <string name="streams_notifications_interval_title">Частата праверкі</string>
     <string name="streams_notifications_network_title">Неабходны тып злучэння</string>
-    <string name="check_for_updates">Праверыць наяўнасць абнаўленняў</string>
-    <string name="manual_update_description">Праверыць наяўнасць новай версіі ўручную</string>
-    <string name="autoplay_summary">Аўтаматычны запуск прайгравання — %s</string>
+
+<string name="autoplay_summary">Аўтаматычны запуск прайгравання — %s</string>
     <string name="card">Карткі</string>
     <string name="app_update_available_notification_text">Націсніце, каб спампаваць %s</string>
     <plurals name="download_finished_notification">
@@ -799,8 +797,7 @@
     <string name="notification_actions_summary_android13">Каб адрэдагаваць кожнае з дзеянняў у апавяшчэнні, націсніце на яго. Першыя тры дзеянні (прайграванне/паўза, папярэдні і наступны) зададзены сістэмай, іх змяніць немагчыма.</string>
     <string name="error_insufficient_storage">Недастаткова вольнага месца на прыладзе</string>
     <string name="yes">Так</string>
-    <string name="auto_update_check_description">NewPipe можа час ад часу аўтаматычна правяраць наяўнасць новай версіі і апавяшчаць, калі яна будзе даступна. \nУключыць гэту функцыю?</string>
-    <string name="import_settings_vulnerable_format">Налады ў імпартаваным экспарце выкарыстоўваюць уразлівы фармат, які састарэў з версіі NewPipe 0.27.0. Пераканайцеся, што імпартаваны экспарт атрыманы з надзейнай крыніцы, і ў будучыні пераважней выкарыстоўваць толькі экспарт, атрыманы з NewPipe 0.27.0 ці навей. Падтрымка імпарту налад у гэтым уразлівым фармаце хутка будзе цалкам выдаленая, і тады старыя версіі NewPipe больш не змогуць імпартаваць наладкі з экспарту з новых версій.</string>
+<string name="import_settings_vulnerable_format">Налады ў імпартаваным экспарце выкарыстоўваюць уразлівы фармат, які састарэў з версіі NewPipe 0.27.0. Пераканайцеся, што імпартаваны экспарт атрыманы з надзейнай крыніцы, і ў будучыні пераважней выкарыстоўваць толькі экспарт, атрыманы з NewPipe 0.27.0 ці навей. Падтрымка імпарту налад у гэтым уразлівым фармаце хутка будзе цалкам выдаленая, і тады старыя версіі NewPipe больш не змогуць імпартаваць наладкі з экспарту з новых версій.</string>
     <string name="no">Не</string>
     <string name="settings_category_backup_restore_title">Рэзервовае капіяванне і аднаўленне</string>
     <string name="reset_settings_title">Скінуць налады</string>

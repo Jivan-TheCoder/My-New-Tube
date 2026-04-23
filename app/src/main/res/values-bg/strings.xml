@@ -376,8 +376,7 @@
     <string name="seekbar_preview_thumbnail_title">Миниатюри на лентата за превъртане</string>
     <string name="low_quality_smaller">Нискокачествени (малки)</string>
     <string name="queued">на опашка</string>
-    <string name="updates_setting_title">Актуализации</string>
-    <string name="overwrite">Презаписване</string>
+<string name="overwrite">Презаписване</string>
     <string name="overwrite_unrelated_warning">Файл с това име вече съществува</string>
     <string name="show_error">Покажи грешка</string>
     <string name="error_connect_host">Неуспешна връзка със сървъра</string>
@@ -526,8 +525,7 @@
     <string name="recaptcha_cookies_cleared">Бисквитките от reCAPTCHA бяха почистени</string>
     <string name="checking_updates_toast">Провери за актуализации…</string>
     <string name="enumeration_comma">,</string>
-    <string name="check_for_updates">Провери за актуализации</string>
-    <string name="percent">Процент</string>
+<string name="percent">Процент</string>
     <string name="unknown_quality">Неизвестно качество</string>
     <string name="unknown_format">Неизвестен формат</string>
     <string name="recently_added">Наскоро добавено</string>
@@ -563,8 +561,7 @@
     <string name="channel_tab_about">За канала</string>
     <string name="show_less">Покажи по-малко</string>
     <string name="show_more">Покажи повече</string>
-    <string name="manual_update_description">Ръчно проверяване за нови версии</string>
-    <string name="enqueued">Добавено в опашка</string>
+<string name="enqueued">Добавено в опашка</string>
     <string name="feed_new_items">Нови неща в емисията</string>
     <string name="audio_track_name">%1$s %2$s</string>
     <string name="feed_notification_loading">Зареждане на емисия…</string>
@@ -660,9 +657,7 @@
     <string name="show_channel_details">Покажи информация за канала</string>
     <string name="playlist_no_uploader">Авто-генерирани (не е намерен ъплоудер)</string>
     <string name="create_error_notification">Създай известие за грешка</string>
-    <string name="auto_update_check_description">NewPipe може автоматично да проверява за нови версии от време на време и да ви известява при наличие.
-\nИскате ли да го включите?</string>
-    <string name="error_http_not_found">Не е намерено</string>
+<string name="error_http_not_found">Не е намерено</string>
     <string name="error_insufficient_storage">Няма достатъчно свободно пространство на устройвството</string>
     <string name="error_postprocessing_stopped">NewPipe бе затворен, докато обработваше файла</string>
     <string name="feed_show_partially_watched">Частично гледани</string>
@@ -742,8 +737,7 @@
     <string name="unset_playlist_thumbnail">Премахване на постоянното миниизображение</string>
     <string name="enable_streams_notifications_title">Известия за нови потоци</string>
     <string name="any_network">Всяка мрежа</string>
-    <string name="updates_setting_description">Покажи известие за актуализация на приложението, когато е налична нова версия</string>
-    <string name="account_terminated">Профилът е прекратен</string>
+<string name="account_terminated">Профилът е прекратен</string>
     <string name="detail_pinned_comment_view_description">Фиксиран коментар</string>
     <string name="streams_not_yet_supported_removed">Потоци, които все още не се поддържат от програмата за изтегляне, не се показват</string>
     <string name="soundcloud_go_plus_content">Това е песен на SoundCloud Go+, поне във вашата страна, така че не може да бъде предавана поточно или изтеглена от NewPipe.</string>
@@ -832,10 +826,9 @@
     <string name="youtube_player_http_403">HTTP грешка 403, получена от сървъра по време на възпроизвеждане, вероятно причинена от забрана на IP адреса или проблеми с деобфускацията на URL адреси за стрийминг</string>
     <string name="sign_in_confirm_not_bot_error">%1$s отказа да предостави данни, като поиска вход, за да потвърди, че заявителят не е бот.\n\nВашият IP адрес може да е временно забранен от %1$s. Можете да изчакате известно време или да превключите към друг IP адрес (например като включите/изключите VPN или като превключите от WiFi към мобилни данни).\n\nМоля, вижте <a href="%2$s">тази статия с ЧЗВ</a> за повече информация.</string>
     <string name="unsupported_content_in_country">Това съдържание не е налично за текущо избраната държава на съдържанието.\n\nПроменете избора си от \"Настройки &gt; Съдържание &gt; Държава на съдържанието по подразбиране\".</string>
-    <string name="kao_dialog_warning">През август 2025 г. Google обяви, че от септември 2026 г. инсталирането на приложения ще изисква проверка от разработчика за всички приложения за Android на сертифицирани устройства, включително тези, инсталирани извън Play Store. Тъй като разработчиците на NewPipe не са съгласни с това изискване, NewPipe вече няма да работи на сертифицирани устройства с Android след този период.</string>
-    <string name="kao_dialog_more_info">Детайли</string>
-    <string name="kao_solution">Решение</string>
-    <plurals name="export_subscriptions">
+
+
+<plurals name="export_subscriptions">
         <item quantity="one">Изнасяне на %d абонамент…</item>
         <item quantity="other">Изнасяне на %d абонаменти…</item>
     </plurals>

@@ -342,9 +342,8 @@
     <string name="restore_defaults_confirmation">Ripristinare valori predefiniti\?</string>
     <string name="subscribers_count_not_available">Contatore degli iscritti non disponibile</string>
     <string name="main_page_content_summary">Schede mostrate nella pagina principale</string>
-    <string name="updates_setting_title">Aggiornamenti</string>
-    <string name="updates_setting_description">Mostra una notifica per suggerire l\'aggiornamento dell\'app se una nuova versione è disponibile</string>
-    <string name="list_view_mode">Modalità visualizzazione lista</string>
+
+<string name="list_view_mode">Modalità visualizzazione lista</string>
     <string name="list">Lista</string>
     <string name="grid">Griglia</string>
     <string name="auto">Automatica</string>
@@ -656,9 +655,8 @@
     <string name="enqueued_next">Aggiunto alla coda come prossimo</string>
     <string name="enqueue_next_stream">Accoda come prossimo</string>
     <string name="processing_may_take_a_moment">Elaborazione… Potrebbe volerci un attimo</string>
-    <string name="check_for_updates">Controlla aggiornamenti</string>
-    <string name="manual_update_description">Verifica manualmente la presenza di nuove versioni</string>
-    <string name="checking_updates_toast">Controllo aggiornamenti…</string>
+
+<string name="checking_updates_toast">Controllo aggiornamenti…</string>
     <string name="feed_new_items">Nuovi elementi feed</string>
     <string name="show_crash_the_player_summary">Quando il lettore multimediale è in uso, mostra un\'opzione per farlo crashare</string>
     <string name="show_crash_the_player_title">Mostra \"Fai crashare il lettore\"</string>
@@ -827,9 +825,7 @@
     <string name="reset_settings_summary">Azzera tutte le impostazioni ai loro valori predefiniti</string>
     <string name="yes">Sì</string>
     <string name="no">No</string>
-    <string name="auto_update_check_description">NewPipe può cercare automaticamente nuove versioni di tanto in tanto e avvisarti quando sono disponibili.
-\nVuoi attivarlo?</string>
-    <string name="import_settings_vulnerable_format">Le impostazioni nell\'export che viene importato usano un formato vulnerabile che è stato deprecato dalla versione 0.27.0 di NewPipe. Assicuratevi che l\'export importato venga da una fonte fidata, sarebbe preferibile usare solo exports ottenuti da NewPipe 0.27.0 o superiori, nel futuro. Il supporto all\'importazione di Impostazioni in questo formato vulnerabile sarà presto rimosso completamente, da quel momento le versioni di NewPipe più vecchie non saranno più in grado di importare impostazioni tramite export di versioni più recenti.</string>
+<string name="import_settings_vulnerable_format">Le impostazioni nell\'export che viene importato usano un formato vulnerabile che è stato deprecato dalla versione 0.27.0 di NewPipe. Assicuratevi che l\'export importato venga da una fonte fidata, sarebbe preferibile usare solo exports ottenuti da NewPipe 0.27.0 o superiori, nel futuro. Il supporto all\'importazione di Impostazioni in questo formato vulnerabile sarà presto rimosso completamente, da quel momento le versioni di NewPipe più vecchie non saranno più in grado di importare impostazioni tramite export di versioni più recenti.</string>
     <string name="audio_track_type_secondary">secondaria</string>
     <string name="share_playlist_as_youtube_temporary_playlist">Condividi come playlist YouTube temporanea</string>
     <string name="tab_bookmarks_short">Playlist</string>
@@ -861,10 +857,9 @@
     <string name="youtube_player_http_403">Errore HTTP 403 ricevuto dal server durante la riproduzione, probabilmente causato da un divieto dell\'IP o problemi di de-offuscamento dell\'URL in streaming</string>
     <string name="sign_in_confirm_not_bot_error">%1$s ha rifiutato di fornire i dati, chiedendo un accesso per confermare che il richiedente non sia un bot.\n\nIl tuo IP potrebbe essere stato temporaneamente vietato da %1$s, puoi aspettare un po\' di tempo o passare ad un IP diverso (ad esempio accendendo/spegnendo una VPN, o passando dal WiFi ai dati mobili).\n\nLeggi <a href="%2$s">questa voce nelle FAQ</a> per maggiori informazioni.</string>
     <string name="unsupported_content_in_country">Questo contenuto non è disponibile per il Paese dei contenuti attualmente selezionato.\n\nModifica la selezione da \"Impostazioni &gt; Contenuti &gt; Paese dei contenuti predefinito\".</string>
-    <string name="kao_dialog_warning">Ad agosto 2025, Google ha annunciato che a partire da settembre 2026, l\'installazione di app richiederà la verifica dello sviluppatore per tutte le app Android su dispositivi certificati, compresi quelli installati al di fuori del Play Store. Poiché gli sviluppatori di NewPipe non sono d\'accordo con questo requisito, NewPipe non funzionerà più su dispositivi Android certificati dopo quel mese.</string>
-    <string name="kao_dialog_more_info">Dettagli</string>
-    <string name="kao_solution">Soluzione</string>
-    <plurals name="export_subscriptions">
+
+
+<plurals name="export_subscriptions">
         <item quantity="one">Esportazione di %d iscrizione…</item>
         <item quantity="many">Esportazione di %d iscrizioni…</item>
         <item quantity="other">Esportazione di %d iscrizioni…</item>

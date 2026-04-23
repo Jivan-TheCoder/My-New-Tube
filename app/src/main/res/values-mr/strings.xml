@@ -152,8 +152,7 @@
     <string name="caption_setting_title">कॅपशन</string>
     <string name="decline">नकार करा</string>
     <string name="minimize_on_exit_none_description">काहीही नाही</string>
-    <string name="updates_setting_title">अपडेट करा</string>
-    <string name="auto">स्वयं</string>
+<string name="auto">स्वयं</string>
     <string name="grid">ग्रिड</string>
     <string name="missions_header_finished">समाप्त झाले</string>
     <string name="missions_header_pending">प्रलंबित</string>

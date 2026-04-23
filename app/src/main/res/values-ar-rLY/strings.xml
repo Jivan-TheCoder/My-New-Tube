@@ -34,8 +34,7 @@
     <string name="title_activity_history">التاريخ</string>
     <string name="pause_downloads">إيقاف التحميل مؤقتًا</string>
     <string name="notification_scale_to_square_image_summary">قم بقص الصورة المصغرة للفيديو الموضحة في الإشعار من نسبة العرض إلى الارتفاع 16: 9 إلى 1: 1</string>
-    <string name="updates_setting_title">التحديثات</string>
-    <string name="detail_pinned_comment_view_description">تعليق مثبت</string>
+<string name="detail_pinned_comment_view_description">تعليق مثبت</string>
     <string name="remove_watched">إزالة ما تمت مشاهدته</string>
     <string name="recovering">استرد</string>
     <string name="youtube_restricted_mode_enabled_title">قم بتشغيل \"وضع تقييد المحتوى\" في يوتيوب</string>
@@ -77,8 +76,7 @@
     <string name="most_liked">الأكثر إعجابًا</string>
     <string name="feed_load_error_account_info">تعذر تحميل موجز \'%s\'.</string>
     <string name="question_mark">؟</string>
-    <string name="check_for_updates">التحقق من وجود تحديثات</string>
-    <string name="peertube_instance_url_title">مثيلات خوادم پيرتيوب</string>
+<string name="peertube_instance_url_title">مثيلات خوادم پيرتيوب</string>
     <string name="more_than_100_videos">+100 فيديو</string>
     <string name="peertube_instance_add_exists">مثيل الخادم موجود بالفعل</string>
     <string name="clear_queue_confirmation_title">طلب تأكيد قبل مسح قائمة الانتظار</string>
@@ -442,8 +440,7 @@
     <string name="error_report_channel_name">إشعار الإبلاغ عن الأخطاء</string>
     <string name="app_language_title">لغة التطبيق</string>
     <string name="feed_notification_loading">تحميل الموجز…</string>
-    <string name="manual_update_description">التحقق يدويا من وجود إصدارات جديدة</string>
-    <string name="no_appropriate_file_manager_message_android_10">لم يتم العثور على مدير ملفات مناسب لهذا الإجراء.
+<string name="no_appropriate_file_manager_message_android_10">لم يتم العثور على مدير ملفات مناسب لهذا الإجراء.
 \nالرجاء تثبيت مدير ملفات متوافق مع إطار عمل الوصول إلى التخزين</string>
     <string name="show_crash_the_player_summary">إظهار خيار تعطل عند استخدام المشغل</string>
     <string name="error_report_open_github_notice">يرجى مراجعة ما إذا توجد بالفعل مشكلة تناقش التحطم الموجود بالفعل. عند إنشاء تذاكر مكررة، فإنك تستغرق منا وقتًا يمكن أن نقضيه في إصلاح الخطأ الفعلي.</string>
@@ -832,8 +829,7 @@
     <string name="left_gesture_control_summary">اختر إيماءة للنصف الأيسر من شاشة المشغل</string>
     <string name="copy_for_github">نسخ التقرير مُنسق</string>
     <string name="channel_tab_livestreams">مباشر</string>
-    <string name="updates_setting_description">إظهار تنبيه للمطالبة بتحديث التطبيق عندما يتوفر إصدار جديد</string>
-    <string name="always_ask_open_action">السؤال دائماً</string>
+<string name="always_ask_open_action">السؤال دائماً</string>
     <string name="done">منجز</string>
     <string name="error_report_title">تقرير عن المشكلة</string>
     <string name="enqueued">أُضيفَ إلى قائمة الانتظار</string>

@@ -300,9 +300,8 @@
     <string name="app_update_notification_channel_description">Obavijest za nove NewPipe verzije</string>
     <string name="clear_search_history_summary">Briše povijest ključnih riječi pretraživanja</string>
     <string name="download_to_sdcard_error_title">Eksterna memorija nije dostupna</string>
-    <string name="updates_setting_title">Aktualiziranja</string>
-    <string name="updates_setting_description">Prikaži obavijest za aktualiziranje aplikacije kad je dostupna nova verzija</string>
-    <string name="list">Popis</string>
+
+<string name="list">Popis</string>
     <string name="grid">Mreža</string>
     <string name="app_update_available_notification_title">Dostupna je nova NewPipe verzija!</string>
     <string name="download_failed">Preuzimanje nije uspjelo</string>
@@ -654,11 +653,9 @@
         <item quantity="other">Izbrisano %1$s preuzimanja</item>
     </plurals>
     <string name="remote_search_suggestions">Prijedlozi daljinjske pretrage</string>
-    <string name="manual_update_description">Ručno traži nove verzije</string>
-    <string name="checking_updates_toast">Traženje novih verzija …</string>
+<string name="checking_updates_toast">Traženje novih verzija …</string>
     <string name="local_search_suggestions">Prijedlozi lokalne pretrage</string>
-    <string name="check_for_updates">Traži nove verzije</string>
-    <string name="start_main_player_fullscreen_summary">Nemoj pokretati videa u mini playeru, već izravno pokreni cjeloekranski prikaz, ako je automatsko okretanje zaključano. Mini playeru i dalje možeš pristupiti napuštanjem cjeloekranskog prikaza</string>
+<string name="start_main_player_fullscreen_summary">Nemoj pokretati videa u mini playeru, već izravno pokreni cjeloekranski prikaz, ako je automatsko okretanje zaključano. Mini playeru i dalje možeš pristupiti napuštanjem cjeloekranskog prikaza</string>
     <string name="feed_new_items">Nove stavke feeda</string>
     <string name="error_report_channel_name">Obavijest o prijavi greške</string>
     <string name="error_report_channel_description">Obavijesti za prijavu grešaka</string>
@@ -817,9 +814,7 @@
     <string name="use_exoplayer_decoder_fallback_summary">Aktiviraj ovu opciju ako imaš problema s inicijaliziranjem dekodera, što vraća dekodere nižeg prioriteta ako inicijaliziranje primarnih dekodera ne uspije. To može rezultirati lošijim performansama reprodukcije u odnosu na korištenje primarnih dekodera</string>
     <string name="error_insufficient_storage">Nedovoljno memorije na uređaju</string>
     <string name="settings_category_backup_restore_title">Spremanje sigurnosne kopije i obnavljanje</string>
-    <string name="auto_update_check_description">NewPipe može automatski tražiti nove verzije i obavijestiti te.
-\nŽeliš li aktivirati tu mogućnost?</string>
-    <string name="reset_settings_title">Obnovi postavke</string>
+<string name="reset_settings_title">Obnovi postavke</string>
     <string name="reset_settings_summary">Obnovi sve postavke na zadane vrijednosti</string>
     <string name="reset_all_settings">Obnavljanje svih postavki odbacit će sve tvoje postavljene postavke i aplikacija će se ponovo pokrenuti.
 \n

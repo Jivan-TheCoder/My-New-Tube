@@ -417,9 +417,8 @@
     <string name="minimize_on_exit_none_description">ഒന്നുമില്ല</string>
     <string name="minimize_on_exit_summary">പ്രധാന വീഡിയോ പ്ലെയറിൽ നിന്ന് മറ്റ് അപ്ലിക്കേഷനിലേക്ക് മാറുമ്പോഴുള്ള പ്രവർത്തനം — %s</string>
     <string name="minimize_on_exit_title">ആപ് മാറ്റുമ്പോൾ മിനിമൈസ് ചെയ്യുക</string>
-    <string name="updates_setting_description">ഒരു പുതിയ പതിപ്പ് ലഭ്യമാകുമ്പോൾ അപ്ലിക്കേഷൻ അപ്‌ഡേറ്റ് ആവശ്യപ്പെടുന്നതിന് ഒരു അറിയിപ്പ് കാണിക്കുക</string>
-    <string name="updates_setting_title">അപ്ഡേറ്റുകൾ</string>
-    <string name="limit_mobile_data_usage_title">മൊബൈൽ ഡാറ്റ ഉപയോഗിക്കുമ്പോൾ മിഴിവ് പരിമിതപ്പെടുത്തുക</string>
+
+<string name="limit_mobile_data_usage_title">മൊബൈൽ ഡാറ്റ ഉപയോഗിക്കുമ്പോൾ മിഴിവ് പരിമിതപ്പെടുത്തുക</string>
     <string name="limit_data_usage_none_description">പരിധിയില്ല</string>
     <string name="decline">നിരസിക്കുക</string>
     <string name="feed_use_dedicated_fetch_method_enable_button">വേഗത്തിലുള്ള മോഡ് പ്രവർത്തനക്ഷമമാക്കുക</string>

@@ -487,12 +487,11 @@
     <string name="streams_notifications_interval_title">Učestalost provjere</string>
     <string name="streams_notifications_network_title">Potrebna mrežna veza</string>
     <string name="any_network">Bilo koja mreža</string>
-    <string name="updates_setting_title">Nadogradnje</string>
-    <string name="updates_setting_description">Prikaži obavještenje za podsticanje ažuriranja aplikacije kada je dostupna nova verzija</string>
-    <string name="check_for_updates">Provjeri ažuriranja</string>
-    <string name="auto_update_check_description">NewPipe može automatski provjeravati nove verzije s vremena na vrijeme i obavijestiti vas kada budu dostupne.\nŽelite li ovo omogućiti?</string>
-    <string name="manual_update_description">Ručno provjerite nove verzije</string>
-    <string name="minimize_on_exit_title">Minimiziraj pri prebacivanju aplikacija</string>
+
+
+
+
+<string name="minimize_on_exit_title">Minimiziraj pri prebacivanju aplikacija</string>
     <string name="minimize_on_exit_summary">Radnja prilikom prelaska na drugu aplikaciju iz glavnog video plejera — %s</string>
     <string name="minimize_on_exit_none_description">Nema</string>
     <string name="minimize_on_exit_background_description">Minimiziraj na pozadinski plejer</string>

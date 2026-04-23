@@ -10,8 +10,6 @@
     <string name="saved_tabs_key">saved_tabs_key</string>
 
     <!-- Key values -->
-    <string name="kao_last_checked_key">kao_last_checked</string>
-
     <string name="download_path_video_key">download_path</string>
     <string name="download_path_audio_key">download_path_audio</string>
 
@@ -505,13 +503,6 @@
         <item>@string/always_ask_open_action_key</item>
         <item>@string/enqueue_key</item>
     </string-array>
-
-    <!-- Updates -->
-    <string name="update_check_consent_key">update_check_consent_key</string>
-    <string name="update_app_key">update_app_key</string>
-    <string name="manual_update_key">manual_update_key</string>
-    <string name="update_pref_screen_key">update_pref_screen_key</string>
-    <string name="update_expiry_key">update_expiry_key</string>
 
     <!-- Localizations   -->
     <string name="default_localization_key">system</string>

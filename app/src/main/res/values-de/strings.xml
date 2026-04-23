@@ -343,9 +343,8 @@
     <string name="restore_defaults_confirmation">Möchtest du die Standardwerte wiederherstellen\?</string>
     <string name="subscribers_count_not_available">Abonnentenzahl nicht abrufbar</string>
     <string name="main_page_content_summary">Welche Tabs auf der Hauptseite angezeigt werden</string>
-    <string name="updates_setting_title">Aktualisierungen</string>
-    <string name="updates_setting_description">Per Benachrichtigung zur Aktualisierung der App auffordern, wenn eine neue Version verfügbar ist</string>
-    <string name="list_view_mode">Art der Ansicht</string>
+
+<string name="list_view_mode">Art der Ansicht</string>
     <string name="list">Liste</string>
     <string name="grid">Raster</string>
     <string name="auto">Automatisch</string>
@@ -647,10 +646,8 @@
     <string name="enqueued_next">Als Nächstes eingereiht</string>
     <string name="enqueue_next_stream">Als Nächstes in Wiedergabe einreihen</string>
     <string name="processing_may_take_a_moment">Verarbeite … Kann einen Moment dauern</string>
-    <string name="check_for_updates">Nach Aktualisierungen suchen</string>
-    <string name="checking_updates_toast">Suche nach Aktualisierungen …</string>
-    <string name="manual_update_description">Manuelle Prüfung auf neue Versionen</string>
-    <string name="feed_new_items">Neue Feed-Elemente</string>
+<string name="checking_updates_toast">Suche nach Aktualisierungen …</string>
+<string name="feed_new_items">Neue Feed-Elemente</string>
     <string name="show_crash_the_player_title">„Player abstürzen lassen“ anzeigen</string>
     <string name="crash_the_player">Player abstürzen lassen</string>
     <string name="show_crash_the_player_summary">Zeigt eine Absturzoption an, wenn der Player verwendet wird</string>
@@ -810,9 +807,7 @@
     <string name="yes">Ja</string>
     <string name="no">Nein</string>
     <string name="settings_category_backup_restore_title">Sichern und Wiederherstellen</string>
-    <string name="auto_update_check_description">NewPipe kann von Zeit zu Zeit automatisch nach neuen Versionen suchen und dich benachrichtigen, sobald sie verfügbar sind.
-\nMöchtest du dies aktivieren?</string>
-    <string name="reset_all_settings">Wenn du alle Einstellungen zurücksetzt, werden alle deine bevorzugten Einstellungen verworfen und die App wird neu gestartet.
+<string name="reset_all_settings">Wenn du alle Einstellungen zurücksetzt, werden alle deine bevorzugten Einstellungen verworfen und die App wird neu gestartet.
 \n
 \nMöchtest du wirklich fortfahren?</string>
     <string name="import_settings_vulnerable_format">Die Einstellungen in dem zu importierenden Export verwenden ein angreifbares Format, das seit NewPipe 0.27.0 veraltet ist. Stellen Sie sicher, dass der zu importierende Export aus einer vertrauenswürdigen Quelle stammt, und verwenden Sie in Zukunft nur noch Exporte, die aus NewPipe 0.27.0 oder neuer stammen. Die Unterstützung für den Import von Einstellungen in diesem angreifbaren Format wird bald vollständig entfernt werden, und dann werden alte Versionen von NewPipe nicht mehr in der Lage sein, Einstellungen von Exporten aus neuen Versionen zu importieren.</string>
@@ -847,10 +842,9 @@
     <string name="youtube_player_http_403">HTTP-Fehler 403 vom Server während der Wiedergabe erhalten, wahrscheinlich verursacht durch eine IP-Sperre oder Probleme beim Entschlüsseln der Streaming-URL</string>
     <string name="sign_in_confirm_not_bot_error">%1$s hat die Datenbereitstellung verweigert und verlangt eine Anmeldung, um zu bestätigen, dass es sich bei dem Anfragenden nicht um einen Bot handelt.\n\nDeine IP-Adresse wurde möglicherweise vorübergehend von %1$s gesperrt. Du kannst einige Zeit warten oder zu einer anderen IP-Adresse wechseln (z. B. durch Ein- und Ausschalten eines VPNs oder durch Wechseln von WLAN zu mobilen Daten).\n\nWeitere Informationen findest du unter <a href="%2$s">diesem FAQ-Eintrag</a>.</string>
     <string name="unsupported_content_in_country">Dieser Inhalt ist für das aktuell ausgewählte Land des Inhalts nicht verfügbar.\n\nÄndere die Auswahl unter „Einstellungen &gt; Inhalt &gt; Bevorzugtes Land des Inhalts“.</string>
-    <string name="kao_dialog_warning">Im August 2025 gab Google bekannt, dass ab September 2026 für die Installation von Apps eine Entwicklerüberprüfung für alle Android-Apps auf zertifizierten Geräten erforderlich sein wird, einschließlich derjenigen, die außerhalb des Play Store installiert wurden. Da die Entwickler von NewPipe dieser Forderung nicht nachkommen, wird NewPipe nach diesem Zeitpunkt auf zertifizierten Android-Geräten nicht mehr funktionieren.</string>
-    <string name="kao_dialog_more_info">Details</string>
-    <string name="kao_solution">Lösung</string>
-    <plurals name="export_subscriptions">
+
+
+<plurals name="export_subscriptions">
         <item quantity="one">%d Abonnement wird exportiert …</item>
         <item quantity="other">%d Abonnements werden exportiert …</item>
     </plurals>

@@ -345,9 +345,8 @@
     <string name="subscribers_count_not_available">Počet odberateľov nie je k dispozícii</string>
     <string name="main_page_content_summary">Aké karty sa zobrazujú na hlavnej stránke</string>
     <string name="conferences">Konferencie</string>
-    <string name="updates_setting_title">Aktualizácie</string>
-    <string name="updates_setting_description">Zobrazí sa výzva na aktualizáciu aplikácie, keď je k dispozícii nová verzia</string>
-    <string name="list_view_mode">Režim zobrazenia zoznamu</string>
+
+<string name="list_view_mode">Režim zobrazenia zoznamu</string>
     <string name="list">Zoznam</string>
     <string name="grid">Mriežka</string>
     <string name="auto">Auto</string>
@@ -657,9 +656,8 @@
     <string name="enqueue_next_stream">Pridať do zoznamu</string>
     <string name="enqueued_next">Ďaľší v poradí</string>
     <string name="processing_may_take_a_moment">Spracovávanie... môže to chvíľku trvať</string>
-    <string name="check_for_updates">Skontrolovať aktualizácie</string>
-    <string name="manual_update_description">Ručne skontrolovať nové verzie</string>
-    <string name="checking_updates_toast">Kontrolujú sa aktualizácie…</string>
+
+<string name="checking_updates_toast">Kontrolujú sa aktualizácie…</string>
     <string name="feed_new_items">Nové položky informačného kanála</string>
     <string name="no_appropriate_file_manager_message">Pre túto akciu sa nenašiel vhodný správca súborov.
 \nNainštalujte si správcu súborov alebo skúste vypnúť \'%s\' v nastaveniach sťahovania</string>
@@ -828,9 +826,7 @@
 \nSte si istí, že chcete pokračovať?</string>
     <string name="no">Nie</string>
     <string name="yes">Áno</string>
-    <string name="auto_update_check_description">NewPipe môže z času na čas automaticky kontrolovať nové verzie a upozorniť vás, keď budú k dispozícii.
-\nChcete to povoliť?</string>
-    <string name="import_settings_vulnerable_format">Nastavenia v importovanom exporte používajú zraniteľný formát, ktorý bol od verzie NewPipe 0.27.0 zrušený. Uistite sa, že importovaný export pochádza z dôveryhodného zdroja, a v budúcnosti radšej používajte len exporty získané z verzie NewPipe 0.27.0 alebo novšej. Podpora importu nastavení v tomto zraniteľnom formáte bude čoskoro úplne odstránená a potom už staré verzie programu NewPipe nebudú môcť importovať nastavenia exportov z nových verzií.</string>
+<string name="import_settings_vulnerable_format">Nastavenia v importovanom exporte používajú zraniteľný formát, ktorý bol od verzie NewPipe 0.27.0 zrušený. Uistite sa, že importovaný export pochádza z dôveryhodného zdroja, a v budúcnosti radšej používajte len exporty získané z verzie NewPipe 0.27.0 alebo novšej. Podpora importu nastavení v tomto zraniteľnom formáte bude čoskoro úplne odstránená a potom už staré verzie programu NewPipe nebudú môcť importovať nastavenia exportov z nových verzií.</string>
     <string name="audio_track_type_secondary">sekundárny</string>
     <string name="share_playlist_as_youtube_temporary_playlist">Zdieľať ako dočasný playlist YouTube</string>
     <string name="tab_bookmarks_short">Playlisty</string>
@@ -862,10 +858,9 @@
     <string name="youtube_player_http_403">Chyba HTTP 403 prijatá zo servera počas prehrávania, pravdepodobne spôsobená zákazom IP adresy alebo problémami s deobfuskáciou streamingovej URL adresy</string>
     <string name="sign_in_confirm_not_bot_error">%1$s odmietol poskytnúť údaje, žiada o prihlásenie na potvrdenie, že žiadateľ nie je bot.\n\nVaša IP adresa mohla byť dočasne zakázaná %1$s, môžete nejaký čas počkať alebo prejsť na inú IP adresu (napríklad zapnutím/vypnutím VPN alebo prepnutím z WiFi na mobilné dáta).\n\nPozrite si <a href="%2$s">túto časť FAQ</a> pre viac informácií.</string>
     <string name="unsupported_content_in_country">Tento obsah nie je dostupný pre aktuálne zvolenú krajinu obsahu.\n\nZmeňte výber v ponuke \"Nastavenia &gt; Obsah &gt; Predvolená krajina obsahu\".</string>
-    <string name="kao_dialog_warning">V auguste 2025 spoločnosť Google oznámila, že od septembra 2026 bude inštalácia aplikácií vyžadovať overenie vývojára pre všetky aplikácie Android na certifikovaných zariadeniach, vrátane tých, ktoré sú inštalované mimo obchodu Play Store. Keďže vývojári NewPipe s touto požiadavkou nesúhlasia, NewPipe po tomto termíne nebude na certifikovaných zariadeniach Android fungovať.</string>
-    <string name="kao_dialog_more_info">Podrobnosti</string>
-    <string name="kao_solution">Riešenie</string>
-    <plurals name="export_subscriptions">
+
+
+<plurals name="export_subscriptions">
         <item quantity="one">Exportovanie %d odberu…</item>
         <item quantity="few">Exportovanie %d odberov…</item>
         <item quantity="many">Exportovanie %d odberov…</item>

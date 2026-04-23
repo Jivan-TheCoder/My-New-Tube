@@ -341,9 +341,8 @@
     <string name="subscribers_count_not_available">Abonnementsantall utilgjengelig</string>
     <string name="main_page_content_summary">Hvilke faner vises på hovedsiden</string>
     <string name="conferences">Konferanser</string>
-    <string name="updates_setting_title">Oppdatering</string>
-    <string name="updates_setting_description">Vis varsel om appoppdatering når en ny versjon er tilgjengelig</string>
-    <string name="list_view_mode">Listevisningsmodus</string>
+
+<string name="list_view_mode">Listevisningsmodus</string>
     <string name="list">Liste</string>
     <string name="grid">Rutenett</string>
     <string name="auto">Automatisk</string>
@@ -643,12 +642,10 @@
     <string name="start_main_player_fullscreen_title">Start hovedspiller i fullskjerm</string>
     <string name="enqueue_next_stream">Still i kø neste</string>
     <string name="enqueued_next">I kø neste</string>
-    <string name="check_for_updates">Se etter oppdateringer</string>
-    <string name="processing_may_take_a_moment">Behandler … Kan ta sin tid</string>
+<string name="processing_may_take_a_moment">Behandler … Kan ta sin tid</string>
     <string name="crash_the_player">Krasj avspilleren</string>
     <string name="show_crash_the_player_title">Vis \"Krasj spilleren\"</string>
-    <string name="manual_update_description">Se etter nye versjoner manuelt</string>
-    <string name="feed_new_items">Nye informasjonskanalelementer</string>
+<string name="feed_new_items">Nye informasjonskanalelementer</string>
     <string name="checking_updates_toast">Ser etter oppdateringer…</string>
     <string name="show_crash_the_player_summary">Viser et krasjalternativ ved bruk av avspilleren</string>
     <string name="error_report_notification_toast">Det oppsto en feil, se varselet</string>

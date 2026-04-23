@@ -341,9 +341,8 @@
     <string name="subscribers_count_not_available">Το πλήθος των συνδρομητών δεν είναι διαθέσιμο</string>
     <string name="main_page_content_summary">Ποιές καρτέλες θα εμφανίζονται στην αρχική σελίδα</string>
     <string name="conferences">Συνέδρια</string>
-    <string name="updates_setting_title">Ενημερώσεις</string>
-    <string name="updates_setting_description">Εμφάνιση ειδοποίησης όταν μια υπάρχει μια νεότερη έκδοση</string>
-    <string name="list_view_mode">Προβολή λίστας</string>
+
+<string name="list_view_mode">Προβολή λίστας</string>
     <string name="list">Λίστα</string>
     <string name="grid">Πλέγμα</string>
     <string name="auto">Αυτόματα</string>
@@ -645,9 +644,8 @@
     <string name="enqueue_next_stream">Προσθήκη επόμενου στην ουρά</string>
     <string name="processing_may_take_a_moment">Επεξεργασία... Μπορεί να πάρει λίγο χρόνο</string>
     <string name="checking_updates_toast">Έλεγχος αναβάθμισης…</string>
-    <string name="manual_update_description">Χειροκίνητος έλεγχος για νέα έκδοση</string>
-    <string name="check_for_updates">Έλεγχος αναβάθμισης</string>
-    <string name="feed_new_items">Νέα αντικείμενα τροφοδοσίας</string>
+
+<string name="feed_new_items">Νέα αντικείμενα τροφοδοσίας</string>
     <string name="show_crash_the_player_title">Εμφάνιση \"Κατάρρευση αναπαραγωγέα\"</string>
     <string name="show_crash_the_player_summary">Εμφανίζει μια επιλογή κατάρρευσης κατά τη χρήση του αναπαραγωγέα</string>
     <string name="crash_the_player">Κατάρρευση αναπαραγωγέα</string>
@@ -808,9 +806,7 @@
     <string name="no">Όχι</string>
     <string name="yes">Ναι</string>
     <string name="settings_category_backup_restore_title">Αντίγραφο ασφαλείας και επαναφορά</string>
-    <string name="auto_update_check_description">Το NewPipe μπορεί να ελέγχει αυτόματα για νέες εκδόσεις και να σας ειδοποιεί μόλις είναι διαθέσιμες.
-\nΘέλετε να το ενεργοποιήσετε;</string>
-    <string name="reset_settings_title">Επαναφορά ρυθμίσεων</string>
+<string name="reset_settings_title">Επαναφορά ρυθμίσεων</string>
     <string name="reset_settings_summary">Επαναφορά όλων των ρυθμίσεων στις αρχικές τιμές τους</string>
     <string name="reset_all_settings">Η επαναφορά όλων των ρυθμίσεων θα απορρίψει όλες τις τροποποιημένες ρυθμίσεις σας και θα επανεκκινήσει την εφαρμογή.
 \n
@@ -847,10 +843,9 @@
     <string name="youtube_player_http_403">Σφάλμα HTTP 403 ελήφθη από τον διακομιστή κατά την αναπαραγωγή, πιθανώς λόγω αποκλεισμού IP ή προβλημάτων απεμπλοκής URL ροής</string>
     <string name="sign_in_confirm_not_bot_error">Ο %1$s αρνήθηκε να παράσχει δεδομένα, ζητώντας σύνδεση για να επιβεβαιώσει ότι ο αιτών δεν είναι bot.\n\nΗ IP σας ενδέχεται να έχει αποκλειστεί προσωρινά από τον %1$s. Μπορείτε να περιμένετε λίγο ή να αλλάξετε IP (για παράδειγμα, ενεργοποιώντας/απενεργοποιώντας ένα VPN ή αλλάζοντας από WiFi σε δεδομένα κινητής τηλεφωνίας).\n\nΑνατρέξτε σε<a href="%2$s">αυτήν την καταχώρηση στις Συχνές Ερωτήσεις</a> για περισσότερες πληροφορίες.</string>
     <string name="unsupported_content_in_country">Αυτό το περιεχόμενο δεν είναι διαθέσιμο για την τρέχουσα επιλεγμένη χώρα περιεχομένου.\n\nΑλλάξτε την επιλογή σας από \"Ρυθμίσεις &gt; Περιεχόμενο &gt; Προεπιλεγμένη χώρα περιεχομένου\".</string>
-    <string name="kao_dialog_more_info">Λεπτομέρειες</string>
-    <string name="kao_solution">Λύση</string>
-    <string name="kao_dialog_warning">Τον Αύγουστο του 2025, η Google ανακοίνωσε ότι από τον Σεπτέμβριο του 2026, η εγκατάσταση εφαρμογών θα απαιτεί επαλήθευση προγραμματιστή για όλες τις εφαρμογές Android σε πιστοποιημένες συσκευές, συμπεριλαμβανομένων εκείνων που είναι εγκατεστημένες εκτός του Play Store. Δεδομένου ότι οι προγραμματιστές του NewPipe δεν συμφωνούν με αυτήν την απαίτηση, το NewPipe δεν θα λειτουργεί πλέον σε πιστοποιημένες συσκευές Android μετά από αυτό το χρονικό διάστημα.</string>
-    <plurals name="export_subscriptions">
+
+
+<plurals name="export_subscriptions">
         <item quantity="one">Εξαγωγή %d συνδρομής…</item>
         <item quantity="other">Εξαγωγή %d συνδρομών…</item>
     </plurals>

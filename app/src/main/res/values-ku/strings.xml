@@ -372,9 +372,8 @@
     <string name="playback_reset">ڕێکخستنەوە</string>
     <string name="saved_tabs_invalid_json">پەڕە بنەڕەتییەکان بەکاردەبردرێن, ناتوانرێ پەڕە پاشەکەوتکراوەکان بخوێنرێنەوە</string>
     <string name="main_page_content_summary">چ پەڕەیەک نیشانبدرێ لە پەڕەی سەرەکی</string>
-    <string name="updates_setting_title">نوێکارییەکان</string>
-    <string name="updates_setting_description">پیشاندانی پەیامێک بۆ ئامادەبوونی ئەپ لەکاتی بەردەست بوونی وەشانی نوێ</string>
-    <string name="list_view_mode">شێوازی پیشاندانی خشتە</string>
+
+<string name="list_view_mode">شێوازی پیشاندانی خشتە</string>
     <string name="list">خشتە</string>
     <string name="grid">چوارخانە</string>
     <string name="auto">خۆکاری</string>

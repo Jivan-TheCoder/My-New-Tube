@@ -309,9 +309,8 @@
     <string name="decline">ปฏิเสธ</string>
     <string name="limit_data_usage_none_description">ไม่จำกัด</string>
     <string name="limit_mobile_data_usage_title">จำกัดความละเอียดเมื่อใช้ข้อมูลมือถือ</string>
-    <string name="updates_setting_title">อัพเดท</string>
-    <string name="updates_setting_description">แสดงการแจ้งเตือนการปรับปรุงให้ทราบก่อนอัพเดทแอพ เมื่อมีเวอร์ชั่นใหม่ให้พร้อมใช้งาน</string>
-    <string name="minimize_on_exit_title">ย่อเล็กสุดเมื่อสลับแอป</string>
+
+<string name="minimize_on_exit_title">ย่อเล็กสุดเมื่อสลับแอป</string>
     <string name="minimize_on_exit_summary">การดำเนินการเมื่อสลับไปยังแอปอื่นๆ จากโปรแกรมเล่นวิดีโอหลัก — %s</string>
     <string name="minimize_on_exit_none_description">ไม่มี</string>
     <string name="minimize_on_exit_background_description">ย่อเล็กสุดไปยังการเล่นพื้นหลัง</string>

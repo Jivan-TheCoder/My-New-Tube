@@ -349,8 +349,7 @@
     <string name="restore_defaults_confirmation">Відновити типові значення\?</string>
     <string name="subscribers_count_not_available">Кількість підписників недоступна</string>
     <string name="conferences">Конференції</string>
-    <string name="updates_setting_title">Оновлення</string>
-    <string name="auto">Автоматично</string>
+<string name="auto">Автоматично</string>
     <string name="app_update_available_notification_title">Доступне оновлення NewPipe!</string>
     <string name="missions_header_finished">Завершено</string>
     <string name="missions_header_pending">Очікує</string>
@@ -382,8 +381,7 @@
     <string name="download_to_sdcard_error_message">Завантаження до зовнішньої SD-карти неможливе. Скинути розташування теки для завантажень\?</string>
     <string name="saved_tabs_invalid_json">Помилка зчитування збережених вкладок. Використовуються типові вкладки</string>
     <string name="main_page_content_summary">Вкладки, показані на головній сторінці</string>
-    <string name="updates_setting_description">Показувати сповіщення з пропозицією оновити застосунок за наявності нової версії</string>
-    <string name="pause_downloads_on_mobile_desc">Корисно під час перемикання на мобільні дані, хоча деякі завантаження неможливо призупинити</string>
+<string name="pause_downloads_on_mobile_desc">Корисно під час перемикання на мобільні дані, хоча деякі завантаження неможливо призупинити</string>
     <string name="show_comments_title">Показувати коментарі</string>
     <string name="show_comments_summary">Вимкніть, щоб сховати коментарі</string>
     <string name="autoplay_title">Автовідтворення</string>
@@ -660,9 +658,8 @@
     <string name="enqueued_next">Заплановано наступним</string>
     <string name="enqueue_next_stream">Запланувати наступним</string>
     <string name="processing_may_take_a_moment">Обробка… Трохи заждіть</string>
-    <string name="check_for_updates">Перевірити наявність оновлень</string>
-    <string name="manual_update_description">Перевірка нових версій вручну</string>
-    <string name="checking_updates_toast">Перевірка оновлень…</string>
+
+<string name="checking_updates_toast">Перевірка оновлень…</string>
     <string name="feed_new_items">Нові записи стрічки</string>
     <string name="show_crash_the_player_title">Показати \"Збій програвача\"</string>
     <string name="show_crash_the_player_summary">Показує параметр збою під час використання програвача</string>
@@ -826,9 +823,7 @@
     <string name="error_insufficient_storage">Недостатньо вільного простору на пристрої</string>
     <string name="reset_settings_title">Скинути налаштування</string>
     <string name="settings_category_backup_restore_title">Резервне копіювання і відновлення</string>
-    <string name="auto_update_check_description">NewPipe може час від часу автоматично перевіряти наявність нових версій і сповіщати вас про їх появу.
-\nХочете увімкнути цю функцію?</string>
-    <string name="yes">Так</string>
+<string name="yes">Так</string>
     <string name="no">Ні</string>
     <string name="reset_settings_summary">Скинути всі налаштування до усталених значень</string>
     <string name="reset_all_settings">Скидання всіх налаштувань призведе до скидання всіх вибраних вами налаштувань і перезапуску застосунку.
@@ -866,7 +861,6 @@
     <string name="youtube_player_http_403">Під час відтворення від сервера отримано помилку HTTP 403, ймовірно, через заборону IP-адреси або проблеми з деобфускацією URL-адреси потокової передачі</string>
     <string name="sign_in_confirm_not_bot_error">%1$s відмовився надати дані, запитуючи логін для підтвердження того, що запитувач не є ботом.\n\nВаша IP-адреса могла бути тимчасово заблокована %1$s. Ви можете почекати деякий час або перейти на іншу IP-адресу (наприклад, увімкнувши/вимкнувши VPN або переключившись з Wi-Fi на мобільні дані).</string>
     <string name="unsupported_content_in_country">Цей контент недоступний для вибраної країни контенту.\n\nЗмініть свій вибір у розділі \"Налаштування &gt; Контент &gt; Країна контенту за замовчуванням\".</string>
-    <string name="kao_dialog_warning">У серпні 2025 року, Google анонсувала, що з вересня 2026 року, для встановлення застосунків буде потрібна верифікація розробника для всіх Android застосунків на сертифікованих пристроях, включаючи ті, що були встановлені не через Play Store. Оскільки розробники NewPipe не згодні з цією вимогою, NewPipe перестане працювати на сертифікованих Android пристроях після цієї дати.</string>
-    <string name="kao_dialog_more_info">Детальніше</string>
-    <string name="kao_solution">Вирішення</string>
+
+
 </resources>

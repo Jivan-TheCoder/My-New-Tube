@@ -214,8 +214,7 @@
 \nDuncas s\'issèberu dipendet dae su chi preferis tue: sa lestresa o sas informatziones a sa minuda.</string>
     <string name="downloads_storage_use_saf_summary">Sa \'Storage Access Framework\' (Istrutura de Atzessu a s\'Archiviatzione) permitet sos iscarrigamentos in un\'ischeda SD esterna</string>
     <string name="queued">postu in lista</string>
-    <string name="updates_setting_description">Ammustra una notìfica pro cussigiare un\'agiornamentu de s\'aplicatzione cando b\'est una versione noa a disponimentu</string>
-    <string name="import_soundcloud_instructions">Importa unu profilu de SoundCloud iscriende o s\'URL o su còdighe identificativu (ID) tuo:
+<string name="import_soundcloud_instructions">Importa unu profilu de SoundCloud iscriende o s\'URL o su còdighe identificativu (ID) tuo:
 \n
 \n 1. Abìlita sa modalidade \"pro elaboradores de iscrivania\" in unu navigadore web (custu situ no est a disponimentu pro dispositivos mòbiles)
 \n 2. Bae a custu URL: %1$s
@@ -348,8 +347,7 @@
     <string name="minimize_on_exit_none_description">Nudda</string>
     <string name="minimize_on_exit_summary">Atzione cando colas a un\'àtera aplicatzione dae su riproduidore de vìdeos printzipale — %s</string>
     <string name="minimize_on_exit_title">Mìnima mudende aplicatzione</string>
-    <string name="updates_setting_title">Agiornamentos</string>
-    <string name="limit_mobile_data_usage_title">Lìmita sa risolutzione durante s\'impreu de sos datos mòbiles</string>
+<string name="limit_mobile_data_usage_title">Lìmita sa risolutzione durante s\'impreu de sos datos mòbiles</string>
     <string name="limit_data_usage_none_description">Perunu lìmite</string>
     <string name="decline">Refuda</string>
     <string name="accept">Atzeto</string>
@@ -644,9 +642,8 @@
     <string name="enqueued_next">Postu in lista comente imbeniente</string>
     <string name="enqueue_next_stream">Pone in lista comente imbeniente</string>
     <string name="processing_may_take_a_moment">Protzessende… Bi diat pòdere chèrrere unu pagu de tempus</string>
-    <string name="check_for_updates">Chirca agiornamentos</string>
-    <string name="manual_update_description">Verìfica in manera manuale pro versiones noas</string>
-    <string name="checking_updates_toast">Controllende sos agiornamentos…</string>
+
+<string name="checking_updates_toast">Controllende sos agiornamentos…</string>
     <string name="error_report_notification_title">NewPipe at rilevadu un\'errore, toca pro lu sinnalare</string>
     <string name="error_report_notification_toast">B\'at àpidu un\'errore, pòmpia sa notìfica</string>
     <string name="show_error_snackbar">Ammustra una barra de errore</string>
@@ -800,9 +797,7 @@
     <string name="notification_actions_summary_android13">Modìfica cada atzione de notìfica inoghe in suta tochende·la. Sas primas tres atziones (riprodutzione/pàusa, antepostu e imbeniente) sunt impostadas dae su sistema e non si podent personalizare.</string>
     <string name="error_insufficient_storage">Non b\'at ispàtziu lìberu bastante in su dispositivu</string>
     <string name="show_less">Mustra de mancu</string>
-    <string name="auto_update_check_description">NewPipe podet chircare in automàticu versiones noas cada tantu e notificare·ti cando sunt a disponimentu.
-\nLu boles abilitare?</string>
-    <string name="no">Nono</string>
+<string name="no">Nono</string>
     <string name="settings_category_backup_restore_title">Còpia de seguresa e riprìstinu</string>
     <plurals name="replies">
         <item quantity="one">%s risposta</item>

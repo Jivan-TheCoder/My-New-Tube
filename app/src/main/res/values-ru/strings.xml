@@ -357,9 +357,8 @@
     <string name="file_deleted">Файл удалён</string>
     <string name="app_update_notification_channel_name">Уведомление об обновлении приложения</string>
     <string name="app_update_notification_channel_description">Уведомления о новых версиях NewPipe</string>
-    <string name="updates_setting_title">Обновления</string>
-    <string name="updates_setting_description">Показать уведомление при наличии новой версии</string>
-    <string name="app_update_available_notification_title">Доступно обновление NewPipe!</string>
+
+<string name="app_update_available_notification_title">Доступно обновление NewPipe!</string>
     <string name="missions_header_finished">Завершено</string>
     <string name="paused">приостановлено</string>
     <string name="queued">в очереди</string>
@@ -666,9 +665,8 @@
     <string name="enqueued_next">Добавлено следующим</string>
     <string name="enqueue_next_stream">Добавить следующим</string>
     <string name="processing_may_take_a_moment">Обработка… Подождите немного</string>
-    <string name="manual_update_description">Проверить обновления вручную</string>
-    <string name="check_for_updates">Проверить обновления</string>
-    <string name="checking_updates_toast">Проверка обновлений…</string>
+
+<string name="checking_updates_toast">Проверка обновлений…</string>
     <string name="feed_new_items">Новое на канале</string>
     <string name="notifications">Уведомления</string>
     <string name="streams_notification_channel_name">Новые видео</string>
@@ -829,9 +827,7 @@
     <string name="no">Нет</string>
     <string name="settings_category_backup_restore_title">Резервное копирование и восстановление</string>
     <string name="reset_settings_title">Сбросить настройки</string>
-    <string name="auto_update_check_description">NewPipe может автоматически проверять наличие обновлений и уведомить вас, когда они будут доступны.
-\nЖелаете включить эту функцию?</string>
-    <string name="reset_all_settings">Сброс всех настроек приведёт к сбросу всех ваших настроек и перезапуску приложения.
+<string name="reset_all_settings">Сброс всех настроек приведёт к сбросу всех ваших настроек и перезапуску приложения.
 \n
 \nВы уверены, что хотите продолжить?</string>
     <string name="import_settings_vulnerable_format">Настройки в импортируемом экспорте используют уязвимый формат, который устарел с версии NewPipe 0.27.0. Убедитесь, что импортируемый экспорт получен из надёжного источника, и в будущем предпочтительнее использовать только экспорт, полученный из NewPipe 0.27.0 или новее. Поддержка импорта настроек в этом уязвимом формате скоро будет полностью удалена, и тогда старые версии NewPipe больше не смогут импортировать настройки из экспорта из новых версий.</string>
@@ -866,7 +862,6 @@
     <string name="youtube_player_http_403">Во время воспроизведения получена ошибка HTTP 403 от сервера, вероятно, вызванная блокировкой IP-адреса или проблемами деобфускации URL-адреса потоковой передачи</string>
     <string name="sign_in_confirm_not_bot_error">%1$s отказался предоставить данные, запросив логин для подтверждения, что запросчик не бот.\n\nВозможно, ваш IP-адрес временно заблокирован %1$s. Вы можете подождать некоторое время или переключиться на другой IP-адрес (например, включив/выключив VPN или переключившись с Wi-Fi на мобильный интернет).</string>
     <string name="unsupported_content_in_country">Этот контент недоступен для выбранной страны контента.\n\nИзмените свой выбор в разделе «Настройки &gt; Контент &gt; Страна контента по умолчанию».</string>
-    <string name="kao_dialog_warning">В августе 2025 года, Google анонсировала, что с сентября 2026 года, установка приложений потребует верификации разработчика для всех Android приложений на сертифицированных устройствах, включая те, которые были установлены не через Play Store. Поскольку разработчики NewPipe не согласны с этим требованием, NewPipe перестанет работать на сертифицированных Android устройствах после этой даты.</string>
-    <string name="kao_dialog_more_info">Подробнее</string>
-    <string name="kao_solution">Решение</string>
+
+
 </resources>

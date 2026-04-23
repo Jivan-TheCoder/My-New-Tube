@@ -326,9 +326,8 @@
     <string name="decline">Tolak</string>
     <string name="limit_data_usage_none_description">Tiada had</string>
     <string name="limit_mobile_data_usage_title">Had resolusi apabila menggunakan data mudah alih</string>
-    <string name="updates_setting_title">Kemas kini</string>
-    <string name="updates_setting_description">Tunjukkan pemberitahuan untuk mengemaskini aplikasi apabila versi baru tersedia</string>
-    <string name="minimize_on_exit_title">Kurangkan apabila beralih app</string>
+
+<string name="minimize_on_exit_title">Kurangkan apabila beralih app</string>
     <string name="minimize_on_exit_summary">Tindakan apabila beralih ke app lain dari pemain video utama — %s</string>
     <string name="minimize_on_exit_none_description">Tiada</string>
     <string name="minimize_on_exit_background_description">Kurangkan ke pemain latar belakang</string>

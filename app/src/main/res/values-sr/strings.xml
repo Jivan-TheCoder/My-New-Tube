@@ -274,9 +274,8 @@
     <string name="minimize_on_exit_none_description">Ниједно</string>
     <string name="minimize_on_exit_summary">Радња при преласку на другу апликацију са главног плејера видео снимака — %s</string>
     <string name="minimize_on_exit_title">Умањи при мењању апликације</string>
-    <string name="updates_setting_description">Прикажи обавештење када постоји нова верзија апликације</string>
-    <string name="updates_setting_title">Ажурирања</string>
-    <string name="limit_mobile_data_usage_title">Ограничење резолуције када се користе мобилни подаци</string>
+
+<string name="limit_mobile_data_usage_title">Ограничење резолуције када се користе мобилни подаци</string>
     <string name="decline">Одбиј</string>
     <string name="limit_data_usage_none_description">Без ограничења</string>
     <string name="accept">Прихвати</string>
@@ -659,8 +658,7 @@
     <string name="low_quality_smaller">Низак квалитет (мањи)</string>
     <string name="unset_playlist_thumbnail">Поништи трајну сличицу</string>
     <string name="any_network">Било која мрежа</string>
-    <string name="manual_update_description">Ручно проверите постоје ли нове верзије</string>
-    <string name="selected_stream_external_player_not_supported">Спољни плејери не подржавају изабрани ток</string>
+<string name="selected_stream_external_player_not_supported">Спољни плејери не подржавају изабрани ток</string>
     <string name="main_tabs_position_summary">Померите главни бирач картице на дно</string>
     <string name="main_tabs_position_title">Положај главних картица</string>
     <string name="error_report_notification_toast">Дошло је до грешке, погледајте обавештење</string>
@@ -708,8 +706,7 @@
     <string name="duplicate_in_playlist">Плејлисте које су затамњене већ садрже ову ставку.</string>
     <string name="leak_canary_not_available">LeakCanary није доступан</string>
     <string name="app_update_available_notification_text">Додирните да бисте преузели %s</string>
-    <string name="check_for_updates">Провера ажурирања</string>
-    <string name="seekbar_preview_thumbnail_title">Преглед сличице траке за претрагу</string>
+<string name="seekbar_preview_thumbnail_title">Преглед сличице траке за претрагу</string>
     <string name="feed_hide_streams_title">Приказ следећих токова</string>
     <string name="feed_show_hide_streams">Прикажи/сакриј токове</string>
     <string name="use_exoplayer_decoder_fallback_title">Користи резервну функцију декодера ExoPlayer-а</string>
@@ -827,9 +824,7 @@
 \nЖелите ли заиста да наставите?</string>
     <string name="no">Не</string>
     <string name="yes">Да</string>
-    <string name="auto_update_check_description">NewPipe може аутоматски да проверава да ли постоје нове верзије с времена на време и да вас обавести када буду доступне.
-\nЖелите ли да омогућите ово?</string>
-    <string name="import_settings_vulnerable_format">Подешавања у извозу који се увозе користе рањив формат који је застарео од NewPipe верзије 0.27.0. Уверите се да извоз који се увози долази из поузданог извора и радије користите само извозе добијене из NewPipe 0.27.0 или новије верзије, у будућности. Подршка за увоз подешавања у овом рањивом формату ће ускоро бити потпуно уклоњена и тада старе NewPipe верзије више неће моћи да увозе подешавања извоза из нових верзија.</string>
+<string name="import_settings_vulnerable_format">Подешавања у извозу који се увозе користе рањив формат који је застарео од NewPipe верзије 0.27.0. Уверите се да извоз који се увози долази из поузданог извора и радије користите само извозе добијене из NewPipe 0.27.0 или новије верзије, у будућности. Подршка за увоз подешавања у овом рањивом формату ће ускоро бити потпуно уклоњена и тада старе NewPipe верзије више неће моћи да увозе подешавања извоза из нових верзија.</string>
     <string name="audio_track_type_secondary">секундарни</string>
     <string name="share_playlist_as_youtube_temporary_playlist">Дели као YouTube привремену плејлисту</string>
     <string name="tab_bookmarks_short">Плејлисте</string>

@@ -305,8 +305,7 @@
     <string name="semitone">Hálftónn</string>
     <string name="accept">Samþykkja</string>
     <string name="decline">Afneita</string>
-    <string name="updates_setting_title">Uppfærslur</string>
-    <string name="auto">Sjálfvirkt</string>
+<string name="auto">Sjálfvirkt</string>
     <string name="missions_header_finished">Lokið</string>
     <string name="missions_header_pending">Í bið</string>
     <string name="paused">Í hléi</string>
@@ -432,10 +431,9 @@
     <string name="streams_notifications_interval_title">Hversu oft á að athuga</string>
     <string name="streams_notifications_network_title">Tegund tengingar</string>
     <string name="any_network">Allar</string>
-    <string name="updates_setting_description">Sýna tilkynningu þegar ný útgáfa er fáanleg</string>
-    <string name="check_for_updates">Leita að uppfærslum</string>
-    <string name="manual_update_description">Leita handvirkt fyrir uppfærslum</string>
-    <string name="minimize_on_exit_title">Fela þegar skipt er um forrit</string>
+
+
+<string name="minimize_on_exit_title">Fela þegar skipt er um forrit</string>
     <string name="minimize_on_exit_background_description">Nota bakgrunnsspilara</string>
     <string name="minimize_on_exit_popup_description">Nota sprettigluggaspilara</string>
     <string name="autoplay_summary">Sjálfvirk spilun — %s</string>
@@ -784,8 +782,7 @@
     <string name="use_exoplayer_decoder_fallback_title">Nota varaeiginleika ExoPlayer-afkóðarans</string>
     <string name="new_seek_duration_toast">Vegna takmarkana í ExoPlayer-spilaranum var tímalengd hoppa sett á %d sekúndur</string>
     <string name="disable_media_tunneling_automatic_info">Margmiðlunargöng (media tunneling) voru gerð óvirk á tækinu þínu þar sem þessi gerð tækja er þekkt fyrir að styðja ekki þennan eiginleika.</string>
-    <string name="auto_update_check_description">NewPipe getur athugað sjálfkrafa hvort nýjar útgáfur séu í boði og láta þig vita þegar slíkt gerist.\nViltu virkja þetta?</string>
-    <string name="reset_all_settings">Frumstilling allra stillinga mun henda öllum áður skilgreindum stillingum og endurræsa forritið.\n\nErtu viss um að þú viljir halda áfram?</string>
+<string name="reset_all_settings">Frumstilling allra stillinga mun henda öllum áður skilgreindum stillingum og endurræsa forritið.\n\nErtu viss um að þú viljir halda áfram?</string>
     <string name="ignore_hardware_media_buttons_summary">Nytsamlegt ef þú til dæmis þarft að nota heyrnartól með biluðum tökkum</string>
     <string name="always_use_exoplayer_set_output_surface_workaround_title">Alltaf nota framhjáhlaupsstillingar ExoPlayer-spilarans fyrir frálagsflöt myndmerkis</string>
     <string name="prefer_descriptive_audio_summary">Veldu hljóðspor með lýsingum fyrir sjónskerta, ef slíkt er tiltækt</string>

@@ -80,8 +80,7 @@
     <string name="never">Marna</string>
     <string name="wifi_only">WiFi-ga kaliya</string>
     <string name="minimize_on_exit_title">Yaree marka app kale loo gudbo</string>
-    <string name="updates_setting_title">Cusboonaysiinta</string>
-    <string name="limit_data_usage_none_description">Ha xadidin</string>
+<string name="limit_data_usage_none_description">Ha xadidin</string>
     <string name="playback_reset">Sidii hore kuceli</string>
     <string name="skip_silence_checkbox">Horay u dhaafi meelaha aamusan</string>
     <string name="playback_speed_control">Maamulista Xawaaraha</string>
@@ -532,8 +531,7 @@
     <string name="minimize_on_exit_popup_description">U gudbi xaga daaqada</string>
     <string name="minimize_on_exit_background_description">U gudbi xaga dambe</string>
     <string name="minimize_on_exit_summary">Waxa la samayn doono marka app kale loo gudbayo ayadoo muuqaal caadi u daaran yahay — %s</string>
-    <string name="updates_setting_description">Ogaysiis soo bandhig doonaya inaad appka cusboonaysiiso marka mid cusub soo baxo</string>
-    <string name="limit_mobile_data_usage_title">Xadid tayada (khadka SIM-ka)</string>
+<string name="limit_mobile_data_usage_title">Xadid tayada (khadka SIM-ka)</string>
     <string name="accept">Aqbal</string>
     <string name="start_accept_privacy_policy">Si loogu hogaansamo Maaraynta Xog Dhawrka Guud ee heer Yurub (GDPR), waxaan halkan kugu xusuusinaynaa siyaasada sirdhawrka NewPipe. Fadlan si taxadar leh u akhriso.
 \nWaana inaad aqbashaa si [hadii aad damacdo] aad cilad appka ah warcelin nooga soo dirto.</string>

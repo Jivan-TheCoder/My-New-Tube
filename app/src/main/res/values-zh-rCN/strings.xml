@@ -56,8 +56,7 @@
     <string name="settings_category_updates_title">更新</string>
     <string name="file_deleted">文件已删除</string>
     <string name="subscribers_count_not_available">无法得知订阅人数</string>
-    <string name="updates_setting_description">有新版本时，显示通知提示更新应用</string>
-    <string name="grid">网格</string>
+<string name="grid">网格</string>
     <string name="app_update_available_notification_title">NewPipe 可更新！</string>
     <string name="error_http_unsupported_range">服务器不接受多线程下载, 使用 @string/msg_threads = 1 重试</string>
     <string name="autoplay_title">自动播放</string>
@@ -352,8 +351,7 @@
     <string name="saved_tabs_invalid_json">读取已保存标签时发生错误，因此使用默认标签</string>
     <string name="restore_defaults">恢复默认</string>
     <string name="restore_defaults_confirmation">是否恢复默认值？</string>
-    <string name="updates_setting_title">更新</string>
-    <string name="list">列表</string>
+<string name="list">列表</string>
     <string name="auto">自动</string>
     <string name="post_processing">处理中</string>
     <string name="generate_unique_name">生成唯一名称</string>
@@ -632,10 +630,8 @@
     <string name="enqueued_next">已添加为下一个播放</string>
     <string name="enqueue_next_stream">下一个播放</string>
     <string name="processing_may_take_a_moment">处理中…可能需要一些时间</string>
-    <string name="manual_update_description">手动检查新版本</string>
-    <string name="checking_updates_toast">检查更新中…</string>
-    <string name="check_for_updates">检查更新</string>
-    <string name="feed_new_items">新订阅源条目</string>
+<string name="checking_updates_toast">检查更新中…</string>
+<string name="feed_new_items">新订阅源条目</string>
     <string name="show_crash_the_player_title">显示\"使播放器崩溃\"</string>
     <string name="show_crash_the_player_summary">在使用播放器时显示一个崩溃选项</string>
     <string name="crash_the_player">使播放器崩溃</string>
@@ -798,9 +794,7 @@
 \n
 \n你确定想要继续吗？</string>
     <string name="no">否</string>
-    <string name="auto_update_check_description">NewPipe 可以自动时不时地检查新版本并在新版本可用时通知你。
-\n你想开启该功能吗？</string>
-    <string name="yes">是</string>
+<string name="yes">是</string>
     <string name="import_settings_vulnerable_format">正导入的导出文件中的设置使用了有漏洞的格式，该格式已从 NewPipe 0.27.0 版本起被弃用。请确保导入的导出文件来自可信来源，今后最好只使用从 NewPipe 0.27.0 或更新版本获取的导出文件。不久后将完全不支持导入这一有漏洞格式的设置，到时旧版 NewPipe 再不能导入来自新版应用的设置导出文件。</string>
     <string name="audio_track_type_secondary">第二</string>
     <string name="share_playlist_as_youtube_temporary_playlist">分享为 YouTube 临时播放列表</string>
@@ -833,10 +827,9 @@
     <string name="youtube_player_http_403">播放时从服务器收到 HTTP 403 错误，可能因 IP 封锁或串流 URL 解密问题导致</string>
     <string name="sign_in_confirm_not_bot_error">%1$s 拒绝提供数据， 要求登录确认请求方不是机器人。\n\n你的 IP 可能已经暂时被 %1$s 封禁，你可以等待一段时间或切换到不同 IP （比如开/关 VPN, 或者从 WiFi 连接切换到移动数据）。\n\n请见 <a href="%2$s">此 FAQ条目</a> 获取更多信息。</string>
     <string name="unsupported_content_in_country">此内容对当前选中的内容地区不可用。\n\n要更改选择，请前往 “设置 &gt; 内容 &gt; 默认内容地区”。</string>
-    <string name="kao_dialog_warning">2025 年 8 月，Google 宣布自 2026 年 9 月起，在已认证设备上安装所有安卓应用都需要开发者验证身份，包括在 Play 商店之外安装的应用。由于 NewPipe 开发者反对此要求，NewPipe 在此时间点后不会再在已认证设备上工作。</string>
-    <string name="kao_dialog_more_info">详情</string>
-    <string name="kao_solution">解决方案</string>
-    <plurals name="export_subscriptions">
+
+
+<plurals name="export_subscriptions">
         <item quantity="other">正在导出 %d 个订阅…</item>
     </plurals>
     <plurals name="load_subscriptions">

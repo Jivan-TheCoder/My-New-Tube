@@ -138,8 +138,7 @@
     <string name="no_subscribers">Sem subscritores</string>
     <string name="use_external_audio_player_title">Utilizar reprodutor de áudio externo</string>
     <string name="did_you_mean">Será que queria dizer \"%1$s\"\?</string>
-    <string name="updates_setting_description">Mostrar uma notificação para pedir a atualização da aplicação se existir uma nova versão</string>
-    <string name="enqueue">Enfileirar</string>
+<string name="enqueue">Enfileirar</string>
     <string name="no_one_watching">Ninguém está a ver</string>
     <string name="delete_downloaded_files">Eliminar ficheiros descarregados</string>
     <string name="app_language_title">Idioma da aplicação</string>
@@ -440,8 +439,7 @@
     <string name="feed_update_threshold_summary">Tempo após a última atualização antes de a subscrição ser considerada desatualizada - %s</string>
     <string name="search">Pesquisar</string>
     <string name="settings_category_updates_title">Atualizações</string>
-    <string name="updates_setting_title">Atualizações</string>
-    <string name="start_downloads">Iniciar transferências</string>
+<string name="start_downloads">Iniciar transferências</string>
     <string name="enable_search_history_summary">Guardar termos de pesquisa localmente</string>
     <string name="unsupported_url">URL não suportado</string>
     <string name="download_dialog_title">Descarregar</string>
@@ -656,9 +654,8 @@
     <string name="enqueued_next">Enfileirado o próximo</string>
     <string name="enqueue_next_stream">Pôr na fila o próximo</string>
     <string name="processing_may_take_a_moment">A processar… Pode demorar um momento</string>
-    <string name="check_for_updates">Procurar atualizações</string>
-    <string name="manual_update_description">Verificar manualmente se existe uma nova versão</string>
-    <string name="checking_updates_toast">A procurar atualizações…</string>
+
+<string name="checking_updates_toast">A procurar atualizações…</string>
     <string name="feed_new_items">Novos itens</string>
     <string name="crash_the_player">Travar o reprodutor</string>
     <string name="show_crash_the_player_title">Mostrar \"Travar o reprodutor\"</string>
@@ -818,9 +815,7 @@
         <item quantity="other">%s respostas</item>
     </plurals>
     <string name="show_less">Mostrar menos</string>
-    <string name="auto_update_check_description">O NewPipe pode verificar automaticamente se há novas versões de tempos em tempos e notificá-lo quando elas estiverem disponíveis.
-\nDeseja ativar essa opção?</string>
-    <string name="reset_settings_summary">Repor valores originais de todas as definições</string>
+<string name="reset_settings_summary">Repor valores originais de todas as definições</string>
     <string name="reset_all_settings">A restauração de todas as configurações descartará todas as suas configurações preferidas e reiniciará a aplicação.
 \n
 \nTem certeza que deseja continuar?</string>
@@ -861,10 +856,9 @@
     <string name="unsupported_content_in_country">Este conteúdo não está disponível para o país de conteúdo atualmente selecionado.\n\nAltere a sua seleção de \"Configurações &gt; Conteúdo &gt; País predefinido de conteúdo\".</string>
     <string name="player_http_403">Erro HTTP 403 recebido do servidor durante a reprodução, provavelmente causado pela URL de streaming expirado ou IP banido</string>
     <string name="youtube_player_http_403">Erro HTTP 403 recebido do servidor durante a reprodução, provavelmente causado por um bloqueio de IP ou problemas de desofuscação da URL de streaming</string>
-    <string name="kao_dialog_warning">Em agosto de 2025, o Google anunciou que, a partir de setembro de 2026, a instalação de apps exigirá a verificação do programador para todas as apps Android em dispositivos certificados, incluindo aqueles instalados fora da Play Store. Como os programadores do NewPipe não concordam com este requisito, o NewPipe já não funcionará em dispositivos Android certificados após essa data.</string>
-    <string name="kao_dialog_more_info">Pormenores</string>
-    <string name="kao_solution">Solução</string>
-    <plurals name="export_subscriptions">
+
+
+<plurals name="export_subscriptions">
         <item quantity="one">A exportar %d subscrição…</item>
         <item quantity="many">A exportar %d subscrições…</item>
         <item quantity="other">A exportar %d subscrições…</item>

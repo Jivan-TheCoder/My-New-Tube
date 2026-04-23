@@ -332,8 +332,7 @@
     <string name="conferences">がいぎ</string>
     <string name="start_accept_privacy_policy">ヨーロッパぬいちぱんデータふぐきせい（GDPR）にじゅんきょしーんたみに、NewPipeぬくじんじょうほうふぐほうしんにぐちゅういください。ゆーゆでぃくぃみそーれー。
 \nわったーんかいふぐあいほうくーくうくいんでー、くりうけいりらんだれーなやびらん。</string>
-    <string name="updates_setting_title">アプリぬこうしん</string>
-    <string name="list_view_mode">リストビューモード</string>
+<string name="list_view_mode">リストビューモード</string>
     <string name="list">リスト</string>
     <string name="grid">グリッド</string>
     <string name="auto">じちゃー</string>
@@ -369,8 +368,7 @@
     <string name="download_to_sdcard_error_message">やしがいぶSDカードんかいダウンロードなやびらん。ダウンロードフォルダーぬばしょリセットさびーが？</string>
     <string name="saved_tabs_invalid_json">ふずんさったるタブゆみくみらんたみ、デフォルトぬタブしーようさびーん</string>
     <string name="main_page_content_summary">メインページんかいひょうじさりーるタブ</string>
-    <string name="updates_setting_description">みーさるバージョンがいようかのうなとぅちにアプリぬこうしんかくにんすんちうちひょうじさびーん</string>
-    <string name="pause_downloads_on_mobile">じゅうりょうせいかきんネットワークぬわりくみ</string>
+<string name="pause_downloads_on_mobile">じゅうりょうせいかきんネットワークぬわりくみ</string>
     <string name="pause_downloads_on_mobile_desc">モバイルデータちうしぬんかいきりけーいーあいにびんりやいびーしが、いちぶぬダウンロードーいちじていしなやびらん</string>
     <string name="show_comments_title">コメントひょうじ</string>
     <string name="show_comments_summary">んーかなすんでぃコメントふぃふぃょうじなさびーん</string>
@@ -641,10 +639,8 @@
         <item quantity="other">%sちぬダウンロードぬかんりょうさびたん</item>
     </plurals>
     <string name="processing_may_take_a_moment">しーょりちゅう… くーてーんじがんがかかいんかむしりやびらん</string>
-    <string name="manual_update_description">みーさるバージョンしーゅどうでぃかくにんさびーん</string>
-    <string name="checking_updates_toast">アップデートかくにんちゅう…</string>
-    <string name="check_for_updates">アップデートかくにん</string>
-    <string name="enqueue_next_stream">ちぎキューんかいちちが</string>
+<string name="checking_updates_toast">アップデートかくにんちゅう…</string>
+<string name="enqueue_next_stream">ちぎキューんかいちちが</string>
     <string name="enqueued_next">ちぎキューんかいちいからさびたん</string>
     <string name="detail_heart_img_view_description">クリエイターぬちむくみてぃ</string>
     <string name="show_crash_the_player_title">\"プレイヤーぬクラッシュ\"ひょうじ</string>
@@ -805,9 +801,7 @@
     <string name="show_less">ひょうじいきらくすん</string>
     <string name="notification_actions_summary_android13">いかぬちうちアクションタップしへんしゅうさびーん。さいしょぬみーちぬアクション （さいせい/いちじていし、めーんかい、ちぎんかい）ーシステムにゆってぃしっていさりてぃうぅい、カスタマイズすしぇーなやびらん。</string>
     <string name="yes">はい</string>
-    <string name="auto_update_check_description">NewPipeーてぃんじちーがみーさるバージョンじちゃーてぃきんかいチェックしー、こうしんがのうないるとぅちうちさびーん。
-\nゆうこうなさびーが？</string>
-    <string name="error_insufficient_storage">デバイスぬあきゆういょうがふすくそーいびーん</string>
+<string name="error_insufficient_storage">デバイスぬあきゆういょうがふすくそーいびーん</string>
     <string name="no">うぅーうぅー</string>
     <string name="settings_category_backup_restore_title">バックアップとぅふくぎん</string>
     <string name="reset_settings_title">しっていリセット</string>

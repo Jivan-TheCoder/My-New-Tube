@@ -134,8 +134,7 @@
     <string name="accept">ᱮᱠᱥᱮᱯᱴ</string>
     <string name="enable_streams_notifications_title">ᱱᱟᱣᱟ ᱥᱴᱨᱚᱢ ᱨᱮᱭᱟᱜ ᱠᱷᱚᱵᱚᱨ</string>
     <string name="streams_notifications_interval_title">ᱪᱟᱪᱞᱟᱣ ᱚᱵᱚᱥᱛᱟ</string>
-    <string name="manual_update_title">ᱱᱟᱣᱟ ᱥᱟᱦᱴᱟ ᱧᱮᱞ ᱢᱮ</string>
-    <string name="paused">ᱛᱷᱟᱯᱚᱱ</string>
+<string name="paused">ᱛᱷᱟᱯᱚᱱ</string>
     <string name="overwrite_unrelated_warning">ᱱᱚᱶᱟ ᱧᱩᱛᱩᱢ ᱟᱱᱟᱜ ᱢᱤᱫ ᱯᱷᱤᱞ ᱢᱮᱱᱟᱜᱼᱟ</string>
     <string name="overwrite_finished_warning">ᱱᱚᱶᱟ ᱧᱩᱛᱩᱢ ᱟᱱ ᱢᱤᱫ ᱰᱟᱩᱱᱞᱚᱰ ᱟᱠᱟᱱ ᱯᱷᱤᱞ ᱢᱮᱱᱟᱜᱼᱟ</string>
     <string name="error_ssl_exception">ᱥᱤᱠᱷᱱᱟᱹᱛ ᱡᱚᱱᱚᱲᱟᱣ ᱵᱟᱭ ᱛᱮᱭᱟᱨ ᱫᱟᱲᱮᱭᱟᱜ ᱠᱟᱱᱟ</string>
@@ -285,8 +284,7 @@
     <string name="decline">ᱰᱷᱮᱨᱚᱜ</string>
     <string name="limit_data_usage_none_description">ᱞᱤᱢᱤᱴ ᱵᱟᱹᱱᱩᱜ</string>
     <string name="limit_mobile_data_usage_title">ᱢᱚᱵᱟᱤᱞ ᱰᱟᱴᱟ ᱵᱮᱵᱷᱟᱨ ᱚᱠᱛᱚ ᱨᱮ ᱞᱤᱢᱤᱴ ᱫᱟᱲᱮ</string>
-    <string name="manual_update_description">ᱱᱟᱣᱟ ᱵᱷᱮᱨᱥᱚᱱ ᱞᱟᱹᱜᱤᱫ ᱛᱮ ᱢᱟᱱᱩᱣᱟᱞ ᱪᱮᱠ</string>
-    <string name="minimize_on_exit_title">ᱟᱯᱞᱤᱠᱮᱥᱚᱱ ᱥᱤᱴᱤᱪ ᱨᱮ ᱞᱟᱹᱴᱩ ᱦᱚᱪᱚ</string>
+<string name="minimize_on_exit_title">ᱟᱯᱞᱤᱠᱮᱥᱚᱱ ᱥᱤᱴᱤᱪ ᱨᱮ ᱞᱟᱹᱴᱩ ᱦᱚᱪᱚ</string>
     <string name="minimize_on_exit_summary">ᱢᱩᱬᱩᱛ ᱵᱷᱤᱰᱤᱭᱳ ᱯᱞᱮᱭᱟᱨ ᱠᱷᱚᱱ ᱮᱴᱟᱜ ᱮᱯᱞᱤᱠᱮᱥᱚᱱ ᱨᱮ ᱥᱮᱞᱮᱫᱚᱜ ᱚᱠᱛᱚ ᱨᱮᱱᱟᱜ ᱠᱟᱹᱢᱤ ⁇ %s</string>
     <string name="minimize_on_exit_none_description">ᱡᱟᱦᱟᱱ ᱵᱟᱝ</string>
     <string name="minimize_on_exit_background_description">ᱚᱛᱱᱚ ᱯᱞᱮᱭᱟᱨ ᱨᱮ ᱞᱟᱹᱴᱩ ᱦᱚᱪᱚ</string>
@@ -550,9 +548,8 @@
     <string name="start_accept_privacy_policy">\"ᱤᱭᱩᱨᱚᱯᱤᱭᱚ ᱡᱚᱡᱚᱱᱟ ᱯᱨᱚᱫᱚᱭᱚᱜᱤᱠᱤ (ᱡᱤ.ᱰᱤ.ᱯᱤ.ᱟᱨ.) ᱥᱟᱞᱟᱜ ᱥᱚᱢᱵᱚᱸᱫᱷ ᱞᱟᱹᱜᱤᱫ ᱛᱮ, ᱱᱚᱣᱟ ᱦᱚᱛᱮᱛᱮ ᱱᱤᱭᱩ ᱯᱟᱭᱤᱯ ᱨᱮᱭᱟᱜ ᱯᱨᱟᱭᱵᱷᱮᱴ ᱯᱚᱞᱤᱥᱤ ᱨᱮ ᱟᱵᱚᱣᱟᱜ ᱟᱫᱷᱤᱱᱤᱭᱚᱢ ᱠᱚ ᱩᱫᱩᱜ ᱦᱚᱪᱚᱭᱟ। ᱱᱚᱶᱟ ᱫᱚ ᱞᱟᱹᱭᱛᱮ ᱯᱟᱲᱦᱟᱣ ᱢᱮ ᱾
 \nᱟᱢ ᱫᱚ ᱱᱚᱶᱟ ᱯᱟᱹᱛᱭᱟᱹᱣ ᱢᱮ ᱡᱮ ᱟᱢ ᱵᱷᱤᱜᱽ ᱨᱮᱯᱳᱨᱴ ᱮᱢ ᱢᱮ ᱾\"</string>
     <string name="enable_streams_notifications_summary">ᱥᱚᱵᱥᱠᱨᱟᱭᱵᱮᱥᱚᱱ ᱠᱷᱚᱱ ᱱᱟᱣᱟ ᱥᱴᱨᱤᱢ ᱠᱚ ᱵᱟᱰᱟᱭ ᱢᱮ</string>
-    <string name="updates_setting_title">ᱚᱯᱰᱮᱴᱥ</string>
-    <string name="updates_setting_description">ᱡᱚᱠᱷᱚᱱ ᱱᱟᱣᱟ ᱵᱟᱨᱥᱚᱱ ᱢᱮᱱᱟᱜ-ᱟ ᱮᱯ ᱟᱯᱰᱮᱴ ᱞᱟᱹᱜᱤᱫ ᱯᱟᱹᱛᱭᱟᱹᱣ ᱵᱚᱫᱚᱞ ᱢᱮ</string>
-    <string name="minimize_on_exit_popup_description">ᱯᱚᱯ-ᱟᱯ ᱠᱷᱮᱞᱚᱸᱰᱤᱭᱟᱹ ᱞᱟᱹᱜᱤᱫ ᱞᱟᱹᱴᱩ ᱦᱚᱪᱚ</string>
+
+<string name="minimize_on_exit_popup_description">ᱯᱚᱯ-ᱟᱯ ᱠᱷᱮᱞᱚᱸᱰᱤᱭᱟᱹ ᱞᱟᱹᱜᱤᱫ ᱞᱟᱹᱴᱩ ᱦᱚᱪᱚ</string>
     <string name="autoplay_summary">ᱚᱞᱪᱤᱠᱤ ᱛᱮ ᱨᱩᱭᱟᱹᱲᱚᱜ ᱢᱮ - %s</string>
     <string name="list_view_mode">ᱞᱤᱥᱴᱤ ᱧᱮᱧᱮᱞ ᱢᱚᱰ</string>
     <string name="list">ᱞᱤᱥᱴᱤ</string>

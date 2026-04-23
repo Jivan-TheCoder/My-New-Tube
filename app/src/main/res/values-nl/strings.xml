@@ -339,9 +339,8 @@
     <string name="restore_defaults_confirmation">Wil je de standaardinstellingen herstellen\?</string>
     <string name="subscribers_count_not_available">Aantal abonnees niet beschikbaar</string>
     <string name="main_page_content_summary">Welke tabbladen worden weergegeven op de hoofdpagina</string>
-    <string name="updates_setting_title">Bijwerken</string>
-    <string name="updates_setting_description">Toon een melding om de app bij te werken wanneer een nieuwe versie beschikbaar is</string>
-    <string name="list_view_mode">Lijstweergavemodus</string>
+
+<string name="list_view_mode">Lijstweergavemodus</string>
     <string name="list">Lijst</string>
     <string name="grid">Raster</string>
     <string name="auto">Auto</string>
@@ -647,9 +646,8 @@
     <string name="crash_the_player">Speler crashen</string>
     <string name="show_crash_the_player_title">‘Speler crashen’ tonen</string>
     <string name="show_crash_the_player_summary">Toont een crash-optie bij gebruik van de speler</string>
-    <string name="manual_update_description">Controleer handmatig op nieuwe versies</string>
-    <string name="check_for_updates">Controleren op updates</string>
-    <string name="checking_updates_toast">Bezig met controleren op updates…</string>
+
+<string name="checking_updates_toast">Bezig met controleren op updates…</string>
     <string name="feed_new_items">Nieuwe feeditems</string>
     <string name="error_report_channel_name">Foutrapporten</string>
     <string name="error_report_channel_description">Beschrijving van foutmeldingen</string>
@@ -812,9 +810,7 @@
 \nWeet u zeker dat u verder wilt gaan?</string>
     <string name="no">Nee</string>
     <string name="settings_category_backup_restore_title">Back-up en herstel</string>
-    <string name="auto_update_check_description">NewPipe kan van tĳd tot tĳd auto­matisch controleren op nieuwe versies en u op de hoogte stellen zodra deze beschik­baar zijn.
-\nWilt u dit inschakelen?</string>
-    <string name="reset_settings_title">Instellingen resetten</string>
+<string name="reset_settings_title">Instellingen resetten</string>
     <string name="import_settings_vulnerable_format">De instellingen in de export die wordt geïmporteerd, gebruiken een kwetsbaar formaat dat verouderd is sinds NewPipe 0.27.0. Zorg ervoor dat de export die wordt geïmporteerd afkomstig is van een vertrouwde bron, en geef er de voorkeur aan om in de toekomst alleen exporten te gebruiken die zijn verkregen van NewPipe 0.27.0 of nieuwer. Ondersteuning voor het importeren van instellingen in dit kwetsbare formaat zal binnenkort volledig worden verwijderd, en oude versies van NewPipe zullen dan geen export­instellingen meer uit nieuwe versies kunnen importeren.</string>
     <string name="audio_track_type_secondary">secundair</string>
     <string name="share_playlist_as_youtube_temporary_playlist">Delen als tĳdelijke YouTube-afspeel­lĳst</string>
@@ -847,9 +843,8 @@
     <string name="youtube_player_http_403">HTTP-fout 403 ontvangen van de server tĳdens het afspelen, waarschĳnlĳk veroorzaakt door een ip-blokkade of problemen met de deobfuscatie van de streaming-url</string>
     <string name="sign_in_confirm_not_bot_error">%1$s weigerde gegevens te verstrekken en vroeg om inlog­gegevens om te bevestigen dat de aanvrager geen bot is.\n\nUw IP-adres is mogelijk tijdelijk geblokkeerd door %1$s. U kunt even wachten of over­schakelen naar een ander IP-adres (bij­voorbeeld door een VPN in/uit te schakelen of door over te schakelen van wifi naar mobiele data).\n\nZie <a href="%2$s">dit FAQ-item</a> voor meer informatie.</string>
     <string name="unsupported_content_in_country">Deze inhoud is niet beschikbaar voor het momenteel geselecteerde inhouds­land.\n\nWijzig uw selectie via ‘Instellingen &gt; Inhoud &gt; Standaard­land voor inhoud’.</string>
-    <string name="kao_dialog_more_info">Details</string>
-    <string name="kao_solution">Oplossing</string>
-    <string name="import_subscriptions_title">Abonnementen importeren</string>
+
+<string name="import_subscriptions_title">Abonnementen importeren</string>
     <string name="export_subscriptions_title">Abonnementen exporteren</string>
     <string name="import_from_previous_export">Importeren vanuit vorige export</string>
     <plurals name="export_subscriptions">
@@ -866,5 +861,4 @@
     </plurals>
     <string name="import_subscriptions_summary">Importeer abonnementen vanuit een eerder geëxporteerd .json-bestand</string>
     <string name="export_subscriptions_summary">Exporteer uw abonnementen naar een .json-bestand</string>
-    <string name="kao_dialog_warning">In augustus 2025 kondigde Google aan dat vanaf september 2026 voor het installeren van apps op gecertificeerde Android-apparaten, inclusief apps die buiten de Play Store zijn geïnstalleerd, een ontwikkelaars­verificatie vereist is. Omdat de ontwikkelaars van NewPipe het niet eens zijn met deze vereiste, zal NewPipe na die datum niet meer werken op gecertificeerde Android-apparaten.</string>
 </resources>

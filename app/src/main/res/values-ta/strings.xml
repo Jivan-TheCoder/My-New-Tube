@@ -299,8 +299,7 @@
         <item quantity="other">%s பதிவிறக்கங்கள் முடிந்தன</item>
     </plurals>
     <string name="download_already_running">இப்பெயருடன் ஒரு பதிவிறக்கம் நடைபெறுகிறது</string>
-    <string name="updates_setting_description">புதிய பதிப்பு கிடைத்தால் செயலி புதுப்பிப்பு பற்றி நினைப்பூட்ட ஓர் அறிவிப்பைக் காட்டு</string>
-    <string name="show_thumbnail_summary">பூட்டுத்திரைப் பின்புலத்திற்கும் அறிவிப்புகளுக்கும் சிறுபடத்தைப் பயன்படுத்து</string>
+<string name="show_thumbnail_summary">பூட்டுத்திரைப் பின்புலத்திற்கும் அறிவிப்புகளுக்கும் சிறுபடத்தைப் பயன்படுத்து</string>
     <string name="main_page_content">முகப்புப்பக்க உள்ளடக்கம்</string>
     <string name="select_night_theme_toast">உம் அபிமான இருண்ட தோற்றத்தைக் கீழே தேர்ந்தெடுக்கலாம்</string>
     <string name="error_download_resource_gone">இப்பதிவிறக்கத்தை மீட்டெடுக்க முடியவில்லை</string>
@@ -533,8 +532,7 @@
     <string name="caption_setting_title">தலைப்புகள்</string>
     <string name="playback_reset">மீட்டமை</string>
     <string name="accept">ஏற்றுக்கொள்</string>
-    <string name="updates_setting_title">புதுப்பிப்புகள்</string>
-    <string name="minimize_on_exit_popup_description">பாப்அப் பிளேயருக்குக் குறைக்கவும்</string>
+<string name="minimize_on_exit_popup_description">பாப்அப் பிளேயருக்குக் குறைக்கவும்</string>
     <string name="overwrite_unrelated_warning">இந்த பெயருடன் ஒரு கோப்பு ஏற்கனவே உள்ளது</string>
     <string name="error_file_creation">கோப்பை உருவாக்க முடியாது</string>
     <string name="error_path_creation">இலக்கு கோப்புறையை உருவாக்க முடியாது</string>
@@ -667,10 +665,9 @@
     <string name="streams_notifications_interval_title">அதிர்வெண் சரிபார்க்கிறது</string>
     <string name="streams_notifications_network_title">தேவையான பிணைய இணைப்பு</string>
     <string name="any_network">எந்த பிணையமும்</string>
-    <string name="check_for_updates">புதுப்பிப்புகளை சரிபார்க்கவும்</string>
-    <string name="auto_update_check_description">நியூபைப் தானாகவே புதிய பதிப்புகள் அவ்வப்போது சரிபார்க்கலாம் மற்றும் அவை கிடைத்தவுடன் உங்களுக்குத் தெரிவிக்கலாம்.\n இதை இயக்க விரும்புகிறீர்களா?</string>
-    <string name="manual_update_description">புதிய பதிப்புகளை கைமுறையாக சரிபார்க்கவும்</string>
-    <string name="minimize_on_exit_title">பயன்பாட்டு சுவிட்சில் குறைக்கவும்</string>
+
+
+<string name="minimize_on_exit_title">பயன்பாட்டு சுவிட்சில் குறைக்கவும்</string>
     <string name="minimize_on_exit_summary">முதன்மையான வீடியோ பிளேயரிடமிருந்து பிற பயன்பாட்டிற்கு மாறும்போது செயல் - %s</string>
     <string name="minimize_on_exit_none_description">எதுவுமில்லை</string>
     <string name="minimize_on_exit_background_description">பின்னணி பிளேயருக்குக் குறைக்கவும்</string>

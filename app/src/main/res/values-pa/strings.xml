@@ -320,9 +320,8 @@
     <string name="restore_defaults_confirmation">ਕੀ ਤੁਸੀਂ ਡਿਫਾਲਟ ਮੁੜ-ਸਥਾਪਿਤ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ\?</string>
     <string name="subscribers_count_not_available">ਸਬਸਕ੍ਰਾਈਬਰਾਂ ਦੀ ਗਿਣਤੀ ਅਣ-ਉਪਲਬਧ</string>
     <string name="main_page_content_summary">ਮੁੱਖ ਪੰਨੇ ਤੇ ਕਿਹੜੇ ਟੈਬ ਵਿਖਾਏ ਜਾਣਗੇ</string>
-    <string name="updates_setting_title">ਅੱਪਡੇਟਾਂ</string>
-    <string name="updates_setting_description">ਜਦੋਂ ਐਪ ਦੀ ਨਵੀਂ ਅੱਪਡੇਟ ਉਪਲੱਬਧ ਹੋਵੇ ਤਾਂ ਅੱਪਡੇਟ ਕਰਨ ਵਾਸਤੇ ਨੋਟੀਫਿਕੇਸ਼ਨ ਵਿਖਾਓ</string>
-    <string name="list_view_mode">ਸੂਚੀ ਵੇਖਣ ਦਾ ਢੰਗ</string>
+
+<string name="list_view_mode">ਸੂਚੀ ਵੇਖਣ ਦਾ ਢੰਗ</string>
     <string name="list">ਸੂਚੀ</string>
     <string name="grid">ਗਰਿੱਡ</string>
     <string name="auto">ਆਟੋ</string>
@@ -643,8 +642,7 @@
     <string name="enable_streams_notifications_summary">ਸਬਸਕ੍ਰਾਈਬ ਕੀਤੇ ਚੈਨਲ ਉੱਪਰ ਨਵੀਂ ਸਟ੍ਰੀਮ ਉੱਪਲਬਧ ਹੋਣ ਤੇ ਨੋਟੀਫਿਕੇਸ਼ਨ ਰਾਹੀਂ ਸੂਚਿਤ ਕਰੋ</string>
     <string name="streams_notifications_interval_title">ਜਾਂਚ ਅਵਧੀ</string>
     <string name="any_network">ਕੋਈ ਵੀ ਨੈੱਟਵਰਕ</string>
-    <string name="check_for_updates">ਅੱਪਡੇਟ ਲਈ ਜਾਂਚ ਕਰੋ</string>
-    <string name="low_quality_smaller">ਘੱਟ ਗੁਣਵੱਤਾ (ਛੋਟਾ ਆਕਾਰ)</string>
+<string name="low_quality_smaller">ਘੱਟ ਗੁਣਵੱਤਾ (ਛੋਟਾ ਆਕਾਰ)</string>
     <string name="delete_downloaded_files_confirm">ਡਿਸਕ ਤੋਂ ਸਾਰੀਆਂ ਡਾਊਨਲੋਡ ਕੀਤੀਆਂ ਫਾਈਲਾਂ ਹਟਾਓ\?</string>
     <plurals name="deleted_downloads_toast">
         <item quantity="one">%1$s ਡਾਊਨਲੋਡ ਹਟਾਇਆ</item>
@@ -664,8 +662,7 @@
     <string name="faq_description">ਅਗਰ ਤੁਸੀਂ ਐਪ ਦੀ ਵਰਤੋਂ ਸਬੰਧੀ ਮੁਸ਼ਕਿਲਾਂ ਦਾ ਸਾਹਮਣਾ ਕਰ ਰਹੇ ਹੋ, ਤਾਂ ਇਹਨਾਂ ਆਮ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਜਾਣਨਾ ਨਾ ਭੁੱਲੋ!</string>
     <string name="enqueued_next">ਕਤਾਰ ਵਿੱਚ ਅੱਗੇ ਲਗਾਇਆ ਗਿਆ</string>
     <string name="streams_notifications_network_title">ਨੈੱਟਵਰਕ ਦੀ ਕਿਸਮ</string>
-    <string name="manual_update_description">ਨਵੇਂ ਸੰਸਕਰਣਾਂ ਲਈ ਹੱਥੀਂ ਜਾਂਚ ਕਰੋ</string>
-    <string name="high_quality_larger">ਵਧੀਆ ਗੁਣਵੱਤਾ (ਵੱਡਾ ਆਕਾਰ)</string>
+<string name="high_quality_larger">ਵਧੀਆ ਗੁਣਵੱਤਾ (ਵੱਡਾ ਆਕਾਰ)</string>
     <string name="no_appropriate_file_manager_message">ਇਸ ਕਾਰਜ ਲਈ ਕੋਈ ਢੁਕਵਾਂ ਫਾਈਲ ਮੈਨੇਜਰ ਨਹੀਂ ਮਿਲਿਆ।
 \nਕ੍ਰਿਪਾ ਕਰਕੇ ਫਾਈਲ ਮੈਨੇਜਰ ਇੰਨਸਟਾਲ ਕਰੋ ਜਾਂ ਡਾਊਨਲੋਡ ਸੈਟਿੰਗ ਵਿੱਚ \'%s\' ਅਸਮਰੱਥ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
     <string name="you_successfully_subscribed">ਤੁਸੀਂ ਇਸ ਚੈਨਲ ਨੂੰ ਸਬਸਕ੍ਰਾਈਬ ਕਰ ਲਿਆ ਹੈ</string>
@@ -786,9 +783,7 @@
     <string name="notification_actions_summary_android13">ਇਸ \'ਤੇ ਟੈਪ ਕਰਕੇ ਹੇਠਾਂ ਹਰੇਕ ਸੂਚਨਾ ਕਾਰਵਾਈ ਨੂੰ ਸੰਪਾਦਿਤ ਕਰੋ। ਪਹਿਲੀਆਂ ਤਿੰਨ ਕਾਰਵਾਈਆਂ (ਚਲਾਓ/ਰੋਕੋ, ਪਿਛਲਾ ਅਤੇ ਅਗਲਾ) ਸਿਸਟਮ ਦੁਆਰਾ ਸੈੱਟ ਕੀਤੀਆਂ ਗਈਆਂ ਹਨ ਅਤੇ ਉਹਨਾਂ ਨੂੰ ਅਨੁਕੂਲਿਤ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ।</string>
     <string name="show_less">ਘੱਟ ਵਿਖਾਓ</string>
     <string name="yes">ਹਾਂ</string>
-    <string name="auto_update_check_description">ਨਿਊਪਾਈਪ ਸਮੇਂ-ਸਮੇਂ \'ਤੇ ਨਵੇਂ ਸੰਸਕਰਣਾਂ ਦੀ ਸਵੈਚਲਿਤ ਤੌਰ \'ਤੇ ਜਾਂਚ ਕਰ ਸਕਦੀ ਹੈ ਅਤੇ ਇੱਕ ਵਾਰ ਉਪਲਬਧ ਹੋਣ \'ਤੇ ਤੁਹਾਨੂੰ ਸੂਚਿਤ ਕਰ ਸਕਦੀ ਹੈ।
-\nਕੀ ਤੁਸੀਂ ਇਸਨੂੰ ਇਨੇਬਲ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?</string>
-    <string name="settings_category_backup_restore_title">ਬੈਕਅੱਪ ਅਤੇ ਰੀਸਟੋਰ</string>
+<string name="settings_category_backup_restore_title">ਬੈਕਅੱਪ ਅਤੇ ਰੀਸਟੋਰ</string>
     <string name="reset_settings_title">ਸੈਟਿੰਗਾਂ ਨੂੰ ਰੀਸੈਟ ਕਰੋ</string>
     <string name="reset_settings_summary">ਸਾਰੀਆਂ ਸੈਟਿੰਗਾਂ ਨੂੰ ਉਹਨਾਂ ਦੇ ਡਿਫ਼ਾਲਟ ਮੁੱਲਾਂ \'ਤੇ ਰੀਸੈਟ ਕਰੋ</string>
     <string name="reset_all_settings">ਸਾਰੀਆਂ ਸੈਟਿੰਗਾਂ ਨੂੰ ਰੀਸੈੱਟ ਕਰਨ ਨਾਲ ਤੁਹਾਡੀਆਂ ਸਾਰੀਆਂ ਤਰਜੀਹੀ ਸੈਟਿੰਗਾਂ ਰੱਦ ਹੋ ਜਾਣਗੀਆਂ ਅਤੇ ਐਪ ਰੀਸਟਾਰਟ ਹੋ ਜਾਵੇਗਾ।
@@ -828,10 +823,9 @@
     <string name="youtube_player_http_403">ਪਲੇਅ ਕਰਦੇ ਸਮੇਂ ਸਰਵਰ ਤੋਂ HTTP error 403 ਪ੍ਰਾਪਤ ਹੋਇਆ, ਜੋ ਸ਼ਾਇਦ IP ਬੈਨ ਜਾਂ ਸਟ੍ਰੀਮਿੰਗ URL ਡੀਔਬਫਸਕੇਸ਼ਨ ਸਮੱਸਿਆਵਾਂ ਕਾਰਨ ਹੋਈ ਹੈ</string>
     <string name="sign_in_confirm_not_bot_error">%1$s ਨੇ ਡੇਟਾ ਪ੍ਰਦਾਨ ਕਰਨ ਤੋਂ ਇਨਕਾਰ ਕਰ ਦਿੱਤਾ, ਅਤੇ ਇਹ ਪੁਸ਼ਟੀ ਕਰਨ ਲਈ ਲੌਗਇਨ ਕਰਨ ਲਈ ਕਿਹਾ ਕਿ ਬੇਨਤੀਕਰਤਾ ਬੋਟ ਨਹੀਂ ਹੈ।\n\nਹੋ ਸਕਦਾ ਹੈ ਕਿ %1$s ਨੇ ਤੁਹਾਡੇ IP ਨੂੰ ਅਸਥਾਈ ਤੌਰ \'ਤੇ ਪਾਬੰਦੀ ਲਗਾਈ ਹੋਵੇ, ਤੁਸੀਂ ਕੁਝ ਸਮਾਂ ਉਡੀਕ ਕਰ ਸਕਦੇ ਹੋ ਜਾਂ ਕਿਸੇ ਵੱਖਰੇ IP \'ਤੇ ਸਵਿੱਚ ਕਰ ਸਕਦੇ ਹੋ (ਉਦਾਹਰਣ ਵਜੋਂ VPN ਨੂੰ ਚਾਲੂ/ਬੰਦ ਕਰਕੇ, ਜਾਂ WiFi ਤੋਂ ਮੋਬਾਈਲ ਡੇਟਾ \'ਤੇ ਸਵਿੱਚ ਕਰਕੇ)।\n\nਹੋਰ ਜਾਣਕਾਰੀ ਲਈ ਕਿਰਪਾ ਕਰਕੇ <a href="%2$s">ਇਹ FAQ ਐਂਟਰੀ</a> ਵੇਖੋ।</string>
     <string name="unsupported_content_in_country">ਇਹ ਸਮੱਗਰੀ ਵਰਤਮਾਨ ਵਿੱਚ ਚੁਣੇ ਗਏ ਦੇਸ਼ ਦੀ ਸਮੱਗਰੀ ਲਈ ਉਪਲੱਬਧ ਨਹੀਂ ਹੈ।\n\n\"ਸੈਟਿੰਗਾਂ &gt; ਸਮੱਗਰੀ &gt; ਡਿਫ਼ਾਲਟ ਸਮੱਗਰੀ ਦੇਸ਼\" ਤੋਂ ਆਪਣੀ ਚੋਣ ਬਦਲੋ।</string>
-    <string name="kao_dialog_warning">ਅਗਸਤ 2025 ਵਿੱਚ, ਗੂਗਲ ਨੇ ਐਲਾਨ ਕੀਤਾ ਕਿ ਸਤੰਬਰ 2026 ਤੋਂ, ਐਪਸ ਨੂੰ ਸਥਾਪਿਤ ਕਰਨ ਲਈ ਪ੍ਰਮਾਣਿਤ ਡਿਵਾਈਸਾਂ \'ਤੇ ਸਾਰੇ ਐਂਡਰਾਇਡ ਐਪਸ ਲਈ ਡਿਵੈਲਪਰ ਤਸਦੀਕ ਦੀ ਲੋੜ ਹੋਵੇਗੀ, ਜਿਸ ਵਿੱਚ ਪਲੇ ਸਟੋਰ ਤੋਂ ਬਾਹਰ ਸਥਾਪਤ ਕੀਤੇ ਐਪਸ ਵੀ ਸ਼ਾਮਲ ਹਨ। ਕਿਉਂਕਿ ਨਿਊਪਾਈਪ ਦੇ ਡਿਵੈਲਪਰ ਇਸ ਲੋੜ ਨਾਲ ਸਹਿਮਤ ਨਹੀਂ ਹਨ, ਇਸ ਲਈ ਨਿਊਪਾਈਪ ਉਸ ਸਮੇਂ ਤੋਂ ਬਾਅਦ ਪ੍ਰਮਾਣਿਤ ਐਂਡਰਾਇਡ ਡਿਵਾਈਸਾਂ \'ਤੇ ਕੰਮ ਨਹੀਂ ਕਰੇਗੀ।</string>
-    <string name="kao_dialog_more_info">ਵੇਰਵੇ</string>
-    <string name="kao_solution">ਹੱਲ</string>
-    <plurals name="export_subscriptions">
+
+
+<plurals name="export_subscriptions">
         <item quantity="one">%d ਸਬਸਕ੍ਰਿਪਸ਼ਨ ਐਕਸਪੋਰਟ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ…</item>
         <item quantity="other">%d ਸਬਸਕ੍ਰਿਪਸ਼ਨਾਂ ਐਕਸਪੋਰਟ ਕੀਤੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ…</item>
     </plurals>

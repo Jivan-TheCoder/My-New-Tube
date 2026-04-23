@@ -276,8 +276,7 @@
     <string name="decline">Afvis</string>
     <string name="limit_data_usage_none_description">Ingen begrænsning</string>
     <string name="limit_mobile_data_usage_title">Begræns opløsning, når mobildata bruges</string>
-    <string name="updates_setting_title">Opdateringer</string>
-    <string name="list_view_mode">Listevisning</string>
+<string name="list_view_mode">Listevisning</string>
     <string name="list">Liste</string>
     <string name="grid">Gitter</string>
     <string name="auto">Automatisk</string>
@@ -351,8 +350,7 @@
     <string name="playback_pitch">Tonehøjde</string>
     <string name="skip_silence_checkbox">Spol forbi stilhed</string>
     <string name="playback_step">Skridt</string>
-    <string name="updates_setting_description">Vis en notifikation for at foreslå opdatering af appen, når en ny version er tilgængelig</string>
-    <string name="minimize_on_exit_title">Minimer ved appskift</string>
+<string name="minimize_on_exit_title">Minimer ved appskift</string>
     <string name="minimize_on_exit_summary">Handling ved skift til anden app fra hovedvideoafspiller — %s</string>
     <string name="minimize_on_exit_none_description">Ingen</string>
     <string name="minimize_on_exit_background_description">Minimer til baggrundsafspiller</string>
@@ -517,12 +515,10 @@
     <string name="streams_notifications_interval_title">Kontrolfrekvens</string>
     <string name="enable_streams_notifications_title">Notifikationer ved nye streams</string>
     <string name="enable_streams_notifications_summary">Underret om nye streams fra abonnementer</string>
-    <string name="manual_update_description">Tjek manuelt efter opdateringer</string>
-    <string name="checking_updates_toast">Tjekker efter opdateringer…</string>
+<string name="checking_updates_toast">Tjekker efter opdateringer…</string>
     <string name="recovering">gendanner</string>
     <string name="feed_load_error_fast_unknown">\"Hurtig feed\"-tilstand oplyser ikke mere info om dette.</string>
-    <string name="check_for_updates">Tjek efter opdateringer</string>
-    <string name="remove_watched_popup_title">Fjern sete videoer?</string>
+<string name="remove_watched_popup_title">Fjern sete videoer?</string>
     <string name="disable_media_tunneling_summary">Deaktivér medietunneling, hvis du oplever en sort skærm eller hakken ved videoafspilning.</string>
     <string name="error_report_open_github_notice">Tjek venligst, om der allerede findes et problem, der diskuterer dit nedbrud. Når du opretter flere tickets, tager du tid fra os, som vi kunne bruge på at løse den faktiske fejl.</string>
     <string name="check_new_streams">Tjek efter nye streams</string>
@@ -809,9 +805,7 @@
     <string name="no">Nej</string>
     <string name="reset_settings_title">Nulstil indstillinger</string>
     <string name="reset_settings_summary">Nulstil alle indstillinger til deres standardværdier</string>
-    <string name="auto_update_check_description">NewPipe kan automatisk tjekke efter nye versioner indimellem og give dig besked, når de er tilgængelige.
-\nØnsker du at aktivere dette?</string>
-    <string name="reset_all_settings">Hvis du nulstiller alle indstillinger, kasseres alle dine foretrukne indstillinger, og appen genstartes.
+<string name="reset_all_settings">Hvis du nulstiller alle indstillinger, kasseres alle dine foretrukne indstillinger, og appen genstartes.
 \n
 \nEr du sikker på, at du vil fortsætte?</string>
     <string name="import_settings_vulnerable_format">Indstillingerne i den eksport, der importeres, bruger et sårbart format, der er blevet forældet siden NewPipe 0.27.0. Sørg for, at den eksport, der importeres, er fra en pålidelig kilde, og brug helst kun eksport fra NewPipe 0.27.0 eller nyere i fremtiden. Understøttelse af import af indstillinger i dette sårbare format fjernes snart helt, og så vil gamle versioner af NewPipe ikke længere være i stand til at importere indstillinger fra eksport fra nye versioner.</string>

@@ -335,9 +335,8 @@
     <string name="restore_defaults_confirmation">Öntanımlıları geri yüklemek istiyor musunuz\?</string>
     <string name="subscribers_count_not_available">Abone sayısı yok</string>
     <string name="main_page_content_summary">Ana sayfada hangi sekmeler gösterilir</string>
-    <string name="updates_setting_title">Güncellemeler</string>
-    <string name="updates_setting_description">Yeni sürüm olduğunda uygulama güncellemesi için bildirim göster</string>
-    <string name="list_view_mode">Liste görünümü kipi</string>
+
+<string name="list_view_mode">Liste görünümü kipi</string>
     <string name="list">Liste</string>
     <string name="grid">Izgara</string>
     <string name="auto">Kendiliğinden</string>
@@ -643,9 +642,8 @@
     <string name="enqueue_next_stream">Bundan sonra oynat</string>
     <string name="enqueued_next">Bundan sonra oynatılmak için sıraya eklendi</string>
     <string name="processing_may_take_a_moment">İşleniyor… Biraz zaman alabilir</string>
-    <string name="check_for_updates">Güncellemeleri denetle</string>
-    <string name="manual_update_description">Yeni sürümleri el ile denetleyin</string>
-    <string name="checking_updates_toast">Güncellemeler denetleniyor…</string>
+
+<string name="checking_updates_toast">Güncellemeler denetleniyor…</string>
     <string name="feed_new_items">Yeni akış ögeleri</string>
     <string name="error_report_channel_name">Hata raporlama bildirimi</string>
     <string name="error_report_notification_title">NewPipe hatayla karşılaştı, bildirmek için dokun</string>
@@ -813,9 +811,7 @@
 \nDevam etmek istediğinizden emin misiniz?</string>
     <string name="yes">Evet</string>
     <string name="no">Hayır</string>
-    <string name="auto_update_check_description">NewPipe zaman zaman yeni sürümleri kendiliğinden denetleyebilir ve kullanılabilir olduklarında sizi bilgilendirebilir.
-\nBunu etkinleştirmek istiyor musunuz?</string>
-    <string name="import_settings_vulnerable_format">İçe aktarılmakta olan dışa aktarımdaki ayarlar, NewPipe 0.27.0\'dan itibaren kullanımdan kaldırılan güvenlik açığı olan bir biçim kullanmaktadır. İçe aktarılmakta olan dışa aktarımın güvenilir bir kaynaktan alındığından emin olun ve gelecekte yalnızca NewPipe 0.27.0 veya daha yeni sürümlerden alınan dışa aktarımları kullanmayı tercih edin. Bu güvenlik açığı bulunan biçimdeki ayarları içe aktarma desteği yakında tamamen kaldırılacak ve ardından NewPipe\'ın eski sürümleri artık yeni sürümlerden dışa aktarılan ayarların içe aktarımını yapamayacaktır.</string>
+<string name="import_settings_vulnerable_format">İçe aktarılmakta olan dışa aktarımdaki ayarlar, NewPipe 0.27.0\'dan itibaren kullanımdan kaldırılan güvenlik açığı olan bir biçim kullanmaktadır. İçe aktarılmakta olan dışa aktarımın güvenilir bir kaynaktan alındığından emin olun ve gelecekte yalnızca NewPipe 0.27.0 veya daha yeni sürümlerden alınan dışa aktarımları kullanmayı tercih edin. Bu güvenlik açığı bulunan biçimdeki ayarları içe aktarma desteği yakında tamamen kaldırılacak ve ardından NewPipe\'ın eski sürümleri artık yeni sürümlerden dışa aktarılan ayarların içe aktarımını yapamayacaktır.</string>
     <string name="audio_track_type_secondary">ikincil</string>
     <string name="tab_bookmarks_short">Oynatma Listeleri</string>
     <string name="share_playlist_as_youtube_temporary_playlist">YouTube geçici oynatma listesi olarak paylaş</string>
@@ -847,10 +843,9 @@
     <string name="youtube_player_http_403">Oynatırken sunucudan HTTP 403 hatası alındı, IP engeli ya da akış URL’si çözme sorunları olabilir</string>
     <string name="sign_in_confirm_not_bot_error">%1$s veri sağlamıyor, istekçinin robot olmadığını doğrulaması için oturum açmasını istiyor.\n\n%1$s, IP adresinizi geçici olarak engellemiş olabilir, bir süre bekleyebilir ya da başka IP\'ye geçebilirsiniz (örneğin VPN\'i açıp/kapatarak ya da WiFi\'den mobil veriye geçerek).\n\nDaha çok bilgi için <a href="%2$s">bu SSS girdisine</a> bakın.</string>
     <string name="unsupported_content_in_country">Bu içerik şu anda seçili içerik ülkesinde kullanılamıyor.\n\nSeçiminizi \"Ayarlar &gt; İçerik &gt; Öntanımlı içerik ülkesi\"nden değiştirin.</string>
-    <string name="kao_dialog_warning">Google, Eylül 2026\'dan sonra sertifikalı Android aygıtlarda Play Store dışından kurulmuşlarla birlikte tüm uygulamaların, geliştiricilerin kişisel kimlik bilgilerini doğrudan Google’a göndermesini gerektireceğini duyurdu. NewPipe geliştiricileri bu zorunluluğu kabul etmediğinden, NewPipe bu tarihten sonra sertifikalı Android aygıtlarda çalışmayacaktır.</string>
-    <string name="kao_dialog_more_info">Ayrıntılar</string>
-    <string name="kao_solution">Çözüm</string>
-    <plurals name="export_subscriptions">
+
+
+<plurals name="export_subscriptions">
         <item quantity="one">%d abonelik dışa aktarılıyor…</item>
         <item quantity="other">%d abonelik dışa aktarılıyor…</item>
     </plurals>

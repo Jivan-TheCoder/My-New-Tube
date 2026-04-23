@@ -466,8 +466,7 @@
     <string name="auto">Auto</string>
     <string name="grid">Tinklelis</string>
     <string name="list">Sąrašas</string>
-    <string name="updates_setting_title">Atnaujinimai</string>
-    <string name="playback_reset">Atstatyti</string>
+<string name="playback_reset">Atstatyti</string>
     <string name="playback_step">Žingsnis</string>
     <string name="minimize_on_exit_none_description">Nieko</string>
     <string name="decline">Atmesti</string>
@@ -528,8 +527,7 @@
     <string name="import_network_expensive_warning">Atminkite, kad ši operacija gali brangiai kainuoti tinkle.
 \n
 \nAr norite tęsti\?</string>
-    <string name="updates_setting_description">Rodyti pranešimą, kuriame raginama atnaujinti programą, kai yra nauja versija</string>
-    <string name="new_seek_duration_toast">Dėl ExoPlayer apribojimų prasukimo trukmė buvo nustatyta %d sekundės</string>
+<string name="new_seek_duration_toast">Dėl ExoPlayer apribojimų prasukimo trukmė buvo nustatyta %d sekundės</string>
     <string name="pause_downloads_on_mobile_desc">Naudinga pereinant prie mobiliųjų duomenų, nors kai kurių atsisiuntimų sustabdyti negalima</string>
     <string name="minimize_on_exit_summary">Veiksmas, kai iš pagrindinio vaizdo įrašų grotuvo pereinama į kitą programą — %s</string>
     <string name="show_original_time_ago_summary">Srauto elementuose bus matomi orginalūs tekstai iš paslaugų</string>
@@ -656,9 +654,8 @@
     <string name="enqueued_next">Sekantis pridėtas į eilę</string>
     <string name="enqueue_next_stream">Įtraukti į eilę sekantį</string>
     <string name="processing_may_take_a_moment">Apdorojama… tai gali užtrukti</string>
-    <string name="check_for_updates">Tikrinti ar yra atnaujinimų</string>
-    <string name="manual_update_description">Tikrinti ar yra atnaujinimų rankiniu būdu</string>
-    <string name="checking_updates_toast">Tikrinti ar yra atnaujinimų…</string>
+
+<string name="checking_updates_toast">Tikrinti ar yra atnaujinimų…</string>
     <string name="feed_new_items">Nauji sklaidos kanalo elementai</string>
     <string name="leak_canary_not_available">LeakCanary neprieinama</string>
     <string name="show_crash_the_player_summary">Naudojant grotuvą rodo lūžio parinkty</string>
@@ -781,9 +778,7 @@
     <string name="no">Ne</string>
     <string name="main_tabs_position_summary">Pagrindinio skirtuko parinkiklio perkėlimas į apačią</string>
     <string name="disable_media_tunneling_automatic_info">Medijos tuneliavimas buvo išjungtas pagal numatytuosius nustatymus jūsų prietaise, nes žinoma, kad jūsų prietaiso modelis jo nepalaiko.</string>
-    <string name="auto_update_check_description">\"NewPipe\" gali automatiškai patikrinti, ar yra naujų versijų, ir pranešti jums, kai jos pasirodys.
-\nAr norite tai įjungti?</string>
-    <string name="image_quality_none">Neįkelti paveikslėlių</string>
+<string name="image_quality_none">Neįkelti paveikslėlių</string>
     <string name="audio_track_name">%1$s %2$s</string>
     <string name="notification_actions_summary_android13">Redaguokite kiekvieną toliau pateiktą pranešimo veiksmą bakstelėdami jį. Pirmi trys veiksmai (groti/pauzė, ankstensnis ir paskesnis) yra sistemos numatytieji ir negali būti pakeisti.</string>
     <string name="settings_category_backup_restore_title">Atsarginės kopijos</string>

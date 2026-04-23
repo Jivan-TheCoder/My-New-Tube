@@ -512,9 +512,8 @@
     <string name="minimize_on_exit_none_description">Niciuna</string>
     <string name="minimize_on_exit_summary">Acțiune la trecerea la altă aplicație de la playerul video principal - %s</string>
     <string name="minimize_on_exit_title">Minimalizați la comutarea aplicației</string>
-    <string name="updates_setting_description">Afișați o notificare pentru a solicita actualizarea aplicației atunci când este disponibilă o nouă versiune</string>
-    <string name="updates_setting_title">Actualizări</string>
-    <string name="limit_data_usage_none_description">Fără limită</string>
+
+<string name="limit_data_usage_none_description">Fără limită</string>
     <string name="start_accept_privacy_policy">Pentru a respecta Regulamentul general european privind protecția datelor (GDPR), vă atragem atenția asupra politicii de confidențialitate a NewPipe. Vă rugăm să o citiți cu atenție.
 \nTrebuie să o acceptați pentru a ne trimite raportul de eroare.</string>
     <string name="playback_reset">Resetare</string>
@@ -656,9 +655,8 @@
     <string name="seekbar_preview_thumbnail_title">Miniatură de previzualizare în bara de derulare</string>
     <string name="disable_media_tunneling_summary">Dezactivați tunelarea media dacă întâmpinați un ecran negru sau blocaje la redarea video.</string>
     <string name="processing_may_take_a_moment">Procesarea.. Poate dura un moment</string>
-    <string name="check_for_updates">Verifică dacă există actualizări</string>
-    <string name="manual_update_description">Verifică manual dacă există versiuni noi</string>
-    <string name="detail_pinned_comment_view_description">Comentariu lipit</string>
+
+<string name="detail_pinned_comment_view_description">Comentariu lipit</string>
     <string name="error_report_channel_name">Notificare cu raport de eroare</string>
     <string name="show_crash_the_player_summary">Afișează opțiunea de a întrerupe atunci când utilizați playerul</string>
     <string name="error_report_notification_toast">A apărut o eroare, consultați notificarea</string>
@@ -820,9 +818,7 @@
     <string name="channel_tab_tracks">Piste</string>
     <string name="error_insufficient_storage">Nu este suficient spațiu liber pe dispozitiv</string>
     <string name="settings_category_backup_restore_title">Backup și restabilire</string>
-    <string name="auto_update_check_description">NewPipe poate verifica automat pentru versiuni noi din când în când și vă poate notifica când acestea sunt disponibile.
-\nDoriți să activați acest lucru?</string>
-    <string name="reset_settings_summary">Resetează toate setările la valorile inițiale</string>
+<string name="reset_settings_summary">Resetează toate setările la valorile inițiale</string>
     <string name="yes">Da</string>
     <string name="no">Nu</string>
     <string name="reset_settings_title">Resetează setări</string>

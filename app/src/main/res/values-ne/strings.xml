@@ -334,9 +334,8 @@
     <string name="decline">अस्वीकार</string>
     <string name="limit_data_usage_none_description">असीमित</string>
     <string name="limit_mobile_data_usage_title">मोबाइल डाटा प्रयोग गर्दा रिजोलुशन सिमित गर</string>
-    <string name="updates_setting_title">अपडेटहरु</string>
-    <string name="updates_setting_description">नयाँ संस्करण उपलब्ध हुने बित्तिकै शीघ्र एप अपडेट गर्न एक सूचना देखाउ</string>
-    <string name="minimize_on_exit_title">अन्य एपमा जादा सानो बनाउ</string>
+
+<string name="minimize_on_exit_title">अन्य एपमा जादा सानो बनाउ</string>
     <string name="minimize_on_exit_summary">मुख्य भिडियो प्लेयरबाट अन्य ऐपहरुमा जादा गरिने कार्य -%s</string>
     <string name="minimize_on_exit_none_description">केहि पनि नगर</string>
     <string name="minimize_on_exit_background_description">पृष्ठभूमि प्लयेरमा मिनिमाइज गर</string>

@@ -47,8 +47,7 @@
     <string name="no_player_found">Նվագարկիչ չի գտնվել, ցանկանո՞ւմ եք բեռնել VLC։</string>
     <string name="use_external_audio_player_title">Օգտագործել արտաքին աուդիո նվագարկիչ</string>
     <string name="use_external_video_player_title">Օգտագործել արտաքին դերակատար</string>
-    <string name="updates_setting_title">Թարմացումներ</string>
-    <string name="feed_update_threshold_option_always_update">Միշտ թարմացնել</string>
+<string name="feed_update_threshold_option_always_update">Միշտ թարմացնել</string>
     <plurals name="feed_group_dialog_selection_count">
         <item quantity="one">%d նշված</item>
         <item quantity="other">%d նշված</item>
@@ -151,8 +150,7 @@
     <string name="resize_zoom">Մեծացնել</string>
     <string name="caption_auto_generated">Գեներացված</string>
     <string name="import_file_title">Ներմուծել ֆայլ</string>
-    <string name="check_for_updates">Ստուգել թարմացումները</string>
-    <string name="auto">Ինքնին</string>
+<string name="auto">Ինքնին</string>
     <string name="high_quality_larger">Բարձր որակ (մեծ)</string>
     <string name="low_quality_smaller">Ցածր որակ (փոքր)</string>
     <string name="queued">հերթագրված</string>
@@ -243,9 +241,8 @@
     <string name="unknown_audio_track">Անհայտ</string>
     <string name="did_you_mean">Նկատի ունե՞ս «%1$s»</string>
     <string name="volume">Բարձրություն</string>
-    <string name="kao_solution">Լուծում</string>
-    <string name="kao_dialog_more_info">Մանրամասներ</string>
-    <plurals name="replies">
+
+<plurals name="replies">
         <item quantity="one">%s պատասխան</item>
         <item quantity="other">%s պատասխաններ</item>
     </plurals>

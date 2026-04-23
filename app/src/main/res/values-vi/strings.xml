@@ -337,9 +337,8 @@
     <string name="main_page_content_summary">Chọn các tab để hiện trên trang chủ</string>
     <string name="top_50">Top 50 phổ biến</string>
     <string name="import_soundcloud_instructions_hint">Nhập ID SoundCloud hoặc link soundcloud.com/&lt;ID của bạn&gt;</string>
-    <string name="updates_setting_title">Cập nhật</string>
-    <string name="updates_setting_description">Hiển thị thông báo để nhắc cập nhật ứng dụng khi có phiên bản mới</string>
-    <string name="list_view_mode">Chế độ hiển thị danh sách</string>
+
+<string name="list_view_mode">Chế độ hiển thị danh sách</string>
     <string name="list">Danh sách</string>
     <string name="grid">Lưới</string>
     <string name="auto">Tự động</string>
@@ -640,9 +639,8 @@
     <string name="show_crash_the_player_summary">Hiện tùy chọn dừng đột ngột khi sử dụng trình phát</string>
     <string name="show_error_snackbar">Hiện thanh báo lỗi</string>
     <string name="create_error_notification">Tạo thông báo lỗi</string>
-    <string name="check_for_updates">Kiểm tra cập nhật</string>
-    <string name="manual_update_description">Kiểm tra phiên bản mới theo cách thủ công</string>
-    <string name="checking_updates_toast">Đang kiểm tra cập nhật…</string>
+
+<string name="checking_updates_toast">Đang kiểm tra cập nhật…</string>
     <string name="feed_new_items">Mục nguồn cấp dữ liệu mới</string>
     <string name="crash_the_player">Làm sập trình phát</string>
     <string name="no_appropriate_file_manager_message_android_10">Không tìm thấy ứng dụng quản lý tệp phù hợp nào để thực hiện hành động.
@@ -796,9 +794,7 @@
     <string name="reset_settings_summary">Đặt lại tất cả cài đặt về giá trị mặc định</string>
     <string name="reset_all_settings">Việc đặt lại tất cả cài đặt sẽ loại bỏ tất cả các cài đặt mà bạn đã đặt và khởi động lại ứng dụng. \n \nBạn có chắc muốn tiếp tục?</string>
     <string name="no">Không</string>
-    <string name="auto_update_check_description">NewPipe có thể tự động kiểm tra các phiên bản mới theo thời gian và thông báo cho bạn khi chúng có sẵn.
-\nBạn có muốn kích hoạt tính năng này không?</string>
-    <string name="yes">Có</string>
+<string name="yes">Có</string>
     <string name="import_settings_vulnerable_format">Cài đặt trong xuất đang được nhập sử dụng định dạng dễ bị tấn công và không được dùng nữa kể từ NewPipe 0.27.0. Đảm bảo rằng bản xuất đang được nhập là từ một nguồn đáng tin cậy và chỉ ưu tiên sử dụng các bản xuất lấy từ NewPipe 0.27.0 hoặc mới hơn trong tương lai. Hỗ trợ nhập cài đặt ở định dạng dễ bị tấn công này sẽ sớm bị xóa hoàn toàn và khi đó các phiên bản cũ của NewPipe sẽ không thể nhập cài đặt xuất từ phiên bản mới nữa.</string>
     <string name="search_with_service_name">Tìm kiếm %1$s</string>
     <string name="search_with_service_name_and_filter">Tìm kiếm %1$s (%2$s)</string>
@@ -831,7 +827,6 @@
     <string name="account_terminated_service_provides_reason">Tài khoản bị vô hiệu hóa. \n\n%1$s cung cấp lý do này: %2$s</string>
     <string name="entry_deleted">Entry đã xóa</string>
     <string name="player_http_invalid_status">Đã xảy ra lỗi HTTP %1$s trong khi phát</string>
-    <string name="kao_dialog_warning">Từ tháng 8 năm 2025, Google đã thông báo rằng kể từ tháng 9 năm 2026, việc cài app sẽ yêu cầu các nhà phát triển phải xác minh trên những thiết bị đã chứng nhận, kể cả đối với các ứng dụng ngoài Play Store. Vì các nhà phát triển của NewPipe không đồng ý với điều kiện này, nên có lẽ NewPipe sẽ không còn hoạt động trên các máy Android được chứng nhận sau thời điểm ấy.</string>
-    <string name="kao_dialog_more_info">Chi tiết</string>
-    <string name="kao_solution">Giải pháp</string>
+
+
 </resources>

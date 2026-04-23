@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import com.grack.nanojson.JsonObject;
 import com.grack.nanojson.JsonStringWriter;
 
+import org.schabi.newpipe.AppMode;
 import org.schabi.newpipe.R;
 import org.schabi.newpipe.database.LocalItem.LocalItemType;
 import org.schabi.newpipe.error.ErrorInfo;
@@ -354,7 +355,13 @@ public abstract class Tab {
 
         @Override
         public KioskFragment getFragment(final Context context) throws ExtractionException {
-            return KioskFragment.getInstance(kioskServiceId, kioskId);
+//            return KioskFragment.getInstance(kioskServiceId, kioskId);
+
+            if (AppMode.USE_EXTRACTOR) {
+                return KioskFragment.getInstance(kioskServiceId, kioskId);
+            } else {
+                return RemoteKioskFragment.getInstance(kioskId); // JSON + Room based
+            }
         }
 
         @Override

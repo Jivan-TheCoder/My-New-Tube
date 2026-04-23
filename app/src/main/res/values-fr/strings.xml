@@ -343,9 +343,8 @@
     <string name="events">Évènements</string>
     <string name="download_to_sdcard_error_message">Impossible de télécharger dans la carte mémoire externe. Voulez-vous réinitialiser l’emplacement du dossier de téléchargement \?</string>
     <string name="main_page_content_summary">Choisir quels onglets seront visibles sur la page principale</string>
-    <string name="updates_setting_title">Mises à jour</string>
-    <string name="updates_setting_description">Afficher une notification pour proposer une mise à jour de l’application lorsqu’une nouvelle version est disponible</string>
-    <string name="list">Liste</string>
+
+<string name="list">Liste</string>
     <string name="grid">Grille</string>
     <string name="auto">Auto</string>
     <string name="app_update_available_notification_title">Une mise à jour de NewPipe est disponible !</string>
@@ -658,10 +657,8 @@
     <string name="enqueue_next_stream">Placer en suivant dans la file</string>
     <string name="enqueued_next">Placé en suivant dans la file</string>
     <string name="processing_may_take_a_moment">Traitement en cours… Veuillez patienter</string>
-    <string name="manual_update_description">Vérifier manuellement de nouvelles versions</string>
-    <string name="checking_updates_toast">Vérification des mises à jour…</string>
-    <string name="check_for_updates">Vérifier les mises à jour</string>
-    <string name="feed_new_items">Nouveaux éléments du flux</string>
+<string name="checking_updates_toast">Vérification des mises à jour…</string>
+<string name="feed_new_items">Nouveaux éléments du flux</string>
     <string name="crash_the_player">Faire planter le lecteur</string>
     <string name="show_crash_the_player_title">Afficher « Faire planter le lecteur »</string>
     <string name="show_crash_the_player_summary">Montrer une option de plantage lors de l\'utilisation du lecteur</string>
@@ -827,9 +824,7 @@
 \nÊtes-vous sûr de vouloir poursuivre ?</string>
     <string name="settings_category_backup_restore_title">Sauvegarde et restauration</string>
     <string name="yes">Oui</string>
-    <string name="auto_update_check_description">NewPipe peut automatiquement vérifier la disponibilité de nouvelles versions de temps en temps et vous notifier lorsqu\'elles sont disponibles.
-\nVoulez-vous activer cette vérification ?</string>
-    <string name="reset_settings_title">Réinitialiser les paramètres</string>
+<string name="reset_settings_title">Réinitialiser les paramètres</string>
     <string name="error_insufficient_storage">Pas assez d\'espace disponible sur l\'appareil</string>
     <string name="import_settings_vulnerable_format">Les paramètres de l\'export en cours d\'importation utilisent un format vulnérable qui a été déprécié depuis NewPipe 0.27.0. Assurez-vous que l\'export en cours d\'importation provient d\'une source fiable. Privilégiez les exports obtenues à partir de NewPipe 0.27.0 ou des versions plus récentes à l\'avenir. Le support pour l\'importation des paramètres dans ce format vulnérable sera bientôt complètement supprimé et les anciennes versions de NewPipe ne pourront plus importer les paramètres des exports des nouvelles versions.</string>
     <string name="audio_track_type_secondary">secondaire</string>
@@ -863,10 +858,9 @@
     <string name="youtube_player_http_403">Erreur HTTP 403 reçue du serveur pendant la lecture, probablement causée par un bannissement d\'IP ou des problèmes de désobfuscation de l\'URL de streaming</string>
     <string name="sign_in_confirm_not_bot_error">%1$s a refusé de fournir des données et a demandé un identifiant pour confirmer que l\'auteur de la requête n\'est pas un robot.\n\nVotre adresse IP a peut-être été temporairement bloquée par %1$s. Vous pouvez patienter ou essayer une autre adresse IP (par exemple, en activant/désactivant un VPN ou en passant du Wi-Fi aux données mobiles).\n\nPour plus d\'informations, veuillez consulter <a href="%2$s">cette FAQ</a>.</string>
     <string name="unsupported_content_in_country">Ce contenu n\'est pas disponible pour le pays actuellement sélectionné.\n\nModifiez votre sélection dans « Paramètres &gt; Contenu &gt; Pays par défaut ».</string>
-    <string name="kao_dialog_warning">En août 2025, Google a annoncé qu\'à compter de septembre 2026, l\'installation d\'applications nécessiterait une vérification par le développeur pour toutes les applications Android sur les appareils certifiés, y compris celles installées en dehors du Play Store. Les développeurs de NewPipe refusant cette exigence, NewPipe ne fonctionnera plus sur les appareils Android certifiés après cette date.</string>
-    <string name="kao_dialog_more_info">Détails</string>
-    <string name="kao_solution">Solution</string>
-    <plurals name="export_subscriptions">
+
+
+<plurals name="export_subscriptions">
         <item quantity="one">Exportation de l\'abonnement %d…</item>
         <item quantity="many">Exportation de %d abonnements…</item>
         <item quantity="other">Exportation de %d abonnements…</item>

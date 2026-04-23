@@ -223,8 +223,7 @@
     <string name="paused">Pavza</string>
     <string name="missions_header_finished">Končano</string>
     <string name="list">Seznam</string>
-    <string name="updates_setting_title">Posodobitve</string>
-    <string name="accept">Sprejmi</string>
+<string name="accept">Sprejmi</string>
     <string name="playback_reset">Resetiraj</string>
     <string name="subscriptions_export_unsuccessful">Ni mogoče izvoziti naročnine</string>
     <string name="subscriptions_import_unsuccessful">Ni mogoče uvoziti naročnine</string>

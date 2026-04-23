@@ -332,9 +332,8 @@
     <string name="download_to_sdcard_error_message">Преземањето на SD картичка не е возможно. Да се ресетира локацијата на папката за преземања ?</string>
     <string name="subscribers_count_not_available">Бројот на претплатници не е достапен</string>
     <string name="main_page_content_summary">Кои јазичиња се прикажани на главната страница</string>
-    <string name="updates_setting_title">Ажурирања</string>
-    <string name="updates_setting_description">Покажи известување за навремено ажурирање на апликацијата кога е достапна нова верзија</string>
-    <string name="list_view_mode">Режим на прегледување список</string>
+
+<string name="list_view_mode">Режим на прегледување список</string>
     <string name="list">Список</string>
     <string name="grid">Решетка</string>
     <string name="auto">Автоматски</string>

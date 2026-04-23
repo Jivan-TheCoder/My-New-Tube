@@ -198,9 +198,8 @@
     <string name="blank_page_summary">Boş səhifə</string>
     <string name="main_page_content_summary">Əsas səhifədə hansı tablar göstərilir</string>
     <string name="main_page_content">Əsas səhifə məzmunu</string>
-    <string name="updates_setting_description">Yeni versiya mövcud olduqda tətbiq yeniləməsini xatırlatmaq üçün bildiriş göstər</string>
-    <string name="updates_setting_title">Yeniləmələr</string>
-    <string name="limit_mobile_data_usage_title">Mobil internet istifadə edərkən ayırdetməni məhdudlaşdır</string>
+
+<string name="limit_mobile_data_usage_title">Mobil internet istifadə edərkən ayırdetməni məhdudlaşdır</string>
     <string name="limit_data_usage_none_description">Limitsiz</string>
     <string name="one_item_deleted">1 element silindi.</string>
     <string name="peertube_instance_add_title">Server əlavə et</string>
@@ -424,8 +423,7 @@
         <item quantity="one">%s baxıcı</item>
         <item quantity="other">%s baxıcı</item>
     </plurals>
-    <string name="manual_update_description">Yeni versiyaları əl ilə yoxla</string>
-    <plurals name="listening">
+<plurals name="listening">
         <item quantity="one">%s dinləyici</item>
         <item quantity="other">%s dinləyici</item>
     </plurals>
@@ -433,8 +431,7 @@
         <item quantity="one">%s video</item>
         <item quantity="other">%s video</item>
     </plurals>
-    <string name="check_for_updates">Yeniləmələri yoxla</string>
-    <string name="seekbar_preview_thumbnail_title">Axtarış çubuğunun miniatür önizləməsi</string>
+<string name="seekbar_preview_thumbnail_title">Axtarış çubuğunun miniatür önizləməsi</string>
     <string name="permission_denied">Əməliyyat sistem tərəfindən ləğv edildi</string>
     <string name="auto">Avto</string>
     <string name="error_http_not_found">Tapılmadı</string>
@@ -741,9 +738,7 @@
     <string name="notification_actions_summary_android13">Aşağıdakı hər bildiriş fəaliyyətin ona toxunub redaktə edin. İlk üç fəaliyyət (oynatma/fasilə, əvvəlki və növbəti) sistem tərəfindən tənzimlənib və dəyişdirilə bilməz.</string>
     <string name="no">Xeyr</string>
     <string name="settings_category_backup_restore_title">Nüsxələ və bərpa et</string>
-    <string name="auto_update_check_description">NewPipe arabir avtomatik şəkildə yeni versiyaları yoxlaya və onlar mövcud olduqda sizə bildirə bilər.
-\nBunu aktivləşdirmək istəyirsiniz?</string>
-    <string name="yes">Bəli</string>
+<string name="yes">Bəli</string>
     <string name="reset_settings_title">Tənzimləmələri sıfırla</string>
     <string name="reset_settings_summary">Bütün tənzimləmələri standart dəyərlərinə sıfırla</string>
     <string name="error_insufficient_storage">Cihazda yetərlik boş yer yoxdur</string>
@@ -825,10 +820,9 @@
     <string name="youtube_player_http_403">HTTP xətası 403 oynadarkən serverdən alındı, ehtimal ki, IP qadağası və ya yayım URL-nin deobfuscation problemləri ilə bağlıdır</string>
     <string name="sign_in_confirm_not_bot_error">%1$s sorğuçunun bot olmadığını təsdiqləmək üçün giriş tələb edərək data təmin etməkdən imtina etdi.\n\nIP-niz %1$s tərəfindən müvəqqəti şəkildə qadağan oluna bilər, bir müddət gözləyə və ya başqa IP-yə keçə bilərsiniz (məsələn, VPN-i açıb/qapatmaqla və ya WiFi-dan mobil dataya keçməklə).\n\nDaha çox məlumat üçün xahiş olunur <a href="%2$s">bu Tez-tez Verilən Suallar qeydinə</a> baxın.</string>
     <string name="unsupported_content_in_country">Bu məzmun hazırda seçilən məzmun ölkəsi üçün əlçatan deyil. \n\nSeçiminizi \"Tənzimləmələr &gt; Məzmun &gt; İlkin məzmun ölkəsi\"- dən dəyişin.</string>
-    <string name="kao_dialog_warning">2025 avqustunda, Google 2026-cı ilin sentyabrından etibarən tətbiqlərin quraşdırılması Play Store xaricində quraşdırılanlar daxil olmaqla, sertifikatlaşdırılan cihazlardakı bütün Android tətbiqləri üçün tərtibatçı təsdiqlənməsini tələb edəcək deyə bəyan etdi. NewPipe tərtibatçıları bu tələblə razılaşmadığı üçün NewPipe bu vaxtdan sonra artıq sertifikatlaşdırılan Android cihazlarında işləməyəcək.</string>
-    <string name="kao_dialog_more_info">Təfərrüatlar</string>
-    <string name="kao_solution">Həll olunma</string>
-    <plurals name="export_subscriptions">
+
+
+<plurals name="export_subscriptions">
         <item quantity="one">%d abunəlik ixrac olunur…</item>
         <item quantity="other">%d abunəlik ixrac olunur…</item>
     </plurals>

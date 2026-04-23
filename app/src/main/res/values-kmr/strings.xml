@@ -424,9 +424,8 @@
     <string name="minimize_on_exit_none_description">Netû</string>
     <string name="minimize_on_exit_summary">Çalakiya dema ku ji bernameya sereke ya vîdyoyê veguherîne ser sepana din — %s</string>
     <string name="minimize_on_exit_title">Li ser veguherîna sepanê kêm bikin</string>
-    <string name="updates_setting_description">Dema ku guhertoyek nû heye, agahdariyek nîşanî nûvekirina bernameyê bide</string>
-    <string name="updates_setting_title">Nûvekirin</string>
-    <string name="limit_mobile_data_usage_title">Dema ku daneyên mobîl bikar tînin çareseriyê sînor bikin</string>
+
+<string name="limit_mobile_data_usage_title">Dema ku daneyên mobîl bikar tînin çareseriyê sînor bikin</string>
     <string name="limit_data_usage_none_description">Sînor tune</string>
     <string name="decline">Paşvegerrî</string>
     <string name="accept">Baweranîn</string>
