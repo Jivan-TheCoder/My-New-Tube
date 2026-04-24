@@ -64,7 +64,6 @@ public class SettingsActivity extends AppCompatActivity implements
         PreferenceFragmentCompat.OnPreferenceStartFragmentCallback,
         PreferenceSearchResultListener {
     private static final String TAG = "SettingsActivity";
-    private static final boolean DEBUG = MainActivity.DEBUG;
 
     @IdRes
     private static final int FRAGMENT_HOLDER_ID = R.id.settings_fragment_holder;
@@ -260,7 +259,7 @@ public class SettingsActivity extends AppCompatActivity implements
      */
     private void ensureSearchRepresentsApplicationState() {
         // Hide debug preferences in RELEASE build variant
-        if (DEBUG) {
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
             SettingsResourceRegistry.getInstance()
                     .getEntryByPreferencesResId(R.xml.debug_settings)
                     .setSearchable(true);
@@ -278,8 +277,8 @@ public class SettingsActivity extends AppCompatActivity implements
     }
 
     public void setSearchActive(final boolean active) {
-        if (DEBUG) {
-            Log.d(TAG, "setSearchActive called active=" + active);
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         // Ignore if search is already in correct state
@@ -340,8 +339,8 @@ public class SettingsActivity extends AppCompatActivity implements
 
     @Override
     public void onSearchResultClicked(@NonNull final PreferenceSearchItem result) {
-        if (DEBUG) {
-            Log.d(TAG, "onSearchResultClicked called result=" + result);
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         // Hide the search
@@ -378,3 +377,4 @@ public class SettingsActivity extends AppCompatActivity implements
 
     //endregion
 }
+

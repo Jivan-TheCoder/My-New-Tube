@@ -27,7 +27,6 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -87,10 +86,6 @@ import org.schabi.newpipe.views.FocusOverlayView;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
-    @SuppressWarnings("ConstantConditions")
-    public static final boolean DEBUG = !BuildConfig.BUILD_TYPE.equals("release");
-
     private ActivityMainBinding mainBinding;
     private DrawerHeaderBinding drawerHeaderBinding;
     private DrawerLayoutBinding drawerLayoutBinding;
@@ -119,44 +114,23 @@ public class MainActivity extends AppCompatActivity {
 
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor sharedPrefEditor;
-    /*//////////////////////////////////////////////////////////////////////////
-    // Activity's LifeCycle
-    //////////////////////////////////////////////////////////////////////////*/
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
-//        if (DEBUG) {
-//            Log.d(TAG, "onCreate() called with: " + "savedInstanceState = [" + savedInstanceState + "]");
-//        }
 
         Localization.migrateAppLanguageSettingIfNecessary(getApplicationContext());
         ThemeHelper.setDayNightMode(this);
         ThemeHelper.setTheme(this, ServiceHelper.getSelectedServiceId(this));
 
-        // Fixes text color turning black in dark/black mode:
-        // https://github.com/TeamNewPipe/NewPipe/issues/12016
-        // For further reference see: https://issuetracker.google.com/issues/37124582
         if (DeviceUtils.supportsWebView()) {
             try {
                 new WebView(this);
             } catch (final Throwable e) {
-                if (DEBUG) {
-                    Log.e(TAG, "Failed to create WebView", e);
-                }
             }
         }
 
         super.onCreate(savedInstanceState);
-        if (getIntent() != null && getIntent().hasExtra(EXTRA_USE_EXTRACTOR)) {
-            AppMode.USE_EXTRACTOR = getIntent().getBooleanExtra(EXTRA_USE_EXTRACTOR, true);
-            if (DEBUG) {
-                Log.d(TAG, "Extractor mode from intent: " + AppMode.USE_EXTRACTOR);
-            } else {
-                Log.d(TAG, "Extractor mode from intent: else part " + AppMode.USE_EXTRACTOR);
-            }
-        } else {
-            Log.d(TAG, "Extractor mode from intent: else part 02 " + AppMode.USE_EXTRACTOR);
-        }
+
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         sharedPrefEditor = sharedPreferences.edit();
 
@@ -188,14 +162,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         sharedPrefEditor.putBoolean(KEY_IS_IN_BACKGROUND, false).apply();
-        Log.d(TAG, "App moved to foreground");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         sharedPrefEditor.putBoolean(KEY_IS_IN_BACKGROUND, true).apply();
-        Log.d(TAG, "App moved to background");
     }
 
     private void setupDrawer() throws ExtractionException {
@@ -317,7 +289,8 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
             final String kioskId = REMOTE_DRAWER_KIOSKS[item.getItemId()];
-            NavigationHelper.openKioskFragment(getSupportFragmentManager(), ServiceHelper.getSelectedServiceId(this), kioskId);
+            sharedPrefEditor.putString(Constants.KEY_PENDING_REMOTE_KIOSK_ID, kioskId).apply();
+            switchToRemoteMainTab(kioskId);
             return;
         }
 
@@ -358,6 +331,18 @@ public class MainActivity extends AppCompatActivity {
             case ITEM_ID_SHARE_APP:
                 ShareUtils.shareText(this, getString(R.string.app_name), "https://play.google.com/store/apps/details?id=" + getPackageName());
                 break;
+        }
+    }
+
+    private void switchToRemoteMainTab(@NonNull final String kioskId) {
+        final FragmentManager fm = getSupportFragmentManager();
+        NavigationHelper.gotoMainFragment(fm);
+        fm.executePendingTransactions();
+
+        final Fragment fragment = fm.findFragmentById(R.id.fragment_holder);
+        if (fragment instanceof MainFragment) {
+            ((MainFragment) fragment).selectTabByKioskId(kioskId);
+            sharedPrefEditor.remove(Constants.KEY_PENDING_REMOTE_KIOSK_ID).apply();
         }
     }
 
@@ -411,17 +396,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (sharedPreferences.getBoolean(Constants.KEY_THEME_CHANGE, false)) {
-            if (DEBUG) {
-                Log.d(TAG, "Theme has changed, recreating activity...");
-            }
             sharedPrefEditor.putBoolean(Constants.KEY_THEME_CHANGE, false).apply();
             ActivityCompat.recreate(this);
         }
 
         if (sharedPreferences.getBoolean(Constants.KEY_MAIN_PAGE_CHANGE, false)) {
-            if (DEBUG) {
-                Log.d(TAG, "main page has changed, recreating main fragment...");
-            }
             sharedPrefEditor.putBoolean(Constants.KEY_MAIN_PAGE_CHANGE, false).apply();
             NavigationHelper.openMainActivity(this);
         }
@@ -437,9 +416,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onNewIntent(final Intent intent) {
-        if (DEBUG) {
-            Log.d(TAG, "onNewIntent() called with: intent = [" + intent + "]");
-        }
         if (intent != null) {
             // Return if launched from a launcher (e.g. Nova Launcher, Pixel Launcher ...)
             // to not destroy the already created backstack
@@ -467,10 +443,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (DEBUG) {
-            Log.d(TAG, "onBackPressed() called");
-        }
-
         if (DeviceUtils.isTv(this)) {
             if (mainBinding.getRoot().isDrawerOpen(drawerLayoutBinding.navigation)) {
                 mainBinding.getRoot().closeDrawers();
@@ -584,9 +556,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(final Menu menu) {
-        if (DEBUG) {
-            Log.d(TAG, "onCreateOptionsMenu() called with: menu = [" + menu + "]");
-        }
         super.onCreateOptionsMenu(menu);
 
         final Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_holder);
@@ -606,10 +575,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull final MenuItem item) {
-        if (DEBUG) {
-            Log.d(TAG, "onOptionsItemSelected() called with: item = [" + item + "]");
-        }
-
         if (item.getItemId() == android.R.id.home) {
             onHomeButtonPressed();
             return true;
@@ -622,9 +587,6 @@ public class MainActivity extends AppCompatActivity {
     //////////////////////////////////////////////////////////////////////////*/
 
     private void initFragments() {
-        if (DEBUG) {
-            Log.d(TAG, "initFragments() called");
-        }
         StateSaver.clearStateFiles();
         if (getIntent() != null && getIntent().hasExtra(Constants.KEY_LINK_TYPE)) {
             // When user watch a video inside popup and then tries to open the video in main player
@@ -666,10 +628,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void handleIntent(final Intent intent) {
         try {
-            if (DEBUG) {
-                Log.d(TAG, "handleIntent() called with: intent = [" + intent + "]");
-            }
-
             if (intent.hasExtra(Constants.KEY_LINK_TYPE)) {
                 final String url = intent.getStringExtra(Constants.KEY_URL);
                 final int serviceId = intent.getIntExtra(Constants.KEY_SERVICE_ID, 0);
@@ -696,6 +654,10 @@ public class MainActivity extends AppCompatActivity {
                         break;
                 }
             } else if (intent.hasExtra(Constants.KEY_OPEN_SEARCH)) {
+                if (!AppMode.USE_EXTRACTOR) {
+                    NavigationHelper.gotoMainFragment(getSupportFragmentManager());
+                    return;
+                }
                 String searchString = intent.getStringExtra(Constants.KEY_SEARCH_STRING);
                 if (searchString == null) {
                     searchString = "";

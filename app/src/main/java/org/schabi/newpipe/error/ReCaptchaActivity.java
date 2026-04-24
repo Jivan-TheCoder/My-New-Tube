@@ -47,6 +47,7 @@ import org.schabi.newpipe.util.ThemeHelper;
  * along with NewPipe.  If not, see <http://www.gnu.org/licenses/>.
  */
 public class ReCaptchaActivity extends AppCompatActivity {
+
     public static final int RECAPTCHA_REQUEST = 10;
     public static final String RECAPTCHA_URL_EXTRA = "recaptcha_url_extra";
     public static final String TAG = ReCaptchaActivity.class.toString();
@@ -88,8 +89,8 @@ public class ReCaptchaActivity extends AppCompatActivity {
             @Override
             public boolean shouldOverrideUrlLoading(final WebView view,
                                                     final WebResourceRequest request) {
-                if (MainActivity.DEBUG) {
-                    Log.d(TAG, "shouldOverrideUrlLoading: url=" + request.getUrl().toString());
+                if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                    
                 }
 
                 handleCookiesFromUrl(request.getUrl().toString());
@@ -143,8 +144,8 @@ public class ReCaptchaActivity extends AppCompatActivity {
     private void saveCookiesAndFinish() {
         // try to get cookies of unclosed page
         handleCookiesFromUrl(recaptchaBinding.reCaptchaWebView.getUrl());
-        if (MainActivity.DEBUG) {
-            Log.d(TAG, "saveCookiesAndFinish: foundCookies=" + foundCookies);
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         if (!foundCookies.isEmpty()) {
@@ -169,8 +170,8 @@ public class ReCaptchaActivity extends AppCompatActivity {
 
 
     private void handleCookiesFromUrl(@Nullable final String url) {
-        if (MainActivity.DEBUG) {
-            Log.d(TAG, "handleCookiesFromUrl: url=" + (url == null ? "null" : url));
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         if (url == null) {
@@ -188,7 +189,7 @@ public class ReCaptchaActivity extends AppCompatActivity {
             try {
                 handleCookies(Utils.decodeUrlUtf8(url.substring(abuseStart + 13, abuseEnd)));
             } catch (final StringIndexOutOfBoundsException e) {
-                if (MainActivity.DEBUG) {
+                if (org.schabi.newpipe.BuildConfig.DEBUG) {
                     Log.e(TAG, "handleCookiesFromUrl: invalid google abuse starting at "
                             + abuseStart + " and ending at " + abuseEnd + " for url " + url, e);
                 }
@@ -197,8 +198,8 @@ public class ReCaptchaActivity extends AppCompatActivity {
     }
 
     private void handleCookies(@Nullable final String cookies) {
-        if (MainActivity.DEBUG) {
-            Log.d(TAG, "handleCookies: cookies=" + (cookies == null ? "null" : cookies));
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         if (cookies == null) {
@@ -232,3 +233,4 @@ public class ReCaptchaActivity extends AppCompatActivity {
         }
     }
 }
+

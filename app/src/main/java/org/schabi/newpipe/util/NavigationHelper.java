@@ -24,6 +24,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.jakewharton.processphoenix.ProcessPhoenix;
 
+import org.schabi.newpipe.AppMode;
 import org.schabi.newpipe.MainActivity;
 import org.schabi.newpipe.NewPipeDatabase;
 import org.schabi.newpipe.R;
@@ -326,8 +327,7 @@ public final class NavigationHelper {
                         .setPositiveButton(R.string.install, (dialog, which) ->
                                 ShareUtils.installApp(context,
                                         context.getString(R.string.vlc_package)))
-                        .setNegativeButton(R.string.cancel, (dialog, which) ->
-                                Log.i("NavigationHelper", "You unlocked a secret unicorn."))
+                        .setNegativeButton(R.string.cancel, null)
                         .show();
             } else {
                 Toast.makeText(context, R.string.no_player_found_toast, Toast.LENGTH_LONG).show();
@@ -364,7 +364,7 @@ public final class NavigationHelper {
     }
 
     public static boolean tryGotoSearchFragment(final FragmentManager fragmentManager) {
-        if (MainActivity.DEBUG) {
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
             for (int i = 0; i < fragmentManager.getBackStackEntryCount(); i++) {
                 Log.d("NavigationHelper", "tryGoToSearchFragment() [" + i + "]"
                         + " = [" + fragmentManager.getBackStackEntryAt(i) + "]");
@@ -376,6 +376,10 @@ public final class NavigationHelper {
 
     public static void openSearchFragment(final FragmentManager fragmentManager,
                                           final int serviceId, final String searchString) {
+        if (!AppMode.USE_EXTRACTOR) {
+            Log.d(TAG, "Ignoring openSearchFragment() because extractor mode is disabled");
+            return;
+        }
         defaultTransaction(fragmentManager)
                 .replace(R.id.fragment_holder, SearchFragment.getInstance(serviceId, searchString))
                 .addToBackStack(SEARCH_FRAGMENT_TAG)
@@ -616,6 +620,10 @@ public final class NavigationHelper {
 
     public static void openSearch(final Context context, final int serviceId,
                                   final String searchString) {
+        if (!AppMode.USE_EXTRACTOR) {
+            
+            return;
+        }
         final Intent mIntent = new Intent(context, MainActivity.class);
         mIntent.putExtra(Constants.KEY_SERVICE_ID, serviceId);
         mIntent.putExtra(Constants.KEY_SEARCH_STRING, searchString);
@@ -760,3 +768,4 @@ public final class NavigationHelper {
         ProcessPhoenix.triggerRebirth(activity.getApplicationContext());
     }
 }
+
