@@ -16,7 +16,6 @@ import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 import java.util.function.BiConsumer
 import java.util.function.Consumer
-import org.schabi.newpipe.MainActivity
 import org.schabi.newpipe.NewPipeDatabase
 import org.schabi.newpipe.R
 import org.schabi.newpipe.error.ErrorInfo
@@ -70,10 +69,6 @@ class MediaBrowserPlaybackPreparer(
     }
 
     override fun onPrepareFromMediaId(mediaId: String, playWhenReady: Boolean, extras: Bundle?) {
-        if (MainActivity.DEBUG) {
-            Log.d(TAG, "onPrepareFromMediaId($mediaId, $playWhenReady, $extras)")
-        }
-
         disposable?.dispose()
         disposable = extractPlayQueueFromMediaId(mediaId)
             .subscribeOn(Schedulers.io())

@@ -23,6 +23,7 @@
             android:layout_gravity="center"
             android:padding="8dp"
             android:scaleType="centerInside"
+            android:tint="?android:attr/textColorPrimary"
             tools:ignore="ContentDescription"
             tools:src="@drawable/ic_fastfood" />
 

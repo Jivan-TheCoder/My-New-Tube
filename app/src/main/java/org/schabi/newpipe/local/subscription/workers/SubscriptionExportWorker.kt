@@ -52,10 +52,6 @@ class SubscriptionExportWorker(
                 }
             }
 
-            if (BuildConfig.DEBUG) {
-                Log.i(TAG, "Exported $qty subscriptions")
-            }
-
             withContext(Dispatchers.Main) {
                 Toast
                     .makeText(applicationContext, R.string.export_complete_toast, Toast.LENGTH_SHORT)

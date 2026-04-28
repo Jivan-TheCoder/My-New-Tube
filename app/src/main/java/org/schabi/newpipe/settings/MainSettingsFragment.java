@@ -7,10 +7,9 @@ import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 
-import org.schabi.newpipe.MainActivity;
 import org.schabi.newpipe.R;
 public class MainSettingsFragment extends BasePreferenceFragment {
-    public static final boolean DEBUG = MainActivity.DEBUG;
+    public static final boolean DEBUG = org.schabi.newpipe.BuildConfig.DEBUG;
 
     private SettingsActivity settingsActivity;
 
@@ -59,3 +58,4 @@ public class MainSettingsFragment extends BasePreferenceFragment {
         super.onDestroy();
     }
 }
+

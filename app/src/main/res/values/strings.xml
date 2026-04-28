@@ -21,6 +21,9 @@
   <string name="search_with_service_name_and_filter">Search %1$s (%2$s)</string>
   <string name="settings">Settings</string>
   <string name="rate_app">Rate app</string>
+  <string name="rating_dialog_subtitle">How much are you enjoying this app?</string>
+  <string name="rating_dialog_rate_now">Rate now</string>
+  <string name="rating_dialog_maybe_later">Maybe later</string>
   <string name="share_app">Share app</string>
   <string name="did_you_mean">Did you mean \"%1$s\"?</string>
   <string name="search_showing_result_for">Showing results for: %s</string>

@@ -16,7 +16,7 @@ import com.livefront.bridge.Bridge;
 
 public abstract class BaseFragment extends Fragment {
     protected final String TAG = getClass().getSimpleName() + "@" + Integer.toHexString(hashCode());
-    protected static final boolean DEBUG = MainActivity.DEBUG;
+    protected static final boolean DEBUG = org.schabi.newpipe.BuildConfig.DEBUG;
     protected AppCompatActivity activity;
     //These values are used for controlling fragments when they are part of the frontpage
     @State
@@ -44,9 +44,8 @@ public abstract class BaseFragment extends Fragment {
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
-        if (DEBUG) {
-            Log.d(TAG, "onCreate() called with: "
-                    + "savedInstanceState = [" + savedInstanceState + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         super.onCreate(savedInstanceState);
         Bridge.restoreInstanceState(this, savedInstanceState);
@@ -59,10 +58,8 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull final View rootView, final Bundle savedInstanceState) {
         super.onViewCreated(rootView, savedInstanceState);
-        if (DEBUG) {
-            Log.d(TAG, "onViewCreated() called with: "
-                    + "rootView = [" + rootView + "], "
-                    + "savedInstanceState = [" + savedInstanceState + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         initViews(rootView, savedInstanceState);
         initListeners();
@@ -112,8 +109,8 @@ public abstract class BaseFragment extends Fragment {
     //////////////////////////////////////////////////////////////////////////*/
 
     public void setTitle(final String title) {
-        if (DEBUG) {
-            Log.d(TAG, "setTitle() called with: title = [" + title + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         if (!useAsFrontPage && activity != null && activity.getSupportActionBar() != null) {
             activity.getSupportActionBar().setDisplayShowTitleEnabled(true);
@@ -138,3 +135,4 @@ public abstract class BaseFragment extends Fragment {
         return current.getFragmentManager();
     }
 }
+

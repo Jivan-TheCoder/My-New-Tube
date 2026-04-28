@@ -179,8 +179,8 @@ public class MediaSourceManager {
      * Dispose the manager and releases all message buses and loaders.
      */
     public void dispose() {
-        if (DEBUG) {
-            Log.d(TAG, "close() called.");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         debouncedSignal.onComplete();
@@ -303,8 +303,8 @@ public class MediaSourceManager {
     }
 
     private void maybeBlock() {
-        if (DEBUG) {
-            Log.d(TAG, "maybeBlock() called.");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         if (isBlocked.get()) {
@@ -318,8 +318,8 @@ public class MediaSourceManager {
     }
 
     private boolean maybeUnblock() {
-        if (DEBUG) {
-            Log.d(TAG, "maybeUnblock() called.");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         if (isBlocked.get()) {
@@ -336,8 +336,8 @@ public class MediaSourceManager {
     //////////////////////////////////////////////////////////////////////////*/
 
     private void maybeSync(final boolean wasBlocked) {
-        if (DEBUG) {
-            Log.d(TAG, "maybeSync() called.");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         final PlayQueueItem currentItem = playQueue.getItem();
@@ -379,8 +379,8 @@ public class MediaSourceManager {
     }
 
     private void loadImmediate() {
-        if (DEBUG) {
-            Log.d(TAG, "MediaSource - loadImmediate() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         final ItemsToLoad itemsToLoad = getItemsToLoad(playQueue);
         if (itemsToLoad == null) {
@@ -397,17 +397,16 @@ public class MediaSourceManager {
     }
 
     private void maybeLoadItem(@NonNull final PlayQueueItem item) {
-        if (DEBUG) {
-            Log.d(TAG, "maybeLoadItem() called.");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         if (playQueue.indexOf(item) >= playlist.size()) {
             return;
         }
 
         if (!loadingItems.contains(item) && isCorrectionNeeded(item)) {
-            if (DEBUG) {
-                Log.d(TAG, "MediaSource - Loading=[" + item.getTitle() + "] "
-                        + "with url=[" + item.getUrl() + "]");
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                
             }
 
             loadingItems.add(item);
@@ -457,9 +456,8 @@ public class MediaSourceManager {
 
     private void onMediaSourceReceived(@NonNull final PlayQueueItem item,
                                        @NonNull final ManagedMediaSource mediaSource) {
-        if (DEBUG) {
-            Log.d(TAG, "MediaSource - Loaded=[" + item.getTitle()
-                    + "] with url=[" + item.getUrl() + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         loadingItems.remove(item);
@@ -467,9 +465,8 @@ public class MediaSourceManager {
         final int itemIndex = playQueue.indexOf(item);
         // Only update the playlist timeline for items at the current index or after.
         if (isCorrectionNeeded(item)) {
-            if (DEBUG) {
-                Log.d(TAG, "MediaSource - Updating index=[" + itemIndex + "] with "
-                        + "title=[" + item.getTitle() + "] at url=[" + item.getUrl() + "]");
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                
             }
             playlist.update(itemIndex, mediaSource, removeMediaSourceHandler,
                     this::maybeSynchronizePlayer);
@@ -522,16 +519,15 @@ public class MediaSourceManager {
             return;
         }
 
-        if (DEBUG) {
-            Log.d(TAG, "MediaSource - Reloading currently playing, "
-                    + "index=[" + currentIndex + "], item=[" + currentItem.getTitle() + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         playlist.invalidate(currentIndex, removeMediaSourceHandler, this::loadImmediate);
     }
 
     private void maybeClearLoaders() {
-        if (DEBUG) {
-            Log.d(TAG, "MediaSource - maybeClearLoaders() called.");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         if (!loadingItems.contains(playQueue.getItem())
                 && loaderReactor.size() > MAXIMUM_LOADER_SIZE) {
@@ -545,15 +541,15 @@ public class MediaSourceManager {
     //////////////////////////////////////////////////////////////////////////*/
 
     private void resetSources() {
-        if (DEBUG) {
-            Log.d(TAG, "resetSources() called.");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         playlist = new ManagedMediaSourcePlaylist();
     }
 
     private void populateSources() {
-        if (DEBUG) {
-            Log.d(TAG, "populateSources() called.");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         while (playlist.size() < playQueue.size()) {
             playlist.expand();

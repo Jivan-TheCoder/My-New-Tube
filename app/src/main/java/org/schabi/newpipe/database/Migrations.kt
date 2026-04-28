@@ -6,9 +6,7 @@
 
 package org.schabi.newpipe.database
 
-import android.util.Log
 import androidx.room.migration.Migration
-import org.schabi.newpipe.MainActivity
 
 object Migrations {
 
@@ -32,11 +30,10 @@ object Migrations {
     const val DB_VER_10 = 10
 
     private val TAG = Migrations::class.java.getName()
-    private val isDebug = MainActivity.DEBUG
+    private val isDebug = org.schabi.newpipe.BuildConfig.DEBUG
 
     val MIGRATION_1_2 = Migration(DB_VER_1, DB_VER_2) { db ->
         if (isDebug) {
-            Log.d(TAG, "Start migrating database")
         }
 
         /*
@@ -145,7 +142,6 @@ object Migrations {
         db.execSQL("DROP TABLE IF EXISTS watch_history")
 
         if (isDebug) {
-            Log.d(TAG, "Stop migrating database")
         }
     }
 

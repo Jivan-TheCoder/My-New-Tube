@@ -165,7 +165,7 @@ public class DownloadMission extends Mission {
         this.psAlgorithm = psInstance;
 
         if (DEBUG && psInstance == null && urls.length > 1) {
-            Log.w(TAG, "mission created with multiple urls ¿missing post-processing algorithm?");
+            Log.w(TAG, "mission created with multiple urls Ã‚Â¿missing post-processing algorithm?");
         }
     }
 
@@ -249,11 +249,11 @@ public class DownloadMission extends Mission {
     void establishConnection(int threadId, HttpURLConnection conn) throws IOException, HttpError {
         int statusCode = conn.getResponseCode();
 
-        if (DEBUG) {
-            Log.d(TAG, threadId + ":[request]  Range=" + conn.getRequestProperty("Range"));
-            Log.d(TAG, threadId + ":[response] Code=" + statusCode);
-            Log.d(TAG, threadId + ":[response] Content-Length=" + conn.getContentLength());
-            Log.d(TAG, threadId + ":[response] Content-Range=" + conn.getHeaderField("Content-Range"));
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
+            
+            
+            
         }
 
 
@@ -364,8 +364,8 @@ public class DownloadMission extends Mission {
         if (current < urls.length) {
             if (++finishCount < threads.length) return;
 
-            if (DEBUG) {
-                Log.d(TAG, "onFinish: downloaded " + (current + 1) + "/" + urls.length);
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                
             }
 
             current++;
@@ -408,7 +408,7 @@ public class DownloadMission extends Mission {
                 action = "Failed";
         }
 
-        Log.d(TAG, action + " postprocessing on " + storage.getName());
+        
 
         if (state == 2) {
             psState = state;
@@ -487,7 +487,7 @@ public class DownloadMission extends Mission {
         if (!running) return;
 
         if (isPsRunning()) {
-            if (DEBUG) {
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
                 Log.w(TAG, "pause during post-processing is not applicable.");
             }
             return;
@@ -497,7 +497,7 @@ public class DownloadMission extends Mission {
         notify(DownloadManagerService.MESSAGE_PAUSED);
 
         if (init != null && init.isAlive()) {
-            // NOTE: if start() method is running ¡will no have effect!
+            // NOTE: if start() method is running Ã‚Â¡will no have effect!
             init.interrupt();
             synchronized (LOCK) {
                 resetState(false, true, ERROR_NOTHING);
@@ -691,7 +691,7 @@ public class DownloadMission extends Mission {
 
         notifyPostProcessing(1);
 
-        if (DEBUG) {
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
             thread.setName("[" + TAG + "]  ps = " + psAlgorithm + "  filename = " + storage.getName());
         }
 
@@ -729,7 +729,7 @@ public class DownloadMission extends Mission {
      * @param errorCode error code which trigger the recovery procedure
      */
     void doRecover(int errorCode) {
-        Log.i(TAG, "Attempting to recover the mission: " + storage.getName());
+        
 
         if (recoveryInfo == null) {
             notifyError(errorCode, null);
@@ -776,7 +776,7 @@ public class DownloadMission extends Mission {
         //    0:     initializer
         //  >=1:     any download thread
 
-        if (DEBUG) {
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
             who.setName(String.format("%s[%s] %s", TAG, id, storage.getName()));
         }
 
@@ -819,7 +819,7 @@ public class DownloadMission extends Mission {
         try {
             for (Thread thread : threads) {
                 if (!thread.isAlive()) continue;
-                if (DEBUG) {
+                if (org.schabi.newpipe.BuildConfig.DEBUG) {
                     Log.w(TAG, "thread alive: " + thread.getName());
                 }
                 if (millis > 0) thread.join(millis);

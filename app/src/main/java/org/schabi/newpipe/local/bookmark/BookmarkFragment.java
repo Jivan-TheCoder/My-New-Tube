@@ -321,9 +321,8 @@ public final class BookmarkFragment extends BaseLocalListFragment<List<PlaylistL
             return;
         }
 
-        if (DEBUG) {
-            Log.d(TAG, "Updating playlist id=[" + id + "] "
-                    + "with new name=[" + name + "] items");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         final Disposable disposable = localPlaylistManager.renamePlaylist(id, name)

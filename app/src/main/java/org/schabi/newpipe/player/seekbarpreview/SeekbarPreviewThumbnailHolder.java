@@ -62,25 +62,23 @@ public class SeekbarPreviewThumbnailHolder {
 
     private void resetFromAsync(final int seekbarPreviewType, final List<Frameset> framesets,
                                 final UUID updateRequestIdentifier) {
-        Log.d(TAG, "Clearing seekbarPreviewData");
+        
         synchronized (seekbarPreviewData) {
             seekbarPreviewData.clear();
         }
 
         if (seekbarPreviewType == SeekbarPreviewThumbnailType.NONE) {
-            Log.d(TAG, "Not processing seekbarPreviewData due to settings");
+            
             return;
         }
 
         final Frameset frameset = getFrameSetForType(framesets, seekbarPreviewType);
         if (frameset == null) {
-            Log.d(TAG, "No frameset was found to fill seekbarPreviewData");
+            
             return;
         }
 
-        Log.d(TAG, "Frameset quality info: "
-                + "[width=" + frameset.getFrameWidth()
-                + ", heigh=" + frameset.getFrameHeight() + "]");
+        
 
         // Abort method execution if we are not the latest request
         if (!isRequestIdentifierCurrent(updateRequestIdentifier)) {
@@ -93,12 +91,12 @@ public class SeekbarPreviewThumbnailHolder {
     private Frameset getFrameSetForType(final List<Frameset> framesets,
                                         final int seekbarPreviewType) {
         if (seekbarPreviewType == SeekbarPreviewThumbnailType.HIGH_QUALITY) {
-            Log.d(TAG, "Strategy for seekbarPreviewData: high quality");
+            
             return framesets.stream()
                     .max(Comparator.comparingInt(fs -> fs.getFrameHeight() * fs.getFrameWidth()))
                     .orElse(null);
         } else {
-            Log.d(TAG, "Strategy for seekbarPreviewData: low quality");
+            
             return framesets.stream()
                     .min(Comparator.comparingInt(fs -> fs.getFrameHeight() * fs.getFrameWidth()))
                     .orElse(null);
@@ -106,7 +104,7 @@ public class SeekbarPreviewThumbnailHolder {
     }
 
     private void generateDataFrom(final Frameset frameset, final UUID updateRequestIdentifier) {
-        Log.d(TAG, "Starting generation of seekbarPreviewData");
+        
         final Stopwatch sw = Log.isLoggable(TAG, Log.DEBUG) ? Stopwatch.createStarted() : null;
 
         int currentPosMs = 0;
@@ -147,13 +145,13 @@ public class SeekbarPreviewThumbnailHolder {
                     seekbarPreviewData.putAll(generatedDataForUrl);
                 }
             } else {
-                Log.d(TAG, "Aborted of generation of seekbarPreviewData");
+                
                 break;
             }
         }
 
         if (sw != null) {
-            Log.d(TAG, "Generation of seekbarPreviewData took " + sw.stop());
+            
         }
     }
 
@@ -205,15 +203,14 @@ public class SeekbarPreviewThumbnailHolder {
 
         final Stopwatch sw = Log.isLoggable(TAG, Log.DEBUG) ? Stopwatch.createStarted() : null;
         try {
-            Log.d(TAG, "Downloading bitmap for seekbarPreview from '" + url + "'");
+            
 
             // Gets the bitmap within the timeout of 15 seconds imposed by default by OkHttpClient
             // Ensure that you are not running on the main thread, otherwise this will hang
             final var bitmap = CoilHelper.INSTANCE.loadBitmapBlocking(App.getInstance(), url);
 
             if (sw != null) {
-                Log.d(TAG, "Download of bitmap for seekbarPreview from '" + url + "' took "
-                        + sw.stop());
+                
             }
 
             return bitmap;

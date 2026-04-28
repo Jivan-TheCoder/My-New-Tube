@@ -362,11 +362,8 @@ public class PlaybackParameterDialog extends DialogFragment {
 
             // If the values differ set the new pitch
             if (this.pitchPercent != newPitchPercent) {
-                if (DEBUG) {
-                    Log.d(TAG, "Bringing pitchPercent to correct corresponding semitone: "
-                            + "currentPitchPercent = " + pitchPercent + ", "
-                            + "newPitchPercent = " + newPitchPercent
-                    );
+                if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                    
                 }
                 this.onPitchPercentSliderUpdated(newPitchPercent);
                 updateCallback();
@@ -563,12 +560,8 @@ public class PlaybackParameterDialog extends DialogFragment {
         if (callback == null) {
             return;
         }
-        if (DEBUG) {
-            Log.d(TAG, "Updating callback: "
-                    + "tempo = " + tempo + ", "
-                    + "pitchPercent = " + pitchPercent + ", "
-                    + "skipSilence = " + skipSilence
-            );
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         callback.onPlaybackParameterChanged((float) tempo, (float) pitchPercent, skipSilence);
     }

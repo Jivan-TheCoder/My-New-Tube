@@ -1,6 +1,5 @@
 package org.schabi.newpipe.util.external_communication;
 
-import static org.schabi.newpipe.MainActivity.DEBUG;
 import static coil3.Image_androidKt.toBitmap;
 
 import android.content.ActivityNotFoundException;
@@ -24,7 +23,7 @@ import androidx.core.content.FileProvider;
 
 import org.schabi.newpipe.BuildConfig;
 import org.schabi.newpipe.R;
-import org.schabi.newpipe.RouterActivity;
+import org.schabi.newpipe.activities.RouterActivity;
 import org.schabi.newpipe.extractor.Image;
 import org.schabi.newpipe.util.image.ImageStrategy;
 
@@ -406,8 +405,8 @@ public final class ShareUtils {
                             BuildConfig.APPLICATION_ID + ".provider",
                             path.toFile()));
 
-            if (DEBUG) {
-                Log.d(TAG, "ClipData successfully generated for Android share sheet: " + clipData);
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                
             }
             return clipData;
         } catch (final Exception e) {
@@ -416,3 +415,4 @@ public final class ShareUtils {
         }
     }
 }
+

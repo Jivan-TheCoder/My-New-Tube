@@ -38,7 +38,7 @@ import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.functions.Function
 import java.util.concurrent.TimeUnit
 import org.schabi.newpipe.App
-import org.schabi.newpipe.MainActivity.DEBUG
+import org.schabi.newpipe.BuildConfig.DEBUG
 import org.schabi.newpipe.R
 import org.schabi.newpipe.database.feed.model.FeedGroupEntity
 import org.schabi.newpipe.local.feed.service.FeedEventManager.Event.ErrorResultEvent
@@ -73,14 +73,6 @@ class FeedLoadService : Service() {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        if (DEBUG) {
-            Log.d(
-                TAG,
-                "onStartCommand() called with: intent = [" + intent + "]," +
-                    " flags = [" + flags + "], startId = [" + startId + "]"
-            )
-        }
-
         if (intent == null || loadingDisposable != null) {
             return START_NOT_STICKY
         }

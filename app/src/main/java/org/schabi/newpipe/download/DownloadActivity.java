@@ -6,12 +6,14 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.ViewTreeObserver;
+import android.widget.FrameLayout;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import org.schabi.newpipe.R;
+import org.schabi.newpipe.ads.AdUtils;
 import org.schabi.newpipe.databinding.ActivityDownloaderBinding;
 import org.schabi.newpipe.util.DeviceUtils;
 import org.schabi.newpipe.util.ThemeHelper;
@@ -38,6 +40,9 @@ public class DownloadActivity extends AppCompatActivity {
         final ActivityDownloaderBinding downloaderBinding =
                 ActivityDownloaderBinding.inflate(getLayoutInflater());
         setContentView(downloaderBinding.getRoot());
+
+        final FrameLayout bannerAdContainer = downloaderBinding.bannerAdContainer;
+        AdUtils.LoadAppLovinBanner(this, bannerAdContainer);
 
         setSupportActionBar(downloaderBinding.toolbarLayout.toolbar);
 

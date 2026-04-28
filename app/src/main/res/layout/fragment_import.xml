@@ -20,7 +20,7 @@
         android:id="@+id/inputs_panel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/bannerAdContainer"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:orientation="vertical"
@@ -44,6 +44,12 @@
             tools:text="@string/import_title" />
 
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/bannerAdContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
 
     <View
         android:layout_width="match_parent"

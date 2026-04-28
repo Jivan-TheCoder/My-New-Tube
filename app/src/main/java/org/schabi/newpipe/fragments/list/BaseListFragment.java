@@ -20,6 +20,9 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.schabi.newpipe.R;
+import org.schabi.newpipe.ads.AdUtils;
+import org.schabi.newpipe.ads.adapter_ads.NativeAdInjectionConfig;
+import org.schabi.newpipe.ads.adapter_ads.RecyclerNativeAdInjector;
 import org.schabi.newpipe.error.ErrorUtil;
 import org.schabi.newpipe.extractor.InfoItem;
 import org.schabi.newpipe.extractor.stream.StreamInfoItem;
@@ -54,6 +57,7 @@ public abstract class BaseListFragment<I, N> extends BaseStateFragment<I>
     protected InfoListAdapter infoListAdapter;
     protected RecyclerView itemsList;
     private int focusedPosition = -1;
+    private String PLACEMENT_KEY = "BaseList_AD";
 
     /*//////////////////////////////////////////////////////////////////////////
     // LifeCycle
@@ -242,12 +246,27 @@ public abstract class BaseListFragment<I, N> extends BaseStateFragment<I>
         }
 
         itemsList.setAdapter(infoListAdapter);
+
+        RecyclerNativeAdInjector.attach(
+                requireActivity(),
+                itemsList,
+                infoListAdapter,
+                getNativeAdInjectionConfig()
+        );
     }
 
     protected void onItemSelected(final InfoItem selectedItem) {
-        if (DEBUG) {
-            Log.d(TAG, "onItemSelected() called with: selectedItem = [" + selectedItem + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
+    }
+
+    @NonNull
+    protected NativeAdInjectionConfig getNativeAdInjectionConfig() {
+        return NativeAdInjectionConfig.interval(2,11)
+                .withMaxAds(3)
+                .withPlacementKey(PLACEMENT_KEY)
+                .withPolicyGuardrails();
     }
 
     @Override
@@ -295,8 +314,8 @@ public abstract class BaseListFragment<I, N> extends BaseStateFragment<I>
      * Removes all listeners and adds the normal scroll listener to the {@link #itemsList}.
      */
     protected void useNormalItemListScrollListener() {
-        if (DEBUG) {
-            Log.d(TAG, "useNormalItemListScrollListener called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         itemsList.clearOnScrollListeners();
         itemsList.addOnScrollListener(new DefaultItemListOnScrolledDownListener());
@@ -320,8 +339,8 @@ public abstract class BaseListFragment<I, N> extends BaseStateFragment<I>
      * </ul>
      */
     protected void useInitialItemListLoadScrollListener() {
-        if (DEBUG) {
-            Log.d(TAG, "useInitialItemListLoadScrollListener called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         itemsList.clearOnScrollListeners();
         itemsList.addOnScrollListener(new DefaultItemListOnScrolledDownListener() {
@@ -359,8 +378,8 @@ public abstract class BaseListFragment<I, N> extends BaseStateFragment<I>
             }
 
             private void log(final String msg) {
-                if (DEBUG) {
-                    Log.d(TAG, "initItemListLoadScrollListener - " + msg);
+                if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                    
                 }
             }
         });
@@ -375,9 +394,14 @@ public abstract class BaseListFragment<I, N> extends BaseStateFragment<I>
 
     private void onStreamSelected(final StreamInfoItem selectedItem) {
         onItemSelected(selectedItem);
-        NavigationHelper.openVideoDetailFragment(requireContext(), getFM(),
-                selectedItem.getServiceId(), selectedItem.getUrl(), selectedItem.getName(),
-                null, false);
+        AdUtils.ClickWithAds(requireActivity(), new AdUtils.InterClick() {
+            @Override
+            public void ClickAds() {
+                NavigationHelper.openVideoDetailFragment(requireContext(), getFM(),
+                        selectedItem.getServiceId(), selectedItem.getUrl(),
+                        selectedItem.getName(), null, false);
+            }
+        });
     }
 
     protected void onScrollToBottom() {
@@ -401,9 +425,8 @@ public abstract class BaseListFragment<I, N> extends BaseStateFragment<I>
     @Override
     public void onCreateOptionsMenu(@NonNull final Menu menu,
                                     @NonNull final MenuInflater inflater) {
-        if (DEBUG) {
-            Log.d(TAG, "onCreateOptionsMenu() called with: "
-                    + "menu = [" + menu + "], inflater = [" + inflater + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         super.onCreateOptionsMenu(menu, inflater);
         final ActionBar supportActionBar = activity.getSupportActionBar();

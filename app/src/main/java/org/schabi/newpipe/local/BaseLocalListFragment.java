@@ -19,6 +19,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 
 import org.schabi.newpipe.R;
+import org.schabi.newpipe.ads.adapter_ads.NativeAdInjectionConfig;
+import org.schabi.newpipe.ads.adapter_ads.RecyclerNativeAdInjector;
 import org.schabi.newpipe.databinding.PignateFooterBinding;
 import org.schabi.newpipe.fragments.BaseStateFragment;
 import org.schabi.newpipe.fragments.list.ListViewContract;
@@ -55,6 +57,7 @@ public abstract class BaseLocalListFragment<I, N> extends BaseStateFragment<I>
     protected LocalItemListAdapter itemListAdapter;
     protected RecyclerView itemsList;
     private int updateFlags = 0;
+    private String PLACEMENT_KEY = "BaseLocalList_AD";
 
     /*//////////////////////////////////////////////////////////////////////////
     // Lifecycle - Creation
@@ -140,7 +143,18 @@ public abstract class BaseLocalListFragment<I, N> extends BaseStateFragment<I>
         footerRootBinding = getListFooter();
         itemListAdapter.setFooter(footerRootBinding.getRoot());
 
-        itemsList.setAdapter(itemListAdapter);
+//        itemsList.setAdapter(itemListAdapter);
+
+
+        RecyclerNativeAdInjector.attach(
+                requireActivity(),
+                itemsList,
+                itemListAdapter,
+                NativeAdInjectionConfig.explicitAfterContentItems(3)
+                        .withMaxAds(1)
+                        .withPlacementKey(PLACEMENT_KEY)
+                        .withPolicyGuardrails()
+        );
     }
 
     @Override
@@ -156,9 +170,8 @@ public abstract class BaseLocalListFragment<I, N> extends BaseStateFragment<I>
     public void onCreateOptionsMenu(@NonNull final Menu menu,
                                     @NonNull final MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
-        if (DEBUG) {
-            Log.d(TAG, "onCreateOptionsMenu() called with: "
-                    + "menu = [" + menu + "], inflater = [" + inflater + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         final ActionBar supportActionBar = activity.getSupportActionBar();

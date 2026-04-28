@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="upload_date_text">Argitaratze-data: %1$s</string>
     <string name="install">Instalatu</string>
@@ -15,7 +15,7 @@
     <string name="default_resolution_title">Lehenetsitako bereizmena</string>
     <string name="play_with_kodi_title">Erreproduzitu Kodi-rekin</string>
     <string name="kore_not_found">Falta den Kore aplikazioa instalatu nahi duzu?</string>
-    <string name="show_play_with_kodi_title">Erakutsi «Erreproduzitu Kodi-rekin» aukera</string>
+    <string name="show_play_with_kodi_title">Erakutsi Â«Erreproduzitu Kodi-rekinÂ» aukera</string>
     <string name="show_play_with_kodi_summary">Erakutsi bideoa Kodi multimedia zentroarekin erreproduzitzeko aukera bat</string>
     <string name="play_audio">Audioa</string>
     <string name="default_audio_format_title">Audio formatu lehenetsia</string>
@@ -94,14 +94,14 @@
     <string name="msg_error">Errorea</string>
     <string name="msg_running">NewPipe deskargatzen</string>
     <string name="msg_running_detail">Sakatu xehetasunetarako</string>
-    <string name="msg_wait">Itxaron mesedez…</string>
+    <string name="msg_wait">Itxaron mesedezâ€¦</string>
     <string name="msg_copied">Arbelera kopiatuta</string>
     <string name="no_available_dir">Ezarri deskargetarako karpeta bat ezarpenetan geroago</string>
     <string name="msg_popup_permission">Baimen hau beharrezkoa da
 \nlaster-leiho moduan irekitzeko</string>
     <string name="title_activity_recaptcha">reCAPTCHA erronka</string>
     <string name="recaptcha_request_toast">reCAPTCHA erronka eskatu da</string>
-    <string name="copyright" formatted="true">© %1$s %2$s-(r)engatik, %3$s lizentziapean</string>
+    <string name="copyright" formatted="true">Â© %1$s %2$s-(r)engatik, %3$s lizentziapean</string>
     <string name="subscribe_button_title">Harpidetu</string>
     <string name="subscribed_button_title">Harpidetuta</string>
     <string name="channel_unsubscribed">Kanaletik harpidetza kenduta</string>
@@ -146,8 +146,8 @@
     </plurals>
     <string name="title_activity_history">Historiala</string>
     <string name="action_history">Historiala</string>
-    <string name="show_hold_to_append_title">Erakutsi «Mantendu ilaran jartzeko » aholkua</string>
-    <string name="show_hold_to_append_summary">Erakutsi aholkua bigarren planoko eta laster-leiho botoia sakatzean bideoaren «Xehetasunak: » atalean</string>
+    <string name="show_hold_to_append_title">Erakutsi Â«Mantendu ilaran jartzeko Â» aholkua</string>
+    <string name="show_hold_to_append_summary">Erakutsi aholkua bigarren planoko eta laster-leiho botoia sakatzean bideoaren Â«Xehetasunak: Â» atalean</string>
     <string name="default_content_country_title">Lehenetsitako edukiaren herrialdea</string>
     <string name="play_all">Erreproduzitu denak</string>
     <string name="unknown_content">[Ezezaguna]</string>
@@ -188,7 +188,7 @@
     <string name="video_player">Bideo erreproduzitzailea</string>
     <string name="background_player">Atzeko planoko erreproduzitzailea</string>
     <string name="popup_player">Laster-leiho erreproduzitzailea</string>
-    <string name="preferred_player_fetcher_notification_title">Informazioa eskuratzen…</string>
+    <string name="preferred_player_fetcher_notification_title">Informazioa eskuratzenâ€¦</string>
     <string name="preferred_player_fetcher_notification_message">Eskatutako edukia kargatzen</string>
     <string name="controls_download_desc">Deskargatu igorpen-fitxategia</string>
     <string name="show_info">Erakutsi informazioa</string>
@@ -233,8 +233,8 @@
     <string name="no_valid_zip_file">Ez da baliozko ZIP fitxategia</string>
     <string name="could_not_import_all_files">Abisua: Ezin izan dira fitxategi guztiak inportatu.</string>
     <string name="override_current_data">Honek zure uneko konfigurazioa gainidatziko du.</string>
-    <string name="preferred_open_action_settings_title">«Ireki» ekintza hobetsia</string>
-    <string name="preferred_open_action_settings_summary">Lehenetsitako ekintza edukia irekitzean — %s</string>
+    <string name="preferred_open_action_settings_title">Â«IrekiÂ» ekintza hobetsia</string>
+    <string name="preferred_open_action_settings_summary">Lehenetsitako ekintza edukia irekitzean â€” %s</string>
     <string name="always_ask_open_action">Galdetu beti</string>
     <string name="create_playlist">Erreprodukzio-zerrenda berria</string>
     <string name="rename_playlist">Berrizendatu</string>
@@ -259,14 +259,14 @@
     <string name="import_title">Inportatu</string>
     <string name="import_from">Inportatu hemendik</string>
     <string name="export_to">Esportatu hona</string>
-    <string name="import_ongoing">Inportatzen…</string>
-    <string name="export_ongoing">Esportatzen…</string>
+    <string name="import_ongoing">Inportatzenâ€¦</string>
+    <string name="export_ongoing">Esportatzenâ€¦</string>
     <string name="import_file_title">Inportatu fitxategia</string>
     <string name="previous_export">Aurreko esportazioa</string>
     <string name="subscriptions_import_unsuccessful">Ezin izan dira harpidetzak inportatu</string>
     <string name="subscriptions_export_unsuccessful">Ezin izan dira harpidetzak esportatu</string>
-    <string name="import_youtube_instructions">Inportatu YouTube harpidetzak Google takeout-etik: \n \n1. Joan URL honetara: %1$s \n2. Hasi saioa eskatzen zaizunean \n3. Hautatu «Datu guztiak barne», gero «Kendu hautapen guztiak», eta hautatu «harpidetzak» soilik eta egin klik «Ados» botoian \n4. Egin klik «Hurrengo pausua» eta «Sortu esportazioa» botoietan \n5. Egin klik «Deskargatu» botoian agertzen denean \n6. Egin klik INPORTATU FITXATEGIA botoian eta hautatu deskargatutako .zip fitxategia \n7. [.zip inportazioak huts egiten badu] Erauzi .csv fitxategia deskargatutako takeout zip-etik (normalean «Youtube eta Youtube Music/harpidetzak/harpidetzak.csv»), egin klik INPORTATU FITXATEGIA botoian eta hautatu erauzitako csv fitxategia</string>
-    <string name="import_soundcloud_instructions">Inportatu SoundCloud profila URL-a edo zure ID-a idatziz: \n \n1. Gaitu «mahaigain modua» web nabigatzailean (gunea ez dabil mugikorretan) \n2. Joan URL honetara: %1$s \n3. Hasi saioa eskatzen zaizunean \n4. Kopiatu profilaren URL-a eraman zaizun orritik.</string>
+    <string name="import_youtube_instructions">Inportatu YouTube harpidetzak Google takeout-etik: \n \n1. Joan URL honetara: %1$s \n2. Hasi saioa eskatzen zaizunean \n3. Hautatu Â«Datu guztiak barneÂ», gero Â«Kendu hautapen guztiakÂ», eta hautatu Â«harpidetzakÂ» soilik eta egin klik Â«AdosÂ» botoian \n4. Egin klik Â«Hurrengo pausuaÂ» eta Â«Sortu esportazioaÂ» botoietan \n5. Egin klik Â«DeskargatuÂ» botoian agertzen denean \n6. Egin klik INPORTATU FITXATEGIA botoian eta hautatu deskargatutako .zip fitxategia \n7. [.zip inportazioak huts egiten badu] Erauzi .csv fitxategia deskargatutako takeout zip-etik (normalean Â«Youtube eta Youtube Music/harpidetzak/harpidetzak.csvÂ»), egin klik INPORTATU FITXATEGIA botoian eta hautatu erauzitako csv fitxategia</string>
+    <string name="import_soundcloud_instructions">Inportatu SoundCloud profila URL-a edo zure ID-a idatziz: \n \n1. Gaitu Â«mahaigain moduaÂ» web nabigatzailean (gunea ez dabil mugikorretan) \n2. Joan URL honetara: %1$s \n3. Hasi saioa eskatzen zaizunean \n4. Kopiatu profilaren URL-a eraman zaizun orritik.</string>
     <string name="import_soundcloud_instructions_hint">zureID,soundcloud.com/zureid</string>
     <string name="import_network_expensive_warning">Eragiketa honek sarearen erabilera handia egin lezake.
 \n
@@ -287,7 +287,7 @@
     <string name="playback_step">Urratsa</string>
     <string name="playback_reset">Leheneratu</string>
     <string name="minimize_on_exit_title">Minimizatu app-a aldatzean</string>
-    <string name="minimize_on_exit_summary">Ekintza bideo-erreproduzitzaile nagusitik beste aplikazio batera aldatzean — %s</string>
+    <string name="minimize_on_exit_summary">Ekintza bideo-erreproduzitzaile nagusitik beste aplikazio batera aldatzean â€” %s</string>
     <string name="minimize_on_exit_none_description">Bat ere ez</string>
     <string name="minimize_on_exit_background_description">Minimizatu bigarren planoko erreproduzitzailera</string>
     <string name="minimize_on_exit_popup_description">Minimizatu laster-leiho erreproduzitzailera</string>
@@ -409,7 +409,7 @@
     <string name="permission_display_over_apps">Baimena eman beste aplikazioen gainetik erakusteko</string>
     <string name="app_language_title">Aplikazioaren hizkuntza</string>
     <string name="systems_language">Sistemaren lehenetsia</string>
-    <string name="subtitle_activity_recaptcha">Sakatu «Eginda» konponduta dagoenean</string>
+    <string name="subtitle_activity_recaptcha">Sakatu Â«EgindaÂ» konponduta dagoenean</string>
     <string name="done">Eginda</string>
     <string name="videos_string">Bideoak</string>
     <plurals name="seconds">
@@ -420,8 +420,8 @@
     <string name="feed_use_dedicated_fetch_method_help_text">Jarioaren karga motelegia dela uste duzu\? Hala bada, saiatu karga azkarra gaitzen (ezarpenetan edo beheko botoia sakatzen aldatu dezakezu).
 \n
 \nNewPipe jarioak kargatzeko bi estrategia eskaintzen ditu:
-\n• Harpidetza kanal osoa eskuratu, motela baina osoa.
-\n• Amaiera-puntu dedikatua erabiliz, arina baina ez osatua.
+\nâ€¢ Harpidetza kanal osoa eskuratu, motela baina osoa.
+\nâ€¢ Amaiera-puntu dedikatua erabiliz, arina baina ez osatua.
 \n
 \nBien arteko diferentzia arinak normalean informazioa falta dela da, elementuaren iraupena edo mota adibidez (ezin du bideo normalen eta zuzenekoen artean bereizi) eta elementu gutxiago buelta ditzake.
 \n
@@ -433,7 +433,7 @@
     <string name="feed_use_dedicated_fetch_method_summary">Zerbitzu batzuetan eskuragarri, normalean askoz azkarragoa da, baina elementu kopuru mugatu eta osatu gabeko informazioa itzuli dezake (adib. iraupenik ez, elementu mota, zuzeneko egoerarik ez)</string>
     <string name="feed_use_dedicated_fetch_method_title">Eskuratu jario dedikatutik eskuragarri dagoenean</string>
     <string name="feed_update_threshold_option_always_update">Eguneratu beti</string>
-    <string name="feed_update_threshold_summary">Pasatzen den denbora harpidetza bat zaharkituta dagoela kontuan hartzen den arte — %s</string>
+    <string name="feed_update_threshold_summary">Pasatzen den denbora harpidetza bat zaharkituta dagoela kontuan hartzen den arte â€” %s</string>
     <string name="feed_update_threshold_title">Jarioaren eguneratze atalasea</string>
     <string name="settings_category_feed_title">Jarioa</string>
     <string name="feed_create_new_group_button_title">Berria</string>
@@ -445,8 +445,8 @@
     </plurals>
     <string name="feed_group_dialog_empty_selection">Ez da harpidetzarik hautatu</string>
     <string name="feed_group_dialog_select_subscriptions">Hautatu harpidetzak</string>
-    <string name="feed_processing_message">Jarioa prozesatzen…</string>
-    <string name="feed_notification_loading">Jarioa kargatzen…</string>
+    <string name="feed_processing_message">Jarioa prozesatzenâ€¦</string>
+    <string name="feed_notification_loading">Jarioa kargatzenâ€¦</string>
     <string name="feed_subscription_not_loaded_count">Kargatu gabe: %d</string>
     <string name="feed_oldest_subscription_update">Jarioaren azken eguneraketa: %s</string>
     <string name="feed_groups_header_title">Kanal-taldeak</string>
@@ -465,7 +465,7 @@
     <string name="unmute">Gaitu audioa</string>
     <string name="mute">Isilarazi</string>
     <string name="content_not_supported">Eduki hau ez dago oraindik NewPiperengatik onartuta. \n \nEtorkizuneko bertsio batean onartua izatea espero da.</string>
-    <string name="infinite_videos">∞ bideo</string>
+    <string name="infinite_videos">âˆž bideo</string>
     <string name="more_than_100_videos">100 bideo baino gehiago</string>
     <string name="artists">Artistak</string>
     <string name="albums">Albumak</string>
@@ -482,7 +482,7 @@
     <string name="remove_watched">Kendu ikusitako bideoak</string>
     <string name="never">Inoiz ez</string>
     <string name="wifi_only">WiFi-arekin soilik</string>
-    <string name="autoplay_summary">Erreprodukzioa automatikoki hasi — %s</string>
+    <string name="autoplay_summary">Erreprodukzioa automatikoki hasi â€” %s</string>
     <string name="show_memory_leaks">Erakutsi memoria galerak</string>
     <string name="title_activity_play_queue">Erreproduzitu ilara</string>
     <string name="no_playlist_bookmarked_yet">Oraindik ez dago erreprodukzio-zerrenda laster-markarik</string>
@@ -494,8 +494,8 @@
     <string name="recaptcha_cookies_cleared">reCAPTCHA kookiak garbitu dira</string>
     <string name="clear_cookie_title">Ezabatu reCAPTCHA-ren kookiak</string>
     <string name="show_age_restricted_content_summary">Adinez mugatuta dagoen eta haurrentzako desegokia izan daitezkeen edukia erakutsi (+18 adibidez)</string>
-    <string name="youtube_restricted_mode_enabled_summary">YouTube-ren «Modu mugatua» helduentzako edukia izan daitekeen edukia ezkutatzen du</string>
-    <string name="youtube_restricted_mode_enabled_title">Gaitu YouTube-ren «Modu mugatua»</string>
+    <string name="youtube_restricted_mode_enabled_summary">YouTube-ren Â«Modu mugatuaÂ» helduentzako edukia izan daitekeen edukia ezkutatzen du</string>
+    <string name="youtube_restricted_mode_enabled_title">Gaitu YouTube-ren Â«Modu mugatuaÂ»</string>
     <string name="unsupported_url_dialog_message">Ezin izan da URL-a ezagutu. Beste aplikazio batekin ireki\?</string>
     <string name="auto_queue_toggle">Auto-ilaratzea</string>
     <string name="clear_queue_confirmation_description">Erreprodukzio-ilara aktiboa ordezkatuko da</string>
@@ -517,7 +517,7 @@
     <string name="enqueued">Ilaran jarri da</string>
     <string name="enqueue_stream">Jarri ilaran</string>
     <string name="show_original_time_ago_summary">Zerbitzuen jatorrizko testuak igorpenaren elementuetan ikusgai egongo dira</string>
-    <string name="show_original_time_ago_title">Erakutsi «orain dela» jatorrizko denbora elementuetan</string>
+    <string name="show_original_time_ago_title">Erakutsi Â«orain delaÂ» jatorrizko denbora elementuetan</string>
     <string name="notification_actions_summary">Editatu beheko jakinarazpen-ekintza bakoitza sakatuz. Hautatu horietako hiru gehienez jakinarazpen trinkoan erakusteko, eskuineko kontrol-laukiak erabiliz.</string>
     <string name="notification_colorize_summary">Androidek miniaturako kolore nagusiaren arabera jakinarazpenaren kolorea pertsonalizatzea baimendu (kontuan izan ez dagoela gailu guztietan erabilgarri)</string>
     <string name="notification_colorize_title">Koloreztatu jakinarazpena</string>
@@ -550,7 +550,7 @@
 \nAdinez mugatutako bideoekiko YouTube-ren politika berriengatik, NewPipe-k ezin ditu bideoen igorpen hauek atzitu eta erreproduzitu.</string>
     <string name="download_has_started">Deskarga hasi da</string>
     <string name="select_night_theme_toast">Behean gaueko gai gogokoena hautatu dezakezu</string>
-    <string name="night_theme_summary">Hautatu zure gaueko gai gogokoena — %s</string>
+    <string name="night_theme_summary">Hautatu zure gaueko gai gogokoena â€” %s</string>
     <string name="auto_device_theme_title">Automatikoa (gailuaren gaia)</string>
     <string name="night_theme_title">Gaueko gaia</string>
     <string name="show_channel_details">Erakutsi kanalaren xehetasunak</string>
@@ -607,7 +607,7 @@
     <string name="start_main_player_fullscreen_title">Hasi erreproduzitzaile nagusia pantaila osoan</string>
     <string name="enqueued_next">Jarraian jarrita</string>
     <string name="enqueue_next_stream">Gehitu jarraian</string>
-    <string name="show_crash_the_player_title">Erakutsi «Erreproduzitzailea kraskatu»</string>
+    <string name="show_crash_the_player_title">Erakutsi Â«Erreproduzitzailea kraskatuÂ»</string>
     <string name="processing_may_take_a_moment">Prozesatzen... Itxoin mesedez</string>
     <string name="error_report_channel_name">Errore-txostenen jakinarazpena</string>
     <string name="error_report_channel_description">Jakinarazpenak erroreen berri emateko</string>
@@ -619,7 +619,7 @@
 \nMesedez, instalatu Storage Access Framework-ekin bateragarria den fitxategi kudeatzaile bat</string>
     <string name="detail_pinned_comment_view_description">Ainguratutako iruzkina</string>
     <string name="crash_the_player">Erreproduzitzailea kraskatu</string>
-    <string name="checking_updates_toast">Eguneraketak bilatzen…</string>
+    <string name="checking_updates_toast">Eguneraketak bilatzenâ€¦</string>
     <string name="no_appropriate_file_manager_message">Ez da fitxategi kudeatzaile bat aurkitu ekintza honetarako.
 \nMesedez, instalatu fitxategi kudeatzaile bat edo saiatu \'%s\' desgaitzen deskarga ezarpenetan</string>
     <string name="show_crash_the_player_summary">Erreproduzitzailea erabiltzean kraskadura aukera erakusten du</string>
@@ -639,7 +639,7 @@
     <string name="enable_streams_notifications_summary">Harpidetzen igorpen berriei buruz jakinarazi</string>
     <string name="delete_downloaded_files_confirm">Ezabatu deskargatutako fitxategi guztiak biltegitik\?</string>
     <string name="streams_notification_channel_description">Harpidetzen igorpen berrien jakinarazpenak</string>
-    <string name="loading_stream_details">Igorpenaren xehetasunak kargatzen…</string>
+    <string name="loading_stream_details">Igorpenaren xehetasunak kargatzenâ€¦</string>
     <plurals name="new_streams">
         <item quantity="one">Igorpen berri %s</item>
         <item quantity="other">%s igorpen berri</item>
@@ -685,7 +685,7 @@
     <string name="volume">Bolumena</string>
     <string name="use_exoplayer_decoder_fallback_title">Erabili ExoPlayer-en deskodetzailearen ordezko ezaugarria</string>
     <string name="none">Bat ere ez</string>
-    <string name="loading_metadata_title">Metadatuak kargatzen…</string>
+    <string name="loading_metadata_title">Metadatuak kargatzenâ€¦</string>
     <string name="settings_category_exoplayer_summary">Kudeatu ExoPlayer-en ezarpen batzuk. Aldaketa hauek eragina izan dezaten, erreproduzitzailea berrabiarazi behar da</string>
     <string name="main_tabs_position_title">Fitxa nagusien kokapena</string>
     <string name="feed_fetch_channel_tabs">Lortu kanalaren fitxak</string>
@@ -759,7 +759,7 @@
     <string name="toggle_screen_orientation">Aldatu pantailaren orientazioa</string>
     <string name="play">Erreproduzitu</string>
     <string name="replay">Berriro erreproduzitu</string>
-    <string name="image_quality_summary">Aukeratu irudien kalitatea eta irudiak kargatu nahi dituzun ala ez, datuen eta memoriaren erabilera murrizteko. Aldaketek memoriako zein diskoko irudien cachea garbitzen dute — %s</string>
+    <string name="image_quality_summary">Aukeratu irudien kalitatea eta irudiak kargatu nahi dituzun ala ez, datuen eta memoriaren erabilera murrizteko. Aldaketek memoriako zein diskoko irudien cachea garbitzen dute â€” %s</string>
     <string name="image_quality_none">Ez kargatu irudiak</string>
     <string name="image_quality_low">Kalitate baxua</string>
     <string name="image_quality_medium">Kalitate ertaina</string>
@@ -778,7 +778,7 @@
     <string name="search_with_service_name_and_filter">Bilatu %1$s (%2$s)</string>
     <string name="tab_bookmarks_short">Erreprodukzio-zerrendak</string>
     <string name="permission_display_over_apps_message">Laster-leiho erreproduzitzailea erabiltzeko, hautatu %1$s Android-en ezarpenen menu hauan, eta gaitu %2$s.</string>
-    <string name="permission_display_over_apps_permission_name">«Baimendu beste aplikazio batzuen gainean bistaratzea»</string>
+    <string name="permission_display_over_apps_permission_name">Â«Baimendu beste aplikazio batzuen gainean bistaratzeaÂ»</string>
     <string name="short_thousand">%sK</string>
     <string name="short_million">%sM</string>
     <string name="short_billion">%sMM</string>
@@ -804,4 +804,17 @@
     <string name="youtube_player_http_403">403 HTTP errorea jaso da zerbitzaritik erreproduzitzen ari zenean, ziurrenik IP debeku batek edo streaming URLaren desofuskazio arazoek eraginda</string>
     <string name="sign_in_confirm_not_bot_error">%1$s-ek datuak emateari uko egin dio, eskatzailea bot bat ez dela baieztatzeko saioa hasteko eskatuz.\n\nBaliteke zure IP helbidea %1$s-ek aldi baterako debekatu izana, denbora pixka bat itxaron dezakezu edo beste IP batera aldatu (adibidez, VPN bat aktibatu/itzaliz, edo WiFitik datu mugikorretara aldatuz).</string>
     <string name="unsupported_content_in_country">Eduki hau ez dago eskuragarri hautatutako edukiaren herrialderako.\n\nAldatu zure hautaketa \"Ezarpenak &gt; Edukia &gt; Edukiaren herrialde lehenetsia\" ataletik.</string>
+
+
+    <string name="rate_app">Baloratu aplikazioa</string>
+    <string name="share_app">Partekatu aplikazioa</string>
+    <string name="friendly_parsing_title">We are improving support for this page.</string>
+    <string name="friendly_parsing_message">Please try this video again after some time. Your app is safe to keep using, and we are continuing to improve compatibility so more videos work smoothly every day. Thank you for staying with us.</string>
+    <string name="import_subscriptions_title">Import subscriptions"</string>
+    <string name="export_subscriptions_title">Export subscriptions</string>
+    <string name="import_subscriptions_summary">Import subscriptions from a previous .json export"</string>
+    <string name="export_subscriptions_summary">Export your subscriptions to a .json file</string>
+    <string name="import_from_previous_export">Import from previous export</string>
 </resources>
+
+

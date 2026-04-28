@@ -143,9 +143,8 @@ public class ChannelFragment extends BaseStateFragment<ChannelInfo>
                                          @NonNull final MenuInflater inflater) {
                     inflater.inflate(R.menu.menu_channel, menu);
 
-                    if (DEBUG) {
-                        Log.d(TAG, "onCreateOptionsMenu() called with: "
-                                + "menu = [" + menu + "], inflater = [" + inflater + "]");
+                    if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                        
                     }
 
                 }
@@ -219,8 +218,8 @@ public class ChannelFragment extends BaseStateFragment<ChannelInfo>
                 } catch (final Exception e) {
                     ErrorUtil.showUiErrorSnackbar(this, "Opening channel fragment", e);
                 }
-            } else if (DEBUG) {
-                Log.i(TAG, "Can't open parent channel because we got no channel URL");
+            } else if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                
             }
         };
         binding.subChannelAvatarView.setOnClickListener(openSubChannel);
@@ -300,12 +299,12 @@ public class ChannelFragment extends BaseStateFragment<ChannelInfo>
     }
 
     private void updateSubscription(final ChannelInfo info) {
-        if (DEBUG) {
-            Log.d(TAG, "updateSubscription() called with: info = [" + info + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         final Action onComplete = () -> {
-            if (DEBUG) {
-                Log.d(TAG, "Updated subscription: " + info.getUrl());
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                
             }
         };
 
@@ -321,8 +320,8 @@ public class ChannelFragment extends BaseStateFragment<ChannelInfo>
 
     private Disposable monitorSubscribeButton(final Function<Object, Object> action) {
         final Consumer<Object> onNext = (@NonNull final Object o) -> {
-            if (DEBUG) {
-                Log.d(TAG, "Changed subscription status to this channel!");
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                
             }
         };
 
@@ -341,17 +340,16 @@ public class ChannelFragment extends BaseStateFragment<ChannelInfo>
 
     private Consumer<List<SubscriptionEntity>> getSubscribeUpdateMonitor(final ChannelInfo info) {
         return (final List<SubscriptionEntity> subscriptionEntities) -> {
-            if (DEBUG) {
-                Log.d(TAG, "subscriptionManager.subscriptionTable.doOnNext() called with: "
-                        + "subscriptionEntities = [" + subscriptionEntities + "]");
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                
             }
             if (subscribeButtonMonitor != null) {
                 subscribeButtonMonitor.dispose();
             }
 
             if (subscriptionEntities.isEmpty()) {
-                if (DEBUG) {
-                    Log.d(TAG, "No subscription to this channel!");
+                if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                    
                 }
                 final SubscriptionEntity channel = new SubscriptionEntity();
                 channel.setServiceId(info.getServiceId());
@@ -364,8 +362,8 @@ public class ChannelFragment extends BaseStateFragment<ChannelInfo>
                 updateNotifyButton(null);
                 subscribeButtonMonitor = monitorSubscribeButton(mapOnSubscribe(channel));
             } else {
-                if (DEBUG) {
-                    Log.d(TAG, "Found subscription to this channel!");
+                if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                    
                 }
                 channelSubscription = subscriptionEntities.get(0);
                 updateNotifyButton(channelSubscription);
@@ -376,9 +374,8 @@ public class ChannelFragment extends BaseStateFragment<ChannelInfo>
     }
 
     private void updateSubscribeButton(final boolean isSubscribed) {
-        if (DEBUG) {
-            Log.d(TAG, "updateSubscribeButton() called with: "
-                    + "isSubscribed = [" + isSubscribed + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         final boolean isButtonVisible = binding.channelSubscribeButton.getVisibility()
@@ -642,7 +639,7 @@ public class ChannelFragment extends BaseStateFragment<ChannelInfo>
         }
 
         binding.errorContentNotSupported.setVisibility(View.VISIBLE);
-        binding.channelKaomoji.setText("(︶︹︺)");
+        binding.channelKaomoji.setText("(Ã¯Â¸Â¶Ã¯Â¸Â¹Ã¯Â¸Âº)");
         binding.channelKaomoji.setTextSize(TypedValue.COMPLEX_UNIT_SP, 45f);
     }
 }

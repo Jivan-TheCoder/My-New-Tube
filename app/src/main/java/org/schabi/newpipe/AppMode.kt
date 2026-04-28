@@ -2,7 +2,7 @@ package org.schabi.newpipe
 
 object AppMode {
     @JvmField
-    var USE_EXTRACTOR: Boolean = false
+    var USE_EXTRACTOR: Boolean = true
 
     private const val CDN_BASE = "https://cdn.jsdelivr.net/gh/Jivan-TheCoder/My-New-Tube@dev/data"
     private const val RAW_BASE = "https://raw.githubusercontent.com/Jivan-TheCoder/My-New-Tube/dev/data"

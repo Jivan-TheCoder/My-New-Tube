@@ -24,6 +24,8 @@ import com.xwray.groupie.Section
 import com.xwray.groupie.viewbinding.GroupieViewHolder
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import org.schabi.newpipe.R
+import org.schabi.newpipe.ads.adapter_ads.NativeAdInjectionConfig
+import org.schabi.newpipe.ads.adapter_ads.RecyclerNativeAdInjector
 import org.schabi.newpipe.database.feed.model.FeedGroupEntity.Companion.GROUP_ALL_ID
 import org.schabi.newpipe.databinding.DialogTitleBinding
 import org.schabi.newpipe.databinding.FeedItemCarouselBinding
@@ -202,6 +204,17 @@ class SubscriptionFragment : BaseStateFragment<SubscriptionState>() {
             spanSizeLookup = groupAdapter.spanSizeLookup
         }
         binding.itemsList.adapter = groupAdapter
+        RecyclerNativeAdInjector.attach(
+            requireActivity(),
+            binding.itemsList,
+            groupAdapter,
+            NativeAdInjectionConfig.interval(5, 15)
+//                .withMaxAds(3)
+                .withMaxUniqueAdsToLoad(2)
+                .withAdMixMode(NativeAdInjectionConfig.AdMixMode.ALTERNATE_MREC_FIRST)
+                .withPlacementKey("Subscription_AD")
+                .withPolicyGuardrails()
+        )
         binding.itemsList.itemAnimator = null
 
         viewModel = ViewModelProvider(this)[SubscriptionViewModel::class.java]

@@ -23,7 +23,7 @@ public class LockManager {
     }
 
     public void acquireWifiAndCpu() {
-        Log.d(TAG, "acquireWifiAndCpu() called");
+        
         if (wakeLock != null && wakeLock.isHeld() && wifiLock != null && wifiLock.isHeld()) {
             return;
         }
@@ -40,7 +40,7 @@ public class LockManager {
     }
 
     public void releaseWifiAndCpu() {
-        Log.d(TAG, "releaseWifiAndCpu() called");
+        
         if (wakeLock != null && wakeLock.isHeld()) {
             wakeLock.release();
         }

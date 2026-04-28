@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import androidx.activity.result.ActivityResult;
@@ -27,6 +28,7 @@ import com.evernote.android.state.State;
 
 import org.schabi.newpipe.BaseFragment;
 import org.schabi.newpipe.R;
+import org.schabi.newpipe.ads.AdUtils;
 import org.schabi.newpipe.error.ErrorInfo;
 import org.schabi.newpipe.error.ErrorUtil;
 import org.schabi.newpipe.error.UserAction;
@@ -37,6 +39,7 @@ import org.schabi.newpipe.local.subscription.workers.SubscriptionImportInput;
 import org.schabi.newpipe.streams.io.NoFileManagerSafeGuard;
 import org.schabi.newpipe.streams.io.StoredFileHelper;
 import org.schabi.newpipe.util.Constants;
+import org.schabi.newpipe.util.PermissionHelper;
 import org.schabi.newpipe.util.ServiceHelper;
 
 import java.util.Collections;
@@ -144,6 +147,9 @@ public class SubscriptionsImportFragment extends BaseFragment {
             supportActionBar.setDisplayShowTitleEnabled(true);
             setTitle(getString(R.string.import_title));
         }
+
+        final FrameLayout bannerAdContainer = rootView.findViewById(R.id.bannerAdContainer);
+        AdUtils.LoadAppLovinBanner(requireActivity(), bannerAdContainer);
     }
 
     @Override
@@ -153,6 +159,11 @@ public class SubscriptionsImportFragment extends BaseFragment {
     }
 
     private void onImportClicked() {
+        if (!PermissionHelper.checkPostNotificationsPermission(requireActivity(),
+                PermissionHelper.POST_NOTIFICATIONS_REQUEST_CODE)) {
+            return;
+        }
+
         if (inputText.getVisibility() == View.VISIBLE) {
             final String value = inputText.getText().toString();
             if (!value.isEmpty()) {

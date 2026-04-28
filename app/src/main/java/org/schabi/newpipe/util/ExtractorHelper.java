@@ -23,7 +23,6 @@ import static org.schabi.newpipe.extractor.utils.Utils.isNullOrEmpty;
 import static org.schabi.newpipe.util.text.TextLinkifier.SET_LINK_MOVEMENT_METHOD;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -32,7 +31,6 @@ import androidx.annotation.Nullable;
 import androidx.core.text.HtmlCompat;
 import androidx.preference.PreferenceManager;
 
-import org.schabi.newpipe.MainActivity;
 import org.schabi.newpipe.R;
 import org.schabi.newpipe.extractor.Info;
 import org.schabi.newpipe.extractor.InfoItem;
@@ -261,8 +259,8 @@ public final class ExtractorHelper {
         return Maybe.defer(() -> {
             //noinspection unchecked
             final I info = (I) CACHE.getFromKey(serviceId, url, cacheType);
-            if (MainActivity.DEBUG) {
-                Log.d(TAG, "loadFromCache() called, info > " + info);
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                
             }
 
             // Only return info if it's not null (it is cached)
@@ -356,3 +354,4 @@ public final class ExtractorHelper {
         }
     }
 }
+

@@ -54,7 +54,7 @@ public class DownloadRunnableFallback extends Thread {
         long start = mMission.fallbackResumeOffset;
 
         if (DEBUG && !mMission.unknownLength && start > 0) {
-            Log.i(TAG, "Resuming a single-thread download at " + start);
+            
         }
 
         try {
@@ -125,7 +125,7 @@ public class DownloadRunnableFallback extends Thread {
                 return;
             }
 
-            if (DEBUG) {
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
                 Log.e(TAG, "got exception, retrying...", e);
             }
 

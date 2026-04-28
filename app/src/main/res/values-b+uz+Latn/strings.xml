@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="use_external_video_player_title">Tashqi video pleerdan foydalanish</string>
     <string name="share_dialog_title">Bilan baham ko\'rish</string>
@@ -15,7 +15,7 @@
     <string name="cancel">Bekor qilish</string>
     <string name="no_player_found_toast">Stream pleer topilmadi (uni ijro etish uchun VLC o\'rnatishingiz mumkin).</string>
     <string name="no_player_found">Hech qanday translatsiya pleyeri topilmadi. VLC o\'rnatilsinmi\?</string>
-    <string name="upload_date_text">%1$s tomonidan e‘lon qilingan</string>
+    <string name="upload_date_text">%1$s tomonidan eâ€˜lon qilingan</string>
     <string name="main_bg_subtitle">Boshlash uchun \"Izlash\" tugmasini bosing</string>
     <string name="auto_queue_toggle">Avto-navbat</string>
     <string name="auto_queue_summary">Tegishli stream qo\'shib, ijro etish navbatini tugatishni (takrorlanmaydigan) davom ettirish</string>
@@ -51,7 +51,7 @@
     <string name="notification_action_1_title">Ikkinchi harakat tugmasi</string>
     <string name="notification_action_0_title">Birinchi harakat tugmasi</string>
     <string name="notification_scale_to_square_image_summary">Bildirishnomada ko\'rsatilgan video eskizini 16: 9dan 1: 1 gacha tomonlarning nisbatiga qarab o\'lchamang (buzilishlarni keltirib chiqarishi mumkin)</string>
-    <string name="notification_scale_to_square_image_title">Eskizini 1: 1 tomonlar nisbatiga o‘lchash</string>
+    <string name="notification_scale_to_square_image_title">Eskizini 1: 1 tomonlar nisbatiga oâ€˜lchash</string>
     <string name="show_play_with_kodi_summary">Kodi media-markazi orqali videoni ijro etish variantini ko\'rsatish</string>
     <string name="show_play_with_kodi_title">\"Kodi bilan ijro etish\" parametrini ko\'rsatish</string>
     <string name="kore_not_found">missing Kore dasturini o\'rnatasizmi\?</string>
@@ -168,7 +168,7 @@
     <string name="enable_search_history_title">Qidiruv tarixi</string>
     <string name="show_search_suggestions_title">Takliflarni qidirish</string>
     <string name="could_not_import_all_files">Ogohlantirish: Barcha fayllarni import qilib bo\'lmadi.</string>
-    <string name="no_valid_zip_file">Haqiqiy ZIP fayli yo‘q</string>
+    <string name="no_valid_zip_file">Haqiqiy ZIP fayli yoâ€˜q</string>
     <string name="import_complete_toast">Import qilindi</string>
     <string name="export_complete_toast">Eksport qilindi</string>
     <string name="select_a_kiosk">kiosk tanlash</string>
@@ -207,7 +207,7 @@
 \npopup rejimida oching</string>
     <string name="no_available_dir">Yuklab olish papkasini keyinroq sozlamalarda belgilang</string>
     <string name="msg_copied">Buferga nusxa olindi</string>
-    <string name="msg_wait">Iltimos kuting…</string>
+    <string name="msg_wait">Iltimos kutingâ€¦</string>
     <string name="msg_running_detail">Tafsilotlar uchun bosing</string>
     <string name="msg_running">NePipe yuklab olinmoqda</string>
     <string name="msg_error">Xato</string>
@@ -226,7 +226,7 @@
         <item quantity="one">%s video</item>
         <item quantity="other">%s videolar</item>
     </plurals>
-    <string name="infinite_videos">∞ videolar</string>
+    <string name="infinite_videos">âˆž videolar</string>
     <string name="more_than_100_videos">100+ videolar</string>
     <string name="no_videos">Videolar yo\'q</string>
     <plurals name="listening">
@@ -319,8 +319,8 @@
     <string name="feed_use_dedicated_fetch_method_help_text">Sizningcha, ta\'minotni yuklash juda sekinmi\? Agar shunday bo\'lsa, tez yuklashni yoqib ko\'ring (uni sozlamalardan yoki quyidagi tugmani bosib o\'zgartirishingiz mumkin).
 \n
 \nNewPipe ikkita lentani yuklash strategiyasini taklif qiladi:
-\n• Sekin, lekin to\'liq bo\'lgan obuna kanalini to\'liq olish.
-\n• Tez, lekin odatda to\'liq bo\'lmagan maxsus xizmatning so\'nggi nuqtasidan foydalanish.
+\nâ€¢ Sekin, lekin to\'liq bo\'lgan obuna kanalini to\'liq olish.
+\nâ€¢ Tez, lekin odatda to\'liq bo\'lmagan maxsus xizmatning so\'nggi nuqtasidan foydalanish.
 \n
 \nIkkalasining farqi shundaki, tezkor narsaning davomiyligi yoki turi kabi ba\'zi ma\'lumotlarga ega emas (jonli videolar va oddiy videolarni ajrata olmaydi) va u kamroq narsalarni qaytarishi mumkin.
 \n
@@ -345,8 +345,8 @@
     </plurals>
     <string name="feed_group_dialog_empty_selection">Obuna tanlanmadi</string>
     <string name="feed_group_dialog_select_subscriptions">Obunalarni tanlang</string>
-    <string name="feed_processing_message">Tasma qayta ishlanmoqda…</string>
-    <string name="feed_notification_loading">Tasma yuklanmoqda…</string>
+    <string name="feed_processing_message">Tasma qayta ishlanmoqdaâ€¦</string>
+    <string name="feed_notification_loading">Tasma yuklanmoqdaâ€¦</string>
     <string name="feed_subscription_not_loaded_count">Yuklanmadi: %d</string>
     <string name="feed_oldest_subscription_update">Oxirgi yangilanish: %s</string>
     <string name="feed_groups_header_title">Kanal guruhlari</string>
@@ -415,7 +415,7 @@
     <string name="overwrite_unrelated_warning">Bunday nomdagi fayl allaqachon mavjud</string>
     <string name="overwrite">Qayta yozish</string>
     <string name="generate_unique_name">Noyob nom yaratish</string>
-    <string name="download_failed">Yuklab bo‘lmadi</string>
+    <string name="download_failed">Yuklab boâ€˜lmadi</string>
     <string name="permission_denied">Tizim tomonidan rad etilgan harakat</string>
     <string name="enqueue">Navbat</string>
     <string name="recovering">tiklanish</string>
@@ -469,12 +469,12 @@
 \n4. \"Keyingi qadam\" ni, so\'ngra \"Eksport yaratish\" tugmasini bosing.
 \n5. U paydo bo\'lgandan keyin va \"Yuklab olish\" tugmasini bosing
 \n6. Yuklangan zip-dan .json faylini chiqarib oling (odatda \"YouTube va YouTube Music / subscriptions / subscriptions.json\" ostida) va uni shu yerga import qiling.</string>
-    <string name="subscriptions_export_unsuccessful">Obunalarni eksport qilib bo‘lmadi</string>
-    <string name="subscriptions_import_unsuccessful">Obunalarni import qilib bo‘lmadi</string>
+    <string name="subscriptions_export_unsuccessful">Obunalarni eksport qilib boâ€˜lmadi</string>
+    <string name="subscriptions_import_unsuccessful">Obunalarni import qilib boâ€˜lmadi</string>
     <string name="previous_export">Oldingi export</string>
     <string name="import_file_title">Import fayli</string>
-    <string name="export_ongoing">Eksport qilinmoqda…</string>
-    <string name="import_ongoing">Import qilinmoqda…</string>
+    <string name="export_ongoing">Eksport qilinmoqdaâ€¦</string>
+    <string name="import_ongoing">Import qilinmoqdaâ€¦</string>
     <string name="import_from">Dan Import qilish</string>
     <string name="export_to">Ga Export qilish</string>
     <string name="import_title">Import</string>
@@ -489,7 +489,7 @@
     <string name="caption_auto_generated">Avtomatik-yaratilgan</string>
     <string name="resize_fit">Yaroqli (tayyor)</string>
     <string name="resize_fill">To\'ldirish</string>
-    <string name="caption_none">Taglavha yo‘q</string>
+    <string name="caption_none">Taglavha yoâ€˜q</string>
     <string name="playlist_no_uploader">Avtomatik yaratildi (yuklovchi topilmadi)</string>
     <string name="playlist_thumbnail_change_success">Pleylist eskizi o\'zgartirildi.</string>
     <string name="playlist_add_stream_success">Pleylist</string>
@@ -505,7 +505,7 @@
     <string name="rename_playlist">Nomni o\'zgartirish</string>
     <string name="create_playlist">Yangi Playlist</string>
     <string name="preferred_player_fetcher_notification_message">So\'ralgan tarkib yuklanmoqda</string>
-    <string name="preferred_player_fetcher_notification_title">Ma\'lumot olinmoqda…</string>
+    <string name="preferred_player_fetcher_notification_title">Ma\'lumot olinmoqdaâ€¦</string>
     <string name="always_ask_open_action">Har doim so\'rash</string>
     <string name="video_player">Video pleyer</string>
     <string name="popup_player">Pop-up pleyer</string>
@@ -530,7 +530,282 @@
     <string name="new_and_hot">Yangi va qaynoqlari</string>
     <string name="top_50">Top 50</string>
     <string name="trending">Ommabop</string>
-    <string name="error_unable_to_load_comments">Fikrlarni yuklab bo‘lmadi</string>
+    <string name="error_unable_to_load_comments">Fikrlarni yuklab boâ€˜lmadi</string>
     <string name="import_settings">Sozlamalarni ham import qilmoqchimisiz\?</string>
     <string name="override_current_data">Bu sizning joriy sozlamangizni bekor qiladi.</string>
+
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="mark_as_watched">Mark as watched</string>
+    <string name="open_with">Open with</string>
+    <string name="search_with_service_name">Search %1$s</string>
+    <string name="search_with_service_name_and_filter">Search %1$s (%2$s)</string>
+    <string name="rate_app">Baholash ilovasi</string>
+    <string name="share_app">Ilovani ulashish</string>
+    <string name="tab_bookmarks_short">Playlists</string>
+    <string name="crash_the_player">Crash the player</string>
+    <string name="notification_actions_summary_android13">Edit each notification action below by tapping on it. The first three actions (play/pause, previous and next) are set by the system and cannot be customized.</string>
+    <string name="notification_colorize_title">Colorize notification</string>
+    <string name="notification_colorize_summary">Have Android customize the notification\'s color according to the main color in the thumbnail (note that this is not available on all devices)</string>
+    <string name="night_theme_title">Night theme</string>
+    <string name="popup_remember_size_pos_title">Remember popup properties</string>
+    <string name="popup_remember_size_pos_summary">Remember last size and position of popup</string>
+    <string name="progressive_load_interval_title">Playback load interval size</string>
+    <string name="progressive_load_interval_summary">Change the load interval size on progressive contents (currently %s). A lower value may speed up their initial loading</string>
+    <string name="ignore_hardware_media_buttons_title">Ignore hardware media button events</string>
+    <string name="ignore_hardware_media_buttons_summary">Useful, for instance, if you are using a headset with broken physical buttons</string>
+    <string name="show_description_title">Show description</string>
+    <string name="show_description_summary">Turn off to hide video description and additional information</string>
+    <string name="show_meta_info_title">Show meta info</string>
+    <string name="show_meta_info_summary">Turn off to hide meta info boxes with additional information about the stream creator, stream content or a search request</string>
+    <string name="prefer_original_audio_title">Prefer original audio</string>
+    <string name="prefer_original_audio_summary">Select the original audio track regardless of the language</string>
+    <string name="prefer_descriptive_audio_title">Prefer descriptive audio</string>
+    <string name="prefer_descriptive_audio_summary">Select an audio track with descriptions for visually impaired people if available</string>
+    <string name="left_gesture_control_summary">Choose gesture for left half of player screen</string>
+    <string name="left_gesture_control_title">Left gesture action</string>
+    <string name="right_gesture_control_summary">Choose gesture for right half of player screen</string>
+    <string name="right_gesture_control_title">Right gesture action</string>
+    <string name="brightness">Brightness</string>
+    <string name="volume">Volume</string>
+    <string name="none">None</string>
+    <string name="local_search_suggestions">Local search suggestions</string>
+    <string name="remote_search_suggestions">Remote search suggestions</string>
+    <string name="start_main_player_fullscreen_title">Start main player in fullscreen</string>
+    <string name="start_main_player_fullscreen_summary">Do not start videos in the mini player, but turn to fullscreen mode directly, if auto rotation is locked. You can still access the mini player by exiting fullscreen</string>
+    <string name="settings_category_player_notification_title">Player notification</string>
+    <string name="settings_category_player_notification_summary">Configure current playing stream notification</string>
+    <string name="settings_category_backup_restore_title">Backup and restore</string>
+    <string name="restricted_video_no_stream">This video is age-restricted.
+\nDue to new YouTube policies with age-restricted videos, NewPipe cannot access any of its video streams and thus is unable to play it.</string>
+    <string name="loading_metadata_title">Loading Metadata...</string>
+    <string name="friendly_parsing_title">We are improving support for this page.</string>
+    <string name="friendly_parsing_message">Please try this video again after some time. Your app is safe to keep using, and we are continuing to improve compatibility so more videos work smoothly every day. Thank you for staying with us.</string>
+    <string name="notifications">Notifications</string>
+    <string name="hash_channel_name">Video hash notification</string>
+    <string name="hash_channel_description">Notifications for video hashing progress</string>
+    <string name="streams_notification_channel_name">New streams</string>
+    <string name="streams_notification_channel_description">Notifications about new streams for subscriptions</string>
+    <string name="error_report_channel_name">Error report notification</string>
+    <string name="error_report_channel_description">Notifications to report errors</string>
+    <string name="fast_mode">Fast mode</string>
+    <string name="main_tabs_position_summary">Move main tab selector to the bottom</string>
+    <string name="main_tabs_position_title">Main tabs position</string>
+    <string name="app_ui_crash">App/UI crashed</string>
+    <string name="permission_display_over_apps_message">In order to use the Popup Player, please select %1$s in the following Android settings menu and enable %2$s.</string>
+    <string name="permission_display_over_apps_permission_name">"Allow display over other apps"</string>
+    <string name="error_report_notification_title">NewPipe encountered an error, tap to report</string>
+    <string name="error_report_notification_toast">An error occurred, see the notification</string>
+    <string name="comments_tab_description">Comments</string>
+    <string name="related_items_tab_description">Related items</string>
+    <string name="description_tab_description">Description</string>
+    <string name="import_subscriptions_hint">Import or export subscriptions from the 3-dot menu</string>
+    <string name="short_thousand">%sK</string>
+    <string name="short_million">%sM</string>
+    <string name="short_billion">%sB</string>
+    <string name="comments_are_disabled">Comments are disabled</string>
+    <string name="no_streams">No streams</string>
+    <string name="no_live_streams">No live streams</string>
+    <string name="delete_file">Delete file</string>
+    <string name="delete_entry">Delete entry</string>
+    <string name="msg_calculating_hash">Calculating hash</string>
+    <string name="msg_failed_to_copy">Failed to copy to clipboard</string>
+    <string name="no_dir_yet">No download folder set yet, choose the default download folder now</string>
+    <string name="recaptcha_solve">Solve</string>
+    <string name="main_page_content_swipe_remove">Swipe items to remove them</string>
+    <string name="select_a_feed_group">Select a feed group</string>
+    <string name="no_feed_group_created_yet">No feed group created yet</string>
+    <string name="play_queue_audio_track">Audio: %s</string>
+    <string name="audio_track">Audio track</string>
+    <string name="show_channel_details">Show channel details</string>
+    <string name="enqueue_next_stream">Enqueue next</string>
+    <string name="enqueued_next">Enqueued next</string>
+    <string name="loading_stream_details">Loading stream details...</string>
+    <string name="duplicate_in_playlist">The playlists that are grayed out already contain this item.</string>
+    <string name="processing_may_take_a_moment">Processing... May take a moment</string>
+    <string name="unset_playlist_thumbnail">Unset permanent thumbnail</string>
+    <string name="playlist_add_stream_success_duplicate">Duplicate added %d time(s)</string>
+    <string name="resize_zoom">Zoom</string>
+    <string name="leak_canary_not_available">LeakCanary is not available</string>
+    <string name="disable_media_tunneling_title">Disable media tunneling</string>
+    <string name="disable_media_tunneling_summary">Disable media tunneling if you experience a black screen or stuttering on video playback.</string>
+    <string name="disable_media_tunneling_automatic_info">Media tunneling was disabled by default on your device because your device model is known to not support it.</string>
+    <string name="show_crash_the_player_title">Show \"Crash the player\"</string>
+    <string name="show_crash_the_player_summary">Shows a crash option when using the player</string>
+    <string name="check_new_streams">Run check for new streams</string>
+    <string name="crash_the_app">Crash the app</string>
+    <string name="show_error_snackbar">Show an error snackbar</string>
+    <string name="create_error_notification">Create an error notification</string>
+    <string name="import_subscriptions_title">Import subscriptions"</string>
+    <string name="export_subscriptions_title">Export subscriptions</string>
+    <string name="import_subscriptions_summary">Import subscriptions from a previous .json export"</string>
+    <string name="export_subscriptions_summary">Export your subscriptions to a .json file</string>
+    <string name="import_from_previous_export">Import from previous export</string>
+    <string name="percent">Percent</string>
+    <string name="semitone">Semitone</string>
+    <string name="enable_streams_notifications_title">New streams notifications</string>
+    <string name="enable_streams_notifications_summary">Notify about new streams from subscriptions</string>
+    <string name="streams_notifications_interval_title">Checking frequency</string>
+    <string name="streams_notifications_network_title">Required network connection</string>
+    <string name="any_network">Any network</string>
+    <string name="card">Card</string>
+    <string name="seekbar_preview_thumbnail_title">Seekbar thumbnail preview</string>
+    <string name="high_quality_larger">High quality (larger)</string>
+    <string name="low_quality_smaller">Low quality (smaller)</string>
+    <string name="dont_show">Don\'t show</string>
+    <string name="app_update_unavailable_toast">You are running the latest version of NewPipe</string>
+    <string name="app_update_available_notification_text">Tap to download %s</string>
+    <string name="checking_updates_toast">Checking for updates...</string>
+    <string name="reset_settings_title">Reset settings</string>
+    <string name="reset_settings_summary">Reset all settings to their default values</string>
+    <string name="reset_all_settings">Resetting all settings will discard all of your preferred settings and restarts the app.\n\nAre you sure you want to proceed?</string>
+    <string name="error_insufficient_storage">Not enough free space on device</string>
+    <string name="delete_downloaded_files_confirm">Erase all downloaded files from disk?</string>
+    <string name="downloads_storage_ask_summary_no_saf_notice">You will be asked where to save each download</string>
+    <string name="downloads_storage_use_saf_summary_api_29">Starting from Android 10 only \'Storage Access Framework\' is supported</string>
+    <string name="remove_duplicates">Remove duplicates</string>
+    <string name="remove_duplicates_title">Remove duplicates?</string>
+    <string name="remove_duplicates_message">Do you want to remove all duplicate streams in this playlist?</string>
+    <string name="feed_group_page_summary">Channel group page</string>
+    <string name="feed_new_items">New feed items</string>
+    <string name="feed_load_error">Error loading feed</string>
+    <string name="feed_load_error_account_info">Could not load feed for \'%s\'.</string>
+    <string name="feed_load_error_terminated">The author\'s account has been terminated.\nNewPipe will not be able to load this feed in the future.\nDo you want to unsubscribe from this channel?</string>
+    <string name="feed_load_error_fast_unknown">The fast feed mode does not provide more info on this.</string>
+    <string name="feed_hide_streams_title">Show the following streams</string>
+    <string name="feed_show_hide_streams">Show/Hide streams</string>
+    <string name="feed_fetch_channel_tabs">Fetch channel tabs</string>
+    <string name="feed_fetch_channel_tabs_summary">Tabs to fetch when updating the feed. This option has no effect if a channel is updated using fast mode.</string>
+    <string name="show_thumbnail_title">Show thumbnail</string>
+    <string name="show_thumbnail_summary">Use thumbnail for both lock screen background and notifications</string>
+    <string name="recent">Recent</string>
+    <string name="chapters">Chapters</string>
+    <string name="no_app_to_open_intent">No app on your device can open this</string>
+    <string name="no_appropriate_file_manager_message">No appropriate file manager was found for this action.
+\nPlease install a file manager or try to disable \'%s\' in the download settings</string>
+    <string name="no_appropriate_file_manager_message_android_10">No appropriate file manager was found for this action.
+\nPlease install a Storage Access Framework compatible file manager</string>
+    <string name="georestricted_content">This content is not available in your country.</string>
+    <string name="private_content">This content is private, so it cannot be streamed or downloaded by NewPipe.</string>
+    <string name="youtube_music_premium_content">This video is available only to YouTube Music Premium members, so it cannot be streamed or downloaded by NewPipe.</string>
+    <string name="account_terminated">Account terminated</string>
+    <string name="account_terminated_service_provides_reason">Account terminated\n\n%1$s provides this reason: %2$s</string>
+    <string name="paid_content">This content is only available to users who have paid, so it cannot be streamed or downloaded by NewPipe.</string>
+    <string name="featured">Featured</string>
+    <string name="radio">Radio</string>
+    <string name="auto_device_theme_title">Automatic (device theme)</string>
+    <string name="night_theme_summary">Select your favorite night theme - %s</string>
+    <string name="select_night_theme_toast">You can select your favorite night theme below</string>
+    <string name="night_theme_available">This option is only available if %s is selected for Theme</string>
+    <string name="download_has_started">Download has started</string>
+    <string name="description_select_note">You can now select text inside the description. Note that the page may flicker and links may not be clickable while in selection mode.</string>
+    <string name="description_select_enable">Enable selecting text in the description</string>
+    <string name="description_select_disable">Disable selecting text in the description</string>
+    <string name="metadata_category">Category</string>
+    <string name="metadata_tags">Tags</string>
+    <string name="metadata_licence">Licence</string>
+    <string name="metadata_privacy">Privacy</string>
+    <string name="metadata_age_limit">Age limit</string>
+    <string name="metadata_language">Language</string>
+    <string name="metadata_support">Support</string>
+    <string name="metadata_host">Host</string>
+    <string name="metadata_thumbnails">Thumbnails</string>
+    <string name="metadata_uploader_avatars">Uploader avatars</string>
+    <string name="metadata_subchannel_avatars">Sub-channel avatars</string>
+    <string name="metadata_avatars">Avatars</string>
+    <string name="metadata_banners">Banners</string>
+    <string name="metadata_privacy_public">Public</string>
+    <string name="metadata_privacy_unlisted">Unlisted</string>
+    <string name="metadata_privacy_private">Private</string>
+    <string name="metadata_privacy_internal">Internal</string>
+    <string name="metadata_subscribers">Subscribers</string>
+    <string name="detail_pinned_comment_view_description">Pinned comment</string>
+    <string name="detail_heart_img_view_description">Hearted by creator</string>
+    <string name="open_website_license">Open website</string>
+    <string name="tablet_mode_title">Tablet mode</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="progressive_load_interval_exoplayer_default">ExoPlayer default</string>
+    <string name="notifications_disabled">Notifications are disabled</string>
+    <string name="get_notified">Get notified</string>
+    <string name="you_successfully_subscribed">You now subscribed to this channel</string>
+    <string name="enumeration_comma">,</string>
+    <string name="toggle_all">Toggle all</string>
+    <string name="streams_not_yet_supported_removed">Streams which are not yet supported by the downloader are not shown</string>
+    <string name="audio_track_present_in_video">An audio track should be already present in this stream</string>
+    <string name="selected_stream_external_player_not_supported">The selected stream is not supported by external players</string>
+    <string name="no_audio_streams_available_for_external_players">No audio streams are available for external players</string>
+    <string name="no_video_streams_available_for_external_players">No video streams are available for external players</string>
+    <string name="select_quality_external_players">Select quality for external players</string>
+    <string name="select_audio_track_external_players">Select audio track for external players</string>
+    <string name="unknown_format">Unknown format</string>
+    <string name="unknown_quality">Unknown quality</string>
+    <string name="unknown_audio_track">Unknown</string>
+    <string name="feed_show_watched">Fully watched</string>
+    <string name="feed_show_partially_watched">Partially watched</string>
+    <string name="feed_show_upcoming">Upcoming</string>
+    <string name="sort">Sort</string>
+    <string name="settings_category_exoplayer_title">ExoPlayer settings</string>
+    <string name="settings_category_exoplayer_summary">Manage some ExoPlayer settings. These changes require a player restart to take effect</string>
+    <string name="use_exoplayer_decoder_fallback_title">Use ExoPlayer\'s decoder fallback feature</string>
+    <string name="use_exoplayer_decoder_fallback_summary">Enable this option if you have decoder initialization issues, which falls back to lower-priority decoders if primary decoders initialization fail. This may result in poor playback performance than when using primary decoders</string>
+    <string name="always_use_exoplayer_set_output_surface_workaround_title">Always use ExoPlayer\'s video output surface setting workaround</string>
+    <string name="always_use_exoplayer_set_output_surface_workaround_summary">This workaround releases and re-instantiates video codecs when a surface change occurs, instead of setting the surface to the codec directly. Already used by ExoPlayer on some devices with this issue, this setting has only an effect on Android 6 and higher\n\nEnabling this option may prevent playback errors when switching the current video player or switching to fullscreen</string>
+    <string name="audio_track_name">%1$s %2$s</string>
+    <string name="audio_track_type_original">original</string>
+    <string name="audio_track_type_dubbed">dubbed</string>
+    <string name="audio_track_type_descriptive">descriptive</string>
+    <string name="audio_track_type_secondary">secondary</string>
+    <string name="channel_tab_videos">Videos</string>
+    <string name="channel_tab_tracks">Tracks</string>
+    <string name="channel_tab_shorts">Shorts</string>
+    <string name="channel_tab_livestreams">Live</string>
+    <string name="channel_tab_channels">Channels</string>
+    <string name="channel_tab_playlists">Playlists</string>
+    <string name="channel_tab_albums">Albums</string>
+    <string name="channel_tab_likes">Likes</string>
+    <string name="show_channel_tabs">Channel tabs</string>
+    <string name="show_channel_tabs_summary">What tabs are shown on the channel pages</string>
+    <string name="open_play_queue">Open play queue</string>
+    <string name="toggle_fullscreen">Toggle fullscreen</string>
+    <string name="toggle_screen_orientation">Toggle screen orientation</string>
+    <string name="previous_stream">Previous stream</string>
+    <string name="next_stream">Next stream</string>
+    <string name="play">Play</string>
+    <string name="replay">Replay</string>
+    <string name="more_options">More options</string>
+    <string name="duration">Duration</string>
+    <string name="rewind">Rewind</string>
+    <string name="forward">Forward</string>
+    <string name="image_quality_title">Image quality</string>
+    <string name="image_quality_summary">Choose the quality of images and whether to load images at all, to reduce data and memory usage. Changes clear both in-memory and on-disk image cache - %s</string>
+    <string name="image_quality_none">Do not load images</string>
+    <string name="image_quality_low">Low quality</string>
+    <string name="image_quality_medium">Medium quality</string>
+    <string name="image_quality_high">High quality</string>
+    <string name="question_mark">\?</string>
+    <string name="share_playlist">Share Playlist</string>
+    <string name="share_playlist_with_titles">Share with Titles</string>
+    <string name="share_playlist_with_list">Share URL list</string>
+    <string name="share_playlist_as_youtube_temporary_playlist">Share as YouTube temporary playlist</string>
+    <string name="video_details_list_item">- %1$s: %2$s</string>
+    <string name="share_playlist_content_details">%1$s\n%2$s</string>
+    <string name="show_more">Show more</string>
+    <string name="show_less">Show less</string>
+    <string name="import_settings_vulnerable_format">The settings in the export being imported use a vulnerable format that was deprecated since NewPipe 0.27.0. Make sure the export being imported is from a trusted source, and prefer using only exports obtained from NewPipe 0.27.0 or newer in the future. Support for importing settings in this vulnerable format will soon be removed completely, and then old versions of NewPipe will not be able to import settings of exports from new versions anymore.</string>
+    <string name="migration_info_7_8_title">YouTube combined trending removed</string>
+    <string name="migration_info_7_8_message">YouTube has discontinued the combined trending page as of 21st July 2025. NewPipe replaced the default trending page with the trending livestreams.\n\nYou can also select different trending pages in \"Settings &gt; Content &gt; Content of main page\".</string>
+    <string name="trending_gaming">Gaming trends</string>
+    <string name="trending_podcasts">Trending podcasts</string>
+    <string name="trending_movies">Trending movies and shows</string>
+    <string name="trending_music">Trending music</string>
+    <string name="entry_deleted">Entry deleted</string>
+    <string name="player_http_403">HTTP error 403 received from server while playing, likely caused by streaming URL expiration or an IP ban</string>
+    <string name="player_http_invalid_status">HTTP error %1$s received from server while playing</string>
+    <string name="youtube_player_http_403">HTTP error 403 received from server while playing, likely caused by an IP ban or streaming URL deobfuscation issues</string>
+    <string name="sign_in_confirm_not_bot_error">%1$s refused to provide data, asking for a login to confirm the requester is not a bot.\n\nYour IP might have been temporarily banned by %1$s, you can wait some time or switch to a different IP (for example by turning on/off a VPN, or by switching from WiFi to mobile data).\n\nPlease see <a href="%2$s">this help entry</a> for more information.</string>
+    <string name="unsupported_content_in_country">This content is not available for the currently selected content country.\n\nChange your selection from \"Settings &gt; Content &gt; Default content country\".</string>
 </resources>
+
+

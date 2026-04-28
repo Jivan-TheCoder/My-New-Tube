@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="use_inexact_seek_title">Isticmaal Dhaafinta dagdaga ah</string>
     <string name="popup_remember_size_pos_summary">Xusuusnow meeshii iyo cabirkii udambeeyay ee daaqada</string>
@@ -89,8 +89,8 @@
     <string name="subscriptions_import_unsuccessful">Lama soo galin karo rukunka</string>
     <string name="previous_export">Gudbin hore</string>
     <string name="import_file_title">Soo gali fayl</string>
-    <string name="export_ongoing">Gudbinaya…</string>
-    <string name="import_ongoing">Soo galinaya…</string>
+    <string name="export_ongoing">Gudbinayaâ€¦</string>
+    <string name="import_ongoing">Soo galinayaâ€¦</string>
     <string name="export_to">U gudbi</string>
     <string name="import_from">Kasoo gali</string>
     <string name="import_title">Soo gali</string>
@@ -117,11 +117,11 @@
     <string name="rename_playlist">Magaca ka baddal</string>
     <string name="create_playlist">Xul Cusub</string>
     <string name="preferred_player_fetcher_notification_message">Soo kicinaya shayga la codsaday</string>
-    <string name="preferred_player_fetcher_notification_title">Helaya xogta…</string>
+    <string name="preferred_player_fetcher_notification_title">Helaya xogtaâ€¦</string>
     <string name="always_ask_open_action">Waydii marwalba</string>
     <string name="background_player">Gadaal ku daare</string>
     <string name="video_player">Muuqaal daareha</string>
-    <string name="preferred_open_action_settings_summary">Hawsha la doorbiday marka shay la furayo — %s</string>
+    <string name="preferred_open_action_settings_summary">Hawsha la doorbiday marka shay la furayo â€” %s</string>
     <string name="preferred_open_action_settings_title">Hawsha \'fur\' loo doorbiday</string>
     <string name="drawer_close">Xidh Khaanada</string>
     <string name="drawer_open">Fur Khaanada</string>
@@ -173,14 +173,14 @@
     <string name="settings_category_downloads_title">Dajinta</string>
     <string name="done">Dhameeyay</string>
     <string name="recaptcha_request_toast">Tijaabada reCAPTCHA ayaa la codsaday</string>
-    <string name="subtitle_activity_recaptcha">Taabo \"Dhameeyay\" ✅ markaad xaliso</string>
+    <string name="subtitle_activity_recaptcha">Taabo \"Dhameeyay\" âœ… markaad xaliso</string>
     <string name="title_activity_recaptcha">Tijaabada reCAPTCHA</string>
     <string name="one_item_deleted">1 shay ayaa la saaray.</string>
     <string name="msg_popup_permission">Ogolaanshahan ayaa loo baahan yahay si
 \nloogu furo qaabka daaqada</string>
     <string name="no_available_dir">Fadlan khaanada wax lagu dajin doono hadhawto xaga fadhiga kasoo dooro</string>
     <string name="msg_copied">Dhakada ayaa lagu qabtay</string>
-    <string name="msg_wait">Fadlan sug…</string>
+    <string name="msg_wait">Fadlan sugâ€¦</string>
     <string name="msg_calculating_hash">Xisaabinaya baddalka</string>
     <string name="msg_running_detail">Faahfaahinta kusii dhufo</string>
     <string name="msg_running">NewPipe wuu dajinayaa</string>
@@ -200,7 +200,7 @@
         <item quantity="one">%s muuqaal</item>
         <item quantity="other">%s muuqaal</item>
     </plurals>
-    <string name="infinite_videos">muuqaalo ∞</string>
+    <string name="infinite_videos">muuqaalo âˆž</string>
     <string name="more_than_100_videos">100+ muuqaal</string>
     <string name="no_videos">muuqaalo ma jiraan</string>
     <plurals name="listening">
@@ -250,7 +250,7 @@
     <string name="permission_display_over_apps">U ogolow appka inuu dul fuulo applicationada kale</string>
     <string name="restore_defaults_confirmation">Ma rabtaa inaad sidii hore kuceliso\?</string>
     <string name="restore_defaults">Dib ugu celi sidii hore</string>
-    <string name="saved_tabs_invalid_json">Lama akhrin karo daaqadihii la kaydiyay, …isticmaalaya kuwii app-ku kusoo baxay</string>
+    <string name="saved_tabs_invalid_json">Lama akhrin karo daaqadihii la kaydiyay, â€¦isticmaalaya kuwii app-ku kusoo baxay</string>
     <string name="no_streams_available_download">Wax la dajiyo lama heli karo</string>
     <string name="error_occurred_detail">Khalad ayaa ka dhacay: %1$s</string>
     <string name="file_name_empty_error">Magaca shayga ma madhnaan karo</string>
@@ -403,7 +403,7 @@
     <string name="auto">ismaamulaya</string>
     <string name="playback_step">Talaabo</string>
     <string name="mute">Aamusii</string>
-    <string name="autoplay_summary">Daaridda si iskeed ah u bilow — %s</string>
+    <string name="autoplay_summary">Daaridda si iskeed ah u bilow â€” %s</string>
     <string name="feed_subscription_not_loaded_count">Lama soo kicinin: %d</string>
     <string name="download_already_pending">Waxaa jirta dajin hormada ku jirta oo magacan leh</string>
     <string name="max_retry_desc">Tirada dib iskugu dayida sixida dajinta intaan la iska daynin</string>
@@ -432,8 +432,8 @@
     <string name="feed_use_dedicated_fetch_method_help_text">Soo kicinta bandhiggu aad miyuu u daahayaa\? Haday saas tahay, iskuday furashada qaabka dagdaga ah (waxaad ka baddali kartaa xaga fadhiga ama adoo riixaya batoonka hoose).
 \n
 \nNewPipe wuxuu leeyahay laba qaab oo uu bandhiga usoo furo:
-\n• Soo kicinta dhamaan rukunka kanaalka, taasoo ah mid culus laakiin dhamaystiran.
-\n• Inuu isticmaalo adeeg hawshan loogu talagalay, taasoo ah mid dagdaga ah laakiin badanaa aan dhamaystirnayn.
+\nâ€¢ Soo kicinta dhamaan rukunka kanaalka, taasoo ah mid culus laakiin dhamaystiran.
+\nâ€¢ Inuu isticmaalo adeeg hawshan loogu talagalay, taasoo ah mid dagdaga ah laakiin badanaa aan dhamaystirnayn.
 \n
 \nFarqiga labadan u dhexeeya ayaa ah in midka dagdaga ah uu la\'yahay xogta shayga qaar, sida intuu shaygu socdo ama nooca (mana kala garan karo muuqaalada tooska ah iyo kuwa caadiga ah) wuxuuna sidoo kale soodhigi karaa waxyaabo yar.
 \n
@@ -445,15 +445,15 @@
     <string name="feed_use_dedicated_fetch_method_summary">Laga heli karo adeegyada qaar, inta badana wuu ka dagdag badanyahay laakiin wuu ka natiijooyin yar yahay inta badana xogtu ma dhamaystirna (tusaale intuu shaygu soconayo ma tusayo, nooca shayga sidoo kale, mana sheegayo inuu muuqaalku toos yahay)</string>
     <string name="feed_use_dedicated_fetch_method_title">Qaabka dagdaga ah</string>
     <string name="feed_update_threshold_option_always_update">Marwalba cusboonaysii</string>
-    <string name="feed_update_threshold_summary">Wakhtiga cusboonaysiinta udambaysa ee bandhigga, ka hor intaan rukunka laga sooqaadin mid duug ah — %s</string>
+    <string name="feed_update_threshold_summary">Wakhtiga cusboonaysiinta udambaysa ee bandhigga, ka hor intaan rukunka laga sooqaadin mid duug ah â€” %s</string>
     <string name="feed_update_threshold_title">Xadka cusboonaysiinta</string>
     <string name="feed_group_show_only_ungrouped_subscriptions">Rukummada aan kooxaysnayn kaliya</string>
     <string name="feed_group_dialog_delete_message">Ma rabtaa inaad kooxdan saarto\?</string>
     <string name="feed_group_dialog_empty_name">Magac kooxeed madhan</string>
     <string name="feed_group_dialog_empty_selection">Wax rukun ah lama dooran</string>
     <string name="feed_group_dialog_select_subscriptions">Dooro rukummada</string>
-    <string name="feed_processing_message">Habaynaya bandhigga…</string>
-    <string name="feed_notification_loading">Soo kicinaya bandhigga…</string>
+    <string name="feed_processing_message">Habaynaya bandhiggaâ€¦</string>
+    <string name="feed_notification_loading">Soo kicinaya bandhiggaâ€¦</string>
     <string name="feed_oldest_subscription_update">La cusboonaysiiyay: %s</string>
     <string name="feed_groups_header_title">Kooxaha kanaalka</string>
     <plurals name="days">
@@ -514,7 +514,7 @@
     <string name="overwrite_finished_warning">Shay horay loo soo dajiyay oo magacan leh ayaa jira</string>
     <string name="minimize_on_exit_popup_description">U gudbi xaga daaqada</string>
     <string name="minimize_on_exit_background_description">U gudbi xaga dambe</string>
-    <string name="minimize_on_exit_summary">Waxa la samayn doono marka app kale loo gudbayo ayadoo muuqaal caadi u daaran yahay — %s</string>
+    <string name="minimize_on_exit_summary">Waxa la samayn doono marka app kale loo gudbayo ayadoo muuqaal caadi u daaran yahay â€” %s</string>
 <string name="limit_mobile_data_usage_title">Xadid tayada (khadka SIM-ka)</string>
     <string name="accept">Aqbal</string>
     <string name="start_accept_privacy_policy">Si loogu hogaansamo Maaraynta Xog Dhawrka Guud ee heer Yurub (GDPR), waxaan halkan kugu xusuusinaynaa siyaasada sirdhawrka NewPipe. Fadlan si taxadar leh u akhriso.
@@ -566,7 +566,7 @@
 \nAyadooy ugu wacantahay talaabooyin cusub oo YouTube uu ku qaaday muuqaalada da\'da ku xidhan, NewPipe ma furi karo muuqaalkan.</string>
     <string name="download_has_started">Dajintii way bilaabatay</string>
     <string name="select_night_theme_toast">Hoos ayaad ka dooran kartaa nashqada habaynkii ee aad door-biday</string>
-    <string name="night_theme_summary">Dooro nashqada habaynkii ee aad doorbiday — %s</string>
+    <string name="night_theme_summary">Dooro nashqada habaynkii ee aad doorbiday â€” %s</string>
     <string name="auto_device_theme_title">ismaamulaya (raacaya aallada)</string>
     <string name="night_theme_title">Nashqada Habaynka</string>
     <string name="show_channel_details">Faahfaahinta kanaalka</string>
@@ -617,4 +617,197 @@
     <string name="no">Maya</string>
     <string name="search_with_service_name">Raadi %1$s</string>
     <string name="search_with_service_name_and_filter">Raadi %1$s (%2$s)</string>
+
+
+    <string name="rate_app">Qiimee abka</string>
+    <string name="share_app">La wadaag abka</string>
+    <string name="tab_bookmarks_short">Playlists</string>
+    <string name="notification_actions_summary_android13">Edit each notification action below by tapping on it. The first three actions (play/pause, previous and next) are set by the system and cannot be customized.</string>
+    <string name="progressive_load_interval_summary">Change the load interval size on progressive contents (currently %s). A lower value may speed up their initial loading</string>
+    <string name="ignore_hardware_media_buttons_title">Ignore hardware media button events</string>
+    <string name="ignore_hardware_media_buttons_summary">Useful, for instance, if you are using a headset with broken physical buttons</string>
+    <string name="prefer_original_audio_title">Prefer original audio</string>
+    <string name="prefer_original_audio_summary">Select the original audio track regardless of the language</string>
+    <string name="prefer_descriptive_audio_title">Prefer descriptive audio</string>
+    <string name="prefer_descriptive_audio_summary">Select an audio track with descriptions for visually impaired people if available</string>
+    <string name="left_gesture_control_summary">Choose gesture for left half of player screen</string>
+    <string name="left_gesture_control_title">Left gesture action</string>
+    <string name="right_gesture_control_summary">Choose gesture for right half of player screen</string>
+    <string name="right_gesture_control_title">Right gesture action</string>
+    <string name="brightness">Brightness</string>
+    <string name="volume">Volume</string>
+    <string name="none">None</string>
+    <string name="start_main_player_fullscreen_title">Start main player in fullscreen</string>
+    <string name="start_main_player_fullscreen_summary">Do not start videos in the mini player, but turn to fullscreen mode directly, if auto rotation is locked. You can still access the mini player by exiting fullscreen</string>
+    <string name="settings_category_player_notification_title">Player notification</string>
+    <string name="settings_category_player_notification_summary">Configure current playing stream notification</string>
+    <string name="settings_category_backup_restore_title">Backup and restore</string>
+    <string name="loading_metadata_title">Loading Metadata...</string>
+    <string name="friendly_parsing_title">We are improving support for this page.</string>
+    <string name="friendly_parsing_message">Please try this video again after some time. Your app is safe to keep using, and we are continuing to improve compatibility so more videos work smoothly every day. Thank you for staying with us.</string>
+    <string name="notifications">Notifications</string>
+    <string name="streams_notification_channel_name">New streams</string>
+    <string name="streams_notification_channel_description">Notifications about new streams for subscriptions</string>
+    <string name="error_report_channel_name">Error report notification</string>
+    <string name="error_report_channel_description">Notifications to report errors</string>
+    <string name="fast_mode">Fast mode</string>
+    <string name="main_tabs_position_summary">Move main tab selector to the bottom</string>
+    <string name="main_tabs_position_title">Main tabs position</string>
+    <string name="permission_display_over_apps_message">In order to use the Popup Player, please select %1$s in the following Android settings menu and enable %2$s.</string>
+    <string name="permission_display_over_apps_permission_name">"Allow display over other apps"</string>
+    <string name="error_report_notification_title">NewPipe encountered an error, tap to report</string>
+    <string name="error_report_notification_toast">An error occurred, see the notification</string>
+    <string name="import_subscriptions_hint">Import or export subscriptions from the 3-dot menu</string>
+    <string name="short_thousand">%sK</string>
+    <string name="short_million">%sM</string>
+    <string name="short_billion">%sB</string>
+    <string name="no_streams">No streams</string>
+    <string name="no_live_streams">No live streams</string>
+    <string name="delete_file">Delete file</string>
+    <string name="delete_entry">Delete entry</string>
+    <string name="msg_failed_to_copy">Failed to copy to clipboard</string>
+    <string name="main_page_content_swipe_remove">Swipe items to remove them</string>
+    <string name="select_a_feed_group">Select a feed group</string>
+    <string name="no_feed_group_created_yet">No feed group created yet</string>
+    <string name="play_queue_audio_track">Audio: %s</string>
+    <string name="audio_track">Audio track</string>
+    <string name="enqueue_next_stream">Enqueue next</string>
+    <string name="enqueued_next">Enqueued next</string>
+    <string name="loading_stream_details">Loading stream details...</string>
+    <string name="duplicate_in_playlist">The playlists that are grayed out already contain this item.</string>
+    <string name="processing_may_take_a_moment">Processing... May take a moment</string>
+    <string name="unset_playlist_thumbnail">Unset permanent thumbnail</string>
+    <string name="playlist_add_stream_success_duplicate">Duplicate added %d time(s)</string>
+    <string name="leak_canary_not_available">LeakCanary is not available</string>
+    <string name="disable_media_tunneling_automatic_info">Media tunneling was disabled by default on your device because your device model is known to not support it.</string>
+    <string name="show_crash_the_player_title">Show \"Crash the player\"</string>
+    <string name="show_crash_the_player_summary">Shows a crash option when using the player</string>
+    <string name="check_new_streams">Run check for new streams</string>
+    <string name="show_error_snackbar">Show an error snackbar</string>
+    <string name="create_error_notification">Create an error notification</string>
+    <string name="import_subscriptions_title">Import subscriptions"</string>
+    <string name="export_subscriptions_title">Export subscriptions</string>
+    <string name="import_subscriptions_summary">Import subscriptions from a previous .json export"</string>
+    <string name="export_subscriptions_summary">Export your subscriptions to a .json file</string>
+    <string name="import_from_previous_export">Import from previous export</string>
+    <string name="percent">Percent</string>
+    <string name="semitone">Semitone</string>
+    <string name="enable_streams_notifications_title">New streams notifications</string>
+    <string name="enable_streams_notifications_summary">Notify about new streams from subscriptions</string>
+    <string name="streams_notifications_interval_title">Checking frequency</string>
+    <string name="streams_notifications_network_title">Required network connection</string>
+    <string name="any_network">Any network</string>
+    <string name="card">Card</string>
+    <string name="app_update_unavailable_toast">You are running the latest version of NewPipe</string>
+    <string name="app_update_available_notification_text">Tap to download %s</string>
+    <string name="checking_updates_toast">Checking for updates...</string>
+    <string name="reset_settings_title">Reset settings</string>
+    <string name="reset_settings_summary">Reset all settings to their default values</string>
+    <string name="reset_all_settings">Resetting all settings will discard all of your preferred settings and restarts the app.\n\nAre you sure you want to proceed?</string>
+    <string name="error_insufficient_storage">Not enough free space on device</string>
+    <string name="delete_downloaded_files_confirm">Erase all downloaded files from disk?</string>
+    <string name="remove_duplicates">Remove duplicates</string>
+    <string name="remove_duplicates_title">Remove duplicates?</string>
+    <string name="remove_duplicates_message">Do you want to remove all duplicate streams in this playlist?</string>
+    <string name="feed_group_page_summary">Channel group page</string>
+    <string name="feed_new_items">New feed items</string>
+    <string name="feed_hide_streams_title">Show the following streams</string>
+    <string name="feed_show_hide_streams">Show/Hide streams</string>
+    <string name="feed_fetch_channel_tabs">Fetch channel tabs</string>
+    <string name="feed_fetch_channel_tabs_summary">Tabs to fetch when updating the feed. This option has no effect if a channel is updated using fast mode.</string>
+    <string name="no_appropriate_file_manager_message">No appropriate file manager was found for this action.
+\nPlease install a file manager or try to disable \'%s\' in the download settings</string>
+    <string name="no_appropriate_file_manager_message_android_10">No appropriate file manager was found for this action.
+\nPlease install a Storage Access Framework compatible file manager</string>
+    <string name="account_terminated_service_provides_reason">Account terminated\n\n%1$s provides this reason: %2$s</string>
+    <string name="night_theme_available">This option is only available if %s is selected for Theme</string>
+    <string name="metadata_thumbnails">Thumbnails</string>
+    <string name="metadata_uploader_avatars">Uploader avatars</string>
+    <string name="metadata_subchannel_avatars">Sub-channel avatars</string>
+    <string name="metadata_avatars">Avatars</string>
+    <string name="metadata_banners">Banners</string>
+    <string name="metadata_subscribers">Subscribers</string>
+    <string name="detail_pinned_comment_view_description">Pinned comment</string>
+    <string name="progressive_load_interval_exoplayer_default">ExoPlayer default</string>
+    <string name="notifications_disabled">Notifications are disabled</string>
+    <string name="get_notified">Get notified</string>
+    <string name="you_successfully_subscribed">You now subscribed to this channel</string>
+    <string name="enumeration_comma">,</string>
+    <string name="toggle_all">Toggle all</string>
+    <string name="streams_not_yet_supported_removed">Streams which are not yet supported by the downloader are not shown</string>
+    <string name="audio_track_present_in_video">An audio track should be already present in this stream</string>
+    <string name="selected_stream_external_player_not_supported">The selected stream is not supported by external players</string>
+    <string name="no_audio_streams_available_for_external_players">No audio streams are available for external players</string>
+    <string name="no_video_streams_available_for_external_players">No video streams are available for external players</string>
+    <string name="select_quality_external_players">Select quality for external players</string>
+    <string name="select_audio_track_external_players">Select audio track for external players</string>
+    <string name="unknown_format">Unknown format</string>
+    <string name="unknown_quality">Unknown quality</string>
+    <string name="unknown_audio_track">Unknown</string>
+    <string name="feed_show_watched">Fully watched</string>
+    <string name="feed_show_partially_watched">Partially watched</string>
+    <string name="feed_show_upcoming">Upcoming</string>
+    <string name="sort">Sort</string>
+    <string name="settings_category_exoplayer_title">ExoPlayer settings</string>
+    <string name="settings_category_exoplayer_summary">Manage some ExoPlayer settings. These changes require a player restart to take effect</string>
+    <string name="use_exoplayer_decoder_fallback_title">Use ExoPlayer\'s decoder fallback feature</string>
+    <string name="use_exoplayer_decoder_fallback_summary">Enable this option if you have decoder initialization issues, which falls back to lower-priority decoders if primary decoders initialization fail. This may result in poor playback performance than when using primary decoders</string>
+    <string name="always_use_exoplayer_set_output_surface_workaround_title">Always use ExoPlayer\'s video output surface setting workaround</string>
+    <string name="always_use_exoplayer_set_output_surface_workaround_summary">This workaround releases and re-instantiates video codecs when a surface change occurs, instead of setting the surface to the codec directly. Already used by ExoPlayer on some devices with this issue, this setting has only an effect on Android 6 and higher\n\nEnabling this option may prevent playback errors when switching the current video player or switching to fullscreen</string>
+    <string name="audio_track_name">%1$s %2$s</string>
+    <string name="audio_track_type_original">original</string>
+    <string name="audio_track_type_dubbed">dubbed</string>
+    <string name="audio_track_type_descriptive">descriptive</string>
+    <string name="audio_track_type_secondary">secondary</string>
+    <string name="channel_tab_videos">Videos</string>
+    <string name="channel_tab_tracks">Tracks</string>
+    <string name="channel_tab_shorts">Shorts</string>
+    <string name="channel_tab_livestreams">Live</string>
+    <string name="channel_tab_channels">Channels</string>
+    <string name="channel_tab_playlists">Playlists</string>
+    <string name="channel_tab_albums">Albums</string>
+    <string name="channel_tab_likes">Likes</string>
+    <string name="show_channel_tabs">Channel tabs</string>
+    <string name="show_channel_tabs_summary">What tabs are shown on the channel pages</string>
+    <string name="open_play_queue">Open play queue</string>
+    <string name="toggle_fullscreen">Toggle fullscreen</string>
+    <string name="toggle_screen_orientation">Toggle screen orientation</string>
+    <string name="previous_stream">Previous stream</string>
+    <string name="next_stream">Next stream</string>
+    <string name="play">Play</string>
+    <string name="replay">Replay</string>
+    <string name="more_options">More options</string>
+    <string name="duration">Duration</string>
+    <string name="rewind">Rewind</string>
+    <string name="forward">Forward</string>
+    <string name="image_quality_title">Image quality</string>
+    <string name="image_quality_summary">Choose the quality of images and whether to load images at all, to reduce data and memory usage. Changes clear both in-memory and on-disk image cache - %s</string>
+    <string name="image_quality_none">Do not load images</string>
+    <string name="image_quality_low">Low quality</string>
+    <string name="image_quality_medium">Medium quality</string>
+    <string name="image_quality_high">High quality</string>
+    <string name="question_mark">\?</string>
+    <string name="share_playlist">Share Playlist</string>
+    <string name="share_playlist_with_titles">Share with Titles</string>
+    <string name="share_playlist_with_list">Share URL list</string>
+    <string name="share_playlist_as_youtube_temporary_playlist">Share as YouTube temporary playlist</string>
+    <string name="video_details_list_item">- %1$s: %2$s</string>
+    <string name="share_playlist_content_details">%1$s\n%2$s</string>
+    <string name="show_more">Show more</string>
+    <string name="show_less">Show less</string>
+    <string name="import_settings_vulnerable_format">The settings in the export being imported use a vulnerable format that was deprecated since NewPipe 0.27.0. Make sure the export being imported is from a trusted source, and prefer using only exports obtained from NewPipe 0.27.0 or newer in the future. Support for importing settings in this vulnerable format will soon be removed completely, and then old versions of NewPipe will not be able to import settings of exports from new versions anymore.</string>
+    <string name="migration_info_7_8_title">YouTube combined trending removed</string>
+    <string name="migration_info_7_8_message">YouTube has discontinued the combined trending page as of 21st July 2025. NewPipe replaced the default trending page with the trending livestreams.\n\nYou can also select different trending pages in \"Settings &gt; Content &gt; Content of main page\".</string>
+    <string name="trending_gaming">Gaming trends</string>
+    <string name="trending_podcasts">Trending podcasts</string>
+    <string name="trending_movies">Trending movies and shows</string>
+    <string name="trending_music">Trending music</string>
+    <string name="entry_deleted">Entry deleted</string>
+    <string name="player_http_403">HTTP error 403 received from server while playing, likely caused by streaming URL expiration or an IP ban</string>
+    <string name="player_http_invalid_status">HTTP error %1$s received from server while playing</string>
+    <string name="youtube_player_http_403">HTTP error 403 received from server while playing, likely caused by an IP ban or streaming URL deobfuscation issues</string>
+    <string name="sign_in_confirm_not_bot_error">%1$s refused to provide data, asking for a login to confirm the requester is not a bot.\n\nYour IP might have been temporarily banned by %1$s, you can wait some time or switch to a different IP (for example by turning on/off a VPN, or by switching from WiFi to mobile data).\n\nPlease see <a href="%2$s">this help entry</a> for more information.</string>
+    <string name="unsupported_content_in_country">This content is not available for the currently selected content country.\n\nChange your selection from \"Settings &gt; Content &gt; Default content country\".</string>
 </resources>
+
+

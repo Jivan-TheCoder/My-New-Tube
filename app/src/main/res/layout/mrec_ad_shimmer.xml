@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:background="#F3F6FA"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="36dp"
+            android:layout_height="22dp"
+            android:background="#E1ECFF"
+            android:gravity="center"
+            android:text="Ad"
+            android:textColor="#102033"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <org.schabi.newpipe.ads.adapter_ads.ShimmerView
+            android:layout_width="match_parent"
+            android:layout_height="168dp"
+            android:layout_marginTop="10dp" />
+
+        <org.schabi.newpipe.ads.adapter_ads.ShimmerView
+            android:layout_width="210dp"
+            android:layout_height="14dp"
+            android:layout_marginTop="12dp" />
+
+        <org.schabi.newpipe.ads.adapter_ads.ShimmerView
+            android:layout_width="120dp"
+            android:layout_height="12dp"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+</FrameLayout>

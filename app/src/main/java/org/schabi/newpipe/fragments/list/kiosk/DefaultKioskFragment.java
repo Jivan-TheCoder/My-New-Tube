@@ -12,7 +12,6 @@ import org.schabi.newpipe.extractor.kiosk.KioskList;
 import org.schabi.newpipe.util.ServiceHelper;
 
 public class DefaultKioskFragment extends KioskFragment {
-
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

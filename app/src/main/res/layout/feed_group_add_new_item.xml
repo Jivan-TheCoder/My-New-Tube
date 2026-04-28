@@ -25,6 +25,7 @@
             android:padding="8dp"
             android:scaleType="centerInside"
             android:src="@drawable/ic_add"
+            android:tint="?android:attr/textColorPrimary"
             tools:ignore="ContentDescription" />
 
         <org.schabi.newpipe.views.NewPipeTextView

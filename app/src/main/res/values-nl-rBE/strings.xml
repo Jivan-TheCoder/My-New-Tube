@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="main_bg_subtitle">Tik op het loepje om te beginnen.</string>
     <string name="upload_date_text">Gepubliceerd op %1$s</string>
@@ -30,7 +30,7 @@
     <string name="controls_background_title">Achtergrond</string>
     <string name="controls_popup_title">Pop-up</string>
     <string name="controls_add_to_playlist_title">Toevoegen aan</string>
-    <string name="download_path_title">Download locatie voor video’s</string>
+    <string name="download_path_title">Download locatie voor videoâ€™s</string>
     <string name="download_path_summary">Gedownloade videobestanden worden hier opgeslagen</string>
     <string name="download_path_dialog_title">Kies de downloadlocatie voor videobestanden</string>
     <string name="download_path_audio_title">Audio download map</string>
@@ -42,7 +42,7 @@
     <string name="show_higher_resolutions_summary">Slechts enkele toestellen kunnen 2K- en 4K-video\'s afspelen</string>
     <string name="play_with_kodi_title">Afspelen met Kodi</string>
     <string name="kore_not_found">Wilt u de missende Kore-app installeren\?</string>
-    <string name="show_play_with_kodi_title">Toon “Afspelen met Kodi”-optie</string>
+    <string name="show_play_with_kodi_title">Toon â€œAfspelen met Kodiâ€-optie</string>
     <string name="show_play_with_kodi_summary">Toont een optie om video af te spelen op een Kodi media center</string>
     <string name="play_audio">Audio</string>
     <string name="default_audio_format_title">Standaard audio formaat</string>
@@ -70,8 +70,8 @@
     <string name="resume_on_audio_focus_gain_title">Hervat afspelen</string>
     <string name="resume_on_audio_focus_gain_summary">Ga verder met afspelen na onderbrekingen (b.v. telefoongesprekken)</string>
     <string name="download_dialog_title">Downloaden</string>
-    <string name="show_next_and_similar_title">Toont ‘Volgende’ en ‘Vergelijkbare’ video’s</string>
-    <string name="show_hold_to_append_title">Toon tip ‘Ingedrukt houden om toe te voegen’</string>
+    <string name="show_next_and_similar_title">Toont â€˜Volgendeâ€™ en â€˜Vergelijkbareâ€™ videoâ€™s</string>
+    <string name="show_hold_to_append_title">Toon tip â€˜Ingedrukt houden om toe te voegenâ€™</string>
     <string name="show_hold_to_append_summary">Toon tip als de achtergrond- of pop-up knop wordt ingedrukt in de video \"Details:\"</string>
     <string name="unsupported_url">URL wordt niet ondersteund</string>
     <string name="default_content_country_title">Standaard land</string>
@@ -157,10 +157,10 @@
         <item quantity="one">%s weergave</item>
         <item quantity="other">%s weergaven</item>
     </plurals>
-    <string name="no_videos">Geen video’s</string>
+    <string name="no_videos">Geen videoâ€™s</string>
     <plurals name="videos">
         <item quantity="one">%s video</item>
-        <item quantity="other">%s video’s</item>
+        <item quantity="other">%s videoâ€™s</item>
     </plurals>
     <string name="start">Begin</string>
     <string name="pause">Pauzeren</string>
@@ -169,13 +169,13 @@
     <string name="checksum">Controlesom</string>
     <string name="dismiss">Sluiten</string>
     <string name="rename">Hernoemen</string>
-    <string name="ok">Oké</string>
+    <string name="ok">OkÃ©</string>
     <string name="msg_name">Bestandsnaam</string>
     <string name="msg_threads">Threads</string>
     <string name="msg_error">Fout</string>
     <string name="msg_running">NewPipe is aan het downloaden</string>
     <string name="msg_running_detail">Tik voor meer informatie</string>
-    <string name="msg_wait">Even geduld…</string>
+    <string name="msg_wait">Even geduldâ€¦</string>
     <string name="msg_copied">Gekopieerd naar klembord</string>
     <string name="no_available_dir">Kies een beschikbare download map</string>
     <string name="msg_popup_permission">Deze toestemming is vereist om
@@ -188,9 +188,9 @@
     <string name="settings_file_replacement_character_title">Vervangend teken</string>
     <string name="charset_letters_and_digits">Letters en cijfers</string>
     <string name="charset_most_special_characters">Meeste speciale tekens</string>
-    <string name="copyright" formatted="true">© %1$s door %2$s, uitgebracht onder de %3$s</string>
+    <string name="copyright" formatted="true">Â© %1$s door %2$s, uitgebracht onder de %3$s</string>
     <string name="donation_title">Doneren</string>
-    <string name="donation_encouragement">NewPipe wordt door vrijwilligers in hun vrije tijd ontwikkeld om jou de beste ervaring te brengen. Geef wat terug zodat onze ontwikkelaars NewPipe nóg beter kunnen maken terwijl ze van hun kopje koffie genieten.</string>
+    <string name="donation_encouragement">NewPipe wordt door vrijwilligers in hun vrije tijd ontwikkeld om jou de beste ervaring te brengen. Geef wat terug zodat onze ontwikkelaars NewPipe nÃ³g beter kunnen maken terwijl ze van hun kopje koffie genieten.</string>
     <string name="give_back">Teruggeven</string>
     <string name="title_activity_history">Geschiedenis</string>
     <string name="action_history">Geschiedenis</string>
@@ -204,8 +204,8 @@
     <string name="select_a_channel">Selecteer een kanaal</string>
     <string name="no_channel_subscribed_yet">Nog niet geabonneerd op een kanaal</string>
     <string name="select_a_kiosk">Selecteer een kiosk</string>
-    <string name="export_complete_toast">Geëxporteerd</string>
-    <string name="import_complete_toast">Geïmporteerd</string>
+    <string name="export_complete_toast">GeÃ«xporteerd</string>
+    <string name="import_complete_toast">GeÃ¯mporteerd</string>
     <string name="no_valid_zip_file">Geen geldig ZIP-bestand</string>
     <string name="could_not_import_all_files">Opgelet: kon niet alle bestanden importeren.</string>
     <string name="override_current_data">Dit zal uw huidige configuratie overschrijven.</string>
@@ -221,12 +221,12 @@
     <string name="drawer_open">Menu openen</string>
     <string name="drawer_close">Menu sluiten</string>
     <string name="preferred_open_action_settings_title">Voorkeursactie voor openen</string>
-    <string name="preferred_open_action_settings_summary">Standaard actie bij openen van inhoud — %s</string>
+    <string name="preferred_open_action_settings_summary">Standaard actie bij openen van inhoud â€” %s</string>
     <string name="video_player">Videospeler</string>
     <string name="background_player">Achtergrondspeler</string>
     <string name="popup_player">Pop-upspeler</string>
     <string name="always_ask_open_action">Altijd vragen</string>
-    <string name="preferred_player_fetcher_notification_title">Info ophalen…</string>
+    <string name="preferred_player_fetcher_notification_title">Info ophalenâ€¦</string>
     <string name="preferred_player_fetcher_notification_message">Bezig met laden van gevraagde inhoud</string>
     <string name="create_playlist">Nieuwe afspeellijst</string>
     <string name="rename_playlist">Hernoemen</string>
@@ -252,8 +252,8 @@
     <string name="import_title">Importeren</string>
     <string name="import_from">Importeren uit</string>
     <string name="export_to">Exporteren naar</string>
-    <string name="import_ongoing">Bezig met importeren…</string>
-    <string name="export_ongoing">Bezig met exporteren…</string>
+    <string name="import_ongoing">Bezig met importerenâ€¦</string>
+    <string name="export_ongoing">Bezig met exporterenâ€¦</string>
     <string name="import_file_title">Bestand importeren</string>
     <string name="previous_export">Vorige exportering</string>
     <string name="subscriptions_import_unsuccessful">Kon abonnementen niet importeren</string>
@@ -274,7 +274,7 @@
 \n3. Log in op uw account
 \n4. Kopieer de koppeling van de pagina waar u op terechtkomt (dat is uw profiel-URL).</string>
     <string name="import_soundcloud_instructions_hint">uwID, soundbutt.com/uwid</string>
-    <string name="import_network_expensive_warning">Let op: deze actie kan veel MB’s van uw netwerk gebruiken.
+    <string name="import_network_expensive_warning">Let op: deze actie kan veel MBâ€™s van uw netwerk gebruiken.
 \n
 \nWilt u doorgaan\?</string>
     <string name="playback_speed_control">Afspeelsnelheidsbesturing</string>
@@ -300,7 +300,7 @@
     <string name="limit_data_usage_none_description">Onbeperkt</string>
     <string name="limit_mobile_data_usage_title">Resolutie beperken bij gebruik van mobiele gegevens</string>
     <string name="minimize_on_exit_title">Minimaliseren bij overschakelen naar andere app</string>
-    <string name="minimize_on_exit_summary">Actie bij overschakelen van videospeler naar andere app — %s</string>
+    <string name="minimize_on_exit_summary">Actie bij overschakelen van videospeler naar andere app â€” %s</string>
     <string name="minimize_on_exit_none_description">Geen</string>
     <string name="minimize_on_exit_background_description">Afspelen in achtergrond</string>
     <string name="minimize_on_exit_popup_description">Afspelen in pop-up</string>
@@ -375,9 +375,9 @@
 \nHopelijk zal dit bij een toekomstige versie ondersteund worden.</string>
     <string name="feed_use_dedicated_fetch_method_help_text">Denk je dat het laden van de feed te sloom is\? Zo ja, probeer snel laden in te schakelen (in de instellingen of door op onderstaande knop te drukken).
 \n
-\nNewPipe biedt twee strategieën aan voor het laden van de feed:
-\n• Het hele abonnementskanaal ophalen, wat sloom maar compleet is.
-\n• Een speciale feed ophalen, wat snel maar meestal incompleet is.
+\nNewPipe biedt twee strategieÃ«n aan voor het laden van de feed:
+\nâ€¢ Het hele abonnementskanaal ophalen, wat sloom maar compleet is.
+\nâ€¢ Een speciale feed ophalen, wat snel maar meestal incompleet is.
 \n
 \nHet verschil tussen de twee is dat de snelle meestal wat informatie mist, zoals de duur of type (live of een normale video) van het item en dat er mogelijk minder items zijn.
 \n
@@ -389,7 +389,7 @@
     <string name="feed_use_dedicated_fetch_method_summary">Beschikbaar in sommige services, het is meestal veel sneller, maar kan een beperkte hoeveelheid items en vaak onvolledige informatie (bijv. geen duur, item type, of live status) bevatten.</string>
     <string name="feed_use_dedicated_fetch_method_title">Uit speciale feed ophalen indien beschikbaar</string>
     <string name="feed_update_threshold_option_always_update">Altijd updaten</string>
-    <string name="feed_update_threshold_summary">Tijd na de laatste update voordat een abonnement als verouderd wordt beschouwd — %s</string>
+    <string name="feed_update_threshold_summary">Tijd na de laatste update voordat een abonnement als verouderd wordt beschouwd â€” %s</string>
     <string name="feed_update_threshold_title">Drempel voor feed update</string>
     <string name="settings_category_feed_title">Feed</string>
     <string name="feed_group_show_only_ungrouped_subscriptions">Toon enkel niet gegroepeerde abonnementen</string>
@@ -402,10 +402,10 @@
     </plurals>
     <string name="feed_group_dialog_empty_selection">Geen abonnement geselecteerd</string>
     <string name="feed_group_dialog_select_subscriptions">Selecteer abonnementen</string>
-    <string name="feed_processing_message">Feed aan het verwerken…</string>
-    <string name="feed_notification_loading">Feed aan het laden…</string>
+    <string name="feed_processing_message">Feed aan het verwerkenâ€¦</string>
+    <string name="feed_notification_loading">Feed aan het ladenâ€¦</string>
     <string name="feed_subscription_not_loaded_count">Niet geladen: %d</string>
-    <string name="feed_oldest_subscription_update">Laatste update nieuws­feed: %s</string>
+    <string name="feed_oldest_subscription_update">Laatste update nieuwsÂ­feed: %s</string>
     <string name="feed_groups_header_title">Kanaalgroepen</string>
     <plurals name="days">
         <item quantity="one">%d dag</item>
@@ -454,7 +454,7 @@
     <string name="missions_header_pending">In afwachting</string>
     <string name="never">Nooit</string>
     <string name="wifi_only">Enkel via Wi-Fi</string>
-    <string name="autoplay_summary">Automatisch afspelen — %s</string>
+    <string name="autoplay_summary">Automatisch afspelen â€” %s</string>
     <string name="show_original_time_ago_summary">Originele teksten van services zijn zichtbaar in stream items</string>
     <string name="show_memory_leaks">Toon memory leaks</string>
     <string name="playlist_no_uploader">Automatisch gegenereerd (geen uploader gevonden)</string>
@@ -470,8 +470,8 @@
     <string name="select_a_playlist">Selecteer een afspeellijst</string>
     <string name="default_kiosk_page_summary">Standaard kiosk</string>
     <string name="done">Klaar</string>
-    <string name="subtitle_activity_recaptcha">Tik op ‘Klaar’ zodra opgelost</string>
-    <string name="infinite_videos">∞ video\'s</string>
+    <string name="subtitle_activity_recaptcha">Tik op â€˜Klaarâ€™ zodra opgelost</string>
+    <string name="infinite_videos">âˆž video\'s</string>
     <string name="more_than_100_videos">100+ video\'s</string>
     <plurals name="listening">
         <item quantity="one">%s luisteraar</item>
@@ -522,7 +522,7 @@
     <string name="enable_playback_resume_title">Afspelen hervatten</string>
     <string name="auto_queue_toggle">Volgende stream automatisch in wachtrij plaatsen</string>
     <string name="clear_queue_confirmation_description">De actieve wachtrij wordt vervangen</string>
-    <string name="clear_queue_confirmation_summary">Veranderen van één speler naar een andere kan jouw wachtrij vervangen</string>
+    <string name="clear_queue_confirmation_summary">Veranderen van Ã©Ã©n speler naar een andere kan jouw wachtrij vervangen</string>
     <string name="clear_queue_confirmation_title">Vraag bevestiging om wachtrij te wissen</string>
     <string name="seek_duration_title">Duur voor-/achteruit spoelen</string>
     <string name="notification_action_nothing">Niets</string>
@@ -562,7 +562,7 @@
     <string name="night_theme_title">Nacht thema</string>
     <string name="open_with">Open met</string>
     <string name="featured">Featured</string>
-    <string name="private_content">Deze inhoud is privé, waardoor het niet kan worden gestreamd of gedownload door NewPipe.</string>
+    <string name="private_content">Deze inhoud is privÃ©, waardoor het niet kan worden gestreamd of gedownload door NewPipe.</string>
     <string name="crash_the_app">Laat de app crashen</string>
     <string name="disable_media_tunneling_summary">Schakel media tunneling uit indien u een zwart scherm of haperingen vaststelt bij het afspelen van video\'s</string>
     <string name="download_has_started">De download is begonnen</string>
@@ -601,13 +601,13 @@
         <item quantity="other">%s nieuwe streams</item>
     </plurals>
     <string name="error_report_channel_name">Foutrapport melding</string>
-    <string name="loading_stream_details">Stream details aan het laden…</string>
+    <string name="loading_stream_details">Stream details aan het ladenâ€¦</string>
     <string name="error_report_notification_toast">Een fout is opgetreden, zie melding</string>
     <string name="crash_the_player">Crash de speler</string>
     <string name="error_report_channel_description">Meldingen om fouten te rapporteren</string>
     <string name="processing_may_take_a_moment">Verwerken... Dit kan even duren</string>
     <string name="leak_canary_not_available">LeakCanary is niet beschikbaar</string>
-    <string name="progressive_load_interval_summary">Verander de intervalgrootte voor het laden van progressieve inhoud (momenteel %s). Een lagere waarde kan het initiële laden versnellen</string>
+    <string name="progressive_load_interval_summary">Verander de intervalgrootte voor het laden van progressieve inhoud (momenteel %s). Een lagere waarde kan het initiÃ«le laden versnellen</string>
     <string name="tab_bookmarks_short">Afspeellijsten</string>
     <string name="notification_actions_summary_android13">Bewerk elke meldingsactie hieronder door erop te tikken. De eerste drie acties (afspelen/pauzeren, vorige en volgende) zijn ingesteld door het systeem en kunnen niet worden aangepast.</string>
     <string name="progressive_load_interval_title">Intervalgrootte voor afspelen laden</string>
@@ -619,4 +619,200 @@
     <string name="prefer_original_audio_summary">Selecteer het oorspronkelijke audiospoor, ongeacht de taal</string>
     <string name="search_with_service_name">Zoeken%1$s</string>
     <string name="search_with_service_name_and_filter">Zoeken%1$s(%2$s)</string>
+
+
+    <string name="rate_app">Beoordeel app</string>
+    <string name="share_app">Deel app</string>
+    <string name="ignore_hardware_media_buttons_title">Ignore hardware media button events</string>
+    <string name="prefer_descriptive_audio_summary">Select an audio track with descriptions for visually impaired people if available</string>
+    <string name="left_gesture_control_summary">Choose gesture for left half of player screen</string>
+    <string name="left_gesture_control_title">Left gesture action</string>
+    <string name="right_gesture_control_summary">Choose gesture for right half of player screen</string>
+    <string name="right_gesture_control_title">Right gesture action</string>
+    <string name="brightness">Brightness</string>
+    <string name="volume">Volume</string>
+    <string name="none">None</string>
+    <string name="settings_category_backup_restore_title">Backup and restore</string>
+    <string name="loading_metadata_title">Loading Metadata...</string>
+    <string name="friendly_parsing_title">We are improving support for this page.</string>
+    <string name="friendly_parsing_message">Please try this video again after some time. Your app is safe to keep using, and we are continuing to improve compatibility so more videos work smoothly every day. Thank you for staying with us.</string>
+    <string name="fast_mode">Fast mode</string>
+    <string name="main_tabs_position_summary">Move main tab selector to the bottom</string>
+    <string name="main_tabs_position_title">Main tabs position</string>
+    <string name="permission_display_over_apps_message">In order to use the Popup Player, please select %1$s in the following Android settings menu and enable %2$s.</string>
+    <string name="permission_display_over_apps_permission_name">"Allow display over other apps"</string>
+    <string name="import_subscriptions_hint">Import or export subscriptions from the 3-dot menu</string>
+    <string name="short_thousand">%sK</string>
+    <string name="short_million">%sM</string>
+    <string name="short_billion">%sB</string>
+    <string name="no_streams">No streams</string>
+    <string name="no_live_streams">No live streams</string>
+    <string name="delete_file">Delete file</string>
+    <string name="delete_entry">Delete entry</string>
+    <string name="msg_failed_to_copy">Failed to copy to clipboard</string>
+    <string name="select_a_feed_group">Select a feed group</string>
+    <string name="no_feed_group_created_yet">No feed group created yet</string>
+    <string name="play_queue_audio_track">Audio: %s</string>
+    <string name="audio_track">Audio track</string>
+    <string name="duplicate_in_playlist">The playlists that are grayed out already contain this item.</string>
+    <string name="unset_playlist_thumbnail">Unset permanent thumbnail</string>
+    <string name="playlist_add_stream_success_duplicate">Duplicate added %d time(s)</string>
+    <string name="disable_media_tunneling_automatic_info">Media tunneling was disabled by default on your device because your device model is known to not support it.</string>
+    <string name="show_crash_the_player_title">Show \"Crash the player\"</string>
+    <string name="show_crash_the_player_summary">Shows a crash option when using the player</string>
+    <string name="check_new_streams">Run check for new streams</string>
+    <string name="show_error_snackbar">Show an error snackbar</string>
+    <string name="create_error_notification">Create an error notification</string>
+    <string name="import_subscriptions_title">Import subscriptions"</string>
+    <string name="export_subscriptions_title">Export subscriptions</string>
+    <string name="import_subscriptions_summary">Import subscriptions from a previous .json export"</string>
+    <string name="export_subscriptions_summary">Export your subscriptions to a .json file</string>
+    <string name="import_from_previous_export">Import from previous export</string>
+    <string name="percent">Percent</string>
+    <string name="semitone">Semitone</string>
+    <string name="enable_streams_notifications_title">New streams notifications</string>
+    <string name="enable_streams_notifications_summary">Notify about new streams from subscriptions</string>
+    <string name="streams_notifications_interval_title">Checking frequency</string>
+    <string name="streams_notifications_network_title">Required network connection</string>
+    <string name="any_network">Any network</string>
+    <string name="card">Card</string>
+    <string name="app_update_unavailable_toast">You are running the latest version of NewPipe</string>
+    <string name="app_update_available_notification_text">Tap to download %s</string>
+    <string name="checking_updates_toast">Checking for updates...</string>
+    <string name="reset_settings_title">Reset settings</string>
+    <string name="reset_settings_summary">Reset all settings to their default values</string>
+    <string name="reset_all_settings">Resetting all settings will discard all of your preferred settings and restarts the app.\n\nAre you sure you want to proceed?</string>
+    <string name="error_insufficient_storage">Not enough free space on device</string>
+    <string name="delete_downloaded_files_confirm">Erase all downloaded files from disk?</string>
+    <string name="downloads_storage_ask_summary_no_saf_notice">You will be asked where to save each download</string>
+    <string name="downloads_storage_use_saf_summary_api_29">Starting from Android 10 only \'Storage Access Framework\' is supported</string>
+    <string name="remove_duplicates">Remove duplicates</string>
+    <string name="remove_duplicates_title">Remove duplicates?</string>
+    <string name="remove_duplicates_message">Do you want to remove all duplicate streams in this playlist?</string>
+    <string name="feed_group_page_summary">Channel group page</string>
+    <string name="feed_new_items">New feed items</string>
+    <string name="feed_load_error">Error loading feed</string>
+    <string name="feed_load_error_account_info">Could not load feed for \'%s\'.</string>
+    <string name="feed_load_error_terminated">The author\'s account has been terminated.\nNewPipe will not be able to load this feed in the future.\nDo you want to unsubscribe from this channel?</string>
+    <string name="feed_load_error_fast_unknown">The fast feed mode does not provide more info on this.</string>
+    <string name="feed_hide_streams_title">Show the following streams</string>
+    <string name="feed_show_hide_streams">Show/Hide streams</string>
+    <string name="feed_fetch_channel_tabs">Fetch channel tabs</string>
+    <string name="feed_fetch_channel_tabs_summary">Tabs to fetch when updating the feed. This option has no effect if a channel is updated using fast mode.</string>
+    <string name="no_appropriate_file_manager_message">No appropriate file manager was found for this action.
+\nPlease install a file manager or try to disable \'%s\' in the download settings</string>
+    <string name="no_appropriate_file_manager_message_android_10">No appropriate file manager was found for this action.
+\nPlease install a Storage Access Framework compatible file manager</string>
+    <string name="account_terminated">Account terminated</string>
+    <string name="account_terminated_service_provides_reason">Account terminated\n\n%1$s provides this reason: %2$s</string>
+    <string name="night_theme_available">This option is only available if %s is selected for Theme</string>
+    <string name="description_select_note">You can now select text inside the description. Note that the page may flicker and links may not be clickable while in selection mode.</string>
+    <string name="description_select_enable">Enable selecting text in the description</string>
+    <string name="description_select_disable">Disable selecting text in the description</string>
+    <string name="metadata_category">Category</string>
+    <string name="metadata_tags">Tags</string>
+    <string name="metadata_licence">Licence</string>
+    <string name="metadata_privacy">Privacy</string>
+    <string name="metadata_age_limit">Age limit</string>
+    <string name="metadata_language">Language</string>
+    <string name="metadata_support">Support</string>
+    <string name="metadata_host">Host</string>
+    <string name="metadata_thumbnails">Thumbnails</string>
+    <string name="metadata_uploader_avatars">Uploader avatars</string>
+    <string name="metadata_subchannel_avatars">Sub-channel avatars</string>
+    <string name="metadata_avatars">Avatars</string>
+    <string name="metadata_banners">Banners</string>
+    <string name="metadata_privacy_public">Public</string>
+    <string name="metadata_privacy_unlisted">Unlisted</string>
+    <string name="metadata_privacy_private">Private</string>
+    <string name="metadata_privacy_internal">Internal</string>
+    <string name="metadata_subscribers">Subscribers</string>
+    <string name="detail_pinned_comment_view_description">Pinned comment</string>
+    <string name="detail_heart_img_view_description">Hearted by creator</string>
+    <string name="open_website_license">Open website</string>
+    <string name="tablet_mode_title">Tablet mode</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="progressive_load_interval_exoplayer_default">ExoPlayer default</string>
+    <string name="notifications_disabled">Notifications are disabled</string>
+    <string name="get_notified">Get notified</string>
+    <string name="you_successfully_subscribed">You now subscribed to this channel</string>
+    <string name="enumeration_comma">,</string>
+    <string name="toggle_all">Toggle all</string>
+    <string name="streams_not_yet_supported_removed">Streams which are not yet supported by the downloader are not shown</string>
+    <string name="audio_track_present_in_video">An audio track should be already present in this stream</string>
+    <string name="selected_stream_external_player_not_supported">The selected stream is not supported by external players</string>
+    <string name="no_audio_streams_available_for_external_players">No audio streams are available for external players</string>
+    <string name="no_video_streams_available_for_external_players">No video streams are available for external players</string>
+    <string name="select_quality_external_players">Select quality for external players</string>
+    <string name="select_audio_track_external_players">Select audio track for external players</string>
+    <string name="unknown_format">Unknown format</string>
+    <string name="unknown_quality">Unknown quality</string>
+    <string name="unknown_audio_track">Unknown</string>
+    <string name="feed_show_watched">Fully watched</string>
+    <string name="feed_show_partially_watched">Partially watched</string>
+    <string name="feed_show_upcoming">Upcoming</string>
+    <string name="sort">Sort</string>
+    <string name="settings_category_exoplayer_title">ExoPlayer settings</string>
+    <string name="settings_category_exoplayer_summary">Manage some ExoPlayer settings. These changes require a player restart to take effect</string>
+    <string name="use_exoplayer_decoder_fallback_title">Use ExoPlayer\'s decoder fallback feature</string>
+    <string name="use_exoplayer_decoder_fallback_summary">Enable this option if you have decoder initialization issues, which falls back to lower-priority decoders if primary decoders initialization fail. This may result in poor playback performance than when using primary decoders</string>
+    <string name="always_use_exoplayer_set_output_surface_workaround_title">Always use ExoPlayer\'s video output surface setting workaround</string>
+    <string name="always_use_exoplayer_set_output_surface_workaround_summary">This workaround releases and re-instantiates video codecs when a surface change occurs, instead of setting the surface to the codec directly. Already used by ExoPlayer on some devices with this issue, this setting has only an effect on Android 6 and higher\n\nEnabling this option may prevent playback errors when switching the current video player or switching to fullscreen</string>
+    <string name="audio_track_name">%1$s %2$s</string>
+    <string name="audio_track_type_original">original</string>
+    <string name="audio_track_type_dubbed">dubbed</string>
+    <string name="audio_track_type_descriptive">descriptive</string>
+    <string name="audio_track_type_secondary">secondary</string>
+    <string name="channel_tab_videos">Videos</string>
+    <string name="channel_tab_tracks">Tracks</string>
+    <string name="channel_tab_shorts">Shorts</string>
+    <string name="channel_tab_livestreams">Live</string>
+    <string name="channel_tab_channels">Channels</string>
+    <string name="channel_tab_playlists">Playlists</string>
+    <string name="channel_tab_albums">Albums</string>
+    <string name="channel_tab_likes">Likes</string>
+    <string name="show_channel_tabs">Channel tabs</string>
+    <string name="show_channel_tabs_summary">What tabs are shown on the channel pages</string>
+    <string name="open_play_queue">Open play queue</string>
+    <string name="toggle_fullscreen">Toggle fullscreen</string>
+    <string name="toggle_screen_orientation">Toggle screen orientation</string>
+    <string name="previous_stream">Previous stream</string>
+    <string name="next_stream">Next stream</string>
+    <string name="play">Play</string>
+    <string name="replay">Replay</string>
+    <string name="more_options">More options</string>
+    <string name="duration">Duration</string>
+    <string name="rewind">Rewind</string>
+    <string name="forward">Forward</string>
+    <string name="image_quality_title">Image quality</string>
+    <string name="image_quality_summary">Choose the quality of images and whether to load images at all, to reduce data and memory usage. Changes clear both in-memory and on-disk image cache - %s</string>
+    <string name="image_quality_none">Do not load images</string>
+    <string name="image_quality_low">Low quality</string>
+    <string name="image_quality_medium">Medium quality</string>
+    <string name="image_quality_high">High quality</string>
+    <string name="question_mark">\?</string>
+    <string name="share_playlist">Share Playlist</string>
+    <string name="share_playlist_with_titles">Share with Titles</string>
+    <string name="share_playlist_with_list">Share URL list</string>
+    <string name="share_playlist_as_youtube_temporary_playlist">Share as YouTube temporary playlist</string>
+    <string name="video_details_list_item">- %1$s: %2$s</string>
+    <string name="share_playlist_content_details">%1$s\n%2$s</string>
+    <string name="show_more">Show more</string>
+    <string name="show_less">Show less</string>
+    <string name="import_settings_vulnerable_format">The settings in the export being imported use a vulnerable format that was deprecated since NewPipe 0.27.0. Make sure the export being imported is from a trusted source, and prefer using only exports obtained from NewPipe 0.27.0 or newer in the future. Support for importing settings in this vulnerable format will soon be removed completely, and then old versions of NewPipe will not be able to import settings of exports from new versions anymore.</string>
+    <string name="migration_info_7_8_title">YouTube combined trending removed</string>
+    <string name="migration_info_7_8_message">YouTube has discontinued the combined trending page as of 21st July 2025. NewPipe replaced the default trending page with the trending livestreams.\n\nYou can also select different trending pages in \"Settings &gt; Content &gt; Content of main page\".</string>
+    <string name="trending_gaming">Gaming trends</string>
+    <string name="trending_podcasts">Trending podcasts</string>
+    <string name="trending_movies">Trending movies and shows</string>
+    <string name="trending_music">Trending music</string>
+    <string name="entry_deleted">Entry deleted</string>
+    <string name="player_http_403">HTTP error 403 received from server while playing, likely caused by streaming URL expiration or an IP ban</string>
+    <string name="player_http_invalid_status">HTTP error %1$s received from server while playing</string>
+    <string name="youtube_player_http_403">HTTP error 403 received from server while playing, likely caused by an IP ban or streaming URL deobfuscation issues</string>
+    <string name="sign_in_confirm_not_bot_error">%1$s refused to provide data, asking for a login to confirm the requester is not a bot.\n\nYour IP might have been temporarily banned by %1$s, you can wait some time or switch to a different IP (for example by turning on/off a VPN, or by switching from WiFi to mobile data).\n\nPlease see <a href="%2$s">this help entry</a> for more information.</string>
+    <string name="unsupported_content_in_country">This content is not available for the currently selected content country.\n\nChange your selection from \"Settings &gt; Content &gt; Default content country\".</string>
 </resources>
+
+

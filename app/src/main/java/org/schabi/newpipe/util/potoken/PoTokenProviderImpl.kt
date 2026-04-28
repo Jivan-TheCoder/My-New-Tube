@@ -4,7 +4,6 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import org.schabi.newpipe.App
-import org.schabi.newpipe.BuildConfig
 import org.schabi.newpipe.extractor.NewPipe
 import org.schabi.newpipe.extractor.services.youtube.InnertubeClientRequestInfo
 import org.schabi.newpipe.extractor.services.youtube.PoTokenProvider
@@ -111,14 +110,6 @@ object PoTokenProviderImpl : PoTokenProvider {
                 Log.e(TAG, "Failed to obtain poToken, retrying", throwable)
                 return getWebClientPoToken(videoId = videoId, forceRecreate = true)
             }
-        }
-
-        if (BuildConfig.DEBUG) {
-            Log.d(
-                TAG,
-                "poToken for $videoId: playerPot=$playerPot, " +
-                    "streamingPot=$streamingPot, visitor_data=$visitorData"
-            )
         }
 
         return PoTokenResult(visitorData, playerPot, streamingPot)

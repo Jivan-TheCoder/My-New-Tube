@@ -1,4 +1,4 @@
-package org.schabi.newpipe;
+package org.schabi.newpipe.activities;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

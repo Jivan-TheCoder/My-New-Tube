@@ -87,8 +87,8 @@ public final class PlayerService extends MediaBrowserServiceCompat {
     public void onCreate() {
         super.onCreate();
 
-        if (DEBUG) {
-            Log.d(TAG, "onCreate() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         ThemeHelper.setTheme(this);
 
@@ -123,10 +123,8 @@ public final class PlayerService extends MediaBrowserServiceCompat {
 
     @Override
     public int onStartCommand(final Intent intent, final int flags, final int startId) {
-        if (DEBUG) {
-            Log.d(TAG, "onStartCommand() called with: intent = [" + intent
-                    + "], extras = [" + BundleKt.toDebugString(intent.getExtras())
-                    + "], flags = [" + flags + "], startId = [" + startId + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         // All internal NewPipe intents used to interact with the player, that are sent to the
@@ -164,7 +162,7 @@ public final class PlayerService extends MediaBrowserServiceCompat {
             // a (dummy) foreground notification, otherwise we'd incur in
             // "Context.startForegroundService() did not then call Service.startForeground()". Then
             // we stop the service again.
-            Log.d(TAG, "onStartCommand() got a useless intent, closing the service");
+            
             NotificationUtil.startForegroundWithDummyNotification(this);
             destroyPlayerAndStopService();
             return START_NOT_STICKY;
@@ -180,8 +178,8 @@ public final class PlayerService extends MediaBrowserServiceCompat {
     }
 
     public void stopForImmediateReusing() {
-        if (DEBUG) {
-            Log.d(TAG, "stopForImmediateReusing() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         if (player != null && !player.exoPlayerIsNull()) {
@@ -205,8 +203,8 @@ public final class PlayerService extends MediaBrowserServiceCompat {
 
     @Override
     public void onDestroy() {
-        if (DEBUG) {
-            Log.d(TAG, "destroy() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         super.onDestroy();
 
@@ -243,8 +241,8 @@ public final class PlayerService extends MediaBrowserServiceCompat {
      * system accesses the media browser even when no player is running).
      */
     public void destroyPlayerAndStopService() {
-        if (DEBUG) {
-            Log.d(TAG, "destroyPlayerAndStopService() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         cleanup();
@@ -267,9 +265,8 @@ public final class PlayerService extends MediaBrowserServiceCompat {
     //region Bind
     @Override
     public IBinder onBind(final Intent intent) {
-        if (DEBUG) {
-            Log.d(TAG, "onBind() called with: intent = [" + intent
-                    + "], extras = [" + BundleKt.toDebugString(intent.getExtras()) + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         if (BIND_PLAYER_HOLDER_ACTION.equals(intent.getAction())) {

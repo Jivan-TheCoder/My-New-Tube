@@ -1,6 +1,6 @@
 package org.schabi.newpipe.settings.migration;
 
-import static org.schabi.newpipe.MainActivity.DEBUG;
+import static org.schabi.newpipe.BuildConfig.DEBUG;
 import static org.schabi.newpipe.extractor.ServiceList.YouTube;
 
 import android.content.Context;
@@ -278,9 +278,8 @@ public final class SettingMigrations {
         for (final Migration currentMigration : SETTING_MIGRATIONS) {
             try {
                 if (currentMigration.shouldMigrate(currentVersion)) {
-                    if (DEBUG) {
-                        Log.d(TAG, "Migrating preferences from version "
-                                + currentVersion + " to " + currentMigration.newVersion);
+                    if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                        
                     }
                     currentMigration.migrate(context);
                     currentVersion = currentMigration.newVersion;
@@ -329,3 +328,4 @@ public final class SettingMigrations {
     }
 
 }
+

@@ -1,6 +1,6 @@
 package org.schabi.newpipe.info_list.dialog;
 
-import static org.schabi.newpipe.MainActivity.DEBUG;
+import static org.schabi.newpipe.BuildConfig.DEBUG;
 
 import android.app.Activity;
 import android.content.Context;
@@ -189,9 +189,8 @@ public final class InfoItemDialog {
                        @NonNull final StreamInfoItem infoItem,
                        final boolean addDefaultEntriesAutomatically) {
             if (activity == null || context == null || context.getResources() == null) {
-                if (DEBUG) {
-                    Log.d(TAG, "activity, context or resources is null: activity = "
-                            + activity + ", context = " + context);
+                if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                    
                 }
                 throw new IllegalArgumentException("activity, context or resources is null");
             }
@@ -354,3 +353,4 @@ public final class InfoItemDialog {
         }
     }
 }
+

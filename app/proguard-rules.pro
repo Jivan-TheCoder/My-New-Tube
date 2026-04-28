@@ -59,3 +59,14 @@
 -keepclasseswithmembers class org.schabi.newpipe.** {
     kotlinx.serialization.KSerializer serializer(...);
 }
+
+# Please add these rules to your existing keep rules in order to suppress warnings.
+# This is generated automatically by the Android Gradle plugin.
+-dontwarn com.facebook.infer.annotation.Nullsafe$Mode
+-dontwarn com.facebook.infer.annotation.Nullsafe
+-dontwarn com.google.android.exoplayer2.source.rtsp.RtspMessageChannel$MessageParser$ReadingState
+
+-keep class com.amazon.** { *; }
+-dontwarn com.amazon.privacypass.PrivacyPass
+-dontwarn com.amazon.privacypass.VerificationContext
+-dontwarn com.amazon.privacypass.callback.AttestAPICallback

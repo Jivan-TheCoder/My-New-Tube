@@ -214,12 +214,12 @@ public final class PlayQueueActivity extends AppCompatActivity
         return new ServiceConnection() {
             @Override
             public void onServiceDisconnected(final ComponentName name) {
-                Log.d(TAG, "Player service is disconnected");
+                
             }
 
             @Override
             public void onServiceConnected(final ComponentName name, final IBinder service) {
-                Log.d(TAG, "Player service is connected");
+                
 
                 if (service instanceof PlayerService.LocalBinder) {
                     player = ((PlayerService.LocalBinder) service).getService().getPlayer();

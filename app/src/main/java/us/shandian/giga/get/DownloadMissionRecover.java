@@ -217,9 +217,7 @@ public class DownloadMissionRecover extends Thread {
     }
 
     private void recover(String url, boolean stale) {
-        Log.i(TAG,
-                String.format("recover()  name=%s  isStale=%s  url=%s", mMission.storage.getName(), stale, url)
-        );
+        
 
         mMission.urls[mMission.current] = url;
 

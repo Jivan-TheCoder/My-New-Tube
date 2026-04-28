@@ -17,9 +17,12 @@ dependencyResolutionManagement {
         mavenCentral()
         maven(url = "https://jitpack.io")
         maven(url = "https://repo.clojars.org")
+
+        maven(url = "https://android-sdk.is.com")
+        maven(url = "https://artifacts.applovin.com/android")
     }
 }
-include (":app")
+include(":app")
 
 // Use a local copy of NewPipe Extractor by uncommenting the lines below.
 // We assume, that NewPipe and NewPipe Extractor have the same parent directory.

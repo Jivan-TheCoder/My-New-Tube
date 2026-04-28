@@ -127,19 +127,15 @@ public class InfoListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         if (data == null) {
             return;
         }
-        if (DEBUG) {
-            Log.d(TAG, "addInfoItemList() before > infoItemList.size() = "
-                    + infoItemList.size() + ", data.size() = " + data.size());
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         final int offsetStart = sizeConsideringHeaderOffset();
         infoItemList.addAll(data);
 
-        if (DEBUG) {
-            Log.d(TAG, "addInfoItemList() after > offsetStart = " + offsetStart + ", "
-                    + "infoItemList.size() = " + infoItemList.size() + ", "
-                    + "hasHeader = " + hasHeader() + ", "
-                    + "showFooter = " + showFooter);
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         notifyItemRangeInserted(offsetStart, data.size());
 
@@ -147,9 +143,8 @@ public class InfoListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             final int footerNow = sizeConsideringHeaderOffset();
             notifyItemMoved(offsetStart, footerNow);
 
-            if (DEBUG) {
-                Log.d(TAG, "addInfoItemList() footer from " + offsetStart
-                        + " to " + footerNow);
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                
             }
         }
     }
@@ -175,8 +170,8 @@ public class InfoListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     public void showFooter(final boolean show) {
-        if (DEBUG) {
-            Log.d(TAG, "showFooter() called with: show = [" + show + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         if (show == showFooter) {
             return;
@@ -192,8 +187,8 @@ public class InfoListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     private int sizeConsideringHeaderOffset() {
         final int i = infoItemList.size() + (hasHeader() ? 1 : 0);
-        if (DEBUG) {
-            Log.d(TAG, "sizeConsideringHeaderOffset() called → " + i);
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         return i;
     }
@@ -212,11 +207,8 @@ public class InfoListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             count++;
         }
 
-        if (DEBUG) {
-            Log.d(TAG, "getItemCount() called with: "
-                    + "count = " + count + ", infoItemList.size() = " + infoItemList.size() + ", "
-                    + "hasHeader = " + hasHeader() + ", "
-                    + "showFooter = " + showFooter);
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         return count;
     }
@@ -224,8 +216,8 @@ public class InfoListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @SuppressWarnings("FinalParameters")
     @Override
     public int getItemViewType(int position) {
-        if (DEBUG) {
-            Log.d(TAG, "getItemViewType() called with: position = [" + position + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         if (hasHeader() && position == 0) {
@@ -279,9 +271,8 @@ public class InfoListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull final ViewGroup parent,
                                                       final int type) {
-        if (DEBUG) {
-            Log.d(TAG, "onCreateViewHolder() called with: "
-                    + "parent = [" + parent + "], type = [" + type + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         switch (type) {
             // #4475 and #3368
@@ -328,10 +319,8 @@ public class InfoListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder holder,
                                  final int position) {
-        if (DEBUG) {
-            Log.d(TAG, "onBindViewHolder() called with: "
-                    + "holder = [" + holder.getClass().getSimpleName() + "], "
-                    + "position = [" + position + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         if (holder instanceof InfoItemHolder) {
             ((InfoItemHolder) holder).updateFromItem(

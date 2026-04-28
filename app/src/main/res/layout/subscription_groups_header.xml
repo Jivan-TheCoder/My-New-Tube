@@ -27,6 +27,7 @@
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/list_view_mode"
         android:padding="8dp"
+        android:tint="?android:attr/textColorPrimary"
         tools:src="@drawable/ic_apps" />
 
     <ImageButton
@@ -37,5 +38,6 @@
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/sort"
         android:padding="8dp"
+        android:tint="?android:attr/textColorPrimary"
         android:src="@drawable/ic_sort" />
 </LinearLayout>

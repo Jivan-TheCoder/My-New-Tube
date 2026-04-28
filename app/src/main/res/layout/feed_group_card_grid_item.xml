@@ -25,6 +25,7 @@
             android:layout_weight="1"
             android:padding="4dp"
             android:scaleType="fitCenter"
+            android:tint="?android:attr/textColorPrimary"
             tools:ignore="ContentDescription"
             tools:src="@drawable/ic_fastfood" />
 

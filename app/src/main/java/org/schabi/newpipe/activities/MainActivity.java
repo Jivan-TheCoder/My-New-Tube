@@ -18,7 +18,7 @@
  * along with NewPipe.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package org.schabi.newpipe;
+package org.schabi.newpipe.activities;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -27,6 +27,9 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -49,8 +52,20 @@ import androidx.fragment.app.FragmentContainerView;
 import androidx.fragment.app.FragmentManager;
 import androidx.preference.PreferenceManager;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.play.core.appupdate.AppUpdateInfo;
+import com.google.android.play.core.appupdate.AppUpdateManager;
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
+import com.google.android.play.core.appupdate.AppUpdateOptions;
+import com.google.android.play.core.install.model.AppUpdateType;
+import com.google.android.play.core.install.model.UpdateAvailability;
 
+import org.schabi.newpipe.AppMode;
+import org.schabi.newpipe.R;
+import org.schabi.newpipe.ads.AdUtils;
 import org.schabi.newpipe.databinding.ActivityMainBinding;
 import org.schabi.newpipe.databinding.DrawerHeaderBinding;
 import org.schabi.newpipe.databinding.DrawerLayoutBinding;
@@ -114,6 +129,8 @@ public class MainActivity extends AppCompatActivity {
 
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor sharedPrefEditor;
+    private AppUpdateManager appUpdateManager;
+    private static final int IN_APP_UPDATE_REQUEST_CODE = 9123;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -126,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
             try {
                 new WebView(this);
             } catch (final Throwable e) {
+                // Ignore WebView init issues; app can still run.
             }
         }
 
@@ -156,6 +174,10 @@ public class MainActivity extends AppCompatActivity {
         openMiniPlayerUponPlayerStarted();
 
         MigrationManager.showUserInfoIfPresent(this);
+
+
+        appUpdateManager = AppUpdateManagerFactory.create(this);
+        checkForAppUpdate();
     }
 
     @Override
@@ -241,12 +263,16 @@ public class MainActivity extends AppCompatActivity {
         final int groupId = item.getGroupId();
         if (groupId == R.id.menu_tabs_group) {
             tabSelected(item);
+            // Non-blocking ad trigger: open destination immediately, then show interstitial.
+            AdUtils.ClickWithAds(this, null);
         } else if (groupId == R.id.menu_kiosks_group) {
             try {
                 kioskSelected(item);
             } catch (final Exception e) {
                 ErrorUtil.showUiErrorSnackbar(this, "Selecting drawer kiosk", e);
             }
+            // Non-blocking ad trigger: open destination immediately, then show interstitial.
+            AdUtils.ClickWithAds(this, null);
         } else if (groupId == R.id.menu_options_about_group) {
             optionsAboutSelected(item);
         } else {
@@ -379,6 +405,7 @@ public class MainActivity extends AppCompatActivity {
         // Change the date format to match the selected language on resume
         Localization.initPrettyTime(Localization.resolvePrettyTime());
         super.onResume();
+        resumeImmediateUpdateIfNeeded();
 
         // Close drawer on return, and don't show animation,
         // so it looks like the drawer isn't open when the user returns to MainActivity
@@ -412,6 +439,61 @@ public class MainActivity extends AppCompatActivity {
         }
 
         updateDrawerNavigation();
+    }
+
+    private void checkForAppUpdate() {
+        if (appUpdateManager == null) {
+            return;
+        }
+
+        final Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
+        appUpdateInfoTask.addOnSuccessListener(new OnSuccessListener<AppUpdateInfo>() {
+            @Override
+            public void onSuccess(final AppUpdateInfo appUpdateInfo) {
+                if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
+                        && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
+                    try {
+                        appUpdateManager.startUpdateFlow(
+                                appUpdateInfo,
+                                MainActivity.this,
+                                AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build()
+                        );
+                    } catch (final Exception e) {
+                        Log.e("MainActivity", "Failed to start immediate in-app update", e);
+                    }
+                }
+            }
+        });
+        appUpdateInfoTask.addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull final Exception e) {
+                Log.e("MainActivity", "In-app update check failed", e);
+            }
+        });
+    }
+
+    private void resumeImmediateUpdateIfNeeded() {
+        if (appUpdateManager == null) {
+            return;
+        }
+
+        appUpdateManager.getAppUpdateInfo().addOnSuccessListener(new OnSuccessListener<AppUpdateInfo>() {
+            @Override
+            public void onSuccess(final AppUpdateInfo appUpdateInfo) {
+                if (appUpdateInfo.updateAvailability()
+                        == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
+                    try {
+                        appUpdateManager.startUpdateFlow(
+                                appUpdateInfo,
+                                MainActivity.this,
+                                AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build()
+                        );
+                    } catch (final Exception e) {
+                        Log.e("MainActivity", "Failed to resume immediate in-app update", e);
+                    }
+                }
+            }
+        });
     }
 
     @Override
@@ -508,6 +590,15 @@ public class MainActivity extends AppCompatActivity {
                     ((VideoDetailFragment) fragment).openDownloadDialog();
                 }
                 break;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(final int requestCode, final int resultCode,
+                                    @Nullable final Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == IN_APP_UPDATE_REQUEST_CODE && resultCode != RESULT_OK) {
+            Log.w("MainActivity", "In-app update flow canceled/failed. resultCode=" + resultCode);
         }
     }
 

@@ -1,7 +1,6 @@
 package org.schabi.newpipe.download;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,6 @@ import androidx.annotation.StringRes;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.DialogFragment;
 
-import org.schabi.newpipe.MainActivity;
 import org.schabi.newpipe.R;
 import org.schabi.newpipe.databinding.DownloadLoadingDialogBinding;
 
@@ -21,7 +19,6 @@ import org.schabi.newpipe.databinding.DownloadLoadingDialogBinding;
  */
 public class LoadingDialog extends DialogFragment {
     private static final String TAG = "LoadingDialog";
-    private static final boolean DEBUG = MainActivity.DEBUG;
     private DownloadLoadingDialogBinding dialogLoadingBinding;
     private final @StringRes int title;
 
@@ -43,9 +40,8 @@ public class LoadingDialog extends DialogFragment {
     @Override
     public void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (DEBUG) {
-            Log.d(TAG, "onCreate() called with: "
-                    + "savedInstanceState = [" + savedInstanceState + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         this.setCancelable(false);
     }
@@ -55,10 +51,8 @@ public class LoadingDialog extends DialogFragment {
             @NonNull final LayoutInflater inflater,
             final ViewGroup container,
             final Bundle savedInstanceState) {
-        if (DEBUG) {
-            Log.d(TAG, "onCreateView() called with: "
-                    + "inflater = [" + inflater + "], container = [" + container + "], "
-                    + "savedInstanceState = [" + savedInstanceState + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         return inflater.inflate(R.layout.download_loading_dialog, container);
     }
@@ -71,8 +65,8 @@ public class LoadingDialog extends DialogFragment {
     }
 
     private void initToolbar(final Toolbar toolbar) {
-        if (DEBUG) {
-            Log.d(TAG, "initToolbar() called with: toolbar = [" + toolbar + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         toolbar.setTitle(requireContext().getString(title));
         toolbar.setNavigationOnClickListener(v -> dismiss());
@@ -85,3 +79,4 @@ public class LoadingDialog extends DialogFragment {
         super.onDestroyView();
     }
 }
+

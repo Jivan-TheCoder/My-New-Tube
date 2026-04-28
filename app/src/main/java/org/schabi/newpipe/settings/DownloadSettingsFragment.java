@@ -161,7 +161,7 @@ public class DownloadSettingsFragment extends BasePreferenceFragment {
                     .releasePersistableUriPermission(uri, StoredDirectoryHelper.PERMISSION_FLAGS);
             context.revokeUriPermission(uri, StoredDirectoryHelper.PERMISSION_FLAGS);
 
-            Log.i(TAG, "Revoke old path permissions success on " + oldPath);
+            
         } catch (final Exception err) {
             Log.e(TAG, "Error revoking old path permissions on " + oldPath, err);
         }
@@ -177,9 +177,8 @@ public class DownloadSettingsFragment extends BasePreferenceFragment {
 
     @Override
     public boolean onPreferenceTreeClick(@NonNull final Preference preference) {
-        if (DEBUG) {
-            Log.d(TAG, "onPreferenceTreeClick() called with: "
-                    + "preference = [" + preference + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         final String key = preference.getKey();
@@ -252,7 +251,7 @@ public class DownloadSettingsFragment extends BasePreferenceFragment {
 
                 final StoredDirectoryHelper mainStorage =
                         new StoredDirectoryHelper(context, uri, null);
-                Log.i(TAG, "Acquiring tree success from " + uri.toString());
+                
 
                 if (!mainStorage.canWrite()) {
                     throw new IOException("No write permissions on " + uri.toString());

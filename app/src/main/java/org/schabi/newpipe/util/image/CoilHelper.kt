@@ -2,7 +2,6 @@ package org.schabi.newpipe.util.image
 
 import android.content.Context
 import android.graphics.Bitmap
-import android.util.Log
 import android.widget.ImageView
 import androidx.annotation.DrawableRes
 import coil3.executeBlocking
@@ -18,7 +17,6 @@ import coil3.target.Target
 import coil3.toBitmap
 import coil3.transform.Transformation
 import kotlin.math.min
-import org.schabi.newpipe.MainActivity
 import org.schabi.newpipe.R
 import org.schabi.newpipe.extractor.Image
 import org.schabi.newpipe.ktx.scale
@@ -31,10 +29,17 @@ object CoilHelper {
         context: Context,
         url: String?,
         @DrawableRes placeholderResId: Int = 0
-    ): Bitmap? = context.imageLoader
-        .executeBlocking(getImageRequest(context, url, placeholderResId).build())
-        .image
-        ?.toBitmap()
+    ): Bitmap? {
+        val takenUrl = sanitizeLoadableUrl(url)
+        if (takenUrl == null && placeholderResId == 0) {
+            return null
+        }
+
+        return context.imageLoader
+            .executeBlocking(getImageRequest(context, takenUrl, placeholderResId).build())
+            .image
+            ?.toBitmap()
+    }
 
     fun loadAvatar(
         target: ImageView,
@@ -81,10 +86,6 @@ object CoilHelper {
                             input: Bitmap,
                             size: Size
                         ): Bitmap {
-                            if (MainActivity.DEBUG) {
-                                Log.d(TAG, "Thumbnail - transform() called")
-                            }
-
                             val notificationThumbnailWidth =
                                 min(
                                     context.resources.getDimension(R.dimen.player_notification_thumbnail_width),
@@ -152,8 +153,17 @@ object CoilHelper {
         @DrawableRes placeholderResId: Int,
         showPlaceholder: Boolean = true
     ) {
+        val takenUrl = sanitizeLoadableUrl(url)
+        if (takenUrl == null) {
+            when {
+                showPlaceholder && placeholderResId != 0 -> target.setImageResource(placeholderResId)
+                else -> target.setImageDrawable(null)
+            }
+            return
+        }
+
         val request =
-            getImageRequest(target.context, url, placeholderResId, showPlaceholder)
+            getImageRequest(target.context, takenUrl, placeholderResId, showPlaceholder)
                 .target(target)
                 .build()
         target.context.imageLoader.enqueue(request)
@@ -168,11 +178,12 @@ object CoilHelper {
         // if the URL was chosen with `choosePreferredImage` it will be null, but check again
         // `shouldLoadImages` in case the URL was chosen with `imageListToDbUrl` (which is the case
         // for URLs stored in the database)
-        val takenUrl = url?.takeIf { it.isNotEmpty() && ImageStrategy.shouldLoadImages() }
+        val takenUrl = sanitizeLoadableUrl(url)
+        val requestData = takenUrl ?: placeholderResId.takeIf { it != 0 } ?: android.R.color.transparent
 
         return ImageRequest
             .Builder(context)
-            .data(takenUrl)
+            .data(requestData)
             .error(placeholderResId)
             .memoryCacheKey(takenUrl)
             .diskCacheKey(takenUrl)
@@ -182,4 +193,6 @@ object CoilHelper {
                 }
             }
     }
+
+    private fun sanitizeLoadableUrl(url: String?): String? = url?.takeIf { it.isNotBlank() && ImageStrategy.shouldLoadImages() }
 }

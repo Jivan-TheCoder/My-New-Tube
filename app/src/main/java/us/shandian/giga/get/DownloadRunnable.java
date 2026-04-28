@@ -59,15 +59,8 @@ public class DownloadRunnable extends Thread {
             }
 
             if (block == null) {
-                if (DEBUG) Log.d(TAG, mId + ":no more blocks left, exiting");
+                
                 break;
-            }
-
-            if (DEBUG) {
-                if (retry)
-                    Log.d(TAG, mId + ":retry block at position=" + block.position + " from the start");
-                else
-                    Log.d(TAG, mId + ":acquired block at position=" + block.position + " done=" + block.done);
             }
 
             long start = (long)block.position * DownloadMission.BLOCK_SIZE;
@@ -101,7 +94,7 @@ public class DownloadRunnable extends Thread {
 
                 // The server may be ignoring the range request
                 if (mConn.getResponseCode() != 206) {
-                    if (DEBUG) {
+                    if (org.schabi.newpipe.BuildConfig.DEBUG) {
                         Log.e(TAG, mId + ":Unsupported " + mConn.getResponseCode());
                     }
                     mMission.notifyError(new DownloadMission.HttpError(mConn.getResponseCode()));
@@ -125,7 +118,7 @@ public class DownloadRunnable extends Thread {
                 }
 
                 if (DEBUG && mMission.running) {
-                    Log.d(TAG, mId + ":position " + block.position + " stopped " + start + "/" + end);
+                    
                 }
             } catch (Exception e) {
                 if (!mMission.running || e instanceof ClosedByInterruptException) break;
@@ -154,19 +147,19 @@ public class DownloadRunnable extends Thread {
 
         f.close();
 
-        if (DEBUG) {
-            Log.d(TAG, "thread " + mId + " exited from main download loop");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         if (mMission.errCode == DownloadMission.ERROR_NOTHING && mMission.running) {
-            if (DEBUG) {
-                Log.d(TAG, "no error has happened, notifying");
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                
             }
             mMission.notifyFinished();
         }
 
         if (DEBUG && !mMission.running) {
-            Log.d(TAG, "The mission has been paused. Passing.");
+            
         }
     }
 

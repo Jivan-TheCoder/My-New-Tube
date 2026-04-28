@@ -12,7 +12,6 @@ import android.content.Intent;
 import android.content.pm.ServiceInfo;
 import android.graphics.Bitmap;
 import android.os.Build;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,7 +21,7 @@ import androidx.core.app.PendingIntentCompat;
 import androidx.core.app.ServiceCompat;
 import androidx.core.content.ContextCompat;
 
-import org.schabi.newpipe.MainActivity;
+import org.schabi.newpipe.activities.MainActivity;
 import org.schabi.newpipe.R;
 import org.schabi.newpipe.player.Player;
 import org.schabi.newpipe.player.PlayerIntentType;
@@ -33,8 +32,6 @@ import org.schabi.newpipe.util.NavigationHelper;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
 
 /**
  * This is a utility class for player notifications.
@@ -79,10 +76,8 @@ public final class NotificationUtil {
 
     public synchronized void updateThumbnail() {
         if (notificationBuilder != null) {
-            if (DEBUG) {
-                Log.d(TAG, "updateThumbnail() called with thumbnail = [" + Integer.toHexString(
-                        Optional.ofNullable(player.getThumbnail()).map(Objects::hashCode).orElse(0))
-                        + "], title = [" + player.getVideoTitle() + "]");
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                
             }
 
             setLargeIcon(notificationBuilder);
@@ -93,8 +88,8 @@ public final class NotificationUtil {
     }
 
     private synchronized NotificationCompat.Builder createNotification() {
-        if (DEBUG) {
-            Log.d(TAG, "createNotification()");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         notificationManager = NotificationManagerCompat.from(player.getContext());
 
@@ -126,8 +121,8 @@ public final class NotificationUtil {
      * Updates the notification builder and the button icons depending on the playback state.
      */
     private synchronized void updateNotification() {
-        if (DEBUG) {
-            Log.d(TAG, "updateNotification()");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         // also update content intent, in case the user switched players

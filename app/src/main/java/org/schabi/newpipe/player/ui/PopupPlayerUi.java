@@ -1,7 +1,7 @@
 package org.schabi.newpipe.player.ui;
 
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
-import static org.schabi.newpipe.MainActivity.DEBUG;
+import static org.schabi.newpipe.BuildConfig.DEBUG;
 import static org.schabi.newpipe.player.helper.PlayerHelper.getMinimumVideoHeight;
 
 import android.animation.Animator;
@@ -108,8 +108,8 @@ public final class PopupPlayerUi extends VideoPlayerUi {
 
     @SuppressLint("RtlHardcoded")
     private void initPopup() {
-        if (DEBUG) {
-            Log.d(TAG, "initPopup() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         // Popup is already added to windowManager
@@ -136,8 +136,8 @@ public final class PopupPlayerUi extends VideoPlayerUi {
 
     @SuppressLint("RtlHardcoded")
     private void initPopupCloseOverlay() {
-        if (DEBUG) {
-            Log.d(TAG, "initPopupCloseOverlay() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         // closeOverlayView is already added to windowManager
@@ -251,10 +251,8 @@ public final class PopupPlayerUi extends VideoPlayerUi {
      * </p>
      */
     public void checkPopupPositionBounds() {
-        if (DEBUG) {
-            Log.d(TAG, "checkPopupPositionBounds() called with: "
-                    + "screenWidth = [" + screenWidth + "], "
-                    + "screenHeight = [" + screenHeight + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         if (popupLayoutParams == null) {
             return;
@@ -281,9 +279,8 @@ public final class PopupPlayerUi extends VideoPlayerUi {
             screenWidth = metrics.widthPixels;
             screenHeight = metrics.heightPixels;
         }
-        if (DEBUG) {
-            Log.d(TAG, "updateScreenSize() called: screenWidth = ["
-                    + screenWidth + "], screenHeight = [" + screenHeight + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
     }
 
@@ -293,8 +290,8 @@ public final class PopupPlayerUi extends VideoPlayerUi {
      *              {@link PlayerHelper#getMinimumVideoHeight(float)}
      */
     public void changePopupSize(final int width) {
-        if (DEBUG) {
-            Log.d(TAG, "changePopupSize() called with: width = [" + width + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         if (anyPopupViewIsNull()) {
@@ -304,9 +301,8 @@ public final class PopupPlayerUi extends VideoPlayerUi {
         final float minimumWidth = context.getResources().getDimension(R.dimen.popup_minimum_width);
         final int actualWidth = MathUtils.clamp(width, (int) minimumWidth, screenWidth);
         final int actualHeight = (int) getMinimumVideoHeight(width);
-        if (DEBUG) {
-            Log.d(TAG, "updatePopupSize() updated values:"
-                    + "  width = [" + actualWidth + "], height = [" + actualHeight + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         popupLayoutParams.width = actualWidth;
@@ -330,8 +326,8 @@ public final class PopupPlayerUi extends VideoPlayerUi {
     //region Popup closing
 
     public void closePopup() {
-        if (DEBUG) {
-            Log.d(TAG, "closePopup() called, isPopupClosing = " + isPopupClosing);
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         if (isPopupClosing) {
             return;
@@ -405,8 +401,8 @@ public final class PopupPlayerUi extends VideoPlayerUi {
     //region Playback states
 
     private void changePopupWindowFlags(final int flags) {
-        if (DEBUG) {
-            Log.d(TAG, "changePopupWindowFlags() called with: flags = [" + flags + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         if (!anyPopupViewIsNull()) {
@@ -600,3 +596,4 @@ public final class PopupPlayerUi extends VideoPlayerUi {
     }
     //endregion
 }
+

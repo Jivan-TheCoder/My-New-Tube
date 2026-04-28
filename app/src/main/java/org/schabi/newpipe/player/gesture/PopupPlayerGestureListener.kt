@@ -1,6 +1,5 @@
 package org.schabi.newpipe.player.gesture
 
-import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewConfiguration
@@ -9,7 +8,6 @@ import kotlin.math.abs
 import kotlin.math.hypot
 import kotlin.math.max
 import kotlin.math.min
-import org.schabi.newpipe.MainActivity
 import org.schabi.newpipe.ktx.AnimationType
 import org.schabi.newpipe.ktx.animate
 import org.schabi.newpipe.player.ui.PopupPlayerUi
@@ -34,9 +32,6 @@ class PopupPlayerGestureListener(
     override fun onTouch(v: View, event: MotionEvent): Boolean {
         super.onTouch(v, event)
         if (event.pointerCount == 2 && !isMoving && !isResizing) {
-            if (DEBUG) {
-                Log.d(TAG, "onTouch() 2 finger pointer detected, enabling resizing.")
-            }
             onPopupResizingStart()
 
             // record coordinates of fingers
@@ -53,23 +48,9 @@ class PopupPlayerGestureListener(
             isResizing = true
         }
         if (event.action == MotionEvent.ACTION_MOVE && !isMoving && isResizing) {
-            if (DEBUG) {
-                Log.d(
-                    TAG,
-                    "onTouch() ACTION_MOVE > v = [$v], e1.getRaw =" +
-                        "[${event.rawX}, ${event.rawY}]"
-                )
-            }
             return handleMultiDrag(event)
         }
         if (event.action == MotionEvent.ACTION_UP) {
-            if (DEBUG) {
-                Log.d(
-                    TAG,
-                    "onTouch() ACTION_UP > v = [$v], e1.getRaw =" +
-                        " [${event.rawX}, ${event.rawY}]"
-                )
-            }
             if (isMoving) {
                 isMoving = false
                 onScrollEnd(event)
@@ -145,9 +126,6 @@ class PopupPlayerGestureListener(
     }
 
     private fun onPopupResizingStart() {
-        if (DEBUG) {
-            Log.d(TAG, "onPopupResizingStart called")
-        }
         binding.loadingPanel.visibility = View.GONE
         playerUi.hideControls(0, 0)
         binding.fastSeekOverlay.animate(false, 0)
@@ -155,9 +133,6 @@ class PopupPlayerGestureListener(
     }
 
     private fun onPopupResizingEnd() {
-        if (DEBUG) {
-            Log.d(TAG, "onPopupResizingEnd called")
-        }
     }
 
     override fun onLongPress(e: MotionEvent) {
@@ -205,10 +180,6 @@ class PopupPlayerGestureListener(
     }
 
     override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
-        if (DEBUG) {
-            Log.d(TAG, "onSingleTapConfirmed() called with: e = [$e]")
-        }
-
         if (isDoubleTapping) {
             return true
         }
@@ -284,7 +255,7 @@ class PopupPlayerGestureListener(
 
     companion object {
         private val TAG = PopupPlayerGestureListener::class.java.simpleName
-        private val DEBUG = MainActivity.DEBUG
+        private val DEBUG = org.schabi.newpipe.BuildConfig.DEBUG
         private const val TOSS_FLING_VELOCITY = 2500
     }
 }

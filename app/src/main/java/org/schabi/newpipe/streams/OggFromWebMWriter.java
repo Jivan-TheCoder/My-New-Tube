@@ -1,6 +1,6 @@
 package org.schabi.newpipe.streams;
 
-import static org.schabi.newpipe.MainActivity.DEBUG;
+import static org.schabi.newpipe.BuildConfig.DEBUG;
 
 import android.util.Log;
 import android.util.Pair;
@@ -284,8 +284,8 @@ public class OggFromWebMWriter implements Closeable {
 
     @Nullable
     private byte[] makeMetadata() {
-        if (DEBUG) {
-            Log.d("OggFromWebMWriter", "Downloading media with codec ID " + webmTrack.codecId);
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         if ("A_OPUS".equals(webmTrack.codecId)) {
@@ -301,17 +301,17 @@ public class OggFromWebMWriter implements Closeable {
                         .format(DateTimeFormatter.ISO_DATE)));
             }
 
-            if (DEBUG) {
-                Log.d("OggFromWebMWriter", "Creating metadata header with this data:");
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                
                 metadata.forEach(p -> {
-                    Log.d("OggFromWebMWriter", p.first + "=" + p.second);
+                    
                 });
             }
 
             return makeOpusTagsHeader(metadata);
         } else if ("A_VORBIS".equals(webmTrack.codecId)) {
             return new byte[]{
-                    0x03, // ¿¿¿???
+                    0x03, // ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¿ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¿ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¿???
                     0x76, 0x6f, 0x72, 0x62, 0x69, 0x73, // "vorbis" binary string
                     0x00, 0x00, 0x00, 0x00, // writing application string size (not present)
                     0x00, 0x00, 0x00, 0x00 // additional tags count (zero means no tags)
@@ -499,3 +499,4 @@ public class OggFromWebMWriter implements Closeable {
         return crc;
     }
 }
+

@@ -3,7 +3,6 @@ package org.schabi.newpipe.player.playqueue;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.schabi.newpipe.MainActivity;
 import org.schabi.newpipe.player.playqueue.PlayQueueEvent.AppendEvent;
 import org.schabi.newpipe.player.playqueue.PlayQueueEvent.ErrorEvent;
 import org.schabi.newpipe.player.playqueue.PlayQueueEvent.InitEvent;
@@ -37,7 +36,7 @@ import io.reactivex.rxjava3.subjects.PublishSubject;
  * </p>
  */
 public abstract class PlayQueue implements Serializable {
-    public static final boolean DEBUG = MainActivity.DEBUG;
+    public static final boolean DEBUG = org.schabi.newpipe.BuildConfig.DEBUG;
     @NonNull
     private final AtomicInteger queueIndex;
     private final List<PlayQueueItem> history = new ArrayList<>();
@@ -572,4 +571,5 @@ public abstract class PlayQueue implements Serializable {
         }
     }
 }
+
 

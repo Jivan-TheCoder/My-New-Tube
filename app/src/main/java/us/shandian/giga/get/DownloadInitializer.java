@@ -105,8 +105,8 @@ public class DownloadInitializer extends Thread {
                     mMission.length = 0;
                     mMission.unknownLength = true;
 
-                    if (DEBUG) {
-                        Log.d(TAG, "falling back (unknown length)");
+                    if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                        
                     }
                 } else {
                     // Open again
@@ -130,16 +130,16 @@ public class DownloadInitializer extends Thread {
                                 mMission.unknownLength = false;
                             }
 
-                            if (DEBUG) {
-                                Log.d(TAG, "http response code = " + mConn.getResponseCode());
+                            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                                
                             }
                         } else {
                             // Fallback to single thread
                             mMission.blocks = new int[0];
                             mMission.unknownLength = false;
 
-                            if (DEBUG) {
-                                Log.d(TAG, "falling back due http response code = " + mConn.getResponseCode());
+                            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                                
                             }
                         }
                     }

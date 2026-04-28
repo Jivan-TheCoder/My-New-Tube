@@ -115,19 +115,15 @@ public class LocalItemListAdapter extends RecyclerView.Adapter<RecyclerView.View
         if (data == null) {
             return;
         }
-        if (DEBUG) {
-            Log.d(TAG, "addItems() before > localItems.size() = "
-                    + localItems.size() + ", data.size() = " + data.size());
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         final int offsetStart = sizeConsideringHeader();
         localItems.addAll(data);
 
-        if (DEBUG) {
-            Log.d(TAG, "addItems() after > offsetStart = " + offsetStart + ", "
-                    + "localItems.size() = " + localItems.size() + ", "
-                    + "header = " + hasHeader() + ", footer = " + footer + ", "
-                    + "showFooter = " + showFooter);
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         notifyItemRangeInserted(offsetStart, data.size());
 
@@ -135,9 +131,8 @@ public class LocalItemListAdapter extends RecyclerView.Adapter<RecyclerView.View
             final int footerNow = sizeConsideringHeader();
             notifyItemMoved(offsetStart, footerNow);
 
-            if (DEBUG) {
-                Log.d(TAG, "addItems() footer from " + offsetStart
-                        + " to " + footerNow);
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                
             }
         }
     }
@@ -210,8 +205,8 @@ public class LocalItemListAdapter extends RecyclerView.Adapter<RecyclerView.View
     @Deprecated(since = "Calling this method with `true` may cause crashes, see "
             + "https://github.com/TeamNewPipe/NewPipe/pull/12996#pullrequestreview-3713317115")
     public void showFooter(final boolean show) {
-        if (DEBUG) {
-            Log.d(TAG, "showFooter() called with: show = [" + show + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         if (show == showFooter) {
             return;
@@ -249,11 +244,8 @@ public class LocalItemListAdapter extends RecyclerView.Adapter<RecyclerView.View
             count++;
         }
 
-        if (DEBUG) {
-            Log.d(TAG, "getItemCount() called, count = " + count + ", "
-                    + "localItems.size() = " + localItems.size() + ", "
-                    + "header = " + hasHeader() + ", footer = " + footer + ", "
-                    + "showFooter = " + showFooter);
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         return count;
     }
@@ -261,8 +253,8 @@ public class LocalItemListAdapter extends RecyclerView.Adapter<RecyclerView.View
     @SuppressWarnings("FinalParameters")
     @Override
     public int getItemViewType(int position) {
-        if (DEBUG) {
-            Log.d(TAG, "getItemViewType() called with: position = [" + position + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         if (hasHeader() && position == 0) {
@@ -322,9 +314,8 @@ public class LocalItemListAdapter extends RecyclerView.Adapter<RecyclerView.View
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull final ViewGroup parent,
                                                       final int type) {
-        if (DEBUG) {
-            Log.d(TAG, "onCreateViewHolder() called with: "
-                    + "parent = [" + parent + "], type = [" + type + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         switch (type) {
             case HEADER_TYPE:
@@ -368,10 +359,8 @@ public class LocalItemListAdapter extends RecyclerView.Adapter<RecyclerView.View
     @SuppressWarnings("FinalParameters")
     @Override
     public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder holder, int position) {
-        if (DEBUG) {
-            Log.d(TAG, "onBindViewHolder() called with: "
-                    + "holder = [" + holder.getClass().getSimpleName() + "], "
-                    + "position = [" + position + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         if (holder instanceof LocalItemHolder) {

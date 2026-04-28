@@ -30,7 +30,6 @@ import androidx.annotation.Nullable;
 import androidx.core.os.BundleCompat;
 
 import org.schabi.newpipe.BuildConfig;
-import org.schabi.newpipe.MainActivity;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -103,9 +102,8 @@ public final class StateSaver {
     @Nullable
     private static SavedState tryToRestore(@NonNull final SavedState savedState,
                                            @NonNull final WriteRead writeRead) {
-        if (MainActivity.DEBUG) {
-            Log.d(TAG, "tryToRestore() called with: savedState = [" + savedState + "], "
-                    + "writeRead = [" + writeRead + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         try {
@@ -113,17 +111,16 @@ public final class StateSaver {
                     STATE_OBJECTS_HOLDER.remove(savedState.getPrefixFileSaved());
             if (savedObjects != null) {
                 writeRead.readFrom(savedObjects);
-                if (MainActivity.DEBUG) {
-                    Log.d(TAG, "tryToSave: reading objects from holder > " + savedObjects
-                            + ", stateObjectsHolder > " + STATE_OBJECTS_HOLDER);
+                if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                    
                 }
                 return savedState;
             }
 
             final File file = new File(savedState.getPathFileSaved());
             if (!file.exists()) {
-                if (MainActivity.DEBUG) {
-                    Log.d(TAG, "Cache file doesn't exist: " + file.getAbsolutePath());
+                if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                    
                 }
                 return null;
             }
@@ -199,12 +196,8 @@ public final class StateSaver {
     @Nullable
     private static SavedState tryToSave(final boolean isChangingConfig, final String prefixFileName,
                                         final String suffixFileName, final WriteRead writeRead) {
-        if (MainActivity.DEBUG) {
-            Log.d(TAG, "tryToSave() called with: "
-                    + "isChangingConfig = [" + isChangingConfig + "], "
-                    + "prefixFileName = [" + prefixFileName + "], "
-                    + "suffixFileName = [" + suffixFileName + "], "
-                    + "writeRead = [" + writeRead + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         final LinkedList<Object> savedObjects = new LinkedList<>();
@@ -215,8 +208,8 @@ public final class StateSaver {
                 STATE_OBJECTS_HOLDER.put(prefixFileName, savedObjects);
                 return new SavedState(prefixFileName, "");
             } else {
-                if (MainActivity.DEBUG) {
-                    Log.d(TAG, "Nothing to save");
+                if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                    
                 }
                 return null;
             }
@@ -271,8 +264,8 @@ public final class StateSaver {
      * @param savedState the saved state to delete
      */
     public static void onDestroy(final SavedState savedState) {
-        if (MainActivity.DEBUG) {
-            Log.d(TAG, "onDestroy() called with: savedState = [" + savedState + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         if (savedState != null && !savedState.getPathFileSaved().isEmpty()) {
@@ -289,8 +282,8 @@ public final class StateSaver {
      * Clear all the files in cache (in memory and disk).
      */
     public static void clearStateFiles() {
-        if (MainActivity.DEBUG) {
-            Log.d(TAG, "clearStateFiles() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         STATE_OBJECTS_HOLDER.clear();
@@ -339,3 +332,4 @@ public final class StateSaver {
         void readFrom(@NonNull Queue<Object> savedObjects) throws Exception;
     }
 }
+

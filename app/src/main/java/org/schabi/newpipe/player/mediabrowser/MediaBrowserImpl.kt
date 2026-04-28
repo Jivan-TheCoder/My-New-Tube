@@ -18,7 +18,7 @@ import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 import java.util.function.Consumer
-import org.schabi.newpipe.MainActivity.DEBUG
+import org.schabi.newpipe.BuildConfig.DEBUG
 import org.schabi.newpipe.NewPipeDatabase
 import org.schabi.newpipe.R
 import org.schabi.newpipe.database.history.model.StreamHistoryEntry
@@ -73,10 +73,6 @@ class MediaBrowserImpl(
         clientUid: Int,
         rootHints: Bundle?
     ): MediaBrowserServiceCompat.BrowserRoot? {
-        if (DEBUG) {
-            Log.d(TAG, "onGetRoot($clientPackageName, $clientUid, $rootHints)")
-        }
-
         if (!packageValidator.isKnownCaller(clientPackageName, clientUid)) {
             // this is a caller we can't trust (see PackageValidator's rules taken from uamp)
             return null
@@ -99,10 +95,6 @@ class MediaBrowserImpl(
 
     //region onLoadChildren
     fun onLoadChildren(parentId: String, result: Result<List<MediaBrowserCompat.MediaItem>>) {
-        if (DEBUG) {
-            Log.d(TAG, "onLoadChildren($parentId)")
-        }
-
         result.detach() // allows sendResult() to happen later
         disposables.add(
             onLoadChildren(parentId)
@@ -381,10 +373,6 @@ class MediaBrowserImpl(
         query: String,
         result: Result<List<MediaBrowserCompat.MediaItem>>
     ) {
-        if (DEBUG) {
-            Log.d(TAG, "onSearch($query)")
-        }
-
         result.detach() // allows sendResult() to happen later
         disposables.add(
             searchMusicBySongTitle(query)

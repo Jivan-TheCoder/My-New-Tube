@@ -132,8 +132,8 @@ public class DownloadManagerService extends Service {
     public void onCreate() {
         super.onCreate();
 
-        if (DEBUG) {
-            Log.d(TAG, "onCreate");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         mBinder = new DownloadManagerBinder();
@@ -190,13 +190,13 @@ public class DownloadManagerService extends Service {
 
     @Override
     public int onStartCommand(final Intent intent, int flags, int startId) {
-        if (DEBUG) {
-            Log.d(TAG, intent == null ? "Restarting" : "Starting");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         if (intent == null) return START_NOT_STICKY;
 
-        Log.i(TAG, "Got intent: " + intent);
+        
         String action = intent.getAction();
         if (action != null) {
             if (action.equals(Intent.ACTION_RUN)) {
@@ -223,8 +223,8 @@ public class DownloadManagerService extends Service {
     public void onDestroy() {
         super.onDestroy();
 
-        if (DEBUG) {
-            Log.d(TAG, "Destroying");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         ServiceCompat.stopForeground(this, ServiceCompat.STOP_FOREGROUND_REMOVE);
@@ -294,7 +294,7 @@ public class DownloadManagerService extends Service {
 
         if (info == null) {
             status = NetworkState.Unavailable;
-            Log.i(TAG, "Active network [connectivity is unavailable]");
+            
         } else {
             boolean connected = info.isConnected();
             boolean metered = mConnectivityManager.isActiveNetworkMetered();
@@ -304,7 +304,7 @@ public class DownloadManagerService extends Service {
             else
                 status = NetworkState.Unavailable;
 
-            Log.i(TAG, "Active network [connected=" + connected + " metered=" + metered + "] " + info.toString());
+            
         }
 
         if (mManager == null) return;// avoid race-conditions while the service is starting
@@ -515,7 +515,7 @@ public class DownloadManagerService extends Service {
         if (path == null || path.isEmpty()) return null;
 
         if (path.charAt(0) == File.separatorChar) {
-            Log.i(TAG, "Old save path style present: " + path);
+            
             path = "";
             mPrefs.edit().putString(getString(prefKey), "").apply();
         }

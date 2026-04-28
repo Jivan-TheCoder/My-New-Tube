@@ -19,20 +19,16 @@
 
 package org.schabi.newpipe.util;
 
-import android.util.Log;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.collection.LruCache;
 
-import org.schabi.newpipe.MainActivity;
 import org.schabi.newpipe.extractor.Info;
 
 import java.util.Map;
 
 public final class InfoCache {
     private final String TAG = getClass().getSimpleName();
-    private static final boolean DEBUG = MainActivity.DEBUG;
 
     private static final InfoCache INSTANCE = new InfoCache();
     private static final int MAX_ITEMS_ON_CACHE = 60;
@@ -98,9 +94,8 @@ public final class InfoCache {
     public Info getFromKey(final int serviceId,
                            @NonNull final String url,
                            @NonNull final Type cacheType) {
-        if (DEBUG) {
-            Log.d(TAG, "getFromKey() called with: "
-                    + "serviceId = [" + serviceId + "], url = [" + url + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         synchronized (LRU_CACHE) {
             return getInfo(keyOf(serviceId, url, cacheType));
@@ -111,8 +106,8 @@ public final class InfoCache {
                         @NonNull final String url,
                         @NonNull final Info info,
                         @NonNull final Type cacheType) {
-        if (DEBUG) {
-            Log.d(TAG, "putInfo() called with: info = [" + info + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         final long expirationMillis = ServiceHelper.getCacheExpirationMillis(info.getServiceId());
@@ -125,9 +120,8 @@ public final class InfoCache {
     public void removeInfo(final int serviceId,
                            @NonNull final String url,
                            @NonNull final Type cacheType) {
-        if (DEBUG) {
-            Log.d(TAG, "removeInfo() called with: "
-                    + "serviceId = [" + serviceId + "], url = [" + url + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         synchronized (LRU_CACHE) {
             LRU_CACHE.remove(keyOf(serviceId, url, cacheType));
@@ -135,8 +129,8 @@ public final class InfoCache {
     }
 
     public void clearCache() {
-        if (DEBUG) {
-            Log.d(TAG, "clearCache() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         synchronized (LRU_CACHE) {
             LRU_CACHE.evictAll();
@@ -144,8 +138,8 @@ public final class InfoCache {
     }
 
     public void trimCache() {
-        if (DEBUG) {
-            Log.d(TAG, "trimCache() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         synchronized (LRU_CACHE) {
             removeStaleCache();
@@ -173,3 +167,4 @@ public final class InfoCache {
         }
     }
 }
+

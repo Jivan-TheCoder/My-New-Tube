@@ -1,6 +1,6 @@
 package org.schabi.newpipe.player.mediasession;
 
-import static org.schabi.newpipe.MainActivity.DEBUG;
+import static org.schabi.newpipe.BuildConfig.DEBUG;
 import static org.schabi.newpipe.player.notification.NotificationConstants.ACTION_RECREATE_NOTIFICATION;
 
 import android.content.Intent;
@@ -149,8 +149,8 @@ public class MediaSessionPlayerUi extends PlayerUi
     }
 
     private MediaMetadataCompat buildMediaMetadata() {
-        if (DEBUG) {
-            Log.d(TAG, "buildMediaMetadata called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         // set title and artist
@@ -288,3 +288,4 @@ public class MediaSessionPlayerUi extends PlayerUi
         updateMediaSessionActions();
     }
 }
+

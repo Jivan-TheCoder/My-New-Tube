@@ -83,7 +83,7 @@ public class AudioReactor implements AudioManager.OnAudioFocusChangeListener, An
 
     @Override
     public void onAudioFocusChange(final int focusChange) {
-        Log.d(TAG, "onAudioFocusChange() called with: focusChange = [" + focusChange + "]");
+        
         switch (focusChange) {
             case AudioManager.AUDIOFOCUS_GAIN:
                 onAudioFocusGain();
@@ -99,7 +99,7 @@ public class AudioReactor implements AudioManager.OnAudioFocusChangeListener, An
     }
 
     private void onAudioFocusGain() {
-        Log.d(TAG, "onAudioFocusGain() called");
+        
         player.setVolume(DUCK_AUDIO_TO);
         animateAudio(DUCK_AUDIO_TO, 1.0f);
 
@@ -109,12 +109,12 @@ public class AudioReactor implements AudioManager.OnAudioFocusChangeListener, An
     }
 
     private void onAudioFocusLoss() {
-        Log.d(TAG, "onAudioFocusLoss() called");
+        
         player.pause();
     }
 
     private void onAudioFocusLossCanDuck() {
-        Log.d(TAG, "onAudioFocusLossCanDuck() called");
+        
         // Set the volume to 1/10 on ducking
         player.setVolume(DUCK_AUDIO_TO);
     }

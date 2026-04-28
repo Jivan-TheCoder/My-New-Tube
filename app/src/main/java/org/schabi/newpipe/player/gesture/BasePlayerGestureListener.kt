@@ -33,13 +33,6 @@ abstract class BasePlayerGestureListener(
         event: MotionEvent,
         portion: DisplayPortion
     ) {
-        if (DEBUG) {
-            Log.d(
-                TAG,
-                "onDoubleTap called with playerType = [" +
-                    player.playerType + "], portion = [" + portion + "]"
-            )
-        }
         if (playerUi.isSomePopupMenuVisible) {
             playerUi.hideControls(0, 0)
         }
@@ -69,13 +62,6 @@ abstract class BasePlayerGestureListener(
     }
 
     open fun onScrollEnd(event: MotionEvent) {
-        if (DEBUG) {
-            Log.d(
-                TAG,
-                "onScrollEnd called with playerType = [" +
-                    player.playerType + "]"
-            )
-        }
         if (playerUi.isControlsVisible && player.currentState == Player.STATE_PLAYING) {
             playerUi.hideControls(
                 VideoPlayerUi.DEFAULT_CONTROLS_DURATION,
@@ -89,10 +75,6 @@ abstract class BasePlayerGestureListener(
     // ///////////////////////////////////////////////////////////////////
 
     override fun onDown(e: MotionEvent): Boolean {
-        if (DEBUG) {
-            Log.d(TAG, "onDown called with e = [$e]")
-        }
-
         if (isDoubleTapping && isDoubleTapEnabled) {
             doubleTapControls?.onDoubleTapProgressDown(getDisplayPortion(e))
             return true
@@ -112,10 +94,6 @@ abstract class BasePlayerGestureListener(
     }
 
     override fun onDoubleTap(e: MotionEvent): Boolean {
-        if (DEBUG) {
-            Log.d(TAG, "onDoubleTap called with e = [$e]")
-        }
-
         onDoubleTap(e, getDisplayPortion(e))
         return true
     }
@@ -141,37 +119,21 @@ abstract class BasePlayerGestureListener(
 
     private fun startMultiDoubleTap(e: MotionEvent) {
         if (!isDoubleTapping) {
-            if (DEBUG) {
-                Log.d(TAG, "startMultiDoubleTap called with e = [$e]")
-            }
-
             keepInDoubleTapMode()
             doubleTapControls?.onDoubleTapStarted(getDisplayPortion(e))
         }
     }
 
     fun keepInDoubleTapMode() {
-        if (DEBUG) {
-            Log.d(TAG, "keepInDoubleTapMode called")
-        }
-
         isDoubleTapping = true
         doubleTapHandler.removeCallbacksAndMessages(DOUBLE_TAP)
         doubleTapHandler.postDelayed(DOUBLE_TAP_DELAY, DOUBLE_TAP) {
-            if (DEBUG) {
-                Log.d(TAG, "doubleTapRunnable called")
-            }
-
             isDoubleTapping = false
             doubleTapControls?.onDoubleTapFinished()
         }
     }
 
     fun endMultiDoubleTap() {
-        if (DEBUG) {
-            Log.d(TAG, "endMultiDoubleTap called")
-        }
-
         isDoubleTapping = false
         doubleTapHandler.removeCallbacksAndMessages(DOUBLE_TAP)
         doubleTapControls?.onDoubleTapFinished()

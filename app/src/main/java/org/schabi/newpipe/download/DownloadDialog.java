@@ -42,7 +42,6 @@ import com.evernote.android.state.State;
 import com.livefront.bridge.Bridge;
 import com.nononsenseapps.filepicker.Utils;
 
-import org.schabi.newpipe.MainActivity;
 import org.schabi.newpipe.R;
 import org.schabi.newpipe.databinding.DownloadDialogBinding;
 import org.schabi.newpipe.error.ErrorInfo;
@@ -91,7 +90,6 @@ import us.shandian.giga.service.MissionState;
 public class DownloadDialog extends DialogFragment
         implements RadioGroup.OnCheckedChangeListener, AdapterView.OnItemSelectedListener {
     private static final String TAG = "DialogFragment";
-    private static final boolean DEBUG = MainActivity.DEBUG;
 
     @State
     StreamInfo currentInfo;
@@ -197,9 +195,8 @@ public class DownloadDialog extends DialogFragment
     @Override
     public void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (DEBUG) {
-            Log.d(TAG, "onCreate() called with: "
-                    + "savedInstanceState = [" + savedInstanceState + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         if (!PermissionHelper.checkStoragePermissions(getActivity(),
@@ -262,7 +259,7 @@ public class DownloadDialog extends DialogFragment
 
             if (audioStream != null) {
                 secondaryStreams.append(i, new SecondaryStreamHelper<>(audioStreams, audioStream));
-            } else if (DEBUG) {
+            } else if (org.schabi.newpipe.BuildConfig.DEBUG) {
                 final MediaFormat mediaFormat = videoStreams.get(i).getFormat();
                 if (mediaFormat != null) {
                     Log.w(TAG, "No audio stream candidates for video format "
@@ -281,10 +278,8 @@ public class DownloadDialog extends DialogFragment
     public View onCreateView(@NonNull final LayoutInflater inflater,
                              final ViewGroup container,
                              final Bundle savedInstanceState) {
-        if (DEBUG) {
-            Log.d(TAG, "onCreateView() called with: "
-                    + "inflater = [" + inflater + "], container = [" + container + "], "
-                    + "savedInstanceState = [" + savedInstanceState + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         return inflater.inflate(R.layout.download_dialog, container);
     }
@@ -334,8 +329,8 @@ public class DownloadDialog extends DialogFragment
     }
 
     private void initToolbar(final Toolbar toolbar) {
-        if (DEBUG) {
-            Log.d(TAG, "initToolbar() called with: toolbar = [" + toolbar + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         toolbar.setTitle(R.string.download_dialog_title);
@@ -552,9 +547,8 @@ public class DownloadDialog extends DialogFragment
 
     @Override
     public void onCheckedChanged(final RadioGroup group, @IdRes final int checkedId) {
-        if (DEBUG) {
-            Log.d(TAG, "onCheckedChanged() called with: "
-                    + "group = [" + group + "], checkedId = [" + checkedId + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         boolean flag = true;
 
@@ -575,10 +569,8 @@ public class DownloadDialog extends DialogFragment
                                final View view,
                                final int position,
                                final long id) {
-        if (DEBUG) {
-            Log.d(TAG, "onItemSelected() called with: "
-                    + "parent = [" + parent + "], view = [" + view + "], "
-                    + "position = [" + position + "], id = [" + id + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         final int parentId = parent.getId();
@@ -1055,6 +1047,11 @@ public class DownloadDialog extends DialogFragment
                 psName = Postprocessing.ALGORITHM_OGG_FROM_WEBM_DEMUXER;
             }
         } else if (checkedRadioButtonId == R.id.video_button) {
+            if (!PermissionHelper.checkPostNotificationsPermission(requireActivity(),
+                    PermissionHelper.POST_NOTIFICATIONS_REQUEST_CODE)) {
+                return;
+            }
+
             kind = 'v';
             selectedStream = videoStreamsAdapter.getItem(selectedVideoIndex);
 
@@ -1125,3 +1122,4 @@ public class DownloadDialog extends DialogFragment
         dismiss();
     }
 }
+

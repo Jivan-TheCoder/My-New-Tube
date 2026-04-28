@@ -1,6 +1,6 @@
 package org.schabi.newpipe.util;
 
-import static org.schabi.newpipe.MainActivity.DEBUG;
+import static org.schabi.newpipe.BuildConfig.DEBUG;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -66,7 +66,7 @@ import java.util.stream.Collectors;
 
 public final class Localization {
     private static final String TAG = Localization.class.toString();
-    public static final String DOT_SEPARATOR = " • ";
+    public static final String DOT_SEPARATOR = " Ã¢â‚¬Â¢ ";
     private static PrettyTime prettyTime;
 
     private Localization() { }
@@ -283,7 +283,7 @@ public final class Localization {
     public static String getDurationString(final long duration, final boolean isDurationComplete,
                                            final boolean showDurationPrefix) {
         final String output = getDurationString(duration);
-        final String durationPrefix = showDurationPrefix ? "⏱ " : "";
+        final String durationPrefix = showDurationPrefix ? "Ã¢ÂÂ± " : "";
         final String durationPostfix = isDurationComplete ? "" : "+";
         return durationPrefix + output + durationPostfix;
     }
@@ -486,3 +486,4 @@ public final class Localization {
         }
     }
 }
+

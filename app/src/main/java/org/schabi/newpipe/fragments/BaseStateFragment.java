@@ -101,8 +101,8 @@ public abstract class BaseStateFragment<I> extends BaseFragment implements ViewC
     }
 
     protected void startLoading(final boolean forceLoad) {
-        if (DEBUG) {
-            Log.d(TAG, "startLoading() called with: forceLoad = [" + forceLoad + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         showLoading();
         isLoading.set(true);
@@ -148,8 +148,8 @@ public abstract class BaseStateFragment<I> extends BaseFragment implements ViewC
 
     @Override
     public void handleResult(final I result) {
-        if (DEBUG) {
-            Log.d(TAG, "handleResult() called with: result = [" + result + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         hideLoading();
     }
@@ -174,7 +174,7 @@ public abstract class BaseStateFragment<I> extends BaseFragment implements ViewC
         handleError();
 
         if (isDetached() || isRemoving()) {
-            if (DEBUG) {
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
                 Log.w(TAG, "showError() is detached or removing = [" + errorInfo + "]");
             }
             return;
@@ -188,7 +188,7 @@ public abstract class BaseStateFragment<I> extends BaseFragment implements ViewC
         handleError();
 
         if (isDetached() || isRemoving()) {
-            if (DEBUG) {
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
                 Log.w(TAG, "showTextError() is detached or removing = [" + errorString + "]");
             }
             return;
@@ -219,8 +219,8 @@ public abstract class BaseStateFragment<I> extends BaseFragment implements ViewC
      * @param errorInfo The error information
      */
     public void showSnackBarError(final ErrorInfo errorInfo) {
-        if (DEBUG) {
-            Log.d(TAG, "showSnackBarError() called with: errorInfo = [" + errorInfo + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         ErrorUtil.showSnackbar(this, errorInfo);
     }

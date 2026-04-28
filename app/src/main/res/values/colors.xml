@@ -80,4 +80,11 @@
 
     <color name="black">#000</color>
 
+<!--    //ads color-->
+    <color name="blue">#0371C8</color>
+    <color name="red">#B30404</color>
+    <color name="green">#036507</color>
+    <color name="hower_color">#FF4081</color>
+    <color name="tr">#00F44336</color>
+
 </resources>

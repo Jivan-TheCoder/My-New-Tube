@@ -1,8 +1,3 @@
-/*
- * SPDX-FileCopyrightText: 2025 NewPipe e.V. <https://newpipe-ev.de>
- * SPDX-License-Identifier: GPL-3.0-or-later
- */
-
 import com.android.build.api.dsl.ApplicationExtension
 import java.io.File
 import java.util.Properties
@@ -189,11 +184,11 @@ if (requestedReleasePackagingTask && !hasReleaseSigningConfig) {
     )
 }
 
-androidComponents {
-    beforeVariants(selector().withBuildType("debug")) { variantBuilder ->
-        variantBuilder.enable = false
-    }
-}
+//androidComponents {
+//    beforeVariants(selector().withBuildType("debug")) { variantBuilder ->
+//        variantBuilder.enable = true
+//    }
+//}
 
 ksp {
     arg("room.schemaLocation", "$projectDir/schemas")
@@ -391,4 +386,20 @@ dependencies {
     androidTestImplementation(libs.androidx.runner)
     androidTestImplementation(libs.androidx.room.testing)
     androidTestImplementation(libs.assertj.core)
+
+    implementation("androidx.lifecycle:lifecycle-runtime:2.10.0")
+    implementation("androidx.lifecycle:lifecycle-process:2.10.0")
+    implementation("com.applovin:applovin-sdk:13.6.2")
+    implementation("com.google.android.gms:play-services-ads:24.9.0")
+    implementation("com.android.volley:volley:1.2.1")
+    implementation("com.facebook.android:facebook-android-sdk:18.1.3")
+    implementation("com.facebook.android:audience-network-sdk:6.21.0")
+    implementation("androidx.activity:activity:1.13.0")
+    implementation("com.airbnb.android:lottie:6.7.1")
+
+    //Todo: in app rate and in app update
+    implementation("com.google.android.play:app-update:2.1.0")
+    implementation("com.google.android.play:review:2.0.2")
+    //Todo: Multidex
+    implementation("androidx.multidex:multidex:2.0.1")
 }

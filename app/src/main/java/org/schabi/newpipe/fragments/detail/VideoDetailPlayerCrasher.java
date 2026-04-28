@@ -83,7 +83,7 @@ public final class VideoDetailPlayerCrasher {
             @Nullable final Player player
     ) {
         if (player == null) {
-            Log.d(TAG, "Player is not available");
+            
             Toast.makeText(context, "Player is not available", Toast.LENGTH_SHORT)
                     .show();
 
@@ -134,7 +134,7 @@ public final class VideoDetailPlayerCrasher {
             @NonNull final Player player,
             @NonNull final ExoPlaybackException exception
     ) {
-        Log.d(TAG, "Crashing the player using player.onPlayerError(ex)");
+        
         try {
             player.onPlayerError(exception);
         } catch (final Exception exPlayer) {

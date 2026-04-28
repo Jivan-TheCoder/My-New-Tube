@@ -1,7 +1,7 @@
 package org.schabi.newpipe.player.ui;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
-import static org.schabi.newpipe.MainActivity.DEBUG;
+import static org.schabi.newpipe.BuildConfig.DEBUG;
 import static org.schabi.newpipe.QueueItemMenuUtil.openPopupMenu;
 import static org.schabi.newpipe.extractor.ServiceList.YouTube;
 import static org.schabi.newpipe.ktx.ViewUtils.animate;
@@ -552,8 +552,8 @@ public final class MainPlayerUi extends VideoPlayerUi implements View.OnLayoutCh
             final int min = Math.min(width, height);
             final int maxGestureLength = (int) (min * 0.75);
 
-            if (DEBUG) {
-                Log.d(TAG, "maxGestureLength = " + maxGestureLength);
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                
             }
 
             binding.volumeProgressBar.setMax(maxGestureLength);
@@ -910,8 +910,8 @@ public final class MainPlayerUi extends VideoPlayerUi implements View.OnLayoutCh
     }
 
     public void toggleFullscreen() {
-        if (DEBUG) {
-            Log.d(TAG, "toggleFullscreen() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         final PlayerServiceEventListener fragmentListener = player.getFragmentListener()
                 .orElse(null);
@@ -978,3 +978,4 @@ public final class MainPlayerUi extends VideoPlayerUi implements View.OnLayoutCh
     }
     //endregion
 }
+

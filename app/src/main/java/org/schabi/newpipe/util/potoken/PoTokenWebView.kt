@@ -70,10 +70,6 @@ class PoTokenWebView private constructor(
      * run it, and obtain an `integrityToken`.
      */
     private fun loadHtmlAndObtainBotguard(context: Context) {
-        if (BuildConfig.DEBUG) {
-            Log.d(TAG, "loadHtmlAndObtainBotguard() called")
-        }
-
         disposables.add(
             Single.fromCallable {
                 val html = context.assets.open("po_token.html").bufferedReader()
@@ -107,10 +103,6 @@ class PoTokenWebView private constructor(
      */
     @JavascriptInterface
     fun downloadAndRunBotguard() {
-        if (BuildConfig.DEBUG) {
-            Log.d(TAG, "downloadAndRunBotguard() called")
-        }
-
         makeBotguardServiceRequest(
             "https://www.youtube.com/api/jnn/v1/Create",
             "[ \"$REQUEST_KEY\" ]"
@@ -151,16 +143,11 @@ class PoTokenWebView private constructor(
      */
     @JavascriptInterface
     fun onRunBotguardResult(botguardResponse: String) {
-        if (BuildConfig.DEBUG) {
-            Log.d(TAG, "botguardResponse: $botguardResponse")
-        }
         makeBotguardServiceRequest(
             "https://www.youtube.com/api/jnn/v1/GenerateIT",
             "[ \"$REQUEST_KEY\", \"$botguardResponse\" ]"
         ) { responseBody ->
-            if (BuildConfig.DEBUG) {
-                Log.d(TAG, "GenerateIT response: $responseBody")
-            }
+
             val (integrityToken, expirationTimeInSeconds) = parseIntegrityTokenData(responseBody)
 
             // leave 10 minutes of margin just to be sure
@@ -169,9 +156,6 @@ class PoTokenWebView private constructor(
             webView.evaluateJavascript(
                 "this.integrityToken = $integrityToken"
             ) {
-                if (BuildConfig.DEBUG) {
-                    Log.d(TAG, "initialization finished, expiration=${expirationTimeInSeconds}s")
-                }
                 generatorEmitter.onSuccess(this)
             }
         }
@@ -180,9 +164,7 @@ class PoTokenWebView private constructor(
 
     //region Obtaining poTokens
     override fun generatePoToken(identifier: String): Single<String> = Single.create { emitter ->
-        if (BuildConfig.DEBUG) {
-            Log.d(TAG, "generatePoToken() called with identifier $identifier")
-        }
+
         runOnMainThread(emitter) {
             addPoTokenEmitter(identifier, emitter)
             val u8Identifier = stringToU8(identifier)
@@ -222,9 +204,6 @@ class PoTokenWebView private constructor(
      */
     @JavascriptInterface
     fun onObtainPoTokenResult(identifier: String, poTokenU8: String) {
-        if (BuildConfig.DEBUG) {
-            Log.d(TAG, "Generated poToken (before decoding): identifier=$identifier poTokenU8=$poTokenU8")
-        }
         val poToken = try {
             u8ToBase64(poTokenU8)
         } catch (t: Throwable) {
@@ -232,9 +211,6 @@ class PoTokenWebView private constructor(
             return
         }
 
-        if (BuildConfig.DEBUG) {
-            Log.d(TAG, "Generated poToken: identifier=$identifier poToken=$poToken")
-        }
         popPoTokenEmitter(identifier)?.onSuccess(poToken)
     }
 

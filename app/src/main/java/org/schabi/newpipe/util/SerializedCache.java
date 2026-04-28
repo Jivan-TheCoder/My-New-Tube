@@ -6,8 +6,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.collection.LruCache;
 
-import org.schabi.newpipe.MainActivity;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.ObjectInputStream;
@@ -16,7 +14,6 @@ import java.io.Serializable;
 import java.util.UUID;
 
 public final class SerializedCache {
-    private static final boolean DEBUG = MainActivity.DEBUG;
     private static final SerializedCache INSTANCE = new SerializedCache();
     private static final int MAX_ITEMS_ON_CACHE = 5;
     private static final LruCache<String, CacheData<?>> LRU_CACHE =
@@ -33,8 +30,8 @@ public final class SerializedCache {
 
     @Nullable
     public <T> T take(@NonNull final String key, @NonNull final Class<T> type) {
-        if (DEBUG) {
-            Log.d(TAG, "take() called with: key = [" + key + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         synchronized (LRU_CACHE) {
             return LRU_CACHE.get(key) != null ? getItem(LRU_CACHE.remove(key), type) : null;
@@ -43,8 +40,8 @@ public final class SerializedCache {
 
     @Nullable
     public <T> T get(@NonNull final String key, @NonNull final Class<T> type) {
-        if (DEBUG) {
-            Log.d(TAG, "get() called with: key = [" + key + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         synchronized (LRU_CACHE) {
             final CacheData<?> data = LRU_CACHE.get(key);
@@ -61,8 +58,8 @@ public final class SerializedCache {
 
     public <T extends Serializable> boolean put(@NonNull final String key, @NonNull final T item,
                                                 @NonNull final Class<T> type) {
-        if (DEBUG) {
-            Log.d(TAG, "put() called with: key = [" + key + "], item = [" + item + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         synchronized (LRU_CACHE) {
             try {
@@ -76,8 +73,8 @@ public final class SerializedCache {
     }
 
     public void clear() {
-        if (DEBUG) {
-            Log.d(TAG, "clear() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         synchronized (LRU_CACHE) {
             LRU_CACHE.evictAll();
@@ -118,3 +115,4 @@ public final class SerializedCache {
         }
     }
 }
+

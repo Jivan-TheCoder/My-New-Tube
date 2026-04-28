@@ -2,7 +2,7 @@ package org.schabi.newpipe.player.ui;
 
 import static com.google.android.exoplayer2.Player.REPEAT_MODE_ALL;
 import static com.google.android.exoplayer2.Player.REPEAT_MODE_ONE;
-import static org.schabi.newpipe.MainActivity.DEBUG;
+import static org.schabi.newpipe.BuildConfig.DEBUG;
 import static org.schabi.newpipe.ktx.ViewUtils.animate;
 import static org.schabi.newpipe.ktx.ViewUtils.animateRotation;
 import static org.schabi.newpipe.player.Player.RENDERER_UNAVAILABLE;
@@ -491,12 +491,8 @@ public abstract class VideoPlayerUi extends PlayerUi implements SeekBar.OnSeekBa
                 null,
                 true);
 
-        if (DEBUG) {
-            Log.d(TAG, "Thumbnail - onThumbnailLoaded() called with: "
-                    + "currentThumbnail = [" + thumbnail + "], "
-                    + thumbnail.getWidth() + "x" + thumbnail.getHeight()
-                    + ", scaled end screen height = " + endScreenHeight
-                    + ", scaled end screen width = " + endScreenBitmap.getWidth());
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         binding.endScreen.setImageBitmap(endScreenBitmap);
@@ -527,10 +523,7 @@ public abstract class VideoPlayerUi extends PlayerUi implements SeekBar.OnSeekBa
                     (int) (binding.playbackSeekBar.getMax() * ((float) bufferPercent / 100)));
         }
         if (DEBUG && bufferPercent % 20 == 0) { //Limit log
-            Log.d(TAG, "notifyProgressUpdateToListeners() called with: "
-                    + "isVisible = " + isControlsVisible() + ", "
-                    + "currentProgress = [" + currentProgress + "], "
-                    + "duration = [" + duration + "], bufferPercent = [" + bufferPercent + "]");
+            
         }
         binding.playbackLiveSync.setClickable(!player.isLiveEdge());
     }
@@ -570,9 +563,8 @@ public abstract class VideoPlayerUi extends PlayerUi implements SeekBar.OnSeekBa
         if (!fromUser) {
             return;
         }
-        if (DEBUG) {
-            Log.d(TAG, "onProgressChanged() called with: "
-                    + "seekBar = [" + seekBar + "], progress = [" + progress + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         binding.currentDisplaySeek.setText(getTimeString(progress));
@@ -626,8 +618,8 @@ public abstract class VideoPlayerUi extends PlayerUi implements SeekBar.OnSeekBa
 
     @Override // seekbar listener
     public void onStartTrackingTouch(final SeekBar seekBar) {
-        if (DEBUG) {
-            Log.d(TAG, "onStartTrackingTouch() called with: seekBar = [" + seekBar + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         if (player.getCurrentState() != STATE_PAUSED_SEEK) {
             player.changeState(STATE_PAUSED_SEEK);
@@ -642,8 +634,8 @@ public abstract class VideoPlayerUi extends PlayerUi implements SeekBar.OnSeekBa
 
     @Override // seekbar listener
     public void onStopTrackingTouch(final SeekBar seekBar) {
-        if (DEBUG) {
-            Log.d(TAG, "onStopTrackingTouch() called with: seekBar = [" + seekBar + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         player.seekTo(seekBar.getProgress());
@@ -677,8 +669,8 @@ public abstract class VideoPlayerUi extends PlayerUi implements SeekBar.OnSeekBa
     }
 
     public void showControlsThenHide() {
-        if (DEBUG) {
-            Log.d(TAG, "showControlsThenHide() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         showOrHideButtons();
@@ -694,8 +686,8 @@ public abstract class VideoPlayerUi extends PlayerUi implements SeekBar.OnSeekBa
     }
 
     public void showControls(final long duration) {
-        if (DEBUG) {
-            Log.d(TAG, "showControls() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         showOrHideButtons();
         showSystemUIPartially();
@@ -705,9 +697,8 @@ public abstract class VideoPlayerUi extends PlayerUi implements SeekBar.OnSeekBa
     }
 
     public void hideControls(final long duration, final long delay) {
-        if (DEBUG) {
-            Log.d(TAG, "hideControls() called with: duration = [" + duration
-                    + "], delay = [" + delay + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         showOrHideButtons();
@@ -933,15 +924,15 @@ public abstract class VideoPlayerUi extends PlayerUi implements SeekBar.OnSeekBa
     //region Repeat, shuffle, mute
 
     public void onRepeatClicked() {
-        if (DEBUG) {
-            Log.d(TAG, "onRepeatClicked() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         player.cycleNextRepeatMode();
     }
 
     public void onShuffleClicked() {
-        if (DEBUG) {
-            Log.d(TAG, "onShuffleClicked() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         player.toggleShuffleModeEnabled();
     }
@@ -1256,10 +1247,8 @@ public abstract class VideoPlayerUi extends PlayerUi implements SeekBar.OnSeekBa
      */
     @Override
     public boolean onMenuItemClick(@NonNull final MenuItem menuItem) {
-        if (DEBUG) {
-            Log.d(TAG, "onMenuItemClick() called with: "
-                    + "menuItem = [" + menuItem + "], "
-                    + "menuItem.getItemId = [" + menuItem.getItemId() + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         if (menuItem.getGroupId() == POPUP_MENU_ID_QUALITY) {
@@ -1325,8 +1314,8 @@ public abstract class VideoPlayerUi extends PlayerUi implements SeekBar.OnSeekBa
      */
     @Override
     public void onDismiss(@Nullable final PopupMenu menu) {
-        if (DEBUG) {
-            Log.d(TAG, "onDismiss() called with: menu = [" + menu + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         isSomePopupMenuVisible = false; //TODO check if this works
         player.getSelectedVideoStream()
@@ -1339,8 +1328,8 @@ public abstract class VideoPlayerUi extends PlayerUi implements SeekBar.OnSeekBa
     }
 
     private void onCaptionClicked() {
-        if (DEBUG) {
-            Log.d(TAG, "onCaptionClicked() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         captionPopupMenu.show();
         isSomePopupMenuVisible = true;
@@ -1434,8 +1423,8 @@ public abstract class VideoPlayerUi extends PlayerUi implements SeekBar.OnSeekBa
      */
     protected View.OnClickListener makeOnClickListener(@NonNull final Runnable runnable) {
         return v -> {
-            if (DEBUG) {
-                Log.d(TAG, "onClick() called with: v = [" + v + "]");
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                
             }
 
             runnable.run();
@@ -1501,8 +1490,8 @@ public abstract class VideoPlayerUi extends PlayerUi implements SeekBar.OnSeekBa
     }
 
     private void onMoreOptionsClicked() {
-        if (DEBUG) {
-            Log.d(TAG, "onMoreOptionsClicked() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         final boolean isMoreControlsVisible =
@@ -1624,3 +1613,4 @@ public abstract class VideoPlayerUi extends PlayerUi implements SeekBar.OnSeekBa
     }
     //endregion
 }
+

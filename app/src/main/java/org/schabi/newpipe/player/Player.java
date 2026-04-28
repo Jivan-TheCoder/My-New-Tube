@@ -82,7 +82,6 @@ import com.google.android.exoplayer2.trackselection.MappingTrackSelector;
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
 import com.google.android.exoplayer2.video.VideoSize;
 
-import org.schabi.newpipe.MainActivity;
 import org.schabi.newpipe.R;
 import org.schabi.newpipe.databinding.PlayerBinding;
 import org.schabi.newpipe.error.ErrorInfo;
@@ -143,7 +142,7 @@ import io.reactivex.rxjava3.disposables.SerialDisposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public final class Player implements PlaybackListener, Listener {
-    public static final boolean DEBUG = MainActivity.DEBUG;
+    public static final boolean DEBUG = org.schabi.newpipe.BuildConfig.DEBUG;
     public static final String TAG = Player.class.getSimpleName();
 
     /*//////////////////////////////////////////////////////////////////////////
@@ -354,7 +353,7 @@ public final class Player implements PlaybackListener, Listener {
         if (playerIntentType == null) {
             return;
         }
-        // TODO: this should be in the second switch below, but I’m not sure whether I
+        // TODO: this should be in the second switch below, but IÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢m not sure whether I
         // can move the initUIs stuff without breaking the setup for edge cases somehow.
         // when playing from a timestamp, keep the current player as-is.
         if (playerIntentType != PlayerIntentType.TimestampChange) {
@@ -524,7 +523,7 @@ public final class Player implements PlaybackListener, Listener {
                                 initPlayback(newQueue, playWhenReady);
                             },
                             error -> {
-                                if (DEBUG) {
+                                if (org.schabi.newpipe.BuildConfig.DEBUG) {
                                     Log.w(TAG, "Failed to start playback", error);
                                 }
                                 // In case any error we can start playback without history
@@ -620,8 +619,8 @@ public final class Player implements PlaybackListener, Listener {
     }
 
     private void initPlayer(final boolean playOnReady) {
-        if (DEBUG) {
-            Log.d(TAG, "initPlayer() called with: playOnReady = [" + playOnReady + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         simpleExoPlayer = new ExoPlayer.Builder(context, renderFactory)
@@ -659,8 +658,8 @@ public final class Player implements PlaybackListener, Listener {
     //region Destroy and recovery
 
     private void destroyPlayer() {
-        if (DEBUG) {
-            Log.d(TAG, "destroyPlayer() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         UIs.call(PlayerUi::destroyPlayer);
 
@@ -684,8 +683,8 @@ public final class Player implements PlaybackListener, Listener {
     }
 
     public void destroy() {
-        if (DEBUG) {
-            Log.d(TAG, "destroy() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         saveStreamProgressState();
@@ -720,8 +719,8 @@ public final class Player implements PlaybackListener, Listener {
             return;
         }
 
-        if (DEBUG) {
-            Log.d(TAG, "Setting recovery, queue: " + queuePos + ", pos: " + windowPos);
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         playQueue.setRecovery(queuePos, windowPos);
     }
@@ -738,8 +737,8 @@ public final class Player implements PlaybackListener, Listener {
 
     @Override // own playback listener
     public void onPlaybackShutdown() {
-        if (DEBUG) {
-            Log.d(TAG, "onPlaybackShutdown() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         // destroys the service, which in turn will destroy the player
         service.destroyPlayerAndStopService();
@@ -767,8 +766,8 @@ public final class Player implements PlaybackListener, Listener {
      * broadcast would not do anything.
      */
     private void setupBroadcastReceiver() {
-        if (DEBUG) {
-            Log.d(TAG, "setupBroadcastReceiver() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         broadcastReceiver = new BroadcastReceiver() {
@@ -805,8 +804,8 @@ public final class Player implements PlaybackListener, Listener {
             return;
         }
 
-        if (DEBUG) {
-            Log.d(TAG, "onBroadcastReceived() called with: intent = [" + intent + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         switch (intent.getAction()) {
@@ -844,8 +843,8 @@ public final class Player implements PlaybackListener, Listener {
                 screenOn = true;
                 break;
             case Intent.ACTION_CONFIGURATION_CHANGED:
-                if (DEBUG) {
-                    Log.d(TAG, "ACTION_CONFIGURATION_CHANGED received");
+                if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                    
                 }
                 break;
         }
@@ -878,9 +877,8 @@ public final class Player implements PlaybackListener, Listener {
     //region Thumbnail loading
 
     private void loadCurrentThumbnail(final List<Image> thumbnails) {
-        if (DEBUG) {
-            Log.d(TAG, "Thumbnail - loadCurrentThumbnail() called with thumbnails = ["
-                    + thumbnails.size() + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         // Cancel any ongoing image loading
@@ -906,15 +904,15 @@ public final class Player implements PlaybackListener, Listener {
 
             @Override
             public void onStart(@Nullable final coil3.Image placeholder) {
-                if (DEBUG) {
-                    Log.d(TAG, "Thumbnail - onStart() called");
+                if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                    
                 }
             }
 
             @Override
             public void onSuccess(@NonNull final coil3.Image result) {
-                if (DEBUG) {
-                    Log.d(TAG, "Thumbnail - onSuccess() called with: drawable = [" + result + "]");
+                if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                    
                 }
                 // there is a new thumbnail, so e.g. the end screen thumbnail needs to change, too.
                 onThumbnailLoaded(toBitmap(result));
@@ -1040,10 +1038,8 @@ public final class Player implements PlaybackListener, Listener {
     //region Playback states
     @Override
     public void onPlayWhenReadyChanged(final boolean playWhenReady, final int reason) {
-        if (DEBUG) {
-            Log.d(TAG, "ExoPlayer - onPlayWhenReadyChanged() called with: "
-                    + "playWhenReady = [" + playWhenReady + "], "
-                    + "reason = [" + reason + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         final int playbackState = exoPlayerIsNull()
                 ? com.google.android.exoplayer2.Player.STATE_IDLE
@@ -1053,23 +1049,20 @@ public final class Player implements PlaybackListener, Listener {
 
     @Override
     public void onPlaybackStateChanged(final int playbackState) {
-        if (DEBUG) {
-            Log.d(TAG, "ExoPlayer - onPlaybackStateChanged() called with: "
-                    + "playbackState = [" + playbackState + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         updatePlaybackState(getPlayWhenReady(), playbackState);
     }
 
     private void updatePlaybackState(final boolean playWhenReady, final int playbackState) {
-        if (DEBUG) {
-            Log.d(TAG, "ExoPlayer - updatePlaybackState() called with: "
-                    + "playWhenReady = [" + playWhenReady + "], "
-                    + "playbackState = [" + playbackState + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         if (currentState == STATE_PAUSED_SEEK) {
-            if (DEBUG) {
-                Log.d(TAG, "updatePlaybackState() is currently blocked");
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                
             }
             return;
         }
@@ -1112,8 +1105,8 @@ public final class Player implements PlaybackListener, Listener {
         if (exoPlayerIsNull()) {
             return;
         }
-        if (DEBUG) {
-            Log.d(TAG, "Playback - onPlaybackBlock() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         currentItem = null;
@@ -1126,8 +1119,8 @@ public final class Player implements PlaybackListener, Listener {
 
     @Override // own playback listener
     public void onPlaybackUnblock(final MediaSource mediaSource) {
-        if (DEBUG) {
-            Log.d(TAG, "Playback - onPlaybackUnblock() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         if (exoPlayerIsNull()) {
@@ -1141,8 +1134,8 @@ public final class Player implements PlaybackListener, Listener {
     }
 
     public void changeState(final int state) {
-        if (DEBUG) {
-            Log.d(TAG, "changeState() called with: state = [" + state + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         currentState = state;
         switch (state) {
@@ -1169,8 +1162,8 @@ public final class Player implements PlaybackListener, Listener {
     }
 
     private void onPrepared(final boolean playWhenReady) {
-        if (DEBUG) {
-            Log.d(TAG, "onPrepared() called with: playWhenReady = [" + playWhenReady + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         UIs.call(PlayerUi::onPrepared);
@@ -1181,8 +1174,8 @@ public final class Player implements PlaybackListener, Listener {
     }
 
     private void onBlocked() {
-        if (DEBUG) {
-            Log.d(TAG, "onBlocked() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         if (!isProgressLoopRunning()) {
             startProgressLoop();
@@ -1192,8 +1185,8 @@ public final class Player implements PlaybackListener, Listener {
     }
 
     private void onPlaying() {
-        if (DEBUG) {
-            Log.d(TAG, "onPlaying() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         if (!isProgressLoopRunning()) {
             startProgressLoop();
@@ -1203,16 +1196,16 @@ public final class Player implements PlaybackListener, Listener {
     }
 
     private void onBuffering() {
-        if (DEBUG) {
-            Log.d(TAG, "onBuffering() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         UIs.call(PlayerUi::onBuffering);
     }
 
     private void onPaused() {
-        if (DEBUG) {
-            Log.d(TAG, "onPaused() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         if (isProgressLoopRunning()) {
@@ -1223,15 +1216,15 @@ public final class Player implements PlaybackListener, Listener {
     }
 
     private void onPausedSeek() {
-        if (DEBUG) {
-            Log.d(TAG, "onPausedSeek() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         UIs.call(PlayerUi::onPausedSeek);
     }
 
     private void onCompleted() {
-        if (DEBUG) {
-            Log.d(TAG, "onCompleted() called" + (playQueue == null ? ". playQueue is null" : ""));
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         if (playQueue == null) {
             return;
@@ -1281,9 +1274,8 @@ public final class Player implements PlaybackListener, Listener {
 
     @Override
     public void onRepeatModeChanged(@RepeatMode final int repeatMode) {
-        if (DEBUG) {
-            Log.d(TAG, "ExoPlayer - onRepeatModeChanged() called with: "
-                    + "repeatMode = [" + repeatMode + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         UIs.call(playerUi -> playerUi.onRepeatModeChanged(repeatMode));
         notifyPlaybackUpdateToListeners();
@@ -1291,9 +1283,8 @@ public final class Player implements PlaybackListener, Listener {
 
     @Override
     public void onShuffleModeEnabledChanged(final boolean shuffleModeEnabled) {
-        if (DEBUG) {
-            Log.d(TAG, "ExoPlayer - onShuffleModeEnabledChanged() called with: "
-                    + "mode = [" + shuffleModeEnabled + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         if (playQueue != null) {
@@ -1396,8 +1387,8 @@ public final class Player implements PlaybackListener, Listener {
             }
 
             currentMetadata.getMaybeStreamInfo().ifPresent(info -> {
-                if (DEBUG) {
-                    Log.d(TAG, "ExoPlayer - onEvents() update stream info: " + info.getName());
+                if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                    
                 }
                 if (previousInfo == null || !previousInfo.getUrl().equals(info.getUrl())) {
                     // only update with the new stream info if it has actually changed
@@ -1415,9 +1406,8 @@ public final class Player implements PlaybackListener, Listener {
 
     @Override
     public void onTracksChanged(@NonNull final Tracks tracks) {
-        if (DEBUG) {
-            Log.d(TAG, "ExoPlayer - onTracksChanged(), "
-                    + "track group size = " + tracks.getGroups().size());
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         UIs.call(playerUi -> playerUi.onTextTracksChanged(tracks));
     }
@@ -1440,9 +1430,8 @@ public final class Player implements PlaybackListener, Listener {
 
     @Override
     public void onPlaybackParametersChanged(@NonNull final PlaybackParameters playbackParameters) {
-        if (DEBUG) {
-            Log.d(TAG, "ExoPlayer - playbackParameters(), speed = [" + playbackParameters.speed
-                    + "], pitch = [" + playbackParameters.pitch + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         UIs.call(playerUi -> playerUi.onPlaybackParametersChanged(playbackParameters));
     }
@@ -1451,13 +1440,8 @@ public final class Player implements PlaybackListener, Listener {
     public void onPositionDiscontinuity(@NonNull final PositionInfo oldPosition,
                                         @NonNull final PositionInfo newPosition,
                                         @DiscontinuityReason final int discontinuityReason) {
-        if (DEBUG) {
-            Log.d(TAG, "ExoPlayer - onPositionDiscontinuity() called with "
-                    + "oldPositionIndex = [" + oldPosition.mediaItemIndex + "], "
-                    + "oldPositionMs = [" + oldPosition.positionMs + "], "
-                    + "newPositionIndex = [" + newPosition.mediaItemIndex + "], "
-                    + "newPositionMs = [" + newPosition.positionMs + "], "
-                    + "discontinuityReason = [" + discontinuityReason + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         if (playQueue == null) {
             return;
@@ -1475,8 +1459,8 @@ public final class Player implements PlaybackListener, Listener {
                     break;
                 }
             case DISCONTINUITY_REASON_SEEK:
-                if (DEBUG) {
-                    Log.d(TAG, "ExoPlayer - onSeekProcessed() called");
+                if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                    
                 }
                 if (isPrepared) {
                     saveStreamProgressState();
@@ -1674,9 +1658,8 @@ public final class Player implements PlaybackListener, Listener {
 
     @Override // own playback listener
     public void onPlaybackSynchronize(@NonNull final PlayQueueItem item, final boolean wasBlocked) {
-        if (DEBUG) {
-            Log.d(TAG, "Playback - onPlaybackSynchronize(was blocked: " + wasBlocked
-                    + ") called with item=[" + item.getTitle() + "], url=[" + item.getUrl() + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         if (exoPlayerIsNull() || playQueue == null || currentItem == item) {
             return; // nothing to synchronize
@@ -1706,9 +1689,8 @@ public final class Player implements PlaybackListener, Listener {
         } else if (wasBlocked || playlistIndex != playQueueIndex || !isPlaying()) {
             // either the player needs to be unblocked, or the play queue index has just been
             // changed and needs to be synchronized, or the player is not playing
-            if (DEBUG) {
-                Log.d(TAG, "Playback - Rewinding to correct index=[" + playQueueIndex + "], "
-                        + "from=[" + playlistIndex + "], size=[" + playlistSize + "].");
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                
             }
 
             if (removeThumbnailBeforeSync) {
@@ -1727,8 +1709,8 @@ public final class Player implements PlaybackListener, Listener {
     }
 
     public void seekTo(final long positionMillis) {
-        if (DEBUG) {
-            Log.d(TAG, "seekBy() called with: position = [" + positionMillis + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         if (!exoPlayerIsNull()) {
             // prevent invalid positions when fast-forwarding/-rewinding
@@ -1738,8 +1720,8 @@ public final class Player implements PlaybackListener, Listener {
     }
 
     private void seekBy(final long offsetMillis) {
-        if (DEBUG) {
-            Log.d(TAG, "seekBy() called with: offsetMillis = [" + offsetMillis + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         seekTo(simpleExoPlayer.getCurrentPosition() + offsetMillis);
     }
@@ -1759,8 +1741,8 @@ public final class Player implements PlaybackListener, Listener {
     //region Player actions (play, pause, previous, fast-forward, ...)
 
     public void play() {
-        if (DEBUG) {
-            Log.d(TAG, "play() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         if (audioReactor == null || playQueue == null || exoPlayerIsNull()) {
             return;
@@ -1788,8 +1770,8 @@ public final class Player implements PlaybackListener, Listener {
     }
 
     public void pause() {
-        if (DEBUG) {
-            Log.d(TAG, "pause() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         if (audioReactor == null || exoPlayerIsNull()) {
             return;
@@ -1801,8 +1783,8 @@ public final class Player implements PlaybackListener, Listener {
     }
 
     public void playPause() {
-        if (DEBUG) {
-            Log.d(TAG, "onPlayPause() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         if (getPlayWhenReady()
@@ -1815,8 +1797,8 @@ public final class Player implements PlaybackListener, Listener {
     }
 
     public void playPrevious() {
-        if (DEBUG) {
-            Log.d(TAG, "onPlayPrevious() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         if (exoPlayerIsNull() || playQueue == null) {
             return;
@@ -1837,8 +1819,8 @@ public final class Player implements PlaybackListener, Listener {
     }
 
     public void playNext() {
-        if (DEBUG) {
-            Log.d(TAG, "onPlayNext() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         if (playQueue == null) {
             return;
@@ -1850,16 +1832,16 @@ public final class Player implements PlaybackListener, Listener {
     }
 
     public void fastForward() {
-        if (DEBUG) {
-            Log.d(TAG, "fastRewind() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         seekBy(retrieveSeekDurationFromPreferences(this));
         triggerProgressUpdate();
     }
 
     public void fastRewind() {
-        if (DEBUG) {
-            Log.d(TAG, "fastRewind() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         seekBy(-retrieveSeekDurationFromPreferences(this));
         triggerProgressUpdate();
@@ -1883,15 +1865,14 @@ public final class Player implements PlaybackListener, Listener {
             if (!prefs.getBoolean(context.getString(R.string.enable_watch_history_key), true)) {
                 return;
             }
-            if (DEBUG) {
-                Log.d(TAG, "saveStreamProgressState() called with: progressMillis=" + progressMillis
-                        + ", currentMetadata=[" + info.getName() + "]");
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                
             }
 
             databaseUpdateDisposable.add(recordManager.saveStreamState(info, progressMillis)
                     .observeOn(AndroidSchedulers.mainThread())
                     .doOnError(e -> {
-                        if (DEBUG) {
+                        if (org.schabi.newpipe.BuildConfig.DEBUG) {
                             e.printStackTrace();
                         }
                     })
@@ -1929,8 +1910,8 @@ public final class Player implements PlaybackListener, Listener {
     //region Metadata
 
     private void updateMetadataWith(@NonNull final StreamInfo info) {
-        if (DEBUG) {
-            Log.d(TAG, "Playback - onMetadataChanged() called, playing: " + info.getName());
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         if (exoPlayerIsNull()) {
             return;
@@ -2108,12 +2089,8 @@ public final class Player implements PlaybackListener, Listener {
     //region Video size
     @Override // exoplayer listener
     public void onVideoSizeChanged(@NonNull final VideoSize videoSize) {
-        if (DEBUG) {
-            Log.d(TAG, "onVideoSizeChanged() called with: "
-                    + "width / height = [" + videoSize.width + " / " + videoSize.height
-                    + " = " + (((float) videoSize.width) / videoSize.height) + "], "
-                    + "unappliedRotationDegrees = [" + videoSize.unappliedRotationDegrees + "], "
-                    + "pixelWidthHeightRatio = [" + videoSize.pixelWidthHeightRatio + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         UIs.call(playerUi -> playerUi.onVideoSizeChanged(videoSize));
@@ -2374,8 +2351,8 @@ public final class Player implements PlaybackListener, Listener {
             return !exoPlayerIsNull() && simpleExoPlayer.isCurrentMediaItemDynamic();
         } catch (final IndexOutOfBoundsException e) {
             // Why would this even happen =(... but lets log it anyway, better safe than sorry
-            if (DEBUG) {
-                Log.d(TAG, "player.isCurrentWindowDynamic() failed: ", e);
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                
             }
             return false;
         }
@@ -2505,3 +2482,4 @@ public final class Player implements PlaybackListener, Listener {
         return screenOn;
     }
 }
+

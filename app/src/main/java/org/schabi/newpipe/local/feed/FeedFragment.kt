@@ -57,6 +57,9 @@ import java.time.OffsetDateTime
 import java.util.function.Consumer
 import org.schabi.newpipe.NewPipeDatabase
 import org.schabi.newpipe.R
+import org.schabi.newpipe.ads.AdUtils
+import org.schabi.newpipe.ads.adapter_ads.NativeAdInjectionConfig
+import org.schabi.newpipe.ads.adapter_ads.RecyclerNativeAdInjector
 import org.schabi.newpipe.database.feed.model.FeedGroupEntity
 import org.schabi.newpipe.database.subscription.SubscriptionEntity
 import org.schabi.newpipe.databinding.FragmentFeedBinding
@@ -161,6 +164,15 @@ class FeedFragment : BaseStateFragment<FeedState>() {
         })
 
         feedBinding.itemsList.adapter = groupAdapter
+        RecyclerNativeAdInjector.attach(
+            requireActivity(),
+            feedBinding.itemsList,
+            groupAdapter,
+            NativeAdInjectionConfig.explicitAfterContentItems(3)
+                .withMaxAds(1)
+                .withPlacementKey("Feed_AD")
+                .withPolicyGuardrails()
+        )
         setupListViewMode()
     }
 
@@ -389,14 +401,21 @@ class FeedFragment : BaseStateFragment<FeedState>() {
         override fun onItemClick(item: Item<*>, view: View) {
             if (item is StreamItem && !isRefreshing) {
                 val stream = item.streamWithState.stream
-                NavigationHelper.openVideoDetailFragment(
-                    requireContext(),
-                    fm,
-                    stream.serviceId,
-                    stream.url,
-                    stream.title,
-                    null,
-                    false
+                AdUtils.ClickWithAds(
+                    requireActivity(),
+                    object : AdUtils.InterClick {
+                        override fun ClickAds() {
+                            NavigationHelper.openVideoDetailFragment(
+                                requireContext(),
+                                fm,
+                                stream.serviceId,
+                                stream.url,
+                                stream.title,
+                                null,
+                                false
+                            )
+                        }
+                    }
                 )
             }
         }

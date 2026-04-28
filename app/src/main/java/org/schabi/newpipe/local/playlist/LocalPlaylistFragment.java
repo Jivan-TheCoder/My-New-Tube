@@ -268,9 +268,8 @@ public class LocalPlaylistFragment extends BaseLocalListFragment<List<PlaylistSt
     @Override
     public void onCreateOptionsMenu(@NonNull final Menu menu,
                                     @NonNull final MenuInflater inflater) {
-        if (DEBUG) {
-            Log.d(TAG, "onCreateOptionsMenu() called with: "
-                    + "menu = [" + menu + "], inflater = [" + inflater + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.menu_local_playlist, menu);
@@ -568,9 +567,8 @@ public class LocalPlaylistFragment extends BaseLocalListFragment<List<PlaylistSt
         this.name = title;
         setTitle(title);
 
-        if (DEBUG) {
-            Log.d(TAG, "Updating playlist id=[" + playlistId + "] "
-                    + "with new title=[" + title + "] items");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         final Disposable disposable = playlistManager.renamePlaylist(playlistId, title)
@@ -591,9 +589,8 @@ public class LocalPlaylistFragment extends BaseLocalListFragment<List<PlaylistSt
                 R.string.playlist_thumbnail_change_success,
                 Toast.LENGTH_SHORT);
 
-        if (DEBUG) {
-            Log.d(TAG, "Updating playlist id=[" + playlistId + "] "
-                    + "with new thumbnail stream id=[" + thumbnailStreamId + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         final Disposable disposable = playlistManager
@@ -698,9 +695,8 @@ public class LocalPlaylistFragment extends BaseLocalListFragment<List<PlaylistSt
             }
         }
 
-        if (DEBUG) {
-            Log.d(TAG, "Updating playlist id=[" + playlistId + "] "
-                    + "with [" + streamIds.size() + "] items");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         final Disposable disposable = playlistManager.updateJoin(playlistId, streamIds)

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="0dp"
+    android:layout_marginEnd="0dp"
+    android:background="#FFFFFF"
+    android:elevation="2dp"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <TextView
+        android:layout_width="34dp"
+        android:layout_height="22dp"
+        android:background="#E8F2FF"
+        android:gravity="center"
+        android:text="Ad"
+        android:textColor="#102033"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <org.schabi.newpipe.ads.adapter_ads.ShimmerView
+        android:layout_width="match_parent"
+        android:layout_marginTop="12dp"
+        android:layout_height="168dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <org.schabi.newpipe.ads.adapter_ads.ShimmerView
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <org.schabi.newpipe.ads.adapter_ads.ShimmerView
+                android:layout_width="match_parent"
+                android:layout_height="14dp" />
+
+            <org.schabi.newpipe.ads.adapter_ads.ShimmerView
+                android:layout_width="82dp"
+                android:layout_height="12dp"
+                android:layout_marginTop="4dp" />
+
+            <org.schabi.newpipe.ads.adapter_ads.ShimmerView
+                android:layout_width="match_parent"
+                android:layout_height="13dp"
+                android:visibility="gone"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <org.schabi.newpipe.ads.adapter_ads.ShimmerView
+            android:layout_width="112dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="12dp" />
+    </LinearLayout>
+</LinearLayout>

@@ -243,8 +243,8 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
 
     @Override
     public void onStart() {
-        if (DEBUG) {
-            Log.d(TAG, "onStart() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         super.onStart();
 
@@ -269,8 +269,8 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
 
     @Override
     public void onResume() {
-        if (DEBUG) {
-            Log.d(TAG, "onResume() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         super.onResume();
 
@@ -311,8 +311,8 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
 
     @Override
     public void onDestroyView() {
-        if (DEBUG) {
-            Log.d(TAG, "onDestroyView() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         unsetSearchListeners();
 
@@ -496,11 +496,8 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
     //////////////////////////////////////////////////////////////////////////*/
 
     private void showSearchOnStart() {
-        if (DEBUG) {
-            Log.d(TAG, "showSearchOnStart() called, searchQuery → "
-                    + searchString
-                    + ", lastSearchedQuery → "
-                    + lastSearchedString);
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         searchEditText.setText(searchString);
 
@@ -522,12 +519,12 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
     }
 
     private void initSearchListeners() {
-        if (DEBUG) {
-            Log.d(TAG, "initSearchListeners() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         searchClear.setOnClickListener(v -> {
-            if (DEBUG) {
-                Log.d(TAG, "onClick() called with: v = [" + v + "]");
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                
             }
             if (isSearchEditBlank()) {
                 NavigationHelper.gotoMainFragment(getFM());
@@ -544,8 +541,8 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
         TooltipCompat.setTooltipText(searchClear, getString(R.string.clear));
 
         searchEditText.setOnClickListener(v -> {
-            if (DEBUG) {
-                Log.d(TAG, "onClick() called with: v = [" + v + "]");
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                
             }
             if ((showLocalSuggestions || showRemoteSuggestions) && !isErrorPanelVisible()) {
                 showSuggestionsPanel();
@@ -556,9 +553,8 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
         });
 
         searchEditText.setOnFocusChangeListener((final View v, final boolean hasFocus) -> {
-            if (DEBUG) {
-                Log.d(TAG, "onFocusChange() called with: "
-                        + "v = [" + v + "], hasFocus = [" + hasFocus + "]");
+            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                
             }
             if ((showLocalSuggestions || showRemoteSuggestions)
                     && hasFocus && !isErrorPanelVisible()) {
@@ -617,9 +613,8 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
         searchEditText.addTextChangedListener(textWatcher);
         searchEditText.setOnEditorActionListener(
                 (final TextView v, final int actionId, final KeyEvent event) -> {
-                    if (DEBUG) {
-                        Log.d(TAG, "onEditorAction() called with: v = [" + v + "], "
-                                + "actionId = [" + actionId + "], event = [" + event + "]");
+                    if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                        
                     }
                     if (actionId == EditorInfo.IME_ACTION_PREVIOUS) {
                         hideKeyboardSearch();
@@ -639,8 +634,8 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
     }
 
     private void unsetSearchListeners() {
-        if (DEBUG) {
-            Log.d(TAG, "unsetSearchListeners() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         searchClear.setOnClickListener(null);
         searchClear.setOnLongClickListener(null);
@@ -655,8 +650,8 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
     }
 
     private void showSuggestionsPanel() {
-        if (DEBUG) {
-            Log.d(TAG, "showSuggestionsPanel() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         suggestionsPanelVisible = true;
         animate(searchBinding.suggestionsPanel, true, 200,
@@ -664,8 +659,8 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
     }
 
     private void hideSuggestionsPanel() {
-        if (DEBUG) {
-            Log.d(TAG, "hideSuggestionsPanel() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         suggestionsPanelVisible = false;
         animate(searchBinding.suggestionsPanel, false, 200,
@@ -673,15 +668,15 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
     }
 
     private void showKeyboardSearch() {
-        if (DEBUG) {
-            Log.d(TAG, "showKeyboardSearch() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         KeyboardUtil.showKeyboard(activity, searchEditText);
     }
 
     private void hideKeyboardSearch() {
-        if (DEBUG) {
-            Log.d(TAG, "hideKeyboardSearch() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         KeyboardUtil.hideKeyboard(activity, searchEditText);
@@ -750,8 +745,8 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
     }
 
     private void initSuggestionObserver() {
-        if (DEBUG) {
-            Log.d(TAG, "initSuggestionObserver() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         if (suggestionDisposable != null) {
             suggestionDisposable.dispose();
@@ -822,8 +817,8 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
     private void search(@NonNull final String theSearchString,
                         final String[] theContentFilter,
                         final String theSortFilter) {
-        if (DEBUG) {
-            Log.d(TAG, "search() called with: query = [" + theSearchString + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         if (theSearchString.isEmpty()) {
             return;
@@ -998,8 +993,8 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
     //////////////////////////////////////////////////////////////////////////*/
 
     public void handleSuggestions(@NonNull final List<SuggestionItem> suggestions) {
-        if (DEBUG) {
-            Log.d(TAG, "handleSuggestions() called with: suggestions = [" + suggestions + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
         suggestionListAdapter.submitList(suggestions,
                 () -> {
@@ -1107,11 +1102,11 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
             // whose results are handled here, but let's check it anyway
             if (nextPage == null) {
                 showSnackBarError(new ErrorInfo(result.getErrors(), UserAction.SEARCHED,
-                        "\"" + searchString + "\" → nextPage == null", serviceId,
+                        "\"" + searchString + "\" Ã¢â€ â€™ nextPage == null", serviceId,
                         getOpenInBrowserUrlForErrors()));
             } else {
                 showSnackBarError(new ErrorInfo(result.getErrors(), UserAction.SEARCHED,
-                        "\"" + searchString + "\" → pageUrl: " + nextPage.getUrl() + ", "
+                        "\"" + searchString + "\" Ã¢â€ â€™ pageUrl: " + nextPage.getUrl() + ", "
                                 + "pageIds: " + nextPage.getIds() + ", "
                                 + "pageCookies: " + nextPage.getCookies(),
                         serviceId, getOpenInBrowserUrlForErrors()));

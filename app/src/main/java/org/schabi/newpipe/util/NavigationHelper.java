@@ -25,10 +25,10 @@ import androidx.fragment.app.FragmentTransaction;
 import com.jakewharton.processphoenix.ProcessPhoenix;
 
 import org.schabi.newpipe.AppMode;
-import org.schabi.newpipe.MainActivity;
+import org.schabi.newpipe.activities.MainActivity;
 import org.schabi.newpipe.NewPipeDatabase;
 import org.schabi.newpipe.R;
-import org.schabi.newpipe.RouterActivity;
+import org.schabi.newpipe.activities.RouterActivity;
 import org.schabi.newpipe.database.feed.model.FeedGroupEntity;
 import org.schabi.newpipe.download.DownloadActivity;
 import org.schabi.newpipe.error.ErrorUtil;

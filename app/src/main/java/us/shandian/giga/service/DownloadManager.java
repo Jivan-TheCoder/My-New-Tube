@@ -65,8 +65,8 @@ public class DownloadManager {
      * @param handler Thread required for Messaging
      */
     DownloadManager(@NonNull Context context, Handler handler, StoredDirectoryHelper storageVideo, StoredDirectoryHelper storageAudio) {
-        if (DEBUG) {
-            Log.d(TAG, "new DownloadManager instance. 0x" + Integer.toHexString(this.hashCode()));
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         mFinishedMissionStore = new FinishedMissionStore(context);
@@ -119,7 +119,7 @@ public class DownloadManager {
             FinishedMission mission = finishedMissions.get(i);
 
             if (!mission.storage.existsAsFile()) {
-                if (DEBUG) Log.d(TAG, "downloaded file removed: " + mission.storage.getName());
+                
 
                 mFinishedMissionStore.deleteMission(mission);
                 finishedMissions.remove(i);
@@ -139,12 +139,12 @@ public class DownloadManager {
         if (subs.length < 1) {
             return;
         }
-        if (DEBUG) {
-            Log.d(TAG, "Loading pending downloads from directory: " + mPendingMissionsDir.getAbsolutePath());
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         File tempDir = pickAvailableTemporalDir(ctx);
-        Log.i(TAG, "using '" + tempDir + "' as temporal directory");
+        
 
         for (File sub : subs) {
             if (!sub.isFile()) continue;
@@ -368,8 +368,8 @@ public class DownloadManager {
                 // length == 0 since the file picker may create an empty file before yielding it,
                 // but that does not mean the file really belonged to a previous mission.
                 if (!storage.existsAsFile() || storage.length() == 0) {
-                    if (DEBUG) {
-                        Log.d(TAG, "matched downloaded file removed: " + storage.getName());
+                    if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                        
                     }
 
                     mFinishedMissionStore.deleteMission(mMissionsFinished.get(i));
@@ -686,8 +686,8 @@ public class DownloadManager {
          * Check if exists missions running and paused. Corrupted and hidden missions are not counted
          *
          * @return two-dimensional array contains the current missions state.
-         * 1° entry: true if has at least one mission running
-         * 2° entry: true if has at least one mission paused
+         * 1Ã‚Â° entry: true if has at least one mission running
+         * 2Ã‚Â° entry: true if has at least one mission paused
          */
         public boolean[] hasValidPendingMissions() {
             boolean running = false;

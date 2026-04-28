@@ -200,6 +200,7 @@
                             android:layout_marginTop="11dp"
                             android:layout_marginEnd="10dp"
                             android:src="@drawable/ic_expand_more"
+                            android:tint="?android:attr/textColorPrimary"
                             tools:ignore="ContentDescription" />
 
                     </FrameLayout>
@@ -412,6 +413,8 @@
                             </RelativeLayout>
                         </RelativeLayout>
 
+                        <!-- Show Banner Ad here -->
+
                         <!-- CONTROLS -->
                         <LinearLayout
                             android:id="@+id/detail_control_panel"
@@ -610,7 +613,7 @@
                 app:elevation="16dp"
                 app:tabBackground="?attr/windowBackground"
                 app:tabGravity="fill"
-                app:tabIconTint="?attr/colorAccent"
+                app:tabIconTint="?android:attr/textColorPrimary"
                 app:tabIndicatorGravity="top" />
 
         </org.schabi.newpipe.views.FocusAwareCoordinator>

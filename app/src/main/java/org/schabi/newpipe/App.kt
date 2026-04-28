@@ -27,6 +27,7 @@ import java.net.SocketException
 import org.acra.ACRA.init
 import org.acra.ACRA.isACRASenderServiceProcess
 import org.acra.config.CoreConfigurationBuilder
+import org.schabi.newpipe.ads.AppOpenManager
 import org.schabi.newpipe.error.ReCaptchaActivity
 import org.schabi.newpipe.extractor.NewPipe
 import org.schabi.newpipe.extractor.downloader.Downloader
@@ -41,26 +42,8 @@ import org.schabi.newpipe.util.image.ImageStrategy
 import org.schabi.newpipe.util.image.PreferredImageQuality
 import org.schabi.newpipe.util.potoken.PoTokenProviderImpl
 
-/*
- * Copyright (C) Hans-Christoph Steiner 2016 <hans@eds.org>
- * App.kt is part of NewPipe.
- *
- * NewPipe is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * NewPipe is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with NewPipe.  If not, see <http://www.gnu.org/licenses/>.
- */
-open class App :
-    Application(),
-    SingletonImageLoader.Factory {
+open class App : Application(), SingletonImageLoader.Factory {
+
     var isFirstRun = false
         private set
     var notificationsRequested = false
@@ -75,13 +58,15 @@ open class App :
         initACRA()
     }
 
+    var mInstance: App? = null
+    var appOpenManager: AppOpenManager? = null
+
     override fun onCreate() {
         super.onCreate()
 
         instance = this
 
         if (ProcessPhoenix.isPhoenixProcess(this)) {
-            Log.i(TAG, "This is a phoenix process! Aborting initialization of App[onCreate]")
             return
         }
 

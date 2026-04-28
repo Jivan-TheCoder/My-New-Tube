@@ -1,6 +1,5 @@
 package org.schabi.newpipe.player.gesture
 
-import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.View.OnTouchListener
@@ -9,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.view.isVisible
 import kotlin.math.abs
-import org.schabi.newpipe.MainActivity
 import org.schabi.newpipe.R
 import org.schabi.newpipe.ktx.AnimationType
 import org.schabi.newpipe.ktx.animate
@@ -53,10 +51,6 @@ class MainPlayerGestureListener(
     }
 
     override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
-        if (DEBUG) {
-            Log.d(TAG, "onSingleTapConfirmed() called with: e = [$e]")
-        }
-
         if (isDoubleTapping) {
             return true
         }
@@ -85,9 +79,6 @@ class MainPlayerGestureListener(
         val currentProgressPercent: Float = bar.progress / bar.max.toFloat()
         val currentVolume = (audioReactor.maxVolume * currentProgressPercent).toInt()
         audioReactor.volume = currentVolume
-        if (DEBUG) {
-            Log.d(TAG, "onScroll().volumeControl, currentVolume = $currentVolume")
-        }
 
         // Update player center image
         binding.volumeImageView.setImageDrawable(
@@ -127,13 +118,6 @@ class MainPlayerGestureListener(
 
         // Save current brightness level
         PlayerHelper.setScreenBrightness(parent, currentProgressPercent)
-        if (DEBUG) {
-            Log.d(
-                TAG,
-                "onScroll().brightnessControl, " +
-                    "currentBrightness = " + currentProgressPercent
-            )
-        }
 
         // Update player center image
         binding.brightnessImageView.setImageDrawable(
@@ -234,7 +218,7 @@ class MainPlayerGestureListener(
 
     companion object {
         private val TAG = MainPlayerGestureListener::class.java.simpleName
-        private val DEBUG = MainActivity.DEBUG
+        private val DEBUG = org.schabi.newpipe.BuildConfig.DEBUG
         private const val MOVEMENT_THRESHOLD = 40
     }
 }

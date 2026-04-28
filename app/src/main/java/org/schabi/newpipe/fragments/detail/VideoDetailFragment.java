@@ -65,6 +65,7 @@ import com.google.android.material.tabs.TabLayout;
 
 import org.schabi.newpipe.App;
 import org.schabi.newpipe.R;
+import org.schabi.newpipe.ads.AdUtils;
 import org.schabi.newpipe.database.stream.model.StreamEntity;
 import org.schabi.newpipe.databinding.FragmentVideoDetailBinding;
 import org.schabi.newpipe.download.DownloadDialog;
@@ -355,8 +356,8 @@ public final class VideoDetailFragment
     @Override
     public void onResume() {
         super.onResume();
-        if (DEBUG) {
-            Log.d(TAG, "onResume() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         activity.sendBroadcast(new Intent(ACTION_VIDEO_FRAGMENT_RESUMED));
@@ -429,6 +430,7 @@ public final class VideoDetailFragment
         binding = null;
     }
 
+//    @suppressWarnings("deprecation")
     @Override
     public void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -459,8 +461,8 @@ public final class VideoDetailFragment
                     openChannel(info.getUploaderUrl(), info.getUploaderName());
                 }
 
-                if (DEBUG) {
-                    Log.i(TAG, "Can't open sub-channel because we got no channel URL");
+                if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                    
                 }
             } else {
                 openChannel(info.getSubChannelUrl(), info.getSubChannelName());
@@ -504,7 +506,7 @@ public final class VideoDetailFragment
                 ShareUtils.openUrlInBrowser(requireContext(), info.getUrl())));
         binding.detailControlsPlayWithKodi.setOnClickListener(makeOnClickListener(info ->
                 KoreUtils.playWithKore(requireContext(), Uri.parse(info.getUrl()))));
-        if (DEBUG) {
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
             binding.detailControlsCrashThePlayer.setOnClickListener(v ->
                     VideoDetailPlayerCrasher.onCrashThePlayer(requireContext(), player));
         }
@@ -611,6 +613,8 @@ public final class VideoDetailFragment
         binding.viewPager.setAdapter(pageAdapter);
         binding.tabLayout.setupWithViewPager(binding.viewPager);
 
+        AdUtils.LoadAppLovinBanner(requireActivity(), binding.bannerAdContainer);
+
         binding.detailThumbnailRootLayout.requestFocus();
 
         binding.detailControlsPlayWithKodi.setVisibility(
@@ -689,8 +693,8 @@ public final class VideoDetailFragment
 
     @Override
     public boolean onBackPressed() {
-        if (DEBUG) {
-            Log.d(TAG, "onBackPressed() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         // If we are in fullscreen mode just exit from it via first back press
@@ -794,9 +798,8 @@ public final class VideoDetailFragment
     }
 
     private void prepareAndHandleInfo(final StreamInfo info, final boolean scrollToTop) {
-        if (DEBUG) {
-            Log.d(TAG, "prepareAndHandleInfo() called with: "
-                    + "info = [" + info + "], scrollToTop = [" + scrollToTop + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         showLoading();
@@ -1562,9 +1565,9 @@ public final class VideoDetailFragment
             binding.detailDurationView.setVisibility(View.GONE);
         }
 
-        binding.detailTitleRootLayout.setClickable(false);
+        binding.detailTitleRootLayout.setClickable(true);
         binding.detailToggleSecondaryControlsView.setRotation(0);
-        binding.detailToggleSecondaryControlsView.setVisibility(View.GONE);
+        binding.detailToggleSecondaryControlsView.setVisibility(View.VISIBLE);
         binding.detailSecondaryControlPanel.setVisibility(View.GONE);
 
         checkUpdateProgressInfo(info);
@@ -1762,10 +1765,8 @@ public final class VideoDetailFragment
     @Override
     public void onQueueUpdate(final PlayQueue queue) {
         playQueue = queue;
-        if (DEBUG) {
-            Log.d(TAG, "onQueueUpdate() called with: serviceId = ["
-                    + serviceId + "], url = [" + url + "], name = ["
-                    + title + "], playQueue = [" + playQueue + "]");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         // Register broadcast receiver to listen to playQueue changes
@@ -1962,8 +1963,8 @@ public final class VideoDetailFragment
     //////////////////////////////////////////////////////////////////////////*/
 
     private void showSystemUi() {
-        if (DEBUG) {
-            Log.d(TAG, "showSystemUi() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         if (activity == null) {
@@ -1982,8 +1983,8 @@ public final class VideoDetailFragment
     }
 
     private void hideSystemUi() {
-        if (DEBUG) {
-            Log.d(TAG, "hideSystemUi() called");
+        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            
         }
 
         if (activity == null) {

@@ -12,7 +12,6 @@ import com.jakewharton.rxbinding4.view.clicks
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.Disposable
 import java.util.concurrent.TimeUnit
-import org.schabi.newpipe.MainActivity
 import org.schabi.newpipe.R
 import org.schabi.newpipe.ktx.animate
 import org.schabi.newpipe.util.external_communication.ShareUtils
@@ -136,6 +135,6 @@ class ErrorPanelHelper(
 
     companion object {
         val TAG: String = ErrorPanelHelper::class.simpleName!!
-        val DEBUG: Boolean = MainActivity.DEBUG
+        val DEBUG: Boolean = org.schabi.newpipe.BuildConfig.DEBUG
     }
 }

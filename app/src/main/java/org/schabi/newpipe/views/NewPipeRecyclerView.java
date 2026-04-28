@@ -125,7 +125,7 @@ public class NewPipeRecyclerView extends RecyclerView {
         }
 
         if (focused != this && direction == FOCUS_DOWN && !allowDpadScroll) {
-            Log.i(TAG, "Consuming downward scroll: content load in progress");
+            
             return true;
         }
 

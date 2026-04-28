@@ -121,7 +121,7 @@ public final class FlingBehavior extends AppBarLayout.Behavior {
                 return ((OverScroller) field.get(this));
             }
         } catch (final NoSuchFieldException | IllegalAccessException e) {
-            // ?
+            return null;
         }
         return null;
     }
@@ -137,7 +137,7 @@ public final class FlingBehavior extends AppBarLayout.Behavior {
                 return field;
             }
         } catch (final NoSuchFieldException e) {
-            // ?
+            return null;
         }
         return null;
     }
@@ -151,7 +151,7 @@ public final class FlingBehavior extends AppBarLayout.Behavior {
                     field.set(this, null);
                 }
             } catch (final IllegalAccessException e) {
-                // ?
+                // Ignore inaccessible internal field.
             }
         }
     }

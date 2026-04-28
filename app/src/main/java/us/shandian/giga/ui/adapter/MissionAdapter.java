@@ -348,8 +348,7 @@ public class MissionAdapter extends Adapter<ViewHolder> implements Handler.Callb
 
         String mimeType = resolveMimeType(mission);
 
-        if (BuildConfig.DEBUG)
-            Log.v(TAG, "Mime: " + mimeType + " package: " + BuildConfig.APPLICATION_ID + ".provider");
+        
 
         Intent viewIntent = new Intent(Intent.ACTION_VIEW);
         viewIntent.setDataAndType(resolveShareableUri(mission), mimeType);
@@ -773,7 +772,7 @@ public class MissionAdapter extends Adapter<ViewHolder> implements Handler.Callb
 
     public void checkMasterButtonsVisibility() {
         boolean[] state = mIterator.hasValidPendingMissions();
-        Log.d(TAG, "checkMasterButtonsVisibility() running=" + state[0] + " paused=" + state[1]);
+        
         setButtonVisible(mPauseButton, state[0]);
         setButtonVisible(mStartButton, state[1]);
     }
