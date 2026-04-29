@@ -613,7 +613,7 @@ public final class VideoDetailFragment
         binding.viewPager.setAdapter(pageAdapter);
         binding.tabLayout.setupWithViewPager(binding.viewPager);
 
-        AdUtils.LoadAppLovinBanner(requireActivity(), binding.bannerAdContainer);
+        AdUtils.loadGoogleBanner(requireActivity(), binding.bannerAdContainer);
 
         binding.detailThumbnailRootLayout.requestFocus();
 
@@ -2503,3 +2503,4 @@ public final class VideoDetailFragment
         }
     }
 }
+

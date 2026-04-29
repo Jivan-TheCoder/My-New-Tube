@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "752779784900",
+    "project_id": "friends-8969d",
+    "storage_bucket": "friends-8969d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:752779784900:android:f447cad25cd54e3d13cf91",
+        "android_client_info": {
+          "package_name": "org.schabi.newpipe"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJ8nw2psYbUbiy3X2WB_z_6DpHJApbVA0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

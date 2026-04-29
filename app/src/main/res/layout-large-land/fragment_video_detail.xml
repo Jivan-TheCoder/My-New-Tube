@@ -517,6 +517,7 @@
                                 android:focusable="true"
                                 android:gravity="center"
                                 android:paddingVertical="@dimen/detail_control_padding"
+                                android:visibility="gone"
                                 android:text="@string/share"
                                 android:textSize="@dimen/detail_control_text_size" />
 
@@ -533,6 +534,7 @@
                                 android:focusable="true"
                                 android:gravity="center"
                                 android:paddingVertical="@dimen/detail_control_padding"
+                                android:visibility="gone"
                                 android:text="@string/open_in_browser"
                                 android:textSize="@dimen/detail_control_text_size" />
 

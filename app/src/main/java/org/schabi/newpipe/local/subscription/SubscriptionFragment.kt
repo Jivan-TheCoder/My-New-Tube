@@ -24,6 +24,7 @@ import com.xwray.groupie.Section
 import com.xwray.groupie.viewbinding.GroupieViewHolder
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import org.schabi.newpipe.R
+import org.schabi.newpipe.ads.AdUtils
 import org.schabi.newpipe.ads.adapter_ads.NativeAdInjectionConfig
 import org.schabi.newpipe.ads.adapter_ads.RecyclerNativeAdInjector
 import org.schabi.newpipe.database.feed.model.FeedGroupEntity.Companion.GROUP_ALL_ID
@@ -341,12 +342,21 @@ class SubscriptionFragment : BaseStateFragment<SubscriptionState>() {
     override fun startLoading(forceLoad: Boolean) = Unit
 
     private val listenerChannelItem = object : OnClickGesture<ChannelInfoItem> {
-        override fun selected(selectedItem: ChannelInfoItem) = NavigationHelper.openChannelFragment(
-            fm,
-            selectedItem.serviceId,
-            selectedItem.url,
-            selectedItem.name
-        )
+        override fun selected(selectedItem: ChannelInfoItem) {
+            AdUtils.ClickWithAds(
+                requireActivity(),
+                object : AdUtils.InterClick {
+                    override fun ClickAds() {
+                        NavigationHelper.openChannelFragment(
+                            fm,
+                            selectedItem.serviceId,
+                            selectedItem.url,
+                            selectedItem.name
+                        )
+                    }
+                }
+            )
+        }
 
         override fun held(selectedItem: ChannelInfoItem) = showLongTapDialog(selectedItem)
     }

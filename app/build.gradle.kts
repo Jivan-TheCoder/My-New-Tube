@@ -4,6 +4,7 @@ import java.util.Properties
 
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.google.services)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.jetbrains.kotlin.kapt)
     alias(libs.plugins.google.ksp)
@@ -311,6 +312,9 @@ dependencies {
     implementation(libs.androidx.work.runtime)
     implementation(libs.androidx.work.rxjava3)
     implementation(libs.google.android.material)
+    implementation(platform(libs.google.firebase.bom))
+    implementation(libs.google.firebase.analytics)
+    implementation(libs.google.firebase.config)
     implementation(libs.androidx.webkit)
 
     // Coroutines interop
@@ -389,7 +393,6 @@ dependencies {
 
     implementation("androidx.lifecycle:lifecycle-runtime:2.10.0")
     implementation("androidx.lifecycle:lifecycle-process:2.10.0")
-    implementation("com.applovin:applovin-sdk:13.6.2")
     implementation("com.google.android.gms:play-services-ads:24.9.0")
     implementation("com.android.volley:volley:1.2.1")
     implementation("com.facebook.android:facebook-android-sdk:18.1.3")

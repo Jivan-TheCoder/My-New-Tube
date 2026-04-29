@@ -262,17 +262,23 @@ public class MainActivity extends AppCompatActivity {
     private boolean drawerItemSelected(final MenuItem item) {
         final int groupId = item.getGroupId();
         if (groupId == R.id.menu_tabs_group) {
-            tabSelected(item);
-            // Non-blocking ad trigger: open destination immediately, then show interstitial.
-            AdUtils.ClickWithAds(this, null);
+            AdUtils.ClickWithAds(this, new AdUtils.InterClick() {
+                @Override
+                public void ClickAds() {
+                    tabSelected(item);
+                }
+            });
         } else if (groupId == R.id.menu_kiosks_group) {
-            try {
-                kioskSelected(item);
-            } catch (final Exception e) {
-                ErrorUtil.showUiErrorSnackbar(this, "Selecting drawer kiosk", e);
-            }
-            // Non-blocking ad trigger: open destination immediately, then show interstitial.
-            AdUtils.ClickWithAds(this, null);
+            AdUtils.ClickWithAds(this, new AdUtils.InterClick() {
+                @Override
+                public void ClickAds() {
+                    try {
+                        kioskSelected(item);
+                    } catch (final Exception e) {
+                        ErrorUtil.showUiErrorSnackbar(MainActivity.this, "Selecting drawer kiosk", e);
+                    }
+                }
+            });
         } else if (groupId == R.id.menu_options_about_group) {
             optionsAboutSelected(item);
         } else {

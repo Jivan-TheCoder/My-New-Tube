@@ -42,7 +42,7 @@ public class DownloadActivity extends AppCompatActivity {
         setContentView(downloaderBinding.getRoot());
 
         final FrameLayout bannerAdContainer = downloaderBinding.bannerAdContainer;
-        AdUtils.LoadAppLovinBanner(this, bannerAdContainer);
+        AdUtils.loadGoogleBanner(this, bannerAdContainer);
 
         setSupportActionBar(downloaderBinding.toolbarLayout.toolbar);
 
@@ -97,3 +97,4 @@ public class DownloadActivity extends AppCompatActivity {
         }
     }
 }
+

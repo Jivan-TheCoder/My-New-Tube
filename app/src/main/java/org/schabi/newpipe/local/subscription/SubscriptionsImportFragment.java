@@ -149,7 +149,7 @@ public class SubscriptionsImportFragment extends BaseFragment {
         }
 
         final FrameLayout bannerAdContainer = rootView.findViewById(R.id.bannerAdContainer);
-        AdUtils.LoadAppLovinBanner(requireActivity(), bannerAdContainer);
+        AdUtils.loadGoogleBanner(requireActivity(), bannerAdContainer);
     }
 
     @Override
@@ -225,3 +225,4 @@ public class SubscriptionsImportFragment extends BaseFragment {
         LinkifyCompat.addLinks(infoTextView, Linkify.WEB_URLS);
     }
 }
+

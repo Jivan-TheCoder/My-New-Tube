@@ -9,6 +9,13 @@ pluginManagement {
         google()
         mavenCentral()
     }
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id == "com.google.gms.google-services") {
+                useModule("com.google.gms:google-services:${requested.version}")
+            }
+        }
+    }
 }
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
@@ -18,8 +25,6 @@ dependencyResolutionManagement {
         maven(url = "https://jitpack.io")
         maven(url = "https://repo.clojars.org")
 
-        maven(url = "https://android-sdk.is.com")
-        maven(url = "https://artifacts.applovin.com/android")
     }
 }
 include(":app")

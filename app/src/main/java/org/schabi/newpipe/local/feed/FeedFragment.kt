@@ -132,7 +132,11 @@ class FeedFragment : BaseStateFragment<FeedState>() {
             .registerOnSharedPreferenceChangeListener(onSettingsChangeListener)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         return inflater.inflate(R.layout.fragment_feed, container, false)
     }
 
@@ -197,10 +201,12 @@ class FeedFragment : BaseStateFragment<FeedState>() {
 
     private fun setupListViewMode() {
         // does everything needed to setup the layouts for grid or list modes
-        groupAdapter.spanCount = if (shouldUseGridLayout(context)) getGridSpanCountStreams(context) else 1
-        feedBinding.itemsList.layoutManager = GridLayoutManager(requireContext(), groupAdapter.spanCount).apply {
-            spanSizeLookup = groupAdapter.spanSizeLookup
-        }
+        groupAdapter.spanCount =
+            if (shouldUseGridLayout(context)) getGridSpanCountStreams(context) else 1
+        feedBinding.itemsList.layoutManager =
+            GridLayoutManager(requireContext(), groupAdapter.spanCount).apply {
+                spanSizeLookup = groupAdapter.spanSizeLookup
+            }
     }
 
     override fun initListeners() {
@@ -242,7 +248,10 @@ class FeedFragment : BaseStateFragment<FeedState>() {
                 .setMessage(R.string.feed_use_dedicated_fetch_method_help_text)
                 .setNeutralButton(enableDisableButtonText) { _, _ ->
                     sharedPreferences.edit {
-                        putBoolean(getString(R.string.feed_use_dedicated_fetch_method_key), !usingDedicatedMethod)
+                        putBoolean(
+                            getString(R.string.feed_use_dedicated_fetch_method_key),
+                            !usingDedicatedMethod
+                        )
                     }
                 }
                 .setPositiveButton(resources.getString(R.string.ok), null)
@@ -709,7 +718,10 @@ class FeedFragment : BaseStateFragment<FeedState>() {
         const val KEY_GROUP_NAME = "ARG_GROUP_NAME"
 
         @JvmStatic
-        fun newInstance(groupId: Long = FeedGroupEntity.GROUP_ALL_ID, groupName: String? = null): FeedFragment {
+        fun newInstance(
+            groupId: Long = FeedGroupEntity.GROUP_ALL_ID,
+            groupName: String? = null
+        ): FeedFragment {
             val feedFragment = FeedFragment()
             feedFragment.arguments = bundleOf(KEY_GROUP_ID to groupId, KEY_GROUP_NAME to groupName)
             return feedFragment

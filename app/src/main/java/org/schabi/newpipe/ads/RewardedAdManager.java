@@ -2,6 +2,7 @@ package org.schabi.newpipe.ads;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
 import android.graphics.PorterDuff;
 import android.os.Handler;
 import android.os.Looper;
@@ -50,16 +51,40 @@ public class RewardedAdManager {
     private RewardedAdManager() {
     }
 
-    public void init(Activity activity) {
+    private boolean isActivityAlive(Activity activity) {
+        return activity != null && !activity.isFinishing() && !activity.isDestroyed();
+    }
+
+    private void dismissDialogSafely(Dialog dialog) {
+        if (dialog == null) {
+            return;
+        }
+        try {
+            if (dialog.isShowing()) {
+                dialog.dismiss();
+            }
+        } catch (Exception ignored) {
+        }
+    }
+
+    public void init(Context context) {
+        if (context == null) {
+            return;
+        }
 
         if (!isDialogEnabled()) {
-            preload(activity);
+            preload(context);
         }
     }
 
     public void show(Activity activity, Callback callback) {
         runOnMain(() -> {
             if (callback == null) {
+                return;
+            }
+            if (!isActivityAlive(activity)) {
+                AdUtils.AdsOpenIntrestial = false;
+                callback.onResult(false);
                 return;
             }
 
@@ -117,13 +142,16 @@ public class RewardedAdManager {
         return adDialog;
     }
 
-    private void preload(Activity activity) {
+    private void preload(Context context) {
+        if (context == null) {
+            return;
+        }
         if (isLoading || rewardedAd != null || AdUtils.Google_Rewarded == null || AdUtils.Google_Rewarded.trim().isEmpty()) {
             return;
         }
 
         isLoading = true;
-        RewardedAd.load(activity, AdUtils.Google_Rewarded, new AdRequest.Builder().build(), new RewardedAdLoadCallback() {
+        RewardedAd.load(context, AdUtils.Google_Rewarded, new AdRequest.Builder().build(), new RewardedAdLoadCallback() {
             @Override
             public void onAdLoaded(@NonNull RewardedAd ad) {
                 rewardedAd = ad;
@@ -132,7 +160,7 @@ public class RewardedAdManager {
 
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError error) {
-                RewardedAd.load(activity, AdUtils.Google_Rewarded_Fail, new AdRequest.Builder().build(), new RewardedAdLoadCallback() {
+                RewardedAd.load(context, AdUtils.Google_Rewarded_Fail, new AdRequest.Builder().build(), new RewardedAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull RewardedAd ad) {
                         rewardedAd = ad;
@@ -141,13 +169,24 @@ public class RewardedAdManager {
 
                     @Override
                     public void onAdFailedToLoad(@NonNull LoadAdError error) {
-                        rewardedAd = null;
-                        isLoading = false;
+                        RewardedAd.load(context, AdUtils.Google_Rewarded_Fail_1, new AdRequest.Builder().build(), new RewardedAdLoadCallback() {
+                            @Override
+                            public void onAdLoaded(@NonNull RewardedAd ad) {
+                                rewardedAd = ad;
+                                isLoading = false;
+                            }
+
+                            @Override
+                            public void onAdFailedToLoad(@NonNull LoadAdError error) {
+                                rewardedAd = null;
+                                isLoading = false;
 
 
-                        if (!isDialogEnabled()) {
-                            mainHandler.postDelayed(() -> preload(activity), 30000);
-                        }
+                                if (!isDialogEnabled()) {
+                                    mainHandler.postDelayed(() -> preload(context), 30000);
+                                }
+                            }
+                        });
                     }
                 });
             }
@@ -155,17 +194,27 @@ public class RewardedAdManager {
     }
 
     private void showPreloaded(Activity activity, Callback callback) {
+        if (!isActivityAlive(activity)) {
+            AdUtils.AdsOpenIntrestial = false;
+            callback.onResult(false);
+            return;
+        }
         if (rewardedAd != null) {
             showInternal(activity, callback);
             return;
         }
 
-        preload(activity);
+        preload(activity.getApplicationContext());
         AdUtils.AdsOpenIntrestial = false;
         callback.onResult(false);
     }
 
     private void loadAndShowWithDialog(Activity activity, Callback callback) {
+        if (!isActivityAlive(activity)) {
+            AdUtils.AdsOpenIntrestial = false;
+            callback.onResult(false);
+            return;
+        }
         if (isLoading || AdUtils.Google_Rewarded == null || AdUtils.Google_Rewarded.trim().isEmpty()) {
             AdUtils.AdsOpenIntrestial = false;
             callback.onResult(false);
@@ -179,12 +228,17 @@ public class RewardedAdManager {
         RewardedAd.load(activity, AdUtils.Google_Rewarded, new AdRequest.Builder().build(), new RewardedAdLoadCallback() {
             @Override
             public void onAdLoaded(@NonNull RewardedAd ad) {
+                if (!isActivityAlive(activity)) {
+                    isLoading = false;
+                    dismissDialogSafely(adDialog);
+                    AdUtils.AdsOpenIntrestial = false;
+                    callback.onResult(false);
+                    return;
+                }
                 isLoading = false;
                 rewardedAd = ad;
 
-                if (adDialog.isShowing()) {
-                    adDialog.dismiss();
-                }
+                dismissDialogSafely(adDialog);
 
                 showInternal(activity, callback);
             }
@@ -194,28 +248,53 @@ public class RewardedAdManager {
                 RewardedAd.load(activity, AdUtils.Google_Rewarded_Fail, new AdRequest.Builder().build(), new RewardedAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull RewardedAd ad) {
+                        if (!isActivityAlive(activity)) {
+                            isLoading = false;
+                            dismissDialogSafely(adDialog);
+                            AdUtils.AdsOpenIntrestial = false;
+                            callback.onResult(false);
+                            return;
+                        }
                         isLoading = false;
                         rewardedAd = ad;
 
-                        if (adDialog.isShowing()) {
-                            adDialog.dismiss();
-                        }
+                        dismissDialogSafely(adDialog);
 
                         showInternal(activity, callback);
                     }
 
                     @Override
                     public void onAdFailedToLoad(@NonNull LoadAdError error) {
-                        isLoading = false;
-                        rewardedAd = null;
+                        RewardedAd.load(activity, AdUtils.Google_Rewarded_Fail_1, new AdRequest.Builder().build(), new RewardedAdLoadCallback() {
+                            @Override
+                            public void onAdLoaded(@NonNull RewardedAd ad) {
+                                if (!isActivityAlive(activity)) {
+                                    isLoading = false;
+                                    dismissDialogSafely(adDialog);
+                                    AdUtils.AdsOpenIntrestial = false;
+                                    callback.onResult(false);
+                                    return;
+                                }
+                                isLoading = false;
+                                rewardedAd = ad;
 
-                        if (adDialog.isShowing()) {
-                            adDialog.dismiss();
-                        }
+                                dismissDialogSafely(adDialog);
 
-                        AdUtils.AdsOpenIntrestial = false;
-                        callback.onResult(false);
+                                showInternal(activity, callback);
+                            }
 
+                            @Override
+                            public void onAdFailedToLoad(@NonNull LoadAdError error) {
+                                isLoading = false;
+                                rewardedAd = null;
+
+                                dismissDialogSafely(adDialog);
+
+                                AdUtils.AdsOpenIntrestial = false;
+                                callback.onResult(false);
+
+                            }
+                        });
                     }
                 });
             }
@@ -223,6 +302,12 @@ public class RewardedAdManager {
     }
 
     private void showInternal(Activity activity, Callback callback) {
+        if (!isActivityAlive(activity)) {
+            isShowing = false;
+            AdUtils.AdsOpenIntrestial = false;
+            callback.onResult(false);
+            return;
+        }
         if (rewardedAd == null) {
             AdUtils.AdsOpenIntrestial = false;
             callback.onResult(false);
@@ -250,7 +335,7 @@ public class RewardedAdManager {
                 callback.onResult(rewardEarned[0]);
 
                 if (!isDialogEnabled()) {
-                    preload(activity);
+                    preload(activity.getApplicationContext());
                 }
             }
 
@@ -263,12 +348,13 @@ public class RewardedAdManager {
                 callback.onResult(false);
 
                 if (!isDialogEnabled()) {
-                    preload(activity);
+                    preload(activity.getApplicationContext());
                 }
             }
         });
 
         if (ProcessLifecycleOwner.get().getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.STARTED)) {
+            AdUtils.AdsOpenIntrestial = true;
             rewardedAd.show(activity, rewardItem -> rewardEarned[0] = true);
         } else {
             isShowing = false;
