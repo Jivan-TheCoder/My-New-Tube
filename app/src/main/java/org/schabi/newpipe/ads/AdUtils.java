@@ -40,6 +40,7 @@ import com.google.android.gms.ads.nativead.NativeAdView;
 
 import org.schabi.newpipe.R;
 
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class AdUtils {
@@ -78,6 +79,27 @@ public class AdUtils {
     public static String REC_Google_Medium_REC_Fail = "";
     public static String REC_Google_Medium_REC_Fail_1 = "";
 
+    public static int feed_after = 3;
+    public static int feed_max = 1;
+    public static int sub_after = 5;
+    public static int sub_every = 15;
+    public static int sub_max = 2;
+    public static int base_after = 2;
+    public static int base_every = 11;
+    public static int base_max = 3;
+    public static int rel_every = 7;
+
+    public static boolean exit_page = false;
+    public static String google_exit_inter = "";
+    public static String google_exit_inter_fail = "";
+    public static String google_exit_inter_fail_1 = "";
+    public static String google_exit_native = "";
+    public static String google_exit_native_fail = "";
+    public static String google_exit_native_fail_1 = "";
+    public static String google_exit_mrec = "";
+    public static String google_exit_mrec_fail = "";
+    public static String google_exit_mrec_fail_1 = "";
+
     public static int ads_native_second = 10;
     public static long NativeTime_Check = 0;
     public static long NativeBannerTime_Check = 0;
@@ -85,10 +107,14 @@ public class AdUtils {
     public static String native_button_color = "#ff8d36";
     public static String native_button_text_color = "#ffffff";
     public static String native_bg_color = "#f7f7f7";
+    public static String native_headline_color = "#000000";
+    public static String native_body_color = "#616161";
 
-    public static String default_native_button_color = "#ff8d36";
-    public static String default_native_button_text_color = "#ffffff";
+    public static String default_native_button_color = "#8AB4F8";
+    public static String default_native_button_text_color = "#202124";
     public static String default_native_bg_color = "#f7f7f7";
+    public static String default_native_headline_color = "#000000";
+    public static String default_native_body_color = "#616161";
 
     public static boolean LoadingAllData = false;
     public static boolean OpenAllData = false;
@@ -110,7 +136,7 @@ public class AdUtils {
     public static Boolean dialog = false;
 
     private static boolean isActivityAlive(Activity act) {
-        return act != null && !act.isFinishing() && !act.isDestroyed();
+        return act == null || act.isFinishing() || act.isDestroyed();
     }
 
     public static boolean isOnline(Context context) {
@@ -127,6 +153,9 @@ public class AdUtils {
     public static InterstitialAd GoogleInt = null;
 
     public static void PreLoad(Context act) {
+        if (GoogleInt != null) {
+            return;
+        }
         if (AdUtils.CheckOnOff) {
             if (AdUtils.isOnline(act)) {
                 if (AdUtils.Google_Intertitial.isEmpty()) {
@@ -140,33 +169,7 @@ public class AdUtils {
 
                         GoogleInt = null;
 
-                        InterstitialAd.load(act, AdUtils.Google_Intertitial_Fail, new AdRequest.Builder().build(), new InterstitialAdLoadCallback() {
-                            @Override
-                            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                                super.onAdFailedToLoad(loadAdError);
-                                GoogleInt = null;
-
-                                InterstitialAd.load(act, AdUtils.Google_Intertitial_Fail_1, new AdRequest.Builder().build(), new InterstitialAdLoadCallback() {
-                                    @Override
-                                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                                        super.onAdFailedToLoad(loadAdError);
-                                        GoogleInt = null;
-                                    }
-
-                                    @Override
-                                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
-                                        super.onAdLoaded(interstitialAd);
-                                        GoogleInt = interstitialAd;
-                                    }
-                                });
-                            }
-
-                            @Override
-                            public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
-                                super.onAdLoaded(interstitialAd);
-                                GoogleInt = interstitialAd;
-                            }
-                        });
+                        preLoadGoogleFailInter(act);
 
                     }
 
@@ -179,9 +182,14 @@ public class AdUtils {
             }
         }
     }
+
     public static void preLoadGoogleFailInter(Context act) {
+        if (GoogleInt != null) {
+            return;
+        }
         if (AdUtils.Google_Intertitial_Fail.isEmpty()) {
             preLoadGoogleFailInter_1(act);
+            return;
         }
 
         InterstitialAd.load(act, AdUtils.Google_Intertitial_Fail, new AdRequest.Builder().build(), new InterstitialAdLoadCallback() {
@@ -202,7 +210,11 @@ public class AdUtils {
             }
         });
     }
+
     public static void preLoadGoogleFailInter_1(Context act) {
+        if (GoogleInt != null) {
+            return;
+        }
         if (AdUtils.Google_Intertitial_Fail_1.isEmpty()) {
             return;
         }
@@ -237,8 +249,9 @@ public class AdUtils {
             }
         });
     }
+
     public static void PreLoadShow(Activity act, InterClick interClick) {
-        if (!isActivityAlive(act)) {
+        if (isActivityAlive(act)) {
             if (interClick != null) {
                 interClick.ClickAds();
             }
@@ -311,9 +324,11 @@ public class AdUtils {
 
 
     }
+
     public interface InterClick {
         void ClickAds();
     }
+
     public static void ClickWithAds(Activity act, InterClick interClick) {
         AdUtils.Ad_Count++;
 
@@ -418,7 +433,7 @@ public class AdUtils {
     }
 
     private static void LoadGoogleFail(Activity act, InterClick interClick, Dialog AdDialog, ProgressBar progress) {
-        if (!isActivityAlive(act)) {
+        if (isActivityAlive(act)) {
             AdUtils.AdsOpenIntrestial = false;
             if (interClick != null) {
                 interClick.ClickAds();
@@ -433,7 +448,7 @@ public class AdUtils {
                 @Override
                 public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
                     super.onAdLoaded(interstitialAd);
-                    if (!isActivityAlive(act)) {
+                    if (isActivityAlive(act)) {
                         AdUtils.AdsOpenIntrestial = false;
                         if (interClick != null) {
                             interClick.ClickAds();
@@ -665,7 +680,7 @@ public class AdUtils {
                                 populateNativeAdView(GoogleNativeBig, finalAdView);
 
 
-                            }).withNativeAdOptions(new NativeAdOptions.Builder().setAdChoicesPlacement(NativeAdOptions.ADCHOICES_TOP_LEFT).build()).withAdListener(new AdListener() {
+                            }).withNativeAdOptions(new NativeAdOptions.Builder().setAdChoicesPlacement(NativeAdOptions.ADCHOICES_TOP_RIGHT).build()).withAdListener(new AdListener() {
                                 @Override
                                 public void onAdFailedToLoad(@NonNull LoadAdError adError) {
                                     Log.e("JJJJJJJJJ", "onAdFailedToLoad: AdUtils.Google_Native failed to load ==> " + adError.getMessage());
@@ -835,7 +850,7 @@ public class AdUtils {
                                 populateNativeAdView(GoogleNativeBig, finalAdView);
 
 
-                            }).withNativeAdOptions(new NativeAdOptions.Builder().setAdChoicesPlacement(NativeAdOptions.ADCHOICES_TOP_LEFT).build()).withAdListener(new AdListener() {
+                            }).withNativeAdOptions(new NativeAdOptions.Builder().setAdChoicesPlacement(NativeAdOptions.ADCHOICES_TOP_RIGHT).build()).withAdListener(new AdListener() {
                                 @Override
                                 public void onAdFailedToLoad(@NonNull LoadAdError adError) {
                                     Log.e("JJJJJJJJJ", "onAdFailedToLoad: AdUtils.Google_Native_Fail failed to load ==> " + adError.getMessage());
@@ -1001,7 +1016,7 @@ public class AdUtils {
 
                                 populateNativeAdView(GoogleNativeBig, finalAdView);
 
-                            }).withNativeAdOptions(new NativeAdOptions.Builder().setAdChoicesPlacement(NativeAdOptions.ADCHOICES_TOP_LEFT).build()).withAdListener(new AdListener() {
+                            }).withNativeAdOptions(new NativeAdOptions.Builder().setAdChoicesPlacement(NativeAdOptions.ADCHOICES_TOP_RIGHT).build()).withAdListener(new AdListener() {
                                 @Override
                                 public void onAdFailedToLoad(@NonNull LoadAdError adError) {
                                     Log.e("LOadBigNative faill: ", "cccc");
@@ -1061,14 +1076,22 @@ public class AdUtils {
         adView.setIconView(adView.findViewById(R.id.ad_app_icon));
 // adView.setAdvertiserView(adView.findViewById(R.id.ad_advertiser));
 
-        ((TextView) adView.getHeadlineView()).setText(nativeAd.getHeadline());
-        ((TextView) adView.getBodyView()).setText(nativeAd.getBody());
-        ((TextView) adView.getCallToActionView()).setText(nativeAd.getCallToAction());
+        ((TextView) Objects.requireNonNull(adView.getHeadlineView())).setText(nativeAd.getHeadline());
+        ((TextView) Objects.requireNonNull(adView.getBodyView())).setText(nativeAd.getBody());
+        ((TextView) Objects.requireNonNull(adView.getCallToActionView())).setText(nativeAd.getCallToAction());
+
+        try {
+            ((TextView) Objects.requireNonNull(adView.getHeadlineView())).setTextColor(Color.parseColor(AdUtils.native_headline_color));
+            ((TextView) Objects.requireNonNull(adView.getBodyView())).setTextColor(Color.parseColor(AdUtils.native_body_color));
+        } catch (Exception e) {
+            ((TextView) Objects.requireNonNull(adView.getHeadlineView())).setTextColor(Color.parseColor(AdUtils.default_native_headline_color));
+            ((TextView) Objects.requireNonNull(adView.getBodyView())).setTextColor(Color.parseColor(AdUtils.default_native_body_color));
+        }
 
         if (nativeAd.getIcon() == null) {
-            adView.getIconView().setVisibility(View.GONE);
+            Objects.requireNonNull(adView.getIconView()).setVisibility(View.GONE);
         } else {
-            ((ImageView) adView.getIconView()).setImageDrawable(nativeAd.getIcon().getDrawable());
+            ((ImageView) Objects.requireNonNull(adView.getIconView())).setImageDrawable(nativeAd.getIcon().getDrawable());
             adView.getIconView().setVisibility(View.VISIBLE);
         }
         adView.setNativeAd(nativeAd);
@@ -1084,14 +1107,22 @@ public class AdUtils {
         adView.setIconView(adView.findViewById(R.id.ad_app_icon));
 // adView.setAdvertiserView(adView.findViewById(R.id.ad_advertiser));
 
-        ((TextView) adView.getHeadlineView()).setText(nativeAd.getHeadline());
-        ((TextView) adView.getBodyView()).setText(nativeAd.getBody());
-        ((TextView) adView.getCallToActionView()).setText(nativeAd.getCallToAction());
+        ((TextView) Objects.requireNonNull(adView.getHeadlineView())).setText(nativeAd.getHeadline());
+        ((TextView) Objects.requireNonNull(adView.getBodyView())).setText(nativeAd.getBody());
+        ((TextView) Objects.requireNonNull(adView.getCallToActionView())).setText(nativeAd.getCallToAction());
+
+        try {
+            ((TextView) Objects.requireNonNull(adView.getHeadlineView())).setTextColor(Color.parseColor(AdUtils.native_headline_color));
+            ((TextView) Objects.requireNonNull(adView.getBodyView())).setTextColor(Color.parseColor(AdUtils.native_body_color));
+        } catch (Exception e) {
+            ((TextView) Objects.requireNonNull(adView.getHeadlineView())).setTextColor(Color.parseColor(AdUtils.default_native_headline_color));
+            ((TextView) Objects.requireNonNull(adView.getBodyView())).setTextColor(Color.parseColor(AdUtils.default_native_body_color));
+        }
 
         if (nativeAd.getIcon() == null) {
-            adView.getIconView().setVisibility(View.GONE);
+            Objects.requireNonNull(adView.getIconView()).setVisibility(View.GONE);
         } else {
-            ((ImageView) adView.getIconView()).setImageDrawable(nativeAd.getIcon().getDrawable());
+            ((ImageView) Objects.requireNonNull(adView.getIconView())).setImageDrawable(nativeAd.getIcon().getDrawable());
             adView.getIconView().setVisibility(View.VISIBLE);
         }
 
@@ -1099,7 +1130,7 @@ public class AdUtils {
     }
 
     public static void loadGoogleBanner(Activity act, FrameLayout adContainer) {
-        if (!isActivityAlive(act)) {
+        if (isActivityAlive(act)) {
             hideAdContainer(adContainer);
             return;
         }
@@ -1144,7 +1175,7 @@ public class AdUtils {
     }
 
     public static void loadGoogleBannerFail(Activity act, FrameLayout adContainer) {
-        if (!isActivityAlive(act)) {
+        if (isActivityAlive(act)) {
             hideAdContainer(adContainer);
             return;
         }
@@ -1176,7 +1207,7 @@ public class AdUtils {
     }
 
     public static void loadGoogleBannerFail_1(Activity act, FrameLayout adContainer) {
-        if (!isActivityAlive(act)) {
+        if (isActivityAlive(act)) {
             hideAdContainer(adContainer);
             return;
         }
@@ -1224,11 +1255,15 @@ public class AdUtils {
         return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(act, adWidth);
     }
 
-    public static void LoadMREC(Activity act, FrameLayout adContainer, AtomicBoolean loadMediumREC, String size) {
-        loadMediumREC.set(true);
-
-        if (AdUtils.isOnline(act)) {
-            loadGoogleMREC(act, adContainer, loadMediumREC, size);
+    public static void LoadMrecExit(Activity act, FrameLayout adContainer, AtomicBoolean loadMediumREC, String size) {
+        if (AdUtils.CheckOnOff) {
+            if (AdUtils.isOnline(act)) {
+                loadMediumREC.set(true);
+                loadGoogleMREC(act, adContainer, loadMediumREC, size);
+            } else {
+                loadMediumREC.set(false);
+                hideAdContainer(adContainer);
+            }
         } else {
             loadMediumREC.set(false);
             hideAdContainer(adContainer);
@@ -1236,16 +1271,16 @@ public class AdUtils {
     }
 
     public static void loadGoogleMREC(Activity act, FrameLayout adContainer, AtomicBoolean loadMediumREC, String size) {
-        if (!isActivityAlive(act)) {
+        if (isActivityAlive(act)) {
             loadMediumREC.set(false);
             hideAdContainer(adContainer);
             return;
         }
         loadMediumREC.set(true);
 
-        if (!AdUtils.Google_Medium_REC.isEmpty()) {
+        if (!AdUtils.google_exit_mrec.isEmpty()) {
             AdView googleAd = new AdView(act);
-            googleAd.setAdUnitId(AdUtils.Google_Medium_REC);
+            googleAd.setAdUnitId(AdUtils.google_exit_mrec);
             googleAd.setAdSize(AdSize.MEDIUM_RECTANGLE);
             googleAd.setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
@@ -1272,16 +1307,16 @@ public class AdUtils {
     }
 
     public static void loadGoogleMRECFail(Activity act, FrameLayout adContainer, AtomicBoolean loadMediumREC, String size) {
-        if (!isActivityAlive(act)) {
+        if (isActivityAlive(act)) {
             loadMediumREC.set(false);
             hideAdContainer(adContainer);
             return;
         }
         loadMediumREC.set(true);
 
-        if (!AdUtils.Google_Medium_REC_Fail.isEmpty()) {
+        if (!AdUtils.google_exit_mrec_fail.isEmpty()) {
             AdView googleAd = new AdView(act);
-            googleAd.setAdUnitId(AdUtils.Google_Medium_REC_Fail);
+            googleAd.setAdUnitId(AdUtils.google_exit_mrec_fail);
             googleAd.setAdSize(AdSize.MEDIUM_RECTANGLE);
             googleAd.setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
@@ -1298,16 +1333,327 @@ public class AdUtils {
                     loadMediumREC.set(false);
                     googleAd.destroy();
 
-//                    hideAdContainer(adContainer);
-                    LOadBigNative(act, adContainer, size);
+                    loadGoogleMRECFail_1(act, adContainer, loadMediumREC, size);
+                }
+            });
+
+            googleAd.loadAd(new AdRequest.Builder().build());
+        } else {
+            loadGoogleMRECFail_1(act, adContainer, loadMediumREC, size);
+        }
+    }
+
+    public static void loadGoogleMRECFail_1(Activity act, FrameLayout adContainer, AtomicBoolean loadMediumREC, String size) {
+        if (isActivityAlive(act)) {
+            loadMediumREC.set(false);
+            hideAdContainer(adContainer);
+            return;
+        }
+        loadMediumREC.set(true);
+
+        if (!AdUtils.google_exit_mrec_fail_1.isEmpty()) {
+            AdView googleAd = new AdView(act);
+            googleAd.setAdUnitId(AdUtils.google_exit_mrec_fail_1);
+            googleAd.setAdSize(AdSize.MEDIUM_RECTANGLE);
+            googleAd.setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
+            googleAd.setAdListener(new AdListener() {
+
+                @Override
+                public void onAdLoaded() {
+                    loadMediumREC.set(true);
+                    showAd(adContainer, googleAd);
+                }
+
+                @Override
+                public void onAdFailedToLoad(LoadAdError error) {
+                    loadMediumREC.set(false);
+                    googleAd.destroy();
+
+                    LOadBigNativeExit(act, adContainer, size);
                 }
             });
 
             googleAd.loadAd(new AdRequest.Builder().build());
         } else {
             loadMediumREC.set(false);
-//            hideAdContainer(adContainer);
-            LOadBigNative(act, adContainer, size);
+            LOadBigNativeExit(act, adContainer, size);
+        }
+    }
+
+    public static void LOadBigNativeExit(Activity act, FrameLayout frameLayout, String size) {
+        NativeAdView adView = null;
+        adView = (NativeAdView) act.getLayoutInflater().inflate(R.layout.google_native_exit, null);
+
+        NativeAdView adView1 = (NativeAdView) adView.findViewById(R.id.ad_view);
+        TextView ad_call_to_action = adView.findViewById(R.id.ad_call_to_action);
+        CardView card = adView.findViewById(R.id.card);
+
+        try {
+            adView1.setBackgroundColor(Color.parseColor(AdUtils.native_bg_color));
+            card.setCardBackgroundColor(Color.parseColor(AdUtils.native_button_color));
+            ad_call_to_action.setTextColor(Color.parseColor(AdUtils.native_button_text_color));
+        } catch (Exception e) {
+            adView1.setBackgroundColor(Color.parseColor(AdUtils.default_native_bg_color));
+            card.setCardBackgroundColor(Color.parseColor(AdUtils.default_native_button_color));
+            ad_call_to_action.setTextColor(Color.parseColor(AdUtils.default_native_button_text_color));
+        }
+
+        if (size.equalsIgnoreCase("big")) {
+            if (!AdUtils.google_exit_native.isEmpty()) {
+                long ctime = System.currentTimeMillis();
+                long aa = ctime - (AdUtils.NativeTime_Check);
+                if (aa > (AdUtils.ads_native_second * 1000L)) {
+                    Log.e("LOadBigNative: ", "aaaaaaaaaa");
+
+                    NativeAdView finalAdView = adView;
+                    adLoader = new AdLoader.Builder(act, AdUtils.google_exit_native)
+
+                            .forNativeAd(nativeAds -> {
+                                Log.e("LOadBigNative: ", "loaddddd");
+
+                                AdUtils.NativeTime_Check = System.currentTimeMillis();
+
+                                GoogleNativeSmall = nativeAds;
+
+                                frameLayout.removeAllViews();
+                                frameLayout.addView(finalAdView);
+
+                                populateNativeAdView(GoogleNativeSmall, finalAdView);
+
+
+                            }).withNativeAdOptions(new NativeAdOptions.Builder().setAdChoicesPlacement(NativeAdOptions.ADCHOICES_TOP_RIGHT).build()).withAdListener(new AdListener() {
+                                @Override
+                                public void onAdFailedToLoad(@NonNull LoadAdError adError) {
+                                    Log.e("JJJJJJJJJ", "onAdFailedToLoad: AdUtils.Google_Native failed to load ==> " + adError.getMessage());
+                                    GoogleNativeSmall = null;
+
+                                    LOadBigNativeFailExit(act, frameLayout, size);
+
+
+                                }
+
+                                @Override
+                                public void onAdClicked() {
+                                    super.onAdClicked();
+                                }
+
+                                @Override
+                                public void onAdLoaded() {
+                                    super.onAdLoaded();
+                                }
+
+                                @Override
+                                public void onAdImpression() {
+                                    super.onAdImpression();
+                                }
+
+                                @Override
+                                public void onAdOpened() {
+                                    super.onAdOpened();
+                                }
+
+                            }).build();
+                    adLoader.loadAd(new AdRequest.Builder().build());
+                } else if (GoogleNativeSmall == null) {
+                    Log.e("LOadBigNative: ", "bbbbbb");
+
+                    LOadBigNativeFailExit(act, frameLayout, size);
+
+                } else {
+                    Log.e("LOadBigNative: ", "ddddd");
+                    frameLayout.removeAllViews();
+                    frameLayout.addView(adView);
+
+                    populateNativeAdView(GoogleNativeSmall, adView);
+
+                }
+
+            } else {
+                Log.e("LOadBigNative: ", "hhhh");
+                LOadBigNativeFailExit(act, frameLayout, size);
+            }
+        }
+    }
+
+    public static void LOadBigNativeFailExit(Activity act, FrameLayout frameLayout, String size) {
+        NativeAdView adView = null;
+        adView = (NativeAdView) act.getLayoutInflater().inflate(R.layout.google_native_exit, null);
+
+        NativeAdView adView1 = (NativeAdView) adView.findViewById(R.id.ad_view);
+        TextView ad_call_to_action = adView.findViewById(R.id.ad_call_to_action);
+        CardView card = adView.findViewById(R.id.card);
+
+        try {
+            adView1.setBackgroundColor(Color.parseColor(AdUtils.native_bg_color));
+            card.setCardBackgroundColor(Color.parseColor(AdUtils.native_button_color));
+            ad_call_to_action.setTextColor(Color.parseColor(AdUtils.native_button_text_color));
+        } catch (Exception e) {
+            adView1.setBackgroundColor(Color.parseColor(AdUtils.default_native_bg_color));
+            card.setCardBackgroundColor(Color.parseColor(AdUtils.default_native_button_color));
+            ad_call_to_action.setTextColor(Color.parseColor(AdUtils.default_native_button_text_color));
+        }
+
+        if (size.equalsIgnoreCase("big")) {
+            if (!AdUtils.google_exit_native_fail.isEmpty()) {
+                long ctime = System.currentTimeMillis();
+                long aa = ctime - (AdUtils.NativeTime_Check);
+                if (aa > (AdUtils.ads_native_second * 1000L)) {
+                    Log.e("LOadBigNative: ", "aaaaaaaaaa");
+
+                    NativeAdView finalAdView = adView;
+                    adLoader = new AdLoader.Builder(act, AdUtils.google_exit_native_fail)
+
+                            .forNativeAd(nativeAds -> {
+                                Log.e("LOadBigNative: ", "loaddddd");
+
+                                AdUtils.NativeTime_Check = System.currentTimeMillis();
+
+                                GoogleNativeSmall = nativeAds;
+
+                                frameLayout.removeAllViews();
+                                frameLayout.addView(finalAdView);
+
+                                populateNativeAdView(GoogleNativeSmall, finalAdView);
+
+
+                            }).withNativeAdOptions(new NativeAdOptions.Builder().setAdChoicesPlacement(NativeAdOptions.ADCHOICES_TOP_LEFT).build()).withAdListener(new AdListener() {
+                                @Override
+                                public void onAdFailedToLoad(@NonNull LoadAdError adError) {
+                                    Log.e("JJJJJJJJJ", "onAdFailedToLoad: AdUtils.Google_Native_Fail failed to load ==> " + adError.getMessage());
+                                    GoogleNativeSmall = null;
+
+                                    LOadBigNativeFailExit_1(act, frameLayout, size);
+
+
+                                }
+
+                                @Override
+                                public void onAdClicked() {
+                                    super.onAdClicked();
+                                }
+
+                                @Override
+                                public void onAdLoaded() {
+                                    super.onAdLoaded();
+                                }
+
+                                @Override
+                                public void onAdImpression() {
+                                    super.onAdImpression();
+                                }
+
+                                @Override
+                                public void onAdOpened() {
+                                    super.onAdOpened();
+                                }
+
+                            }).build();
+                    adLoader.loadAd(new AdRequest.Builder().build());
+                } else if (GoogleNativeSmall == null) {
+                    Log.e("LOadBigNative: ", "bbbbbb");
+
+                    LOadBigNativeFailExit_1(act, frameLayout, size);
+
+                } else {
+                    Log.e("LOadBigNative: ", "ddddd");
+                    frameLayout.removeAllViews();
+                    frameLayout.addView(adView);
+
+                    populateNativeAdView(GoogleNativeSmall, adView);
+
+                }
+
+            } else {
+                Log.e("LOadBigNative: ", "hhhh");
+                LOadBigNativeFailExit_1(act, frameLayout, size);
+            }
+        }
+    }
+
+    public static void LOadBigNativeFailExit_1(Activity act, FrameLayout frameLayout, String size) {
+
+        NativeAdView adView = null;
+        adView = (NativeAdView) act.getLayoutInflater().inflate(R.layout.google_native_exit, null);
+
+        NativeAdView adView1 = (NativeAdView) adView.findViewById(R.id.ad_view);
+        TextView ad_call_to_action = adView.findViewById(R.id.ad_call_to_action);
+        CardView card = adView.findViewById(R.id.card);
+
+        try {
+            adView1.setBackgroundColor(Color.parseColor(AdUtils.native_bg_color));
+            card.setCardBackgroundColor(Color.parseColor(AdUtils.native_button_color));
+            ad_call_to_action.setTextColor(Color.parseColor(AdUtils.native_button_text_color));
+        } catch (Exception e) {
+            adView1.setBackgroundColor(Color.parseColor(AdUtils.default_native_bg_color));
+            card.setCardBackgroundColor(Color.parseColor(AdUtils.default_native_button_color));
+            ad_call_to_action.setTextColor(Color.parseColor(AdUtils.default_native_button_text_color));
+        }
+
+        if (size.equalsIgnoreCase("big")) {
+            if (GoogleNativeSmall == null) {
+                if (!AdUtils.google_exit_native_fail_1.isEmpty()) {
+
+                    Log.e("LOadBigNative faill: ", "aaaaa");
+
+                    NativeAdView finalAdView = adView;
+                    NativeAdView finalAdView1 = adView;
+                    adLoader = new AdLoader.Builder(act, AdUtils.google_exit_native_fail_1)
+
+                            .forNativeAd(nativeAds -> {
+                                Log.e("LOadBigNative faill: ", "bbbb");
+
+                                AdUtils.NativeTime_Check = System.currentTimeMillis();
+
+                                GoogleNativeSmall = nativeAds;
+
+                                frameLayout.removeAllViews();
+                                frameLayout.addView(finalAdView);
+
+                                populateNativeAdView(GoogleNativeSmall, finalAdView);
+
+                            }).withNativeAdOptions(new NativeAdOptions.Builder().setAdChoicesPlacement(NativeAdOptions.ADCHOICES_TOP_RIGHT).build()).withAdListener(new AdListener() {
+                                @Override
+                                public void onAdFailedToLoad(@NonNull LoadAdError adError) {
+                                    Log.e("LOadBigNative faill: ", "cccc");
+                                    frameLayout.removeAllViews();
+                                    frameLayout.addView(finalAdView1);
+
+                                    adView1.setVisibility(View.INVISIBLE);
+
+                                }
+
+                                @Override
+                                public void onAdClicked() {
+                                    super.onAdClicked();
+                                }
+
+                                @Override
+                                public void onAdLoaded() {
+                                    super.onAdLoaded();
+                                }
+
+                                @Override
+                                public void onAdImpression() {
+                                    super.onAdImpression();
+                                }
+
+                                @Override
+                                public void onAdOpened() {
+                                    super.onAdOpened();
+                                }
+
+                            }).build();
+                    adLoader.loadAd(new AdRequest.Builder().build());
+                }
+            } else {
+                Log.e("LOadBigNative faill: ", "ddddd");
+                frameLayout.removeAllViews();
+                frameLayout.addView(adView);
+
+                populateNativeAdView(GoogleNativeSmall, adView);
+
+            }
         }
     }
 

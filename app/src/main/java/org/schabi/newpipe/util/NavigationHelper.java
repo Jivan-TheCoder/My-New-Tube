@@ -621,7 +621,6 @@ public final class NavigationHelper {
     public static void openSearch(final Context context, final int serviceId,
                                   final String searchString) {
         if (!AppMode.USE_EXTRACTOR) {
-            
             return;
         }
         final Intent mIntent = new Intent(context, MainActivity.class);

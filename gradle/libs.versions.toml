@@ -5,6 +5,7 @@
 
 [versions]
 acra = "5.13.1"
+activity = "1.13.0"
 agp = "8.13.2"
 appcompat = "1.7.1"
 assertj = "3.27.7"
@@ -70,6 +71,7 @@ work = "2.11.2"
 [libraries]
 acra-core = { module = "ch.acra:acra-core", version.ref = "acra" }
 android-desugar = { module = "com.android.tools:desugar_jdk_libs_nio", version.ref = "desugar" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 androidx-cardview = { module = "androidx.cardview:cardview", version.ref = "cardview" }
 androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }

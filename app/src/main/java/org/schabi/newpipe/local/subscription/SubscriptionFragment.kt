@@ -33,6 +33,7 @@ import org.schabi.newpipe.databinding.FeedItemCarouselBinding
 import org.schabi.newpipe.databinding.FragmentSubscriptionBinding
 import org.schabi.newpipe.error.ErrorInfo
 import org.schabi.newpipe.error.UserAction
+import org.schabi.newpipe.extractor.ServiceList
 import org.schabi.newpipe.extractor.channel.ChannelInfoItem
 import org.schabi.newpipe.fragments.BaseStateFragment
 import org.schabi.newpipe.ktx.animate
@@ -138,7 +139,7 @@ class SubscriptionFragment : BaseStateFragment<SubscriptionState>() {
             if (supportedSources.isEmpty()) continue
 
             addMenuItemToSubmenu(importSubMenu, service.serviceInfo.name) {
-                onImportFromServiceSelected(service.serviceId)
+                onImportFromServiceSelectedWithAdIfNeeded(service.serviceId)
             }
                 .setIcon(ServiceHelper.getIcon(service.serviceId))
         }
@@ -188,6 +189,21 @@ class SubscriptionFragment : BaseStateFragment<SubscriptionState>() {
         NavigationHelper.openSubscriptionsImportFragment(fragmentManager, safeServiceId)
     }
 
+    private fun onImportFromServiceSelectedWithAdIfNeeded(serviceId: Int) {
+        if (serviceId == ServiceList.YouTube.serviceId && isAdded) {
+            AdUtils.ClickWithAds(
+                requireActivity(),
+                object : AdUtils.InterClick {
+                    override fun ClickAds() {
+                        onImportFromServiceSelected(serviceId)
+                    }
+                }
+            )
+            return
+        }
+        onImportFromServiceSelected(serviceId)
+    }
+
     private fun openReorderDialog() {
         FeedGroupReorderDialog().show(parentFragmentManager, null)
     }
@@ -209,9 +225,9 @@ class SubscriptionFragment : BaseStateFragment<SubscriptionState>() {
             requireActivity(),
             binding.itemsList,
             groupAdapter,
-            NativeAdInjectionConfig.interval(5, 15)
+            NativeAdInjectionConfig.interval(AdUtils.sub_after, AdUtils.sub_every)
 //                .withMaxAds(3)
-                .withMaxUniqueAdsToLoad(2)
+                .withMaxUniqueAdsToLoad(AdUtils.sub_max)
                 .withAdMixMode(NativeAdInjectionConfig.AdMixMode.ALTERNATE_MREC_FIRST)
                 .withPlacementKey("Subscription_AD")
                 .withPolicyGuardrails()

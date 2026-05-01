@@ -102,26 +102,16 @@ public final class StateSaver {
     @Nullable
     private static SavedState tryToRestore(@NonNull final SavedState savedState,
                                            @NonNull final WriteRead writeRead) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
-
         try {
             Queue<Object> savedObjects =
                     STATE_OBJECTS_HOLDER.remove(savedState.getPrefixFileSaved());
             if (savedObjects != null) {
                 writeRead.readFrom(savedObjects);
-                if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                    
-                }
                 return savedState;
             }
 
             final File file = new File(savedState.getPathFileSaved());
             if (!file.exists()) {
-                if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                    
-                }
                 return null;
             }
 
@@ -196,10 +186,6 @@ public final class StateSaver {
     @Nullable
     private static SavedState tryToSave(final boolean isChangingConfig, final String prefixFileName,
                                         final String suffixFileName, final WriteRead writeRead) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
-
         final LinkedList<Object> savedObjects = new LinkedList<>();
         writeRead.writeTo(savedObjects);
 
@@ -208,9 +194,6 @@ public final class StateSaver {
                 STATE_OBJECTS_HOLDER.put(prefixFileName, savedObjects);
                 return new SavedState(prefixFileName, "");
             } else {
-                if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                    
-                }
                 return null;
             }
         }
@@ -264,10 +247,6 @@ public final class StateSaver {
      * @param savedState the saved state to delete
      */
     public static void onDestroy(final SavedState savedState) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
-
         if (savedState != null && !savedState.getPathFileSaved().isEmpty()) {
             STATE_OBJECTS_HOLDER.remove(savedState.getPrefixFileSaved());
             try {
@@ -282,10 +261,6 @@ public final class StateSaver {
      * Clear all the files in cache (in memory and disk).
      */
     public static void clearStateFiles() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
-
         STATE_OBJECTS_HOLDER.clear();
         File cacheDir = new File(cacheDirPath);
         if (!cacheDir.exists()) {

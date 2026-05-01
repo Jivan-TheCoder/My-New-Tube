@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 
 import org.schabi.newpipe.R;
+import org.schabi.newpipe.ads.AdUtils;
 import org.schabi.newpipe.ads.adapter_ads.NativeAdInjectionConfig;
 import org.schabi.newpipe.ads.adapter_ads.RecyclerNativeAdInjector;
 import org.schabi.newpipe.databinding.PignateFooterBinding;
@@ -150,8 +151,8 @@ public abstract class BaseLocalListFragment<I, N> extends BaseStateFragment<I>
                 requireActivity(),
                 itemsList,
                 itemListAdapter,
-                NativeAdInjectionConfig.explicitAfterContentItems(3)
-                        .withMaxAds(1)
+                NativeAdInjectionConfig.explicitAfterContentItems(AdUtils.feed_after)
+                        .withMaxAds(AdUtils.feed_max)
                         .withPlacementKey(PLACEMENT_KEY)
                         .withPolicyGuardrails()
         );

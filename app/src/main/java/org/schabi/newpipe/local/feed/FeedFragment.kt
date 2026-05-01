@@ -172,8 +172,8 @@ class FeedFragment : BaseStateFragment<FeedState>() {
             requireActivity(),
             feedBinding.itemsList,
             groupAdapter,
-            NativeAdInjectionConfig.explicitAfterContentItems(3)
-                .withMaxAds(1)
+            NativeAdInjectionConfig.explicitAfterContentItems(AdUtils.feed_after)
+                .withMaxAds(AdUtils.feed_max)
                 .withPlacementKey("Feed_AD")
                 .withPolicyGuardrails()
         )

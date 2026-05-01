@@ -30,6 +30,7 @@ import org.schabi.newpipe.ads.AdUtils;
 
 import java.lang.ref.WeakReference;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -271,6 +272,7 @@ public class RecyclerNativeWaterfallManager {
             ctaButton.setBackgroundColor(ctaBgColor);
             ctaButton.setTextColor(ctaTextColor);
         }
+
     }
 
     private void populateGoogleNativeAdView(@NonNull NativeAd nativeAd, @NonNull NativeAdView adView) {
@@ -288,8 +290,14 @@ public class RecyclerNativeWaterfallManager {
         TextView body = (TextView) adView.getBodyView();
         TextView callToAction = (TextView) adView.getCallToActionView();
 
-        if (headline != null) headline.setText(nativeAd.getHeadline());
-        if (body != null) body.setText(nativeAd.getBody());
+        if (headline != null) {
+            headline.setText(nativeAd.getHeadline());
+            headline.setTextColor(parseColorOrDefault(AdUtils.native_headline_color, AdUtils.default_native_headline_color));
+        }
+        if (body != null) {
+            body.setText(nativeAd.getBody());
+            body.setTextColor(parseColorOrDefault(AdUtils.native_body_color, AdUtils.default_native_body_color));
+        }
         if (callToAction != null) callToAction.setText(nativeAd.getCallToAction());
 
         if (adView.getIconView() instanceof ImageView) {

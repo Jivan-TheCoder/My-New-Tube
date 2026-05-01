@@ -30,9 +30,6 @@ public final class SerializedCache {
 
     @Nullable
     public <T> T take(@NonNull final String key, @NonNull final Class<T> type) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         synchronized (LRU_CACHE) {
             return LRU_CACHE.get(key) != null ? getItem(LRU_CACHE.remove(key), type) : null;
         }
@@ -40,9 +37,6 @@ public final class SerializedCache {
 
     @Nullable
     public <T> T get(@NonNull final String key, @NonNull final Class<T> type) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         synchronized (LRU_CACHE) {
             final CacheData<?> data = LRU_CACHE.get(key);
             return data != null ? getItem(data, type) : null;
@@ -58,9 +52,6 @@ public final class SerializedCache {
 
     public <T extends Serializable> boolean put(@NonNull final String key, @NonNull final T item,
                                                 @NonNull final Class<T> type) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         synchronized (LRU_CACHE) {
             try {
                 LRU_CACHE.put(key, new CacheData<>(clone(item, type), type));
@@ -73,9 +64,6 @@ public final class SerializedCache {
     }
 
     public void clear() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         synchronized (LRU_CACHE) {
             LRU_CACHE.evictAll();
         }

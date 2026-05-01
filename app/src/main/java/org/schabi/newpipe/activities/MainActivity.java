@@ -66,6 +66,8 @@ import com.google.android.play.core.install.model.UpdateAvailability;
 import org.schabi.newpipe.AppMode;
 import org.schabi.newpipe.R;
 import org.schabi.newpipe.ads.AdUtils;
+import org.schabi.newpipe.ads.ExitDialogManager;
+import org.schabi.newpipe.ads.RatingManager;
 import org.schabi.newpipe.databinding.ActivityMainBinding;
 import org.schabi.newpipe.databinding.DrawerHeaderBinding;
 import org.schabi.newpipe.databinding.DrawerLayoutBinding;
@@ -131,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences.Editor sharedPrefEditor;
     private AppUpdateManager appUpdateManager;
     private static final int IN_APP_UPDATE_REQUEST_CODE = 9123;
+    private boolean isRateDialogShown = false;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -151,6 +154,8 @@ public class MainActivity extends AppCompatActivity {
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         sharedPrefEditor = sharedPreferences.edit();
+
+        isRateDialogShown = RatingManager.getRating(MainActivity.this);
 
         mainBinding = ActivityMainBinding.inflate(getLayoutInflater());
         drawerLayoutBinding = mainBinding.drawerLayout;
@@ -572,7 +577,33 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (getSupportFragmentManager().getBackStackEntryCount() == 1) {
-            finish();
+            if (isRateDialogShown) {
+                if (AdUtils.exit_page) {
+                    AdUtils.ClickWithAds(MainActivity.this, new AdUtils.InterClick() {
+                        @Override
+                        public void ClickAds() {
+                            startActivity(new Intent(MainActivity.this, ThanksActivity.class));
+                        }
+                    });
+                } else {
+                    ExitDialogManager.showExitDialog(this, this::finish);
+                }
+            } else {
+                RatingManager.rateDialog(this, new RatingManager.RateDialogListener() {
+                    @Override
+                    public void onRateDialogDismiss(boolean ratedNow) {
+                        isRateDialogShown = true;
+                        if (!ratedNow) {
+                            if (AdUtils.exit_page) {
+                                startActivity(new Intent(MainActivity.this, ThanksActivity.class));
+                            } else {
+                                ExitDialogManager.showExitDialog(MainActivity.this, MainActivity.this::finish);
+                            }
+                        }
+                    }
+                });
+            }
+
         } else {
             super.onBackPressed();
         }

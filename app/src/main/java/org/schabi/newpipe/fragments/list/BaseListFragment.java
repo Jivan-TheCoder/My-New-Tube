@@ -263,8 +263,8 @@ public abstract class BaseListFragment<I, N> extends BaseStateFragment<I>
 
     @NonNull
     protected NativeAdInjectionConfig getNativeAdInjectionConfig() {
-        return NativeAdInjectionConfig.interval(2,11)
-                .withMaxAds(3)
+        return NativeAdInjectionConfig.interval(AdUtils.base_after,AdUtils.base_every)
+                .withMaxAds(AdUtils.base_max)
                 .withPlacementKey(PLACEMENT_KEY)
                 .withPolicyGuardrails();
     }

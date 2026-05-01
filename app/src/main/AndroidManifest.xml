@@ -11,12 +11,11 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-
-    <!-- We need to be able to open links in the browser on API 30+ -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- We need to be able to open links in the browser on API 30+ -->
     <queries>
         <intent>
             <action android:name="android.intent.action.VIEW" />
+
             <data android:scheme="http" />
         </intent>
     </queries>
@@ -41,7 +40,9 @@
         android:theme="@style/OpeningTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
-
+        <activity
+            android:name=".activities.ThanksActivity"
+            android:exported="false" />
         <activity
             android:name=".ads.SplashActivity"
             android:exported="true"
@@ -55,7 +56,6 @@
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activities.MainActivity"
             android:exported="true"
@@ -78,7 +78,6 @@
                 android:name="autoStoreLocales"
                 android:value="true" />
         </service>
-
         <service
             android:name=".player.PlayerService"
             android:exported="true"
@@ -96,7 +95,6 @@
             android:exported="false"
             android:label="@string/title_activity_play_queue"
             android:launchMode="singleTask" />
-
         <activity
             android:name=".settings.SettingsActivity"
             android:exported="false"
@@ -105,7 +103,6 @@
         <service
             android:name=".local.feed.service.FeedLoadService"
             android:foregroundServiceType="dataSync" />
-
         <service
             android:name="androidx.work.impl.foreground.SystemForegroundService"
             android:foregroundServiceType="dataSync"
@@ -123,18 +120,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activities.ExitActivity"
             android:exported="false"
             android:label="@string/general_error"
             android:theme="@android:style/Theme.NoDisplay" />
-
         <activity
             android:name=".error.ErrorActivity"
-            android:exported="false" />
-
-        <!-- giga get related -->
+            android:exported="false" /> <!-- giga get related -->
         <activity
             android:name=".download.DownloadActivity"
             android:exported="false"
@@ -152,10 +145,10 @@
             android:theme="@style/FilePickerThemeDark">
             <intent-filter>
                 <action android:name="android.intent.action.GET_CONTENT" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".error.ReCaptchaActivity"
             android:exported="false"
@@ -250,40 +243,36 @@
             <!-- Share filter -->
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:mimeType="text/plain" />
             </intent-filter>
-
         </activity>
+
         <service
             android:name=".activities.RouterActivity$FetcherService"
             android:exported="false"
-            android:foregroundServiceType="dataSync" />
-
-        <!-- opting out of sending metrics to Google in Android System WebView -->
+            android:foregroundServiceType="dataSync" /> <!-- opting out of sending metrics to Google in Android System WebView -->
         <meta-data
             android:name="android.webkit.WebView.MetricsOptOut"
-            android:value="true" />
-        <!-- see https://github.com/TeamNewPipe/NewPipe/issues/3947 -->
+            android:value="true" /> <!-- see https://github.com/TeamNewPipe/NewPipe/issues/3947 -->
         <!-- Version < 3.0. DeX Mode and Screen Mirroring support -->
         <meta-data
             android:name="com.samsung.android.keepalive.density"
-            android:value="true" />
-        <!-- Version >= 3.0. DeX Dual Mode support -->
+            android:value="true" /> <!-- Version >= 3.0. DeX Dual Mode support -->
         <meta-data
             android:name="com.samsung.android.multidisplay.keep_process_alive"
-            android:value="true" />
-        <!-- Android Auto -->
+            android:value="true" /> <!-- Android Auto -->
         <meta-data
             android:name="com.google.android.gms.car.application"
             android:resource="@xml/automotive_app_desc" />
         <meta-data
             android:name="com.google.android.gms.car.notification.SmallIcon"
-            android:resource="@mipmap/ic_launcher" />
-
-        <!-- Google Admob -->
+            android:resource="@mipmap/ic_launcher" /> <!-- Google Admob -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3940256099942544~3347511713" />
     </application>
+
 </manifest>

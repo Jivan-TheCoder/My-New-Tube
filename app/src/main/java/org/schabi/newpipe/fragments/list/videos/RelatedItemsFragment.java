@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.preference.PreferenceManager;
 
 import org.schabi.newpipe.R;
+import org.schabi.newpipe.ads.AdUtils;
 import org.schabi.newpipe.ads.adapter_ads.NativeAdInjectionConfig;
 import org.schabi.newpipe.databinding.RelatedItemsHeaderBinding;
 import org.schabi.newpipe.error.UserAction;
@@ -181,8 +182,8 @@ public class RelatedItemsFragment extends BaseListInfoFragment<InfoItem, Related
     @NonNull
     @Override
     protected NativeAdInjectionConfig getNativeAdInjectionConfig() {
-        return NativeAdInjectionConfig.interval(3,10)
-                .withMaxAds(2)
+        return NativeAdInjectionConfig.interval((AdUtils.base_after + 1), AdUtils.rel_every)
+                .withMaxAds(AdUtils.base_max)
                 .withPlacementKey("RelatedItems_AD")
                 .withPolicyGuardrails();
     }

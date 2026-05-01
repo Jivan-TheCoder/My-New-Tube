@@ -94,9 +94,6 @@ public final class InfoCache {
     public Info getFromKey(final int serviceId,
                            @NonNull final String url,
                            @NonNull final Type cacheType) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         synchronized (LRU_CACHE) {
             return getInfo(keyOf(serviceId, url, cacheType));
         }
@@ -106,10 +103,6 @@ public final class InfoCache {
                         @NonNull final String url,
                         @NonNull final Info info,
                         @NonNull final Type cacheType) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
-
         final long expirationMillis = ServiceHelper.getCacheExpirationMillis(info.getServiceId());
         synchronized (LRU_CACHE) {
             final CacheData data = new CacheData(info, expirationMillis);
@@ -120,27 +113,18 @@ public final class InfoCache {
     public void removeInfo(final int serviceId,
                            @NonNull final String url,
                            @NonNull final Type cacheType) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         synchronized (LRU_CACHE) {
             LRU_CACHE.remove(keyOf(serviceId, url, cacheType));
         }
     }
 
     public void clearCache() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         synchronized (LRU_CACHE) {
             LRU_CACHE.evictAll();
         }
     }
 
     public void trimCache() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         synchronized (LRU_CACHE) {
             removeStaleCache();
             LRU_CACHE.trimToSize(TRIM_CACHE_TO);

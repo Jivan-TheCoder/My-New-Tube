@@ -34,6 +34,7 @@ import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 
+import org.schabi.newpipe.AppMode;
 import org.schabi.newpipe.R;
 import org.schabi.newpipe.activities.MainActivity;
 
@@ -141,6 +142,7 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void applyRemoteConfig(FirebaseRemoteConfig remoteConfig) {
+        AppMode.applyRemoteConfig(remoteConfig, "Splash");
         AdUtils.CheckOnOff = remoteConfig.getBoolean("ads_status");
         if (AdUtils.CheckOnOff) {
             String redirect = remoteConfig.getString("redirect");
@@ -235,9 +237,31 @@ public class SplashActivity extends AppCompatActivity {
             AdUtils.REC_Google_Medium_REC_Fail = remoteConfig.getString("REC_Google_Medium_REC_Fail");
             AdUtils.REC_Google_Medium_REC_Fail_1 = remoteConfig.getString("REC_Google_Medium_REC_Fail_1");
 
+            AdUtils.native_headline_color = remoteConfig.getString("native_headline_color");
+            AdUtils.native_body_color = remoteConfig.getString("native_body_color");
             AdUtils.native_button_color = remoteConfig.getString("native_button_color");
             AdUtils.native_button_text_color = remoteConfig.getString("native_button_text_color");
             AdUtils.native_bg_color = remoteConfig.getString("native_bg_color");
+
+            AdUtils.feed_after = (int) remoteConfig.getLong("feed_after");
+            AdUtils.feed_max = (int) remoteConfig.getLong("feed_max");
+            AdUtils.sub_after = (int) remoteConfig.getLong("sub_after");
+            AdUtils.sub_every = (int) remoteConfig.getLong("sub_every");
+            AdUtils.sub_max = (int) remoteConfig.getLong("sub_max");
+            AdUtils.base_after = (int) remoteConfig.getLong("base_after");
+            AdUtils.base_every = (int) remoteConfig.getLong("base_every");
+            AdUtils.base_max = (int) remoteConfig.getLong("base_max");
+            AdUtils.rel_every = (int) remoteConfig.getLong("rel_every");
+            AdUtils.exit_page = remoteConfig.getBoolean("exit_page");
+            AdUtils.google_exit_inter = remoteConfig.getString("google_exit_inter");
+            AdUtils.google_exit_inter_fail = remoteConfig.getString("google_exit_inter_fail");
+            AdUtils.google_exit_inter_fail_1 = remoteConfig.getString("google_exit_inter_fail_1");
+            AdUtils.google_exit_native = remoteConfig.getString("google_exit_native");
+            AdUtils.google_exit_native_fail = remoteConfig.getString("google_exit_native_fail");
+            AdUtils.google_exit_native_fail_1 = remoteConfig.getString("google_exit_native_fail_1");
+            AdUtils.google_exit_mrec = remoteConfig.getString("google_exit_mrec");
+            AdUtils.google_exit_mrec_fail = remoteConfig.getString("google_exit_mrec_fail");
+            AdUtils.google_exit_mrec_fail_1 = remoteConfig.getString("google_exit_mrec_fail_1");
 
             AdUtils.ads_native_second = (int) remoteConfig.getLong("ads_native_second");
             AdUtils.NativeTime_Check = remoteConfig.getLong("NativeTime_Check");

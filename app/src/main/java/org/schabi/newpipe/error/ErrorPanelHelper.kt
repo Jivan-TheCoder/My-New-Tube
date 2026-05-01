@@ -13,6 +13,9 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.Disposable
 import java.util.concurrent.TimeUnit
 import org.schabi.newpipe.R
+import org.schabi.newpipe.ads.AdUtils
+import org.schabi.newpipe.ads.AdsRemoteConfigLoader
+import org.schabi.newpipe.ads.RewardedAdManager
 import org.schabi.newpipe.ktx.animate
 import org.schabi.newpipe.util.external_communication.ShareUtils
 import org.schabi.newpipe.util.text.setTextWithLinks
@@ -48,7 +51,21 @@ class ErrorPanelHelper(
             errorDisposable = errorRetryButton.clicks()
                 .debounce(300, TimeUnit.MILLISECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe { onRetry.run() }
+                .subscribe {
+                    AdsRemoteConfigLoader.fetchIfNeeded(
+                        context,
+                        Runnable {
+                            if (!AdUtils.dialog) {
+                                if (AdUtils.ShowRewarded) {
+                                    RewardedAdManager.getInstance().init(context)
+                                } else {
+                                    AdUtils.PreLoad(context)
+                                }
+                            }
+                            onRetry.run()
+                        }
+                    )
+                }
         }
     }
 
