@@ -171,9 +171,6 @@ public abstract class BaseLocalListFragment<I, N> extends BaseStateFragment<I>
     public void onCreateOptionsMenu(@NonNull final Menu menu,
                                     @NonNull final MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         final ActionBar supportActionBar = activity.getSupportActionBar();
         if (supportActionBar == null) {

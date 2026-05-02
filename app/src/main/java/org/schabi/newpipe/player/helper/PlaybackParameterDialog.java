@@ -362,9 +362,6 @@ public class PlaybackParameterDialog extends DialogFragment {
 
             // If the values differ set the new pitch
             if (this.pitchPercent != newPitchPercent) {
-                if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                    
-                }
                 this.onPitchPercentSliderUpdated(newPitchPercent);
                 updateCallback();
             }
@@ -559,9 +556,6 @@ public class PlaybackParameterDialog extends DialogFragment {
     private void updateCallback() {
         if (callback == null) {
             return;
-        }
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
         }
         callback.onPlaybackParameterChanged((float) tempo, (float) pitchPercent, skipSilence);
     }

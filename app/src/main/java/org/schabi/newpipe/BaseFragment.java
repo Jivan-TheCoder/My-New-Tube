@@ -44,9 +44,6 @@ public abstract class BaseFragment extends Fragment {
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         super.onCreate(savedInstanceState);
         Bridge.restoreInstanceState(this, savedInstanceState);
         if (savedInstanceState != null) {
@@ -58,9 +55,6 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull final View rootView, final Bundle savedInstanceState) {
         super.onViewCreated(rootView, savedInstanceState);
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         initViews(rootView, savedInstanceState);
         initListeners();
     }
@@ -109,9 +103,6 @@ public abstract class BaseFragment extends Fragment {
     //////////////////////////////////////////////////////////////////////////*/
 
     public void setTitle(final String title) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         if (!useAsFrontPage && activity != null && activity.getSupportActionBar() != null) {
             activity.getSupportActionBar().setDisplayShowTitleEnabled(true);
             activity.getSupportActionBar().setTitle(title);

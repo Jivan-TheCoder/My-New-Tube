@@ -189,9 +189,6 @@ public final class InfoItemDialog {
                        @NonNull final StreamInfoItem infoItem,
                        final boolean addDefaultEntriesAutomatically) {
             if (activity == null || context == null || context.getResources() == null) {
-                if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                    
-                }
                 throw new IllegalArgumentException("activity, context or resources is null");
             }
             this.activity = activity;

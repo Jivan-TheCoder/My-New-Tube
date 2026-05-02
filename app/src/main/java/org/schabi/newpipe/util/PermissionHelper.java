@@ -123,6 +123,7 @@ public final class PermissionHelper {
                 try {
                     context.startActivity(i);
                 } catch (final ActivityNotFoundException ignored) {
+                    // Ignore: settings screen not available on this device.
                 }
                 return false;
             // from Android R the ACTION_MANAGE_OVERLAY_PERMISSION will only point to the menu,
@@ -150,6 +151,7 @@ public final class PermissionHelper {
                             try {
                                 context.startActivity(intent);
                             } catch (final ActivityNotFoundException ignored) {
+                                // Ignore: settings screen not available on this device.
                             }
                         })
                         .setCancelable(true)

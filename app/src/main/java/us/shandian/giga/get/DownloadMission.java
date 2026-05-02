@@ -249,12 +249,6 @@ public class DownloadMission extends Mission {
     void establishConnection(int threadId, HttpURLConnection conn) throws IOException, HttpError {
         int statusCode = conn.getResponseCode();
 
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-            
-            
-            
-        }
 
 
         switch (statusCode) {
@@ -364,9 +358,6 @@ public class DownloadMission extends Mission {
         if (current < urls.length) {
             if (++finishCount < threads.length) return;
 
-            if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                
-            }
 
             current++;
             if (current < urls.length) {

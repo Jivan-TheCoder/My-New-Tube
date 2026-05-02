@@ -65,9 +65,6 @@ public class DownloadManager {
      * @param handler Thread required for Messaging
      */
     DownloadManager(@NonNull Context context, Handler handler, StoredDirectoryHelper storageVideo, StoredDirectoryHelper storageAudio) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         mFinishedMissionStore = new FinishedMissionStore(context);
         mHandler = handler;
@@ -138,9 +135,6 @@ public class DownloadManager {
         }
         if (subs.length < 1) {
             return;
-        }
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
         }
 
         File tempDir = pickAvailableTemporalDir(ctx);
@@ -368,9 +362,6 @@ public class DownloadManager {
                 // length == 0 since the file picker may create an empty file before yielding it,
                 // but that does not mean the file really belonged to a previous mission.
                 if (!storage.existsAsFile() || storage.length() == 0) {
-                    if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                        
-                    }
 
                     mFinishedMissionStore.deleteMission(mMissionsFinished.get(i));
                     mMissionsFinished.remove(i);

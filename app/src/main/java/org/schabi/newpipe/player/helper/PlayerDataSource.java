@@ -208,9 +208,6 @@ public class PlayerDataSource {
     private static void instantiateCacheIfNeeded(final Context context) {
         if (cache == null) {
             final File cacheDir = new File(context.getExternalCacheDir(), CACHE_FOLDER_NAME);
-            if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                
-            }
             if (!cacheDir.exists() && !cacheDir.mkdir()) {
                 Log.w(TAG, "instantiateCacheIfNeeded: could not create cache dir");
             }

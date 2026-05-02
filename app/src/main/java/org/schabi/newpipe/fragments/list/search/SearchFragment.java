@@ -243,9 +243,6 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
 
     @Override
     public void onStart() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         super.onStart();
 
         updateService();
@@ -269,9 +266,6 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
 
     @Override
     public void onResume() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         super.onResume();
 
         if (suggestionDisposable == null || suggestionDisposable.isDisposed()) {
@@ -311,9 +305,6 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
 
     @Override
     public void onDestroyView() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         unsetSearchListeners();
 
         searchBinding = null;
@@ -496,9 +487,6 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
     //////////////////////////////////////////////////////////////////////////*/
 
     private void showSearchOnStart() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         searchEditText.setText(searchString);
 
         if (TextUtils.isEmpty(searchString)
@@ -519,13 +507,7 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
     }
 
     private void initSearchListeners() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         searchClear.setOnClickListener(v -> {
-            if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                
-            }
             if (isSearchEditBlank()) {
                 NavigationHelper.gotoMainFragment(getFM());
                 return;
@@ -541,9 +523,6 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
         TooltipCompat.setTooltipText(searchClear, getString(R.string.clear));
 
         searchEditText.setOnClickListener(v -> {
-            if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                
-            }
             if ((showLocalSuggestions || showRemoteSuggestions) && !isErrorPanelVisible()) {
                 showSuggestionsPanel();
             }
@@ -553,9 +532,6 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
         });
 
         searchEditText.setOnFocusChangeListener((final View v, final boolean hasFocus) -> {
-            if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                
-            }
             if ((showLocalSuggestions || showRemoteSuggestions)
                     && hasFocus && !isErrorPanelVisible()) {
                 showSuggestionsPanel();
@@ -613,9 +589,6 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
         searchEditText.addTextChangedListener(textWatcher);
         searchEditText.setOnEditorActionListener(
                 (final TextView v, final int actionId, final KeyEvent event) -> {
-                    if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                        
-                    }
                     if (actionId == EditorInfo.IME_ACTION_PREVIOUS) {
                         hideKeyboardSearch();
                     } else if (event != null
@@ -634,9 +607,6 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
     }
 
     private void unsetSearchListeners() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         searchClear.setOnClickListener(null);
         searchClear.setOnLongClickListener(null);
         searchEditText.setOnClickListener(null);
@@ -650,34 +620,22 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
     }
 
     private void showSuggestionsPanel() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         suggestionsPanelVisible = true;
         animate(searchBinding.suggestionsPanel, true, 200,
                 AnimationType.LIGHT_SLIDE_AND_ALPHA);
     }
 
     private void hideSuggestionsPanel() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         suggestionsPanelVisible = false;
         animate(searchBinding.suggestionsPanel, false, 200,
                 AnimationType.LIGHT_SLIDE_AND_ALPHA);
     }
 
     private void showKeyboardSearch() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         KeyboardUtil.showKeyboard(activity, searchEditText);
     }
 
     private void hideKeyboardSearch() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         KeyboardUtil.hideKeyboard(activity, searchEditText);
     }
@@ -745,9 +703,6 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
     }
 
     private void initSuggestionObserver() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         if (suggestionDisposable != null) {
             suggestionDisposable.dispose();
         }
@@ -817,9 +772,6 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
     private void search(@NonNull final String theSearchString,
                         final String[] theContentFilter,
                         final String theSortFilter) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         if (theSearchString.isEmpty()) {
             return;
         }
@@ -993,9 +945,6 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
     //////////////////////////////////////////////////////////////////////////*/
 
     public void handleSuggestions(@NonNull final List<SuggestionItem> suggestions) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         suggestionListAdapter.submitList(suggestions,
                 () -> {
                     if (searchBinding != null) {
@@ -1102,11 +1051,11 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
             // whose results are handled here, but let's check it anyway
             if (nextPage == null) {
                 showSnackBarError(new ErrorInfo(result.getErrors(), UserAction.SEARCHED,
-                        "\"" + searchString + "\" Ã¢â€ â€™ nextPage == null", serviceId,
+                        "\"" + searchString + "\" -> nextPage == null", serviceId,
                         getOpenInBrowserUrlForErrors()));
             } else {
                 showSnackBarError(new ErrorInfo(result.getErrors(), UserAction.SEARCHED,
-                        "\"" + searchString + "\" Ã¢â€ â€™ pageUrl: " + nextPage.getUrl() + ", "
+                        "\"" + searchString + "\" -> pageUrl: " + nextPage.getUrl() + ", "
                                 + "pageIds: " + nextPage.getIds() + ", "
                                 + "pageCookies: " + nextPage.getCookies(),
                         serviceId, getOpenInBrowserUrlForErrors()));

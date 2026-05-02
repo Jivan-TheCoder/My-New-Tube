@@ -127,25 +127,16 @@ public class InfoListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         if (data == null) {
             return;
         }
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         final int offsetStart = sizeConsideringHeaderOffset();
         infoItemList.addAll(data);
 
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         notifyItemRangeInserted(offsetStart, data.size());
 
         if (showFooter) {
             final int footerNow = sizeConsideringHeaderOffset();
             notifyItemMoved(offsetStart, footerNow);
 
-            if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                
-            }
         }
     }
 
@@ -170,9 +161,6 @@ public class InfoListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     public void showFooter(final boolean show) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         if (show == showFooter) {
             return;
         }
@@ -187,9 +175,6 @@ public class InfoListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     private int sizeConsideringHeaderOffset() {
         final int i = infoItemList.size() + (hasHeader() ? 1 : 0);
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         return i;
     }
 
@@ -207,18 +192,12 @@ public class InfoListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             count++;
         }
 
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         return count;
     }
 
     @SuppressWarnings("FinalParameters")
     @Override
     public int getItemViewType(int position) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         if (hasHeader() && position == 0) {
             return HEADER_TYPE;
@@ -271,9 +250,6 @@ public class InfoListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull final ViewGroup parent,
                                                       final int type) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         switch (type) {
             // #4475 and #3368
             // Always create a new instance otherwise the same instance
@@ -319,9 +295,6 @@ public class InfoListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder holder,
                                  final int position) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         if (holder instanceof InfoItemHolder) {
             ((InfoItemHolder) holder).updateFromItem(
                     // If header is present, offset the items by -1

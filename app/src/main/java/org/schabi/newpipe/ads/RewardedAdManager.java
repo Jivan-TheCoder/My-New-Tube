@@ -64,6 +64,7 @@ public class RewardedAdManager {
                 dialog.dismiss();
             }
         } catch (Exception ignored) {
+            // Ignore window token/state race while dismissing.
         }
     }
 

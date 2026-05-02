@@ -76,9 +76,6 @@ public final class NotificationUtil {
 
     public synchronized void updateThumbnail() {
         if (notificationBuilder != null) {
-            if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                
-            }
 
             setLargeIcon(notificationBuilder);
             if (notificationManager.areNotificationsEnabled()) {
@@ -88,9 +85,6 @@ public final class NotificationUtil {
     }
 
     private synchronized NotificationCompat.Builder createNotification() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         notificationManager = NotificationManagerCompat.from(player.getContext());
 
         // setup media style (compact notification slots and media session)
@@ -121,9 +115,6 @@ public final class NotificationUtil {
      * Updates the notification builder and the button icons depending on the playback state.
      */
     private synchronized void updateNotification() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         // also update content intent, in case the user switched players
         notificationBuilder.setContentIntent(PendingIntentCompat.getActivity(player.getContext(),

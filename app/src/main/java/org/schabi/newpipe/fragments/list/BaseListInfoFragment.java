@@ -111,9 +111,6 @@ public abstract class BaseListInfoFragment<I extends InfoItem, L extends ListInf
 
     @Override
     protected void doInitialLoadLogic() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         if (currentInfo == null) {
             startLoading(false);
         } else {

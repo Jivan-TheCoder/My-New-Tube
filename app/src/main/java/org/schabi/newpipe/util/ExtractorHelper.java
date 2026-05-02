@@ -259,9 +259,6 @@ public final class ExtractorHelper {
         return Maybe.defer(() -> {
             //noinspection unchecked
             final I info = (I) CACHE.getFromKey(serviceId, url, cacheType);
-            if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                
-            }
 
             // Only return info if it's not null (it is cached)
             if (info != null) {

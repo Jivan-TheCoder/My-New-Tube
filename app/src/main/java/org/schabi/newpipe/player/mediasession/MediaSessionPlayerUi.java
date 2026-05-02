@@ -149,9 +149,6 @@ public class MediaSessionPlayerUi extends PlayerUi
     }
 
     private MediaMetadataCompat buildMediaMetadata() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         // set title and artist
         final MediaMetadataCompat.Builder builder = new MediaMetadataCompat.Builder()

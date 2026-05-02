@@ -253,6 +253,7 @@ public final class StateSaver {
                 //noinspection ResultOfMethodCallIgnored
                 new File(savedState.getPathFileSaved()).delete();
             } catch (final Exception ignored) {
+                // Ignore cleanup failures.
             }
         }
     }

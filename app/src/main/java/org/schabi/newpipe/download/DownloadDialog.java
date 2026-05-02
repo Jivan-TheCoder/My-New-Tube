@@ -195,9 +195,6 @@ public class DownloadDialog extends DialogFragment
     @Override
     public void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         if (!PermissionHelper.checkStoragePermissions(getActivity(),
                 PermissionHelper.DOWNLOAD_DIALOG_REQUEST_CODE)) {
@@ -278,9 +275,6 @@ public class DownloadDialog extends DialogFragment
     public View onCreateView(@NonNull final LayoutInflater inflater,
                              final ViewGroup container,
                              final Bundle savedInstanceState) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         return inflater.inflate(R.layout.download_dialog, container);
     }
 
@@ -329,9 +323,6 @@ public class DownloadDialog extends DialogFragment
     }
 
     private void initToolbar(final Toolbar toolbar) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         toolbar.setTitle(R.string.download_dialog_title);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
@@ -547,9 +538,6 @@ public class DownloadDialog extends DialogFragment
 
     @Override
     public void onCheckedChanged(final RadioGroup group, @IdRes final int checkedId) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         boolean flag = true;
 
         if (checkedId == R.id.audio_button) {
@@ -569,9 +557,6 @@ public class DownloadDialog extends DialogFragment
                                final View view,
                                final int position,
                                final long id) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         final int parentId = parent.getId();
         if (parentId == R.id.quality_spinner) {

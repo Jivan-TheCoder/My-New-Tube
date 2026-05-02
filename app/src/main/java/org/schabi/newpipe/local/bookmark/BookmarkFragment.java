@@ -321,9 +321,6 @@ public final class BookmarkFragment extends BaseLocalListFragment<List<PlaylistL
             return;
         }
 
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         final Disposable disposable = localPlaylistManager.renamePlaylist(id, name)
                 .observeOn(AndroidSchedulers.mainThread())

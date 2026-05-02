@@ -278,9 +278,6 @@ public final class SettingMigrations {
         for (final Migration currentMigration : SETTING_MIGRATIONS) {
             try {
                 if (currentMigration.shouldMigrate(currentVersion)) {
-                    if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                        
-                    }
                     currentMigration.migrate(context);
                     currentVersion = currentMigration.newVersion;
                 }

@@ -11,8 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.collection.SparseArrayCompat;
 
-import com.google.common.base.Stopwatch;
-
 import org.schabi.newpipe.App;
 import org.schabi.newpipe.extractor.stream.Frameset;
 import org.schabi.newpipe.util.image.CoilHelper;
@@ -68,17 +66,13 @@ public class SeekbarPreviewThumbnailHolder {
         }
 
         if (seekbarPreviewType == SeekbarPreviewThumbnailType.NONE) {
-            
             return;
         }
 
         final Frameset frameset = getFrameSetForType(framesets, seekbarPreviewType);
         if (frameset == null) {
-            
             return;
         }
-
-        
 
         // Abort method execution if we are not the latest request
         if (!isRequestIdentifierCurrent(updateRequestIdentifier)) {
@@ -91,12 +85,10 @@ public class SeekbarPreviewThumbnailHolder {
     private Frameset getFrameSetForType(final List<Frameset> framesets,
                                         final int seekbarPreviewType) {
         if (seekbarPreviewType == SeekbarPreviewThumbnailType.HIGH_QUALITY) {
-            
             return framesets.stream()
                     .max(Comparator.comparingInt(fs -> fs.getFrameHeight() * fs.getFrameWidth()))
                     .orElse(null);
         } else {
-            
             return framesets.stream()
                     .min(Comparator.comparingInt(fs -> fs.getFrameHeight() * fs.getFrameWidth()))
                     .orElse(null);
@@ -104,9 +96,6 @@ public class SeekbarPreviewThumbnailHolder {
     }
 
     private void generateDataFrom(final Frameset frameset, final UUID updateRequestIdentifier) {
-        
-        final Stopwatch sw = Log.isLoggable(TAG, Log.DEBUG) ? Stopwatch.createStarted() : null;
-
         int currentPosMs = 0;
         int pos = 1;
 
@@ -145,13 +134,8 @@ public class SeekbarPreviewThumbnailHolder {
                     seekbarPreviewData.putAll(generatedDataForUrl);
                 }
             } else {
-                
                 break;
             }
-        }
-
-        if (sw != null) {
-            
         }
     }
 
@@ -201,17 +185,10 @@ public class SeekbarPreviewThumbnailHolder {
             return null;
         }
 
-        final Stopwatch sw = Log.isLoggable(TAG, Log.DEBUG) ? Stopwatch.createStarted() : null;
         try {
-            
-
             // Gets the bitmap within the timeout of 15 seconds imposed by default by OkHttpClient
             // Ensure that you are not running on the main thread, otherwise this will hang
             final var bitmap = CoilHelper.INSTANCE.loadBitmapBlocking(App.getInstance(), url);
-
-            if (sw != null) {
-                
-            }
 
             return bitmap;
         } catch (final Exception ex) {

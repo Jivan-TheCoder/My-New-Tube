@@ -105,9 +105,6 @@ public class DownloadInitializer extends Thread {
                     mMission.length = 0;
                     mMission.unknownLength = true;
 
-                    if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                        
-                    }
                 } else {
                     // Open again
                     mConn = mMission.openConnection(true, mMission.length - 10, mMission.length);
@@ -130,17 +127,11 @@ public class DownloadInitializer extends Thread {
                                 mMission.unknownLength = false;
                             }
 
-                            if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                                
-                            }
                         } else {
                             // Fallback to single thread
                             mMission.blocks = new int[0];
                             mMission.unknownLength = false;
 
-                            if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                                
-                            }
                         }
                     }
 

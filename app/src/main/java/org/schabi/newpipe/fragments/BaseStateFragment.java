@@ -101,9 +101,6 @@ public abstract class BaseStateFragment<I> extends BaseFragment implements ViewC
     }
 
     protected void startLoading(final boolean forceLoad) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         showLoading();
         isLoading.set(true);
     }
@@ -148,9 +145,6 @@ public abstract class BaseStateFragment<I> extends BaseFragment implements ViewC
 
     @Override
     public void handleResult(final I result) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         hideLoading();
     }
 
@@ -219,9 +213,6 @@ public abstract class BaseStateFragment<I> extends BaseFragment implements ViewC
      * @param errorInfo The error information
      */
     public void showSnackBarError(final ErrorInfo errorInfo) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         ErrorUtil.showSnackbar(this, errorInfo);
     }
 }

@@ -276,9 +276,6 @@ public class SettingsActivity extends AppCompatActivity implements
     }
 
     public void setSearchActive(final boolean active) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         // Ignore if search is already in correct state
         if (isSearchActive() == active) {
@@ -338,9 +335,6 @@ public class SettingsActivity extends AppCompatActivity implements
 
     @Override
     public void onSearchResultClicked(@NonNull final PreferenceSearchItem result) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         // Hide the search
         setSearchActive(false);

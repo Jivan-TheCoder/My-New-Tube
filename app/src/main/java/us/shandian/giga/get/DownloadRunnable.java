@@ -117,9 +117,6 @@ public class DownloadRunnable extends Thread {
                     }
                 }
 
-                if (DEBUG && mMission.running) {
-                    
-                }
             } catch (Exception e) {
                 if (!mMission.running || e instanceof ClosedByInterruptException) break;
 
@@ -147,20 +144,11 @@ public class DownloadRunnable extends Thread {
 
         f.close();
 
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         if (mMission.errCode == DownloadMission.ERROR_NOTHING && mMission.running) {
-            if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                
-            }
             mMission.notifyFinished();
         }
 
-        if (DEBUG && !mMission.running) {
-            
-        }
     }
 
     @Override

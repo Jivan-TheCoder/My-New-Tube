@@ -118,9 +118,6 @@ public final class PlayerHolder {
 
     public void startService(final boolean playAfterConnect,
                              final PlayerServiceExtendedEventListener newListener) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         final Context context = getCommonContext();
         setListener(newListener);
         if (bound) {
@@ -138,9 +135,6 @@ public final class PlayerHolder {
     }
 
     public void stopService() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         if (playerService != null) {
             playerService.destroyPlayerAndStopService();
         }
@@ -166,9 +160,6 @@ public final class PlayerHolder {
 
         @Override
         public void onServiceDisconnected(final ComponentName compName) {
-            if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                
-            }
 
             final Context context = getCommonContext();
             unbind(context);
@@ -176,9 +167,6 @@ public final class PlayerHolder {
 
         @Override
         public void onServiceConnected(final ComponentName compName, final IBinder service) {
-            if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                
-            }
             final PlayerService.LocalBinder localBinder = (PlayerService.LocalBinder) service;
 
             playerService = localBinder.getService();
@@ -197,9 +185,6 @@ public final class PlayerHolder {
     }
 
     private void bind(final Context context) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         // BIND_AUTO_CREATE starts the service if it's not already running
         bound = bind(context, Context.BIND_AUTO_CREATE);
         if (!bound) {
@@ -223,9 +208,6 @@ public final class PlayerHolder {
     }
 
     private void unbind(final Context context) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         if (bound) {
             context.unbindService(serviceConnection);

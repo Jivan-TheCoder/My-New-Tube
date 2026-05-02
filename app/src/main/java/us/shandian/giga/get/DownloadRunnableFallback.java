@@ -53,10 +53,6 @@ public class DownloadRunnableFallback extends Thread {
         boolean done;
         long start = mMission.fallbackResumeOffset;
 
-        if (DEBUG && !mMission.unknownLength && start > 0) {
-            
-        }
-
         try {
             long rangeStart = (mMission.unknownLength || start < 1) ? -1 : start;
 

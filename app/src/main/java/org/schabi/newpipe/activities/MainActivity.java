@@ -27,8 +27,6 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -120,10 +118,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int ITEM_ID_SETTINGS = 0;
     private static final int ITEM_ID_RATE_APP = 1;
     private static final int ITEM_ID_SHARE_APP = 2;
-    private static final String[] REMOTE_DRAWER_KIOSKS = new String[]{
-            "trending_gaming",
-            "trending_music"
-    };
+    private static final String[] REMOTE_DRAWER_KIOSKS = new String[]{"trending_gaming", "trending_music"};
 
     private static final int ORDER = 0;
     public static final String KEY_IS_IN_BACKGROUND = "is_in_background";
@@ -353,8 +348,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean isRemoteDrawerKiosk(@NonNull final String kioskId) {
-        return "trending_gaming".equals(kioskId)
-                || "trending_music".equals(kioskId);
+        return "trending_gaming".equals(kioskId) || "trending_music".equals(kioskId);
     }
 
     private void optionsAboutSelected(final MenuItem item) {
@@ -461,14 +455,9 @@ public class MainActivity extends AppCompatActivity {
         appUpdateInfoTask.addOnSuccessListener(new OnSuccessListener<AppUpdateInfo>() {
             @Override
             public void onSuccess(final AppUpdateInfo appUpdateInfo) {
-                if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
-                        && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
+                if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
                     try {
-                        appUpdateManager.startUpdateFlow(
-                                appUpdateInfo,
-                                MainActivity.this,
-                                AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build()
-                        );
+                        appUpdateManager.startUpdateFlow(appUpdateInfo, MainActivity.this, AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build());
                     } catch (final Exception e) {
                         Log.e("MainActivity", "Failed to start immediate in-app update", e);
                     }
@@ -491,14 +480,9 @@ public class MainActivity extends AppCompatActivity {
         appUpdateManager.getAppUpdateInfo().addOnSuccessListener(new OnSuccessListener<AppUpdateInfo>() {
             @Override
             public void onSuccess(final AppUpdateInfo appUpdateInfo) {
-                if (appUpdateInfo.updateAvailability()
-                        == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
+                if (appUpdateInfo.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
                     try {
-                        appUpdateManager.startUpdateFlow(
-                                appUpdateInfo,
-                                MainActivity.this,
-                                AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build()
-                        );
+                        appUpdateManager.startUpdateFlow(appUpdateInfo, MainActivity.this, AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build());
                     } catch (final Exception e) {
                         Log.e("MainActivity", "Failed to resume immediate in-app update", e);
                     }
@@ -579,7 +563,7 @@ public class MainActivity extends AppCompatActivity {
         if (getSupportFragmentManager().getBackStackEntryCount() == 1) {
             if (isRateDialogShown) {
                 if (AdUtils.exit_page) {
-                    AdUtils.ClickWithAds(MainActivity.this, new AdUtils.InterClick() {
+                    AdUtils.ClickWithExitAds(MainActivity.this, new AdUtils.InterClick() {
                         @Override
                         public void ClickAds() {
                             startActivity(new Intent(MainActivity.this, ThanksActivity.class));
@@ -631,8 +615,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(final int requestCode, final int resultCode,
-                                    @Nullable final Intent data) {
+    protected void onActivityResult(final int requestCode, final int resultCode, @Nullable final Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == IN_APP_UPDATE_REQUEST_CODE && resultCode != RESULT_OK) {
             Log.w("MainActivity", "In-app update flow canceled/failed. resultCode=" + resultCode);

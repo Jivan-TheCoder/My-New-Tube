@@ -1,4 +1,4 @@
-@file:JvmName("ViewUtils")
+﻿@file:JvmName("ViewUtils")
 
 package org.schabi.newpipe.ktx
 
@@ -43,7 +43,7 @@ fun View.animate(
     if (DEBUG) {
         val id = runCatching { resources.getResourceEntryName(id) }.getOrDefault(id.toString())
         val msg = String.format(
-            "%8s Ã¢â€ â€™  [%s:%s] [%s %s:%s] execOnEnd=%s",
+            "%8s ->  [%s:%s] [%s %s:%s] execOnEnd=%s",
             enterOrExit,
             javaClass.simpleName,
             id,

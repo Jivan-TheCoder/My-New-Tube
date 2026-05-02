@@ -388,6 +388,7 @@ public class RecyclerNativeWaterfallManager {
             try {
                 nativeAd.destroy();
             } catch (Exception ignored) {
+                // Ignore ad SDK destroy edge cases.
             }
         }
     }
@@ -397,6 +398,7 @@ public class RecyclerNativeWaterfallManager {
             try {
                 adView.destroy();
             } catch (Exception ignored) {
+                // Ignore ad SDK destroy edge cases.
             }
         }
     }

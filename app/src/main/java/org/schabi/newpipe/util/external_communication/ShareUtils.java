@@ -405,9 +405,6 @@ public final class ShareUtils {
                             BuildConfig.APPLICATION_ID + ".provider",
                             path.toFile()));
 
-            if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                
-            }
             return clipData;
         } catch (final Exception e) {
             Log.w(TAG, "Error when setting preview image for share sheet", e);

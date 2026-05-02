@@ -268,9 +268,6 @@ public class LocalPlaylistFragment extends BaseLocalListFragment<List<PlaylistSt
     @Override
     public void onCreateOptionsMenu(@NonNull final Menu menu,
                                     @NonNull final MenuInflater inflater) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.menu_local_playlist, menu);
     }
@@ -567,9 +564,6 @@ public class LocalPlaylistFragment extends BaseLocalListFragment<List<PlaylistSt
         this.name = title;
         setTitle(title);
 
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         final Disposable disposable = playlistManager.renamePlaylist(playlistId, title)
                 .observeOn(AndroidSchedulers.mainThread())
@@ -589,9 +583,6 @@ public class LocalPlaylistFragment extends BaseLocalListFragment<List<PlaylistSt
                 R.string.playlist_thumbnail_change_success,
                 Toast.LENGTH_SHORT);
 
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         final Disposable disposable = playlistManager
                 .changePlaylistThumbnail(playlistId, thumbnailStreamId, isPermanent)
@@ -695,9 +686,6 @@ public class LocalPlaylistFragment extends BaseLocalListFragment<List<PlaylistSt
             }
         }
 
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         final Disposable disposable = playlistManager.updateJoin(playlistId, streamIds)
                 .observeOn(AndroidSchedulers.mainThread())

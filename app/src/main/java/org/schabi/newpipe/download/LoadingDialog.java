@@ -40,9 +40,6 @@ public class LoadingDialog extends DialogFragment {
     @Override
     public void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         this.setCancelable(false);
     }
 
@@ -51,9 +48,6 @@ public class LoadingDialog extends DialogFragment {
             @NonNull final LayoutInflater inflater,
             final ViewGroup container,
             final Bundle savedInstanceState) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         return inflater.inflate(R.layout.download_loading_dialog, container);
     }
 
@@ -65,9 +59,6 @@ public class LoadingDialog extends DialogFragment {
     }
 
     private void initToolbar(final Toolbar toolbar) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         toolbar.setTitle(requireContext().getString(title));
         toolbar.setNavigationOnClickListener(v -> dismiss());
 

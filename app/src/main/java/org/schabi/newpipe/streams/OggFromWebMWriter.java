@@ -284,9 +284,6 @@ public class OggFromWebMWriter implements Closeable {
 
     @Nullable
     private byte[] makeMetadata() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         if ("A_OPUS".equals(webmTrack.codecId)) {
             final var metadata = new ArrayList<Pair<String, String>>();

@@ -7,7 +7,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -256,14 +255,11 @@ public abstract class BaseListFragment<I, N> extends BaseStateFragment<I>
     }
 
     protected void onItemSelected(final InfoItem selectedItem) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
     }
 
     @NonNull
     protected NativeAdInjectionConfig getNativeAdInjectionConfig() {
-        return NativeAdInjectionConfig.interval(AdUtils.base_after,AdUtils.base_every)
+        return NativeAdInjectionConfig.interval(AdUtils.base_after, AdUtils.base_every)
                 .withMaxAds(AdUtils.base_max)
                 .withPlacementKey(PLACEMENT_KEY)
                 .withPolicyGuardrails();
@@ -314,9 +310,6 @@ public abstract class BaseListFragment<I, N> extends BaseStateFragment<I>
      * Removes all listeners and adds the normal scroll listener to the {@link #itemsList}.
      */
     protected void useNormalItemListScrollListener() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         itemsList.clearOnScrollListeners();
         itemsList.addOnScrollListener(new DefaultItemListOnScrolledDownListener());
     }
@@ -339,9 +332,6 @@ public abstract class BaseListFragment<I, N> extends BaseStateFragment<I>
      * </ul>
      */
     protected void useInitialItemListLoadScrollListener() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         itemsList.clearOnScrollListeners();
         itemsList.addOnScrollListener(new DefaultItemListOnScrolledDownListener() {
             @Override
@@ -378,9 +368,6 @@ public abstract class BaseListFragment<I, N> extends BaseStateFragment<I>
             }
 
             private void log(final String msg) {
-                if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                    
-                }
             }
         });
     }
@@ -425,9 +412,6 @@ public abstract class BaseListFragment<I, N> extends BaseStateFragment<I>
     @Override
     public void onCreateOptionsMenu(@NonNull final Menu menu,
                                     @NonNull final MenuInflater inflater) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         super.onCreateOptionsMenu(menu, inflater);
         final ActionBar supportActionBar = activity.getSupportActionBar();
         if (supportActionBar != null) {
@@ -504,6 +488,7 @@ public abstract class BaseListFragment<I, N> extends BaseStateFragment<I>
 
     /**
      * Returns preferred item view mode.
+     *
      * @return ItemViewMode
      */
     protected ItemViewMode getItemViewMode() {

@@ -212,6 +212,7 @@ public class SubscriptionsImportFragment extends BaseFragment {
                 instructionsString = ServiceHelper.getImportInstructions(currentServiceId);
                 return;
             } catch (final ExtractionException ignored) {
+                // Ignore and fall back to defaults below.
             }
         }
 

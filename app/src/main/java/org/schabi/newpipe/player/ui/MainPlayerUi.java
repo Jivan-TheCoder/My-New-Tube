@@ -552,9 +552,6 @@ public final class MainPlayerUi extends VideoPlayerUi implements View.OnLayoutCh
             final int min = Math.min(width, height);
             final int maxGestureLength = (int) (min * 0.75);
 
-            if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                
-            }
 
             binding.volumeProgressBar.setMax(maxGestureLength);
             binding.brightnessProgressBar.setMax(maxGestureLength);
@@ -910,9 +907,6 @@ public final class MainPlayerUi extends VideoPlayerUi implements View.OnLayoutCh
     }
 
     public void toggleFullscreen() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         final PlayerServiceEventListener fragmentListener = player.getFragmentListener()
                 .orElse(null);
         if (fragmentListener == null || player.exoPlayerIsNull()) {

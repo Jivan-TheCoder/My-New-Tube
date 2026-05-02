@@ -356,9 +356,6 @@ public final class VideoDetailFragment
     @Override
     public void onResume() {
         super.onResume();
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         activity.sendBroadcast(new Intent(ACTION_VIDEO_FRAGMENT_RESUMED));
 
@@ -461,9 +458,6 @@ public final class VideoDetailFragment
                     openChannel(info.getUploaderUrl(), info.getUploaderName());
                 }
 
-                if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                    
-                }
             } else {
                 openChannel(info.getSubChannelUrl(), info.getSubChannelName());
             }
@@ -693,9 +687,6 @@ public final class VideoDetailFragment
 
     @Override
     public boolean onBackPressed() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         // If we are in fullscreen mode just exit from it via first back press
         if (isFullscreen()) {
@@ -798,9 +789,6 @@ public final class VideoDetailFragment
     }
 
     private void prepareAndHandleInfo(final StreamInfo info, final boolean scrollToTop) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         showLoading();
         initTabs();
@@ -1765,9 +1753,6 @@ public final class VideoDetailFragment
     @Override
     public void onQueueUpdate(final PlayQueue queue) {
         playQueue = queue;
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         // Register broadcast receiver to listen to playQueue changes
         // and hide the overlayPlayQueueButton when the playQueue is empty / destroyed.
@@ -1963,9 +1948,6 @@ public final class VideoDetailFragment
     //////////////////////////////////////////////////////////////////////////*/
 
     private void showSystemUi() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         if (activity == null) {
             return;
@@ -1983,10 +1965,6 @@ public final class VideoDetailFragment
     }
 
     private void hideSystemUi() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
-
         if (activity == null) {
             return;
         }

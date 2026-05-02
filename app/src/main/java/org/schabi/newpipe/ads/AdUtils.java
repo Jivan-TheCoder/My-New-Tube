@@ -1669,4 +1669,230 @@ public class AdUtils {
         adContainer.setVisibility(View.GONE);
     }
 
+    public static void ClickWithExitAds(Activity act, InterClick interClick) {
+        AdUtils.Ad_Count++;
+
+        // TEST ONLY (remove later)
+        AdUtils.CheckOnOff = true;
+        AdUtils.Ad_Click = 0;        // so Ad_Count (1,2,3...) is always > 0 after increment
+        AdUtils.Time_interval = 0;   // no wait time
+        AdUtils.Time_Check = 0L;     // makes aa huge
+
+        Log.e("JKJKJKJK", "ClickWithAds: interstitial ad path");
+        GoogleAdsExit(act, interClick);
+    }
+
+    private static void GoogleAdsExit(Activity act, InterClick interClick) {
+        if (AdUtils.dialog) {
+            if (AdUtils.isOnline(act)) {
+                long ctime = System.currentTimeMillis();
+                long aa = ctime - (AdUtils.Time_Check);
+                if (AdUtils.CheckOnOff && AdUtils.Ad_Count > AdUtils.Ad_Click && aa > (AdUtils.Time_interval * 1000L)) {
+
+                    final Dialog AdDialog = new Dialog(act, R.style.UserDialog1);
+                    AdDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                    AdDialog.setCancelable(false);
+                    AdDialog.setContentView(R.layout.ad_dialog_layout);
+
+                    ProgressBar progress = AdDialog.findViewById(R.id.progress);
+
+                    progress.getIndeterminateDrawable().setColorFilter(ContextCompat.getColor(act, R.color.red), PorterDuff.Mode.SRC_IN);
+
+                    AdDialog.show();
+                    if (!AdUtils.google_exit_inter.isEmpty()) {
+                        InterstitialAd.load(act, AdUtils.google_exit_inter, new AdRequest.Builder().build(), new InterstitialAdLoadCallback() {
+                            @Override
+                            public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                                super.onAdLoaded(interstitialAd);
+
+                                AdDialog.dismiss();
+                                if (ProcessLifecycleOwner.get().getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.STARTED)) {
+                                    AdUtils.AdsOpenIntrestial = true;
+                                    interstitialAd.show(act);
+                                }
+
+                                interstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                                    @Override
+                                    public void onAdFailedToShowFullScreenContent(@NonNull com.google.android.gms.ads.AdError adError) {
+                                        super.onAdFailedToShowFullScreenContent(adError);
+                                        AdUtils.AdsOpenIntrestial = false;
+                                        AdDialog.dismiss();
+                                        if (interClick != null) {
+                                            interClick.ClickAds();
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onAdDismissedFullScreenContent() {
+                                        super.onAdDismissedFullScreenContent();
+
+                                        AdUtils.Time_Check = System.currentTimeMillis();
+
+                                        AdUtils.AdsOpenIntrestial = false;
+                                        AdUtils.Ad_Count = 0;
+                                        if (interClick != null) {
+                                            interClick.ClickAds();
+                                        }
+                                    }
+                                });
+                            }
+
+                            @Override
+                            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                                super.onAdFailedToLoad(loadAdError);
+                                LoadGoogleExitFail(act, interClick, AdDialog, progress);
+                            }
+                        });
+                    } else {
+                        LoadGoogleExitFail(act, interClick, AdDialog, progress);
+                    }
+                } else {
+                    AdUtils.AdsOpenIntrestial = false;
+                    if (interClick != null) {
+                        interClick.ClickAds();
+                    }
+                }
+
+            } else {
+                AdUtils.AdsOpenIntrestial = false;
+                if (interClick != null) {
+                    interClick.ClickAds();
+                }
+            }
+        } else {
+            PreLoadShow(act, interClick);
+        }
+    }
+
+    private static void LoadGoogleExitFail(Activity act, InterClick interClick, Dialog AdDialog, ProgressBar progress) {
+        if (isActivityAlive(act)) {
+            AdUtils.AdsOpenIntrestial = false;
+            if (interClick != null) {
+                interClick.ClickAds();
+            }
+            return;
+        }
+
+        if (!AdUtils.google_exit_inter_fail.isEmpty()) {
+            progress.getIndeterminateDrawable().setColorFilter(ContextCompat.getColor(act, R.color.blue), PorterDuff.Mode.SRC_IN);
+
+            InterstitialAd.load(act, AdUtils.google_exit_inter_fail, new AdRequest.Builder().build(), new InterstitialAdLoadCallback() {
+                @Override
+                public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                    super.onAdLoaded(interstitialAd);
+                    if (isActivityAlive(act)) {
+                        AdUtils.AdsOpenIntrestial = false;
+                        if (interClick != null) {
+                            interClick.ClickAds();
+                        }
+                        return;
+                    }
+                    AdDialog.dismiss();
+                    if (ProcessLifecycleOwner.get().getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.STARTED)) {
+                        AdUtils.AdsOpenIntrestial = true;
+                        interstitialAd.show(act);
+                    }
+
+                    interstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                        @Override
+                        public void onAdFailedToShowFullScreenContent(@NonNull com.google.android.gms.ads.AdError adError) {
+                            super.onAdFailedToShowFullScreenContent(adError);
+                            AdUtils.AdsOpenIntrestial = false;
+                            AdDialog.dismiss();
+                            if (interClick != null) {
+                                interClick.ClickAds();
+                            }
+                        }
+
+                        @Override
+                        public void onAdDismissedFullScreenContent() {
+                            super.onAdDismissedFullScreenContent();
+
+                            AdUtils.Time_Check = System.currentTimeMillis();
+
+                            AdUtils.AdsOpenIntrestial = false;
+                            AdUtils.Ad_Count = 0;
+                            if (interClick != null) {
+                                interClick.ClickAds();
+                            }
+
+                        }
+                    });
+                }
+
+                @Override
+                public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                    super.onAdFailedToLoad(loadAdError);
+
+                    LoadGoogleExitFail_1(act, interClick, AdDialog, progress);
+                }
+            });
+        } else {
+            LoadGoogleExitFail_1(act, interClick, AdDialog, progress);
+        }
+    }
+
+    private static void LoadGoogleExitFail_1(Activity act, InterClick interClick, Dialog AdDialog, ProgressBar progress) {
+
+        if (AdUtils.google_exit_inter_fail_1.isEmpty()) {
+            progress.getIndeterminateDrawable().setColorFilter(ContextCompat.getColor(act, R.color.blue), PorterDuff.Mode.SRC_IN);
+
+            InterstitialAd.load(act, AdUtils.google_exit_inter_fail_1, new AdRequest.Builder().build(), new InterstitialAdLoadCallback() {
+                @Override
+                public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                    super.onAdLoaded(interstitialAd);
+                    AdDialog.dismiss();
+                    if (ProcessLifecycleOwner.get().getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.STARTED)) {
+                        AdUtils.AdsOpenIntrestial = true;
+                        interstitialAd.show(act);
+                    }
+
+                    interstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                        @Override
+                        public void onAdFailedToShowFullScreenContent(@NonNull com.google.android.gms.ads.AdError adError) {
+                            super.onAdFailedToShowFullScreenContent(adError);
+                            AdUtils.AdsOpenIntrestial = false;
+                            AdDialog.dismiss();
+                            if (interClick != null) {
+                                interClick.ClickAds();
+                            }
+                        }
+
+                        @Override
+                        public void onAdDismissedFullScreenContent() {
+                            super.onAdDismissedFullScreenContent();
+
+                            AdUtils.Time_Check = System.currentTimeMillis();
+
+                            AdUtils.AdsOpenIntrestial = false;
+                            AdUtils.Ad_Count = 0;
+                            if (interClick != null) {
+                                interClick.ClickAds();
+                            }
+
+                        }
+                    });
+                }
+
+                @Override
+                public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                    super.onAdFailedToLoad(loadAdError);
+
+                    AdDialog.dismiss();
+                    AdUtils.AdsOpenIntrestial = false;
+                    if (interClick != null) {
+                        interClick.ClickAds();
+                    }
+                }
+            });
+        } else {
+            AdUtils.AdsOpenIntrestial = false;
+            AdDialog.dismiss();
+            if (interClick != null) {
+                interClick.ClickAds();
+            }
+        }
+    }
+
+
 }

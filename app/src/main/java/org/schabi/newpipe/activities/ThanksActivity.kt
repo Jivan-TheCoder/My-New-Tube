@@ -14,6 +14,7 @@ import org.schabi.newpipe.ads.AdUtils
 class ThanksActivity : AppCompatActivity() {
 
     var tv_exit_app: TextView? = null
+    var tv_exit_later: TextView? = null
     var adContainer: FrameLayout? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +29,7 @@ class ThanksActivity : AppCompatActivity() {
         }
 
         tv_exit_app = findViewById(R.id.tv_exit_app)
+        tv_exit_later = findViewById(R.id.tv_exit_app)
         adContainer = findViewById(R.id.ad_container)
 
         val loadMediumREC = AtomicBoolean()
@@ -36,6 +38,10 @@ class ThanksActivity : AppCompatActivity() {
 
         tv_exit_app?.setOnClickListener {
             finish()
+        }
+
+        tv_exit_later?.setOnClickListener {
+            onBackPressed()
         }
     }
 }

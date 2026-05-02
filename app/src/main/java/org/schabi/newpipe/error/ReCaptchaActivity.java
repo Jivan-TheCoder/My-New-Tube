@@ -89,9 +89,6 @@ public class ReCaptchaActivity extends AppCompatActivity {
             @Override
             public boolean shouldOverrideUrlLoading(final WebView view,
                                                     final WebResourceRequest request) {
-                if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                    
-                }
 
                 handleCookiesFromUrl(request.getUrl().toString());
                 return false;
@@ -144,9 +141,6 @@ public class ReCaptchaActivity extends AppCompatActivity {
     private void saveCookiesAndFinish() {
         // try to get cookies of unclosed page
         handleCookiesFromUrl(recaptchaBinding.reCaptchaWebView.getUrl());
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         if (!foundCookies.isEmpty()) {
             // save cookies to preferences
@@ -170,9 +164,6 @@ public class ReCaptchaActivity extends AppCompatActivity {
 
 
     private void handleCookiesFromUrl(@Nullable final String url) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         if (url == null) {
             return;
@@ -198,9 +189,6 @@ public class ReCaptchaActivity extends AppCompatActivity {
     }
 
     private void handleCookies(@Nullable final String cookies) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         if (cookies == null) {
             return;

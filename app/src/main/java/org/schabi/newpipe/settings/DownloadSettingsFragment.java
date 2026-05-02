@@ -177,9 +177,6 @@ public class DownloadSettingsFragment extends BasePreferenceFragment {
 
     @Override
     public boolean onPreferenceTreeClick(@NonNull final Preference preference) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         final String key = preference.getKey();
 

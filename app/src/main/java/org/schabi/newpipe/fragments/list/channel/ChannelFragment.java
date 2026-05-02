@@ -143,9 +143,6 @@ public class ChannelFragment extends BaseStateFragment<ChannelInfo>
                                          @NonNull final MenuInflater inflater) {
                     inflater.inflate(R.menu.menu_channel, menu);
 
-                    if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                        
-                    }
 
                 }
 
@@ -218,8 +215,6 @@ public class ChannelFragment extends BaseStateFragment<ChannelInfo>
                 } catch (final Exception e) {
                     ErrorUtil.showUiErrorSnackbar(this, "Opening channel fragment", e);
                 }
-            } else if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                
             }
         };
         binding.subChannelAvatarView.setOnClickListener(openSubChannel);
@@ -299,13 +294,7 @@ public class ChannelFragment extends BaseStateFragment<ChannelInfo>
     }
 
     private void updateSubscription(final ChannelInfo info) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         final Action onComplete = () -> {
-            if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                
-            }
         };
 
         final Consumer<Throwable> onError = (@NonNull Throwable throwable) ->
@@ -320,9 +309,6 @@ public class ChannelFragment extends BaseStateFragment<ChannelInfo>
 
     private Disposable monitorSubscribeButton(final Function<Object, Object> action) {
         final Consumer<Object> onNext = (@NonNull final Object o) -> {
-            if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                
-            }
         };
 
         final Consumer<Throwable> onError = (@NonNull Throwable throwable) ->
@@ -340,17 +326,11 @@ public class ChannelFragment extends BaseStateFragment<ChannelInfo>
 
     private Consumer<List<SubscriptionEntity>> getSubscribeUpdateMonitor(final ChannelInfo info) {
         return (final List<SubscriptionEntity> subscriptionEntities) -> {
-            if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                
-            }
             if (subscribeButtonMonitor != null) {
                 subscribeButtonMonitor.dispose();
             }
 
             if (subscriptionEntities.isEmpty()) {
-                if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                    
-                }
                 final SubscriptionEntity channel = new SubscriptionEntity();
                 channel.setServiceId(info.getServiceId());
                 channel.setUrl(info.getUrl());
@@ -362,9 +342,6 @@ public class ChannelFragment extends BaseStateFragment<ChannelInfo>
                 updateNotifyButton(null);
                 subscribeButtonMonitor = monitorSubscribeButton(mapOnSubscribe(channel));
             } else {
-                if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                    
-                }
                 channelSubscription = subscriptionEntities.get(0);
                 updateNotifyButton(channelSubscription);
                 subscribeButtonMonitor =
@@ -374,9 +351,6 @@ public class ChannelFragment extends BaseStateFragment<ChannelInfo>
     }
 
     private void updateSubscribeButton(final boolean isSubscribed) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         final boolean isButtonVisible = binding.channelSubscribeButton.getVisibility()
                 == View.VISIBLE;
@@ -639,7 +613,7 @@ public class ChannelFragment extends BaseStateFragment<ChannelInfo>
         }
 
         binding.errorContentNotSupported.setVisibility(View.VISIBLE);
-        binding.channelKaomoji.setText("(Ã¯Â¸Â¶Ã¯Â¸Â¹Ã¯Â¸Âº)");
+        binding.channelKaomoji.setText("(︶︹︺)");
         binding.channelKaomoji.setTextSize(TypedValue.COMPLEX_UNIT_SP, 45f);
     }
 }

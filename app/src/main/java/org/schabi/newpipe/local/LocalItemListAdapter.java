@@ -115,25 +115,16 @@ public class LocalItemListAdapter extends RecyclerView.Adapter<RecyclerView.View
         if (data == null) {
             return;
         }
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         final int offsetStart = sizeConsideringHeader();
         localItems.addAll(data);
 
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         notifyItemRangeInserted(offsetStart, data.size());
 
         if (footer != null && showFooter) {
             final int footerNow = sizeConsideringHeader();
             notifyItemMoved(offsetStart, footerNow);
 
-            if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                
-            }
         }
     }
 
@@ -205,9 +196,6 @@ public class LocalItemListAdapter extends RecyclerView.Adapter<RecyclerView.View
     @Deprecated(since = "Calling this method with `true` may cause crashes, see "
             + "https://github.com/TeamNewPipe/NewPipe/pull/12996#pullrequestreview-3713317115")
     public void showFooter(final boolean show) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         if (show == showFooter) {
             return;
         }
@@ -244,18 +232,12 @@ public class LocalItemListAdapter extends RecyclerView.Adapter<RecyclerView.View
             count++;
         }
 
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         return count;
     }
 
     @SuppressWarnings("FinalParameters")
     @Override
     public int getItemViewType(int position) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         if (hasHeader() && position == 0) {
             return HEADER_TYPE;
@@ -314,9 +296,6 @@ public class LocalItemListAdapter extends RecyclerView.Adapter<RecyclerView.View
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull final ViewGroup parent,
                                                       final int type) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         switch (type) {
             case HEADER_TYPE:
                 return new HeaderFooterHolder(headerSupplier.get());
@@ -359,9 +338,6 @@ public class LocalItemListAdapter extends RecyclerView.Adapter<RecyclerView.View
     @SuppressWarnings("FinalParameters")
     @Override
     public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder holder, int position) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         if (holder instanceof LocalItemHolder) {
             // If header isn't null, offset the items by -1

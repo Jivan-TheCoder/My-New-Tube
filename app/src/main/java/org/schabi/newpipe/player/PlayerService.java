@@ -87,9 +87,6 @@ public final class PlayerService extends MediaBrowserServiceCompat {
     public void onCreate() {
         super.onCreate();
 
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         ThemeHelper.setTheme(this);
 
         mediaBrowserImpl = new MediaBrowserImpl(this, this::notifyChildrenChanged);
@@ -123,9 +120,6 @@ public final class PlayerService extends MediaBrowserServiceCompat {
 
     @Override
     public int onStartCommand(final Intent intent, final int flags, final int startId) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         // All internal NewPipe intents used to interact with the player, that are sent to the
         // PlayerService using startForegroundService(), will have SHOULD_START_FOREGROUND_EXTRA,
@@ -178,9 +172,6 @@ public final class PlayerService extends MediaBrowserServiceCompat {
     }
 
     public void stopForImmediateReusing() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         if (player != null && !player.exoPlayerIsNull()) {
             // Releases wifi & cpu, disables keepScreenOn, etc.
@@ -203,9 +194,6 @@ public final class PlayerService extends MediaBrowserServiceCompat {
 
     @Override
     public void onDestroy() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
         super.onDestroy();
 
         cleanup();
@@ -241,9 +229,6 @@ public final class PlayerService extends MediaBrowserServiceCompat {
      * system accesses the media browser even when no player is running).
      */
     public void destroyPlayerAndStopService() {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         cleanup();
 
@@ -265,9 +250,6 @@ public final class PlayerService extends MediaBrowserServiceCompat {
     //region Bind
     @Override
     public IBinder onBind(final Intent intent) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         if (BIND_PLAYER_HOLDER_ACTION.equals(intent.getAction())) {
             // Note that this binder might be reused multiple times while the service is alive, even

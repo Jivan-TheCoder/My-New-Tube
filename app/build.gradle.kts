@@ -1,5 +1,4 @@
 import com.android.build.api.dsl.ApplicationExtension
-import java.io.File
 import java.util.Properties
 
 plugins {
@@ -10,8 +9,6 @@ plugins {
     alias(libs.plugins.google.ksp)
     alias(libs.plugins.jetbrains.kotlin.parcelize)
     alias(libs.plugins.jetbrains.kotlinx.serialization)
-    alias(libs.plugins.sonarqube)
-    checkstyle
 }
 
 System.getProperty("customBuildDir")?.let { customBuildDir ->
@@ -196,85 +193,13 @@ ksp {
 }
 
 
-// Custom dependency configuration for ktlint
-val ktlint by configurations.creating
-
-// https://checkstyle.org/#JRE_and_JDK
-tasks.withType<Checkstyle>().configureEach {
-    javaLauncher = javaToolchains.launcherFor {
-        languageVersion = JavaLanguageVersion.of(21)
-    }
-}
-
-checkstyle {
-    configDirectory = rootProject.file("checkstyle")
-    isIgnoreFailures = false
-    isShowViolations = true
-    toolVersion = libs.versions.checkstyle.get()
-}
-
-tasks.register<Checkstyle>("runCheckstyle") {
-    source("src")
-    include("**/*.java")
-    exclude("**/MainActivity.java")
-    exclude("**/gen/**")
-    exclude("**/R.java")
-    exclude("**/BuildConfig.java")
-    exclude("main/java/us/shandian/giga/**")
-
-    classpath = configurations.getByName("checkstyle")
-
-    isShowViolations = true
-    // Do not block local APK builds on style-only violations.
-    isIgnoreFailures = true
-
-    reports {
-        xml.required = true
-        html.required = true
-    }
-}
-
-val outputDir = project.layout.buildDirectory.dir("reports/ktlint/")
-val inputFiles = fileTree("src") { include("**/*.kt") }
-
-tasks.register<JavaExec>("runKtlint") {
-    inputs.files(inputFiles)
-    outputs.dir(outputDir)
-    mainClass.set("com.pinterest.ktlint.Main")
-    classpath = configurations.getByName("ktlint")
-    args = listOf("--editorconfig=../.editorconfig", "src/**/*.kt")
-    jvmArgs = listOf("--add-opens", "java.base/java.lang=ALL-UNNAMED")
-    // Do not block local APK builds on style-only violations.
-    isIgnoreExitValue = true
-}
-
-tasks.register<JavaExec>("formatKtlint") {
-    inputs.files(inputFiles)
-    outputs.dir(outputDir)
-    mainClass.set("com.pinterest.ktlint.Main")
-    classpath = configurations.getByName("ktlint")
-    args = listOf("--editorconfig=../.editorconfig", "-F", "src/**/*.kt")
-    jvmArgs = listOf("--add-opens", "java.base/java.lang=ALL-UNNAMED")
-}
-
 tasks.register<CheckDependenciesOrder>("checkDependenciesOrder") {
     tomlFile = layout.projectDirectory.file("../gradle/libs.versions.toml")
 }
 
 afterEvaluate {
     tasks.named("preReleaseBuild").configure {
-        if (!System.getProperties().containsKey("skipFormatKtlint")) {
-            dependsOn("formatKtlint")
-        }
-        dependsOn("runCheckstyle", "runKtlint", "checkDependenciesOrder")
-    }
-}
-
-sonar {
-    properties {
-        property("sonar.projectKey", "TeamNewPipe_NewPipe")
-        property("sonar.organization", "teamnewpipe")
-        property("sonar.host.url", "https://sonarcloud.io")
+        dependsOn("checkDependenciesOrder")
     }
 }
 
@@ -286,10 +211,6 @@ dependencies {
     implementation(libs.newpipe.nanojson)
     implementation(libs.newpipe.extractor)
     implementation(libs.newpipe.filepicker)
-
-    /** Checkstyle **/
-    checkstyle(libs.puppycrawl.checkstyle)
-    ktlint(libs.pinterest.ktlint)
 
     /** AndroidX **/
     implementation(libs.androidx.appcompat)

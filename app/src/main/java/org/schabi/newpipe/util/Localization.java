@@ -66,7 +66,7 @@ import java.util.stream.Collectors;
 
 public final class Localization {
     private static final String TAG = Localization.class.toString();
-    public static final String DOT_SEPARATOR = " Ã¢â‚¬Â¢ ";
+    public static final String DOT_SEPARATOR = " \u2022 ";
     private static PrettyTime prettyTime;
 
     private Localization() { }
@@ -283,7 +283,7 @@ public final class Localization {
     public static String getDurationString(final long duration, final boolean isDurationComplete,
                                            final boolean showDurationPrefix) {
         final String output = getDurationString(duration);
-        final String durationPrefix = showDurationPrefix ? "Ã¢ÂÂ± " : "";
+        final String durationPrefix = showDurationPrefix ? "\u23F1 " : "";
         final String durationPostfix = isDurationComplete ? "" : "+";
         return durationPrefix + output + durationPostfix;
     }
@@ -486,4 +486,5 @@ public final class Localization {
         }
     }
 }
+
 

@@ -132,9 +132,6 @@ public class DownloadManagerService extends Service {
     public void onCreate() {
         super.onCreate();
 
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         mBinder = new DownloadManagerBinder();
         mHandler = new Handler(this::handleMessage);
@@ -190,9 +187,6 @@ public class DownloadManagerService extends Service {
 
     @Override
     public int onStartCommand(final Intent intent, int flags, int startId) {
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         if (intent == null) return START_NOT_STICKY;
 
@@ -223,9 +217,6 @@ public class DownloadManagerService extends Service {
     public void onDestroy() {
         super.onDestroy();
 
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
-            
-        }
 
         ServiceCompat.stopForeground(this, ServiceCompat.STOP_FOREGROUND_REMOVE);
 

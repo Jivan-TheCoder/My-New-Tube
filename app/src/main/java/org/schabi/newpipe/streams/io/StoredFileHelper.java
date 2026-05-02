@@ -309,9 +309,6 @@ public class StoredFileHelper implements Serializable {
 
     public boolean existsAsFile() {
         if (source == null || (docFile == null && ioPath == null)) {
-            if (org.schabi.newpipe.BuildConfig.DEBUG) {
-                
-            }
             return false;
         }
 
