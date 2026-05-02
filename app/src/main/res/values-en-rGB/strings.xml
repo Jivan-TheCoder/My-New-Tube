@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="use_inexact_seek_summary">Inexact seek allows the player to seek to positions faster with reduced precision. Seeking for 5, 15 or 25 seconds doesnâ€™t work with this.</string>
+    <string name="use_inexact_seek_summary">Inexact seek allows the player to seek to positions faster with reduced precision. Seeking for 5, 15 or 25 seconds doesn\u2019t work with this.</string>
     <string name="show_play_with_kodi_summary">Display an option to play a video via Kodi media centre</string>
-    <string name="notification_colorize_summary">Have Android customise the notificationâ€™s colour according to the main colour in the thumbnail (note that this is not available on all devices)</string>
+    <string name="notification_colorize_summary">Have Android customise the notification\u2019s colour according to the main colour in the thumbnail (note that this is not available on all devices)</string>
     <string name="notification_colorize_title">Colourise notification</string>
     <string name="import_soundcloud_instructions">Import a SoundCloud profile by typing either the URL or your ID:
 \n
-\n1. Enable â€˜desktop modeâ€™ in a web browser (the site is not available for mobile devices)
+\n1. Enable \u2018desktop mode\u2019 in a web browser (the site is not available for mobile devices)
 \n2. Go to this URL: %1$s
 \n3. Log in when asked
 \n4. Copy the profile URL you were redirected to.</string>
@@ -14,27 +14,27 @@
 \n
 \n1. Go to this URL: %1$s
 \n2. Log in when asked
-\n3. Click on â€˜All data includedâ€™, then on â€˜Deselect allâ€™, then select only â€˜subscriptionsâ€™ and click â€˜OKâ€™
-\n4. Click on â€˜Next stepâ€™ and then on â€˜Create exportâ€™
-\n5. Click on the â€˜Downloadâ€™ button after it appears
+\n3. Click on \u2018All data included\u2019, then on \u2018Deselect all\u2019, then select only \u2018subscriptions\u2019 and click \u2018OK\u2019
+\n4. Click on \u2018Next step\u2019 and then on \u2018Create export\u2019
+\n5. Click on the \u2018Download\u2019 button after it appears
 \n6. Click on IMPORT FILE below and select the downloaded .zip file
-\n7. [If the .zip import fails] Extract the .csv file (usually under â€˜YouTube and YouTube Music/subscriptions/subscriptions.csvâ€™), click on IMPORT FILE below and select the extracted csv file</string>
-    <string name="subtitle_activity_recaptcha">Press â€˜Doneâ€™ when solved</string>
+\n7. [If the .zip import fails] Extract the .csv file (usually under \u2018YouTube and YouTube Music/subscriptions/subscriptions.csv\u2019), click on IMPORT FILE below and select the extracted csv file</string>
+    <string name="subtitle_activity_recaptcha">Press \u2018Done\u2019 when solved</string>
     <string name="restricted_video">This video is age restricted.
 \n
-\nTurn on â€˜%1$sâ€™ in the settings if you want to see it.</string>
-    <string name="youtube_restricted_mode_enabled_summary">YouTube provides a â€˜Restricted Modeâ€™ which hides potentially mature content</string>
-    <string name="youtube_restricted_mode_enabled_title">Turn on YouTubeâ€™s â€˜Restricted Modeâ€™</string>
-    <string name="show_hold_to_append_summary">Show tip when pressing the background or the pop-up button in video â€˜Details:â€™</string>
-    <string name="show_hold_to_append_title">Show â€˜Hold to appendâ€™ tip</string>
-    <string name="show_play_with_kodi_title">Show â€˜Play with Kodiâ€™ option</string>
-    <string name="did_you_mean">Did you mean â€˜%1$sâ€™\?</string>
+\nTurn on \u2018%1$s\u2019 in the settings if you want to see it.</string>
+    <string name="youtube_restricted_mode_enabled_summary">YouTube provides a \u2018Restricted Mode\u2019 which hides potentially mature content</string>
+    <string name="youtube_restricted_mode_enabled_title">Turn on YouTube\u2019s \u2018Restricted Mode\u2019</string>
+    <string name="show_hold_to_append_summary">Show tip when pressing the background or the pop-up button in video \u2018Details:\u2019</string>
+    <string name="show_hold_to_append_title">Show \u2018Hold to append\u2019 tip</string>
+    <string name="show_play_with_kodi_title">Show \u2018Play with Kodi\u2019 option</string>
+    <string name="did_you_mean">Did you mean \u2018%1$s\u2019\?</string>
     <string name="main_bg_subtitle">Tap the magnifying glass to get started.</string>
-    <string name="detail_sub_channel_thumbnail_view_description">Channelâ€™s avatar thumbnail</string>
-    <string name="feed_update_threshold_summary">Time after last update before a subscription is considered outdated â€“ %s</string>
-    <string name="autoplay_summary">Start playback automatically â€“ %s</string>
-    <string name="minimize_on_exit_summary">Action when switching to other app from main video player â€“ %s</string>
-    <string name="preferred_open_action_settings_summary">Default action when opening content â€“ %s</string>
+    <string name="detail_sub_channel_thumbnail_view_description">Channel\u2019s avatar thumbnail</string>
+    <string name="feed_update_threshold_summary">Time after last update before a subscription is considered outdated - %s</string>
+    <string name="autoplay_summary">Start playback automatically - %s</string>
+    <string name="minimize_on_exit_summary">Action when switching to other app from main video player - %s</string>
+    <string name="preferred_open_action_settings_summary">Default action when opening content - %s</string>
     <string name="switch_to_main">Switch to Main</string>
     <string name="switch_to_popup">Switch to Pop-up</string>
     <string name="switch_to_background">Switch to Background</string>
@@ -56,8 +56,8 @@
     <string name="feed_use_dedicated_fetch_method_help_text">Do you think feed loading is too slow\? If so, try enabling fast loading (you can change it in settings or by pressing the button below).
 \n
 \nNewPipe offers two feed loading methods:
-\nâ€¢ Fetching the whole subscription channel, which is slow but complete.
-\nâ€¢ Using a dedicated service endpoint, which is fast but usually not complete.
+\n\u2022 Fetching the whole subscription channel, which is slow but complete.
+\n\u2022 Using a dedicated service endpoint, which is fast but usually not complete.
 \n
 \nThe difference between the two is that the fast one usually lacks some information, like the item\'s duration or type (can\'t distinguish between live videos and normal ones) and it may return fewer items.
 \n
@@ -72,7 +72,7 @@
     <string name="resume_on_audio_focus_gain_summary">Continue playing after interruptions (e.g. phone calls)</string>
     <string name="upload_date_text">Published on %1$s</string>
     <string name="error_report_button_text">Report this error via e-mail</string>
-    <string name="night_theme_summary">Select your favorite night theme â€“ %s</string>
+    <string name="night_theme_summary">Select your favorite night theme - %s</string>
     <string name="no_player_found">No stream player found. Install VLC\?</string>
     <string name="install">Install</string>
     <string name="ok">Okay</string>
@@ -750,4 +750,5 @@
     <string name="sign_in_confirm_not_bot_error">%1$s refused to provide data, asking for a login to confirm the requester is not a bot.\n\nYour IP might have been temporarily banned by %1$s, you can wait some time or switch to a different IP (for example by turning on/off a VPN, or by switching from WiFi to mobile data).\n\nPlease see <a href="%2$s">this help entry</a> for more information.</string>
     <string name="unsupported_content_in_country">This content is not available for the currently selected content country.\n\nChange your selection from \"Settings &gt; Content &gt; Default content country\".</string>
 </resources>
+
 

@@ -84,8 +84,6 @@ class ErrorActivity : AppCompatActivity() {
 
         errorInfo = IntentCompat.getParcelableExtra(intent, ERROR_INFO, ErrorInfo::class.java)!!
 
-        // important add guru meditation
-        addGuruMeditation()
         // print current time, as zoned ISO8601 timestamp
         currentTimeStamp = ZonedDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)
 
@@ -93,10 +91,11 @@ class ErrorActivity : AppCompatActivity() {
             ShareUtils.copyToClipboard(this, buildMarkdown())
         }
 
-        // normal bugreport
+        // Build crash report payloads internally, but keep UI user-friendly.
         buildInfo(errorInfo)
-        binding.errorMessageView.setTextWithLinks(errorInfo.getMessage(this))
+        binding.errorMessageView.setTextWithLinks(getString(R.string.error_friendly_message))
         binding.errorView.text = formErrorText(errorInfo.stackTraces)
+        showFriendlyErrorMessage()
 
         if (shouldShowFriendlyParsingMessage()) {
             showFriendlyParsingMessage()
@@ -233,15 +232,25 @@ class ErrorActivity : AppCompatActivity() {
         }
     }
 
-    private fun addGuruMeditation() {
-        // just an easter egg
-        var text = binding.errorSorryView.text.toString()
-        text += "\n" + getString(R.string.guru_meditation)
-        binding.errorSorryView.text = text
-    }
-
     private fun shouldShowFriendlyParsingMessage(): Boolean {
         return errorInfo.getMessage(this).toString() == getString(R.string.parsing_error)
+    }
+
+    private fun showFriendlyErrorMessage() {
+        binding.errorSorryView.text = getString(R.string.error_friendly_title)
+        binding.errorSorryView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f)
+        binding.errorMessageView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20f)
+        binding.errorMessageView.setLineSpacing(0f, 1.15f)
+
+        binding.whatHappenedHeadlineView.visibility = View.GONE
+        binding.whatDeviceHeadlineView.visibility = View.GONE
+        binding.errorInfoContainer.visibility = View.GONE
+        binding.errorDetailsHeadlineView.visibility = View.GONE
+        binding.errorView.visibility = View.GONE
+        binding.yourCommentHeadlineView.visibility = View.GONE
+        binding.errorCommentBox.visibility = View.GONE
+        binding.errorGithubNoticeView.visibility = View.GONE
+        binding.errorReportCopyButton.visibility = View.GONE
     }
 
     private fun showFriendlyParsingMessage() {
