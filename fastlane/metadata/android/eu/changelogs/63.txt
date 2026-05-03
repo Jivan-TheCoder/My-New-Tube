@@ -1,4 +1,3 @@
-### Hobekuntzak
 - Inportatu/esportatu ezarpenak #1333
 - Murriztu gainmarrazketa (errendimendu hobekuntza) #1371
 - Kode hobekuntza txikiak #1375

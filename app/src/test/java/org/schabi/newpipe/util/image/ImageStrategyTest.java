@@ -3,8 +3,10 @@ package org.schabi.newpipe.util.image;
 import static org.junit.Assert.assertEquals;
 import static org.schabi.newpipe.extractor.Image.HEIGHT_UNKNOWN;
 import static org.schabi.newpipe.extractor.Image.WIDTH_UNKNOWN;
-import static org.schabi.newpipe.util.image.ImageStrategy.choosePreferredImage;
-import static org.schabi.newpipe.util.image.ImageStrategy.estimatePixelCount;
+import static com.playtube.protube.video.music.util.image.ImageStrategy.choosePreferredImage;
+import static com.playtube.protube.video.music.util.image.ImageStrategy.estimatePixelCount;
+
+import com.playtube.protube.video.music.util.image.PreferredImageQuality;
 
 import org.junit.Test;
 import org.schabi.newpipe.extractor.Image;

@@ -18,6 +18,8 @@ import static org.junit.Assert.assertTrue;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.playtube.protube.video.music.util.ListHelper;
+
 public class ListHelperTest {
     private static final String BEST_RESOLUTION_KEY = "best_resolution";
     private static final List<AudioStream> AUDIO_STREAMS_TEST_LIST = List.of(

@@ -1,4 +1,3 @@
-### Fejlesztések
 - Lehetőség a videó minőségének korlátozására mobiladat-kapcsolaton #1339 
 - A munkamenet erejéig megjegyzi a fényerő-beállítást #1442 
 - Jobb letöltési teljesítmény gyengébb CPU esetén #1431 

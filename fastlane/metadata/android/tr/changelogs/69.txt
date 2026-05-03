@@ -1,4 +1,3 @@
-### Yenilikler
 - Aboneliklerde uzun dokunarak silme ve paylaşma işlemleri eklendi #1516
 - Tablet kullanıcı arayüzü ve kılavuz liste düzeni eklendi #1617
 

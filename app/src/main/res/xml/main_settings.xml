@@ -5,37 +5,37 @@
     android:title="@string/settings">
 
     <PreferenceScreen
-        android:fragment="org.schabi.newpipe.settings.VideoAudioSettingsFragment"
+        android:fragment="com.playtube.protube.video.music.settings.VideoAudioSettingsFragment"
         android:icon="@drawable/ic_headset"
         android:title="@string/settings_category_video_audio_title"
         app:iconSpaceReserved="false" />
 
     <PreferenceScreen
-        android:fragment="org.schabi.newpipe.settings.DownloadSettingsFragment"
+        android:fragment="com.playtube.protube.video.music.settings.DownloadSettingsFragment"
         android:icon="@drawable/ic_file_download"
         android:title="@string/settings_category_downloads_title"
         app:iconSpaceReserved="false" />
 
     <PreferenceScreen
-        android:fragment="org.schabi.newpipe.settings.AppearanceSettingsFragment"
+        android:fragment="com.playtube.protube.video.music.settings.AppearanceSettingsFragment"
         android:icon="@drawable/ic_palette"
         android:title="@string/settings_category_appearance_title"
         app:iconSpaceReserved="false" />
 
     <PreferenceScreen
-        android:fragment="org.schabi.newpipe.settings.HistorySettingsFragment"
+        android:fragment="com.playtube.protube.video.music.settings.HistorySettingsFragment"
         android:icon="@drawable/ic_history"
         android:title="@string/settings_category_history_title"
         app:iconSpaceReserved="false" />
 
     <PreferenceScreen
-        android:fragment="org.schabi.newpipe.settings.ContentSettingsFragment"
+        android:fragment="com.playtube.protube.video.music.settings.ContentSettingsFragment"
         android:icon="@drawable/ic_language"
         android:title="@string/content"
         app:iconSpaceReserved="false" />
 
     <PreferenceScreen
-        android:fragment="org.schabi.newpipe.settings.DebugSettingsFragment"
+        android:fragment="com.playtube.protube.video.music.settings.DebugSettingsFragment"
         android:icon="@drawable/ic_bug_report"
         android:key="@string/debug_pref_screen_key"
         android:title="@string/settings_category_debug_title"

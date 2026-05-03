@@ -1,6 +1,3 @@
-# changelog versie v0.14.1
-
- ### opgelost
  - Probleem opgelost waarbij video-URL #1659 niet kon worden gedecodeerd 
  - Vaste beschrijvingslink wordt niet goed geëxtraheerd #1657
 

@@ -1,7 +1,3 @@
-# v0.14.1 dəyişiklikləri
-
-### Sabit
-
 - Video URL-nin şifrəsini açmaqda uğursuzluq düzəldildi#1659
 - Sabit təsvir linki yaxşı çıxarılmadı#1657
 

@@ -1,4 +1,3 @@
-### Hobekuntzak
 - Mugikorreko datuak erabiltzen badira bideoaren kalitatea mugatzeko aukera gehitu. #1339
 - Gogoan izan saiorako distira #1442
 - Deskargaren errendimendua CPU ahulagoentzat hobetu #1431

@@ -1,4 +1,3 @@
-### Miglioramenti
 * Aggiungi la notifica di aggiornamento dell'app per la build di GitHub (#1608 di @krtkush)
 * Vari miglioramenti al downloader (#1944 di @kapodamy):
   * aggiungi icone bianche mancanti e usa il modo hardcore per cambiare i colori delle icone

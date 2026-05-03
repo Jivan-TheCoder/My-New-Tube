@@ -1,4 +1,3 @@
-### Täiustused
 - Lisatud võimalus piirata videokvaliteeti mobiilse andmeside kasutamisel. #1339
 - Pea seansi heledus meeles #1442
 - Parandatud allalaadimise jõudlust nõrgematel protsessoritel #1431

@@ -1,5 +1,6 @@
 package org.schabi.newpipe.local.subscription
 
+import com.playtube.protube.video.music.local.subscription.FeedGroupIcon
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test

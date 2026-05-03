@@ -1,4 +1,3 @@
-### Forbedringer
 - Import/export indstillinger #1333 
 - Reducering af overtegning (ydeevne forbedring )#1371 
 - Små kode forbedringer #1375 

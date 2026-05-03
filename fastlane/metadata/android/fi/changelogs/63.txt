@@ -1,4 +1,3 @@
-### Parannukset
 - Tuonti-/vientiasetukset #1333
 - Vähennetty ylipiirtoa (suorituskyvyn parannus) #1371
 - Pieniä koodiparannuksia #1375

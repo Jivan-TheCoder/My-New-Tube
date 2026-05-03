@@ -1,4 +1,3 @@
-### Verbesserungen
 * Benachrichtigung über App-Updates für GitHub-Build (#1608 von @krtkush)
 * Verschiedene Verbesserungen am Downloader (#1944 von @kapodamy):
   * Weiße Symbole und Hardcoded-Methode zum Ändern der Symbolfarben

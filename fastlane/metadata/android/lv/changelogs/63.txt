@@ -1,4 +1,3 @@
-### Uzlabojumi
 - Ievietot/izgūt iestatījumus #1333
 - Samazināts pārzīmēšanas skaits (veiktspējas uzlabojums) #1371
 - Nelieli koda uzlabojumi #1375

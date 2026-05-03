@@ -19,6 +19,9 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.spy;
 
+import com.playtube.protube.video.music.player.playqueue.PlayQueue;
+import com.playtube.protube.video.music.player.playqueue.PlayQueueItem;
+
 @SuppressWarnings("checkstyle:HideUtilityClassConstructor")
 public class PlayQueueTest {
     static PlayQueue makePlayQueue(final int index, final List<PlayQueueItem> streams) {

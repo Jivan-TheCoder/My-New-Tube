@@ -1,5 +1,3 @@
-### İyileştirmeler
-
 - Burgermenu simge animasyonunu devre dışı bırak #1486
 
 - İndirilenlerin silinmesini geri al #1472

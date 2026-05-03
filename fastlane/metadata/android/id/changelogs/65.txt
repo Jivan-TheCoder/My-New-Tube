@@ -1,5 +1,3 @@
-### peningkatan
-
 - Nonaktifkan Animasi Ikon burgermenu #1486
 - Kembali (undo) hapus unduhan #1472
 - Unduh Opsi di menu Bagikan #1498

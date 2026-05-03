@@ -1,0 +1,198 @@
+package com.playtube.protube.video.music.util.image
+
+import android.content.Context
+import android.graphics.Bitmap
+import android.widget.ImageView
+import androidx.annotation.DrawableRes
+import coil3.executeBlocking
+import coil3.imageLoader
+import coil3.request.Disposable
+import coil3.request.ImageRequest
+import coil3.request.error
+import coil3.request.placeholder
+import coil3.request.target
+import coil3.request.transformations
+import coil3.size.Size
+import coil3.target.Target
+import coil3.toBitmap
+import coil3.transform.Transformation
+import com.playtube.protube.video.music.ktx.scale
+import kotlin.math.min
+import com.playtube.protube.video.music.R
+import org.schabi.newpipe.extractor.Image
+
+object CoilHelper {
+    private val TAG = CoilHelper::class.java.simpleName
+
+    @JvmOverloads
+    fun loadBitmapBlocking(
+        context: Context,
+        url: String?,
+        @DrawableRes placeholderResId: Int = 0
+    ): Bitmap? {
+        val takenUrl = sanitizeLoadableUrl(url)
+        if (takenUrl == null && placeholderResId == 0) {
+            return null
+        }
+
+        return context.imageLoader
+            .executeBlocking(getImageRequest(context, takenUrl, placeholderResId).build())
+            .image
+            ?.toBitmap()
+    }
+
+    fun loadAvatar(
+        target: ImageView,
+        images: List<Image>
+    ) {
+        loadImageDefault(target, images, R.drawable.placeholder_person)
+    }
+
+    fun loadAvatar(
+        target: ImageView,
+        url: String?
+    ) {
+        loadImageDefault(target, url, R.drawable.placeholder_person)
+    }
+
+    fun loadThumbnail(
+        target: ImageView,
+        images: List<Image>
+    ) {
+        loadImageDefault(target, images, R.drawable.placeholder_thumbnail_video)
+    }
+
+    fun loadThumbnail(
+        target: ImageView,
+        url: String?
+    ) {
+        loadImageDefault(target, url, R.drawable.placeholder_thumbnail_video)
+    }
+
+    fun loadScaledDownThumbnail(
+        context: Context,
+        images: List<Image>,
+        target: Target
+    ): Disposable {
+        val url = ImageStrategy.choosePreferredImage(images)
+        val request =
+            getImageRequest(context, url, R.drawable.placeholder_thumbnail_video)
+                .target(target)
+                .transformations(
+                    object : Transformation() {
+                        override val cacheKey = "COIL_PLAYER_THUMBNAIL_TRANSFORMATION_KEY"
+
+                        override suspend fun transform(
+                            input: Bitmap,
+                            size: Size
+                        ): Bitmap {
+                            val notificationThumbnailWidth =
+                                min(
+                                    context.resources.getDimension(R.dimen.player_notification_thumbnail_width),
+                                    input.width.toFloat()
+                                ).toInt()
+
+                            var newHeight = input.height / (input.width / notificationThumbnailWidth)
+                            val result = input.scale(notificationThumbnailWidth, newHeight)
+
+                            return if (result == input || !result.isMutable) {
+                                // create a new mutable bitmap to prevent strange crashes on some
+                                // devices (see #4638)
+                                newHeight = input.height / (input.width / (notificationThumbnailWidth - 1))
+                                input.scale(notificationThumbnailWidth, newHeight)
+                            } else {
+                                result
+                            }
+                        }
+                    }
+                ).build()
+
+        return context.imageLoader.enqueue(request)
+    }
+
+    fun loadDetailsThumbnail(
+        target: ImageView,
+        images: List<Image>
+    ) {
+        val url = ImageStrategy.choosePreferredImage(images)
+        loadImageDefault(target, url, R.drawable.placeholder_thumbnail_video, false)
+    }
+
+    fun loadBanner(
+        target: ImageView,
+        images: List<Image>
+    ) {
+        loadImageDefault(target, images, R.drawable.placeholder_channel_banner)
+    }
+
+    fun loadPlaylistThumbnail(
+        target: ImageView,
+        images: List<Image>
+    ) {
+        loadImageDefault(target, images, R.drawable.placeholder_thumbnail_playlist)
+    }
+
+    fun loadPlaylistThumbnail(
+        target: ImageView,
+        url: String?
+    ) {
+        loadImageDefault(target, url, R.drawable.placeholder_thumbnail_playlist)
+    }
+
+    private fun loadImageDefault(
+        target: ImageView,
+        images: List<Image>,
+        @DrawableRes placeholderResId: Int
+    ) {
+        loadImageDefault(target, ImageStrategy.choosePreferredImage(images), placeholderResId)
+    }
+
+    private fun loadImageDefault(
+        target: ImageView,
+        url: String?,
+        @DrawableRes placeholderResId: Int,
+        showPlaceholder: Boolean = true
+    ) {
+        val takenUrl = sanitizeLoadableUrl(url)
+        if (takenUrl == null) {
+            when {
+                showPlaceholder && placeholderResId != 0 -> target.setImageResource(placeholderResId)
+                else -> target.setImageDrawable(null)
+            }
+            return
+        }
+
+        val request =
+            getImageRequest(target.context, takenUrl, placeholderResId, showPlaceholder)
+                .target(target)
+                .build()
+        target.context.imageLoader.enqueue(request)
+    }
+
+    private fun getImageRequest(
+        context: Context,
+        url: String?,
+        @DrawableRes placeholderResId: Int,
+        showPlaceholderWhileLoading: Boolean = true
+    ): ImageRequest.Builder {
+        // if the URL was chosen with `choosePreferredImage` it will be null, but check again
+        // `shouldLoadImages` in case the URL was chosen with `imageListToDbUrl` (which is the case
+        // for URLs stored in the database)
+        val takenUrl = sanitizeLoadableUrl(url)
+        val requestData = takenUrl ?: placeholderResId.takeIf { it != 0 } ?: android.R.color.transparent
+
+        return ImageRequest
+            .Builder(context)
+            .data(requestData)
+            .error(placeholderResId)
+            .memoryCacheKey(takenUrl)
+            .diskCacheKey(takenUrl)
+            .apply {
+                if (takenUrl != null || showPlaceholderWhileLoading) {
+                    placeholder(placeholderResId)
+                }
+            }
+    }
+
+    private fun sanitizeLoadableUrl(url: String?): String? = url?.takeIf { it.isNotBlank() && ImageStrategy.shouldLoadImages() }
+}

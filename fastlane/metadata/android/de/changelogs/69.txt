@@ -1,4 +1,3 @@
-### Neu
 - Langes Tippen zum Löschen/Teilen in Abonnements #1516
 - Tablet-UI und Rasterlistenlayout #1617
 

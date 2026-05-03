@@ -1,2 +1,1 @@
-# Fixed
 - Hot fix decrypt function error again.

@@ -1,4 +1,3 @@
-### Vylepšení
 * Přidání oznámení o aktualizaci aplikace pro sestavení na GitHubu (#1608 by @krtkush)
 * Různá vylepšení downloaderu (#1944 by @kapodamy):
   * přidat chybějící bílé ikony a použít hardcorový způsob změny barev ikon

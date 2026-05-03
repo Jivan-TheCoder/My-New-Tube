@@ -1,4 +1,3 @@
-### takomillashtirish
 - Mobil ma'lumotlardan foydalanishda video sifatini cheklash qobiliyati qo'shildi. # 1339
 - # 1442 sessiya uchun yorqinligini eslang
 - Zaif protsessorlar uchun yuklab olish ish faoliyatini yaxshilang # 1431

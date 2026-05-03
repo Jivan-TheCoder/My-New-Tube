@@ -1,4 +1,3 @@
-### Ulepszenia
 - Dodano możliwość ograniczenia jakości wideo przy korzystaniu z danych mobilnych. #1339
 - Zapamiętanie jasności dla sesji #1442
 - Zwiększenie wydajności pobierania dla słabszych procesorów #1431

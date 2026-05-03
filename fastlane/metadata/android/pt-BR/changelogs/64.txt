@@ -1,4 +1,3 @@
-### Melhorias
 - Adiciona o recurso de limitar a qualidade do vídeo ao usar dados móveis. #1339
 - Mantém o brilho da sessão #1442
 - Melhora o desempenho para baixar em CPU mais fracas #1431

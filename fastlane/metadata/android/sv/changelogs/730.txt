@@ -1,2 +1,1 @@
-# Fixade
 - Snabbfixade avkrypteringsfunktionen igen.

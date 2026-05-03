@@ -1,5 +1,3 @@
-# v0.13.7 değişiklik günlüğü
-### Düzeltildi
 - v0.13.6'nın sıralama filtresi sorunlarını düzeltin
 
 # v0.13.6'nın değişiklik günlüğü

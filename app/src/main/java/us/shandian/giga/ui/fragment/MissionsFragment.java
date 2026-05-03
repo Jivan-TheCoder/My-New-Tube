@@ -30,11 +30,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.nononsenseapps.filepicker.Utils;
 
-import org.schabi.newpipe.R;
-import org.schabi.newpipe.settings.NewPipeSettings;
-import org.schabi.newpipe.streams.io.NoFileManagerSafeGuard;
-import org.schabi.newpipe.streams.io.StoredFileHelper;
-import org.schabi.newpipe.util.FilePickerActivityHelper;
+import com.playtube.protube.video.music.R;
+import com.playtube.protube.video.music.settings.NewPipeSettings;
+import com.playtube.protube.video.music.streams.io.NoFileManagerSafeGuard;
+import com.playtube.protube.video.music.streams.io.StoredFileHelper;
+import com.playtube.protube.video.music.util.FilePickerActivityHelper;
 
 import java.io.File;
 import java.io.IOException;

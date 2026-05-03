@@ -1,6 +1,3 @@
-# Változások v0.14.1
-
-### Javítva
 - a nem sikerül visszafejteni a videó URL-t #1659
 - a leíró link nem jól kibontható #1657
 

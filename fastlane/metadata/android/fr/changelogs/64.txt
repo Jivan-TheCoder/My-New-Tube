@@ -1,4 +1,3 @@
-### Améliorations
 - Possibilité de limiter la qualité vidéo pour l'utilisation des données mobiles #1339 
 - Mémoriser la luminosité pour la session #1442 
 - Améliorations des performances de téléchargement pour les processeurs peu performants #1431 

@@ -1,6 +1,3 @@
-# Nhật ký thay đổi của v0.13.7
-
-### Đã sửa
 - Khắc phục sự cố bộ lọc sắp xếp của v0.13.6
 
 # Nhật ký thay đổi của v0.13.6

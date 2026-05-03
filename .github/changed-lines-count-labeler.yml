@@ -1,4 +1,3 @@
-# Add 'size/small' label to any changes with less than 50 lines
 size/small:
   max: 49
 

@@ -1,4 +1,3 @@
-#### Novo
 - Eliminação de longa duração e partilha de subscrições #1516 
 - Tabela UI e esquema de lista de grelha #1617 
 

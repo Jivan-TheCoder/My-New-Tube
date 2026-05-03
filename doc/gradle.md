@@ -1,5 +1,3 @@
-# Custom gradle parameters
-
 You can use these parameters by specifying them inside the `gradle.properties` file as 
 `systemProp.<name>=<value>` or passing them through the CLI with `-D<name>=<value>`.
 

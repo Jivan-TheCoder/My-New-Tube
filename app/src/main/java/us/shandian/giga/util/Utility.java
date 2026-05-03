@@ -2,8 +2,6 @@ package us.shandian.giga.util;
 
 import android.content.Context;
 import android.os.Build;
-import android.os.Environment;
-import android.os.StatFs;
 import android.util.Log;
 
 import androidx.annotation.ColorInt;
@@ -14,9 +12,9 @@ import androidx.core.content.ContextCompat;
 
 import com.google.android.exoplayer2.util.Util;
 
-import org.schabi.newpipe.R;
-import org.schabi.newpipe.streams.io.SharpInputStream;
-import org.schabi.newpipe.streams.io.StoredFileHelper;
+import com.playtube.protube.video.music.R;
+import com.playtube.protube.video.music.streams.io.SharpInputStream;
+import com.playtube.protube.video.music.streams.io.StoredFileHelper;
 
 import java.io.BufferedOutputStream;
 import java.io.File;

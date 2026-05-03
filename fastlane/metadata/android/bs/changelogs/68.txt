@@ -1,6 +1,3 @@
-# promjene v0.14.1
-
-### Ispravljeno
 - Ispravljeno neuspješno dešifriranje URL-a videa #1659
 - Ispravljeno nije dobro izdvajanje linka opisa #1657
 

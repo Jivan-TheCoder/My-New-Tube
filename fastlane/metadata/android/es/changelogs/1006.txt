@@ -1,4 +1,3 @@
-#Mejoras
 Mantener el reproductor actual al hacer clic en marcas de tiempo.
 Intentar recuperar descargas pendientes cuando sea posible.
 Añadir opción para eliminar una descarga sin borrar el archivo.

@@ -1,4 +1,3 @@
-### Cải thiện
 - Nhập/xuất cài đặt (yêu cầu #1333)
 - Giảm thiểu overdraw (cải thiện hiệu năng tổng quan) (vấn đề #1371)
 - Cải thiện code một chút (vấn đề #1375)

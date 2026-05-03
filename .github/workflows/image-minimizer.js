@@ -1,6 +1,3 @@
-/*
- * Script for minimizing big images (jpg,gif,png) when they are uploaded to GitHub and not edited otherwise
- */
 module.exports = async ({github, context}) => {
     const IGNORE_KEY = '<!-- IGNORE IMAGE MINIFY -->';
     const IGNORE_ALT_NAME_END = 'ignoreImageMinify';

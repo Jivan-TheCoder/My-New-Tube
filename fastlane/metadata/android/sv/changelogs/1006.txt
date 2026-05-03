@@ -1,4 +1,3 @@
-# Förbättrat
 Behåll aktuell spelare när du klickar på tidsstämplar
 Försök att återställa väntande nedladdningsuppdrag när det är möjligt
 Lägg till alternativ för att ta bort en nedladdning utan att också ta bort filen

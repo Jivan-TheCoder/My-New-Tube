@@ -11,6 +11,8 @@ import java.lang.reflect.Method;
 import java.nio.charset.StandardCharsets;
 import static org.junit.Assert.assertEquals;
 
+import com.playtube.protube.video.music.streams.SrtFromTtmlWriter;
+
 /**
  * Unit tests for {@link SrtFromTtmlWriter}.
  *

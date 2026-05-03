@@ -1,4 +1,3 @@
-### Fejlesztések
 * App frissítések értesítés hozzáadása a GitHub verzióhoz (#1608 @krtkush jóvoltából)
 * Különféle javítások a letöltőhöz (#1944 @kapodamy jóvoltából):
   * hiányzó fehér gombok pótlása és ikon színek módosítása

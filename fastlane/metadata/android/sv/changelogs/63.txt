@@ -1,4 +1,3 @@
-### Förbättringar
 - Import/exportinställningar #1333
 - Minskade överdragningen (prestandaförbättring) #1371
 - Små kodförbättringar #1375

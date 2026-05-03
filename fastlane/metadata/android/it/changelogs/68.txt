@@ -1,6 +1,3 @@
-# modifiche della v0.14.1
-
-### Fisso
 - Risolto il problema con la decrittografia dell'URL del video n. 1659
 - Corretto il collegamento alla descrizione che non estrae bene #1657
 

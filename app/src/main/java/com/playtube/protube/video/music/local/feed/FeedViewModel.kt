@@ -1,0 +1,183 @@
+package com.playtube.protube.video.music.local.feed
+
+import android.app.Application
+import android.content.Context
+import androidx.core.content.edit
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewmodel.initializer
+import androidx.lifecycle.viewmodel.viewModelFactory
+import androidx.preference.PreferenceManager
+import com.playtube.protube.video.music.App
+import com.playtube.protube.video.music.database.feed.model.FeedGroupEntity
+import com.playtube.protube.video.music.database.stream.StreamWithState
+import com.playtube.protube.video.music.local.feed.item.StreamItem
+import com.playtube.protube.video.music.local.feed.service.FeedEventManager
+import com.playtube.protube.video.music.util.DEFAULT_THROTTLE_TIMEOUT
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.core.Flowable
+import io.reactivex.rxjava3.functions.Function6
+import io.reactivex.rxjava3.processors.BehaviorProcessor
+import io.reactivex.rxjava3.schedulers.Schedulers
+import java.time.OffsetDateTime
+import java.util.concurrent.TimeUnit
+import com.playtube.protube.video.music.R
+
+class FeedViewModel(
+    private val application: Application,
+    groupId: Long = FeedGroupEntity.Companion.GROUP_ALL_ID,
+    initialShowPlayedItems: Boolean,
+    initialShowPartiallyPlayedItems: Boolean,
+    initialShowFutureItems: Boolean
+) : ViewModel() {
+    private val feedDatabaseManager = FeedDatabaseManager(application)
+
+    private val showPlayedItems = BehaviorProcessor.create<Boolean>()
+    private val showPlayedItemsFlowable = showPlayedItems
+        .startWithItem(initialShowPlayedItems)
+        .distinctUntilChanged()
+
+    private val showPartiallyPlayedItems = BehaviorProcessor.create<Boolean>()
+    private val showPartiallyPlayedItemsFlowable = showPartiallyPlayedItems
+        .startWithItem(initialShowPartiallyPlayedItems)
+        .distinctUntilChanged()
+
+    private val showFutureItems = BehaviorProcessor.create<Boolean>()
+    private val showFutureItemsFlowable = showFutureItems
+        .startWithItem(initialShowFutureItems)
+        .distinctUntilChanged()
+
+    private val mutableStateLiveData = MutableLiveData<FeedState>()
+    val stateLiveData: LiveData<FeedState> = mutableStateLiveData
+
+    private var combineDisposable = Flowable
+        .combineLatest(
+            FeedEventManager.events(),
+            showPlayedItemsFlowable,
+            showPartiallyPlayedItemsFlowable,
+            showFutureItemsFlowable,
+            feedDatabaseManager.notLoadedCount(groupId),
+            feedDatabaseManager.oldestSubscriptionUpdate(groupId),
+
+            Function6 {
+                    t1: FeedEventManager.Event,
+                    t2: Boolean,
+                    t3: Boolean,
+                    t4: Boolean,
+                    t5: Long,
+                    t6: List<OffsetDateTime?>
+                ->
+                return@Function6 CombineResultEventHolder(t1, t2, t3, t4, t5, t6.firstOrNull())
+            }
+        )
+        .throttleLatest(DEFAULT_THROTTLE_TIMEOUT, TimeUnit.MILLISECONDS)
+        .subscribeOn(Schedulers.io())
+        .observeOn(Schedulers.io())
+        .map { (event, showPlayedItems, showPartiallyPlayedItems, showFutureItems, notLoadedCount, oldestUpdate) ->
+            val streamItems = if (event is FeedEventManager.Event.SuccessResultEvent || event is FeedEventManager.Event.IdleEvent) {
+                feedDatabaseManager
+                    .getStreams(groupId, showPlayedItems, showPartiallyPlayedItems, showFutureItems)
+                    .blockingGet(arrayListOf())
+            } else {
+                arrayListOf()
+            }
+
+            CombineResultDataHolder(event, streamItems, notLoadedCount, oldestUpdate)
+        }
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribe { (event, listFromDB, notLoadedCount, oldestUpdate) ->
+            mutableStateLiveData.postValue(
+                when (event) {
+                    is FeedEventManager.Event.IdleEvent -> FeedState.LoadedState(listFromDB.map { e ->
+                        StreamItem(
+                            e
+                        )
+                    }, oldestUpdate, notLoadedCount, listOf())
+                    is FeedEventManager.Event.ProgressEvent -> FeedState.ProgressState(event.currentProgress, event.maxProgress, event.progressMessage)
+                    is FeedEventManager.Event.SuccessResultEvent -> FeedState.LoadedState(listFromDB.map { e ->
+                        StreamItem(
+                            e
+                        )
+                    }, oldestUpdate, notLoadedCount, event.itemsErrors)
+                    is FeedEventManager.Event.ErrorResultEvent -> FeedState.ErrorState(event.error)
+                }
+            )
+
+            if (event is FeedEventManager.Event.ErrorResultEvent || event is FeedEventManager.Event.SuccessResultEvent) {
+                FeedEventManager.reset()
+            }
+        }
+
+    override fun onCleared() {
+        super.onCleared()
+        combineDisposable.dispose()
+    }
+
+    private data class CombineResultEventHolder(
+        val t1: FeedEventManager.Event,
+        val t2: Boolean,
+        val t3: Boolean,
+        val t4: Boolean,
+        val t5: Long,
+        val t6: OffsetDateTime?
+    )
+
+    private data class CombineResultDataHolder(
+        val t1: FeedEventManager.Event,
+        val t2: List<StreamWithState>,
+        val t3: Long,
+        val t4: OffsetDateTime?
+    )
+
+    fun setSaveShowPlayedItems(showPlayedItems: Boolean) {
+        this.showPlayedItems.onNext(showPlayedItems)
+        PreferenceManager.getDefaultSharedPreferences(application).edit {
+            putBoolean(application.getString(R.string.feed_show_watched_items_key), showPlayedItems)
+        }
+    }
+
+    fun getShowPlayedItemsFromPreferences() = getShowPlayedItemsFromPreferences(application)
+
+    fun setSaveShowPartiallyPlayedItems(showPartiallyPlayedItems: Boolean) {
+        this.showPartiallyPlayedItems.onNext(showPartiallyPlayedItems)
+        PreferenceManager.getDefaultSharedPreferences(application).edit {
+            putBoolean(application.getString(R.string.feed_show_partially_watched_items_key), showPartiallyPlayedItems)
+        }
+    }
+
+    fun getShowPartiallyPlayedItemsFromPreferences() = getShowPartiallyPlayedItemsFromPreferences(application)
+
+    fun setSaveShowFutureItems(showFutureItems: Boolean) {
+        this.showFutureItems.onNext(showFutureItems)
+        PreferenceManager.getDefaultSharedPreferences(application).edit {
+            putBoolean(application.getString(R.string.feed_show_future_items_key), showFutureItems)
+        }
+    }
+
+    fun getShowFutureItemsFromPreferences() = getShowFutureItemsFromPreferences(application)
+
+    companion object {
+        private fun getShowPlayedItemsFromPreferences(context: Context) = PreferenceManager.getDefaultSharedPreferences(context)
+            .getBoolean(context.getString(R.string.feed_show_watched_items_key), true)
+
+        private fun getShowPartiallyPlayedItemsFromPreferences(context: Context) = PreferenceManager.getDefaultSharedPreferences(context)
+            .getBoolean(context.getString(R.string.feed_show_partially_watched_items_key), true)
+
+        private fun getShowFutureItemsFromPreferences(context: Context) = PreferenceManager.getDefaultSharedPreferences(context)
+            .getBoolean(context.getString(R.string.feed_show_future_items_key), true)
+
+        fun getFactory(context: Context, groupId: Long) = viewModelFactory {
+            initializer {
+                FeedViewModel(
+                    App.Companion.instance,
+                    groupId,
+                    // Read initial value from preferences
+                    getShowPlayedItemsFromPreferences(context.applicationContext),
+                    getShowPartiallyPlayedItemsFromPreferences(context.applicationContext),
+                    getShowFutureItemsFromPreferences(context.applicationContext)
+                )
+            }
+        }
+    }
+}

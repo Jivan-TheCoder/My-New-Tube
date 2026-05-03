@@ -5,6 +5,8 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
+import com.playtube.protube.video.music.player.playqueue.PlayQueueItem;
+
 public class PlayQueueItemTest {
 
     public static final String URL = "MY_URL";

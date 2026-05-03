@@ -1,5 +1,7 @@
 package org.schabi.newpipe.ktx
 
+import com.playtube.protube.video.music.ktx.hasAssignableCause
+import com.playtube.protube.video.music.ktx.hasExactCause
 import java.io.IOException
 import java.io.InterruptedIOException
 import java.net.SocketException

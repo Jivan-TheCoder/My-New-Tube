@@ -1,16 +1,11 @@
-/*
- * SPDX-FileCopyrightText: 2022-2024 NewPipe contributors <https://newpipe.net>
- * SPDX-FileCopyrightText: 2025 NewPipe e.V. <https://newpipe-ev.de>
- * SPDX-License-Identifier: GPL-3.0-or-later
- */
-
 package org.schabi.newpipe.database.playlist
 
+import com.playtube.protube.video.music.database.playlist.PlaylistMetadataEntry
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
-import org.schabi.newpipe.database.playlist.model.PlaylistRemoteEntity
-import org.schabi.newpipe.local.bookmark.MergedPlaylistManager
+import com.playtube.protube.video.music.database.playlist.model.PlaylistRemoteEntity
+import com.playtube.protube.video.music.local.bookmark.MergedPlaylistManager
 
 class PlaylistLocalItemTest {
 

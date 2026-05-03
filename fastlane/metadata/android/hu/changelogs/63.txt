@@ -1,4 +1,3 @@
-### Fejlesztések
 - Beállítások importálása/exportálása #1333 
 - Túlrajzolás csökkentése (teljesítménybeli javítás) #1371 
 - Apró kódfejlesztések #1375 

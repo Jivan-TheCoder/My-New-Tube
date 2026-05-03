@@ -1,4 +1,3 @@
-#Nouveautés :
 -Identifier dates et étiquettes dans la description
 -Ajout des paramètres manuels du mode tablette
 -Possibilité de masquer l'élément en cours dans le flux

@@ -1,5 +1,6 @@
 package org.schabi.newpipe.error
 
+import com.playtube.protube.video.music.error.ReCaptchaActivity
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

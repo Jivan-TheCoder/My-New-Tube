@@ -1,4 +1,3 @@
-### Mới
 - Nhấn và giữ để xóa và chia sẻ trong đăng ký #1516
 - Giao diện người dùng máy tính bảng và bố cục danh sách lưới #1617
 

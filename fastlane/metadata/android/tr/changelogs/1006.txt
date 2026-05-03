@@ -1,5 +1,3 @@
-# Geliştirmeler (Improved)
-
 * Zaman damgalarına tıklandığında mevcut oynatıcıyı koru.
 * Mümkün olduğunda bekleyen indirme görevlerini kurtarmayı dene.
 * Dosyayı silmeden sadece indirme kaydını silme seçeneği ekle.

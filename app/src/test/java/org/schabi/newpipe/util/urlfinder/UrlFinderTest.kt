@@ -1,5 +1,6 @@
 package org.schabi.newpipe.util.urlfinder
 
+import com.playtube.protube.video.music.util.urlfinder.UrlFinder
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

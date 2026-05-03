@@ -7,6 +7,8 @@ import java.util.Set;
 
 import static org.junit.Assert.assertTrue;
 
+import com.playtube.protube.video.music.settings.tabs.Tab;
+
 public class TabTest {
     @Test
     public void checkIdDuplication() {

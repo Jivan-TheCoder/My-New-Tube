@@ -7,8 +7,8 @@ import kotlin.math.abs
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
-import org.schabi.newpipe.util.ReleaseVersionUtil.coerceUpdateCheckExpiry
-import org.schabi.newpipe.util.ReleaseVersionUtil.isLastUpdateCheckExpired
+import com.playtube.protube.video.music.util.ReleaseVersionUtil.coerceUpdateCheckExpiry
+import com.playtube.protube.video.music.util.ReleaseVersionUtil.isLastUpdateCheckExpired
 
 class NewVersionManagerTest {
 

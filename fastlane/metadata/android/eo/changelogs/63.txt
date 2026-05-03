@@ -1,4 +1,3 @@
-### Plibonigojn
 - Importi/eksporti konfiguraĵojn #1333
 - Malpliigi superdesegnaĵon (rendimentan plibonigon) #1371
 - Malgrandajn kodajn plibonigojn #1375

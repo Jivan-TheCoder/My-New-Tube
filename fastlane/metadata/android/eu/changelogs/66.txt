@@ -1,5 +1,3 @@
-# 0.13.7 bertsioaren aldaketa-erregistroa
-### Konpondua
 - Ordenazio-iragazkiak
 
 # 0.13.6 bertsioaren aldaketa-erregistroa

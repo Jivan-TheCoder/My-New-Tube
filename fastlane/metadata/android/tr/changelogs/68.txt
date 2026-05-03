@@ -1,6 +1,3 @@
-# v0.14.1 değişiklikleri
-
-### Düzeltmeler
 - Video url'sinin şifresinin çözülememesi düzeltildi #1659 
 - Sabit açıklama bağlantısı iyi açılamıyor #1657
 

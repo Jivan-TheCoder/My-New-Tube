@@ -1,4 +1,4 @@
-package org.schabi.newpipe.settings;
+package com.playtube.protube.video.music.settings;
 
 import android.content.Intent;
 

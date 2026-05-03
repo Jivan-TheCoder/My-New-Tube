@@ -1,4 +1,3 @@
-### Yeni 
 - Uzun kliklə silin və abunəliklərdə paylaşın #1516 - Planşet UI və şəbəkə siyahısı tərtibatı #1617 
 
 ### Təkmilləşdirmələr 

@@ -1,5 +1,3 @@
-### Cải thiện:
-
 - Tắt hoạt ảnh biểu tượng burgermenu #1486
 - Hoàn tác xóa các bản tải xuống # 1472
 - Tùy chọn tải xuống trong menu chia sẻ #1498

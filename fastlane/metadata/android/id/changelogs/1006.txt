@@ -1,4 +1,3 @@
-# Peningkatan
 Pertahankan pemutar saat ini ketika mengklik stempel waktu
 Cobalah untuk memulihkan misi pengunduhan yang tertunda jika memungkinkan
 Tambahkan opsi untuk menghapus unduhan tanpa ikut menghapus berkas

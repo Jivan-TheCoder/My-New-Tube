@@ -1,4 +1,3 @@
-#### Patobulinimai
 - Pridėta galimybė apriboti vaizdo įrašo kokybę, jei naudojate mobiliuosius duomenis. #1339
 - Prisiminti sesijos ryškumą #1442
 - Pagerintas atsisiuntimo našumas silpnesniems procesoriams #1431

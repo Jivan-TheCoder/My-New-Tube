@@ -28,7 +28,7 @@
         android:required="false" />
 
     <application
-        android:name=".App"
+        android:name="com.playtube.protube.video.music.App"
         android:allowBackup="true"
         android:banner="@mipmap/newpipe_tv_banner"
         android:hardwareAccelerated="true"
@@ -41,10 +41,10 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
         <activity
-            android:name=".activities.ThanksActivity"
+            android:name="com.playtube.protube.video.music.activities.ThanksActivity"
             android:exported="false" />
         <activity
-            android:name=".ads.SplashActivity"
+            android:name="com.playtube.protube.video.music.ads.SplashActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:launchMode="singleTask"
@@ -57,7 +57,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.MainActivity"
+            android:name="com.playtube.protube.video.music.activities.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:launchMode="singleTask" />
@@ -79,7 +79,7 @@
                 android:value="true" />
         </service>
         <service
-            android:name=".player.PlayerService"
+            android:name="com.playtube.protube.video.music.player.PlayerService"
             android:exported="true"
             android:foregroundServiceType="mediaPlayback">
             <intent-filter>
@@ -91,17 +91,17 @@
         </service>
 
         <activity
-            android:name=".player.PlayQueueActivity"
+            android:name="com.playtube.protube.video.music.player.PlayQueueActivity"
             android:exported="false"
             android:label="@string/title_activity_play_queue"
             android:launchMode="singleTask" />
         <activity
-            android:name=".settings.SettingsActivity"
+            android:name="com.playtube.protube.video.music.settings.SettingsActivity"
             android:exported="false"
             android:label="@string/settings" />
 
         <service
-            android:name=".local.feed.service.FeedLoadService"
+            android:name="com.playtube.protube.video.music.local.feed.service.FeedLoadService"
             android:foregroundServiceType="dataSync" />
         <service
             android:name="androidx.work.impl.foreground.SystemForegroundService"
@@ -109,7 +109,7 @@
             tools:node="merge" />
 
         <activity
-            android:name=".activities.PanicResponderActivity"
+            android:name="com.playtube.protube.video.music.activities.PanicResponderActivity"
             android:exported="true"
             android:launchMode="singleInstance"
             android:noHistory="true"
@@ -121,15 +121,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.ExitActivity"
+            android:name="com.playtube.protube.video.music.activities.ExitActivity"
             android:exported="false"
             android:label="@string/general_error"
             android:theme="@android:style/Theme.NoDisplay" />
         <activity
-            android:name=".error.ErrorActivity"
+            android:name="com.playtube.protube.video.music.error.ErrorActivity"
             android:exported="false" /> <!-- giga get related -->
         <activity
-            android:name=".download.DownloadActivity"
+            android:name="com.playtube.protube.video.music.download.DownloadActivity"
             android:exported="false"
             android:label="@string/app_name"
             android:launchMode="singleTask" />
@@ -139,7 +139,7 @@
             android:foregroundServiceType="dataSync" />
 
         <activity
-            android:name=".util.FilePickerActivityHelper"
+            android:name="com.playtube.protube.video.music.util.FilePickerActivityHelper"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/FilePickerThemeDark">
@@ -150,7 +150,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".error.ReCaptchaActivity"
+            android:name="com.playtube.protube.video.music.error.ReCaptchaActivity"
             android:exported="false"
             android:label="@string/recaptcha" />
 
@@ -165,7 +165,7 @@
         </provider>
 
         <activity
-            android:name=".activities.RouterActivity"
+            android:name="com.playtube.protube.video.music.activities.RouterActivity"
             android:excludeFromRecents="true"
             android:exported="true"
             android:label="@string/preferred_open_action_share_menu_title"
@@ -251,7 +251,7 @@
         </activity>
 
         <service
-            android:name=".activities.RouterActivity$FetcherService"
+            android:name="com.playtube.protube.video.music.activities.RouterActivity$FetcherService"
             android:exported="false"
             android:foregroundServiceType="dataSync" /> <!-- opting out of sending metrics to Google in Android System WebView -->
         <meta-data

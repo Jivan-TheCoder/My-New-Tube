@@ -1,5 +1,3 @@
-### Improvements
-
 - Disable burgermenu icon animation #1486 
 - undo delete of downloads #1472 
 - Download option in share menu #1498

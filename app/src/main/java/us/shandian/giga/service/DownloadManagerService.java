@@ -1,7 +1,6 @@
 package us.shandian.giga.service;
 
-import static org.schabi.newpipe.BuildConfig.APPLICATION_ID;
-import static org.schabi.newpipe.BuildConfig.DEBUG;
+import static com.playtube.protube.video.music.BuildConfig.APPLICATION_ID;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -38,13 +37,13 @@ import androidx.core.content.ContextCompat;
 import androidx.core.content.IntentCompat;
 import androidx.preference.PreferenceManager;
 
-import org.schabi.newpipe.R;
-import org.schabi.newpipe.download.DownloadActivity;
+import com.playtube.protube.video.music.R;
+import com.playtube.protube.video.music.download.DownloadActivity;
 import org.schabi.newpipe.extractor.stream.StreamInfo;
-import org.schabi.newpipe.player.helper.LockManager;
-import org.schabi.newpipe.streams.io.StoredDirectoryHelper;
-import org.schabi.newpipe.streams.io.StoredFileHelper;
-import org.schabi.newpipe.util.Localization;
+import com.playtube.protube.video.music.player.helper.LockManager;
+import com.playtube.protube.video.music.streams.io.StoredDirectoryHelper;
+import com.playtube.protube.video.music.streams.io.StoredFileHelper;
+import com.playtube.protube.video.music.util.Localization;
 
 import java.io.File;
 import java.io.IOException;

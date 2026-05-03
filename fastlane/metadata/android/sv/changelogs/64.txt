@@ -1,4 +1,3 @@
-### Förbättringar
 - La till möjligheten all begränsa videokvaliteten vid användning av mobildata. #1339
 - Kom ihåg ljusstyrka för sessionen #1442
 - Förbättra nedladdningsprestandan på svagare CPUs #1431

@@ -1,4 +1,3 @@
-### New
 - Long-tap delete and share in subscriptions #1516 
 - Tablet UI and grid list layout #1617 
 

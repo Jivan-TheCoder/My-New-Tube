@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".error.ErrorActivity">
+    tools:context="com.playtube.protube.video.music.error.ErrorActivity">
 
     <include
         layout="@layout/toolbar_layout"
@@ -26,7 +26,7 @@
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingBottom="@dimen/activity_vertical_margin">
 
-            <org.schabi.newpipe.views.NewPipeTextView
+            <com.playtube.protube.video.music.views.NewPipeTextView
                 android:id="@+id/errorSorryView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textStyle="bold" />
 
-            <org.schabi.newpipe.views.NewPipeTextView
+            <com.playtube.protube.video.music.views.NewPipeTextView
                 android:id="@+id/whatHappenedHeadlineView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -43,14 +43,14 @@
                 android:text="@string/what_happened_headline"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
-            <org.schabi.newpipe.views.NewPipeTextView
+            <com.playtube.protube.video.music.views.NewPipeTextView
                 android:id="@+id/errorMessageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/info_labels"
                 android:textColor="?attr/colorAccent" />
 
-            <org.schabi.newpipe.views.NewPipeTextView
+            <com.playtube.protube.video.music.views.NewPipeTextView
                 android:id="@+id/whatDeviceHeadlineView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <org.schabi.newpipe.views.NewPipeTextView
+                <com.playtube.protube.video.music.views.NewPipeTextView
                     android:id="@+id/errorInfoLabelsView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -76,7 +76,7 @@
                     android:layout_height="wrap_content"
                     android:paddingLeft="16dp">
 
-                    <org.schabi.newpipe.views.NewPipeTextView
+                    <com.playtube.protube.video.music.views.NewPipeTextView
                         android:id="@+id/errorInfosView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
@@ -85,7 +85,7 @@
 
             </LinearLayout>
 
-            <org.schabi.newpipe.views.NewPipeTextView
+            <com.playtube.protube.video.music.views.NewPipeTextView
                 android:id="@+id/errorDetailsHeadlineView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center">
 
-                <org.schabi.newpipe.views.NewPipeTextView
+                <com.playtube.protube.video.music.views.NewPipeTextView
                     android:id="@+id/errorView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -106,7 +106,7 @@
                     android:typeface="monospace" />
             </HorizontalScrollView>
 
-            <org.schabi.newpipe.views.NewPipeTextView
+            <com.playtube.protube.video.music.views.NewPipeTextView
                 android:id="@+id/yourCommentHeadlineView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -114,13 +114,13 @@
                 android:text="@string/your_comment"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
-            <org.schabi.newpipe.views.NewPipeEditText
+            <com.playtube.protube.video.music.views.NewPipeEditText
                 android:id="@+id/errorCommentBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="" />
 
-            <org.schabi.newpipe.views.NewPipeTextView
+            <com.playtube.protube.video.music.views.NewPipeTextView
                 android:id="@+id/errorGithubNoticeView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

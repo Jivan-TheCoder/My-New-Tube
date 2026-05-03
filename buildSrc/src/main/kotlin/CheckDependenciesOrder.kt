@@ -1,9 +1,3 @@
-/*
- * SPDX-FileCopyrightText: 2024 NewPipe contributors <https://newpipe.net>
- * SPDX-FileCopyrightText: 2025 NewPipe e.V. <https://newpipe-ev.de>
- * SPDX-License-Identifier: GPL-3.0-or-later
- */
-
 import org.gradle.api.DefaultTask
 import org.gradle.api.file.RegularFileProperty
 import org.gradle.api.tasks.InputFile

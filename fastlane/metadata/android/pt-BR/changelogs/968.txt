@@ -1,4 +1,3 @@
-# Melhorias
 * Detalhes do canal adicionados ao menu de toque longo.
 * Agora é possível renomear playlists diretamente pela interface.
 * Permite pausar o vídeo mesmo durante o carregamento (buffering).

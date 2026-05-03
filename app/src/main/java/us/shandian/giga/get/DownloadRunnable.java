@@ -2,7 +2,7 @@ package us.shandian.giga.get;
 
 import android.util.Log;
 
-import org.schabi.newpipe.streams.io.SharpStream;
+import com.playtube.protube.video.music.streams.io.SharpStream;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,7 +13,6 @@ import java.util.Objects;
 import us.shandian.giga.get.DownloadMission.Block;
 import us.shandian.giga.get.DownloadMission.HttpError;
 
-import static org.schabi.newpipe.BuildConfig.DEBUG;
 import static us.shandian.giga.get.DownloadMission.ERROR_HTTP_FORBIDDEN;
 
 
@@ -94,7 +93,7 @@ public class DownloadRunnable extends Thread {
 
                 // The server may be ignoring the range request
                 if (mConn.getResponseCode() != 206) {
-                    if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                    if (com.playtube.protube.video.music.BuildConfig.DEBUG) {
                         Log.e(TAG, mId + ":Unsupported " + mConn.getResponseCode());
                     }
                     mMission.notifyError(new DownloadMission.HttpError(mConn.getResponseCode()));

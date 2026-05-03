@@ -1,4 +1,3 @@
-### Poboljšanja
 * Dodana obavijest o ažuriranju aplikacije za GitHub verziju (#1608 od @krtkush)
 * Različita poboljšanja programa za preuzimanje (#1944 od @kapodamy):
 * dodane nedostajuće bijele ikone i korištenje ugrađenog načina za promjenu boja ikona

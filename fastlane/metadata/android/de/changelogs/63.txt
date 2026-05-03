@@ -1,4 +1,3 @@
-### Verbesserungen
 - Import/Export-Einstellungen #1333 
 - Reduzierung der Überzeichnung (Leistungsverbesserung) #1371 
 - Kleine Codeverbesserungen #1375 

@@ -1,4 +1,3 @@
-### Usprawnienia
 - Ustawienia importu/eksportu #1333
 - Redukcja przerysowań (poprawa wydajności) #1371
 - Małe poprawki kodu #1375

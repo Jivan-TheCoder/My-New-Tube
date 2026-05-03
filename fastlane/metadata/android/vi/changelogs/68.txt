@@ -1,6 +1,3 @@
-# Thay đổi
-
-### v0.14.1
 Đã sửa
 • Lỗi không giải mã được URL video (#1659)
 • Lỗi liên kết trong mô tả video (#1657)

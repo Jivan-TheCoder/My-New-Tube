@@ -1,6 +1,3 @@
-# mudanças da v0.14.1
-
-### fixo
 - Fixo falhou em desencriptar a url de vídeo #1659 
 - Ligação de descrição fixa não extraída bem #1657
 

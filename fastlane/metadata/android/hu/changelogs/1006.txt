@@ -1,4 +1,3 @@
-# Továbbfejlesztve
 Az aktuális lejátszó megmarad időbélyegre kattintáskor
 Függőben lévő letöltések helyreállításának megkísérlése
 Letöltés törlése a fájl megtartásával

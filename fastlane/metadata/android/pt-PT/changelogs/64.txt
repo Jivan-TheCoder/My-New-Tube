@@ -1,4 +1,3 @@
-#### Melhorias
 - Adicionada a capacidade de limitar a qualidade do vídeo se usar dados móveis. #1339
 - Lembra-se do brilho para a sessão #1442
 - Melhora o desempenho de descarregar para CPUs mais fracas #1431

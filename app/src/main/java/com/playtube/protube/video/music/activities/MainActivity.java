@@ -1,0 +1,871 @@
+package com.playtube.protube.video.music.activities;
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.widget.FrameLayout;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentContainerView;
+import androidx.fragment.app.FragmentManager;
+import androidx.preference.PreferenceManager;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.play.core.appupdate.AppUpdateInfo;
+import com.google.android.play.core.appupdate.AppUpdateManager;
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
+import com.google.android.play.core.appupdate.AppUpdateOptions;
+import com.google.android.play.core.install.model.AppUpdateType;
+import com.google.android.play.core.install.model.UpdateAvailability;
+
+import com.playtube.protube.video.music.AppMode;
+import com.playtube.protube.video.music.R;
+import com.playtube.protube.video.music.ads.AdUtils;
+import com.playtube.protube.video.music.ads.ExitDialogManager;
+import com.playtube.protube.video.music.ads.RatingManager;
+import com.playtube.protube.video.music.databinding.ActivityMainBinding;
+import com.playtube.protube.video.music.databinding.DrawerHeaderBinding;
+import com.playtube.protube.video.music.databinding.DrawerLayoutBinding;
+import com.playtube.protube.video.music.databinding.ToolbarLayoutBinding;
+import com.playtube.protube.video.music.error.ErrorUtil;
+import org.schabi.newpipe.extractor.NewPipe;
+import org.schabi.newpipe.extractor.StreamingService;
+import org.schabi.newpipe.extractor.comments.CommentsInfoItem;
+import org.schabi.newpipe.extractor.exceptions.ExtractionException;
+import com.playtube.protube.video.music.fragments.BackPressable;
+import com.playtube.protube.video.music.fragments.MainFragment;
+import com.playtube.protube.video.music.fragments.detail.VideoDetailFragment;
+import com.playtube.protube.video.music.fragments.list.comments.CommentRepliesFragment;
+import com.playtube.protube.video.music.fragments.list.search.SearchFragment;
+import com.playtube.protube.video.music.player.Player;
+import com.playtube.protube.video.music.player.event.OnKeyDownListener;
+import com.playtube.protube.video.music.player.helper.PlayerHolder;
+import com.playtube.protube.video.music.player.playqueue.PlayQueue;
+import com.playtube.protube.video.music.settings.migration.MigrationManager;
+import com.playtube.protube.video.music.util.Constants;
+import com.playtube.protube.video.music.util.DeviceUtils;
+import com.playtube.protube.video.music.util.KioskTranslator;
+import com.playtube.protube.video.music.util.Localization;
+import com.playtube.protube.video.music.util.NavigationHelper;
+import com.playtube.protube.video.music.util.PermissionHelper;
+import com.playtube.protube.video.music.util.SerializedCache;
+import com.playtube.protube.video.music.util.ServiceHelper;
+import com.playtube.protube.video.music.util.StateSaver;
+import com.playtube.protube.video.music.util.ThemeHelper;
+import com.playtube.protube.video.music.util.external_communication.ShareUtils;
+import com.playtube.protube.video.music.views.FocusOverlayView;
+
+import java.util.Objects;
+
+public class MainActivity extends AppCompatActivity {
+    private ActivityMainBinding mainBinding;
+    private DrawerHeaderBinding drawerHeaderBinding;
+    private DrawerLayoutBinding drawerLayoutBinding;
+    private ToolbarLayoutBinding toolbarLayoutBinding;
+
+    private ActionBarDrawerToggle toggle;
+
+    private BroadcastReceiver broadcastReceiver;
+
+    private static final int ITEM_ID_SUBSCRIPTIONS = -1;
+    private static final int ITEM_ID_FEED = -2;
+    private static final int ITEM_ID_BOOKMARKS = -3;
+    private static final int ITEM_ID_DOWNLOADS = -4;
+    private static final int ITEM_ID_HISTORY = -5;
+    private static final int ITEM_ID_SETTINGS = 0;
+    private static final int ITEM_ID_RATE_APP = 1;
+    private static final int ITEM_ID_SHARE_APP = 2;
+    private static final String[] REMOTE_DRAWER_KIOSKS = new String[]{"trending_gaming", "trending_music"};
+
+    private static final int ORDER = 0;
+    public static final String KEY_IS_IN_BACKGROUND = "is_in_background";
+    public static final String EXTRA_USE_EXTRACTOR = "use_extractor_mode";
+
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor sharedPrefEditor;
+    private AppUpdateManager appUpdateManager;
+    private static final int IN_APP_UPDATE_REQUEST_CODE = 9123;
+    private boolean isRateDialogShown = false;
+
+    @Override
+    protected void onCreate(final Bundle savedInstanceState) {
+
+        Localization.migrateAppLanguageSettingIfNecessary(getApplicationContext());
+        ThemeHelper.setDayNightMode(this);
+        ThemeHelper.setTheme(this, ServiceHelper.getSelectedServiceId(this));
+
+        if (DeviceUtils.supportsWebView()) {
+            try {
+                new WebView(this);
+            } catch (final Throwable e) {
+                // Ignore WebView init issues; app can still run.
+            }
+        }
+
+        super.onCreate(savedInstanceState);
+
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        sharedPrefEditor = sharedPreferences.edit();
+
+        isRateDialogShown = RatingManager.getRating(MainActivity.this);
+
+        mainBinding = ActivityMainBinding.inflate(getLayoutInflater());
+        drawerLayoutBinding = mainBinding.drawerLayout;
+        drawerHeaderBinding = DrawerHeaderBinding.bind(drawerLayoutBinding.navigation.getHeaderView(0));
+        toolbarLayoutBinding = mainBinding.toolbarLayout;
+        setContentView(mainBinding.getRoot());
+
+        if (getSupportFragmentManager().getBackStackEntryCount() == 0) {
+            initFragments();
+        }
+
+        setSupportActionBar(toolbarLayoutBinding.toolbar);
+        try {
+            setupDrawer();
+        } catch (final Exception e) {
+            ErrorUtil.showUiErrorSnackbar(this, "Setting up drawer", e);
+        }
+        if (DeviceUtils.isTv(this)) {
+            FocusOverlayView.setupFocusObserver(this);
+        }
+        openMiniPlayerUponPlayerStarted();
+
+        MigrationManager.showUserInfoIfPresent(this);
+
+
+        appUpdateManager = AppUpdateManagerFactory.create(this);
+        checkForAppUpdate();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        sharedPrefEditor.putBoolean(KEY_IS_IN_BACKGROUND, false).apply();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        sharedPrefEditor.putBoolean(KEY_IS_IN_BACKGROUND, true).apply();
+    }
+
+    private void setupDrawer() throws ExtractionException {
+        addDrawerMenuForCurrentService();
+
+        toggle = new ActionBarDrawerToggle(this, mainBinding.getRoot(), toolbarLayoutBinding.toolbar, R.string.drawer_open, R.string.drawer_close);
+        toggle.syncState();
+        mainBinding.getRoot().addDrawerListener(toggle);
+        mainBinding.getRoot().addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
+            private int lastService;
+
+            @Override
+            public void onDrawerOpened(final View drawerView) {
+                lastService = ServiceHelper.getSelectedServiceId(MainActivity.this);
+            }
+
+            @Override
+            public void onDrawerClosed(final View drawerView) {
+                if (lastService != ServiceHelper.getSelectedServiceId(MainActivity.this)) {
+                    ActivityCompat.recreate(MainActivity.this);
+                }
+            }
+        });
+
+        drawerLayoutBinding.navigation.setNavigationItemSelectedListener(this::drawerItemSelected);
+        setupDrawerHeader();
+    }
+
+    /**
+     * Builds the drawer menu for the current service.
+     *
+     * @throws ExtractionException if the service didn't provide available kiosks
+     */
+    private void addDrawerMenuForCurrentService() throws ExtractionException {
+        if (AppMode.USE_EXTRACTOR) {
+            //Tabs
+            drawerLayoutBinding.navigation.getMenu().add(R.id.menu_tabs_group, ITEM_ID_SUBSCRIPTIONS, ORDER, R.string.tab_subscriptions).setIcon(R.drawable.ic_tv);
+            drawerLayoutBinding.navigation.getMenu().add(R.id.menu_tabs_group, ITEM_ID_FEED, ORDER, R.string.fragment_feed_title).setIcon(R.drawable.ic_subscriptions);
+            drawerLayoutBinding.navigation.getMenu().add(R.id.menu_tabs_group, ITEM_ID_BOOKMARKS, ORDER, R.string.tab_bookmarks).setIcon(R.drawable.ic_bookmark);
+            drawerLayoutBinding.navigation.getMenu().add(R.id.menu_tabs_group, ITEM_ID_DOWNLOADS, ORDER, R.string.downloads).setIcon(R.drawable.ic_file_download);
+            drawerLayoutBinding.navigation.getMenu().add(R.id.menu_tabs_group, ITEM_ID_HISTORY, ORDER, R.string.action_history).setIcon(R.drawable.ic_history);
+        }
+
+        //Kiosks
+        if (AppMode.USE_EXTRACTOR) {
+            final int currentServiceId = ServiceHelper.getSelectedServiceId(this);
+            final StreamingService service = NewPipe.getService(currentServiceId);
+
+            int kioskMenuItemId = 0;
+            for (final String ks : service.getKioskList().getAvailableKiosks()) {
+                if (shouldHideDrawerKiosk(ks)) {
+                    continue;
+                }
+                drawerLayoutBinding.navigation.getMenu().add(R.id.menu_kiosks_group, kioskMenuItemId, 0, KioskTranslator.getTranslatedKioskName(ks, this)).setIcon(KioskTranslator.getKioskIcon(ks));
+                kioskMenuItemId++;
+            }
+        } else {
+            for (int i = 0; i < REMOTE_DRAWER_KIOSKS.length; i++) {
+                final String kioskId = REMOTE_DRAWER_KIOSKS[i];
+                drawerLayoutBinding.navigation.getMenu().add(R.id.menu_kiosks_group, i, 0, KioskTranslator.getTranslatedKioskName(kioskId, this)).setIcon(KioskTranslator.getKioskIcon(kioskId));
+            }
+        }
+
+        // Settings
+        drawerLayoutBinding.navigation.getMenu().add(R.id.menu_options_about_group, ITEM_ID_SETTINGS, ORDER, R.string.settings).setIcon(R.drawable.ic_settings);
+        drawerLayoutBinding.navigation.getMenu().add(R.id.menu_options_about_group, ITEM_ID_RATE_APP, ORDER, R.string.rate_app).setIcon(R.drawable.ic_star_filled);
+        drawerLayoutBinding.navigation.getMenu().add(R.id.menu_options_about_group, ITEM_ID_SHARE_APP, ORDER, R.string.share_app).setIcon(R.drawable.ic_share);
+    }
+
+    private boolean drawerItemSelected(final MenuItem item) {
+        final int groupId = item.getGroupId();
+        if (groupId == R.id.menu_tabs_group) {
+            AdUtils.ClickWithAds(this, new AdUtils.InterClick() {
+                @Override
+                public void ClickAds() {
+                    tabSelected(item);
+                }
+            });
+        } else if (groupId == R.id.menu_kiosks_group) {
+            AdUtils.ClickWithAds(this, new AdUtils.InterClick() {
+                @Override
+                public void ClickAds() {
+                    try {
+                        kioskSelected(item);
+                    } catch (final Exception e) {
+                        ErrorUtil.showUiErrorSnackbar(MainActivity.this, "Selecting drawer kiosk", e);
+                    }
+                }
+            });
+        } else if (groupId == R.id.menu_options_about_group) {
+            optionsAboutSelected(item);
+        } else {
+            return false;
+        }
+
+        mainBinding.getRoot().closeDrawers();
+        return true;
+    }
+
+    private void changeService(final MenuItem item) {
+        drawerLayoutBinding.navigation.getMenu().getItem(ServiceHelper.getSelectedServiceId(this)).setChecked(false);
+        ServiceHelper.setSelectedServiceId(this, item.getItemId());
+        drawerLayoutBinding.navigation.getMenu().getItem(ServiceHelper.getSelectedServiceId(this)).setChecked(true);
+    }
+
+    private void tabSelected(final MenuItem item) {
+        switch (item.getItemId()) {
+            case ITEM_ID_SUBSCRIPTIONS:
+                NavigationHelper.openSubscriptionFragment(getSupportFragmentManager());
+                break;
+            case ITEM_ID_FEED:
+                NavigationHelper.openFeedFragment(getSupportFragmentManager());
+                break;
+            case ITEM_ID_BOOKMARKS:
+                NavigationHelper.openBookmarksFragment(getSupportFragmentManager());
+                break;
+            case ITEM_ID_DOWNLOADS:
+                NavigationHelper.openDownloads(this);
+                break;
+            case ITEM_ID_HISTORY:
+                NavigationHelper.openStatisticFragment(getSupportFragmentManager());
+                break;
+        }
+    }
+
+    private void kioskSelected(final MenuItem item) throws ExtractionException {
+        if (!AppMode.USE_EXTRACTOR) {
+            if (item.getItemId() < 0 || item.getItemId() >= REMOTE_DRAWER_KIOSKS.length) {
+                return;
+            }
+            final String kioskId = REMOTE_DRAWER_KIOSKS[item.getItemId()];
+            sharedPrefEditor.putString(Constants.KEY_PENDING_REMOTE_KIOSK_ID, kioskId).apply();
+            switchToRemoteMainTab(kioskId);
+            return;
+        }
+
+        final StreamingService currentService = ServiceHelper.getSelectedService(this);
+        int kioskMenuItemId = 0;
+        for (final String kioskId : currentService.getKioskList().getAvailableKiosks()) {
+            if (shouldHideDrawerKiosk(kioskId)) {
+                continue;
+            }
+            if (kioskMenuItemId == item.getItemId()) {
+                NavigationHelper.openKioskFragment(getSupportFragmentManager(), currentService.getServiceId(), kioskId);
+                break;
+            }
+            kioskMenuItemId++;
+        }
+    }
+
+    private boolean shouldHideDrawerKiosk(@NonNull final String kioskId) {
+        if (!AppMode.USE_EXTRACTOR) {
+            return !isRemoteDrawerKiosk(kioskId);
+        }
+        return "Trending".equals(kioskId);
+    }
+
+    private boolean isRemoteDrawerKiosk(@NonNull final String kioskId) {
+        return "trending_gaming".equals(kioskId) || "trending_music".equals(kioskId);
+    }
+
+    private void optionsAboutSelected(final MenuItem item) {
+        switch (item.getItemId()) {
+            case ITEM_ID_SETTINGS:
+                NavigationHelper.openSettings(this);
+                break;
+            case ITEM_ID_RATE_APP:
+                ShareUtils.installApp(this, getPackageName());
+                break;
+            case ITEM_ID_SHARE_APP:
+                ShareUtils.shareText(this, getString(R.string.app_name), "https://play.google.com/store/apps/details?id=" + getPackageName());
+                break;
+        }
+    }
+
+    private void switchToRemoteMainTab(@NonNull final String kioskId) {
+        final FragmentManager fm = getSupportFragmentManager();
+        NavigationHelper.gotoMainFragment(fm);
+        fm.executePendingTransactions();
+
+        final Fragment fragment = fm.findFragmentById(R.id.fragment_holder);
+        if (fragment instanceof MainFragment) {
+            ((MainFragment) fragment).selectTabByKioskId(kioskId);
+            sharedPrefEditor.remove(Constants.KEY_PENDING_REMOTE_KIOSK_ID).apply();
+        }
+    }
+
+    private void setupDrawerHeader() {
+        drawerHeaderBinding.drawerHeaderActionButton.setOnClickListener(null);
+        drawerHeaderBinding.drawerHeaderActionButton.setEnabled(false);
+
+        // If the current app name is bigger than the default "NewPipe" (7 chars),
+        // let the text view grow a little more as well.
+        if (getString(R.string.app_name).length() > "NewPipe".length()) {
+            final ViewGroup.LayoutParams layoutParams = drawerHeaderBinding.drawerHeaderNewpipeTitle.getLayoutParams();
+            layoutParams.width = ViewGroup.LayoutParams.WRAP_CONTENT;
+            drawerHeaderBinding.drawerHeaderNewpipeTitle.setLayoutParams(layoutParams);
+            drawerHeaderBinding.drawerHeaderNewpipeTitle.setMaxLines(2);
+            drawerHeaderBinding.drawerHeaderNewpipeTitle.setMinWidth(getResources().getDimensionPixelSize(R.dimen.drawer_header_newpipe_title_default_width));
+            drawerHeaderBinding.drawerHeaderNewpipeTitle.setMaxWidth(getResources().getDimensionPixelSize(R.dimen.drawer_header_newpipe_title_max_width));
+        }
+        drawerHeaderBinding.drawerArrow.setVisibility(View.GONE);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (!isChangingConfigurations()) {
+            StateSaver.clearStateFiles();
+        }
+        if (broadcastReceiver != null) {
+            unregisterReceiver(broadcastReceiver);
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        // Change the date format to match the selected language on resume
+        Localization.initPrettyTime(Localization.resolvePrettyTime());
+        super.onResume();
+        resumeImmediateUpdateIfNeeded();
+
+        // Close drawer on return, and don't show animation,
+        // so it looks like the drawer isn't open when the user returns to MainActivity
+        mainBinding.getRoot().closeDrawer(GravityCompat.START, false);
+        try {
+            final int selectedServiceId = ServiceHelper.getSelectedServiceId(this);
+            final String selectedServiceName = NewPipe.getService(selectedServiceId).getServiceInfo().getName();
+            drawerHeaderBinding.drawerHeaderServiceView.setText(selectedServiceName);
+            drawerHeaderBinding.drawerHeaderServiceIcon.setImageResource(ServiceHelper.getIcon(selectedServiceId));
+
+            drawerHeaderBinding.drawerHeaderServiceView.post(() -> drawerHeaderBinding.drawerHeaderServiceView.setSelected(true));
+            drawerHeaderBinding.drawerHeaderActionButton.setContentDescription(getString(R.string.drawer_header_description) + selectedServiceName);
+        } catch (final Exception e) {
+            ErrorUtil.showUiErrorSnackbar(this, "Setting up service toggle", e);
+        }
+
+        if (sharedPreferences.getBoolean(Constants.KEY_THEME_CHANGE, false)) {
+            sharedPrefEditor.putBoolean(Constants.KEY_THEME_CHANGE, false).apply();
+            ActivityCompat.recreate(this);
+        }
+
+        if (sharedPreferences.getBoolean(Constants.KEY_MAIN_PAGE_CHANGE, false)) {
+            sharedPrefEditor.putBoolean(Constants.KEY_MAIN_PAGE_CHANGE, false).apply();
+            NavigationHelper.openMainActivity(this);
+        }
+
+        final boolean isHistoryEnabled = sharedPreferences.getBoolean(getString(R.string.enable_watch_history_key), true);
+        final MenuItem historyItem = drawerLayoutBinding.navigation.getMenu().findItem(ITEM_ID_HISTORY);
+        if (historyItem != null) {
+            historyItem.setVisible(isHistoryEnabled && AppMode.USE_EXTRACTOR);
+        }
+
+        updateDrawerNavigation();
+    }
+
+    private void checkForAppUpdate() {
+        if (appUpdateManager == null) {
+            return;
+        }
+
+        final Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
+        appUpdateInfoTask.addOnSuccessListener(new OnSuccessListener<AppUpdateInfo>() {
+            @Override
+            public void onSuccess(final AppUpdateInfo appUpdateInfo) {
+                if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
+                    try {
+                        appUpdateManager.startUpdateFlow(appUpdateInfo, MainActivity.this, AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build());
+                    } catch (final Exception e) {
+                        Log.e("MainActivity", "Failed to start immediate in-app update", e);
+                    }
+                }
+            }
+        });
+        appUpdateInfoTask.addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull final Exception e) {
+                Log.e("MainActivity", "In-app update check failed", e);
+            }
+        });
+    }
+
+    private void resumeImmediateUpdateIfNeeded() {
+        if (appUpdateManager == null) {
+            return;
+        }
+
+        appUpdateManager.getAppUpdateInfo().addOnSuccessListener(new OnSuccessListener<AppUpdateInfo>() {
+            @Override
+            public void onSuccess(final AppUpdateInfo appUpdateInfo) {
+                if (appUpdateInfo.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
+                    try {
+                        appUpdateManager.startUpdateFlow(appUpdateInfo, MainActivity.this, AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build());
+                    } catch (final Exception e) {
+                        Log.e("MainActivity", "Failed to resume immediate in-app update", e);
+                    }
+                }
+            }
+        });
+    }
+
+    @Override
+    protected void onNewIntent(final Intent intent) {
+        if (intent != null) {
+            // Return if launched from a launcher (e.g. Nova Launcher, Pixel Launcher ...)
+            // to not destroy the already created backstack
+            final String action = intent.getAction();
+            if ((action != null && action.equals(Intent.ACTION_MAIN)) && intent.hasCategory(Intent.CATEGORY_LAUNCHER)) {
+                return;
+            }
+        }
+
+        super.onNewIntent(intent);
+        setIntent(intent);
+        handleIntent(intent);
+    }
+
+    @Override
+    public boolean onKeyDown(final int keyCode, final KeyEvent event) {
+        final Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_player_holder);
+        if (fragment instanceof OnKeyDownListener && !bottomSheetHiddenOrCollapsed()) {
+            // Provide keyDown event to fragment which then sends this event
+            // to the main player service
+            return ((OnKeyDownListener) fragment).onKeyDown(keyCode) || super.onKeyDown(keyCode, event);
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (DeviceUtils.isTv(this)) {
+            if (mainBinding.getRoot().isDrawerOpen(drawerLayoutBinding.navigation)) {
+                mainBinding.getRoot().closeDrawers();
+                return;
+            }
+        }
+
+        // In case bottomSheet is not visible on the screen or collapsed we can assume that the user
+        // interacts with a fragment inside fragment_holder so all back presses should be
+        // handled by it
+        if (bottomSheetHiddenOrCollapsed()) {
+            final FragmentManager fm = getSupportFragmentManager();
+            final Fragment fragment = fm.findFragmentById(R.id.fragment_holder);
+            // If current fragment implements BackPressable (i.e. can/wanna handle back press)
+            // delegate the back press to it
+            if (fragment instanceof BackPressable) {
+                if (((BackPressable) fragment).onBackPressed()) {
+                    return;
+                }
+            } else if (fragment instanceof CommentRepliesFragment) {
+                // expand DetailsFragment if CommentRepliesFragment was opened
+                // to show the top level comments again
+                // Expand DetailsFragment if CommentRepliesFragment was opened
+                // and no other CommentRepliesFragments are on top of the back stack
+                // to show the top level comments again.
+                openDetailFragmentFromCommentReplies(fm, false);
+            }
+
+        } else {
+            final Fragment fragmentPlayer = getSupportFragmentManager().findFragmentById(R.id.fragment_player_holder);
+            // If current fragment implements BackPressable (i.e. can/wanna handle back press)
+            // delegate the back press to it
+            if (fragmentPlayer instanceof BackPressable) {
+                if (!((BackPressable) fragmentPlayer).onBackPressed()) {
+                    BottomSheetBehavior.from(mainBinding.fragmentPlayerHolder).setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+                return;
+            }
+        }
+
+        if (getSupportFragmentManager().getBackStackEntryCount() == 1) {
+            if (isRateDialogShown) {
+                if (AdUtils.exit_page) {
+                    AdUtils.ClickWithExitAds(MainActivity.this, new AdUtils.InterClick() {
+                        @Override
+                        public void ClickAds() {
+                            startActivity(new Intent(MainActivity.this, ThanksActivity.class));
+                        }
+                    });
+                } else {
+                    ExitDialogManager.showExitDialog(this, this::finish);
+                }
+            } else {
+                RatingManager.rateDialog(this, new RatingManager.RateDialogListener() {
+                    @Override
+                    public void onRateDialogDismiss(boolean ratedNow) {
+                        isRateDialogShown = true;
+                        if (!ratedNow) {
+                            if (AdUtils.exit_page) {
+                                startActivity(new Intent(MainActivity.this, ThanksActivity.class));
+                            } else {
+                                ExitDialogManager.showExitDialog(MainActivity.this, MainActivity.this::finish);
+                            }
+                        }
+                    }
+                });
+            }
+
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(final int requestCode, @NonNull final String[] permissions, @NonNull final int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        for (final int i : grantResults) {
+            if (i == PackageManager.PERMISSION_DENIED) {
+                return;
+            }
+        }
+        switch (requestCode) {
+            case PermissionHelper.DOWNLOADS_REQUEST_CODE:
+                NavigationHelper.openDownloads(this);
+                break;
+            case PermissionHelper.DOWNLOAD_DIALOG_REQUEST_CODE:
+                final Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_player_holder);
+                if (fragment instanceof VideoDetailFragment) {
+                    ((VideoDetailFragment) fragment).openDownloadDialog();
+                }
+                break;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(final int requestCode, final int resultCode, @Nullable final Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == IN_APP_UPDATE_REQUEST_CODE && resultCode != RESULT_OK) {
+            Log.w("MainActivity", "In-app update flow canceled/failed. resultCode=" + resultCode);
+        }
+    }
+
+    /**
+     * Implement the following diagram behavior for the up button:
+     * <pre>
+     *              +---------------+
+     *              |  Main Screen  +----+
+     *              +-------+-------+    |
+     *                      |            |
+     *                      ▲ Up         | Search Button
+     *                      |            |
+     *                 +----+-----+      |
+     *    +------------+  Search  |◄-----+
+     *    |            +----+-----+
+     *    |   Open          |
+     *    |  something      ▲ Up
+     *    |                 |
+     *    |    +------------+-------------+
+     *    |    |                          |
+     *    |    |  Video    <->  Channel   |
+     *    +---►|  Channel  <->  Playlist  |
+     *         |  Video    <->  ....      |
+     *         |                          |
+     *         +--------------------------+
+     * </pre>
+     */
+    private void onHomeButtonPressed() {
+        final FragmentManager fm = getSupportFragmentManager();
+        final Fragment fragment = fm.findFragmentById(R.id.fragment_holder);
+
+        if (fragment instanceof CommentRepliesFragment) {
+            // Expand DetailsFragment if CommentRepliesFragment was opened
+            // and no other CommentRepliesFragments are on top of the back stack
+            // to show the top level comments again.
+            openDetailFragmentFromCommentReplies(fm, true);
+        } else if (!NavigationHelper.tryGotoSearchFragment(fm)) {
+            // If search fragment wasn't found in the backstack go to the main fragment
+            NavigationHelper.gotoMainFragment(fm);
+        }
+    }
+
+    /*//////////////////////////////////////////////////////////////////////////
+    // Menu
+    //////////////////////////////////////////////////////////////////////////*/
+
+    @Override
+    public boolean onCreateOptionsMenu(final Menu menu) {
+        super.onCreateOptionsMenu(menu);
+
+        final Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_holder);
+        if (!(fragment instanceof SearchFragment)) {
+            toolbarLayoutBinding.toolbarSearchContainer.getRoot().setVisibility(View.GONE);
+        }
+
+        final ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(false);
+        }
+
+        updateDrawerNavigation();
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull final MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onHomeButtonPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    /*//////////////////////////////////////////////////////////////////////////
+    // Init
+    //////////////////////////////////////////////////////////////////////////*/
+
+    private void initFragments() {
+        StateSaver.clearStateFiles();
+        if (getIntent() != null && getIntent().hasExtra(Constants.KEY_LINK_TYPE)) {
+            // When user watch a video inside popup and then tries to open the video in main player
+            // while the app is closed he will see a blank fragment on place of kiosk.
+            // Let's open it first
+            if (getSupportFragmentManager().getBackStackEntryCount() == 0) {
+                NavigationHelper.openMainFragment(getSupportFragmentManager());
+            }
+
+            handleIntent(getIntent());
+        } else {
+            NavigationHelper.gotoMainFragment(getSupportFragmentManager());
+        }
+    }
+
+    /*//////////////////////////////////////////////////////////////////////////
+    // Utils
+    //////////////////////////////////////////////////////////////////////////*/
+
+    private void updateDrawerNavigation() {
+        if (getSupportActionBar() == null) {
+            return;
+        }
+
+        final Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_holder);
+        if (fragment instanceof MainFragment) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+            if (toggle != null) {
+                toggle.syncState();
+                toolbarLayoutBinding.toolbar.setNavigationOnClickListener(v -> mainBinding.getRoot().open());
+                mainBinding.getRoot().setDrawerLockMode(DrawerLayout.LOCK_MODE_UNDEFINED);
+            }
+        } else {
+            mainBinding.getRoot().setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            toolbarLayoutBinding.toolbar.setNavigationOnClickListener(v -> onHomeButtonPressed());
+        }
+    }
+
+    private void handleIntent(final Intent intent) {
+        try {
+            if (intent.hasExtra(Constants.KEY_LINK_TYPE)) {
+                final String url = intent.getStringExtra(Constants.KEY_URL);
+                final int serviceId = intent.getIntExtra(Constants.KEY_SERVICE_ID, 0);
+                String title = intent.getStringExtra(Constants.KEY_TITLE);
+                if (title == null) {
+                    title = "";
+                }
+
+                final StreamingService.LinkType linkType = ((StreamingService.LinkType) intent.getSerializableExtra(Constants.KEY_LINK_TYPE));
+                assert linkType != null;
+                switch (linkType) {
+                    case STREAM:
+                        final String intentCacheKey = intent.getStringExtra(Player.PLAY_QUEUE_KEY);
+                        final PlayQueue playQueue = intentCacheKey != null ? SerializedCache.getInstance().take(intentCacheKey, PlayQueue.class) : null;
+
+                        final boolean switchingPlayers = intent.getBooleanExtra(VideoDetailFragment.KEY_SWITCHING_PLAYERS, false);
+                        NavigationHelper.openVideoDetailFragment(getApplicationContext(), getSupportFragmentManager(), serviceId, url, title, playQueue, switchingPlayers);
+                        break;
+                    case CHANNEL:
+                        NavigationHelper.openChannelFragment(getSupportFragmentManager(), serviceId, url, title);
+                        break;
+                    case PLAYLIST:
+                        NavigationHelper.openPlaylistFragment(getSupportFragmentManager(), serviceId, url, title);
+                        break;
+                }
+            } else if (intent.hasExtra(Constants.KEY_OPEN_SEARCH)) {
+                if (!AppMode.USE_EXTRACTOR) {
+                    NavigationHelper.gotoMainFragment(getSupportFragmentManager());
+                    return;
+                }
+                String searchString = intent.getStringExtra(Constants.KEY_SEARCH_STRING);
+                if (searchString == null) {
+                    searchString = "";
+                }
+                final int serviceId = intent.getIntExtra(Constants.KEY_SERVICE_ID, 0);
+                NavigationHelper.openSearchFragment(getSupportFragmentManager(), serviceId, searchString);
+
+            } else {
+                NavigationHelper.gotoMainFragment(getSupportFragmentManager());
+            }
+        } catch (final Exception e) {
+            ErrorUtil.showUiErrorSnackbar(this, "Handling intent", e);
+        }
+    }
+
+    private void openMiniPlayerIfMissing() {
+        final Fragment fragmentPlayer = getSupportFragmentManager().findFragmentById(R.id.fragment_player_holder);
+        if (fragmentPlayer == null) {
+            // We still don't have a fragment attached to the activity. It can happen when a user
+            // started popup or background players without opening a stream inside the fragment.
+            // Adding it in a collapsed state (only mini player will be visible).
+            NavigationHelper.showMiniPlayer(getSupportFragmentManager());
+        }
+    }
+
+    private void openMiniPlayerUponPlayerStarted() {
+        if (getIntent().getSerializableExtra(Constants.KEY_LINK_TYPE) == StreamingService.LinkType.STREAM) {
+            // handleIntent() already takes care of opening video detail fragment
+            // due to an intent containing a STREAM link
+            return;
+        }
+
+        if (PlayerHolder.getInstance().isPlayerOpen()) {
+            // if the player is already open, no need for a broadcast receiver
+            openMiniPlayerIfMissing();
+        } else {
+            // listen for player start intent being sent around
+            broadcastReceiver = new BroadcastReceiver() {
+                @Override
+                public void onReceive(final Context context, final Intent intent) {
+                    if (Objects.equals(intent.getAction(), VideoDetailFragment.ACTION_PLAYER_STARTED) && PlayerHolder.getInstance().isPlayerOpen()) {
+                        openMiniPlayerIfMissing();
+                        // At this point the player is added 100%, we can unregister. Other actions
+                        // are useless since the fragment will not be removed after that.
+                        unregisterReceiver(broadcastReceiver);
+                        broadcastReceiver = null;
+                    }
+                }
+            };
+            final IntentFilter intentFilter = new IntentFilter();
+            intentFilter.addAction(VideoDetailFragment.ACTION_PLAYER_STARTED);
+            ContextCompat.registerReceiver(this, broadcastReceiver, intentFilter, ContextCompat.RECEIVER_EXPORTED);
+
+            // If the PlayerHolder is not bound yet, but the service is running, try to bind to it.
+            // Once the connection is established, the ACTION_PLAYER_STARTED will be sent.
+            PlayerHolder.getInstance().tryBindIfNeeded(this);
+        }
+    }
+
+    private void openDetailFragmentFromCommentReplies(@NonNull final FragmentManager fm, final boolean popBackStack) {
+        // obtain the name of the fragment under the replies fragment that's going to be popped
+        @Nullable final String fragmentUnderEntryName;
+        if (fm.getBackStackEntryCount() < 2) {
+            fragmentUnderEntryName = null;
+        } else {
+            fragmentUnderEntryName = fm.getBackStackEntryAt(fm.getBackStackEntryCount() - 2).getName();
+        }
+
+        // the root comment is the comment for which the user opened the replies page
+        @Nullable final CommentRepliesFragment repliesFragment = (CommentRepliesFragment) fm.findFragmentByTag(CommentRepliesFragment.TAG);
+        @Nullable final CommentsInfoItem rootComment = repliesFragment == null ? null : repliesFragment.getCommentsInfoItem();
+
+        // sometimes this function pops the backstack, other times it's handled by the system
+        if (popBackStack) {
+            fm.popBackStackImmediate();
+        }
+
+        // only expand the bottom sheet back if there are no more nested comment replies fragments
+        // stacked under the one that is currently being popped
+        if (CommentRepliesFragment.TAG.equals(fragmentUnderEntryName)) {
+            return;
+        }
+
+        final BottomSheetBehavior<FragmentContainerView> behavior = BottomSheetBehavior.from(mainBinding.fragmentPlayerHolder);
+        // do not return to the comment if the details fragment was closed
+        if (behavior.getState() == BottomSheetBehavior.STATE_HIDDEN) {
+            return;
+        }
+
+        // scroll to the root comment once the bottom sheet expansion animation is finished
+        behavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+            @Override
+            public void onStateChanged(@NonNull final View bottomSheet, final int newState) {
+                if (newState == BottomSheetBehavior.STATE_EXPANDED) {
+                    final Fragment detailFragment = fm.findFragmentById(R.id.fragment_player_holder);
+                    if (detailFragment instanceof VideoDetailFragment && rootComment != null) {
+                        // should always be the case
+                        ((VideoDetailFragment) detailFragment).scrollToComment(rootComment);
+                    }
+                    behavior.removeBottomSheetCallback(this);
+                }
+            }
+
+            @Override
+            public void onSlide(@NonNull final View bottomSheet, final float slideOffset) {
+                // not needed, listener is removed once the sheet is expanded
+            }
+        });
+
+        behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+    }
+
+    private boolean bottomSheetHiddenOrCollapsed() {
+        final BottomSheetBehavior<FrameLayout> bottomSheetBehavior = BottomSheetBehavior.from(mainBinding.fragmentPlayerHolder);
+
+        final int sheetState = bottomSheetBehavior.getState();
+        return sheetState == BottomSheetBehavior.STATE_HIDDEN || sheetState == BottomSheetBehavior.STATE_COLLAPSED;
+    }
+
+}

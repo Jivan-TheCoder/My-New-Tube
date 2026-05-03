@@ -1,4 +1,3 @@
-### Förbättringar
 - Stängde av burgarmeny ikonens animation #1486
 - Ångra radering av nedladdningar #1472
 - Nedladdningsalternativ i delningsmenyn #1498

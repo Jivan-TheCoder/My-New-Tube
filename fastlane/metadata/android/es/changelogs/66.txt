@@ -1,6 +1,3 @@
-# Cambios de v0.13.7
-
-### Fijado
 - Arreglar problemas de lod filtros de ordenación de la v0.13.6
 
 # Cambios de la v0.13.6

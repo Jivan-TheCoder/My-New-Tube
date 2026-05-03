@@ -1,4 +1,3 @@
-# Improved
 Keep current player when clicking on timestamps
 Try to recover pending download missions when possible
 Add option to delete a download without also deleting file

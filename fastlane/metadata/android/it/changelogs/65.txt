@@ -1,5 +1,3 @@
-### Miglioramenti
-
 - Disattiva l'animazione dell'icona burgermenu #1486
 - annulla l'eliminazione dei download #1472
 - Opzione di download nel menu di condivisione #1498

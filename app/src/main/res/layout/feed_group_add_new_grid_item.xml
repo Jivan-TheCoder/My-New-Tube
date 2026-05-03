@@ -30,7 +30,7 @@
             android:tint="?android:attr/textColorPrimary"
             tools:ignore="ContentDescription" />
 
-        <org.schabi.newpipe.views.NewPipeTextView
+        <com.playtube.protube.video.music.views.NewPipeTextView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

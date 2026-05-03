@@ -1,4 +1,3 @@
-### Poboljšanja
 - Dodata je mogućnost ograničavanja kvalitete videa ako se koriste mobilni podaci. #1339
 - Zapamti svjetlinu za sesiju #1442
 - Poboljšane performanse preuzimanja za slabije procesore #1431

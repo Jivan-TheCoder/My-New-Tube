@@ -19,7 +19,7 @@
         android:textSize="12sp"
         android:textStyle="bold" />
 
-    <org.schabi.newpipe.ads.adapter_ads.ShimmerView
+    <com.playtube.protube.video.music.ads.adapter_ads.ShimmerView
         android:layout_width="match_parent"
         android:layout_marginTop="12dp"
         android:layout_height="168dp" />
@@ -31,7 +31,7 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <org.schabi.newpipe.ads.adapter_ads.ShimmerView
+        <com.playtube.protube.video.music.ads.adapter_ads.ShimmerView
             android:layout_width="40dp"
             android:layout_height="40dp" />
 
@@ -42,23 +42,23 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <org.schabi.newpipe.ads.adapter_ads.ShimmerView
+            <com.playtube.protube.video.music.ads.adapter_ads.ShimmerView
                 android:layout_width="match_parent"
                 android:layout_height="14dp" />
 
-            <org.schabi.newpipe.ads.adapter_ads.ShimmerView
+            <com.playtube.protube.video.music.ads.adapter_ads.ShimmerView
                 android:layout_width="82dp"
                 android:layout_height="12dp"
                 android:layout_marginTop="4dp" />
 
-            <org.schabi.newpipe.ads.adapter_ads.ShimmerView
+            <com.playtube.protube.video.music.ads.adapter_ads.ShimmerView
                 android:layout_width="match_parent"
                 android:layout_height="13dp"
                 android:visibility="gone"
                 android:layout_marginTop="8dp" />
         </LinearLayout>
 
-        <org.schabi.newpipe.ads.adapter_ads.ShimmerView
+        <com.playtube.protube.video.music.ads.adapter_ads.ShimmerView
             android:layout_width="112dp"
             android:layout_height="46dp"
             android:layout_marginStart="12dp" />

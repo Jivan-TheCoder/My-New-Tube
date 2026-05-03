@@ -1,4 +1,3 @@
-### Improvements
 * downloaded files can now be opened with one click
 * drop support for android 4.1 - 4.3
 * remove streams from current play queue by swiping them to the right

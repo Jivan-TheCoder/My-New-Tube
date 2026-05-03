@@ -1,4 +1,3 @@
-### New
 - Odstranění a sdílení v odběrech dlouhým klepnutím #1516 
 - Uživatelské rozhraní tabletu a rozvržení seznamu mřížky #1617 
 

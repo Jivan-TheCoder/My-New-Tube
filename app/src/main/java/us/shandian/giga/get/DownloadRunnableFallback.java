@@ -4,7 +4,7 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import org.schabi.newpipe.streams.io.SharpStream;
+import com.playtube.protube.video.music.streams.io.SharpStream;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,7 +14,6 @@ import java.nio.channels.ClosedByInterruptException;
 import us.shandian.giga.get.DownloadMission.HttpError;
 import us.shandian.giga.util.Utility;
 
-import static org.schabi.newpipe.BuildConfig.DEBUG;
 import static us.shandian.giga.get.DownloadMission.ERROR_HTTP_FORBIDDEN;
 
 /**
@@ -121,7 +120,7 @@ public class DownloadRunnableFallback extends Thread {
                 return;
             }
 
-            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            if (com.playtube.protube.video.music.BuildConfig.DEBUG) {
                 Log.e(TAG, "got exception, retrying...", e);
             }
 

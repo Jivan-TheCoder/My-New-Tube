@@ -1,6 +1,3 @@
-# Ändringar i v0.14.1
-
-### Fixat
 - Rättad beskrivning länk som inte extraherade bra #1657
 
 # Ändringar i v0.14.0

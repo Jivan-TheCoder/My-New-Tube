@@ -65,17 +65,17 @@ kotlin {
 
 configure<ApplicationExtension> {
     compileSdk = 36
-    namespace = "org.schabi.newpipe"
+    namespace = "com.playtube.protube.video.music"
 
     defaultConfig {
-        applicationId = "org.schabi.newpipe"
-        resValue("string", "app_name", "My NewPipe")
+        applicationId = "com.playtube.protube.video.music"
+        resValue("string", "app_name", "Playtube : video & music")
         minSdk = 23
         targetSdk = 35
 
-        versionCode = System.getProperty("versionCodeOverride")?.toInt() ?: 1010
+        versionCode = System.getProperty("versionCodeOverride")?.toInt() ?: 1
 
-        versionName = "0.28.5"
+        versionName = "1.0"
         System.getProperty("versionNameSuffix")?.let { versionNameSuffix = it }
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -95,6 +95,8 @@ configure<ApplicationExtension> {
     buildTypes {
         debug {
             isDebuggable = true
+            // Keep debug and release side-by-side to avoid key/signature replace conflicts.
+            applicationIdSuffix = ".debug"
         }
 
         release {
@@ -103,10 +105,14 @@ configure<ApplicationExtension> {
             }
             System.getProperty("packageSuffix")?.let { suffix ->
                 applicationIdSuffix = suffix
-                resValue("string", "app_name", "My NewPipe $suffix")
+                resValue("string", "app_name", "Playtube : video & music $suffix")
             }
             isMinifyEnabled = false
             isShrinkResources = false
+            // Workaround for Android 15 install failures: INSTALL_BASELINE_PROFILE_FAILED.
+            installation {
+                enableBaselineProfile = false
+            }
 //            proguardFiles(
 //                getDefaultProguardFile("proguard-android-optimize.txt"),
 //                "proguard-rules.pro"

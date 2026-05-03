@@ -1,6 +1,3 @@
-<!-- Hey there. Thank you so much for improving NewPipe, and filling out the details. Having roughly the same layout helps everyone considerably :)-->
-
-#### What is it?
 - [ ] Bugfix (user facing)
 - [ ] Feature (user facing) ⚠️ **Your PR must target the [`refactor`](https://github.com/TeamNewPipe/NewPipe/tree/refactor) branch**
 - [ ] Codebase improvement (dev facing)

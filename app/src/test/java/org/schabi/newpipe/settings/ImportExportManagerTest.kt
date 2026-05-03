@@ -30,9 +30,9 @@ import org.mockito.Mockito.verify
 import org.mockito.Mockito.`when`
 import org.mockito.Mockito.withSettings
 import org.mockito.junit.MockitoJUnitRunner
-import org.schabi.newpipe.settings.export.BackupFileLocator
-import org.schabi.newpipe.settings.export.ImportExportManager
-import org.schabi.newpipe.streams.io.StoredFileHelper
+import com.playtube.protube.video.music.settings.export.BackupFileLocator
+import com.playtube.protube.video.music.settings.export.ImportExportManager
+import com.playtube.protube.video.music.streams.io.StoredFileHelper
 import us.shandian.giga.io.FileStream
 
 @RunWith(MockitoJUnitRunner::class)

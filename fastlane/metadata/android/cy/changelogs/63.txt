@@ -1,4 +1,3 @@
-### Gwelliannau
 - Gosodiadau mewnforio/Allforio #1333 
 - Lleihau dros dynnu (gwelliant perfformiad) #1371 
 - Gwelliannau bychan cod #1375 

@@ -1,4 +1,3 @@
-### Improvements
 - Import/export settings #1333 
 - Reduce overdraw (performance improvement) #1371 
 - Small code improvements #1375 

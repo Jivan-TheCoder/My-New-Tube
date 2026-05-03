@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:752779784900:android:f447cad25cd54e3d13cf91",
         "android_client_info": {
-          "package_name": "org.schabi.newpipe"
+          "package_name": "com.playtube.protube.video.music"
         }
       },
       "oauth_client": [],

@@ -1,5 +1,3 @@
-### Poboljšanja
-
 - Onemogućavanje animacije ikone burgermenuja #1486
 - poništavanje brisanja preuzimanja #1472
 - Opcija preuzimanja u meniju za dijeljenje #1498

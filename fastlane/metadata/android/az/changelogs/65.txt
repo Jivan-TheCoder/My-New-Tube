@@ -1,5 +1,3 @@
-### Təkmilləşdirmələr
-
 - Burgermenyu ikona animasiyasını deaktiv edin #1486
 
 - yükləmələrin silinməsini geri qaytarın #1472

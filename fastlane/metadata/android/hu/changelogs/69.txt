@@ -1,4 +1,3 @@
-### Új
 - Hosszú lenyomásnál törlés és megosztás a feliratkozásoknál #1516 
 - Tablet felület és rácslistát elrendezés #1617 
 

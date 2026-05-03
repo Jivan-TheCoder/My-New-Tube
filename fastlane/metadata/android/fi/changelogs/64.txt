@@ -1,4 +1,3 @@
-### Parannukset
 - Lisätty mahdollisuus rajoittaa videon laatua mobiilidataa käytettäessä. #1339
 - Muista istunnon kirkkaus #1442
 - Parannettu lataussuorituskykyä heikommilla suorittimilla #1431

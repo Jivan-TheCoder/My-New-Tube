@@ -1,6 +1,3 @@
-# Catatan perubahan v0.13.7
-
-### Diperbaiki
 - Perbaiki masalah filter pengurutan v0.13.6
 
 # Changelog v0.13.6

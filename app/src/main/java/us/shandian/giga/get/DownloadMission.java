@@ -8,7 +8,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.schabi.newpipe.DownloaderImpl;
+import com.playtube.protube.video.music.DownloaderImpl;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -25,12 +25,12 @@ import java.util.Objects;
 
 import javax.net.ssl.SSLException;
 
-import org.schabi.newpipe.streams.io.StoredFileHelper;
+import com.playtube.protube.video.music.streams.io.StoredFileHelper;
 import us.shandian.giga.postprocessing.Postprocessing;
 import us.shandian.giga.service.DownloadManagerService;
 import us.shandian.giga.util.Utility;
 
-import static org.schabi.newpipe.BuildConfig.DEBUG;
+import static com.playtube.protube.video.music.BuildConfig.DEBUG;
 
 public class DownloadMission extends Mission {
     private static final long serialVersionUID = 6L;// last bump: 07 october 2019
@@ -478,7 +478,7 @@ public class DownloadMission extends Mission {
         if (!running) return;
 
         if (isPsRunning()) {
-            if (org.schabi.newpipe.BuildConfig.DEBUG) {
+            if (com.playtube.protube.video.music.BuildConfig.DEBUG) {
                 Log.w(TAG, "pause during post-processing is not applicable.");
             }
             return;
@@ -682,7 +682,7 @@ public class DownloadMission extends Mission {
 
         notifyPostProcessing(1);
 
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+        if (com.playtube.protube.video.music.BuildConfig.DEBUG) {
             thread.setName("[" + TAG + "]  ps = " + psAlgorithm + "  filename = " + storage.getName());
         }
 
@@ -767,7 +767,7 @@ public class DownloadMission extends Mission {
         //    0:     initializer
         //  >=1:     any download thread
 
-        if (org.schabi.newpipe.BuildConfig.DEBUG) {
+        if (com.playtube.protube.video.music.BuildConfig.DEBUG) {
             who.setName(String.format("%s[%s] %s", TAG, id, storage.getName()));
         }
 
@@ -810,7 +810,7 @@ public class DownloadMission extends Mission {
         try {
             for (Thread thread : threads) {
                 if (!thread.isAlive()) continue;
-                if (org.schabi.newpipe.BuildConfig.DEBUG) {
+                if (com.playtube.protube.video.music.BuildConfig.DEBUG) {
                     Log.w(TAG, "thread alive: " + thread.getName());
                 }
                 if (millis > 0) thread.join(millis);

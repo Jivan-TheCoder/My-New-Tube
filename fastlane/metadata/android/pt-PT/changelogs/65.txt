@@ -1,5 +1,3 @@
-### Melhorias
-
 - Desativar a animação do ícone do burgermenu #1486
 - Desfazer a eliminação de descarregamentos #1472
 - Opção de descarregamento no menu de partilha #1498

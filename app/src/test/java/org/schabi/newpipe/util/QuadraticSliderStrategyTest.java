@@ -5,6 +5,8 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import com.playtube.protube.video.music.util.SliderStrategy;
+
 public class QuadraticSliderStrategyTest {
     private static final int STEP = 100;
     private static final float DELTA = 1f / (float) STEP;

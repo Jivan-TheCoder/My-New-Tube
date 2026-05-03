@@ -1,4 +1,3 @@
-### Améliorations
 * Notification maj GitHub #1608
 * Améliorations téléchargeur #1944 :
   * Ajout des icônes blanches manquantes et utilisation d'une méthode hardcodé pour changer leurs couleurs

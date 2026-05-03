@@ -1,6 +1,3 @@
-# cambios de la v0.14.1
-
-### Arreglado
 - Arreglado el fallo de descifrar la url del vídeo #1659 
 - Corregido el enlace de descripción que no se extrae bien #1657
 

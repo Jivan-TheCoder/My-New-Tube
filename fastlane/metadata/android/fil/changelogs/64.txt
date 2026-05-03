@@ -1,4 +1,3 @@
-### Mga pagpapabuti
 - Maaari nang limitahan ang kalidad ng video kung gumagamit ng mobile data. #1339 
 - Tandaan ang liwanag ng screen para sa sesyon #1442 
 - Mas pinainam na pag-download sa mahihinang CPU #1431 

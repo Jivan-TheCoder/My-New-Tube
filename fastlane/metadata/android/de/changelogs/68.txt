@@ -1,6 +1,3 @@
-# Änderungen von v0.14.1
-
-### Behoben
 - nicht entschlüsselt Video url #1659
 - Beschreibungs Link nicht extrahierbar #1657
 

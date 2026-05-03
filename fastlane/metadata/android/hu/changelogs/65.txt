@@ -1,5 +1,3 @@
-### Fejlesztések
-
 - Burgermenü animáció tiltása #1486
 - a letöltések törlésének visszavonása #1472
 - Letöltési a megosztásban #1498

@@ -1,4 +1,3 @@
-# Yeni
 • Yorum yanıtları eklendi
 • Oynatma listelerini yeniden sıralama
 • Liste açıklaması ve süresi gösterimi

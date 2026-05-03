@@ -1,4 +1,3 @@
-### Təkmilləşdirmələr
  * GitHub quruluşu üçün proqram yeniləmə bildirişi əlavə edin (@krtkush tərəfindən #1608) 
 * Yükləyiciyə müxtəlif təkmilləşdirmələr (@kapodamy tərəfindən #1944): 
 * çatışmayan ağ nişanlar əlavə edin və simvol rənglərini dəyişdirmək üçün sərt üsuldan istifadə edin 

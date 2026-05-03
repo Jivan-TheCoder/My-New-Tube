@@ -1,4 +1,3 @@
-# Vylepšení
 Ponechání aktuálního přehrávače při klepnutí na časová razítka
 Pokus o obnovení čekajících stahování, pokud to jde
 Možnost odstranění stahování bez smazání souboru

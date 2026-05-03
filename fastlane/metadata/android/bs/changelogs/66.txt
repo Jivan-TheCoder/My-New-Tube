@@ -1,6 +1,3 @@
-# Dnevnik promjena v0.13.7
-
-### Ispravljeno
 - Ispravljeni problemi sa filterom sortiranja iz v0.13.6
 
 # Dnevnik promjena v0.13.6

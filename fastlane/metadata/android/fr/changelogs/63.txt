@@ -1,4 +1,3 @@
-### Améliorations
 - Import/export des paramètres #1333 
 - Réduction overdraw (amélioration des performances) #1371 
 - Petites améliorations du code #1375 

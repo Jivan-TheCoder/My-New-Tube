@@ -1,5 +1,3 @@
-### Hobekuntzak
-
 - Burger menuko animazioa desgaitu #1486 
 - Deskargen ezabaketa desegin #1472 
 - Partekatze-menuan deskargatzeko aukera #1498

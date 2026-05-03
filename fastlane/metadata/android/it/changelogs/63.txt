@@ -1,4 +1,3 @@
-### Miglioramenti
 - Impostazioni di importazione / esportazione #1333
 - Ridotto l'overdraw (miglioramento delle prestazioni) #1371
 - Piccoli miglioramenti al codice #1375

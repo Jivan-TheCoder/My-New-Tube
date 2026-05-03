@@ -1,4 +1,3 @@
-### Nuovo
 - Tocca a lungo elimina e condividi gli abbonamenti #1516
 - Interfaccia utente tablet e layout elenco griglia #1617
 

@@ -1,4 +1,3 @@
-# Melhorias
 Mantém o player ao tocar nas minutagens do vídeo.
 Recupera downloads pendentes quando possível.
 Limpa a lista de downloads sem excluir o arquivo permanentemente.

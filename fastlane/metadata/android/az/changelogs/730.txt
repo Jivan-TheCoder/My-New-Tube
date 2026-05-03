@@ -1,2 +1,1 @@
-# Sabit 
 - Yenidən qaynar şəkildə deşifrə funksiyası xətası.

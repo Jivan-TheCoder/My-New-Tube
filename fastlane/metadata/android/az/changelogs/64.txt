@@ -1,4 +1,3 @@
-### Təkmilləşdirmələr
 - Mobil datadan istifadə edərkən video keyfiyyətini məhdudlaşdırmaq imkanı əlavə edildi. #1339
 - Sessiya üçün parlaqlığı yadda saxla #1442
 - Daha zəif CPU-lar üçün yükləmə performansını yaxşılaşdırın #1431

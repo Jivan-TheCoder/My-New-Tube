@@ -1,4 +1,3 @@
-### Îmbunătățiri
 - Setări de import/export #1333 
 - Reducerea supradimensionării (îmbunătățirea performanței) #1371 
 - Mici îmbunătățiri de cod #1375 

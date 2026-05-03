@@ -1,4 +1,3 @@
-# Migliorie
 Tieni il player attuale se si cliccano le marche temporali
 Recupera i download in sospeso se possibile
 Opzione per eliminare un download senza anche eliminare il file

@@ -9,6 +9,8 @@ import com.grack.nanojson.JsonArray;
 import com.grack.nanojson.JsonObject;
 import com.grack.nanojson.JsonParser;
 import com.grack.nanojson.JsonParserException;
+import com.playtube.protube.video.music.settings.tabs.Tab;
+import com.playtube.protube.video.music.settings.tabs.TabsJsonHelper;
 
 import org.junit.Test;
 

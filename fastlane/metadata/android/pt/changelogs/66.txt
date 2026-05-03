@@ -1,6 +1,3 @@
-# Changelog de v0.13.7
-
-### Fixo
 - Fixar questões de filtro de ordenação da v0.13.6
 
 # Mudança do v0.13.6

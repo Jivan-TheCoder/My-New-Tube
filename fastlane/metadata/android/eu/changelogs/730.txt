@@ -1,2 +1,1 @@
-# Konponduta
 - Konpondu deszifratze funtzioaren errorea berriro.

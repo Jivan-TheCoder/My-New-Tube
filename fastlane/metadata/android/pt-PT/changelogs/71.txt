@@ -1,4 +1,3 @@
-### Melhoria
 * Adicionar notificação de atualização do aplicativo para compilação do GitHub (#1608 por @ krtkush)
 * Várias melhorias para o downloader(# 1944 por @kapodamy):
   * * adicione ícones brancos ausentes e use o modo hardcore para alterar as cores dos ícones

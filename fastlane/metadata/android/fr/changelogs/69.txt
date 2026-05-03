@@ -1,4 +1,3 @@
-### Nouveau
 - Suppression et partage par appui long dans les abonnements #1516
 - Interface utilisateur pour tablettes et disposition de la liste en grille #1617
 

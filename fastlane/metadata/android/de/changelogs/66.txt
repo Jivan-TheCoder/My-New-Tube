@@ -1,6 +1,3 @@
-# Versionsänderung von v0.13.7
-
-### Behebungen
 - Probleme der Filterung von v.0.13.6 behoben
 
 # Versionsänderung von v0.13.6

@@ -1,4 +1,3 @@
-#### Förbättringar
 * Olika förbättringar av nedladdaren (#1944 av @kapodamy):
   * Kontrollera om iteratorn är initialiserad (rättar #2031).
   * Tillåter att nedladdningar med felet "post-processing failed" (efterbearbetning misslyckades) kan göras om i den nya muxern.

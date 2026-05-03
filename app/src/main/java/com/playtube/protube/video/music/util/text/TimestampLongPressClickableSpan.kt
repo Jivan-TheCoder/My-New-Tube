@@ -1,0 +1,48 @@
+package com.playtube.protube.video.music.util.text
+
+import android.content.Context
+import android.view.View
+import com.playtube.protube.video.music.util.external_communication.ShareUtils
+import io.reactivex.rxjava3.disposables.CompositeDisposable
+import org.schabi.newpipe.extractor.StreamingService
+
+class TimestampLongPressClickableSpan(
+    private val context: Context,
+    private val descriptionText: String,
+    private val disposables: CompositeDisposable,
+    private val relatedInfoService: StreamingService,
+    private val relatedStreamUrl: String,
+    private val timestampMatchDTO: TimestampExtractor.TimestampMatchDTO
+) : LongPressClickableSpan() {
+    override fun onClick(view: View) {
+        InternalUrlsHandler.playOnPopup(
+            context,
+            relatedStreamUrl,
+            relatedInfoService,
+            timestampMatchDTO.seconds()
+        )
+    }
+
+    override fun onLongClick(view: View) {
+        ShareUtils.copyToClipboard(
+            context,
+            getTimestampTextToCopy(
+                relatedInfoService,
+                relatedStreamUrl,
+                descriptionText,
+                timestampMatchDTO
+            )
+        )
+    }
+
+    companion object {
+        private fun getTimestampTextToCopy(
+            relatedInfoService: StreamingService,
+            relatedStreamUrl: String,
+            descriptionText: String,
+            timestampMatchDTO: TimestampExtractor.TimestampMatchDTO
+        ): String {
+            return "$relatedStreamUrl&t=${timestampMatchDTO.seconds()}"
+        }
+    }
+}

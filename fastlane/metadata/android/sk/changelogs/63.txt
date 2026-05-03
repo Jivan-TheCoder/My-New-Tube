@@ -1,4 +1,3 @@
-### Vylepšenia
 - Nastavenia importu/exportu #1333 
 - Zníženie overdrawu (zlepšenie výkonu) #1371 
 - Malé vylepšenia kódu #1375 

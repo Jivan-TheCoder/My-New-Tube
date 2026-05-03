@@ -1,6 +1,3 @@
-# Modifications de la v0.14.1
-
-### Nouveau
 - Nouveau design du tiroir (#1461)
 - Nouvelle page d'accueil personnalisable (#1461)
 

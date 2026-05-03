@@ -1,4 +1,3 @@
-### Patobulinimai
 - Importavimo / eksportavimo nustatymai # 1333
 - Sumažintas "ovrdraw" (veikumo patobulinimas) # 1371
 - Nedideli kodo patobulinimai # 1375

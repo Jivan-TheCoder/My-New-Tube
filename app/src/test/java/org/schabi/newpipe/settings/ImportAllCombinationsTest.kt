@@ -9,9 +9,9 @@ import kotlin.io.path.fileSize
 import org.junit.Assert
 import org.junit.Test
 import org.mockito.Mockito
-import org.schabi.newpipe.settings.export.BackupFileLocator
-import org.schabi.newpipe.settings.export.ImportExportManager
-import org.schabi.newpipe.streams.io.StoredFileHelper
+import com.playtube.protube.video.music.settings.export.BackupFileLocator
+import com.playtube.protube.video.music.settings.export.ImportExportManager
+import com.playtube.protube.video.music.streams.io.StoredFileHelper
 import us.shandian.giga.io.FileStream
 
 class ImportAllCombinationsTest {

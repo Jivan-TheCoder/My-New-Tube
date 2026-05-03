@@ -1,4 +1,3 @@
-# Verbesserungen
 Aktuellen Player beim Klick auf Zeitstempel beibehalten
 Wiederherstellen ausstehender Downloadaufträge
 Downloads löschen, ohne gleichzeitiges Löschen der Datei

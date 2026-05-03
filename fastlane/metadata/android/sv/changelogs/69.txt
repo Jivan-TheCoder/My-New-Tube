@@ -1,4 +1,3 @@
-#### Nytt
 - Användargränssnitt för surfplattor och layout för rutnätslistor #1617 
 
 #### Förbättringar

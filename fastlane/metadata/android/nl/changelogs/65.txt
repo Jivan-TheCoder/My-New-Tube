@@ -1,5 +1,3 @@
-### Verbeteringen
-
 - Burgermenu icoon animatie uitschakelen #1486 
 - Verwijderen van downloads ongedaan maken #1472 
 - Downloadoptie in deel menu #1498

@@ -1,4 +1,3 @@
-### Novo
 - Dugi dodir za brisanje i dijeljenje u pretplatama #1516
 - Korisnički interfejs tableta i raspored mreže #1617
 

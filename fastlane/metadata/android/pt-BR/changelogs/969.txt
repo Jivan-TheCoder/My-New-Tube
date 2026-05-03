@@ -1,4 +1,3 @@
-# Melhorias
 Instalação em armazenamento externo (SD).
 [Bandcamp] Exibe os 3 primeiros comentários.
 Aviso de download aparece apenas ao iniciar.

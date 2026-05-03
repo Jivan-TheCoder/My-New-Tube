@@ -1,4 +1,3 @@
-### Mga Pagpapabuti
 - Mag-import/export ng mga setting #1333
 - Bawasan ang pag-overdraw (nakabubuti sa pagtakbo ng app) #1371
 - Ilan pang mga pagpapahusay #1375

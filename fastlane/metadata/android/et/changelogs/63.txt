@@ -1,4 +1,3 @@
-### Täiustused
 - Impordi/ekspordi seaded #1333
 - Ülejoonistamise vähendamine (jõudluse parendus) #1371
 - Väikesed koodi täiustused #1375

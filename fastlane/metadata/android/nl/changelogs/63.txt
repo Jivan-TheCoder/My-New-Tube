@@ -1,4 +1,3 @@
-### Verbeteringen
 - Instellingen importeren/exporteren #1333
 - Overdraw verminderen (prestatieverbetering) #1371
 - Kleine code verbeteringen #1375

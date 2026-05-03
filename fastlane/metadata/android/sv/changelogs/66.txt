@@ -1,6 +1,3 @@
-# Ändringslogg för v0.13.7
-
-### Fixat
 - Löser problem med sorteringsfilter i v0.13.6
 
 # Ändringslogg för v0.13.6

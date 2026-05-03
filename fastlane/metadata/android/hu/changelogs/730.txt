@@ -1,2 +1,1 @@
-# Javítás
 - Funkció hiba feloldás újabb gyors javítása.

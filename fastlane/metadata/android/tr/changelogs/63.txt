@@ -1,4 +1,3 @@
-### Geliştirmeler
 - İçe/Dışa aktarma ayarları #1333
 - Aşmalar azaltıldı(performans iyileştirmeleri) #1371
 - Küçük kod iyileştirmeleri #1375

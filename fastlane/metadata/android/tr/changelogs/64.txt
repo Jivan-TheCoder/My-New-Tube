@@ -1,4 +1,3 @@
-### Geliştirmeler
 - Mobil veri kullanıldığında video kalitesini sınırlandırma seçeneği eklendi. #1339
 - Oturum boyunca parlaklığı hatırla #1442
 - düşük performanslı CPU'larda indirme performansı iyileştirildi #1431

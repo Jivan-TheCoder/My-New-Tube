@@ -1,4 +1,3 @@
-# Hobetua
 Erreproduzitzailea denbora-zigiluetan mantendu
 Deskarga misioak berreskuratu
 Ezabatu deskarga fitxategia gorde

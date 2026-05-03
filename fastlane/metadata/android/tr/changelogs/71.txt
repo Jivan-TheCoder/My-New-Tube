@@ -1,4 +1,3 @@
-### İyileştirmeler
 * GitHub derlemesi için uygulama güncelleme bildirimi ekleyin (#1608 yazan @krtkush)
 * İndiricide çeşitli iyileştirmeler (@kapodamy tarafından #1944):
 * eksik beyaz simgeleri ekleyin ve simge renklerini değiştirmek için sert çizgili yol kullanın

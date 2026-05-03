@@ -1,4 +1,3 @@
-###Penambahbaikan
 - Pengaturan Import/Eksport #1333
 - Mengurangi Pengambaran berlebih (peningkatan prestasi) #1371
 - Penambahbaikan kecil kepada kod #1375

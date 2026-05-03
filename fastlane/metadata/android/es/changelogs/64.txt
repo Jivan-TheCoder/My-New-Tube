@@ -1,4 +1,3 @@
-### Mejoras
 - Capacidad para limitar la calidad de video si se están usando datos móviles. #1339
 - Recordar brillo para la sesión #1442
 - Mejorado el rendimiento de descarga en procesadores débiles #1431

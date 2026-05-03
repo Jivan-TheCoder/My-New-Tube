@@ -1,4 +1,3 @@
-### Improvements
 * Add app update notification for GitHub build (#1608 by @krtkush)
 * Various improvements to the downloader (#1944 by @kapodamy):
   * add missing white icons and use hardcored way for change the icon colors

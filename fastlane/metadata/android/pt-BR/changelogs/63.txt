@@ -1,4 +1,3 @@
-### Melhorias
  - Importar/exportar configurações #1333
  - Reduzir overdraw (melhoria de desempenho) #1371
  - Pequenas melhorias no código #1375

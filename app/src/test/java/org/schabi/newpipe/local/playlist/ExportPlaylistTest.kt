@@ -1,19 +1,15 @@
-/*
- * SPDX-FileCopyrightText: 2025 NewPipe contributors <https://newpipe.net>
- * SPDX-License-Identifier: GPL-3.0-or-later
- */
-
 package org.schabi.newpipe.local.playlist
 
 import android.content.Context
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.mockito.Mockito.mock
-import org.schabi.newpipe.database.playlist.PlaylistStreamEntry
-import org.schabi.newpipe.database.stream.model.StreamEntity
+import com.playtube.protube.video.music.database.playlist.PlaylistStreamEntry
+import com.playtube.protube.video.music.database.stream.model.StreamEntity
 import org.schabi.newpipe.extractor.stream.StreamType
-import org.schabi.newpipe.local.playlist.PlayListShareMode.JUST_URLS
-import org.schabi.newpipe.local.playlist.PlayListShareMode.YOUTUBE_TEMP_PLAYLIST
+import com.playtube.protube.video.music.local.playlist.PlayListShareMode.JUST_URLS
+import com.playtube.protube.video.music.local.playlist.PlayListShareMode.YOUTUBE_TEMP_PLAYLIST
+import com.playtube.protube.video.music.local.playlist.export
 
 class ExportPlaylistTest {
 

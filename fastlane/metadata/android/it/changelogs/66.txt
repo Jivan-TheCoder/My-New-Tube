@@ -1,6 +1,3 @@
-# Registro delle modifiche della v0.13.7
-
-### Fisso
 - Risolti i problemi del filtro di ordinamento della v0.13.6
 
 # Registro delle modifiche della v0.13.6
