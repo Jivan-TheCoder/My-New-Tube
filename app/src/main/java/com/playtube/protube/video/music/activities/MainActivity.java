@@ -1,12 +1,16 @@
 package com.playtube.protube.video.music.activities;
 
+import android.Manifest;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -15,9 +19,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -98,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int ITEM_ID_SETTINGS = 0;
     private static final int ITEM_ID_RATE_APP = 1;
     private static final int ITEM_ID_SHARE_APP = 2;
+    private static final int ITEM_ID_PRIVACY_POLICY = 3;
     private static final String[] REMOTE_DRAWER_KIOSKS = new String[]{"trending_gaming", "trending_music"};
 
     private static final int ORDER = 0;
@@ -155,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
 
         MigrationManager.showUserInfoIfPresent(this);
 
+        requestNotificationPermissionIfNeeded();
 
         appUpdateManager = AppUpdateManagerFactory.create(this);
         checkForAppUpdate();
@@ -237,6 +245,7 @@ public class MainActivity extends AppCompatActivity {
         drawerLayoutBinding.navigation.getMenu().add(R.id.menu_options_about_group, ITEM_ID_SETTINGS, ORDER, R.string.settings).setIcon(R.drawable.ic_settings);
         drawerLayoutBinding.navigation.getMenu().add(R.id.menu_options_about_group, ITEM_ID_RATE_APP, ORDER, R.string.rate_app).setIcon(R.drawable.ic_star_filled);
         drawerLayoutBinding.navigation.getMenu().add(R.id.menu_options_about_group, ITEM_ID_SHARE_APP, ORDER, R.string.share_app).setIcon(R.drawable.ic_share);
+        drawerLayoutBinding.navigation.getMenu().add(R.id.menu_options_about_group, ITEM_ID_PRIVACY_POLICY, ORDER, R.string.privacy_policy).setIcon(R.drawable.ic_description);
     }
 
     private boolean drawerItemSelected(final MenuItem item) {
@@ -342,6 +351,9 @@ public class MainActivity extends AppCompatActivity {
             case ITEM_ID_SHARE_APP:
                 ShareUtils.shareText(this, getString(R.string.app_name), "https://play.google.com/store/apps/details?id=" + getPackageName());
                 break;
+            case ITEM_ID_PRIVACY_POLICY:
+                ShareUtils.openUrlInBrowser(this, "https://sites.google.com/view/playtube-privacy-policy/");
+                break;
         }
     }
 
@@ -432,7 +444,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         final Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
-        appUpdateInfoTask.addOnSuccessListener(new OnSuccessListener<AppUpdateInfo>() {
+        appUpdateInfoTask.addOnSuccessListener(
+                new OnSuccessListener<AppUpdateInfo>() {
             @Override
             public void onSuccess(final AppUpdateInfo appUpdateInfo) {
                 if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
@@ -450,6 +463,29 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("MainActivity", "In-app update check failed", e);
             }
         });
+    }
+
+    private void requestNotificationPermissionIfNeeded() {
+        PermissionHelper.checkPostNotificationsPermission(this,
+                PermissionHelper.POST_NOTIFICATIONS_REQUEST_CODE);
+    }
+
+    private void showNotificationsPermissionSettingsDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.notifications)
+                .setMessage(R.string.notifications_disabled)
+                .setPositiveButton(android.R.string.ok, (dialog, which) -> {
+                    final Intent intent = new Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS)
+                            .putExtra(Settings.EXTRA_APP_PACKAGE, getPackageName())
+                            .setData(Uri.parse("package:" + getPackageName()));
+                    try {
+                        startActivity(intent);
+                    } catch (final Exception e) {
+                        ErrorUtil.showUiErrorSnackbar(this, "Opening notification settings", e);
+                    }
+                })
+                .setNegativeButton(android.R.string.cancel, null)
+                .show();
     }
 
     private void resumeImmediateUpdateIfNeeded() {
@@ -576,6 +612,23 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(final int requestCode, @NonNull final String[] permissions, @NonNull final int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == PermissionHelper.POST_NOTIFICATIONS_REQUEST_CODE) {
+            final boolean granted = grantResults.length > 0
+                    && grantResults[0] == PackageManager.PERMISSION_GRANTED;
+            if (!granted) {
+                Toast.makeText(this, R.string.permission_denied, Toast.LENGTH_SHORT).show();
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
+                        && !ActivityCompat.shouldShowRequestPermissionRationale(this,
+                        Manifest.permission.POST_NOTIFICATIONS)
+                        && ContextCompat.checkSelfPermission(this,
+                        Manifest.permission.POST_NOTIFICATIONS)
+                        != PackageManager.PERMISSION_GRANTED) {
+                    showNotificationsPermissionSettingsDialog();
+                }
+            }
+            return;
+        }
+
         for (final int i : grantResults) {
             if (i == PackageManager.PERMISSION_DENIED) {
                 return;

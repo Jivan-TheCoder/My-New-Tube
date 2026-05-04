@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="@dimen/drawer_header_height"
     android:background="?colorPrimary"
     android:nextFocusDown="@+id/drawer_header_action_button">
 
@@ -18,11 +18,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginTop="@dimen/drawer_header_padding_top"
         android:fitsSystemWindows="true"
         android:gravity="bottom"
         android:minHeight="@dimen/drawer_header_content_min_height"
+        android:visibility="gone"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -51,7 +52,7 @@
                 android:gravity="start|center_vertical"
                 android:hyphenationFrequency="full"
                 android:maxLines="1"
-                android:text="@string/app_name"
+                android:text="Play Tube"
                 android:textColor="@color/drawer_header_font_color"
                 android:textStyle="bold"
                 app:autoSizeMaxTextSize="@dimen/drawer_header_newpipe_title_max_text_size"

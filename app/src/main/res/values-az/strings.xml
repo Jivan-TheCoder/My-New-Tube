@@ -823,8 +823,18 @@
 
     <string name="rate_app">Qiymətləndirmə proqramı</string>
     <string name="share_app">Proqramı paylaşın</string>
-    <string name="friendly_parsing_title">We are improving support for this page.</string>
-    <string name="friendly_parsing_message">Please try this video again after some time. Your app is safe to keep using, and we are continuing to improve compatibility so more videos work smoothly every day. Thank you for staying with us.</string>
+    <string name="friendly_parsing_title">Bu səhifə üçün dəstəyi təkmilləşdiririk.</string>
+    <string name="friendly_parsing_message">Bir müddət sonra bu videonu yenidən sınayın. Tətbiqinizdən istifadə etməyə davam etmək təhlükəsizdir və hər gün daha çox videonun problemsiz işləməsi üçün uyğunluğu təkmilləşdirməyə davam edirik. Bizimlə qaldığınız üçün təşəkkür edirik.</string>
+
+    <string name="rating_dialog_title">Play Tube-dan zövq alırsınız?</string>
+    <string name="rating_dialog_subtitle">İnkişafı dəstəkləmək və təkmilləşdirməyimizə kömək etmək üçün bizə qiymət verin.</string>
+    <string name="rating_dialog_rate_now">İndi qiymətləndirin</string>
+    <string name="rating_dialog_maybe_later">Bəlkə daha sonra</string>
+    <string name="rating_dialog_no_thanks">Xeyr, təşəkkürlər</string>
+    <string name="exit_dialog_title">Çıxmaq istədiyinizə əminsinizmi?</string>
+    <string name="exit_dialog_subtitle">Səni darıxacağıq! Həmişə qaldığınız yerdən davam edə bilərsiniz.</string>
+    <string name="exit_dialog_exit_app">Tətbiqdən çıxın</string>
+    <string name="exit_dialog_keep_watching">İzləməyə davam edin</string>
 </resources>
 
 

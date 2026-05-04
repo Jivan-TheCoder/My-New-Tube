@@ -851,11 +851,19 @@
     <string name="export_subscriptions_summary">Exportar suscripciones a un archivo .json</string>
     <string name="import_from_previous_export">Importar desde exportaciÃ³n anterior</string>
 
-
     <string name="rate_app">Calificar aplicación</string>
     <string name="share_app">Compartir aplicación</string>
-    <string name="friendly_parsing_title">We are improving support for this page.</string>
-    <string name="friendly_parsing_message">Please try this video again after some time. Your app is safe to keep using, and we are continuing to improve compatibility so more videos work smoothly every day. Thank you for staying with us.</string>
+    <string name="friendly_parsing_title">Estamos mejorando la compatibilidad con esta página.</string>
+    <string name="friendly_parsing_message">Por favor, intente reproducir este video nuevamente más tarde. Puede seguir utilizando la aplicación con total seguridad; seguimos mejorando la compatibilidad para que cada día más videos se reproduzcan con fluidez. Gracias por seguir con nosotros.</string>
+    <string name="rating_dialog_title">¿Te gusta Play Tube?</string>
+    <string name="rating_dialog_subtitle">Por favor, califícanos para apoyar el desarrollo y ayudarnos a mejorar.</string>
+    <string name="rating_dialog_rate_now">Calificar ahora</string>
+    <string name="rating_dialog_maybe_later">Quizás más tarde</string>
+    <string name="rating_dialog_no_thanks">No, gracias</string>
+    <string name="exit_dialog_title">¿Estás seguro de que quieres salir?</string>
+    <string name="exit_dialog_subtitle">¡Te extrañaremos! Siempre puedes retomar donde lo dejaste.</string>
+    <string name="exit_dialog_exit_app">Salir de la app</string>
+    <string name="exit_dialog_keep_watching">Seguir viendo</string>
 </resources>
 
 

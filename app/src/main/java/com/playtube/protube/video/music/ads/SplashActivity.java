@@ -30,12 +30,19 @@ import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+import com.google.android.ump.ConsentInformation;
+import com.google.android.ump.ConsentRequestParameters;
+import com.google.android.ump.FormError;
+import com.google.android.ump.UserMessagingPlatform;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 
 import com.playtube.protube.video.music.AppMode;
 import com.playtube.protube.video.music.R;
 import com.playtube.protube.video.music.activities.MainActivity;
+import com.playtube.protube.video.music.util.Localization;
+import com.playtube.protube.video.music.util.ServiceHelper;
+import com.playtube.protube.video.music.util.ThemeHelper;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -49,14 +56,14 @@ public class SplashActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
-//        Localization.migrateAppLanguageSettingIfNecessary(getApplicationContext());
-//        ThemeHelper.setDayNightMode(this);
-//        ThemeHelper.setTheme(this, ServiceHelper.getSelectedServiceId(this));
+        Localization.migrateAppLanguageSettingIfNecessary(getApplicationContext());
+        ThemeHelper.setDayNightMode(this);
+        ThemeHelper.setTheme(this, ServiceHelper.getSelectedServiceId(this));
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(Color.parseColor("#010B1A"));
+        window.setStatusBarColor(Color.parseColor("#D3221D"));
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_splash);
@@ -79,16 +86,13 @@ public class SplashActivity extends AppCompatActivity {
             }
         });
 
-
         logActivityVariables("onCreate");
-
         if (AdUtils.isOnline(this)) {
             getAdsData();
         } else {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-
                     AdUtils.OpenAllData = false;
                     AdUtils.AdsOpenIntrestial = false;
                     CallIntent(1);
@@ -135,6 +139,7 @@ public class SplashActivity extends AppCompatActivity {
 
     private void handleRemoteConfigFailure() {
         AdUtils.CheckOnOff = false;
+        AdUtils.dialog = false;
         AdUtils.LoadingAllData = false;
         AdUtils.AdsOpenIntrestial = false;
         CallIntent(200);
@@ -191,6 +196,16 @@ public class SplashActivity extends AppCompatActivity {
                 AdUtils.REC_Google_Medium_REC = "";
                 AdUtils.REC_Google_Medium_REC_Fail = "";
                 AdUtils.REC_Google_Medium_REC_Fail_1 = "";
+
+                AdUtils.google_exit_inter = "";
+                AdUtils.google_exit_inter_fail = "";
+                AdUtils.google_exit_inter_fail_1 = "";
+                AdUtils.google_exit_native = "";
+                AdUtils.google_exit_native_fail = "";
+                AdUtils.google_exit_native_fail_1 = "";
+                AdUtils.google_exit_mrec = "";
+                AdUtils.google_exit_mrec_fail = "";
+                AdUtils.google_exit_mrec_fail_1 = "";
 
                 finish();
                 return;
@@ -281,15 +296,7 @@ public class SplashActivity extends AppCompatActivity {
 
             logAdsValue();
 
-            if (!AdUtils.dialog) {
-                if (AdUtils.ShowRewarded) {
-                    RewardedAdManager.getInstance().init(SplashActivity.this);
-                } else {
-                    AdUtils.PreLoad(SplashActivity.this);
-                }
-            }
-            fetchAd();
-            AdUtils.LoadingAllData = true;
+            requestConsentBeforeLoadingAds();
         } else {
             AdUtils.AdsOpenIntrestial = false;
 
@@ -328,8 +335,60 @@ public class SplashActivity extends AppCompatActivity {
             AdUtils.REC_Google_Medium_REC_Fail = "";
             AdUtils.REC_Google_Medium_REC_Fail_1 = "";
 
+
+            AdUtils.google_exit_inter = "";
+            AdUtils.google_exit_inter_fail = "";
+            AdUtils.google_exit_inter_fail_1 = "";
+            AdUtils.google_exit_native = "";
+            AdUtils.google_exit_native_fail = "";
+            AdUtils.google_exit_native_fail_1 = "";
+            AdUtils.google_exit_mrec = "";
+            AdUtils.google_exit_mrec_fail = "";
+            AdUtils.google_exit_mrec_fail_1 = "";
+
             CallIntent(2);
         }
+    }
+
+    private void requestConsentBeforeLoadingAds() {
+        final ConsentInformation consentInformation =
+                UserMessagingPlatform.getConsentInformation(this);
+        final ConsentRequestParameters params = new ConsentRequestParameters.Builder().build();
+
+        consentInformation.requestConsentInfoUpdate(
+                this,
+                params,
+                () -> UserMessagingPlatform.loadAndShowConsentFormIfRequired(
+                        this,
+                        (FormError formError) -> {
+                            if (formError != null) {
+                                Log.w(TAG, "Consent form error: " + formError.getMessage());
+                            }
+                            continueLoadingAdsAfterConsent(consentInformation);
+                        }),
+                requestConsentError -> {
+                    Log.w(TAG, "Consent info update failed: " + requestConsentError.getMessage());
+                    continueLoadingAdsAfterConsent(consentInformation);
+                });
+    }
+
+    private void continueLoadingAdsAfterConsent(@NonNull final ConsentInformation consentInformation) {
+        if (!consentInformation.canRequestAds()) {
+            AdUtils.AdsOpenIntrestial = false;
+            AdUtils.LoadingAllData = false;
+            CallIntent(12);
+            return;
+        }
+
+        if (!AdUtils.dialog) {
+            if (AdUtils.ShowRewarded) {
+                RewardedAdManager.getInstance().init(SplashActivity.this);
+            } else {
+                AdUtils.PreLoad(SplashActivity.this);
+            }
+        }
+        fetchAd();
+        AdUtils.LoadingAllData = true;
     }
 
     private void fetchAd() {

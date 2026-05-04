@@ -169,7 +169,7 @@
     <string name="duration_live">Live</string>
     <string name="downloads">Downloads</string>
     <string name="downloads_title">Downloads</string>
-    <string name="loading_metadata_title">Loading Metadata...</string>
+    <string name="loading_metadata_title">Loading Metadata…</string>
     <string name="error_report_title">Error report</string>
     <string name="friendly_parsing_title">We are improving support for this page.</string>
     <string name="friendly_parsing_message">Please try this video again after some time. Your app is safe to keep using, and we are continuing to improve compatibility so more videos work smoothly every day. Thank you for staying with us.</string>
@@ -316,7 +316,7 @@
     <string name="msg_running">NewPipe Downloading</string>
     <string name="msg_running_detail">Tap for details</string>
     <string name="msg_calculating_hash">Calculating hash</string>
-    <string name="msg_wait">Please wait...</string>
+    <string name="msg_wait">Please wait…</string>
     <string name="msg_copied">Copied to clipboard</string>
     <string name="msg_failed_to_copy">Failed to copy to clipboard</string>
     <string name="no_available_dir">Please define a download folder later in settings</string>
@@ -381,7 +381,7 @@
     <string name="enqueued_next">Enqueued next</string>
     <string name="start_here_on_background">Start playing in the background</string>
     <string name="start_here_on_popup">Start playing in a popup</string>
-    <string name="loading_stream_details">Loading stream details...</string>
+    <string name="loading_stream_details">Loading stream details…</string>
     <string name="drawer_open">Open Drawer</string>
     <string name="drawer_close">Close Drawer</string>
     <string name="preferred_open_action_settings_title">Preferred \'open\' action</string>
@@ -390,14 +390,14 @@
     <string name="background_player">Background player</string>
     <string name="popup_player">Popup player</string>
     <string name="always_ask_open_action">Always ask</string>
-    <string name="preferred_player_fetcher_notification_title">Getting info...</string>
+    <string name="preferred_player_fetcher_notification_title">Getting info…</string>
     <string name="preferred_player_fetcher_notification_message">"Loading requested content"</string>
     <string name="create_playlist">New Playlist</string>
     <string name="duplicate_in_playlist">The playlists that are grayed out already contain this item.</string>
     <string name="rename_playlist">Rename</string>
     <string name="name">Name</string>
     <string name="add_to_playlist">Add to playlist</string>
-    <string name="processing_may_take_a_moment">Processing... May take a moment</string>
+    <string name="processing_may_take_a_moment">Processing… May take a moment</string>
     <string name="mute">Mute</string>
     <string name="unmute">Unmute</string>
     <string name="set_as_playlist_thumbnail">Set as playlist thumbnail</string>
@@ -433,11 +433,24 @@
     <string name="crash_the_app">Crash the app</string>
     <string name="show_error_snackbar">Show an error snackbar</string>
     <string name="create_error_notification">Create an error notification</string>
+    <plurals name="export_subscriptions">
+        <item quantity="one">Teungoh geu-ekspor %d langganan…</item>
+        <item quantity="other">Teungoh geu-ekspor %d langganan…</item>
+    </plurals>
+    <plurals name="load_subscriptions">
+        <item quantity="one">Teungoh jimuat langganan %d…</item>
+        <item quantity="other">Teungoh jimuat %d langganan…</item>
+    </plurals>
+    <plurals name="import_subscriptions">
+        <item quantity="one">Teungoh meuimpor %d langganan…</item>
+        <item quantity="other">Teungoh meuimpor %d langganan…</item>
+    </plurals>
+
     <string name="import_title">Import</string>
     <string name="import_from">Import from</string>
     <string name="export_to">Export to</string>
-    <string name="import_ongoing">Importing...</string>
-    <string name="export_ongoing">Exporting...</string>
+    <string name="import_ongoing">Importing…</string>
+    <string name="export_ongoing">Exporting…</string>
     <string name="import_file_title">Import file</string>
     <string name="previous_export">Previous export</string>
     <string name="import_subscriptions_title">Import subscriptions"</string>
@@ -505,7 +518,7 @@
     <string name="recovering">recovering</string>
     <string name="enqueue">Enqueue</string>
     <string name="permission_denied">Action denied by the system</string>
-    <string name="checking_updates_toast">Checking for updates...</string>
+    <string name="checking_updates_toast">Checking for updates…</string>
     <string name="download_failed">Download failed</string>
     <string name="reset_settings_title">Reset settings</string>
     <string name="reset_settings_summary">Reset all settings to their default values</string>
@@ -569,8 +582,8 @@
     <string name="feed_groups_header_title">Channel groups</string>
     <string name="feed_oldest_subscription_update">Feed last updated: %s</string>
     <string name="feed_subscription_not_loaded_count">Not loaded: %d</string>
-    <string name="feed_notification_loading">Loading feed...</string>
-    <string name="feed_processing_message">Processing feed...</string>
+    <string name="feed_notification_loading">Loading feed…</string>
+    <string name="feed_processing_message">Processing feed…</string>
     <string name="feed_new_items">New feed items</string>
     <string name="feed_group_dialog_select_subscriptions">Select subscriptions</string>
     <string name="feed_group_dialog_empty_selection">No subscription selected</string>
@@ -739,5 +752,15 @@
     <string name="youtube_player_http_403">HTTP error 403 received from server while playing, likely caused by an IP ban or streaming URL deobfuscation issues</string>
     <string name="sign_in_confirm_not_bot_error">%1$s refused to provide data, asking for a login to confirm the requester is not a bot.\n\nYour IP might have been temporarily banned by %1$s, you can wait some time or switch to a different IP (for example by turning on/off a VPN, or by switching from WiFi to mobile data).\n\nPlease see <a href="%2$s">this help entry</a> for more information.</string>
     <string name="unsupported_content_in_country">This content is not available for the currently selected content country.\n\nChange your selection from \"Settings &gt; Content &gt; Default content country\".</string>
+
+    <string name="rating_dialog_title">Peuë droëneuh neunikmati Play Tube?</string>
+    <string name="rating_dialog_subtitle">Neubri nilai keu kamoe mangat jeuet neubantu dukong peukeumbangan ngon neupeugot kamoe leubeh get lom.</string>
+    <string name="rating_dialog_rate_now">Nilai Jinoe</string>
+    <string name="rating_dialog_maybe_later">Mungken Eunteuk</string>
+    <string name="rating_dialog_no_thanks">Hana, Teurimong geunaseh</string>
+    <string name="exit_dialog_title">Peuë Droeneuh beutôi-beutôi neuk neuteubiet?</string>
+    <string name="exit_dialog_subtitle">Kamoe akan rindu keu droeneuh! Droeneuh jeuet neusambong nonton tepat bak teumpat droeneuh neupiyoh pajan mantong nyang droeneuh galak.</string>
+    <string name="exit_dialog_exit_app">Teubiet Aplikasi</string>
+    <string name="exit_dialog_keep_watching">Teutap neutonton</string>
 </resources>
 

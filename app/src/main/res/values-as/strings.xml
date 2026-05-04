@@ -6,7 +6,7 @@
     <string name="ok">ঠিক আছে</string>
     <string name="open_in_browser">ব্ৰাউজাৰত খোলক</string>
     <string name="open_in_popup_mode">POPUP অৱস্থাত খোলক</string>
-    <string name="open_with">...ৰ সৈতে খোলক</string>
+    <string name="open_with">…ৰ সৈতে খোলক</string>
     <string name="share">চেয়াৰ</string>
     <string name="upload_date_text">%1$s ত প্ৰকাশ কৰা হৈছে</string>
     <string name="no_player_found">কোনো ষ্ট্ৰিম প্লেয়াৰ পোৱা নগ\'ল। VLC ইনষ্টল কৰক\?</string>
@@ -455,7 +455,7 @@
     <string name="import_from"></string>ৰ পৰা আমদানি কৰক
     <string name="export_to"></string> লৈ ৰপ্তানি কৰক
     <string name="import_ongoing">আমদানি কৰা হৈছে...</string>
-    <string name="export_ongoing">ৰপ্তানি কৰা হৈছে...</string>
+    <string name="export_ongoing">ৰপ্তানি কৰা হৈছে…</string>
     <string name="import_file_title">ফাইল আমদানি কৰক</string>
     <string name="previous_export">পূৰ্বৰ ৰপ্তানি</string>
     <string name="import_subscriptions_title">স্বত্বাধিকাৰ আমদানি কৰক"</string>
@@ -525,7 +525,7 @@
     <string name="recovering">পুনৰুদ্ধাৰ কৰা হৈছে</string>
     <string name="enqueue">এনকেউ</string>
     <string name="permission_denied">চিস্টেমে অস্বীকাৰ কৰা কাৰ্য্য</string>
-    <string name="checking_updates_toast">আপডেইটসমূহৰ বাবে পৰীক্ষা কৰা হৈছে...</string>
+    <string name="checking_updates_toast">আপডেইটসমূহৰ বাবে পৰীক্ষা কৰা হৈছে…</string>
     <string name="download_failed">ডাউনলোড ব্যৰ্থ</string>
     <string name="reset_settings_title">সংহতিসমূহ পুনৰায় সেট কৰক</string>
     <string name="reset_settings_summary">সকলো সংহতি সিহতৰ অবিকল্পিত মানলৈ পুনৰায় সেট কৰক</string>

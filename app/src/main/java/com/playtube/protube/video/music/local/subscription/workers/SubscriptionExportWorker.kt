@@ -78,7 +78,7 @@ class SubscriptionExportWorker(
         val notification =
             NotificationCompat
                 .Builder(applicationContext, NOTIFICATION_CHANNEL_ID)
-                .setSmallIcon(R.drawable.ic_newpipe_triangle_white)
+                .setSmallIcon(R.drawable.ic_playtube_triangle_white)
                 .setOngoing(true)
                 .setProgress(-1, -1, true)
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)

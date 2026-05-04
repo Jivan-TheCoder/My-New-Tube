@@ -4,6 +4,7 @@ import java.util.Properties
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.google.services)
+    alias(libs.plugins.google.firebase.crashlytics)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.jetbrains.kotlin.kapt)
     alias(libs.plugins.google.ksp)
@@ -242,6 +243,7 @@ dependencies {
     implementation(platform(libs.google.firebase.bom))
     implementation(libs.google.firebase.analytics)
     implementation(libs.google.firebase.config)
+    implementation(libs.google.firebase.crashlytics)
     implementation(libs.androidx.webkit)
 
     // Coroutines interop
@@ -330,6 +332,7 @@ dependencies {
     //Todo: in app rate and in app update
     implementation("com.google.android.play:app-update:2.1.0")
     implementation("com.google.android.play:review:2.0.2")
+    implementation("com.google.android.ump:user-messaging-platform:3.1.0")
     //Todo: Multidex
     implementation("androidx.multidex:multidex:2.0.1")
 }

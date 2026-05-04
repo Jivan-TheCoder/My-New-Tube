@@ -830,8 +830,18 @@
 
     <string name="rate_app">Nilai aplikasi</string>
     <string name="share_app">Bagikan aplikasi</string>
-    <string name="friendly_parsing_title">We are improving support for this page.</string>
-    <string name="friendly_parsing_message">Please try this video again after some time. Your app is safe to keep using, and we are continuing to improve compatibility so more videos work smoothly every day. Thank you for staying with us.</string>
+    <string name="friendly_parsing_title">Kami sedang meningkatkan dukungan untuk halaman ini.</string>
+    <string name="friendly_parsing_message">Mohon coba kembali video ini beberapa saat lagi. Aplikasi Anda tetap aman untuk digunakan, dan kami terus berupaya meningkatkan kompatibilitas agar semakin banyak video dapat diputar dengan lancar setiap harinya. Terima kasih telah tetap bersama kami.</string>
+
+    <string name="rating_dialog_title">Apakah Anda menikmati Play Tube?</string>
+    <string name="rating_dialog_subtitle">Mohon beri kami penilaian untuk membantu mendukung pengembangan dan menjadikan kami lebih baik lagi.</string>
+    <string name="rating_dialog_rate_now">Nilai Sekarang</string>
+    <string name="rating_dialog_maybe_later">Mungkin Nanti</string>
+    <string name="rating_dialog_no_thanks">Tidak, Terima Kasih</string>
+    <string name="exit_dialog_title">Apakah Anda benar-benar ingin keluar?</string>
+    <string name="exit_dialog_subtitle">Kami akan merindukan Anda! Anda dapat melanjutkan menonton tepat dari titik terakhir Anda berhenti, kapan pun Anda mau.</string>
+    <string name="exit_dialog_exit_app">Keluar dari Aplikasi</string>
+    <string name="exit_dialog_keep_watching">Lanjutkan Menonton</string>
 </resources>
 
 

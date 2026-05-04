@@ -865,8 +865,18 @@
 
     <string name="rate_app">Evaluer application</string>
     <string name="share_app">Partager application</string>
-    <string name="friendly_parsing_title">We are improving support for this page.</string>
-    <string name="friendly_parsing_message">Please try this video again after some time. Your app is safe to keep using, and we are continuing to improve compatibility so more videos work smoothly every day. Thank you for staying with us.</string>
+    <string name="friendly_parsing_title">Estamos mejorando la compatibilidad con esta página.</string>
+    <string name="friendly_parsing_message">Por favor, intenta reproducir este video de nuevo más tarde. Puedes seguir usando la aplicación con total seguridad; seguimos trabajando para mejorar la compatibilidad y lograr que cada día más videos se reproduzcan sin problemas. Gracias por seguir con nosotros.</string>
+
+    <string name="rating_dialog_title">¿Te gusta Play Tube?</string>
+    <string name="rating_dialog_subtitle">Por favor, califícanos para apoyar el desarrollo y ayudarnos a mejorar.</string>
+    <string name="rating_dialog_rate_now">Calificar ahora</string>
+    <string name="rating_dialog_maybe_later">Quizás más tarde</string>
+    <string name="rating_dialog_no_thanks">No, gracias</string>
+    <string name="exit_dialog_title">¿Estás seguro de que quieres salir?</string>
+    <string name="exit_dialog_subtitle">¡Te extrañaremos! Siempre puedes retomar la reproducción justo donde la dejaste.</string>
+    <string name="exit_dialog_exit_app">Salir de la app</string>
+    <string name="exit_dialog_keep_watching">Seguir viendo</string>
 </resources>
 
 

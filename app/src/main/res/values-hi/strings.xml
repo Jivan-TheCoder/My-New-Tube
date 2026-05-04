@@ -847,9 +847,6 @@
     <string name="youtube_player_http_403">पले करते समय सर्वर से HTTP error 403 मिला, जो शायद IP बैन या स्ट्रीमिंग URL डीओबफस्केशन की दिक्कतों की वजह से हुआ है</string>
     <string name="sign_in_confirm_not_bot_error">%1$s ने डेटा देने से मना कर दिया, और यह कन्फर्म करने के लिए लॉगिन मांगा कि रिक्वेस्ट करने वाला बोट नहीं है।\n\nहो सकता है कि %1$s ने आपके IP को कुछ समय के लिए बैन कर दिया हो, आप कुछ समय इंतज़ार कर सकते हैं या किसी दूसरे IP पर स्विच कर सकते हैं (जैसे VPN ऑन/ऑफ करके, या WiFi से मोबाइल डेटा पर स्विच करके)।\n\nअधिक जानकारी के लिए कृपया <a href="%2$s">यह FAQ एंट्री</a> देखें।</string>
     <string name="unsupported_content_in_country">यह कंटेंट अभी चुने गए देश के कंटेंट के लिए उपलब्ध नहीं है।\n\n\"सेटिंग्स &gt; कंटेंट &gt; डिफ़ॉल्ट कंटेंट देश\" से अपना चुनाव बदलें।</string>
-    <string name="kao_dialog_warning">अगस्त 2025 में, Google ने घोषणा की कि सितंबर 2026 से, सर्टिफाइड डिवाइस पर सभी Android ऐप्स जिनमें Play Store के बाहर से इंस्टॉल किए गए ऐप्स भी शामिल हैं, को इंस्टॉल करने के लिए डेवलपर वेरिफिकेशन ज़रूरी होगा। चूंकि NewPipe के डेवलपर्स इस शर्त से सहमत नहीं हैं, इसलिए उस समय के बाद NewPipe सर्टिफाइड Android डिवाइस पर काम नहीं करेगा।</string>
-    <string name="kao_dialog_more_info">विवरण</string>
-    <string name="kao_solution">समाधान</string>
     <plurals name="export_subscriptions">
         <item quantity="one">%d सब्सक्रिप्शन एक्सपोर्ट किया जा रहा है…</item>
         <item quantity="other">%d सब्सक्रिप्शन एक्सपोर्ट किए जा रहे हैं…</item>
@@ -870,8 +867,19 @@
 
     <string name="rate_app">एप्प का मूल्यांकन</string>
     <string name="share_app">ऐप साझा करें</string>
-    <string name="friendly_parsing_title">We are improving support for this page.</string>
-    <string name="friendly_parsing_message">Please try this video again after some time. Your app is safe to keep using, and we are continuing to improve compatibility so more videos work smoothly every day. Thank you for staying with us.</string>
+
+    <string name="friendly_parsing_title">हम इस पेज के लिए सपोर्ट बेहतर बना रहे हैं।</string>
+    <string name="friendly_parsing_message">कृपया कुछ समय बाद इस वीडियो को फिर से चलाकर देखें। आप बेझिझक अपने ऐप का इस्तेमाल करते रह सकते हैं, और हम लगातार इसकी कम्पैटिबिलिटी को बेहतर बनाने पर काम कर रहे हैं, ताकि हर दिन ज़्यादा से ज़्यादा वीडियो बिना किसी रुकावट के चल सकें। हमारे साथ बने रहने के लिए धन्यवाद।</string>
+
+    <string name="rating_dialog_title">क्या आपको Play Tube पसंद आ रहा है?</string>
+    <string name="rating_dialog_subtitle">कृपया डेवलपमेंट में मदद करने और हमें बेहतर बनाने में सहायता के लिए हमें रेट करें।</string>
+    <string name="rating_dialog_rate_now">अभी रेट करें</string>
+    <string name="rating_dialog_maybe_later">शायद बाद में</string>
+    <string name="rating_dialog_no_thanks">नहीं, धन्यवाद</string>
+    <string name="exit_dialog_title">क्या आप सच में बाहर निकलना चाहते हैं?</string>
+    <string name="exit_dialog_subtitle">हमें आपकी कमी खलेगी! आप जब चाहें वहीं से देखना जारी रख सकते हैं जहाँ आपने छोड़ा था।</string>
+    <string name="exit_dialog_exit_app">ऐप से बाहर निकलें</string>
+    <string name="exit_dialog_keep_watching">देखना जारी रखें</string>
 </resources>
 
 

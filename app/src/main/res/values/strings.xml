@@ -21,7 +21,7 @@
     <string name="search_with_service_name_and_filter">Search %1$s (%2$s)</string>
     <string name="settings">Settings</string>
     <string name="rate_app">Rate app</string>
-    <string name="rating_dialog_title">Enjoying New Tube?</string>
+    <string name="rating_dialog_title">Enjoying Play Tube?</string>
     <string name="rating_dialog_subtitle">Please rate us to support development and help us improve.</string>
     <string name="rating_dialog_rate_now">Rate now</string>
     <string name="rating_dialog_maybe_later">Maybe later</string>
@@ -31,6 +31,7 @@
     <string name="exit_dialog_exit_app">Exit App</string>
     <string name="exit_dialog_keep_watching">Keep Watching</string>
     <string name="share_app">Share app</string>
+    <string name="privacy_policy">Privacy policy</string>
     <string name="did_you_mean">Did you mean \"%1$s\"?</string>
     <string name="search_showing_result_for">Showing results for: %s</string>
     <string name="share_dialog_title">Share with</string>
@@ -496,6 +497,8 @@
         <item quantity="one">Importing %d subscription...</item>
         <item quantity="other">Importing %d subscriptions...</item>
     </plurals>
+
+
     <string name="import_title">Import</string>
     <string name="import_from">Import from</string>
     <string name="export_to">Export to</string>

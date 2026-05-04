@@ -917,7 +917,7 @@
     <string name="import_from_previous_export">Import from previous export</string>
 
     <string name="rate_app">تقييم التطبيق</string>
-    <string name="rating_dialog_title">هل تستمتع بتطبيق New Tube؟</string>
+    <string name="rating_dialog_title">هل تستمتع بتطبيق Play Tube؟</string>
     <string name="rating_dialog_subtitle">يُرجى تقييمنا لدعم عملية التطوير ومساعدتنا على التحسين.</string>
     <string name="rating_dialog_rate_now">قيّم الآن</string>
     <string name="rating_dialog_maybe_later">ربما لاحقاً</string>

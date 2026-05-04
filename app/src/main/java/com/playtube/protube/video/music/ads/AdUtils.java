@@ -332,12 +332,6 @@ public class AdUtils {
     public static void ClickWithAds(Activity act, InterClick interClick) {
         AdUtils.Ad_Count++;
 
-        // TEST ONLY (remove later)
-        AdUtils.CheckOnOff = true;
-        AdUtils.Ad_Click = 0;        // so Ad_Count (1,2,3...) is always > 0 after increment
-        AdUtils.Time_interval = 0;   // no wait time
-        AdUtils.Time_Check = 0L;     // makes aa huge
-
         if (AdUtils.ShowRewarded) {
             Log.e("JKJKJKJK", "ClickWithAds: rewarded ad path");
             RewardedAdManager.getInstance().show(act, rewarded -> {
@@ -1671,12 +1665,6 @@ public class AdUtils {
 
     public static void ClickWithExitAds(Activity act, InterClick interClick) {
         AdUtils.Ad_Count++;
-
-        // TEST ONLY (remove later)
-        AdUtils.CheckOnOff = true;
-        AdUtils.Ad_Click = 0;        // so Ad_Count (1,2,3...) is always > 0 after increment
-        AdUtils.Time_interval = 0;   // no wait time
-        AdUtils.Time_Check = 0L;     // makes aa huge
 
         Log.e("JKJKJKJK", "ClickWithAds: interstitial ad path");
         GoogleAdsExit(act, interClick);
