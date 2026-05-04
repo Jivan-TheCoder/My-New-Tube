@@ -4,13 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
@@ -41,7 +39,6 @@ import com.playtube.protube.video.music.AppMode;
 import com.playtube.protube.video.music.R;
 import com.playtube.protube.video.music.activities.MainActivity;
 import com.playtube.protube.video.music.util.Localization;
-import com.playtube.protube.video.music.util.ServiceHelper;
 import com.playtube.protube.video.music.util.ThemeHelper;
 
 import java.lang.reflect.Field;
@@ -58,14 +55,9 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
         Localization.migrateAppLanguageSettingIfNecessary(getApplicationContext());
         ThemeHelper.setDayNightMode(this);
-        ThemeHelper.setTheme(this, ServiceHelper.getSelectedServiceId(this));
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        Window window = getWindow();
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(Color.parseColor("#D3221D"));
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_splash);
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -105,10 +97,6 @@ public class SplashActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         logActivityVariables("onResume");
-    }
-
-    public static float convertPixelsToDp(float px, Context context) {
-        return px / ((float) context.getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
     }
 
     public void getAdsData() {
