@@ -15,7 +15,7 @@ import androidx.documentfile.provider.DocumentFile;
 
 import com.nononsenseapps.filepicker.Utils;
 
-import com.playtube.protube.video.music.settings.NewPipeSettings;
+import com.playtube.protube.video.music.settings.PlayTubeSettings;
 import com.playtube.protube.video.music.util.FilePickerActivityHelper;
 
 import java.io.File;
@@ -476,7 +476,7 @@ public class StoredFileHelper implements Serializable {
 
     public static Intent getPicker(@NonNull final Context ctx,
                                    @NonNull final String mimeType) {
-        if (NewPipeSettings.useStorageAccessFramework(ctx)) {
+        if (PlayTubeSettings.useStorageAccessFramework(ctx)) {
             return new Intent(Intent.ACTION_OPEN_DOCUMENT)
                     .putExtra("android.content.extra.SHOW_ADVANCED", true)
                     .setType(mimeType)
@@ -504,7 +504,7 @@ public class StoredFileHelper implements Serializable {
                                       @NonNull final String mimeType,
                                       @Nullable final Uri initialPath) {
         final Intent i;
-        if (NewPipeSettings.useStorageAccessFramework(ctx)) {
+        if (PlayTubeSettings.useStorageAccessFramework(ctx)) {
             i = new Intent(Intent.ACTION_CREATE_DOCUMENT)
                     .putExtra("android.content.extra.SHOW_ADVANCED", true)
                     .setType(mimeType)
@@ -530,7 +530,7 @@ public class StoredFileHelper implements Serializable {
                                                          @Nullable final Uri initialPath,
                                                          @Nullable final String filename) {
 
-        if (NewPipeSettings.useStorageAccessFramework(ctx)) {
+        if (PlayTubeSettings.useStorageAccessFramework(ctx)) {
             if (initialPath == null) {
                 return intent; // nothing to do, no initial path provided
             }

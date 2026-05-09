@@ -31,7 +31,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.nononsenseapps.filepicker.Utils;
 
 import com.playtube.protube.video.music.R;
-import com.playtube.protube.video.music.settings.NewPipeSettings;
+import com.playtube.protube.video.music.settings.PlayTubeSettings;
 import com.playtube.protube.video.music.streams.io.NoFileManagerSafeGuard;
 import com.playtube.protube.video.music.streams.io.StoredFileHelper;
 import com.playtube.protube.video.music.util.FilePickerActivityHelper;
@@ -265,14 +265,14 @@ public class MissionsFragment extends Fragment {
         unsafeMissionTarget = mission;
 
         final Uri initialPath;
-        if (NewPipeSettings.useStorageAccessFramework(mContext)) {
+        if (PlayTubeSettings.useStorageAccessFramework(mContext)) {
             initialPath = null;
         } else {
             final File initialSavePath;
             if (DownloadManager.TAG_AUDIO.equals(mission.storage.getType())) {
-                initialSavePath = NewPipeSettings.getDir(Environment.DIRECTORY_MUSIC);
+                initialSavePath = PlayTubeSettings.getDir(Environment.DIRECTORY_MUSIC);
             } else {
-                initialSavePath = NewPipeSettings.getDir(Environment.DIRECTORY_MOVIES);
+                initialSavePath = PlayTubeSettings.getDir(Environment.DIRECTORY_MOVIES);
             }
             initialPath = Uri.parse(initialSavePath.getAbsolutePath());
         }

@@ -8,7 +8,9 @@ import android.os.Parcelable
 import android.util.Log
 import android.webkit.MimeTypeMap
 import android.widget.Toast
+import androidx.core.app.NotificationChannelCompat
 import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.core.net.toUri
 import androidx.work.CoroutineWorker
 import androidx.work.Data
@@ -215,9 +217,11 @@ class SubscriptionImportWorker(
         currentProgress: Int,
         maxProgress: Int
     ): ForegroundInfo {
+        ensureNotificationChannel()
+        val channelId = applicationContext.getString(R.string.notification_channel_id)
         val notification =
             NotificationCompat
-                .Builder(applicationContext, NOTIFICATION_CHANNEL_ID)
+                .Builder(applicationContext, channelId)
                 .setSmallIcon(R.drawable.ic_playtube_triangle_white)
                 .setOngoing(true)
                 .setProgress(maxProgress, currentProgress, currentProgress == 0)
@@ -244,12 +248,22 @@ class SubscriptionImportWorker(
         return ForegroundInfo(NOTIFICATION_ID, notification, serviceType)
     }
 
+    private fun ensureNotificationChannel() {
+        val channelId = applicationContext.getString(R.string.notification_channel_id)
+        val channel = NotificationChannelCompat.Builder(
+            channelId,
+            NotificationManagerCompat.IMPORTANCE_LOW
+        ).setName(applicationContext.getString(R.string.notification_channel_name))
+            .setDescription(applicationContext.getString(R.string.notification_channel_description))
+            .build()
+        NotificationManagerCompat.from(applicationContext).createNotificationChannel(channel)
+    }
+
     companion object {
         // Log tag length is limited to 23 characters on API levels < 24.
         private const val TAG = "SubscriptionImport"
 
         private const val NOTIFICATION_ID = 4568
-        private const val NOTIFICATION_CHANNEL_ID = "newpipe"
         private val DEFAULT_MIME_CANDIDATES = listOf(
             "application/zip",
             "zip",

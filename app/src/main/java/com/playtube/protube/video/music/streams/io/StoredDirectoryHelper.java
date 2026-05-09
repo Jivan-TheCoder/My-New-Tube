@@ -19,7 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.documentfile.provider.DocumentFile;
 
-import com.playtube.protube.video.music.settings.NewPipeSettings;
+import com.playtube.protube.video.music.settings.PlayTubeSettings;
 import com.playtube.protube.video.music.util.FilePickerActivityHelper;
 
 import java.io.FileDescriptor;
@@ -386,7 +386,7 @@ public class StoredDirectoryHelper {
     }
 
     public static Intent getPicker(final Context ctx) {
-        if (NewPipeSettings.useStorageAccessFramework(ctx)) {
+        if (PlayTubeSettings.useStorageAccessFramework(ctx)) {
             return new Intent(Intent.ACTION_OPEN_DOCUMENT_TREE)
                     .putExtra("android.content.extra.SHOW_ADVANCED", true)
                     .addFlags(Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION

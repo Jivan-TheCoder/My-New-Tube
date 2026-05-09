@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Rect;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.playtube.protube.video.music.R;
+import com.playtube.protube.video.music.ads.AdUtils;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -239,7 +242,7 @@ public final class RecyclerNativeAdInjector {
 
         private void rebuildPositionsAndRefresh() {
             lastSourceCount = sourceAdapter.getItemCount();
-            adPositions = config.resolveAdAdapterPositions(lastSourceCount);
+            adPositions = resolveEligibleAdPositions(lastSourceCount);
             notifyDataSetChanged();
         }
 
@@ -247,8 +250,33 @@ public final class RecyclerNativeAdInjector {
             int sourceCount = sourceAdapter.getItemCount();
             if (sourceCount != lastSourceCount) {
                 lastSourceCount = sourceCount;
-                adPositions = config.resolveAdAdapterPositions(sourceCount);
+                adPositions = resolveEligibleAdPositions(sourceCount);
             }
+        }
+
+        @NonNull
+        private List<Integer> resolveEligibleAdPositions(int sourceCount) {
+            List<Integer> rawPositions = config.resolveAdAdapterPositions(sourceCount);
+            if (rawPositions.isEmpty()) {
+                return rawPositions;
+            }
+            List<Integer> filtered = new ArrayList<>(rawPositions.size());
+            for (int slotIndex = 0; slotIndex < rawPositions.size(); slotIndex++) {
+                NativeAdInjectionConfig.AdType slotType = config.resolveAdTypeForSlot(slotIndex);
+                if (hasAdUnitForType(slotType)) {
+                    filtered.add(rawPositions.get(slotIndex));
+                }
+            }
+            return filtered;
+        }
+
+        private boolean hasAdUnitForType(@NonNull NativeAdInjectionConfig.AdType adType) {
+            if (adType == NativeAdInjectionConfig.AdType.MREC) {
+                return !TextUtils.isEmpty(AdUtils.REC_Google_Medium_REC)
+                        || !TextUtils.isEmpty(AdUtils.REC_Google_Medium_REC_Fail);
+            }
+            return !TextUtils.isEmpty(AdUtils.REC_Google_Native)
+                    || !TextUtils.isEmpty(AdUtils.REC_Google_Native_Fail);
         }
 
         private boolean isAdPosition(int adapterPosition) {

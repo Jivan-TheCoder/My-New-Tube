@@ -18,7 +18,7 @@ import com.jakewharton.processphoenix.ProcessPhoenix
 import com.playtube.protube.video.music.ads.AppOpenManager
 import com.playtube.protube.video.music.error.ReCaptchaActivity
 import com.playtube.protube.video.music.ktx.hasAssignableCause
-import com.playtube.protube.video.music.settings.NewPipeSettings
+import com.playtube.protube.video.music.settings.PlayTubeSettings
 import com.playtube.protube.video.music.util.BridgeStateSaverInitializer
 import com.playtube.protube.video.music.util.Localization
 import com.playtube.protube.video.music.util.ServiceHelper
@@ -38,8 +38,6 @@ import java.net.SocketException
 import org.acra.ACRA.init
 import org.acra.ACRA.isACRASenderServiceProcess
 import org.acra.config.CoreConfigurationBuilder
-import com.playtube.protube.video.music.BuildConfig
-import com.playtube.protube.video.music.R
 import org.schabi.newpipe.extractor.NewPipe
 import org.schabi.newpipe.extractor.downloader.Downloader
 import org.schabi.newpipe.extractor.services.youtube.extractors.YoutubeStreamExtractor
@@ -79,7 +77,7 @@ open class App : Application(), SingletonImageLoader.Factory {
         isFirstRun = lastUsedPrefVersion == -1
 
         // Initialize settings first because other initializations can use its values
-        NewPipeSettings.initSettings(this)
+        PlayTubeSettings.initSettings(this)
 
         NewPipe.init(
             getDownloader(),

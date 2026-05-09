@@ -46,6 +46,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class SubscriptionsImportFragment extends BaseFragment {
+    private static final String KEY_SERVICE_ID = "service_id";
     @State
     int currentServiceId = Constants.NO_SERVICE_ID;
 
@@ -68,7 +69,9 @@ public class SubscriptionsImportFragment extends BaseFragment {
 
     public static SubscriptionsImportFragment getInstance(final int serviceId) {
         final SubscriptionsImportFragment instance = new SubscriptionsImportFragment();
-        instance.setInitialData(serviceId);
+        final Bundle args = new Bundle();
+        args.putInt(KEY_SERVICE_ID, serviceId);
+        instance.setArguments(args);
         return instance;
     }
 
@@ -83,6 +86,9 @@ public class SubscriptionsImportFragment extends BaseFragment {
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (currentServiceId == Constants.NO_SERVICE_ID && getArguments() != null) {
+            setInitialData(getArguments().getInt(KEY_SERVICE_ID, Constants.NO_SERVICE_ID));
+        }
 
         setupServiceVariables();
         if (supportedSources.isEmpty() && currentServiceId != Constants.NO_SERVICE_ID) {

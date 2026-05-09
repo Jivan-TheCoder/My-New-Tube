@@ -70,13 +70,14 @@ configure<ApplicationExtension> {
 
     defaultConfig {
         applicationId = "com.playtube.protube.video.music"
-        resValue("string", "app_name", "Playtube : video & music")
+        resValue("string", "app_name", "Playtube : Video & Music")
+        resValue ("string", "home_label", "#Playtube : Video & Music")
         minSdk = 23
         targetSdk = 35
 
-        versionCode = System.getProperty("versionCodeOverride")?.toInt() ?: 1
+        versionCode = System.getProperty("versionCodeOverride")?.toInt() ?: 3
 
-        versionName = "1.0"
+        versionName = "1.2"
         System.getProperty("versionNameSuffix")?.let { versionNameSuffix = it }
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -97,7 +98,7 @@ configure<ApplicationExtension> {
         debug {
             isDebuggable = true
             // Keep debug and release side-by-side to avoid key/signature replace conflicts.
-            applicationIdSuffix = ".debug"
+//            applicationIdSuffix = ".debug"
         }
 
         release {
@@ -106,18 +107,18 @@ configure<ApplicationExtension> {
             }
             System.getProperty("packageSuffix")?.let { suffix ->
                 applicationIdSuffix = suffix
-                resValue("string", "app_name", "Playtube : video & music $suffix")
+                resValue("string", "app_name", "Playtube : video & music")
             }
-            isMinifyEnabled = false
-            isShrinkResources = false
-            // Workaround for Android 15 install failures: INSTALL_BASELINE_PROFILE_FAILED.
+            isMinifyEnabled = true
+            isShrinkResources = true
+
             installation {
                 enableBaselineProfile = false
             }
-//            proguardFiles(
-//                getDefaultProguardFile("proguard-android-optimize.txt"),
-//                "proguard-rules.pro"
-//            )
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 
@@ -244,6 +245,7 @@ dependencies {
     implementation(libs.google.firebase.analytics)
     implementation(libs.google.firebase.config)
     implementation(libs.google.firebase.crashlytics)
+    implementation(libs.google.firebase.messaging)
     implementation(libs.androidx.webkit)
 
     // Coroutines interop
@@ -324,8 +326,6 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-process:2.10.0")
     implementation("com.google.android.gms:play-services-ads:24.9.0")
     implementation("com.android.volley:volley:1.2.1")
-    implementation("com.facebook.android:facebook-android-sdk:18.1.3")
-    implementation("com.facebook.android:audience-network-sdk:6.21.0")
     implementation("androidx.activity:activity:1.13.0")
     implementation("com.airbnb.android:lottie:6.7.1")
 

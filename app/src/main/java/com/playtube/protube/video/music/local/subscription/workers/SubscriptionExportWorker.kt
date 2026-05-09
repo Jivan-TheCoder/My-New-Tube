@@ -6,7 +6,9 @@ import android.net.Uri
 import android.os.Build
 import android.util.Log
 import android.widget.Toast
+import androidx.core.app.NotificationChannelCompat
 import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.core.net.toUri
 import androidx.work.CoroutineWorker
 import androidx.work.ExistingWorkPolicy
@@ -75,9 +77,11 @@ class SubscriptionExportWorker(
     }
 
     private fun createForegroundInfo(title: String): ForegroundInfo {
+        ensureNotificationChannel()
+        val channelId = applicationContext.getString(R.string.notification_channel_id)
         val notification =
             NotificationCompat
-                .Builder(applicationContext, NOTIFICATION_CHANNEL_ID)
+                .Builder(applicationContext, channelId)
                 .setSmallIcon(R.drawable.ic_playtube_triangle_white)
                 .setOngoing(true)
                 .setProgress(-1, -1, true)
@@ -89,10 +93,20 @@ class SubscriptionExportWorker(
         return ForegroundInfo(NOTIFICATION_ID, notification, serviceType)
     }
 
+    private fun ensureNotificationChannel() {
+        val channelId = applicationContext.getString(R.string.notification_channel_id)
+        val channel = NotificationChannelCompat.Builder(
+            channelId,
+            NotificationManagerCompat.IMPORTANCE_LOW
+        ).setName(applicationContext.getString(R.string.notification_channel_name))
+            .setDescription(applicationContext.getString(R.string.notification_channel_description))
+            .build()
+        NotificationManagerCompat.from(applicationContext).createNotificationChannel(channel)
+    }
+
     companion object {
         private const val TAG = "SubscriptionExportWork"
         private const val NOTIFICATION_ID = 4567
-        private const val NOTIFICATION_CHANNEL_ID = "newpipe"
         private const val WORK_NAME = "exportSubscriptions"
         private const val EXPORT_PATH = "exportPath"
 

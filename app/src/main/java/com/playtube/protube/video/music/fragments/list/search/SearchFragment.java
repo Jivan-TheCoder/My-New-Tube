@@ -63,7 +63,7 @@ import com.playtube.protube.video.music.fragments.list.BaseListFragment;
 import com.playtube.protube.video.music.ktx.AnimationType;
 import com.playtube.protube.video.music.ktx.ExceptionUtils;
 import com.playtube.protube.video.music.local.history.HistoryRecordManager;
-import com.playtube.protube.video.music.settings.NewPipeSettings;
+import com.playtube.protube.video.music.settings.PlayTubeSettings;
 import com.playtube.protube.video.music.util.Constants;
 import com.playtube.protube.video.music.util.DeviceUtils;
 import com.playtube.protube.video.music.util.ExtractorHelper;
@@ -203,8 +203,8 @@ public class SearchFragment extends BaseListFragment<SearchInfo, ListExtractor.I
         super.onAttach(context);
 
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(activity);
-        showLocalSuggestions = NewPipeSettings.showLocalSearchSuggestions(activity, prefs);
-        showRemoteSuggestions = NewPipeSettings.showRemoteSearchSuggestions(activity, prefs);
+        showLocalSuggestions = PlayTubeSettings.showLocalSearchSuggestions(activity, prefs);
+        showRemoteSuggestions = PlayTubeSettings.showRemoteSearchSuggestions(activity, prefs);
 
         suggestionListAdapter = new SuggestionListAdapter();
         historyRecordManager = new HistoryRecordManager(context);

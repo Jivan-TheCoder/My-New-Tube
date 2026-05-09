@@ -3,10 +3,4 @@
 
     <item
         android:drawable="@color/dark_youtube_primary_color"/>
-
-    <item>
-        <bitmap
-            android:src="@drawable/ic_playtube_triangle_white"
-            android:gravity="center_vertical|center_horizontal" />
-    </item>
 </layer-list>

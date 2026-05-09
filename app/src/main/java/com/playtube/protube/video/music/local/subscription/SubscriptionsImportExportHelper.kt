@@ -2,6 +2,8 @@ package com.playtube.protube.video.music.local.subscription
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 import androidx.fragment.app.Fragment
@@ -37,25 +39,42 @@ class SubscriptionsImportExportHelper(
         fragment.registerForActivityResult(StartActivityForResult(), this::requestImportResult)
 
     private fun requestExportResult(result: ActivityResult) {
-        val data = result.data?.data
-        if (data != null && result.resultCode == Activity.RESULT_OK) {
-            SubscriptionExportWorker.Companion.schedule(context, data)
+        val uri = result.data?.data
+        if (uri != null && result.resultCode == Activity.RESULT_OK) {
+            persistSafUriPermission(uri, result.data?.flags ?: 0)
+            SubscriptionExportWorker.Companion.schedule(context, uri)
         }
     }
 
     private fun requestImportResult(result: ActivityResult) {
-        val data = result.data?.dataString
-        if (data != null && result.resultCode == Activity.RESULT_OK) {
+        val uri = result.data?.data
+        if (uri != null && result.resultCode == Activity.RESULT_OK) {
+            persistSafUriPermission(uri, result.data?.flags ?: 0)
             ImportConfirmationDialog.show(
                 fragment,
-                SubscriptionImportInput.PreviousExportMode(data)
+                SubscriptionImportInput.PreviousExportMode(uri.toString())
             )
+        }
+    }
+
+    private fun persistSafUriPermission(uri: Uri, resultFlags: Int) {
+        val takeFlags = resultFlags and
+            (Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
+        if (takeFlags == 0) {
+            return
+        }
+
+        try {
+            context.contentResolver.takePersistableUriPermission(uri, takeFlags)
+        } catch (_: SecurityException) {
+            // Some providers/flows don't support persistable grants; worker can still proceed
+            // with already-granted temporary permissions when available.
         }
     }
 
     fun onExportSelected() {
         val date = SimpleDateFormat("yyyyMMddHHmm", Locale.ENGLISH).format(Date())
-        val exportName = "newpipe_subscriptions_$date.json"
+        val exportName = "playtube_subscriptions_$date.json"
 
         NoFileManagerSafeGuard.launchSafe(
             requestExportLauncher,

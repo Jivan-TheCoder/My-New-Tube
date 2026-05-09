@@ -1,1 +1,0 @@
-- Atkārtoti izlabota atšifrēšanas funkcijas kļūda.

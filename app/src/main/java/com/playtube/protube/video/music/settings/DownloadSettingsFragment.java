@@ -61,7 +61,7 @@ public class DownloadSettingsFragment extends BasePreferenceFragment {
         prefStorageAsk = findPreference(downloadStorageAsk);
 
         final SwitchPreferenceCompat prefUseSaf = findPreference(storageUseSafPreference);
-        prefUseSaf.setChecked(NewPipeSettings.useStorageAccessFramework(ctx));
+        prefUseSaf.setChecked(PlayTubeSettings.useStorageAccessFramework(ctx));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             prefUseSaf.setEnabled(false);
             prefUseSaf.setSummary(R.string.downloads_storage_use_saf_summary_api_29);
@@ -181,9 +181,9 @@ public class DownloadSettingsFragment extends BasePreferenceFragment {
         final String key = preference.getKey();
 
         if (key.equals(storageUseSafPreference)) {
-            if (!NewPipeSettings.useStorageAccessFramework(ctx)) {
-                NewPipeSettings.saveDefaultVideoDownloadDirectory(ctx);
-                NewPipeSettings.saveDefaultAudioDownloadDirectory(ctx);
+            if (!PlayTubeSettings.useStorageAccessFramework(ctx)) {
+                PlayTubeSettings.saveDefaultVideoDownloadDirectory(ctx);
+                PlayTubeSettings.saveDefaultAudioDownloadDirectory(ctx);
             } else {
                 defaultPreferences.edit().putString(downloadPathVideoPreference, null)
                         .putString(downloadPathAudioPreference, null).apply();
